@@ -8,7 +8,7 @@ jobs:
   ssh-ec2:
     runs-on: ubuntu-latest 
     environment:  
-          name: dev
+          name: staging
           url: https://github.com
 
     steps:
@@ -93,5 +93,5 @@ jobs:
 
           # Start the containers using Docker Compose
           echo "Running docker-compose up -d --build"
-          sudo docker compose -p automation-dev up -d --build
+          sudo docker compose -p automation-staging up -d --build
           EOF
