@@ -2,13 +2,13 @@ name: ONDC Automation Config Service Deployment
 
 on:
   push:
-    branches: ["main"]
+    branches: ["release-staging"]
 
 jobs:
   ssh-ec2:
     runs-on: ubuntu-latest 
     environment:  
-          name: dev
+          name: staging
           url: https://github.com
 
     steps:
@@ -23,11 +23,11 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
           ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} -T <<EOF
-          REPO_DIR=~/ONDC-automation-framework/automation-config-service
+          REPO_DIR=~/ONDC-automation-framework-staging/automation-config-service
           echo "Removing existing repository directory if exists"
           rm -rf \$REPO_DIR
-          echo "Cloning repository from main branch"
-          git clone --single-branch --branch main https://github.com/ONDC-Official/automation-config-service.git \$REPO_DIR
+          echo "Cloning repository from release-staging branch"
+          git clone --single-branch --branch release-staging https://github.com/ONDC-Official/automation-config-service.git \$REPO_DIR
           EOF
  
       - name: Install Docker Compose (if not installed)
@@ -48,7 +48,7 @@ jobs:
         run: |
           echo "Writing secrets to .env file"
           ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} <<EOF
-          REPO_DIR=~/ONDC-automation-framework/automation-config-service
+          REPO_DIR=~/ONDC-automation-framework-staging/automation-config-service
           echo "Writing environment variables to .env file"
           echo "PORT=${{ vars.PORT }}" >> \$REPO_DIR/.env
           echo "REDIS_USERNAME=${{ vars.REDIS_USERNAME }}" >> \$REPO_DIR/.env
@@ -60,7 +60,7 @@ jobs:
       - name: Verify .env and docker-compose.yml files
         run: |
           ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} <<EOF
-          REPO_DIR=~/ONDC-automation-framework/automation-config-service
+          REPO_DIR=~/ONDC-automation-framework-staging/automation-config-service
           # Check if .env and docker-compose.yml files exist
           if [ ! -f \$REPO_DIR/.env ]; then
             echo ".env file not found in \$REPO_DIR!"
@@ -77,7 +77,7 @@ jobs:
         run: |
           echo "Deploying with Docker Compose"
           ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} <<EOF
-          REPO_DIR=~/ONDC-automation-framework/automation-config-service
+          REPO_DIR=~/ONDC-automation-framework-staging/automation-config-service
           cd \$REPO_DIR
 
           # Ensure the .env and docker-compose.yml files exist
@@ -93,5 +93,5 @@ jobs:
 
           # Start the containers using Docker Compose
           echo "Running docker-compose up -d --build"
-          sudo docker compose -p automation-dev up -d --build
+          sudo docker compose -p automation-staging up -d --build
           EOF
