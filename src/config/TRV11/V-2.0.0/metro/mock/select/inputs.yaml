@@ -1,0 +1,17 @@
+inputs:
+  - name: items
+    label: Fill Items
+    type: list
+    payloadField: $.message.order.items
+    inputs: 
+      - name: item_id
+        type: text
+        label: "Enter Item Id"
+        payloadField: $.id
+      - name: quantity
+        type: number
+        label: "Enter quantity"
+        payloadField: $.quantity.selected.count
+
+
+    

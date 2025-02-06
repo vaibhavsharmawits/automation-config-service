@@ -1,0 +1,12 @@
+inputs:
+  - name: vehicle_category
+    label: Select vehicle category
+    type: enum
+    values:
+      - METRO
+      - BUS
+    payloadField: $.message.intent.fulfillment.vehicle.category
+  - name: city_code
+    label: Enter city code
+    type: text
+    payloadField: $.context.location.city.code

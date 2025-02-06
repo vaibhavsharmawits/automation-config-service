@@ -1,0 +1,34 @@
+message:
+  intent:
+    fulfillment:
+      stops:
+        - type: START
+          location:
+            descriptor:
+              code: SHAHEED_STHAL
+        - type: END
+          location:
+            descriptor:
+              code: AZADPUR
+      vehicle:
+        category: METRO
+    payment:
+      collected_by: BAP
+      tags:
+        - descriptor:
+            code: BUYER_FINDER_FEES
+          display: false
+          list:
+            - descriptor:
+                code: BUYER_FINDER_FEES_PERCENTAGE
+              value: "1"
+        - descriptor:
+            code: SETTLEMENT_TERMS
+          display: false
+          list:
+            - descriptor:
+                code: DELAY_INTEREST
+              value: "2.5"
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://api.example-bap.com/booking/terms

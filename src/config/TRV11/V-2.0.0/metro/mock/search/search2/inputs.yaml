@@ -1,0 +1,19 @@
+inputs:
+  - name: vehicle_category
+    label: Select vehicle category
+    type: enum
+    values:
+      - METRO
+    payloadField: $.message.intent.fulfillment.vehicle.category
+  - name: city_code
+    label: Enter city code
+    type: text
+    payloadField: $.context.location.city.code
+  - name: start_code
+    label: Enter start code
+    type: text
+    payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+  - name: end_code
+    label: Enter end code
+    type: text
+    payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code

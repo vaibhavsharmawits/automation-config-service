@@ -1,0 +1,11 @@
+save-data:
+  cityCode: "$.context.location.city.code"
+  bap_id: "$.context.bap_id"
+  bap_uri: "$.context.bap_uri"
+  transaction_id: "$.context.transaction_id"
+  message_id: "$.context.message_id"
+  price: "$.message.order.quote.price.value"
+  updated_payments: "$.message.order.payments[*]"
+  items: "$.message.order.items[*]"
+  fulfillments: "$.message.order.fulfillments[*]"
+  quote: "$.message.order.quote"
