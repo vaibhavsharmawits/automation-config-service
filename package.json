@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc && copyfiles -u 1 \"src/**/*.{yaml,html,css}\" dist/",
     "dev": "nodemon src/index.ts"
   },
   "author": "",
