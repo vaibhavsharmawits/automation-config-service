@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/index.ts",
     "build": "tsc && copyfiles -u 1 \"src/**/*.{yaml,html,css}\" dist/",
-    "dev": "nodemon src/index.ts"
+    "start": "node dist/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,8 +20,10 @@
     "ondc-automation-cache-lib": "^2.0.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/js-yaml": "^4.0.9",
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
