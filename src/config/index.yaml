@@ -7,6 +7,8 @@ domain:
             flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
             supportedActions:
               $ref: "src/config/TRV11/V-2.0.0/metro/supportedActions/index.yaml"
+          - name: Bus
+            flows: "./TRV11/V-2.0.0/bus/flows/index.yaml"
       - id: 2.0.1
         usecase:
           - name: Metro
