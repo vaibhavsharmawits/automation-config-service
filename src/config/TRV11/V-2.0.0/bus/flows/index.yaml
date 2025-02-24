@@ -1,12 +1,12 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
-    description: User uses station code for searching metro
+    description: User uses station code for searching bus
     sequence:
       - key: search1
         type: search
         unsolicited: false
         description:
-          User searches over the network to avail the metro mode of transport
+          User searches over the network to avail the bus mode of transport
           in the city
         pair: on_search1
         owner: BAP
@@ -18,13 +18,13 @@ flows:
         pair: null
         owner: BPP
   - id: STATION_CODE_FLOW_ORDER
-    description: User uses station code for searching metro
+    description: User uses station code for searching bus
     sequence:
       - key: search1
         type: search
         unsolicited: false
         description:
-          User searches over the network to avail the metro mode of transport
+          User searches over the network to avail the bus mode of transport
           in the city
         pair: on_search1
         owner: BAP
@@ -39,7 +39,7 @@ flows:
         type: search
         unsolicited: false
         description:
-          User searches over the network to avail the metro mode of transport
+          User searches over the network to avail the bus mode of transport
           from one station to another
         pair: on_search2
         owner: BAP
@@ -49,7 +49,7 @@ flows:
             label: Select vehicle category
             type: select
             values:
-              - METRO
+              - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
           - name: city_code
             label: Enter city code
@@ -130,13 +130,13 @@ flows:
         pair: null
         owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
-    description: User cancels the metro booking
+    description: User cancels the bus booking
     sequence:
       - key: search1
         type: search
         unsolicited: false
         description:
-          User searches over the network to avail the metro mode of transport
+          User searches over the network to avail the bus mode of transport
           in the city
         pair: on_search1
         owner: BAP
@@ -151,7 +151,7 @@ flows:
         type: search
         unsolicited: false
         description:
-          User searches over the network to avail the metro mode of transport
+          User searches over the network to avail the bus mode of transport
           from one station to another
         pair: on_search2
         owner: BAP
@@ -161,7 +161,7 @@ flows:
             label: Select vehicle category
             type: select
             values:
-              - METRO
+              - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
           - name: city_code
             label: Enter city code
