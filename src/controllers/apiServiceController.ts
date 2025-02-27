@@ -10,7 +10,7 @@ export const getSupportedActions = async (req: Request, res: Response) => {
       config,
       query.domain,
       query.version,
-      query.usecase,
+      "Metro",
       "supportedActions"
     );
 
