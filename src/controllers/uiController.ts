@@ -23,3 +23,5 @@ export const getFlows = async (req: Request, res: Response) => {
       .send({ error: true, message: "Error while fetching flows" });
   }
 };
+
+export const getScenarioFormData = async () => {};

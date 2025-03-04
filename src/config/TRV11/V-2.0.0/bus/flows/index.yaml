@@ -2,16 +2,16 @@ flows:
   - id: STATION_CODE_FLOW_CATALOG
     description: User uses station code for searching bus
     sequence:
-      - key: search1
+      - key: search1_BUS
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           in the city
-        pair: on_search1
+        pair: on_search1_BUS
         owner: BAP
         expect: true
-      - key: on_search1
+      - key: on_search1_BUS
         type: on_search
         unsolicited: false
         description: Response with all station codes
@@ -20,28 +20,28 @@ flows:
   - id: STATION_CODE_FLOW_ORDER
     description: User uses station code for searching bus
     sequence:
-      - key: search1
+      - key: search1_BUS
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           in the city
-        pair: on_search1
+        pair: on_search1_BUS
         owner: BAP
         expect: true
-      - key: on_search1
+      - key: on_search1_BUS
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2
+      - key: search2_BUS
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           from one station to another
-        pair: on_search2
+        pair: on_search2_BUS
         owner: BAP
         expect: false
         input:
@@ -67,33 +67,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2
+      - key: on_search2_BUS
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select
+      - key: select_BUS
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select
+        pair: on_select_BUS
         owner: BAP
-      - key: on_select
+      - key: on_select_BUS
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init
+      - key: init_BUS
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init
+        pair: on_init_BUS
         owner: BAP
-      - key: on_init
+      - key: on_init_BUS
         type: on_init
         unsolicited: false
         description:
@@ -101,15 +101,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm
+      - key: confirm_BUS
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm
+        pair: on_confirm_BUS
         owner: BAP
-      - key: on_confirm
+      - key: on_confirm_BUS
         type: on_confirm
         unsolicited: false
         description:
@@ -117,13 +117,13 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status
+      - key: status_BUS
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status
+        pair: on_status_BUS
         owner: BAP
-      - key: on_status
+      - key: on_status_BUS
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
