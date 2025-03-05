@@ -24,4 +24,8 @@ export const getFlows = async (req: Request, res: Response) => {
   }
 };
 
-export const getScenarioFormData = async () => {};
+export const getScenarioFormData = async (_req: Request, res: Response) => {
+  const config = await getConfigService();
+
+  res.send(config.usecases);
+};
