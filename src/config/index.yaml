@@ -5,11 +5,19 @@ domain:
         usecase:
           - name: Metro
             flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
-            mock:
-              $ref: "src/config/TRV11/V-2.0.0/metro/mock/index.yaml"
-            # test:
-            #   $ref: "src/config/TRV11/V-2.0.0/metro/flows/index.yaml"
+            supportedActions:
+              $ref: "src/config/TRV11/V-2.0.0/metro/supportedActions/index.yaml"
+          - name: Bus
+            flows: "./TRV11/V-2.0.0/bus/flows/index.yaml"
       - id: 2.0.1
         usecase:
           - name: Metro
             flows: "./flows/TRV11/V-2.0.1/index.yaml"
+usecases:
+  domain:
+    - key: ONDC:TRV11
+      version:
+        - key: 2.0.0
+          usecase:
+            - Metro
+            - Bus

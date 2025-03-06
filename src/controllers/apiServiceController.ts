@@ -1,19 +1,18 @@
 import { Request, Response } from "express";
 import { getConfigService } from "../services/cacheService";
-import { filterDomainData, getFileFromRefrence } from "../utils";
+import { filterDomainData } from "../utils";
 
-export const getFlows = async (req: Request, res: Response) => {
+export const getSupportedActions = async (req: Request, res: Response) => {
   try {
     const query = req.query;
     const config = await getConfigService();
-    const filePath = filterDomainData(
+    const data = filterDomainData(
       config,
       query.domain,
       query.version,
-      query.usecase,
-      "flows"
+      "Metro",
+      "supportedActions"
     );
-    const data = await getFileFromRefrence(filePath);
 
     res.send({ data: data });
   } catch (e) {
@@ -22,10 +21,4 @@ export const getFlows = async (req: Request, res: Response) => {
       .status(400)
       .send({ error: true, message: "Error while fetching flows" });
   }
-};
-
-export const getScenarioFormData = async (_req: Request, res: Response) => {
-  const config = await getConfigService();
-
-  res.send(config.usecases);
 };
