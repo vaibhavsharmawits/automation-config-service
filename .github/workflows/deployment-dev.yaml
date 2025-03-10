@@ -1,6 +1,7 @@
 name: ONDC Automation Config Service Deployment
 
 on:
+  workflow_dispatch: 
   push:
     branches: ["release-staging"]
 
