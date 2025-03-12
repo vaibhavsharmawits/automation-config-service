@@ -1,0 +1,89 @@
+flows:
+  - id: ORDER_FLOW_BASE_LINE
+    description: User uses station code for searching bus
+    sequence:
+      - key: search1_BUS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search1_BUS
+        owner: BAP
+        expect: true
+      - key: on_search1_BUS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_BUS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_BUS
+        owner: BAP
+      - key: on_init_BUS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_BUS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_BUS
+        owner: BAP
+      - key: on_confirm_BUS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_BUS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_BUS
+        owner: BAP
+      - key: on_update_BUS
+        type: on_update
+        unsolicited: false
+        description: LSP updates order details
+        pair: null
+        owner: BPP
+      - key: on_status_1_BUS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_1_BUS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_1_BUS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: track_BUS
+        type: track
+        unsolicited: false
+        description: LBNP requests for tracking informatio
+        pair: on_track_BUS
+        owner: BAP
+      - key: on_track_BUS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_2_BUS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
