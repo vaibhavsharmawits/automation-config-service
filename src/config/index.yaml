@@ -13,6 +13,12 @@ domain:
         usecase:
           - name: Metro
             flows: "./flows/TRV11/V-2.0.1/index.yaml"
+  - name: NIC2004:60232
+    versions:
+      - id: 1.2.5
+        usecase:
+          - name: Logistics
+            flows: "./NIC2004:60232/V-1.2.5/logistics/flows/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -21,3 +27,8 @@ usecases:
           usecase:
             - Metro
             - Bus
+    - key: NIC2004:60232
+      version:
+        - key: 1.2.5
+          usecase:
+            - Logistics
