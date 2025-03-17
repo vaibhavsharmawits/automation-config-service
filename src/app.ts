@@ -17,9 +17,11 @@ app.use(cors());
 app.use(express.json());
 
 loadYAMLWithRefs(path.join(__dirname, configPath))
-  .then((config: any) => {
+  .then(async (config: any) => {
     console.log(">>>>>", JSON.stringify(config, null, 2));
-    setConfigService(config)
+    console.log(config);
+    
+    await setConfigService(config)
   })
   .catch(console.error);
 

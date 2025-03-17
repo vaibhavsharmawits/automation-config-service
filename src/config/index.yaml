@@ -5,20 +5,24 @@ domain:
         usecase:
           - name: Metro
             flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
-            supportedActions:
-              $ref: "src/config/TRV11/V-2.0.0/metro/supportedActions/index.yaml"
           - name: Bus
             flows: "./TRV11/V-2.0.0/bus/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV11/V-2.0.0/supportedActions/index.yaml"
       - id: 2.0.1
         usecase:
           - name: Metro
             flows: "./flows/TRV11/V-2.0.1/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
   - name: NIC2004:60232
     versions:
       - id: 1.2.5
         usecase:
           - name: Logistics
             flows: "./NIC2004:60232/V-1.2.5/logistics/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/NIC2004:60232/V-1.2.5/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11

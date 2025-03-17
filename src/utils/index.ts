@@ -3,10 +3,10 @@ import { loadYAMLWithRefs } from "../services/configService";
 
 export function filterDomainData(
   data: any,
-  domainName: any,
-  versionId: any,
-  usecaseName: any,
-  property: any
+  domainName: string,
+  versionId: string,
+  usecaseName: string,
+  property: string
 ) {
   if (!data || !data.domain) return null;
 
@@ -14,6 +14,10 @@ export function filterDomainData(
     if (domain.name === domainName) {
       for (const version of domain.versions) {
         if (version.id === versionId) {
+          if (property === "supportedActions") {
+            
+            return version[property];
+          }
           for (const usecase of version.usecase) {
             if (usecase.name === usecaseName) {
               return usecase[property] || null;
