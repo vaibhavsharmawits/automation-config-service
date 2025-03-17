@@ -10,7 +10,6 @@ export const getConfigService = async () => {
     // if (!sessionData) {
     //   throw new Error("Session not found");
     // }
-
     // Return the session data if found
     return JSON.parse(sessionData || "{}");
   } catch (error: any) {

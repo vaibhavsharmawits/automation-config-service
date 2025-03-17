@@ -8,9 +8,9 @@ export const getFlows = async (req: Request, res: Response) => {
     const config = await getConfigService();
     const filePath = filterDomainData(
       config,
-      query.domain,
-      query.version,
-      query.usecase,
+      query.domain as string,
+      query.version as string,
+      query.usecase as string,
       "flows"
     );
     const data = await getFileFromRefrence(filePath);
