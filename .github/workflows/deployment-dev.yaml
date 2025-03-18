@@ -70,7 +70,7 @@ jobs:
           fi
           echo ".env and docker-compose.yml files found."
           EOF
-      - name: Automation Api Server Deployment
+      - name: Automation config Server Deployment
         run: |
           echo "Deploying with Docker Compose"
           ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} <<EOF
@@ -87,5 +87,6 @@ jobs:
           fi
           # Start the containers using Docker Compose
           echo "Running docker-compose up -d --build"
+          sudo docker compose down
           sudo docker compose -p automation-dev up -d --build
           EOF
