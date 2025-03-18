@@ -87,6 +87,6 @@ jobs:
           fi
           # Start the containers using Docker Compose
           echo "Running docker-compose up -d --build"
-          sudo docker compose down
+          sudo docker compose down || true
           sudo docker compose -p automation-dev up -d --build
           EOF
