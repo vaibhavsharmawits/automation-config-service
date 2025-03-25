@@ -1,49 +1,4 @@
 flows:
-  - id: BPP_Collecting_Payment_Confirmation
-    description: BPP Collecting - Payment Confirmation
-    sequence:
-      - key: init
-        type: init
-        unsolicited: false
-        pair: null
-        owner: BAP
-        expect: false
-      - key: on_init
-        type: on_init
-        unsolicited: false
-        pair: init
-        owner: BPP
-        expect: false
-      - key: form
-        type: form
-        unsolicited: false
-        pair: on_init
-        owner: BAP
-        expect: false
-      - key: status
-        type: status
-        unsolicited: false
-        pair: form
-        owner: BAP
-        expect: false
-      - key: on_status
-        type: on_status
-        unsolicited: false
-        pair: status
-        owner: BPP
-        expect: false
-      - key: confirm
-        type: confirm
-        unsolicited: false
-        pair: on_status
-        owner: BAP
-        expect: false
-      - key: on_confirm
-        type: on_confirm
-        unsolicited: false
-        pair: confirm
-        owner: BPP
-        expect: false
   - id: OnDemand_Assign_driver_on_onconfirm
     description: On-Demand - Assign driver on on-confirm
     sequence:
@@ -52,7 +7,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -151,7 +106,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -250,7 +205,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -349,7 +304,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -538,7 +493,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -670,7 +625,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -724,7 +679,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -823,7 +778,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -928,7 +883,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
@@ -1033,7 +988,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BAP
-        expect: false
+        expect: true
       - key: on_search
         type: on_search
         unsolicited: false
