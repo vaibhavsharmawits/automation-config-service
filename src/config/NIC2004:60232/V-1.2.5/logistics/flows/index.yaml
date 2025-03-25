@@ -2,14 +2,44 @@ flows:
   - id: ORDER_FLOW_BASE_LINE
     description: User uses station code for searching bus
     sequence:
-      - key: search1_LOGISTICS
+      - key: search_LOGISTICS
         type: search
         unsolicited: false
         description: LBNP sends a search request
-        pair: on_search1_LOGISTICS
+        pair: on_search_LOGISTICS
         owner: BAP
         expect: true
-      - key: on_search1_LOGISTICS
+        input:
+          - name: delivery_type
+            label: Select devlivery type
+            type: select
+            values:
+              - P2P
+              - P2H2P
+            payloadField: $.message.intent.item.descriptor.code
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Immediate Delivery
+            payloadField: $.message.intent.category.id
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
