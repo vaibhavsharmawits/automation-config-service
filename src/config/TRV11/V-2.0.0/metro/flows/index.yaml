@@ -1,6 +1,7 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
-    description: User uses station code for searching metro
+    title: Fetching catalog of metro providers
+    description: This flow illustrates the first search operation where the buyer app fetches for the catalog of metro providers consisting of routes and station codes available
     sequence:
       - key: search1_METRO
         type: search
@@ -18,7 +19,8 @@ flows:
         pair: null
         owner: BPP
   - id: STATION_CODE_FLOW_ORDER
-    description: User uses station code for searching metro
+    title: Purchase journey of metro tickets
+    description: This flow illustrates a typical purchase journey where the journey starts with searching for a specific pair of stations all the way to getting the ticket and completion of the journey
     sequence:
       - key: search1_METRO
         type: search
@@ -130,7 +132,8 @@ flows:
         pair: null
         owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
-    description: User cancels the metro booking
+    title: Technical cancellation journey
+    description: This flow illustrates the technical cancellation flow where the buyer app attempts to cancel the order transaction due to technical issues/ failures (viz. on_confirm response beyond ttl)
     sequence:
       - key: search1_METRO
         type: search
@@ -256,7 +259,8 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
-    description: User cancels the metro booking
+    title: User cancellation joureney
+    description: This flow illustrates the user cancellation flow where the buyer intends to cancel their metro ticket
     sequence:
       - key: search1_METRO
         type: search
