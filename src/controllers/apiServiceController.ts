@@ -8,9 +8,9 @@ export const getSupportedActions = async (req: Request, res: Response) => {
     const config = await getConfigService();
     const data = filterDomainData(
       config,
-      query.domain,
-      query.version,
-      "Metro",
+      query.domain as string,
+      query.version as string, 
+      "", 
       "supportedActions"
     );
 

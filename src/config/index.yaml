@@ -5,14 +5,32 @@ domain:
         usecase:
           - name: Metro
             flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
-            supportedActions:
-              $ref: "src/config/TRV11/V-2.0.0/metro/supportedActions/index.yaml"
           - name: Bus
             flows: "./TRV11/V-2.0.0/bus/flows/index.yaml"
-      - id: 2.0.1
-        usecase:
-          - name: Metro
-            flows: "./flows/TRV11/V-2.0.1/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV11/V-2.0.0/supportedActions/index.yaml"
+      # - id: 2.0.1
+      #   usecase:
+      #     - name: Metro
+      #       flows: "./TRV11/V-2.0.1/metro/flows/index.yaml"
+      #   supportedActions:
+      #     $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
+  # - name: nic2004:60232
+  #   versions:
+  #     - id: 1.2.5
+  #       usecase:
+  #         - name: Logistics
+  #           flows: "./NIC2004:60232/V-1.2.5/logistics/flows/index.yaml"
+  #       supportedActions:
+  #         $ref: "src/config/NIC2004:60232/V-1.2.5/supportedActions/index.yaml"
+  # - name: ONDC:TRV10
+  #   versions:
+  #     - id: 2.1.0
+  #       usecase:
+  #         - name: Ride-hailing
+  #           flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
+  #       supportedActions:
+  #         $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -21,3 +39,16 @@ usecases:
           usecase:
             - Metro
             - Bus
+    #     - key: 2.0.1
+    #       usecase:
+    #         - Metro
+    # - key: nic2004:60232
+    #   version:
+    #     - key: 1.2.5
+    #       usecase:
+    #         - Logistics
+    # - key: ONDC:TRV10
+    #   version:
+    #     - key: 2.1.0
+    #       usecase:
+    #         - Ride-hailing
