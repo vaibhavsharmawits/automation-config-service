@@ -13,9 +13,9 @@ supportedActions:
   status: ["on_status"]
   track: ["on_track"]
   on_track: ["on_track", "status", "on_status"]
-  on_status: ["status", "cancel", "track", "on_status"]
+  on_status: ["status", "cancel", "track", "on_status", "on_cancel", "on_track"]
   cancel: ["on_cancel", "status"]
-  on_cancel: ["cancel", "status"]
+  on_cancel: ["cancel", "status", "on_status"]
 
 apiProperties:
   search:
@@ -67,7 +67,7 @@ apiProperties:
     transaction_partner:
       ["search", "on_search", "init", "on_init", "confirm", "on_confirm"]
   on_track:
-    async_predecessor: "track"
+    async_predecessor: null
     transaction_partner:
       [
         "search",
