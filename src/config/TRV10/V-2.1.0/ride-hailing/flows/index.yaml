@@ -2,7 +2,7 @@ flows:
   - id: OnDemand_Assign_driver_on_onconfirm
     description: On-Demand - Assign driver on on-confirm
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
         pair: on_search
@@ -41,46 +41,46 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_ride
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_ride
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: track
+      - key: track_ride
         type: track
         unsolicited: false
-        pair: on_track
+        pair: on_track_ride
         owner: BAP
         expect: false
-      - key: on_track
+      - key: on_track_ride
         type: on_track
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_ride
         type: on_update
         unsolicited: true
         pair: null
@@ -89,10 +89,10 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -140,16 +140,16 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_driver_not_assigned
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_driver_not_assigned
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_ride
         type: on_update
         unsolicited: true
         pair: null
@@ -167,19 +167,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
@@ -188,10 +188,10 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -239,16 +239,16 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_ride
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_ride
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
@@ -266,19 +266,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_ride
         type: on_update
         unsolicited: true
         pair: null
@@ -287,10 +287,10 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -338,23 +338,17 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_driver_not_assigned
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_driver_not_assigned
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_ride
         type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_status
-        type: on_status
         unsolicited: true
         pair: null
         owner: BPP
@@ -371,8 +365,20 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
-        type: on_update
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
         unsolicited: true
         pair: null
         owner: BPP
@@ -380,10 +386,10 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -392,13 +398,55 @@ flows:
   - id: OnDemand_Ride_cancellation_by_driver
     description: On-Demand - Ride cancellation by driver
     sequence:
-      - key: on_confirm
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_ride
+        owner: BAP
+        expect: false
+      - key: on_confirm_ride
         type: on_confirm
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_async
         type: on_cancel
         unsolicited: true
         pair: null
@@ -407,19 +455,61 @@ flows:
   - id: OnDemand_Ride_cancellation_by_rider
     description: On-Demand - Ride cancellation by rider
     sequence:
-      - key: on_confirm
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_ride
+        owner: BAP
+        expect: false
+      - key: on_confirm_ride
         type: on_confirm
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
@@ -428,22 +518,22 @@ flows:
       - key: cancel
         type: cancel
         unsolicited: false
-        pair: on_cancel
+        pair: on_cancel_ride_cancel
         owner: BAP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_ride_cancel
         type: on_cancel
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: cancel
+      - key: cancel_hard
         type: cancel
         unsolicited: false
-        pair: on_cancel
+        pair: on_cancel_hard
         owner: BAP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_hard
         type: on_cancel
         unsolicited: false
         pair: null
@@ -452,13 +542,49 @@ flows:
   - id: Driver_not_found_on_onconfirm
     description: Driver not found on on_confirm
     sequence:
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_driver_not_found
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_driver_not_found
         type: on_confirm
         unsolicited: false
         pair: null
@@ -467,19 +593,55 @@ flows:
   - id: Driver_not_found_post_onconfirm
     description: Driver not found post on_confirm
     sequence:
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_driver_not_assigned
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_driver_not_assigned
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_rider_not_found
         type: on_cancel
         unsolicited: true
         pair: null
@@ -536,7 +698,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
@@ -554,13 +716,13 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
@@ -575,10 +737,10 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -586,93 +748,6 @@ flows:
         expect: false
   - id: OnDemand_Update_Stop
     description: On-Demand - Update Stop
-    sequence:
-      - key: update
-        type: update
-        unsolicited: false
-        pair: on_update
-        owner: BAP
-        expect: false
-      - key: on_update
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: update
-        type: update
-        unsolicited: false
-        pair: on_update
-        owner: BAP
-        expect: false
-      - key: on_update
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_status
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-  - id: OnDemand_Pre_Order_Bid
-    description: On-Demand - Pre Order Bid
-    sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: false
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-  - id: OnDemand_Post_Order_Tip
-    description: On-Demand - Post Order Tip
-    sequence:
-      - key: confirm
-        type: confirm
-        unsolicited: false
-        pair: on_confirm
-        owner: BAP
-        expect: false
-      - key: on_confirm
-        type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: update
-        type: update
-        unsolicited: false
-        pair: on_update
-        owner: BAP
-        expect: false
-      - key: on_update
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-  - id: OnDemand_Rental
-    description: On-Demand - Rental
     sequence:
       - key: search
         type: search
@@ -722,7 +797,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
@@ -740,13 +815,118 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update_soft_update
+        owner: BAP
+        expect: false
+      - key: on_update_soft_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_hard
+        type: update
+        unsolicited: false
+        pair: on_update_ride_updated
+        owner: BAP
+        expect: false
+      - key: on_update_ride_updated
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Pre_Order_Bid
+    description: On-Demand - Pre Order Bid
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
@@ -761,10 +941,172 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Post_Order_Tip
+    description: On-Demand - Post Order Tip
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_quote
+        type: update
+        unsolicited: false
+        pair: on_update_quote
+        owner: BAP
+        expect: false
+      - key: on_update_quote
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Rental
+    description: On-Demand - Rental
+    sequence:
+      - key: search_rental
+        type: search
+        unsolicited: false
+        pair: on_search_rental
+        owner: BAP
+        expect: true
+      - key: on_search_rental
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -839,25 +1181,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_2
         type: on_update
         unsolicited: true
         pair: null
@@ -866,10 +1208,10 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
@@ -944,19 +1286,118 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_unsolicited
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_2
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Rentalwhen_end_stop_gps_coordinate_is_present
+    description: On-Demand - Rental(when end stop gps coordinate is present)
+    sequence:
+      - key: search_rental_end
+        type: search
+        unsolicited: false
+        pair: on_search_rental_end
+        owner: BAP
+        expect: true
+      - key: on_search_rental_end
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
@@ -971,17 +1412,17 @@ flows:
       - key: status
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_solicited
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_solicited
         type: on_status
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-  - id: OnDemand_Rentalwhen_end_stop_gps_coordinate_is_present
-    description: On-Demand - Rental(when end stop gps coordinate is present)
+  - id: No_Acceptance_SoftCancel
+    description: No Acceptance - Soft_Cancel
     sequence:
       - key: search
         type: search
@@ -995,9 +1436,48 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: No_Acceptance_SoftCancel
-    description: No Acceptance - Soft_Cancel
-    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
       - key: cancel
         type: cancel
         unsolicited: false
@@ -1010,7 +1490,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_arrived
         type: on_status
         unsolicited: true
         pair: null
@@ -1019,19 +1499,91 @@ flows:
   - id: No_Acceptance_SoftUpdate
     description: No Acceptance - Soft_Update
     sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
       - key: update
         type: update
         unsolicited: false
-        pair: on_update
+        pair: on_update_soft_update
         owner: BAP
         expect: false
-      - key: on_update
+      - key: on_update_soft_update
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_status
+      - key: on_status_ride_started
         type: on_status
         unsolicited: true
         pair: null
