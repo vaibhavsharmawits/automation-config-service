@@ -866,7 +866,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_preorder_bid
         type: select
         unsolicited: false
         pair: on_select
@@ -1028,13 +1028,13 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_rental
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_rental
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_rental
         type: on_select
         unsolicited: false
         pair: null
@@ -1115,25 +1115,25 @@ flows:
   - id: Schedule_Rental
     description: Schedule - Rental
     sequence:
-      - key: search
+      - key: search_schedule_rental
         type: search
         unsolicited: false
-        pair: on_search
+        pair: on_search_schedule_rental
         owner: BAP
         expect: true
-      - key: on_search
+      - key: on_search_schedule_rental
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_rental
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_rental
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_rental
         type: on_select
         unsolicited: false
         pair: null
@@ -1163,7 +1163,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_ride_assigned
         type: on_update
         unsolicited: true
         pair: null
@@ -1199,7 +1199,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update_2
+      - key: on_update
         type: on_update
         unsolicited: true
         pair: null
@@ -1220,13 +1220,13 @@ flows:
   - id: Schedule_Trip
     description: Schedule - Trip
     sequence:
-      - key: search
+      - key: search_schedule_trip
         type: search
         unsolicited: false
-        pair: on_search
+        pair: on_search_schedule_trip
         owner: BAP
         expect: true
-      - key: on_search
+      - key: on_search_schedule_trip
         type: on_search
         unsolicited: false
         pair: null
@@ -1268,7 +1268,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_ride_assigned
         type: on_update
         unsolicited: true
         pair: null
@@ -1304,7 +1304,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update_2
+      - key: on_update
         type: on_update
         unsolicited: true
         pair: null
@@ -1478,6 +1478,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
       - key: cancel
         type: cancel
         unsolicited: false
@@ -1490,7 +1496,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status_ride_arrived
+      - key: on_status_ride_arrived_2
         type: on_status
         unsolicited: true
         pair: null
