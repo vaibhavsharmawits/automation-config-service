@@ -851,6 +851,24 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
   - id: OnDemand_Pre_Order_Bid
     description: On-Demand - Pre Order Bid
     sequence:
@@ -869,10 +887,10 @@ flows:
       - key: select_preorder_bid
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_preorder
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_preorder
         type: on_select
         unsolicited: false
         pair: null
@@ -997,6 +1015,54 @@ flows:
         expect: false
       - key: on_confirm
         type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
         unsolicited: false
         pair: null
         owner: BPP
