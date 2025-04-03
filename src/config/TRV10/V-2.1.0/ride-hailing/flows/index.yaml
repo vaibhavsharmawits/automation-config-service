@@ -8,6 +8,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -44,7 +57,7 @@ flows:
         pair: on_confirm_ride
         owner: BAP
         expect: false
-      - key: on_confirm_ride
+      - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
@@ -80,7 +93,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update_ride
+      - key: on_update
         type: on_update
         unsolicited: true
         pair: null
@@ -107,6 +120,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -206,6 +232,15 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -305,6 +340,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -404,6 +452,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -461,6 +522,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -548,6 +622,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -599,6 +686,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -656,6 +756,23 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: intermediate_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='INTERMEDIATE_STOP')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -755,6 +872,23 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: intermediate_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='INTERMEDIATE_STOP')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -878,6 +1012,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -977,6 +1124,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -1088,6 +1248,15 @@ flows:
         pair: on_search_rental
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
       - key: on_search_rental
         type: on_search
         unsolicited: false
@@ -1187,6 +1356,15 @@ flows:
         pair: on_search_schedule_rental
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
       - key: on_search_schedule_rental
         type: on_search
         unsolicited: false
@@ -1292,6 +1470,15 @@ flows:
         pair: on_search_schedule_trip
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
       - key: on_search_schedule_trip
         type: on_search
         unsolicited: false
@@ -1397,6 +1584,19 @@ flows:
         pair: on_search_rental_end
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search_rental_end
         type: on_search
         unsolicited: false
@@ -1496,6 +1696,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
@@ -1577,6 +1790,19 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search
         type: on_search
         unsolicited: false
