@@ -1,4 +1,151 @@
 flows:
+  - id: FEATURE_DISCOVERY
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Immediate Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+              - Instant Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "00B"
+                name: "Updated cancellation codes"
+              - code: "00E"
+                name: "Pickup & delivery attempt trail (P2H2P)"
+              - code: "00F"
+                name: "ePOD"
+              - code: "017"
+                name: "Surge fee"
+              - code: "019"
+                name: "eWay bill"
+              - code: "01A"
+                name: "Cancellation terms"
+              - code: "01C"
+                name: "SLA metrics"
+              - code: "01D"
+                name: "Publish special capabilities"
+              - code: "01E"
+                name: "RCM self-declaration"
+              - code: "01F"
+                name: "Codified static terms"
+              - code: "020"
+                name: "Exchange customer support contact details"
+              - code: "021"
+                name: "Differential weight charges"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "005"
+                name: "Quick Commerce Logistics"
+              - code: "006"
+                name: "Milk Run Logistics"
+              - code: "007"
+                name: "Single pickup multi drop (SPMD)"
+              - code: "008"
+                name: "COD order"
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "00A"
+                name: "Static OTP verification (RTO)"
+              - code: "00B"
+                name: "Updated cancellation codes"
+              - code: "00C"
+                name: "Updated flow for Immediate Delivery"
+              - code: "00D"
+                name: "Payment wallet"
+              - code: "00E"
+                name: "Pickup & delivery attempt trail (P2H2P)"
+              - code: "00F"
+                name: "ePOD"
+              - code: "010"
+                name: "Call Masking"
+              - code: "011"
+                name: "Update delivery address"
+              - code: "012"
+                name: "Update pickup & delivery authorization"
+              - code: "013"
+                name: "Seller & buyer instructions"
+              - code: "014"
+                name: "Seller Creds"
+              - code: "015"
+                name: "Dynamic OTP verification (pickup & delivery)"
+              - code: "016"
+                name: "Dynamic OTP verification (RTO)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "018"
+                name: "Partial RTO"
+              - code: "019"
+                name: "eWay bill"
+              - code: "01A"
+                name: "Cancellation terms"
+              - code: "01B"
+                name: "Reverse QC"
+              - code: "01C"
+                name: "SLA metrics"
+              - code: "01D"
+                name: "Publish special capabilities"
+              - code: "01E"
+                name: "RCM self-declaration"
+              - code: "01F"
+                name: "Codified static terms"
+              - code: "020"
+                name: "Exchange customer support contact details"
+              - code: "021"
+                name: "Differential weight charges"
+
   - id: ORDER_FLOW_BASE_LINE
     description: User uses station code for searching bus
     sequence:
