@@ -1118,7 +1118,7 @@ flows:
   - id: OnDemand_Post_Order_Tip
     description: On-Demand - Post Order Tip
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
         pair: on_search
@@ -1398,10 +1398,10 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_rental
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_rental
         type: on_confirm
         unsolicited: false
         pair: null
@@ -1512,10 +1512,10 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_rental
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_rental
         type: on_confirm
         unsolicited: false
         pair: null
