@@ -36,18 +36,22 @@ flows:
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
           - name: feature_discovery
             label: Features supported
             type: checkbox
@@ -145,7 +149,6 @@ flows:
                 name: "Exchange customer support contact details"
               - code: "021"
                 name: "Differential weight charges"
-
   - id: ORDER_FLOW_BASE_LINE
     description: User uses station code for searching bus
     sequence:
@@ -169,29 +172,32 @@ flows:
             type: select
             values:
               - POST-FULFILLMENT
-              - ON-ORDER
-              - ON-FULFILLMENT
             payloadField: $.message.intent.payment.type
           - name: city_code
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
@@ -232,6 +238,12 @@ flows:
         type: on_update
         unsolicited: false
         description: LSP updates order details
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
         pair: null
         owner: BPP
       - key: on_status_1_LOGISTICS
@@ -294,22 +306,27 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
@@ -350,6 +367,12 @@ flows:
         type: on_update
         unsolicited: false
         description: LSP updates order details
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
         pair: null
         owner: BPP
       - key: on_status_1_LOGISTICS
@@ -418,28 +441,38 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "008"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
@@ -474,6 +507,12 @@ flows:
         type: on_update
         unsolicited: false
         description: LSP updates order details
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
         pair: null
         owner: BPP
       - key: on_status_1_LOGISTICS
@@ -534,28 +573,38 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "00D"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
@@ -590,6 +639,12 @@ flows:
         type: on_update
         unsolicited: false
         description: LSP updates order details
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
         pair: null
         owner: BPP
       - key: on_status_1_LOGISTICS
@@ -652,28 +707,42 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
+          - name: feature_discovery
+            display: false
+            default:
+              - "021"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "021"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
@@ -710,6 +779,12 @@ flows:
         description: LSP updates order details
         pair: null
         owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
+        pair: null
+        owner: BPP
       - key: on_status_1_LOGISTICS
         type: on_status
         unsolicited: true
@@ -732,6 +807,156 @@ flows:
         type: on_status
         unsolicited: true
         description: LSP updates order status [Out for delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: PICKUP_DELIVERY_ATTEMPT
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Express Delivery
+              - Standard Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
+          - name: feature_discovery
+            display: false
+            default:
+              - "00E"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "00E"
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_1_LOGISTICS
+        owner: BAP
+      - key: on_update_1_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP updates order details
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
+        pair: null
+        owner: BPP
+      - key: on_status_8_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Pickup rescheduled]
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: on_status_7_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [In Transit]
+        pair: null
+        owner: BPP
+      - key: on_status_6_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [At destination hub]
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_10_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Delivery rescheduled]
         pair: null
         owner: BPP
       - key: on_status_3_LOGISTICS

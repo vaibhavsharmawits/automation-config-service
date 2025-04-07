@@ -32,22 +32,27 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
           - name: feature_discovery
             label: Features supported
             type: checkbox
@@ -141,7 +146,6 @@ flows:
                 name: "Exchange customer support contact details"
               - code: "021"
                 name: "Differential weight charges"
-
   - id: ORDER_FLOW_BASE_LINE
     description: User uses station code for searching bus
     sequence:
@@ -168,29 +172,32 @@ flows:
             type: select
             values:
               - POST-FULFILLMENT
-              - ON-ORDER
-              - ON-FULFILLMENT
             payloadField: $.message.intent.payment.type
           - name: city_code
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
@@ -296,22 +303,27 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
@@ -411,28 +423,38 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "008"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
@@ -532,28 +554,38 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "00D"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
@@ -647,28 +679,38 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.city
+            default: "std:080"
           - name: start_gps
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
           - name: end_gps
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
             payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "654321"
           - name: end_code
             label: Enter end area code
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "123456"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "00C"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
