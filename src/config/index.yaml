@@ -47,6 +47,14 @@ domain:
             flows: "./LOG11/V-1.2.5/logistics/flows/index.yaml"
         supportedActions:
           $ref: "src/config/LOG11/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:RET11
+    versions:
+      - id: 1.2.5
+        usecase:
+          - name: F&B
+            flows: "./RET11/V-1.2.5/F&B/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET11/V-1.2.5/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -78,3 +86,8 @@ usecases:
         - key: 1.2.5
           usecase:
             - Logistics (P2H2P)
+    - key: ONDC:RET11
+      version:
+        - key: 1.2.5
+          usecase:
+            - F&B
