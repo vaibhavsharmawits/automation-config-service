@@ -13,7 +13,17 @@ supportedActions:
   status: ["on_status"]
   track: ["on_track"]
   on_track: ["on_track", "status", "on_status"]
-  on_status: ["status", "cancel", "track", "on_status", "on_cancel", "on_track"]
+  on_status:
+    [
+      "status",
+      "cancel",
+      "track",
+      "on_status",
+      "on_cancel",
+      "on_track",
+      "update",
+      "on_update",
+    ]
   cancel: ["on_cancel", "status"]
   on_cancel: ["cancel", "status", "on_status"]
 
