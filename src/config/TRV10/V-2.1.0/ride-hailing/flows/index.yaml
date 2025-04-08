@@ -766,7 +766,7 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
           - name: intermediate_gps
-            label: Enter start gps coordinates
+            label: Enter intermediate gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='INTERMEDIATE_STOP')].location.gps
           - name: end_gps
@@ -882,7 +882,7 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
           - name: intermediate_gps
-            label: Enter start gps coordinates
+            label: Enter intermediate gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='INTERMEDIATE_STOP')].location.gps
           - name: end_gps
@@ -1006,7 +1006,7 @@ flows:
   - id: OnDemand_Pre_Order_Bid
     description: On-Demand - Pre Order Bid
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
         pair: on_search
@@ -1690,7 +1690,7 @@ flows:
   - id: No_Acceptance_SoftCancel
     description: No Acceptance - Soft_Cancel
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
         pair: on_search
@@ -1799,6 +1799,10 @@ flows:
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: intermediate_gps
+            label: Enter intermediate gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='INTERMEDIATE_STOP')].location.gps
           - name: end_gps
             label: Enter end gps coordinates
             type: text
@@ -1872,10 +1876,10 @@ flows:
       - key: update
         type: update
         unsolicited: false
-        pair: on_update_soft_update
+        pair: on_update_ride_updated
         owner: BAP
         expect: false
-      - key: on_update_soft_update
+      - key: on_update_ride_updated
         type: on_update
         unsolicited: false
         pair: null
