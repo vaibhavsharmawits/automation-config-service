@@ -121,9 +121,9 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_active_METRO_201
+        pair: on_status_complete_METRO_201
         owner: BAP
-      - key: on_status_active_METRO_201
+      - key: on_status_complete_METRO_201
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
@@ -495,7 +495,7 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
-      - key: cancel_soft_METRO_201
+      - key: cancel_hard_METRO_201
         type: cancel
         unsolicited: false
         description: User cancels the booking
@@ -627,7 +627,7 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
-      - key: cancel_soft_METRO_201
+      - key: cancel_hard_METRO_201
         type: cancel
         unsolicited: false
         description: User cancels the booking
@@ -639,7 +639,7 @@ flows:
         description:
           Provider platform cancels the booking and provides the details of
           the cancellation
-        pair: cancel_METRO_201
+        pair: cancel_hard_METRO_201
         owner: BPP
       - key: on_status_cancel_METRO_201
         type: on_status
