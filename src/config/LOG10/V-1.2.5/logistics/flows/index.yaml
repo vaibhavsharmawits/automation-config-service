@@ -161,7 +161,6 @@ flows:
                 name: "Exchange customer support contact details"
               - code: "021"
                 name: "Differential weight charges"
-
   - id: ORDER_FLOW_BASE_LINE
     description: Standard point-to-point delivery flow including baseline features
     sequence:
@@ -415,13 +414,13 @@ flows:
       - key: on_status_1_LOGISTICS
         type: on_status
         unsolicited: true
-        description: LSP status update: Order picked up
+        description: LSP status update - Order picked up
         pair: null
         owner: LSP
       - key: on_status_2_LOGISTICS
         type: on_status
         unsolicited: true
-        description: LSP status update: Out for delivery
+        description: LSP status update -  Out for delivery
         pair: null
         owner: LSP
       - key: on_cancel_LOGISTICS
@@ -433,7 +432,7 @@ flows:
       - key: on_status_4_LOGISTICS
         type: on_status
         unsolicited: true
-        description: LSP status update: RTO Delivered
+        description: LSP status update - RTO Delivered
         pair: null
         owner: LSP
   - id: CASH_ON_DELIVERY_FLOW
@@ -583,9 +582,7 @@ flows:
         pair: null
         owner: LSP
   - id: PREPAID_PAYMENT_FLOW
-    description: >
-      This flow outlines the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers. 
-      Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
+    description: This flow outlines the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers.Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -721,7 +718,7 @@ flows:
         pair: null
         owner: BPP
   - id: IMMEDIATE_DELIVERY_FLOW
-    description: The Immediate Delivery Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Ship to delivery (S2D) TAT for the same is less than 60 minutes. 
+    description: The Immediate Delivery Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Ship to delivery (S2D) TAT for the same is less than 60 minutes.
     sequence:
       - key: search_LOGISTICS
         type: search
