@@ -14,8 +14,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -30,10 +28,7 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
-              - Next Day Delivery
-              - Same Day Delivery
-              - Instant Delivery
+              - Express Delivery
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
@@ -179,8 +174,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -321,8 +314,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -471,8 +462,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -620,8 +609,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -767,8 +754,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -920,8 +905,6 @@ flows:
             label: Select retail item category
             type: select
             values:
-              - F&B
-              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -1014,9 +997,9 @@ flows:
         type: update
         unsolicited: false
         description: LBNP updates order details
-        pair: on_update_1_LOGISTICS
+        pair: on_update_LOGISTICS
         owner: BAP
-      - key: on_update_1_LOGISTICS
+      - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
         description: LSP updates order details
