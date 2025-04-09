@@ -308,7 +308,7 @@ flows:
         unsolicited: false
         description: LBNP sends a search request for logistics services
         pair: on_search_LOGISTICS
-        owner: LBNP
+        owner: BAP
         expect: true
         input:
           - name: retailCategory
@@ -374,67 +374,67 @@ flows:
         unsolicited: false
         description: LSP responds with catalog of delivery services
         pair: null
-        owner: LSP
+        owner: BPP
       - key: init_LOGISTICS
         type: init
         unsolicited: false
         description: LBNP selects and initializes logistics order
         pair: on_init_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_init_LOGISTICS
         type: on_init
         unsolicited: false
         description: LSP acknowledges and shares quote breakdown
         pair: null
-        owner: LSP
+        owner: BPP
       - key: confirm_LOGISTICS
         type: confirm
         unsolicited: false
         description: LBNP confirms logistics order
         pair: on_confirm_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_confirm_LOGISTICS
         type: on_confirm
         unsolicited: false
         description: LSP accepts the logistics order
         pair: null
-        owner: LSP
+        owner: BPP
       - key: update_LOGISTICS
         type: update
         unsolicited: false
         description: LBNP updates logistics order details
         pair: on_update_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
         description: LSP updates logistics order status or info
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_status_1_LOGISTICS
         type: on_status
         unsolicited: true
         description: LSP status update - Order picked up
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_status_2_LOGISTICS
         type: on_status
         unsolicited: true
         description: LSP status update -  Out for delivery
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_cancel_LOGISTICS
         type: on_cancel
         unsolicited: false
         description: LSP initiates Return to Origin (RTO)
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_status_4_LOGISTICS
         type: on_status
         unsolicited: true
         description: LSP status update - RTO Delivered
         pair: null
-        owner: LSP
+        owner: BPP
   - id: CASH_ON_DELIVERY_FLOW
     description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
     sequence:
@@ -443,7 +443,7 @@ flows:
         unsolicited: false
         description: LBNP sends a search request
         pair: on_search_LOGISTICS
-        owner: LBNP
+        owner: BAP
         expect: true
         input:
           - name: retailCategory
@@ -509,7 +509,7 @@ flows:
         unsolicited: false
         description: LSP responds with catalog and COD support
         pair: null
-        owner: LSP
+        owner: BPP
         input:
           - name: feature_discovery
             display: false
@@ -520,67 +520,67 @@ flows:
         unsolicited: false
         description: LBNP initializes order
         pair: on_init_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_init_LOGISTICS
         type: on_init
         unsolicited: false
         description: LSP acknowledges and provides quote with COD charges
         pair: null
-        owner: LSP
+        owner: BPP
       - key: confirm_LOGISTICS
         type: confirm
         unsolicited: false
         description: LBNP confirms the COD order including COD settlement details
         pair: on_confirm_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_confirm_LOGISTICS
         type: on_confirm
         unsolicited: false
         description: LSP confirms and accepts the COD order
         pair: null
-        owner: LSP
+        owner: BPP
       - key: update_LOGISTICS
         type: update
         unsolicited: false
         description: LBNP updates order details
         pair: on_update_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
         description: LSP updates order info
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_status_1_LOGISTICS
         type: on_status
         unsolicited: true
         description: LSP updates status [Order picked up]
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_status_2_LOGISTICS
         type: on_status
         unsolicited: true
         description: LSP updates status [Out for delivery]
         pair: null
-        owner: LSP
+        owner: BPP
       - key: track_LOGISTICS
         type: track
         unsolicited: false
         description: LBNP requests tracking details
         pair: on_track_LOGISTICS
-        owner: LBNP
+        owner: BAP
       - key: on_track_LOGISTICS
         type: on_track
         unsolicited: false
         description: LSP shares tracking details (GPS or URL)
         pair: null
-        owner: LSP
+        owner: BPP
       - key: on_status_3_LOGISTICS
         type: on_status
         unsolicited: true
         description: LSP updates status [Order delivered and COD charge collected]
         pair: null
-        owner: LSP
+        owner: BPP
   - id: PREPAID_PAYMENT_FLOW
     description: This flow outlines the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers.Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
     sequence:
