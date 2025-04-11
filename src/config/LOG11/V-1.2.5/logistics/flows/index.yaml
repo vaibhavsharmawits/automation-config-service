@@ -1,6 +1,6 @@
 flows:
   - id: FEATURE_DISCOVERY
-    description: User uses station code for searching bus
+    description: This flow illustrates the feature discovery flow among network participants for point-to-hub-to-point (P2H2P) logistics operations
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -160,7 +160,7 @@ flows:
               - code: "021"
                 name: "Differential weight charges"
   - id: ORDER_FLOW_BASE_LINE
-    description: User uses station code for searching bus
+    description: This flow illustrates the logistics order process for Baseline Features to be implemented by all Network participants transacting on version v1.2.5.
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -300,7 +300,7 @@ flows:
         pair: null
         owner: BPP
   - id: RTO_FLOW
-    description: User uses station code for searching bus
+    description: This flow illustrates the Return to Origin (RTO) process for Logistics Service Providers (LSPs) to handle situations where the buyer is unavailable, an accident occurs, or other unforeseen circumstances arise while the rider is out for delivery.
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -455,7 +455,7 @@ flows:
         pair: null
         owner: BPP
   - id: CASH_ON_DELIVERY_FLOW
-    description: User uses station code for searching bus
+    description: This flow illustrates the logistics process for Cash on Delivery (COD)/ Payment on Delivery (POD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
     sequence:
       - key: search_1_LOGISITCS
         type: search
@@ -602,7 +602,7 @@ flows:
         pair: null
         owner: BPP
   - id: PREPAID_PAYMENT_FLOW
-    description: User uses station code for searching bus
+    description: This flow illustrates the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers. Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
     sequence:
       - key: search_LOGISTICS
         type: search
