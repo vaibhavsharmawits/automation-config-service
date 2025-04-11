@@ -747,7 +747,7 @@ flows:
         pair: null
         owner: BPP
   - id: WEIGHT_DIFFERENTIAL_FLOW
-    description: This flow illustrates the cases where there is a discrepancy between the declared and actual weight of a shipment, the LSP identifies the difference and updates the corresponding weight differential charges. 
+    description: This flow illustrates scenarios where there is a discrepancy between the declared and actual weight of a shipment, the LSP identifies the difference and updates the corresponding weight differential charges. 
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -904,7 +904,7 @@ flows:
         pair: null
         owner: BPP
   - id: PICKUP_DELIVERY_ATTEMPT
-    description: This flow illustrates the scenarios where the LSP initiates a pickup or delivery attempt but is unable to complete it—due to reasons such as customer unavailability, restricted access, or operational constraints. In such cases, the LSP marks the attempt as failed, provides a reason code, and reschedules the task for a future date. All attempts, including timestamps, statuses, and reason codes, are recorded in the system to maintain a complete and auditable trail of logistics activity. 
+    description: This flow illustrates scenarios where the LSP initiates a pickup or delivery attempt but is unable to complete it—due to reasons such as customer unavailability, restricted access, or operational constraints. In such cases, the LSP marks the attempt as failed, provides a reason code, and reschedules the task for a future date. All attempts, including timestamps, statuses, and reason codes, are recorded in the system to maintain a complete and auditable trail of logistics activity. 
     sequence:
       - key: search_LOGISTICS
         type: search
