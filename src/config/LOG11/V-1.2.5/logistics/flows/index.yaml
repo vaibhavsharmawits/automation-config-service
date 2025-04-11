@@ -855,7 +855,7 @@ flows:
         description: LBNP updates order details
         pair: on_update_1_LOGISTICS
         owner: BAP
-      - key: on_update_1_LOGISTICS
+      - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
         description: LSP updates order details
@@ -883,6 +883,12 @@ flows:
         type: on_status
         unsolicited: true
         description: LSP updates order status [At destination hub]
+        pair: null
+        owner: BPP
+      - key: on_update_1_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP updates weight differential charges
         pair: null
         owner: BPP
       - key: on_status_2_LOGISTICS
