@@ -387,6 +387,13 @@ flows:
         description: LBNP sends order confirmation
         pair: on_confirm_LOGISTICS
         owner: BAP
+        input:
+          - name: returnToOrigin
+            label: Return to origin
+            type: select
+            values:
+              - 'yes'
+              - 'no'
       - key: on_confirm_LOGISTICS
         type: on_confirm
         unsolicited: false
