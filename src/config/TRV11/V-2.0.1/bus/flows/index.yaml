@@ -1,0 +1,352 @@
+flows:
+  - id: IntraCity_Delayed_Cancellation_FlowRejected
+    description: IntraCity - Delayed Cancellation Flow(Rejected)
+    sequence:
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_Delayed_Cancellation_FlowSuccessful
+    description: IntraCity - Delayed Cancellation Flow(Successful)
+    sequence:
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_GPS_Based_Flow
+    description: IntraCity - GPS Based Flow
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_Purchase_Journey_FlowCode_Based
+    description: IntraCity - Purchase Journey Flow(Code Based)
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_Search_Pagination_FlowCode_Based
+    description: IntraCity - Search Pagination Flow(Code Based)
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_Unlimited_Passes_FlowCode_Based
+    description: IntraCity - Unlimited Passes Flow(Code Based)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_User_Cancellation_Flow
+    description: IntraCity - User Cancellation Flow
+    sequence:
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_Vehicle_Based_Confirmation_flow
+    description: IntraCity - Vehicle Based Confirmation flow
+    sequence:
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: IntraCity_Technical_Cancellation_Flow
+    description: IntraCity - Technical Cancellation Flow
+    sequence:
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
