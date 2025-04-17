@@ -29,3 +29,17 @@ export const getScenarioFormData = async (_req: Request, res: Response) => {
 
   res.send(config.usecases);
 };
+
+export const getReportingStatus = async (req: Request, res: Response) => {
+  const query = req.query;
+  const config = await getConfigService();
+  const reporting = filterDomainData(
+    config,
+    query.domain as string,
+    query.version as string,
+    "",
+    "reporting"
+  );
+
+  res.send({ data: reporting });
+};

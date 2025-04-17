@@ -2,6 +2,7 @@ domain:
   - name: ONDC:TRV11
     versions:
       - id: 2.0.0
+        reporting: true
         usecase:
           - name: Metro
             flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
@@ -10,6 +11,7 @@ domain:
         supportedActions:
           $ref: "src/config/TRV11/V-2.0.0/supportedActions/index.yaml"
       - id: 2.0.1
+        reporting: true
         usecase:
           - name: Metro
             flows: "./TRV11/V-2.0.1/metro/flows/index.yaml"
@@ -17,17 +19,10 @@ domain:
             flows: "./TRV11/V-2.0.1/bus/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
-  # - name: nic2004:60232
-  #   versions:
-  #     - id: 1.2.5
-  #       usecase:
-  #         - name: Logistics
-  #           flows: "./NIC2004:60232/V-1.2.5/logistics/flows/index.yaml"
-  #       supportedActions:
-  #         $ref: "src/config/NIC2004:60232/V-1.2.5/supportedActions/index.yaml"
   - name: ONDC:TRV10
     versions:
       - id: 2.1.0
+        reporting: false
         usecase:
           - name: Ride-hailing
             flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
@@ -36,6 +31,7 @@ domain:
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
+        reporting: true
         usecase:
           - name: Logistics (P2P)
             flows: "./LOG10/V-1.2.5/logistics/flows/index.yaml"
@@ -44,6 +40,7 @@ domain:
   - name: ONDC:LOG11
     versions:
       - id: 1.2.5
+        reporting: true
         usecase:
           - name: Logistics (P2H2P)
             flows: "./LOG11/V-1.2.5/logistics/flows/index.yaml"
@@ -52,6 +49,7 @@ domain:
   - name: ONDC:RET11
     versions:
       - id: 1.2.5
+        reporting: false
         usecase:
           - name: F&B
             flows: "./RET11/V-1.2.5/F&B/flows/index.yaml"
@@ -69,11 +67,6 @@ usecases:
           usecase:
             - Metro
             - Bus
-    # - key: nic2004:60232
-    #   version:
-    #     - key: 1.2.5
-    #       usecase:
-    #         - Logistics
     - key: ONDC:TRV10
       version:
         - key: 2.1.0
