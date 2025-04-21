@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { getConfigService } from "../services/cacheService";
 import { filterDomainData, getFileFromRefrence } from "../utils";
 
-export const getFlows = async (req: Request, res: Response) => {
+export const getFlow = async (req: Request, res: Response) => {
   try {
     const query = req.query;
     const config = await getConfigService();
@@ -15,12 +15,20 @@ export const getFlows = async (req: Request, res: Response) => {
     );
     const data = await getFileFromRefrence(filePath);
 
-    res.send({ data: data });
+    const filteredFlow = data.flows?.filter(
+      (flow: any) => flow.id === query.flowId
+    );
+
+    if (filteredFlow?.length) {
+      res.send({ data: filteredFlow[0] });
+      return;
+    } else {
+      res.send({ data: null, message: "No flow found with the given flowId" });
+      return;
+    }
   } catch (e) {
-    console.log("Error while fetching flows", e);
-    res
-      .status(400)
-      .send({ error: true, message: "Error while fetching flows" });
+    console.log("Error while fetching flow", e);
+    res.status(400).send({ error: true, message: "Error while fetching flow" });
   }
 };
 
@@ -28,18 +36,4 @@ export const getScenarioFormData = async (_req: Request, res: Response) => {
   const config = await getConfigService();
 
   res.send(config.usecases);
-};
-
-export const getReportingStatus = async (req: Request, res: Response) => {
-  const query = req.query;
-  const config = await getConfigService();
-  const reporting = filterDomainData(
-    config,
-    query.domain as string,
-    query.version as string,
-    "",
-    "reporting"
-  );
-
-  res.send({ data: reporting });
 };
