@@ -41,5 +41,5 @@ export const getReportingStatus = async (req: Request, res: Response) => {
     "reporting"
   );
 
-  res.send({ data: reporting });
+  res.send({ data: reporting || true});
 };
