@@ -159,6 +159,8 @@ flows:
                 name: "Exchange customer support contact details"
               - code: "021"
                 name: "Differential weight charges"
+              - code: "022"
+                name: "RTO (with return)"
   - id: ORDER_FLOW_BASE_LINE
     description: This flow illustrates the logistics order process for Baseline Features to be implemented by all Network participants transacting on version v1.2.5.
     sequence:
@@ -369,6 +371,11 @@ flows:
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "022"
       - key: init_LOGISTICS
         type: init
         unsolicited: false
