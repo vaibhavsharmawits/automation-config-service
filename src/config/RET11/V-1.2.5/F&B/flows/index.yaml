@@ -52,3 +52,19 @@ flows:
       #     - name: search_mode
       #       display: false
       #       default: stop
+  - id: ORDER_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
