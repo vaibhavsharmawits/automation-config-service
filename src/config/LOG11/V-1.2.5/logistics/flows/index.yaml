@@ -90,6 +90,8 @@ flows:
                 name: "Exchange customer support contact details"
               - code: "021"
                 name: "Differential weight charges"
+              - code: "022"
+                name: "Differential weight charges"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
@@ -262,7 +264,13 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP updates order details
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
         pair: null
         owner: BPP
       - key: on_status_9_LOGISTICS
@@ -416,7 +424,13 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP updates order details
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
         pair: null
         owner: BPP
       - key: on_status_9_LOGISTICS
@@ -569,7 +583,13 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP updates order details
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
         pair: null
         owner: BPP
       - key: on_status_9_LOGISTICS
@@ -714,7 +734,13 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP updates order details
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
         pair: null
         owner: BPP
       - key: on_status_9_LOGISTICS
@@ -865,7 +891,13 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP updates order details
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
         pair: null
         owner: BPP
       - key: on_status_9_LOGISTICS
@@ -1022,7 +1054,13 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP updates order details
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
         pair: null
         owner: BPP
       - key: on_status_9_LOGISTICS
@@ -1065,6 +1103,161 @@ flows:
         type: on_status
         unsolicited: true
         description: LSP updates order status [Delivery rescheduled]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: CANCELLATION_TERMS_FLOW
+    description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Express Delivery
+              - Standard Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+          - name: feature_discovery
+            display: false
+            default:
+              - "01A"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: feature_discovery
+            display: false
+            default:
+              - "01A"
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup (along with cancellation terms)
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: on_status_7_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [In Transit]
+        pair: null
+        owner: BPP
+      - key: on_status_6_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [At destination hub]
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status [Out for delivery]
         pair: null
         owner: BPP
       - key: on_status_3_LOGISTICS
