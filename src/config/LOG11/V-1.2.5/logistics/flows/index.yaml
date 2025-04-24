@@ -943,7 +943,7 @@ flows:
         pair: null
         owner: BPP
   - id: PICKUP_DELIVERY_ATTEMPT
-    description: This flow illustrates scenarios where the LSP initiates a pickup or delivery attempt but is unable to complete it—due to reasons such as customer unavailability, restricted access, or operational constraints. In such cases, the LSP marks the attempt as failed, provides a reason code, and reschedules the task for a future date. All attempts, including timestamps, statuses, and reason codes, are recorded in the system to maintain a complete and auditable trail of logistics activity. 
+    description: This flow illustrates scenarios where the LSP initiates a pickup or delivery attempt but is unable to complete it due to reasons such as customer unavailability, restricted access, or operational constraints. In such cases, the LSP marks the attempt as failed, provides a reason code, and reschedules the task for a future date. All attempts, including timestamps, statuses, and reason codes, are recorded in the system to maintain a complete and auditable trail of logistics activity. 
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -1112,7 +1112,7 @@ flows:
         pair: null
         owner: BPP
   - id: CANCELLATION_TERMS_FLOW
-    description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
+    description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
     sequence:
       - key: search_LOGISTICS
         type: search
