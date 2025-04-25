@@ -691,6 +691,16 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
             default: "560001"
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
       - key: on_search_LOGISTICS
         type: on_search
         unsolicited: false
@@ -698,8 +708,20 @@ flows:
         pair: null
         owner: BPP
         input:
+          # - name: feature_discovery
+          #   display: false
+          #   default:
+          #     - "00D"
           - name: feature_discovery
-            display: false
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
             default:
               - "00D"
       - key: init_LOGISTICS
@@ -858,9 +880,7 @@ flows:
             options:
               - code: "009"
                 name: "Static OTP verification (pickup & delivery)"
-              - code: "00A"
-                name: "Static OTP verification (RTO)"
-              - code: "00D"
+              - code: "017"
                 name: "Surge fee"
               - code: "01A"
                 name: "Cancellation terms"
@@ -877,9 +897,7 @@ flows:
             options:
               - code: "009"
                 name: "Static OTP verification (pickup & delivery)"
-              - code: "00A"
-                name: "Static OTP verification (RTO)"
-              - code: "00D"
+              - code: "017"
                 name: "Surge fee"
               - code: "01A"
                 name: "Cancellation terms"
