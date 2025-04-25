@@ -33,7 +33,6 @@ flows:
               - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
-
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
@@ -196,7 +195,6 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
             payloadField: $.message.intent.category.id
@@ -346,10 +344,8 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
-
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
@@ -505,10 +501,8 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
-
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
@@ -643,15 +637,28 @@ flows:
         owner: BAP
         expect: true
         input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
           - name: category
             label: Select a category
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
-
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
@@ -1095,7 +1102,6 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
             payloadField: $.message.intent.category.id
@@ -1258,7 +1264,6 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
             payloadField: $.message.intent.category.id
@@ -1421,7 +1426,6 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
             payloadField: $.message.intent.category.id
@@ -1580,10 +1584,8 @@ flows:
             type: select
             values:
               - Standard Delivery
-              - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
-
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
