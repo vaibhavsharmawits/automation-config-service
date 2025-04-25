@@ -889,18 +889,6 @@ flows:
         description: LSP acknowledges order update
         pair: null
         owner: BPP
-      - key: on_status_13_LOGISTICS
-        type: on_status
-        unsolicited: true
-        description: LSP updates order status [Agent-assigned]
-        pair: null
-        owner: BPP
-      - key: on_status_5_LOGISTICS
-        type: on_status
-        unsolicited: true
-        description: LSP updates order status (At-pickup)
-        pair: null
-        owner: BPP
       - key: on_status_1_LOGISTICS
         type: on_status
         unsolicited: true
