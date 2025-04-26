@@ -411,6 +411,8 @@ flows:
                 name: "Surge fee"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "022"
       - key: init_LOGISTICS
@@ -586,6 +588,8 @@ flows:
                 name: "Surge fee"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "008"
       - key: init_LOGISTICS
@@ -762,6 +766,8 @@ flows:
                 name: "Surge fee"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "00D"
       - key: init_LOGISTICS
@@ -1221,7 +1227,7 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
             default: "560001"
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "017"
@@ -1232,7 +1238,7 @@ flows:
         pair: null
         owner: BPP
         input:
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "017"
@@ -1383,7 +1389,7 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
             default: "560001"
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "01A"
@@ -1394,7 +1400,7 @@ flows:
         pair: null
         owner: BPP
         input:
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "01A"
@@ -1552,7 +1558,7 @@ flows:
         pair: null
         owner: BPP
         input:
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "009"
@@ -1710,11 +1716,7 @@ flows:
         pair: null
         owner: BPP
         input:
-          - name: feature_discovery
-            display: false
-            default:
-              - "022"
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "00A"
