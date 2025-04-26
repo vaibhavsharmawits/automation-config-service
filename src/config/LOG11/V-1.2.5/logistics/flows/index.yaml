@@ -400,6 +400,8 @@ flows:
                 name: "Static OTP verification (RTO)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "022"
       - key: init_LOGISTICS
@@ -580,6 +582,8 @@ flows:
                 name: "Static OTP verification (pickup & delivery)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "008"
       - key: init_LOGISTICS
@@ -745,6 +749,8 @@ flows:
                 name: "Static OTP verification (pickup & delivery)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "00D"
       - key: init_LOGISTICS
@@ -897,6 +903,8 @@ flows:
                 name: "Static OTP verification (pickup & delivery)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "021"
       - key: on_search_LOGISTICS
@@ -914,6 +922,8 @@ flows:
                 name: "Static OTP verification (pickup & delivery)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "021"
       - key: init_LOGISTICS
@@ -1072,6 +1082,8 @@ flows:
                 name: "Static OTP verification (pickup & delivery)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "00E"
       - key: on_search_LOGISTICS
@@ -1089,6 +1101,8 @@ flows:
                 name: "Static OTP verification (pickup & delivery)"
               - code: "01A"
                 name: "Cancellation terms"
+          - name: default_feature
+            display: false
             default:
               - "00E"
       - key: init_LOGISTICS
@@ -1243,7 +1257,7 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.end.location.address.area_code
             default: "560001"
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "01A"
@@ -1254,7 +1268,7 @@ flows:
         pair: null
         owner: BPP
         input:
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
               - "01A"
@@ -1553,9 +1567,10 @@ flows:
         pair: null
         owner: BPP
         input:
-          - name: feature_discovery
+          - name: default_feature
             display: false
             default:
+              - "00A"
               - "022"
       - key: init_LOGISTICS
         type: init
