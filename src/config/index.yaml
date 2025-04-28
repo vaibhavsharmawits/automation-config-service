@@ -55,6 +55,15 @@ domain:
             flows: "./RET11/V-1.2.5/F&B/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET11/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:RET10
+    versions:
+      - id: 1.2.5
+        reporting: false
+        usecase:
+          - name: GROCERY
+            flows: "./RET10/V-1.2.5/GROCERY/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET10/V-1.2.5/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -87,3 +96,8 @@ usecases:
         - key: 1.2.5
           usecase:
             - F&B
+    - key: ONDC:RET10
+      version:
+        - key: 1.2.5
+          usecase:
+            - GROCERY
