@@ -3,16 +3,16 @@ flows:
     title: Fetching catalog of metro providers
     description: This flow illustrates the first search operation where the buyer app fetches for the catalog of metro providers consisting of routes and station codes available
     sequence:
-      - key: search1_METRO
+      - key: search1_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           in the city
-        pair: on_search1_METRO
+        pair: on_search1_METRO_200
         owner: BAP
         expect: true
-      - key: on_search1_METRO
+      - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
@@ -22,28 +22,28 @@ flows:
     title: Purchase journey of metro tickets
     description: This flow illustrates a typical purchase journey where the journey starts with searching for a specific pair of stations all the way to getting the ticket and completion of the journey
     sequence:
-      - key: search1_METRO
+      - key: search1_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           in the city
-        pair: on_search1_METRO
+        pair: on_search1_METRO_200
         owner: BAP
         expect: true
-      - key: on_search1_METRO
+      - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2_METRO
+      - key: search2_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_METRO
+        pair: on_search2_METRO_200
         owner: BAP
         expect: false
         input:
@@ -69,33 +69,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO
+      - key: on_search2_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_METRO
+      - key: select_METRO_200
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select_METRO
+        pair: on_select_METRO_200
         owner: BAP
-      - key: on_select_METRO
+      - key: on_select_METRO_200
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init_METRO
+      - key: init_METRO_200
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_METRO
+        pair: on_init_METRO_200
         owner: BAP
-      - key: on_init_METRO
+      - key: on_init_METRO_200
         type: on_init
         unsolicited: false
         description:
@@ -103,15 +103,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm_METRO
+      - key: confirm_METRO_200
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm_METRO
+        pair: on_confirm_METRO_200
         owner: BAP
-      - key: on_confirm_METRO
+      - key: on_confirm_METRO_200
         type: on_confirm
         unsolicited: false
         description:
@@ -119,13 +119,13 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO
+      - key: status_METRO_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_active_METRO
+        pair: on_status_active_METRO_200
         owner: BAP
-      - key: on_status_active_METRO
+      - key: on_status_active_METRO_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
@@ -135,28 +135,28 @@ flows:
     title: Technical cancellation journey
     description: This flow illustrates the technical cancellation flow where the buyer app attempts to cancel the order transaction due to technical issues/ failures (viz. on_confirm response beyond ttl)
     sequence:
-      - key: search1_METRO
+      - key: search1_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           in the city
-        pair: on_search1_METRO
+        pair: on_search1_METRO_200
         owner: BAP
         expect: true
-      - key: on_search1_METRO
+      - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2_METRO
+      - key: search2_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_METRO
+        pair: on_search2_METRO_200
         owner: BAP
         expect: false
         input:
@@ -182,33 +182,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO
+      - key: on_search2_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_METRO
+      - key: select_METRO_200
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select_METRO
+        pair: on_select_METRO_200
         owner: BAP
-      - key: on_select_METRO
+      - key: on_select_METRO_200
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init_METRO
+      - key: init_METRO_200
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_METRO
+        pair: on_init_METRO_200
         owner: BAP
-      - key: on_init_METRO
+      - key: on_init_METRO_200
         type: on_init
         unsolicited: false
         description:
@@ -216,15 +216,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm_METRO
+      - key: confirm_METRO_200
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm_delayed_METRO
+        pair: on_confirm_delayed_METRO_200
         owner: BAP
-      - key: on_confirm_delayed_METRO
+      - key: on_confirm_delayed_METRO_200
         type: on_confirm
         unsolicited: false
         description:
@@ -232,25 +232,25 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO
+      - key: status_METRO_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_active_METRO
+        pair: on_status_active_METRO_200
         owner: BAP
-      - key: on_status_active_METRO
+      - key: on_status_active_METRO_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
-      - key: cancel_METRO
+      - key: cancel_tech_METRO_200
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_hard_METRO
+        pair: on_cancel_METRO_200
         owner: BAP
-      - key: on_cancel_hard_METRO
+      - key: on_cancel_METRO_200
         type: on_cancel
         unsolicited: false
         description:
@@ -262,28 +262,28 @@ flows:
     title: User cancellation joureney
     description: This flow illustrates the user cancellation flow where the buyer intends to cancel their metro ticket
     sequence:
-      - key: search1_METRO
+      - key: search1_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           in the city
-        pair: on_search1_METRO
+        pair: on_search1_METRO_200
         owner: BAP
         expect: true
-      - key: on_search1_METRO
+      - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2_METRO
+      - key: search2_METRO_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_METRO
+        pair: on_search2_METRO_200
         owner: BAP
         expect: false
         input:
@@ -309,33 +309,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO
+      - key: on_search2_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_METRO
+      - key: select_METRO_200
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select_METRO
+        pair: on_select_METRO_200
         owner: BAP
-      - key: on_select_METRO
+      - key: on_select_METRO_200
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init_METRO
+      - key: init_METRO_200
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_METRO
+        pair: on_init_METRO_200
         owner: BAP
-      - key: on_init_METRO
+      - key: on_init_METRO_200
         type: on_init
         unsolicited: false
         description:
@@ -343,15 +343,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm_METRO
+      - key: confirm_METRO_200
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm_METRO
+        pair: on_confirm_METRO_200
         owner: BAP
-      - key: on_confirm_METRO
+      - key: on_confirm_METRO_200
         type: on_confirm
         unsolicited: false
         description:
@@ -359,13 +359,13 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: cancel_soft_METRO
+      - key: cancel_soft_METRO_200
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_soft_METRO
+        pair: on_cancel_soft_METRO_200
         owner: BAP
-      - key: on_cancel_soft_METRO
+      - key: on_cancel_soft_METRO_200
         type: on_cancel
         unsolicited: false
         description:
@@ -373,13 +373,13 @@ flows:
           the cancellation
         pair: null
         owner: BPP
-      - key: cancel_hard_METRO
+      - key: cancel_hard_METRO_200
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_hard_METRO
+        pair: on_cancel_hard_METRO_200
         owner: BAP
-      - key: on_cancel_hard_METRO
+      - key: on_cancel_hard_METRO_200
         type: on_cancel
         unsolicited: false
         description:
