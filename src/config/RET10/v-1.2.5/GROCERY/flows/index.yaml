@@ -116,7 +116,7 @@ flows:
         expect: false
         description: BPP returns the full catalog refresh
   - id: Retail_Discovery_Flow_incremental_catalog
-    description: ""
+    description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
     sequence:
       - key: search_inc
         type: search
@@ -124,7 +124,7 @@ flows:
         pair: null
         owner: BAP
         expect: false
-        description: Bap sends search for incremental changes
+        description: Bap begins search for incremental changes
       - key: on_search_inc
         type: on_search
         unsolicited: true
@@ -132,13 +132,20 @@ flows:
         owner: BPP
         expect: false
         description: BPP returns the incremental changes
-      - key: on_search_inc
+      - key: on_search_inc_disable
         type: on_search
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: BPP returns the incremental changes
+      - key: search_inc
+        type: search
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
+        description: Bap stops search for incremental changes
   - id: Retail_Delivery
     description: Retail 1.2.5 (Delivery)
     sequence:
