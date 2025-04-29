@@ -2,16 +2,16 @@ flows:
   - id: STATION_CODE_FLOW_CATALOG
     description: User uses station code for searching bus
     sequence:
-      - key: search1_BUS
+      - key: search1_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           in the city
-        pair: on_search1_BUS
+        pair: on_search1_BUS_200
         owner: BAP
         expect: true
-      - key: on_search1_BUS
+      - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
@@ -20,28 +20,28 @@ flows:
   - id: STATION_CODE_FLOW_ORDER
     description: User uses station code for searching bus
     sequence:
-      - key: search1_BUS
+      - key: search1_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           in the city
-        pair: on_search1_BUS
+        pair: on_search1_BUS_200
         owner: BAP
         expect: true
-      - key: on_search1_BUS
+      - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2_BUS
+      - key: search2_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           from one station to another
-        pair: on_search2_BUS
+        pair: on_search2_BUS_200
         owner: BAP
         expect: false
         input:
@@ -67,33 +67,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_BUS
+      - key: on_search2_BUS_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_BUS
+      - key: select_BUS_200
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select_BUS
+        pair: on_select_BUS_200
         owner: BAP
-      - key: on_select_BUS
+      - key: on_select_BUS_200
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init_BUS
+      - key: init_BUS_200
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_BUS
+        pair: on_init_BUS_200
         owner: BAP
-      - key: on_init_BUS
+      - key: on_init_BUS_200
         type: on_init
         unsolicited: false
         description:
@@ -101,15 +101,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm_BUS
+      - key: confirm_BUS_200
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm_BUS
+        pair: on_confirm_BUS_200
         owner: BAP
-      - key: on_confirm_BUS
+      - key: on_confirm_BUS_200
         type: on_confirm
         unsolicited: false
         description:
@@ -117,13 +117,13 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_BUS
+      - key: status_BUS_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_BUS
+        pair: on_status_BUS_200
         owner: BAP
-      - key: on_status_BUS
+      - key: on_status_BUS_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
@@ -132,28 +132,28 @@ flows:
   - id: TECHNICAL_CANCELLATION_FLOW
     description: User cancels the bus booking
     sequence:
-      - key: search1_BUS
+      - key: search1_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           in the city
-        pair: on_search1_BUS
+        pair: on_search1_BUS_200
         owner: BAP
         expect: true
-      - key: on_search1_BUS
+      - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2_BUS
+      - key: search2_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           from one station to another
-        pair: on_search2_BUS
+        pair: on_search2_BUS_200
         owner: BAP
         expect: false
         input:
@@ -179,33 +179,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_BUS
+      - key: on_search2_BUS_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_BUS
+      - key: select_BUS_200
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select_BUS
+        pair: on_select_BUS_200
         owner: BAP
-      - key: on_select_BUS
+      - key: on_select_BUS_200
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init_BUS
+      - key: init_BUS_200
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_BUS
+        pair: on_init_BUS_200
         owner: BAP
-      - key: on_init_BUS
+      - key: on_init_BUS_200
         type: on_init
         unsolicited: false
         description:
@@ -213,15 +213,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm_BUS
+      - key: confirm_BUS_200
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm_delayed_BUS
+        pair: on_confirm_delayed_BUS_200
         owner: BAP
-      - key: on_confirm_delayed_BUS
+      - key: on_confirm_delayed_BUS_200
         type: on_confirm
         unsolicited: false
         description:
@@ -229,25 +229,25 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_BUS
+      - key: status_BUS_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_active_BUS
+        pair: on_status_active_BUS_200
         owner: BAP
-      - key: on_status_active_BUS
+      - key: on_status_active_BUS_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
-      - key: cancel_hard_BUS
+      - key: cancel_tech_BUS_200
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_hard_BUS
+        pair: on_cancel_tech_BUS_200
         owner: BAP
-      - key: on_cancel_hard_BUS
+      - key: on_cancel_tech_BUS_200
         type: on_cancel
         unsolicited: false
         description:
@@ -258,28 +258,28 @@ flows:
   - id: USER_CANCELLATION_FLOW
     description: User cancels the bus booking
     sequence:
-      - key: search1_BUS
+      - key: search1_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           in the city
-        pair: on_search1_BUS
+        pair: on_search1_BUS_200
         owner: BAP
         expect: true
-      - key: on_search1_BUS
+      - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-      - key: search2_BUS
+      - key: search2_BUS_200
         type: search
         unsolicited: false
         description:
           User searches over the network to avail the bus mode of transport
           from one station to another
-        pair: on_search2_BUS
+        pair: on_search2_BUS_200
         owner: BAP
         expect: false
         input:
@@ -305,33 +305,33 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_BUS
+      - key: on_search2_BUS_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_BUS
+      - key: select_BUS_200
         type: select
         unsolicited: false
         description: User selects the station code
-        pair: on_select_BUS
+        pair: on_select_BUS_200
         owner: BAP
-      - key: on_select_BUS
+      - key: on_select_BUS_200
         type: on_select
         unsolicited: false
         description: Response with selected station code
         pair: null
         owner: BPP
-      - key: init_BUS
+      - key: init_BUS_200
         type: init
         unsolicited: false
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_BUS
+        pair: on_init_BUS_200
         owner: BAP
-      - key: on_init_BUS
+      - key: on_init_BUS_200
         type: on_init
         unsolicited: false
         description:
@@ -339,15 +339,15 @@ flows:
           terms and responds with the final draft
         pair: null
         owner: BPP
-      - key: confirm_BUS
+      - key: confirm_BUS_200
         type: confirm
         unsolicited: false
         description:
           Consumer platform confirms the booking and provides all information
           required for confirmation as per the terms of order
-        pair: on_confirm_BUS
+        pair: on_confirm_BUS_200
         owner: BAP
-      - key: on_confirm_BUS
+      - key: on_confirm_BUS_200
         type: on_confirm
         unsolicited: false
         description:
@@ -355,13 +355,13 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: cancel_soft_BUS
+      - key: cancel_soft_BUS_200
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_soft_BUS
+        pair: on_cancel_soft_BUS_200
         owner: BAP
-      - key: on_cancel_soft_BUS
+      - key: on_cancel_soft_BUS_200
         type: on_cancel
         unsolicited: false
         description:
@@ -369,13 +369,13 @@ flows:
           the cancellation
         pair: null
         owner: BPP
-      - key: cancel_hard_BUS
+      - key: cancel_hard_BUS_200
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_hard_BUS
+        pair: on_cancel_hard_BUS_200
         owner: BAP
-      - key: on_cancel_hard_BUS
+      - key: on_cancel_hard_BUS_200
         type: on_cancel
         unsolicited: false
         description:
