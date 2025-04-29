@@ -15,14 +15,24 @@ domain:
       #       flows: "./TRV11/V-2.0.1/metro/flows/index.yaml"
       #   supportedActions:
       #     $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
-  # - name: nic2004:60232
-  #   versions:
-  #     - id: 1.2.5
-  #       usecase:
-  #         - name: Logistics
-  #           flows: "./NIC2004:60232/V-1.2.5/logistics/flows/index.yaml"
-  #       supportedActions:
-  #         $ref: "src/config/NIC2004:60232/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:LOG10
+    versions:
+      - id: 1.2.5
+        reporting: true
+        usecase:
+          - name: Logistics (P2P)
+            flows: "./LOG10/V-1.2.5/logistics/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/LOG10/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:LOG11
+    versions:
+      - id: 1.2.5
+        reporting: true
+        usecase:
+          - name: Logistics (P2H2P)
+            flows: "./LOG11/V-1.2.5/logistics/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/LOG11/V-1.2.5/supportedActions/index.yaml"
   # - name: ONDC:TRV10
   #   versions:
   #     - id: 2.1.0
@@ -42,11 +52,16 @@ usecases:
     #     - key: 2.0.1
     #       usecase:
     #         - Metro
-    # - key: nic2004:60232
-    #   version:
-    #     - key: 1.2.5
-    #       usecase:
-    #         - Logistics
+    - key: ONDC:LOG10
+      version:
+        - key: 1.2.5
+          usecase:
+            - Logistics (P2P)
+    - key: ONDC:LOG11
+      version:
+        - key: 1.2.5
+          usecase:
+            - Logistics (P2H2P)
     # - key: ONDC:TRV10
     #   version:
     #     - key: 2.1.0
