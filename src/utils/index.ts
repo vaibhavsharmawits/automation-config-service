@@ -14,8 +14,7 @@ export function filterDomainData(
     if (domain.name === domainName) {
       for (const version of domain.versions) {
         if (version.id === versionId) {
-          if (property === "supportedActions") {
-            
+          if (property === "supportedActions" || property === "reporting") {
             return version[property];
           }
           for (const usecase of version.usecase) {
