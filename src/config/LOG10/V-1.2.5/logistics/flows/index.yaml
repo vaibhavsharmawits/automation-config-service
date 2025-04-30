@@ -418,8 +418,9 @@ flows:
         owner: BAP
       - key: on_init_LOGISTICS
         type: on_init
+        label: inline rider check
         unsolicited: false
-        description: LSP acknowledges and provides quote breakup
+        description: LSP acknowledges and provides quote breakup, also does an inline rider check.
         pair: null
         owner: BPP
       - key: confirm_LOGISTICS
@@ -432,7 +433,7 @@ flows:
       - key: on_confirm_LOGISTICS
         type: on_confirm
         unsolicited: false
-        description: LSP accepts the order
+        description: LSP accepts the order and agent may be assigned.
         pair: null
         owner: BPP
       - key: update_LOGISTICS
@@ -445,7 +446,7 @@ flows:
       - key: on_update_LOGISTICS
         type: on_update
         unsolicited: false
-        description: LSP acknowledges order update
+        description: LSP acknowledges order update and rider reaches the pickup location.
         pair: null
         owner: BPP
       - key: on_status_1_LOGISTICS
