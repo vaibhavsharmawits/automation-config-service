@@ -1,5 +1,5 @@
 flows:
-  - id: Retail_Discovery_Flow
+  - id: Retail_Discovery_Flow_full_catalog
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -9,27 +9,144 @@ flows:
         owner: BAP
         expect: true
         description: BAP sends the search request
+        input:
+          - name: city_code
+            label: Enter the city code
+            type: text
+            payloadField: $.context.city
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              # - code: "001"
+              #   name: "Item availability"
+              - code: "002"
+                name: "Self-Pickup"
+              - code: "003"
+                name: "Slotted delivery"
+              - code: "004"
+                name: "Fulfillment by BNP"
+              - code: "005"
+                name: "Force cancellation"
+              - code: "006"
+                name: "Return with pickup"
+              - code: "007"
+                name: "SNP collecting payment"
+              - code: "008"
+                name: "Minimum order value"
+              - code: "0091"
+                name: "Offer (discount)"
+              - code: "0092"
+                name: "Offer (buyXgetY)"
+              - code: "0093"
+                name: "Offer (freebie)"
+              - code: "0094"
+                name: "Offer (slab)"
+              - code: "0095"
+                name: "Offer (combo)"
+              - code: "0096"
+                name: "Offer (delivery)"
+              - code: "0097"
+                name: "Offer (exchange)"
+              - code: "0098"
+                name: "Offer (financing)"
+              - code: "0099"
+                name: "Purchase Finance by BNP"
+              - code: "00A"
+                name: "Commercial model for BNP/SNP"
+              - code: "00B"
+                name: "Replacement flow"
+              - code: "00C"
+                name: "Exchange flow"
+              - code: "00D"
+                name: "Cancel Return Request"
+              - code: "00E"
+                name: "Update sale invoice"
+              - code: "00F"
+                name: "Update delivery address"
+              - code: "010"
+                name: "Update delivery authorization"
+              - code: "011"
+                name: "Buyer instructions"
+              - code: "012"
+                name: "Cash on delivery (COD) order"
+              - code: "013"
+                name: "Order price adjustment, not tied to return or cancel"
+              - code: "014"
+                name: "Cross-category order flow"
+              - code: "015"
+                name: "Breakup of fulfillment level taxes in quote"
+              - code: "016"
+                name: "Customization of input type text"
+              - code: "017"
+                name: "Seller Creds"
+              - code: "018"
+                name: "Cross-linking make-to-order item in quote_trail"
+              - code: "019"
+                name: "Streamline fulfillment attributes for hyperlocal"
+              - code: "01A"
+                name: "Item unitized count"
+              - code: "01B"
+                name: "Minimum item quantity"
+              - code: "01C"
+                name: "Identification of on-network LSP"
+              - code: "01D"
+                name: "Option for multi-fulfillment order"
+              - code: "01E"
+                name: "Cancellation terms"
+              - code: "01F"
+                name: "Codified static terms"
+              - code: "020"
+                name: "Fulfillment delay"
+              - code: "021"
+                name: "Catalog as download link"
+              - code: "022"
+                name: "BNP promotions planned"
+              - code: "023"
+                name: "Full catalog refresh (search by item)"
+              - code: "024"
+                name: "Full catalog refresh (search by fulfillment end location)"
+              - code: "025"
+                name: "BNP demand signals"
       - key: on_search
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        label: full catalog
         description: BPP returns the full catalog refresh
+  - id: Retail_Discovery_Flow_incremental_catalog
+    description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
+    sequence:
       - key: search_inc
         type: search
         unsolicited: false
-        pair: on_search_inc
+        pair: null
         owner: BAP
-        expect: false
-        description: Bap sends search for incremental changes
+        expect: true
+        description: Bap begins search for incremental changes
       - key: on_search_inc
         type: on_search
-        unsolicited: false
+        unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: BPP returns the incremental changes
+      - key: on_search_inc_disable
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP returns the incremental changes
+      - key: search_inc
+        type: search
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
+        description: Bap stops search for incremental changes
   - id: Retail_Delivery
     description: Retail 1.2.5 (Delivery)
     sequence:
