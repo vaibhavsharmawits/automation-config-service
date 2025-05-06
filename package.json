@@ -17,7 +17,17 @@
     "express": "^4.21.2",
     "js-yaml": "^4.1.0",
     "json-schema-ref-parser": "^9.0.9",
-    "ondc-automation-cache-lib": "^2.0.0"
+    "ondc-automation-cache-lib": "^2.0.0",
+    "@opentelemetry/api": "1.9.0",
+		"@opentelemetry/auto-instrumentations-node": "0.57.1",
+		"@opentelemetry/exporter-jaeger": "2.0.0",
+		"@opentelemetry/exporter-prometheus": "0.200.0",
+		"@opentelemetry/resources": "^1.8.0",
+		"@opentelemetry/sdk-logs": "0.200.0",
+		"@opentelemetry/sdk-metrics": "2.0.0",
+		"@opentelemetry/sdk-node": "0.200.0",
+		"@opentelemetry/semantic-conventions": "1.32.0",
+		"lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -26,6 +36,7 @@
     "copyfiles": "^2.4.1",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "@types/lodash": "^4.17.16"
   }
 }

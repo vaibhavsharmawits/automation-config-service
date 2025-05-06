@@ -1,3 +1,4 @@
+require("./services/tracingService")
 import app from "./app";
 import * as dotenv from "dotenv";
 
