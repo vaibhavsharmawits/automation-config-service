@@ -68,12 +68,32 @@ flows:
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: npType
+            label: Select a type
+            type: select
+            values:
+              - ISN
+              - MSN
+            default: MSN
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - label: items
+            name: items
+            type: nestedSelect
+          - name: gps
+            label: Enter gps coordinates
+            type: text
+            default: 12.4535,77.9283
+          - name: area_code
+            label: Enter area code
+            type: text
+            default: "560001"
       - key: on_select
         type: on_select
         unsolicited: false
@@ -104,6 +124,48 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_pickup
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
   - id: OUT_OF_STOCK
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
@@ -114,7 +176,7 @@ flows:
         owner: BAP
         expect: true
         description: BAP sends the search request
-      - key: on_search_118
+      - key: on_search
         type: on_search
         unsolicited: false
         pair: null
@@ -128,7 +190,7 @@ flows:
         owner: BAP
         expect: false
         description: BAP may add unavailable or out-of-stock items to the cart
-      - key: on_select_out_of_stock
+      - key: on_select_oos
         type: on_select
         unsolicited: false
         pair: null
