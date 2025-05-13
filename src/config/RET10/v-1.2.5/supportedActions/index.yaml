@@ -55,16 +55,16 @@ apiProperties:
     transaction_partner: ["init", "on_init", "confirm"]
   status:
     async_predecessor: null
-    transaction_partner: ["init", "on_init", "confirm"]
+    transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   on_status:
     async_predecessor: null
-    transaction_partner: ["init", "on_init", "confirm"]
+    transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   update:
     async_predecessor: null
-    transaction_partner: ["init", "on_init", "confirm"]
+    transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   on_update:
     async_predecessor: "update"
-    transaction_partner: ["init", "on_init", "confirm"]
+    transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   cancel:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
