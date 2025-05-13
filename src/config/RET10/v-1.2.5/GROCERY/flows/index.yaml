@@ -197,6 +197,13 @@ flows:
         owner: BPP
         expect: false
         description: Seller Accepts confirmation
+      - key: on_status_accepted
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
