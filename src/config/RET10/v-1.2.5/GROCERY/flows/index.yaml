@@ -626,6 +626,12 @@ flows:
         expect: false
         description: Status updates - order out for delivery
       - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered
       - key: update_return
         type: update
         unsolicited: false
