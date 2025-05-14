@@ -793,8 +793,8 @@ flows:
         input:
           - name: grocery_select
             type: ret10_grocery_select
-      - key: on_select
-        type: on_select_self_pickup
+      - key: on_select_self_pickup
+        type: on_select
         unsolicited: false
         pair: null
         owner: BPP
@@ -907,7 +907,7 @@ flows:
       - key: select
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_buyer_delivery
         owner: BAP
         expect: true
         description: BAP select the item
@@ -1156,6 +1156,13 @@ flows:
         owner: BAP
         expect: false
         description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
       - key: on_status_accepted
         type: on_status
         unsolicited: true
