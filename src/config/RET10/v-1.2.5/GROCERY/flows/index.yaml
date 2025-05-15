@@ -276,6 +276,9 @@ flows:
       - key: select
         type: select
         unsolicited: false
+        input:
+          - name: grocery_select
+            type: ret10_grocery_select
         pair: on_select
         owner: BAP
         expect: false
