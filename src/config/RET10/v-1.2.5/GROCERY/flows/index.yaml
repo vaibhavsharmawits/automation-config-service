@@ -262,11 +262,11 @@ flows:
         input:
           - name: grocery_select
             type: ret10_grocery_select
-        pair: on_select
+        pair: on_select_out_of_stock
         owner: BAP
         expect: false
         description: BAP may add unavailable or out-of-stock items to the cart
-      - key: on_select
+      - key: on_select_out_of_stock
         type: on_select
         unsolicited: false
         pair: null
