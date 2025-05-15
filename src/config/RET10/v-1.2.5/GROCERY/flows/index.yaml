@@ -256,14 +256,17 @@ flows:
   - id: Out_Of_Stock_Flow
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
-      - key: select_out_of_stock
+      - key: select
         type: select
         unsolicited: false
-        pair: on_select_out_of_stock
+        input:
+          - name: grocery_select
+            type: ret10_grocery_select
+        pair: on_select
         owner: BAP
         expect: false
         description: BAP may add unavailable or out-of-stock items to the cart
-      - key: on_select_out_of_stock
+      - key: on_select
         type: on_select
         unsolicited: false
         pair: null
@@ -1205,6 +1208,3 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order delivered
-      
-
-    
