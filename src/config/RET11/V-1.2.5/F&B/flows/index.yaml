@@ -901,3 +901,123 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: MULTI_OPTION_FULFILLMENT_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: npType
+            label: Select a type
+            type: select
+            values:
+              - ISN
+              - MSN
+            default: MSN
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select_fulfillment_array
+        owner: BAP
+        expect: false
+        input:
+          - label: items
+            name: items
+            type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
+          - name: gps
+            label: Enter gps coordinates
+            type: text
+            default: 12.4535,77.9283
+          - name: area_code
+            label: Enter area code
+            type: text
+            default: "110088"
+      - key: on_select_fulfillment_array
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_fulfillment_array
+        type: init
+        unsolicited: false
+        pair: on_init_fulfillment_array
+        owner: BAP
+        expect: false
+      - key: on_init_fulfillment_array
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_pickup
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
