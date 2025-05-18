@@ -833,6 +833,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_self_delivery_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
   - id: SLOTTED_DELIVERY
     description: User pickes the order themselfs
     sequence:
@@ -881,17 +887,16 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_multiple_fulfillment
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
         input:
-          - name: fulfillmentType
-            label: Fulfillment type
+          - name: selectedFulfillment
+            label: Select Fulfillment Id
             type: text
-            default: Self-Pickup
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1068,7 +1073,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-
   - id: MULTI_OPTION_FULFILLMENT_FLOW
     description: User uses station code for searching bus
     sequence:
