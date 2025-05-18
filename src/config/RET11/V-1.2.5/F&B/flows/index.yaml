@@ -228,9 +228,6 @@ flows:
           - label: Items
             name: items
             type: nestedSelect
-          - label: Out of stock item
-            name: outOfStockitem
-            type: nestedSelect
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -247,6 +244,10 @@ flows:
         owner: BPP
         expect: false
         description: BPP returns item breakup when item is out of stock
+        input:
+          - label: Enter Item id for Out of stock item
+            name: oosItem
+            type: text
       - key: select
         type: select
         unsolicited: false
