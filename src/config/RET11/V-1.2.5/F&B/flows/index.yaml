@@ -424,233 +424,303 @@ flows:
         owner: BPP
         expect: false
         description: Seller confirms the cancellation of the order
-  - id: SELLER_CANCEL
+  - id: RTO_PLUS_PART_CANCELLATION
     description: Retail 1.2.5 (Seller Side Order Cancellation RTO)
     sequence:
       - key: search
         type: search
         unsolicited: false
-        pair: on_search_121
+        description: LBNP sends a search request
+        pair: on_search
         owner: BAP
         expect: true
-        description: BAP sends the search request
-      - key: on_search_121
+      - key: on_search
         type: on_search
         unsolicited: false
+        description: LSP responds with catalog
         pair: null
         owner: BPP
-        expect: false
-        description: BPP returns the full catalog refresh
-      - key: select_122
+        input:
+          - name: npType
+            label: Select a type
+            type: select
+            values:
+              - ISN
+              - MSN
+            default: MSN
+      - key: select
         type: select
         unsolicited: false
-        pair: on_select_130
+        pair: on_select
         owner: BAP
         expect: false
-        description: BAP select the item
-      - key: on_select_130
+        input:
+          - label: items
+            name: items
+            type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
+          - name: gps
+            label: Enter gps coordinates
+            type: text
+            default: 12.4535,77.9283
+          - name: area_code
+            label: Enter area code
+            type: text
+            default: "110088"
+      - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description:
-          BPP returns item breakup when item is in stock and offer applied
-          (if any)
-      - key: init_131
+      - key: init
         type: init
         unsolicited: false
-        pair: on_init_132
+        pair: on_init
         owner: BAP
         expect: false
-        description: Buyer initiate the product and send the updated fulfillment id
-      - key: on_init_132
+      - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description: Respond to init
-      - key: confirm_133
+      - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm_134
+        pair: on_confirm
         owner: BAP
         expect: false
-        description: Buyer confirms product
-      - key: on_confirm_134
+      - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description: Seller Accepts confirmation
+      - key: on_update_part_cancel
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_settelment
+        type: update
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order pending
-      - key: on_status_packed_136
+      - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order packed
-      - key: on_status_picked_137
+      - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order picked up
-      - key: on_status_out_for_delivery_138
+      - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order out for delivery
-      - key: on_cancel_rto
-        type: on_cancel
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Order updates - seller side full-order cancellation
-      - key: on_status_rto_delivereddisposed
+      - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - rto order delivered
-  - id: RETURN_WITH_LIQUIDATION
+      - key: track
+        type: track
+        unsolicited: false
+        description: LBNP sends a track request
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: on_status_at_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: RETURN_FLOW
     description: Retail 1.2.5 (Liquidation)
     sequence:
       - key: search
         type: search
         unsolicited: false
-        pair: on_search_141
+        description: LBNP sends a search request
+        pair: on_search
         owner: BAP
         expect: true
-        description: BAP sends the search request
-      - key: on_search_141
+      - key: on_search
         type: on_search
         unsolicited: false
+        description: LSP responds with catalog
         pair: null
         owner: BPP
-        expect: false
-        description: BPP returns the full catalog refresh
-      - key: select_142
+        input:
+          - name: npType
+            label: Select a type
+            type: select
+            values:
+              - ISN
+              - MSN
+            default: MSN
+      - key: select
         type: select
         unsolicited: false
-        pair: on_select_143
+        pair: on_select
         owner: BAP
         expect: false
-        description: BAP selects the item
-      - key: on_select_143
+        input:
+          - label: items
+            name: items
+            type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
+          - name: gps
+            label: Enter gps coordinates
+            type: text
+            default: 12.4535,77.9283
+          - name: area_code
+            label: Enter area code
+            type: text
+            default: "110088"
+      - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description:
-          BPP returns item breakup when item is in stock and offer applied
-          (if any)
-      - key: init_144
+      - key: init
         type: init
         unsolicited: false
-        pair: on_init_145
+        pair: on_init
         owner: BAP
         expect: false
-        description: Buyer initiates the product and sends the updated fulfillment ID
-      - key: on_init_145
+      - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description: Respond to init
-      - key: confirm_146
+      - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm_147
+        pair: on_confirm
         owner: BAP
         expect: false
-        description: Buyer confirms product
-      - key: on_confirm_147
+      - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description: Seller accepts confirmation
-      - key: on_status_pending_155
+      - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order accepted
-      - key: on_status_packed_156
+      - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order packed
-      - key: on_status_picked_157
+      - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order picked up
-      - key: on_status_out_for_delivery_158
+      - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order out for delivery
-      - key: on_status_order_delivered_159
+      - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered
-      - key: update_liquidated
-        type: update
+      - key: track
+        type: track
         unsolicited: false
-        pair: on_update_interim_liquidated
+        description: LBNP sends a track request
+        pair: on_track
         owner: BAP
         expect: false
-        description: BAP requests to return the items
-      - key: on_update_interim_liquidated
-        type: on_update
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: on_status_at_delivery
+        type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: BPP sends the return initiate request
-      - key: on_update_liquidated
-        type: on_update
+      - key: on_status_order_delivered
+        type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: BPP approves return request and liquidates the items
-      - key: update_liquidated_settlement
+      - key: update_return
         type: update
         unsolicited: false
         pair: null
         owner: BAP
         expect: false
-        description: Update settlement - liquidated
+        input:
+          - label: Select Item id to return
+            name: returnItemId
+            type: text
+          - label: Select Return reason
+            name: returnReason
+            type: select
+            values:
+              - "001"
+              - "002"
+              - "003"
+              - "004"
+              - "005"
   - id: FORCE_CANCEL
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
@@ -732,7 +802,7 @@ flows:
         description: Buyer request for the cancellation of the order
       - key: cancel_force
         type: cancel
-        unsolicited: false
+        unsolicited: true
         pair: on_cancel
         owner: BAP
         expect: false
