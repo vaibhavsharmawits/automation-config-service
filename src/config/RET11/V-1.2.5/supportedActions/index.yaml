@@ -8,8 +8,9 @@ supportedActions:
   init: ["on_init"]
   on_init: ["init", "confirm"]
   confirm: ["on_confirm", "status"]
-  on_confirm: ["confirm", "status", "cancel", "on_status", "track", "update"]
-  update: ["on_update"]
+  on_confirm:
+    ["confirm", "status", "cancel", "on_status", "track", "update", "on_update"]
+  update: ["on_update", "on_status"]
   on_update: ["status", "on_status", "track", "cancel", "update"]
   status: ["on_status"]
   track: ["on_track"]
@@ -25,7 +26,7 @@ supportedActions:
       "update",
       "on_update",
     ]
-  cancel: ["on_cancel", "status"]
+  cancel: ["on_cancel", "status", "cancel"]
   on_cancel: ["cancel", "status", "on_status"]
 
 apiProperties:
