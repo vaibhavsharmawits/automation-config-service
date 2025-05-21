@@ -9,7 +9,7 @@ flows:
         pair: on_search
         owner: BAP
         expect: true
-        inputs:
+        input:
           - label: Options
             name: options
             type: checkbox
@@ -991,7 +991,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: BUYER_DELIVERY  
+  - id: BUYER_DELIVERY
     description: User uses station code for searching bus
     sequence:
       - key: search
@@ -1018,7 +1018,7 @@ flows:
       - key: select
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_multiple_fulfillment
         owner: BAP
         expect: false
         input:
@@ -1039,7 +1039,7 @@ flows:
             label: Enter area code
             type: text
             default: "110088"
-      - key: on_select
+      - key: on_select_multiple_fulfillment
         type: on_select
         unsolicited: false
         pair: null
@@ -1051,6 +1051,12 @@ flows:
         pair: on_init
         owner: BAP
         expect: false
+        input:
+          - name: fulfillmentType
+            label: Fulfillment type
+            type: text
+            display: false
+            default: Buyer-Delivery
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1081,7 +1087,31 @@ flows:
         pair: null
         owner: BPP
         expect: false
-   
+      - key: update_buyer_delivery_intermin
+        type: update
+        unsolicited: false
+        pair: on_update_buyer_delivery_intermin
+        owner: BAP
+        expect: false
+      - key: on_update_buyer_delivery_intermin
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_buyer_delivery_final
+        type: update
+        unsolicited: false
+        pair: on_update_buyer_delivery_final
+        owner: BAP
+        expect: false
+      - key: on_update_buyer_delivery_final
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
   - id: BUYER INSTRUCTIONS AND ADDRESS UPDATE FLOW
     description: User uses station code for searching bus
     sequence:
