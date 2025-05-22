@@ -1845,7 +1845,7 @@ flows:
         pair: null
         owner: BPP
   - id: ORDER_FLOW_BASE_LINE_WITH_IGM
-    description: Flow for IGM
+    description: Standard point-to-point delivery flow including baseline features
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -1953,7 +1953,7 @@ flows:
         owner: BPP
       - key: on_status_13_LOGISTICS
         type: on_status
-        label: on_status (Agent-assigned)
+        label: Agent-assigned
         unsolicited: true
         description: LSP updates order status [Agent-assigned]
         pair: null
@@ -1962,12 +1962,12 @@ flows:
         type: on_status
         unsolicited: true
         description: LSP updates order status (At-pickup)
-        label: on_status (At-pickup)
+        label: At-pickup
         pair: null
         owner: BPP
       - key: on_status_1_LOGISTICS
         type: on_status
-        label: on_status (Order-picked-up)
+        label: Order-picked-up
         unsolicited: true
         description: LSP updates order status [Order picked up]
         pair: null
@@ -1986,20 +1986,21 @@ flows:
         owner: BPP
       - key: on_status_12_LOGISTICS
         type: on_status
-        label: on_status (At-delivery)
+        label: At-delivery
         unsolicited: true
         description: LSP updates order status [At-delivery]
         pair: null
         owner: BPP
       - key: on_status_3_LOGISTICS
         type: on_status
-        label: on_status (Order-delivered)
+        label: Order-delivered
         unsolicited: true
         description: LSP updates order status [Order delivered]
         pair: null
         owner: BPP
       - key: issue_open
         type: issue
+        label: open
         unsolicited: false
         description: Open an issue for IGM
         pair : on_issue_processing
@@ -2007,6 +2008,7 @@ flows:
         expect : false
       - key: on_issue_processing
         type: on_issue
+        label: processing
         unsolicited: false
         description: anything
         pair : null
@@ -2014,48 +2016,55 @@ flows:
         expect : false 
       - key: on_issue_need_more_info
         type: on_issue
+        label: need_more_info
         unsolicited: true
-        description: LSSA provides more information
+        description: LSP provides more information
         pair : null
         owner : BPP
         expect : true
       - key: issue_info_provided
         type: issue
+        label: info_provided
         unsolicited: false
         description: Open an issue for IGM
-        pair : on_issue_processing
+        pair : on_issue_provided
         owner : BAP
         expect : false
-      - key: on_issue_processing
+      - key: on_issue_provided
         type: on_issue
+        label: provided
         unsolicited: false
-        description: LSSA 
+        description: LSP
         pair : null
         owner : BPP
         expect : false
-      - key: on_issue_Resolution
+      - key: on_issue_resolution
         type: on_issue
+        label: resolution
         unsolicited: true
         description: LSSA 
         pair : null
         owner : BPP
         expect : false
-      - key: issue_Resolution_accept
+      - key: issue_resolution_accept
         type: issue
+        label: resolution_accept
         unsolicited: false
         description: Open an issue for IGM
-        pair : on_issue_Resolved
+        pair : on_issue_resolved
         owner : BAP
         expect : false
-      - key: on_issue_Resolved 
+      - key: on_issue_resolved 
         type: on_issue
+        label: resolved
         unsolicited: false
         description: LSSA 
         pair : null
         owner : BPP
         expect : false
-      - key: issue_Close 
+      - key: issue_close 
         type: issue
+        label: close
         unsolicited: false
         description: Open an issue for IGM
         pair : null
