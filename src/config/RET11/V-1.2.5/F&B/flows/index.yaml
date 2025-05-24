@@ -104,7 +104,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -231,7 +231,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -261,7 +261,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -375,7 +375,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -467,7 +467,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -544,19 +544,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: track
-        type: track
-        unsolicited: false
-        description: LBNP sends a track request
-        pair: on_track
-        owner: BAP
-        expect: false
-      - key: on_track
-        type: on_track
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
@@ -612,7 +599,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -763,7 +750,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -856,7 +843,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -952,7 +939,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -1034,7 +1021,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -1111,7 +1098,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-
   - id: BUYER INSTRUCTIONS AND ADDRESS UPDATE FLOW
     description: User uses station code for searching bus
     sequence:
@@ -1155,7 +1141,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
@@ -1313,7 +1299,7 @@ flows:
           - name: gps
             label: Enter gps coordinates
             type: text
-            default: 12.4535,77.9283
+            default: 77.1976,28.5671
           - name: area_code
             label: Enter area code
             type: text
