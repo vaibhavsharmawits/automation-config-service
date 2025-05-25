@@ -508,7 +508,11 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: update_settelment_cancel
+        input:
+          - label: Select item id to cancel
+            name: partCancelItemId
+            type: text
+      - key: update_settelment_part_cancel
         type: update
         unsolicited: false
         pair: null
@@ -550,7 +554,14 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_status_order_delivered
+      - key: on_cancel_rto
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller confirms the cancellation of the order
+      - key: on_status_rto_disposed
         type: on_status
         unsolicited: true
         pair: null
