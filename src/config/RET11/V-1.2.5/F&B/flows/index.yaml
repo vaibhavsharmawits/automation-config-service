@@ -92,7 +92,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: providerId
@@ -255,7 +255,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: gps
@@ -369,7 +369,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: gps
@@ -455,7 +455,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: providerId
@@ -598,7 +598,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: providerId
@@ -755,7 +755,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: gps
@@ -817,6 +817,101 @@ flows:
         owner: BPP
         expect: false
         description: Seller confirms the cancellation of the order
+  - id: OFFERS_FLOW
+    description: Retail 1.2.5 (Buyer Side Order Cancellation)
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: npType
+            label: Select a type
+            type: select
+            values:
+              - ISN
+              - MSN
+            default: MSN
+            display: false
+          - name: offers
+            label: Select offers
+            type: select
+            values:
+              - Discount
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - label: Items
+            name: items
+            type: nestedSelect
+          - label: Select offer Id
+            name: offerId
+            type: text
+          - name: gps
+            label: Enter gps coordinates
+            type: text
+            default: 77.1976,28.5671
+          - name: area_code
+            label: Enter area code
+            type: text
+            default: "560001"
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+        description: Buyer request for the cancellation of the order
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller confirms the cancellation of the order
   - id: SELF_PICKUP
     description: User pickes the order themselfs
     sequence:
@@ -848,7 +943,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: gps
@@ -944,7 +1039,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: gps
@@ -1020,7 +1115,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: providerId
@@ -1140,7 +1235,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: providerId
@@ -1298,7 +1393,7 @@ flows:
         owner: BAP
         expect: false
         input:
-          - label: items
+          - label: Items
             name: items
             type: nestedSelect
           - name: providerId
