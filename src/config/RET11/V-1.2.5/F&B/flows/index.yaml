@@ -44,23 +44,30 @@ flows:
         description: LSP responds with catalog
         pair: null
         owner: BPP
+      - key: on_search_3
+        type: on_search
+        unsolicited: true
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
       - key: on_search_2
         type: on_search
         unsolicited: true
         description: LSP responds with catalog
         pair: null
         owner: BPP
-      # - key: search_1
-      #   type: search
-      #   unsolicited: false
-      #   description: LBNP sends a search request
-      #   pair: ""
-      #   owner: BAP
-      #   expect: true
-      #   input:
-      #     - name: search_mode
-      #       display: false
-      #       default: stop
+      - key: search_1
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: ""
+        owner: BAP
+        expect: true
+        input:
+          - name: search_mode
+            type: text
+            display: false
+            default: stop
   - id: ORDER_FLOW
     description: User uses station code for searching bus
     sequence:
@@ -80,11 +87,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -169,6 +174,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      # - key: update_document
+      #   type: update
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BAP
+      #   expect: false
       - key: track
         type: track
         unsolicited: false
@@ -213,11 +224,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select_oos
         type: select
         unsolicited: false
@@ -357,11 +366,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -416,6 +423,7 @@ flows:
         pair: on_cancel
         owner: BAP
         expect: false
+        # cancellation "001"
         description: Buyer request for the cancellation of the order
       - key: on_cancel
         type: on_cancel
@@ -443,11 +451,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -512,6 +518,7 @@ flows:
           - label: Select item id to cancel
             name: partCancelItemId
             type: text
+            # cancellation "002"
       - key: update_settelment_part_cancel
         type: update
         unsolicited: false
@@ -561,6 +568,7 @@ flows:
         owner: BPP
         expect: false
         description: Seller confirms the cancellation of the order
+    # send input code "013" as cancel code
       - key: on_status_rto_disposed
         type: on_status
         unsolicited: true
@@ -586,11 +594,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -743,11 +749,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -803,12 +807,14 @@ flows:
         owner: BAP
         expect: false
         description: Buyer request for the cancellation of the order
+        # caceellation id "006"
       - key: cancel_force
         type: cancel
         unsolicited: true
         pair: on_cancel
         owner: BAP
         expect: false
+         # caceellation id "006"
         description: Buyer request for the cancellation of the order
       - key: on_cancel
         type: on_cancel
@@ -836,10 +842,7 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
             display: false
           - name: offers
@@ -905,6 +908,7 @@ flows:
         owner: BAP
         expect: false
         description: Buyer request for the cancellation of the order
+        # add input with reason code "001"
       - key: on_cancel
         type: on_cancel
         unsolicited: false
@@ -931,11 +935,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -1027,11 +1029,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -1103,11 +1103,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -1223,11 +1221,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
@@ -1381,11 +1377,9 @@ flows:
         input:
           - name: npType
             label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
+            type: text
             default: MSN
+            display: false
       - key: select
         type: select
         unsolicited: false
