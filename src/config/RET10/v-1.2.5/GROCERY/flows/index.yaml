@@ -133,7 +133,13 @@ flows:
         owner: BPP
         expect: false
         description: BPP returns the incremental changes
-      - key: on_search_inc_disable
+      - key: on_search_inc_close
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_inc_open
         type: on_search
         unsolicited: true
         pair: null
