@@ -808,14 +808,14 @@ flows:
         description:
           BPP returns item breakup when item is in stock and offer applied
           (if any)
-      - key: init
+      - key: init_self_pickup
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_self_pickup
         owner: BAP
         expect: false
         description: Buyer initiate the product and send the updated fulfillment id
-      - key: on_init
+      - key: on_init_self_pickup
         type: on_init
         unsolicited: false
         pair: null
@@ -843,14 +843,14 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order accepted
-      - key: on_status_packed
+      - key: on_status_self_pick_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: Status updates - order packed
-      - key: on_status_self_pickup_complete
+      - key: on_status_self_pick_picked
         type: on_status
         unsolicited: true
         pair: null
@@ -1125,7 +1125,7 @@ flows:
       - key: select
         type: select
         unsolicited: false
-        pair: on_select_multi_fulfillment
+        pair: on_select_multi_fulfillment 
         owner: BAP
         expect: true
         description: BAP select the item
