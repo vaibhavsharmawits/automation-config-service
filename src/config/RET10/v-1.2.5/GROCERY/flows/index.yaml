@@ -1161,7 +1161,7 @@ flows:
         owner: BPP
         expect: false
         description: Respond to init
-      - key: confirm
+      - key: confirm_multi_fulfillment
         type: confirm
         unsolicited: false
         pair: on_confirm
@@ -1182,38 +1182,38 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order accepted
-      - key: on_status_packed
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order packed
-      - key: on_status_agent_assigned
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - agent assigned
-      - key: on_status_picked
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order picked up
-      - key: on_status_out_for_delivery
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order out for delivery
-      - key: on_status_order_delivered
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order delivered
+      # - key: on_status_packed
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order packed
+      # - key: on_status_agent_assigned
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - agent assigned
+      # - key: on_status_picked
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order picked up
+      # - key: on_status_out_for_delivery
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order out for delivery
+      # - key: on_status_order_delivered
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order delivered
