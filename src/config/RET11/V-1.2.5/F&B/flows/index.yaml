@@ -24,6 +24,15 @@ flows:
         description: LSP responds with catalog
         pair: null
         owner: BPP
+        input:
+          - name: offers
+            label: Select offers
+            type: checkbox
+            options:
+              - code: "discount"
+                name: "Discount"
+              # - code: "buyXgetY"
+              #   name: "BuyXGetY"
   - id: INCREMENTAL_CATALOG
     description: User uses station code for searching bus
     sequence:
@@ -44,53 +53,58 @@ flows:
         description: LSP responds with catalog
         pair: null
         owner: BPP
+      - key: on_search_3
+        type: on_search
+        unsolicited: true
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
       - key: on_search_2
         type: on_search
         unsolicited: true
         description: LSP responds with catalog
         pair: null
         owner: BPP
-      # - key: search_1
-      #   type: search
-      #   unsolicited: false
-      #   description: LBNP sends a search request
-      #   pair: ""
-      #   owner: BAP
-      #   expect: true
-      #   input:
-      #     - name: search_mode
-      #       display: false
-      #       default: stop
-  - id: ORDER_FLOW
-    description: User uses station code for searching bus
-    sequence:
-      - key: search
+      - key: search_1
         type: search
         unsolicited: false
         description: LBNP sends a search request
-        pair: on_search
+        pair: ""
         owner: BAP
         expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
         input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+          - name: search_mode
+            type: text
+            display: false
+            default: stop
+  - id: ORDER_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
@@ -169,6 +183,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      # - key: update_document
+      #   type: update
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BAP
+      #   expect: false
       - key: track
         type: track
         unsolicited: false
@@ -197,37 +217,41 @@ flows:
   - id: OUT_OF_STOCK
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select_oos
         type: select
         unsolicited: false
         pair: on_select_oos
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
             type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -258,6 +282,12 @@ flows:
           - label: Items
             name: items
             type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -341,37 +371,41 @@ flows:
   - id: BUYER_CANCEL
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
             type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -416,6 +450,7 @@ flows:
         pair: on_cancel
         owner: BAP
         expect: false
+        # cancellation "001"
         description: Buyer request for the cancellation of the order
       - key: on_cancel
         type: on_cancel
@@ -427,33 +462,31 @@ flows:
   - id: RTO_PLUS_PART_CANCELLATION
     description: Retail 1.2.5 (Seller Side Order Cancellation RTO)
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
@@ -512,6 +545,7 @@ flows:
           - label: Select item id to cancel
             name: partCancelItemId
             type: text
+            # cancellation "002"
       - key: update_settelment_part_cancel
         type: update
         unsolicited: false
@@ -561,6 +595,7 @@ flows:
         owner: BPP
         expect: false
         description: Seller confirms the cancellation of the order
+      # send input code "013" as cancel code
       - key: on_status_rto_disposed
         type: on_status
         unsolicited: true
@@ -570,33 +605,31 @@ flows:
   - id: RETURN_FLOW
     description: Retail 1.2.5 (Liquidation)
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
@@ -727,37 +760,41 @@ flows:
   - id: FORCE_CANCEL
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
             type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -796,6 +833,36 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_pickup
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
       - key: cancel
         type: cancel
         unsolicited: false
@@ -803,12 +870,15 @@ flows:
         owner: BAP
         expect: false
         description: Buyer request for the cancellation of the order
+        # caceellation id "006"
       - key: cancel_force
         type: cancel
         unsolicited: true
         pair: on_cancel
         owner: BAP
-        expect: false
+        expect:
+          false
+          # caceellation id "006"
         description: Buyer request for the cancellation of the order
       - key: on_cancel
         type: on_cancel
@@ -820,45 +890,48 @@ flows:
   - id: OFFERS_FLOW
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
-            display: false
-          - name: offers
-            label: Select offers
-            type: select
-            values:
-              - Discount
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
+      #     - name: offers
+      #       label: Select offers
+      #       type: select
+      #       values:
+      #         - Discount
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
             type: nestedSelect
           - label: Select offer Id
             name: offerId
+            type: text
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
             type: text
           - name: gps
             label: Enter gps coordinates
@@ -905,6 +978,7 @@ flows:
         owner: BAP
         expect: false
         description: Buyer request for the cancellation of the order
+        # add input with reason code "001"
       - key: on_cancel
         type: on_cancel
         unsolicited: false
@@ -915,37 +989,41 @@ flows:
   - id: SELF_PICKUP
     description: User pickes the order themselfs
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select_multiple_fulfillment
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
             type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -1011,37 +1089,41 @@ flows:
   - id: SLOTTED_DELIVERY
     description: User pickes the order themselfs
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
-        pair: on_select_multiple_fulfillment
+        pair: on_select_slotted
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
             type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
           - name: gps
             label: Enter gps coordinates
             type: text
@@ -1050,7 +1132,7 @@ flows:
             label: Enter area code
             type: text
             default: "560001"
-      - key: on_select_multiple_fulfillment
+      - key: on_select_slotted
         type: on_select
         unsolicited: false
         pair: null
@@ -1084,36 +1166,76 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_pickup
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_at_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
   - id: BUYER_DELIVERY
     description: User uses station code for searching bus
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select_multiple_fulfillment
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
@@ -1207,33 +1329,31 @@ flows:
   - id: BUYER INSTRUCTIONS AND ADDRESS UPDATE FLOW
     description: User uses station code for searching bus
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
@@ -1365,33 +1485,31 @@ flows:
   - id: MULTI_OPTION_FULFILLMENT_FLOW
     description: User uses station code for searching bus
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        description: LBNP sends a search request
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        description: LSP responds with catalog
-        pair: null
-        owner: BPP
-        input:
-          - name: npType
-            label: Select a type
-            type: select
-            values:
-              - ISN
-              - MSN
-            default: MSN
+      # - key: search
+      #   type: search
+      #   unsolicited: false
+      #   description: LBNP sends a search request
+      #   pair: on_search
+      #   owner: BAP
+      #   expect: true
+      # - key: on_search
+      #   type: on_search
+      #   unsolicited: false
+      #   description: LSP responds with catalog
+      #   pair: null
+      #   owner: BPP
+      #   input:
+      #     - name: npType
+      #       label: Select a type
+      #       type: text
+      #       default: MSN
+      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select_fulfillment_array
         owner: BAP
-        expect: false
+        expect: true
         input:
           - label: Items
             name: items
