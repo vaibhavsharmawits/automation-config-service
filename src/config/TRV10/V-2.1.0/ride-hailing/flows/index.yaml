@@ -1876,10 +1876,10 @@ flows:
       - key: update
         type: update
         unsolicited: false
-        pair: on_update_ride_updated
+        pair: on_update_soft_update
         owner: BAP
         expect: false
-      - key: on_update_ride_updated
+      - key: on_update_soft_update
         type: on_update
         unsolicited: false
         pair: null
