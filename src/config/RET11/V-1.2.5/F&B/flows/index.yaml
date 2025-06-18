@@ -1,11 +1,11 @@
 flows:
   - id: FULL_CATALOG
-    description: User uses station code for searching bus
+    description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
         type: search
         unsolicited: false
-        description: LBNP sends a search request
+        description: BAP sends the search request
         pair: on_search
         owner: BAP
         expect: true
@@ -21,7 +21,7 @@ flows:
       - key: on_search
         type: on_search
         unsolicited: false
-        description: LSP responds with catalog
+        description: BPP returns the full catalog refresh
         pair: null
         owner: BPP
         input:
@@ -34,12 +34,12 @@ flows:
               # - code: "buyXgetY"
               #   name: "BuyXGetY"
   - id: INCREMENTAL_CATALOG
-    description: User uses station code for searching bus
+    description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
     sequence:
       - key: search_1
         type: search
         unsolicited: false
-        description: LBNP sends a search request
+        description: Bap begins search for incremental changes
         pair: on_search_1
         owner: BAP
         expect: true
@@ -50,25 +50,25 @@ flows:
       - key: on_search_1
         type: on_search
         unsolicited: false
-        description: LSP responds with catalog
+        description: BPP returns the incremental changes
         pair: null
         owner: BPP
       - key: on_search_3
         type: on_search
         unsolicited: true
-        description: LSP responds with catalog
+        description: BPP returns the incremental changes
         pair: null
         owner: BPP
       - key: on_search_2
         type: on_search
         unsolicited: true
-        description: LSP responds with catalog
+        description: BPP returns the incremental changes
         pair: null
         owner: BPP
       - key: search_1
         type: search
         unsolicited: false
-        description: LBNP sends a search request
+        description: Bap stops search for incremental changes
         pair: ""
         owner: BAP
         expect: true
@@ -78,33 +78,15 @@ flows:
             display: false
             default: stop
   - id: ORDER_FLOW
-    description: User uses station code for searching bus
+    description: Retail 1.2.5 (Order Flow)
     sequence:
-      # - key: search
-      #   type: search
-      #   unsolicited: false
-      #   description: LBNP sends a search request
-      #   pair: on_search
-      #   owner: BAP
-      #   expect: true
-      # - key: on_search
-      #   type: on_search
-      #   unsolicited: false
-      #   description: LSP responds with catalog
-      #   pair: null
-      #   owner: BPP
-      #   input:
-      #     - name: npType
-      #       label: Select a type
-      #       type: text
-      #       default: MSN
-      #       display: false
       - key: select
         type: select
         unsolicited: false
         pair: on_select
         owner: BAP
         expect: true
+        description: BAP select the item
         input:
           - label: Items
             name: items
@@ -129,54 +111,65 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: Respond to init
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: Buyer confirms product
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: Seller Accepts confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
@@ -192,14 +185,14 @@ flows:
       - key: track
         type: track
         unsolicited: false
-        description: LBNP sends a track request
+        description: BAP request to track the order
         pair: on_track
         owner: BAP
         expect: false
       - key: on_track
         type: on_track
         unsolicited: false
-        description: LSP responds with catalog
+        description: BPP sends the tracking information
         pair: null
         owner: BPP
       - key: on_status_at_delivery
@@ -208,12 +201,14 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order out for delivery
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order delivered
   - id: OUT_OF_STOCK
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
@@ -278,6 +273,7 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        description: BAP select the item
         input:
           - label: Items
             name: items
@@ -302,72 +298,86 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: Respond to init
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: Buyer confirms product
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: Seller Accepts confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - Order picked up
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - At delivery
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order delivered
   - id: BUYER_CANCEL
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
@@ -396,6 +406,7 @@ flows:
         pair: on_select
         owner: BAP
         expect: true
+        description: BAP select the item
         input:
           - label: Items
             name: items
@@ -420,18 +431,23 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: Respond to init
       - key: confirm
         type: confirm
         unsolicited: false
