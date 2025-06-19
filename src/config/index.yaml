@@ -46,6 +46,15 @@ domain:
             flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
+  - name: ONDC:RET11
+    versions:
+      - id: 1.2.5
+        reporting: false
+        usecase:
+          - name: F&B
+            flows: "./RET11/V-1.2.5/F&B/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET11/V-1.2.5/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -73,3 +82,8 @@ usecases:
         - key: 2.1.0
           usecase:
             - Ride-hailing
+    - key: ONDC:RET11
+      version:
+        - key: 1.2.5
+          usecase:
+            - F&B
