@@ -73,6 +73,15 @@ domain:
             flows: "./TRV14/V-2.0.0/entry-pass/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:RET12
+    versions:
+      - id: 1.2.5
+        reporting: false
+        usecase:
+          - name: FASHION
+            flows: "./RET12/V-1.2.5/FASHION/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET12/V-1.2.5/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -100,13 +109,18 @@ usecases:
         - key: 1.2.5
           usecase:
             - Logistics (P2H2P)
-    - key: ONDC:RET11
-      version:
-        - key: 1.2.5
-          usecase:
-            - F&B
     - key: ONDC:RET10
       version:
         - key: 1.2.5
           usecase:
             - GROCERY
+    - key: ONDC:RET11
+      version:
+        - key: 1.2.5
+          usecase:
+            - F&B
+    - key: ONDC:RET12
+      version:
+        - key: 1.2.5
+          usecase:
+            - FASHION
