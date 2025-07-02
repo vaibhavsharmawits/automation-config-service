@@ -1069,10 +1069,10 @@ flows:
             label: Select a category
             type: select
             values:
+              - Instant Delivery
               - Immediate Delivery
               - Next Day Delivery
               - Same Day Delivery
-              - Instant Delivery
             payloadField: $.message.intent.category.id
           - name: paymentType
             label: Select payment type
@@ -1102,11 +1102,6 @@ flows:
             type: text
             payloadField: $.message.intent.fulfillment.start.location.gps
             default: 12.4535,77.9283
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.end.location.gps
-            default: 12.4535,77.9283
           - name: start_code
             label: Enter start area code
             type: text
@@ -1128,25 +1123,27 @@ flows:
             display: false
             default:
               - "005"
+              - "006"
+              - "007"
       - key: init_qc
         type: init
         unsolicited: false
         description: LBNP selects and initializes order
-        pair: on_init_LOGISTICS
+        pair: on_init_qc
         owner: BAP
-      - key: on_init_LOGISTICS
+      - key: on_init_qc
         type: on_init
         unsolicited: false
         description: LSP acknowledges and provides quote breakup
         pair: null
         owner: BPP
-      - key: confirm_LOGISTICS
+      - key: confirm_qc
         type: confirm
         unsolicited: false
         description: LBNP sends order confirmation
-        pair: on_confirm_LOGISTICS
+        pair: on_confirm_qc
         owner: BAP
-      - key: on_confirm_LOGISTICS
+      - key: on_confirm_qc
         type: on_confirm
         unsolicited: false
         description: LSP accepts the order
@@ -1158,32 +1155,42 @@ flows:
         description: LSP updates order status [Agent assigned] and provides rider details to LBNP.
         pair: null
         owner: BPP
-      - key: update_LOGISTICS
+      - key: update_qc
         type: update
         unsolicited: false
         description: LBNP updates linked order details and assigns riders to the fulfillments.
-        pair: on_update_LOGISTICS
+        pair: on_update_qc
         owner: BAP
-      - key: on_update_LOGISTICS
+      - key: on_update_qc
         type: on_update
         unsolicited: false
         description: LSP acknowledges order updates and searches for an agent.
         pair: null
         owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        label: At-pickup
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        pair: null
+        owner: BPP
       - key: on_status_1_LOGISTICS
         type: on_status
+        label: Order-picked-up
         unsolicited: true
         description: LSP updates order status [Order picked up]
         pair: null
         owner: BPP
       - key: on_status_12_LOGISTICS
         type: on_status
+        label: At-delivery
         unsolicited: true
         description: LSP updates order status [At-delivery]
         pair: null
         owner: BPP
       - key: on_status_3_LOGISTICS
         type: on_status
+        label: Order-delivered
         unsolicited: true
         description: LSP updates order status [Order delivered]
         pair: null
