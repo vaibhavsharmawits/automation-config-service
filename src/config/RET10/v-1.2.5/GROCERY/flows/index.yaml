@@ -1346,14 +1346,14 @@ flows:
         description: Status updates - order out for delivery
       - key: cancel
         type: cancel
-        unsolicited: true
+        unsolicited: false
         pair: null
         owner: BAP
         expect: false
         description: Buyer cancels product
       - key: cancel_force
         type: cancel
-        unsolicited: false
+        unsolicited: true
         pair: on_cancel_force
         owner: BAP
         expect: false
