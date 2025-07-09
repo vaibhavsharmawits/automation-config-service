@@ -79,9 +79,18 @@ domain:
         reporting: false
         usecase:
           - name: FASHION
+            flows: "./RET13/V-1.2.5/BPC/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:RET13
+    versions:
+      - id: 1.2.5
+        reporting: false
+        usecase:
+          - name: BPC
             flows: "./RET12/V-1.2.5/FASHION/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/RET12/V-1.2.5/supportedActions/index.yaml"
+          $ref: "src/config/RET12/-1.2.5/supportedActions/index.yaml"
   - name: ONDC:RET14
     versions:
       - id: 1.2.5
@@ -133,6 +142,11 @@ usecases:
         - key: 1.2.5
           usecase:
             - FASHION
+    - key: ONDC:RET13
+      version:
+        - key: 1.2.5
+          usecase:
+            - BPC
     - key: ONDC:RET14
       version:
         - key: 1.2.5
