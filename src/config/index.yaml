@@ -88,9 +88,9 @@ domain:
         reporting: false
         usecase:
           - name: BPC
-            flows: "./RET12/V-1.2.5/FASHION/flows/index.yaml"
+            flows: "./RET13/V-1.2.5/BPC/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/RET12/-1.2.5/supportedActions/index.yaml"
+          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
   - name: ONDC:RET14
     versions:
       - id: 1.2.5
