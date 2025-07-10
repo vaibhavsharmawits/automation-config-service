@@ -1,16 +1,17 @@
 domain:
   - name: ONDC:TRV11
     versions:
-    #   - id: 2.0.0
-    #     reporting: true
-    #     usecase:
-    #       - name: Metro
-    #         flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
-    #       - name: Bus
-    #         flows: "./TRV11/V-2.0.0/bus/flows/index.yaml"
-    #     supportedActions:
-    #       $ref: "src/config/TRV11/V-2.0.0/supportedActions/index.yaml"
+      - id: 2.0.0
+        reporting: true
+        usecase:
+          - name: Metro
+            flows: "./TRV11/V-2.0.0/metro/flows/index.yaml"
+          - name: Bus
+            flows: "./TRV11/V-2.0.0/bus/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV11/V-2.0.0/supportedActions/index.yaml"
       - id: 2.0.1
+        reporting: true
         usecase:
           - name: Metro
             flows: "./TRV11/V-2.0.1/metro/flows/index.yaml"
@@ -18,8 +19,15 @@ domain:
             flows: "./TRV11/V-2.0.1/bus/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
-    supportedActions:
-      $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
+  - name: ONDC:TRV10
+    versions:
+      - id: 2.1.0
+        reporting: false
+        usecase:
+          - name: Ride-hailing
+            flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -38,14 +46,6 @@ domain:
             flows: "./LOG11/V-1.2.5/logistics/flows/index.yaml"
         supportedActions:
           $ref: "src/config/LOG11/V-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:TRV10
-    versions:
-      - id: 2.1.0
-        usecase:
-          - name: Ride-hailing
-            flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
   - name: ONDC:RET11
     versions:
       - id: 1.2.5
@@ -104,14 +104,19 @@ usecases:
   domain:
     - key: ONDC:TRV11
       version:
-        # - key: 2.0.0
-        #   usecase:
-        #     - Metro
-        #     - Bus
+        - key: 2.0.0
+          usecase:
+            - Metro
+            - Bus
         - key: 2.0.1
           usecase:
             - Metro
             - Bus
+    - key: ONDC:TRV10
+      version:
+        - key: 2.1.0
+          usecase:
+            - Ride-hailing
     - key: ONDC:LOG10
       version:
         - key: 1.2.5

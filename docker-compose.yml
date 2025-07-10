@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: config-service-staging
+    container_name: config-service-dev
     ports:
       - "${PORT:-5556}:${PORT:-5556}"
     env_file:
