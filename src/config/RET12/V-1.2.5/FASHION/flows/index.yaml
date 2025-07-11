@@ -330,21 +330,12 @@ flows:
           - name: cancellation_reason_id
             label: Select a reason_id
             type: select
-            values:
-              - "002"  
-              - "011"  
-              - "013"  
-              - "014"  
-              - "016"  
-              - "018"  
-              - "021"  
-              - "022"  
-              - "023"  
-              - "024"  
+            values: 
               - "051"  
               - "052"  
               - "053"
-            default: "002"
+              - "999"
+            default: "053"
       - key: on_cancel
         type: on_cancel
         unsolicited: false
