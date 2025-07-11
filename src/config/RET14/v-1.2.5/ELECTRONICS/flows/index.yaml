@@ -76,7 +76,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: electronics_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -167,6 +167,9 @@ flows:
         owner: BAP
         expect: true
         description: BAP may add unavailable or out-of-stock items to the cart
+        input:
+          - name: electronics_select
+            type: ret10_grocery_select
       - key: on_select_out_of_stock
         type: on_select
         unsolicited: false
@@ -181,6 +184,9 @@ flows:
         owner: BAP
         expect: false
         description: BAP select the item
+        input:
+          - name: electronics_select
+            type: ret10_grocery_select
       - key: on_select
         type: on_select
         unsolicited: false
@@ -271,7 +277,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: electronics_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -322,13 +328,20 @@ flows:
             label: Select a reason_id
             type: select
             values:
-              - "001"
-              - "003"
-              - "004"
-              - "006"
-              - "009"
-              - "010"
-            default: "001"
+              - "002"  
+              - "011"  
+              - "013"  
+              - "014"  
+              - "016"  
+              - "018"  
+              - "021"  
+              - "022"  
+              - "023"  
+              - "024"  
+              - "051"  
+              - "052"  
+              - "053"
+            default: "002"
       - key: on_cancel
         type: on_cancel
         unsolicited: false
@@ -347,7 +360,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: electronics_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -460,7 +473,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: electronics_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -559,7 +572,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: electronics_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -651,7 +664,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: electronics_select
             type: ret10_grocery_select
           - name: custom_input_text
             label: Enter text
