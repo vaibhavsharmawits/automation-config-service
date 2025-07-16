@@ -1,6 +1,7 @@
 flows:
   - id: FEATURE_DISCOVERY
     description: Feature discovery for point-to-point logistics operations
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -166,6 +167,7 @@ flows:
                 name: "RTO (with return)"
   - id: ORDER_FLOW_BASE_LINE
     description: Standard point-to-point delivery flow including baseline features
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -320,6 +322,7 @@ flows:
         owner: BPP
   - id: IMMEDIATE_DELIVERY_FLOW
     description: The Immediate Delivery Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Ship to delivery (S2D) TAT for the same is less than 60 minutes.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -484,6 +487,7 @@ flows:
         owner: BPP
   - id: RTO_FLOW
     description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -670,6 +674,7 @@ flows:
         owner: BPP
   - id: CASH_ON_DELIVERY_FLOW
     description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_1_LOGISITCS
         type: search
@@ -851,6 +856,7 @@ flows:
         owner: BPP
   - id: PREPAID_PAYMENT_FLOW
     description: This flow outlines the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers.Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -1041,6 +1047,7 @@ flows:
         owner: BPP
   - id: QUICK_COMMERCE_FLOW
     description: This flow covers logistics for Quick Commerce, Milk Run, and SPMD models, enabling coordination between LBNPs and LSPs.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_qc
         type: search
@@ -1197,6 +1204,7 @@ flows:
         owner: BPP
   - id: SURGE_FEE_FLOW
     description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP adds an additional surge charge due to any operational reason.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -1364,6 +1372,7 @@ flows:
         owner: BPP
   - id: CANCELLATION_TERMS_FLOW
     description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -1531,6 +1540,7 @@ flows:
         owner: BPP
   - id: STATIC_OTP_PICKUP_DELIVERY
     description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_2_LOGISITCS
         type: search
@@ -1694,6 +1704,7 @@ flows:
         owner: BPP
   - id: STATIC_OTP_RTO_DELIVERY
     description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_3_LOGISITCS
         type: search
@@ -1857,6 +1868,7 @@ flows:
         owner: BPP
   - id: ORDER_FLOW_BASE_LINE_WITH_IGM
     description: Standard point-to-point delivery flow including baseline features
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -2083,6 +2095,7 @@ flows:
         expect: false
   - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
     description: Standard point-to-point delivery flow including baseline features
+    tags: ["WORKBENCH"]
     sequence:
       - key: search_LOGISTICS
         type: search
@@ -2466,7 +2479,7 @@ flows:
 
   # init
 
-  - id: ORDER_FLOW_BASE_LINE
+  - id: ORDER_FLOW_BASE_LINE_INIT_DEV_PORTAL
     title: Baseline Flow
     tags: ["DEV_PORTAL", "INIT", "SPSD"]
     description: Standard point-to-point delivery flow including baseline features
@@ -2554,7 +2567,7 @@ flows:
 
   # confirm
 
-  - id: ORDER_FLOW_BASE_LINE
+  - id: ORDER_FLOW_BASE_LINE_CONFIRM_DEV_PORTAL
     title: Baseline Flow
     tags: ["DEV_PORTAL", "CONFIRM", "SPSD"]
     description: Standard point-to-point delivery flow including baseline features
