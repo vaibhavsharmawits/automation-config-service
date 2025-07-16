@@ -28,6 +28,15 @@ domain:
             flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
+  - name: ONDC:TRV14
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: unreserved-entry-pass
+            flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -117,6 +126,12 @@ usecases:
         - key: 2.1.0
           usecase:
             - Ride-hailing
+    
+    - key: ONDC:TRV14
+      version:
+        - key: 2.0.0
+          usecase:
+            - unreserved-entry-pass
     - key: ONDC:LOG10
       version:
         - key: 1.2.5
