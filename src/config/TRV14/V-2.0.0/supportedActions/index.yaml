@@ -1,9 +1,9 @@
 supportedActions:
   null: ["search"]
   search: ["on_search"]
-  on_search: ["search", "select"]
-  select: ["on_select"]
-  on_select: ["init"]
+  on_search: ["search", "select","on_search"]
+  select: ["on_select","select"]
+  on_select: ["init","on_select"]
   init: ["on_init"]
   on_init: ["init", "confirm"]
   confirm: ["on_confirm", "status"]
