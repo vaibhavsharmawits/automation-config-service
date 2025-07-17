@@ -22,13 +22,13 @@ apiProperties:
     async_predecessor: null
     transaction_partner: []
   on_search:
-    async_predecessor: "search"
+    async_predecessor: null
     transaction_partner: ["search"]
   select:
     async_predecessor: null
     transaction_partner: ["search"]
   on_select:
-    async_predecessor: "select"
+    async_predecessor: null
     transaction_partner: ["select", "search", "on_search"]
   init:
     async_predecessor: null
