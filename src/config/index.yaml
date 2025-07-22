@@ -20,6 +20,15 @@ domain:
           $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
     supportedActions:
       $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
+  - name: ONDC:TRV14
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: unreserved-entry-pass
+            flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -143,3 +152,8 @@ usecases:
         - key: 1.2.5
           usecase:
             - ELECTRONICS
+    - key: ONDC:TRV14
+      version:
+        - key: 2.0.0
+          usecase:
+            - unreserved-entry-pass
