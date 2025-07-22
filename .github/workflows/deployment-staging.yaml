@@ -1,16 +1,16 @@
 name: Staging Deployment
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   push:
     branches: ["release-staging"]
 
 jobs:
   ssh-ec2:
-    runs-on: ubuntu-latest 
-    environment:  
-          name: staging
-          url: https://github.com
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://github.com
 
     steps:
       - name: Checkout code
@@ -30,7 +30,7 @@ jobs:
           echo "Cloning repository from release-staging branch"
           git clone --single-branch --branch release-staging https://github.com/ONDC-Official/automation-config-service.git \$REPO_DIR
           EOF
- 
+
       - name: Install Docker Compose (if not installed)
         run: |
           ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} <<EOF
