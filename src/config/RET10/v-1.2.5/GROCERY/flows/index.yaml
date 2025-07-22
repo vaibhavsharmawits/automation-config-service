@@ -108,6 +108,11 @@ flows:
                 name: "Full catalog refresh (search by fulfillment end location)"
               - code: "025"
                 name: "BNP demand signals"
+        input:
+          - name: city_code
+            label: Enter the city code
+            type: text
+            payloadField: $.context.city
       - key: on_search
         type: on_search
         unsolicited: false
