@@ -1525,7 +1525,7 @@ flows:
   - id: STATIC_OTP_PICKUP_DELIVERY
     description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
     sequence:
-      - key: search_2_LOGISITCS
+      - key: search_2_LOGISTICS
         type: search
         unsolicited: false
         description: LBNP sends a search request
@@ -1688,7 +1688,7 @@ flows:
   - id: STATIC_OTP_RTO_DELIVERY
     description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
     sequence:
-      - key: search_3_LOGISITCS
+      - key: search_3_LOGISTICS
         type: search
         unsolicited: false
         description: LBNP sends a search request for logistics services
