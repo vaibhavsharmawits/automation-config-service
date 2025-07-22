@@ -1,5 +1,5 @@
 flows:
-  - id: Discovery_Flow_full_catalog
+  - id: Retail_Discovery_Flow_full_catalog
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -126,6 +126,13 @@ flows:
         owner: BAP
         expect: true
         description: Bap begins search for incremental changes
+      - key: on_search_inc
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP returns the incremental changes
       - key: on_search_inc
         type: on_search
         unsolicited: true
