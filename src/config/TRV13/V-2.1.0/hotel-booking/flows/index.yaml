@@ -1,0 +1,177 @@
+flows:
+  - id: Hotel Booking
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_2
+        type: search
+        unsolicited: false
+        pair: on_search_2
+        owner: BAP
+        expect: true
+      - key: on_search_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: search_3
+        type: search
+        unsolicited: false
+        pair: on_search_3
+        owner: BAP
+        expect: true
+      - key: on_search_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: search_4
+        type: search
+        unsolicited: false
+        pair: on_search_4
+        owner: BAP
+        expect: true
+      - key: on_search_4
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Hotel Booking TTL
+    description: Hotel Booking (ttl based) - Flow
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_2
+        type: search
+        unsolicited: false
+        pair: on_search_2
+        owner: BAP
+        expect: true
+      - key: on_search_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
