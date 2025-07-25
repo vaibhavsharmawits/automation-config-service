@@ -1348,6 +1348,15 @@ flows:
         type: cancel
         unsolicited: false
         pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
         owner: BAP
         expect: false
         description: Buyer cancels product
