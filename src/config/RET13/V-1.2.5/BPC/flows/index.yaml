@@ -18,16 +18,18 @@ flows:
             label: Features supported
             type: checkbox
             options:
-            - code: "012"
-              name: "Cash on delivery (COD) order"
-            - code: "017"
-              name: "Seller Creds"
-            - code: "01A"
-              name: "Item Unitized Count"
-            - code: "01B"
-              name: "Minimum Item Quantity"
-            - code: "01B"
-              name: "Minimum order value"
+              - code: "012"
+                name: "Cash on delivery (COD) order"
+              - code: "017"
+                name: "Seller Creds"
+              - code: "01A"
+                name: "Item Unitized Count"
+              - code: "01B"
+                name: "Minimum Item Quantity"
+              - code: "01B"
+                name: "Minimum order value"
+              - code: "005"
+                name: "Force cancellation"
       - key: on_search
         type: on_search
         unsolicited: false
@@ -158,10 +160,10 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
   - id: Cross_Category_Cart_Flow
     description: Retail 1.2.5 (Cross Category Cart Flow)
-    sequence: 
+    sequence:
       - key: select_ccc
         type: select
         unsolicited: false
@@ -250,7 +252,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
   - id: Out_Of_Stock_Flow
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
@@ -423,10 +425,10 @@ flows:
             label: Select a reason_id
             type: select
             values:
-              - '051'
-              - '052'
-              - '053'
-              - '999'
+              - "051"
+              - "052"
+              - "053"
+              - "999"
             default: "051"
       - key: on_cancel
         type: on_cancel
@@ -598,6 +600,135 @@ flows:
         owner: BPP
         expect: false
         description: Seller Accepts confirmation
+  - id: Force_Cancellation_Flow
+    description: Retail 1.2.5 (Cancellation)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP select the item
+        input:
+          - name: fashion_select
+            type: ret10_grocery_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Respond to init
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery_force
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: cancel_no
+        type: cancel
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
+        description: Buyer side full order cancellation
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "052"
+            default: "052"
+      - key: cancel_yes
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_yes
+        owner: BAP
+        expect: false
+        description: Buyer side full order cancellation
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "052"
+            default: "052"
+      - key: on_cancel_yes
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts cancellation
+      - key: update_settlement_cancel
+        type: update
+        unsolicited: true
+        pair: null
+        owner: BAP
+        expect: false
+        description: settlement trail update
   - id: Cash_On_Delivery_Flow
     description: Retail 1.2.5 (Cash On Delivery)
     sequence:
