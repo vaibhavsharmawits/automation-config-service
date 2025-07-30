@@ -2294,6 +2294,7 @@ flows:
 
   ## developer portal flows
 
+  ## --- SPSD (Baseline)
   # search
 
   - id: FEATURE_DISCOVERY_SEARCH_DEV_PORTAL
@@ -2649,5 +2650,349 @@ flows:
         type: on_confirm
         unsolicited: false
         description: LSP accepts the order
+        pair: null
+        owner: BPP
+
+  ## -- COD
+
+  # search
+
+  - id: CASH_ON_DELIVERY_FLOW_SEARCH_DEV_PORTAL
+    tags: ["DEV_PORTAL", "SEARCH", "COD"]
+    description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
+    sequence:
+      - key: search_1_LOGISITCS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog and COD support
+        pair: null
+        owner: BPP
+        input:
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
+          - name: default_feature
+            display: false
+            default:
+              - "008"
+
+  # init
+
+  - id: CASH_ON_DELIVERY_FLOW_INIT_DEV_PORTAL
+    tags: ["DEV_PORTAL", "INIT", "COD"]
+    description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
+    sequence:
+      - key: search_1_LOGISITCS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog and COD support
+        pair: null
+        owner: BPP
+        input:
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
+          - name: default_feature
+            display: false
+            default:
+              - "008"
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote with COD charges
+        pair: null
+        owner: BPP
+
+  # confirm
+
+  - id: CASH_ON_DELIVERY_FLOW_CONFIRM_DEV_PORTAL
+    tags: ["DEV_PORTAL", "CONFIRM", "COD"]
+    description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
+    sequence:
+      - key: search_1_LOGISITCS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog and COD support
+        pair: null
+        owner: BPP
+        input:
+          - name: feature_discovery
+            label: Features supported
+            type: checkbox
+            options:
+              - code: "009"
+                name: "Static OTP verification (pickup & delivery)"
+              - code: "017"
+                name: "Surge fee"
+              - code: "01A"
+                name: "Cancellation terms"
+          - name: default_feature
+            display: false
+            default:
+              - "008"
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote with COD charges
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP confirms the COD order including COD settlement details
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP confirms and accepts the COD order
         pair: null
         owner: BPP
