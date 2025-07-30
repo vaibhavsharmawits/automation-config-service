@@ -2299,7 +2299,7 @@ flows:
 
   - id: FEATURE_DISCOVERY_SEARCH_DEV_PORTAL
     title: Feature Discovery
-    tags: ["DEV_PORTAL", "SEARCH", "SPSD"]
+    tags: ["DEV_PORTAL", "SEARCH", "SPSD", "FD"]
     description: Feature discovery for point-to-point logistics operations
     sequence:
       - key: search_LOGISTICS
@@ -2994,5 +2994,214 @@ flows:
         type: on_confirm
         unsolicited: false
         description: LSP confirms and accepts the COD order
+        pair: null
+        owner: BPP
+
+  ## -- CT
+
+  # init
+
+  - id: CANCELLATION_TERMS_FLOW_INIT_DEV_PORTAL
+    tags: ["DEV_PORTAL", "INIT", "CT"]
+    description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+          - name: default_feature
+            display: false
+            default:
+              - "01A"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: default_feature
+            display: false
+            default:
+              - "01A"
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup alone with cancellation terms.
+        pair: null
+        owner: BPP
+
+  ## -- SOV_P&D
+
+  # confirm
+
+  - id: STATIC_OTP_PICKUP_DELIVERY_CONFIRM_DEV_PORTAL
+    tags: ["DEV_PORTAL", "CONFIRM", "SOV_P&D"]
+    description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
+    sequence:
+      - key: search_2_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+        input:
+          - name: default_feature
+            display: false
+            default:
+              - "009"
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup alone with cancellation terms.
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: >
+          LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
         pair: null
         owner: BPP
