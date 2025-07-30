@@ -60,6 +60,10 @@ export const filterByTags = (
     return items;
   }
 
+  if(options.length === 1 && options[0] === "WORKBENCH") {
+    return items.filter(item => !('tags' in item));
+  }
+
   return items.filter(
     (item) =>
       Array.isArray(item.tags) &&
