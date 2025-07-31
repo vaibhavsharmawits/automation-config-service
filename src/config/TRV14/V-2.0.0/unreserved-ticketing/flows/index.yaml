@@ -1,0 +1,499 @@
+flows:
+  - id: seller_app_pagination_journey
+    description: Seller App Pagination flow with repeated on_search steps
+    sequence:
+      - key: search_seller_pagination
+        type: search
+        unsolicited: false
+        pair: on_search_seller_pagination_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.city.code
+      - key: on_search_seller_pagination_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+      - key: on_select_form_submission
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: incremental_pull_journey
+    description: Incremental Pull flow with repeated on_search steps
+    sequence:
+      - key: search_incremental_pull
+        type: search
+        unsolicited: false
+        pair: on_search_incremental_pull_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.city.code
+      - key: on_search_incremental_pull_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_incremental_pull_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_incremental_pull_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+      - key: on_select_form_submission
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: technical_cancellation
+    description: Technical Cancellation flow (soft & confirm status)
+    sequence:
+      - key: search_seller_pagination
+        type: search
+        unsolicited: false
+        pair: on_search_seller_pagination_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.city.code
+      - key: on_search_seller_pagination_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+      - key: on_select_form_submission
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_technical_cancellation
+        owner: BAP
+        expect: false
+      - key: on_status_technical_cancellation
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_soft_technical_cancellation
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_technical_cancellation
+        owner: BAP
+        expect: false
+      - key: on_cancel_soft_technical_cancellation
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_confirm_technical_cancellation
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_confirm_technical_cancellation
+        owner: BAP
+        expect: false
+      - key: on_cancel_confirm_technical_cancellation
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  # - id: cancellation_user
+  #   description: User Cancellation flow (soft & confirm status)
+  #   sequence:
+  #     - key: search_seller_pagination
+  #       type: search
+  #       unsolicited: false
+  #       pair: on_search_seller_pagination
+  #       owner: BAP
+  #       expect: true
+  #     - key: on_search_seller_pagination_1
+  #       type: on_search
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: on_search_seller_pagination_2
+  #       type: on_search
+  #       unsolicited: true
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: on_search_seller_pagination_3
+  #       type: on_search
+  #       unsolicited: true
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: select
+  #       type: select
+  #       unsolicited: false
+  #       pair: on_select
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_select
+  #       type: on_select
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: select_2
+  #       type: select_2
+  #       unsolicited: false
+  #       pair: on_select_2
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_select_2
+  #       type: on_select_2
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: init
+  #       type: init
+  #       unsolicited: false
+  #       pair: on_init
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_init
+  #       type: on_init
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: confirm
+  #       type: confirm
+  #       unsolicited: false
+  #       pair: on_confirm
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_confirm_user_cancellation
+  #       type: on_confirm
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: status_user_cancellation
+  #       type: status
+  #       unsolicited: false
+  #       pair: on_status_user_cancellation
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_status_user_cancellation
+  #       type: on_status
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: cancel_soft_user_cancellation
+  #       type: cancel
+  #       unsolicited: false
+  #       pair: on_cancel_user_cancellation
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_cancel_soft_user_cancellation
+  #       type: on_cancel
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: cancel_confirm_user_cancellation
+  #       type: cancel
+  #       unsolicited: false
+  #       pair: on_cancel_user_cancellation
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_cancel_confirm_user_cancellation
+  #       type: on_cancel
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  # - id: cancellation_partial
+  #   description: Partial Cancellation flow
+  #   sequence:
+  #     - key: search_seller_pagination
+  #       type: search
+  #       unsolicited: false
+  #       pair: on_search_seller_pagination
+  #       owner: BAP
+  #       expect: true
+  #     - key: on_search_seller_pagination_1
+  #       type: on_search
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: on_search_seller_pagination_2
+  #       type: on_search
+  #       unsolicited: true
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: on_search_seller_pagination_3
+  #       type: on_search
+  #       unsolicited: true
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: select
+  #       type: select
+  #       unsolicited: false
+  #       pair: on_select
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_select
+  #       type: on_select
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: select_2
+  #       type: select_2
+  #       unsolicited: false
+  #       pair: on_select_2
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_select_2
+  #       type: on_select_2
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: init
+  #       type: init
+  #       unsolicited: false
+  #       pair: on_init
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_init
+  #       type: on_init
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: confirm
+  #       type: confirm
+  #       unsolicited: false
+  #       pair: on_confirm
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_confirm_partial_cancellation
+  #       type: on_confirm
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: cancel_soft_partial_cancellation
+  #       type: cancel
+  #       unsolicited: false
+  #       pair: on_cancel_partial_cancellation
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_cancel_soft_partial_cancellation
+  #       type: on_cancel
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
