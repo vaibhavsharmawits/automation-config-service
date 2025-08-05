@@ -888,6 +888,17 @@ flows:
             type: text
             default: "yes"
             display: false
+      - key: update_settelment_cancel
+        type: update
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: isRefund
+            type: text
+            default: "yes"
+            display: false
   - id: OFFERS_FLOW
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:

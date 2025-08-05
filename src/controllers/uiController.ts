@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { getConfigService } from "../services/cacheService";
-import { filterDomainData, getFileFromRefrence } from "../utils";
+import { filterDomainData, getFileFromRefrence, filterByTags } from "../utils";
 
 export const getFlows = async (req: Request, res: Response) => {
   try {
     const query = req.query;
     const config = await getConfigService();
+
     const filePath = filterDomainData(
       config,
       query.domain as string,
@@ -13,9 +14,18 @@ export const getFlows = async (req: Request, res: Response) => {
       query.usecase as string,
       "flows"
     );
-    const data = await getFileFromRefrence(filePath);
+    const data: any = await getFileFromRefrence(filePath);
 
-    res.send({ data: data });
+    const optionsParam = req.query?.options as string;
+
+    const optionsArray = Array.isArray(optionsParam)
+      ? optionsParam // multiple ?options=apple&options=banana
+      : optionsParam?.split(",");
+
+    console.log("req.query?.options", optionsArray);
+    const filteredData = filterByTags(data.flows, optionsArray);
+
+    res.send({ data: { flows: filteredData } });
   } catch (e) {
     console.log("Error while fetching flows", e);
     res
@@ -41,5 +51,5 @@ export const getReportingStatus = async (req: Request, res: Response) => {
     "reporting"
   );
 
-  res.send({ data: reporting || true});
+  res.send({ data: reporting || true });
 };
