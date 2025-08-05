@@ -18,16 +18,14 @@ flows:
             label: Features supported
             type: checkbox
             options:
-              - code: "006"
-                name: "Return with pickup"
-              - code: "00B"
-                name: "Replacement flow"
-              - code: "012"
-                name: "Cash on delivery (COD) order"
-              - code: "017"
-                name: "Seller Creds"
-              - code: "01D"
-                name: "Option for multi-fulfillment order"
+              - code: "007"
+                name: "SNP collecting payment"
+              - code: "00C"
+                name: "Exchange flow"
+              - code: "0099"
+                name: "Purchase finance"
+              - code: "016"
+                name: "Customization of input type text"
       - key: on_search
         type: on_search
         unsolicited: false
@@ -78,7 +76,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: appliances_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -165,13 +163,13 @@ flows:
       - key: select_out_of_stock
         type: select
         unsolicited: false
-        input:
-          - name: fashion_select
-            type: ret10_grocery_select
         pair: on_select_out_of_stock
         owner: BAP
         expect: true
         description: BAP may add unavailable or out-of-stock items to the cart
+        input:
+          - name: appliances_select
+            type: ret10_grocery_select
       - key: on_select_out_of_stock
         type: on_select
         unsolicited: false
@@ -182,13 +180,13 @@ flows:
       - key: select
         type: select
         unsolicited: false
-        input:
-          - name: fashion_select
-            type: ret10_grocery_select
         pair: on_select
         owner: BAP
         expect: false
         description: BAP select the item
+        input:
+          - name: appliances_select
+            type: ret10_grocery_select
       - key: on_select
         type: on_select
         unsolicited: false
@@ -279,7 +277,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: appliances_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -325,12 +323,13 @@ flows:
         owner: BAP
         expect: false
         description: Buyer side full order cancellation
-        payloadField: $.message.order.cancellation_reason_id
         input:
           - name: cancellation_reason_id
             label: Select a reason_id
             type: select
-            values:
+            values: 
+              - "051"  
+              - "052"  
               - "053"
               - "999"
             default: "053"
@@ -352,7 +351,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: appliances_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -454,8 +453,107 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - rto order delivered
-  - id: Seller_Cred_Flow
-    description: Retail 1.2.5 (Delivery)
+  - id: SNP_Collecting_Payment_Flow
+    description: Retail 1.2.5 (SNP collecting paymen)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP select the item
+        input:
+          - name: appliances_select
+            type: ret10_grocery_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)automation-mock-service/src/config/mock-config/RET15/APPLIANCES/1.2.5/on_init/on_init
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
+      - key: on_init_snp
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Respond to init
+      - key: on_init_snp_unsolicited
+        type: on_init
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Unsolicited on_init
+      - key: confirm_snp
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered 
+  - id: Purchase_Finance_Flow
+    description: Retail 1.2.5 (purchase finance)
     sequence: &base_line_flow
       - key: select
         type: select
@@ -465,7 +563,7 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: APPLIANCES_select
             type: ret10_grocery_select
       - key: on_select
         type: on_select
@@ -476,165 +574,80 @@ flows:
         description:
           BPP returns item breakup when item is in stock and offer applied
           (if any)
-      - key: init
+      - key: init_fin
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_fin
         owner: BAP
         expect: false
         description: Buyer initiate the product and send the updated fulfillment id
-      - key: on_init
+      - key: on_init_fin
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
         description: Respond to init
-      - key: confirm_seller_cred
+      - key: confirm_fin
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_fin
         owner: BAP
         expect: false
         description: Buyer confirms product
-      - key: on_confirm_seller_cred
+      - key: on_confirm_fin
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
         description: Seller Accepts confirmation
-  - id: Return_Flow
-    description: Retail 1.2.5 (Return)
-    sequence:
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: true
-        description: BAP select the item
-        input:
-          - name: fashion_select
-            type: ret10_grocery_select
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description:
-          BPP returns item breakup when item is in stock and offer applied
-          (if any)
-      - key: init
-        type: init
-        unsolicited: false
-        pair: on_init
-        owner: BAP
-        expect: false
-        description: Buyer initiate the product and send the updated fulfillment id
-      - key: on_init
-        type: on_init
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Respond to init
-      - key: confirm
-        type: confirm
-        unsolicited: false
-        pair: on_confirm
-        owner: BAP
-        expect: false
-        description: Buyer confirms product
-      - key: on_confirm
-        type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Seller Accepts confirmation
-      - key: on_status_pending
+      - key: on_status_pending_fin
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: Status updates - order accepted
-      - key: on_status_packed
+      - key: on_status_packed_fin
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: Status updates - order packed
-      - key: on_status_picked
+      - key: on_status_agent_assigned_fin
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked_fin
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: Status updates - order picked up
-      - key: on_status_out_for_delivery
+      - key: on_status_out_for_delivery_fin
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
         description: Status updates - order out for delivery
-      - key: on_status_order_delivered
+      - key: on_status_order_delivered_fin
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered
-      - key: update_reverse_qc
-        type: update
-        unsolicited: false
-        pair: on_update_interim_reverseQc
-        owner: BAP
-        expect: false
-        description: Buyer updates product
-      - key: on_update_interim_reverseQc
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Seller Accepts update request
-      - key: on_update_return_approved
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request approved
-      - key: on_update_return_picked
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request picked
-      - key: update_reverse_qc_settlement
-        type: update
-        unsolicited: false
-        pair: null
-        owner: BAP
-        expect: false
-        description: settlement trail update
-      - key: on_update_return_delivered
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request delivered
-  - id: Cash_On_Delivery_Flow
-    description: Retail 1.2.5 (Cash On Delivery)
-    sequence:
-      - key: select
+        description: Status updates - order delivered 
+  - id: Customization_Input_Text_Flow
+    description: Retail 1.2.5 (Customization input)
+    sequence: &base_line_flow
+      - key: select_input
         type: select
         unsolicited: false
         pair: on_select
@@ -642,94 +655,12 @@ flows:
         expect: true
         description: BAP select the item
         input:
-          - name: fashion_select
+          - name: appliances_select
             type: ret10_grocery_select
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description:
-          BPP returns item breakup when item is in stock and offer applied
-          (if any)
-      - key: init_cod
-        type: init
-        unsolicited: false
-        pair: on_init_cod
-        owner: BAP
-        expect: false
-        description: Buyer initiate the product and send the updated fulfillment id
-      - key: on_init_cod
-        type: on_init
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Respond to init
-      - key: confirm_cod
-        type: confirm
-        unsolicited: false
-        pair: on_confirm_cod
-        owner: BAP
-        expect: false
-        description: Buyer confirms product
-      - key: on_confirm_cod
-        type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Seller Accepts confirmation
-      - key: on_status_pending
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order accepted
-      - key: on_status_packed
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order packed
-      - key: on_status_picked
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order picked up
-      - key: on_status_out_for_delivery
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order out for delivery
-      - key: on_status_order_delivered_cod
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order delivered
-  - id: Replacement_Flow
-    description: Retail 1.2.5 (Replacement)
-    sequence:
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: true
-        description: BAP select the item
-        input:
-          - name: fashion_select
-            type: ret10_grocery_select
-      - key: on_select
+          - name: custom_input_text
+            label: Enter text
+            type: text
+      - key: on_select_input
         type: on_select
         unsolicited: false
         pair: null
@@ -780,6 +711,13 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
       - key: on_status_picked
         type: on_status
         unsolicited: true
@@ -801,198 +739,6 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order delivered
-      - key: update_reverse_qc_rep
-        type: update
-        unsolicited: false
-        pair: on_update_interim_reverseQc
-        owner: BAP
-        expect: false
-        description: Buyer updates product
-      - key: on_update_interim_reverseQc
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Seller Accepts update request
-      - key: on_update_return_approved
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request approved
-      - key: on_update_return_picked_rep
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request picked
-      - key: on_update_return_delivered_rep
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request delivered
-      - key: on_status_packed_rep
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order packed for replacement
-      - key: on_status_picked_rep
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order picked up for replacement
-      - key: on_status_out_for_delivery_rep
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order out for delivery for replacement
-      - key: on_status_order_delivered_rep
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order delivered for replacement
-  - id: Cancel_Return_Request_Flow
-    description: Retail 1.2.5 (Cancel Return Request)
-    sequence:
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: true
-        description: BAP select the item
-        input:
-          - name: fashion_select
-            type: ret10_grocery_select
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description:
-          BPP returns item breakup when item is in stock and offer applied
-          (if any)
-      - key: init
-        type: init
-        unsolicited: false
-        pair: on_init
-        owner: BAP
-        expect: false
-        description: Buyer initiate the product and send the updated fulfillment id
-      - key: on_init
-        type: on_init
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Respond to init
-      - key: confirm
-        type: confirm
-        unsolicited: false
-        pair: on_confirm
-        owner: BAP
-        expect: false
-        description: Buyer confirms product
-      - key: on_confirm
-        type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Seller Accepts confirmation
-      - key: on_status_pending
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order accepted
-      - key: on_status_packed
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order packed
-      - key: on_status_picked
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order picked up
-      - key: on_status_out_for_delivery
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order out for delivery
-      - key: on_status_order_delivered
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order delivered
-      - key: update_reverse_qc
-        type: update
-        unsolicited: false
-        pair: on_update_interim_reverseQc
-        owner: BAP
-        expect: false
-        description: Buyer updates product
-      - key: on_update_interim_reverseQc
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Seller Accepts update request
-      - key: on_update_return_approved
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update request approved
-      - key: cancel_return_request
-        type: cancel
-        unsolicited: false
-        pair: on_cancel_return_request
-        owner: BAP
-        expect: false
-        description: Cancel return request
-        input:
-          - name: Cancellation Return Reason Id
-            label: Select a reason_id
-            type: select
-            values:
-              - "001"
-              - "002"
-              - "003"
-            default: "001"
-      - key: on_cancel_return_request
-        type: on_cancel
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        description: Respond to cancel return request
   - id: Force_Cancellation_Flow
     description: Retail 1.2.5 (Cancellation)
     sequence:

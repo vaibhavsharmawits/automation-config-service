@@ -14,7 +14,13 @@ export function filterDomainData(
     if (domain.name === domainName) {
       for (const version of domain.versions) {
         if (version.id === versionId) {
-          if (property === "supportedActions" || property === "reporting") {
+          console.log("gettting here?");
+          if (
+            property === "supportedActions" ||
+            property === "reporting" ||
+            property === "devPortalFlows"
+          ) {
+            console.log("wokring??????", version, property);
             return version[property];
           }
           for (const usecase of version.usecase) {
@@ -40,4 +46,27 @@ export const getFileFromRefrence = async (filePath: string) => {
     console.error("error while fetching file", e);
     throw new Error("Error while fetching file");
   }
+};
+
+type Item = {
+  tags?: string[];
+};
+
+export const filterByTags = (
+  items: Item[],
+  options?: string[] | null
+): Item[] => {
+  if (!options || options.length === 0) {
+    return items;
+  }
+
+  if(options.length === 1 && options[0] === "WORKBENCH") {
+    return items.filter(item => !('tags' in item));
+  }
+
+  return items.filter(
+    (item) =>
+      Array.isArray(item.tags) &&
+      options.every((option) => item.tags!.includes(option))
+  );
 };
