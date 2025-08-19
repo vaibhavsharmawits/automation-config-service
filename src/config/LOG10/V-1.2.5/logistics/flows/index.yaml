@@ -4232,3 +4232,1089 @@ flows:
         description: LSP accepts the order (add the surge charge in the quote)
         pair: null
         owner: BPP
+  - id: ORDER_FLOW_EXCHANGE_CUSTOMER_SUPPORT_DETAILS
+    description: Standard point-to-point delivery flow including baseline features with customer support details
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS_EXCHANGE
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS_EXCHANGE
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: ORDER_FLOW_CODIFIED_STATIC_TERMS
+    description: Standard point-to-point delivery flow including baseline features with codifed static terms
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS_CODIFIED
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS_CODIFIED
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS_CODIFIED
+        owner: BAP
+      - key: on_confirm_LOGISTICS_CODIFIED
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: ORDER_FLOW_RCM
+    description: Standard point-to-point delivery flow including baseline features with rcm self-declartion
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS_RCM
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS_RCM
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS_RCM
+        owner: BAP
+      - key: on_confirm_LOGISTICS_RCM
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: ORDER_FLOW_BASE_LINE_PUBLIC_SPECIAL_CAPABILITIES
+    description: Standard point-to-point delivery flow including baseline features with public special capabilities
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS_PUBLIC_SPECIAL
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS_PUBLIC_SPECIAL
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: ORDER_FLOW_BASE_LINE_SLA_METRICS
+    description: Standard point-to-point delivery flow including baseline features
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS_SLA
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS_SLA
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS_SLA
+        owner: BAP
+      - key: on_confirm_LOGISTICS_SLA
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP  
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BP
+  - id: ORDER_FLOW_BASE_LINE_SELLER_CREDS
+    description: Standard point-to-point delivery flow including baseline features
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS_SELLER_CREDS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  
+  - id: UPDATE_DELIVERY_ADDRESS
+    description: Standard point-to-point delivery flow including baseline features
+    tags: ["WORKBENCH"]
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - F&B
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Standard Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS_SELLER_CREDS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status (At-pickup)
+        label: At-pickup
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order-picked-up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_12_LOGISTICS
+        type: on_status
+        label: At-delivery
+        unsolicited: true
+        description: LSP updates order status [At-delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order-delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
