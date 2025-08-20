@@ -49,6 +49,11 @@ flows:
         pair: on_select_form_submission
         owner: BAP
         expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: text
+            payloadField: $.message.intent.dummy
       - key: on_select_form_submission
         type: on_select
         unsolicited: false
