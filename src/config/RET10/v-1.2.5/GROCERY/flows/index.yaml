@@ -1365,3 +1365,69 @@ flows:
         owner: BPP
         expect: false
         description: Seller Accepts force cancellation
+  - id: Commercial_Model_For_BNP/SNP_Flow
+    description: Retail 1.2.5 (Commercial model)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP selects items from the catalog
+        input:
+          - name: grocery_select
+            type: ret10_grocery_select
+      - key: on_select_commercial_model
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP returns quote with channel margin as convenience fee (misc quote line item type) for selected items
+      - key: init_commercial_model
+        type: init
+        unsolicited: false
+        pair: on_init_commercial_model
+        owner: BAP
+        expect: true
+        description: BAP initiates order, selecting specific channel margin options and providing platform fees for COD if applicable
+        input:
+          - name: np_fees
+            label: Select NP Fees (choose one per item)
+            type: checkbox
+            options:
+              - code: "I1_npf_1"
+                name: "np_fee 1 for I1"
+              - code: "I1_npf_2"
+                name: "np_fee 2  for I1"
+              - code: "I2_npf_1"
+                name: "np_fee 1 for I2"
+              - code: "I2_npf_2"
+                name: "np_fee 2 for I2"
+              - code: "I3_npf_1"
+                name: "np_fee 1 for I3"
+              - code: "I3_npf_2"
+                name: "np_fee 2 for I3"
+            description: BNP selects np_fees option (channel margin) per item
+      - key: on_init_commercial_model
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP responds with updated quote, including selected channel margin option as convenience fee
+      - key: confirm_commercial_model
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: true
+        description: BAP confirms the order, including payment details for COD if applicable
+      - key: on_confirm_commercial_model
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP accepts order confirmation
