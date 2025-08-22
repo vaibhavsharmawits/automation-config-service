@@ -1,0 +1,174 @@
+flows:
+  - id: Discovery_of_product_from_master_policies
+    description: Discovery of Products from Master Policies
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: policy_id
+            label: Enter policy id
+            type: text
+            payloadField: $.message.intent.provider.tags[*].list[*].value
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Discovery_of_Insurer_Providers_and_Master_Policies
+    description: Discovery of Insurer Providers and Master Policies
+    sequence:
+      - key: search_insurence_provider
+        type: search
+        unsolicited: false
+        pair: on_search_insurence_provider
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: person_id
+            label: Enter person id
+            type: text
+            payloadField: $.message.intent.fulfillment.agent.person.id  
+      - key: on_search_insurence_provider 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+    
+  - id: Purchase_Journey_Transit_Insurance
+    description: Purchase Journey Transit Insurance
+    sequence:
+      - key: search_purchase_journey_transit
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_journey_transit
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_purchase_journey_transit
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Purchase_Journey_Hospicash_Insurance
+    description: Purchase Journey Hospicash Insurance
+    sequence:
+      - key: search_purchase_journey_hospicash
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_journey_hospicash
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_purchase_journey_hospicash
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select_hospicash
+        owner: BAP
+        expect: false
+      - key: on_select_hospicash
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: init_hospicash
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_hospicash
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_hospicash
+        owner: BAP
+        expect: false
+      - key: on_confirm_hospicash
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_hospicash
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
