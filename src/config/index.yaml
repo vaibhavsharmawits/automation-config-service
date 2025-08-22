@@ -28,6 +28,15 @@ domain:
             flows: "./TRV10/V-2.1.0/ride-hailing/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
+  - name: 'ONDC:TRV14'
+    versions:
+      - id: 2.0.0
+        reporting: false
+        supportedActions:
+          $ref: src/config/TRV14/V-2.0.0/supportedActions/index.yaml
+        usecase:
+          - flows: ./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml
+            name: unreserved-entry-pass
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -82,7 +91,15 @@ domain:
             flows: "./RET12/V-1.2.5/FASHION/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET12/V-1.2.5/supportedActions/index.yaml"
-          # $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
+  - name: 'ONDC:RET13'
+    versions:
+      - id: 1.2.5
+        reporting: false
+        supportedActions:
+          $ref: src/config/RET13/V-1.2.5/supportedActions/index.yaml
+        usecase:
+          - flows: ./RET13/V-1.2.5/BPC/flows/index.yaml
+            name: BPC
   - name: ONDC:RET14
     versions:
       - id: 1.2.5
@@ -145,6 +162,11 @@ usecases:
         - key: 2.1.0
           usecase:
             - Ride-hailing
+    - key: 'ONDC:TRV14'
+      version:
+        - key: 2.0.0
+          usecase:
+            - unreserved-entry-pass
     - key: ONDC:LOG10
       version:
         - key: 1.2.5
@@ -177,7 +199,7 @@ usecases:
             - HEALTH&WELLNESS
     - key: ONDC:RET13
       version:
-        - key: 2.0.0
+        - key: 1.2.5
           usecase:
             - BPC
     - key: ONDC:RET14
