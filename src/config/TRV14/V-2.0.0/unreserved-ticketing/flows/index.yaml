@@ -344,7 +344,7 @@ flows:
   - id: User Cancellation (Partial)
     description: Partial Cancellation flow (cancel 1 quantity of item)
     sequence:
-      - key: select
+      - key: select_for_partial_cancellation
         type: select
         unsolicited: false
         pair: on_select_without_form
