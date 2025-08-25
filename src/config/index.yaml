@@ -84,13 +84,13 @@ domain:
           $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:TRV13
     versions:
-      - id: 2.1.0
+      - id: 2.0.0
         reporting: false
         usecase:
           - name: Hotel-Booking
-            flows: "./TRV13/V-2.1.0/hotel-booking/flows/index.yaml"
+            flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV13/V-2.1.0/supportedActions/index.yaml"          
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"          
   - name: ONDC:RET12
     versions:
       - id: 1.2.5
@@ -168,7 +168,7 @@ usecases:
             - Bus
     - key: ONDC:TRV13
       version:
-        - key: 2.1.0
+        - key: 2.0.0
           usecase:
             - Hotel-Booking       
     - key: ONDC:TRV10
