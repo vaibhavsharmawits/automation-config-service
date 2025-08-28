@@ -82,6 +82,15 @@ domain:
             flows: "./TRV14/V-2.0.0/entry-pass/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:TRV13
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: Hotel-Booking
+            flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"          
   - name: ONDC:RET12
     versions:
       - id: 1.2.5
@@ -157,6 +166,11 @@ usecases:
           usecase:
             - Metro
             - Bus
+    - key: ONDC:TRV13
+      version:
+        - key: 2.0.0
+          usecase:
+            - Hotel-Booking       
     - key: ONDC:TRV10
       version:
         - key: 2.1.0
