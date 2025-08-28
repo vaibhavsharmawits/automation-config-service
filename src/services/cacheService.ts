@@ -10,7 +10,6 @@ export const getConfigService = async () => {
     // Fetch session data from Redis
     // const sessionData = await redisClient.get(sessionId);
     let sessionData = await RedisService.getKey("config");
-
     if (!sessionData) {
       const config = await loadYAMLWithRefs(path.join(__dirname, configPath));
       await setConfigService(config);
@@ -21,8 +20,8 @@ export const getConfigService = async () => {
       // })
       // .catch(console.error);
 
-      console.log("console::::::::::…", config, typeof config)
-      return config
+      console.log("console::::::::::…", config, typeof config);
+      return config;
     } else {
       return JSON.parse(sessionData || "{}");
     }
