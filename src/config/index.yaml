@@ -29,6 +29,15 @@ domain:
             flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:TRV13
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: Hotel-Booking
+            flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"        
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -141,6 +150,11 @@ usecases:
         - key: 1.2.5
           usecase:
             - F&B
+    - key: ONDC:TRV13
+      version:
+        - key: 2.0.0
+          usecase:
+            - Hotel-Booking        
     - key: ONDC:RET10
       version:
         - key: 1.2.5
