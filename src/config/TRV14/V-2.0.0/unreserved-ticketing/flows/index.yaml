@@ -1,6 +1,3 @@
-#expect true = session will be created 
-#expect false = session will not be created
-
 flows:
   - id: seller_app_pagination_journey
     description: Seller App Pagination flow with repeated on_search steps
@@ -66,7 +63,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: purchase_journey_with_form 
+  - id: purchase_journey_with_form
     description: Purchase flow with form (select - on_status)
     sequence:
       - key: select
@@ -85,17 +82,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: first_form_testing
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.first_form_testing
       - key: select_form_submission
         type: select
         unsolicited: false
         pair: on_select_form_submission
         owner: BAP
         expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: text
-            payloadField: $.message.intent.dummy
+        force_proceed: true
       - key: on_select_form_submission
         type: on_select
         unsolicited: false
@@ -139,7 +144,7 @@ flows:
         owner: BPP
         expect: false
   - id: purchase_journey_without_form
-    description: purchase journey select to on_status without form 
+    description: purchase journey select to on_status without form
     sequence:
       - key: select
         type: select
@@ -212,7 +217,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-     
+
       - key: init
         type: init
         unsolicited: false
@@ -264,6 +269,36 @@ flows:
   - id: User Cancellation (Full)
     description: User Cancellation flow (soft & confirm cancel)
     sequence:
+      - key: search_seller_pagination
+        type: search
+        unsolicited: false
+        pair: on_search_seller_pagination_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.city.code
+
+      - key: on_search_seller_pagination_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
       - key: select
         type: select
         unsolicited: false
@@ -351,6 +386,49 @@ flows:
         owner: BAP
         expect: true
         input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.city.code
+
+      - key: on_search_seller_pagination_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_seller_pagination_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_partial_cancellation
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+      - key: on_select_form_submission
+        input:
           - name: select_input
             label: Enter
             type: trv_select
@@ -360,7 +438,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-     
       - key: init
         type: init
         unsolicited: false
@@ -409,7 +486,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-
   - id: Cancellation Rejected
     description: cancellation_rejected flow (soft cancel rejected)
     sequence:
