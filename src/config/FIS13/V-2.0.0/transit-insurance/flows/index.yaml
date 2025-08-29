@@ -1,28 +1,4 @@
 flows:
-  - id: Discovery_of_product_from_master_policies
-    description: Discovery of Products from Master Policies
-    sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        pair: on_search
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: policy_id
-            label: Enter policy id
-            type: text
-            payloadField: $.message.intent.provider.tags[*].list[*].value
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
   - id: Discovery_of_Insurer_Providers_and_Master_Policies
     description: Discovery of Insurer Providers and Master Policies
     sequence:
@@ -47,6 +23,54 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: Discovery_of_Products_from_Master_Policies (Transit Insurance)
+    description: Discovery of Products from Master Policies (Transit Insurance)
+    sequence:
+      - key: search_discover_product_transit
+        type: search
+        unsolicited: false
+        pair: on_search_discover_product_tranist
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: policy_name
+            label: Enter Policy
+            type: text
+            payloadField: $.message.catalog.descriptor.name
+      - key: on_search_discover_product_tranist 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Discovery_of_Products_from_Master_Policies (Hospicash Insurance)
+    description: Discovery of Products from Master Policies (Hospicash Insurance)
+    sequence:
+      - key: search_discover_product_hospicash
+        type: search
+        unsolicited: false
+        pair: on_search_discover_product_hospicash
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: policy_name
+            label: Enter Policy
+            type: text
+            payloadField: $.message.catalog.descriptor.name
+      - key: on_search_discover_product_hospicash 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
     
   - id: Purchase_Journey_Transit_Insurance
     description: Purchase Journey Transit Insurance
@@ -62,6 +86,26 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: buyer_name
+            label: Enter buyer name
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: phone_number
+            label: Enter phone number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: pan_number
+            label: Enter pan number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: start_address
+            label: Enter start address
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: end_address
+            label: Enter end address
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
       - key: on_search_purchase_journey_transit
         type: on_search
         unsolicited: false
@@ -85,7 +129,12 @@ flows:
         unsolicited: false
         pair: on_init
         owner: BAP
-        expect: false
+        expect: true
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
       - key: on_init
         type: on_init
         unsolicited: false
@@ -124,6 +173,34 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: buyer_name
+            label: Enter buyer name
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: phone_number
+            label: Enter phone number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: pan_number
+            label: Enter pan number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: dob
+            label: Enter date of birth
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: gender
+            label: Enter gender
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: email
+            label: Enter email
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: sum_insured
+            label: Enter sum insured
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
       - key: on_search_purchase_journey_hospicash
         type: on_search
         unsolicited: false
@@ -142,13 +219,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_hospicash
         type: init
         unsolicited: false
-        pair: init_hospicash
+        pair: on_init_hospicash
         owner: BAP
-        expect: false
-      - key: on_init
+        expect: true
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+      - key: on_init_hospicash
         type: on_init
         unsolicited: false
         pair: null
