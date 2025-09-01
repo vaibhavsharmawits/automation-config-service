@@ -118,6 +118,15 @@ domain:
             flows: "./RET15/v-1.2.5/APPLIANCES/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET15/v-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:RET18
+    versions:
+      - id: 1.2.5
+        reporting: false
+        usecase:
+          - name: HEALTH&WELLNESS
+            flows: "./RET18/V-1.2.5/HEALTH&WELLNESS/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
