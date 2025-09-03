@@ -73,15 +73,6 @@ domain:
             flows: "./RET10/v-1.2.5/GROCERY/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET10/v-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:TRV14
-    versions:
-      - id: 2.0.0
-        reporting: false
-        usecase:
-          - name: Entry-Pass
-            flows: "./TRV14/V-2.0.0/entry-pass/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:TRV13
     versions:
       - id: 2.0.0
