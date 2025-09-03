@@ -1,0 +1,121 @@
+flows:
+  - id: Discovery of Metro Card Recharge.
+    description: Discovery of Metro Card Recharge.
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Metro Card Balance - Success
+    description: Discovery of Metro Card Balance (select/on_select & init_on_init calls are optional).
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_card_balance_success
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_card_balance_success
+        owner: BAP
+        expect: false
+      - key: on_confirm_card_balance_success
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Metro Card Balance - Failure
+    description: Discovery of Metro Card Balance (select/on_select & init_on_init calls are optional).
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_card_balance_faliure
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_card_balance_faliure
+        owner: BAP
+        expect: false
+      - key: on_confirm_card_balance_faliure
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
