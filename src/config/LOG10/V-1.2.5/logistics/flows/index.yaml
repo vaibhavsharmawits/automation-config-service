@@ -5972,6 +5972,7 @@ flows:
       type: select
       values:
       - Standard Delivery
+      - Immediate Delivery
       - Next Day Delivery
       - Same Day Delivery
       payloadField: $.message.intent.category.id
@@ -5980,6 +5981,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -6006,6 +6009,40 @@ flows:
       type: text
       payloadField: $.message.intent.fulfillment.end.location.address.area_code
       default: "560001"
+    - name: feature_discovery
+      label: Features supported
+      type: checkbox
+      options:
+      - code: "003"
+        name: "Rate Card for P2P"
+      - code: "004"
+        name: "Rate Card for P2H2P"
+      - code: "00B"
+        name: "Updated cancellation codes"
+      - code: "00C"
+        name: "FIFO orders"
+      - code: "00E"
+        name: "Pickup & delivery attempt trail (P2H2P)"
+      - code: "00F"
+        name: "ePOD"
+      - code: "017"
+        name: "Surge fee"
+      - code: "019"
+        name: "eWay bill"
+      - code: "01A"
+        name: "Cancellation terms"
+      - code: "01C"
+        name: "SLA metrics"
+      - code: "01D"
+        name: "Publish special capabilities"
+      - code: "01E"
+        name: "RCM self-declaration"
+      - code: "01F"
+        name: "Codified static terms"
+      - code: "020"
+        name: "Exchange customer support contact details"
+      - code: "021"
+        name: "Differential weight charges"
   - key: on_search_rate_card_LOGISTICS
     type: on_search
     unsolicited: false
