@@ -1,16 +1,16 @@
 supportedActions:
-  null: ["search","select"]
+  null: ["search"]
   search: ["on_search"]
-  on_search: ["search", "select","on_search"]
-  select: ["on_select","select"]
-  on_select: ["init","on_select","select"]
+  on_search: ["search", "select"]
+  select: ["on_select"]
+  on_select: ["init"]
   init: ["on_init"]
   on_init: ["init", "confirm"]
   confirm: ["on_confirm", "status"]
   on_confirm: ["status", "cancel", "on_status", "on_update","update","on_cancel"]
   status: ["on_status"]
   on_status: ["status", "cancel", "on_update","track","on_status","update"]
-  on_update: ["status","update","on_status","track"]
+  on_update: ["status","update","on_status","track", "cancel", "on_cancel"]
   cancel: ["on_cancel", "status"]
   on_cancel: ["cancel", "status","on_status"]
   track: ["on_track"]
@@ -22,20 +22,20 @@ apiProperties:
     async_predecessor: null
     transaction_partner: []
   on_search:
-    async_predecessor: null
+    async_predecessor: "search"
     transaction_partner: ["search"]
   select:
     async_predecessor: null
-    transaction_partner: []
+    transaction_partner: ["search"]
   on_select:
-    async_predecessor: null
-    transaction_partner: ["select"]
+    async_predecessor: "select"
+    transaction_partner: ["select", "search", "on_search"]
   init:
     async_predecessor: null
-    transaction_partner: ["select", "on_select"]
+    transaction_partner: ["select", "search", "on_search", "on_select"]
   on_init:
     async_predecessor: "init"
-    transaction_partner: ["init", "select", "on_select"]
+    transaction_partner: ["init", "select", "search", "on_search", "on_select"]
   confirm:
     async_predecessor: null
     transaction_partner: ["init", "on_init"]
@@ -50,10 +50,10 @@ apiProperties:
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   cancel:
     async_predecessor: null
-    transaction_partner: ["confirm", "on_confirm"]
+    transaction_partner: ["confirm", "on_confirm","on_update", "update"]
   on_cancel:
     async_predecessor: null
-    transaction_partner: ["confirm","on_confirm"]
+    transaction_partner: ["confirm","on_confirm","on_update", "update"]
   track:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
@@ -62,7 +62,7 @@ apiProperties:
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   update:
     async_predecessor: null
-    transaction_partner: []
+    transaction_partner: ["status", "on_status"]
   on_update:
     async_predecessor: null
-    transaction_partner: []
+    transaction_partner: ["update","status", "on_status"]
