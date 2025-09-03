@@ -38,6 +38,7 @@ export function filterDomainData(
 
 export const getFileFromRefrence = async (filePath: string) => {
   try {
+    console.log("filePath", filePath);
     const config = await loadYAMLWithRefs(
       path.join(__dirname, "../config", filePath)
     );
