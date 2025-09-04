@@ -1344,27 +1344,50 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order out for delivery
-      - key: cancel
+      - key: cancel_no
         type: cancel
         unsolicited: false
         pair: null
         owner: BAP
         expect: false
-        description: Buyer cancels product
-      - key: cancel_force
+        description: Buyer side full order cancellation
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "052"
+            default: "052"
+      - key: cancel_yes
         type: cancel
-        unsolicited: true
+        unsolicited: false
         pair: on_cancel_force
         owner: BAP
         expect: false
-        description: Buyer force cancels product
+        description: Buyer side full order cancellation
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "052"
+            default: "052"
       - key: on_cancel_force
         type: on_cancel
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-        description: Seller Accepts force cancellation
+        description: Seller Accepts cancellation
+      - key: update_settlement_cancel
+        type: update
+        unsolicited: true
+        pair: null
+        owner: BAP
+        expect: false
+        description: settlement trail update
   - id: Commercial_Model_For_BNP/SNP_Flow
     description: Retail 1.2.5 (Commercial model)
     sequence:
