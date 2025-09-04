@@ -37,7 +37,14 @@ domain:
           - name: Hotel-Booking
             flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"        
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml" 
+      - id: 2.0.1
+        reporting: false
+        usecase:
+          - name: Hotel-Booking-V2
+            flows: "./TRV13/V-2.0.1/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"           
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -172,7 +179,10 @@ usecases:
       version:
         - key: 2.0.0
           usecase:
-            - Hotel-Booking        
+            - Hotel-Booking 
+        - key: 2.0.1
+          usecase:
+            - Hotel-Booking-V2           
     - key: ONDC:RET10
       version:
         - key: 1.2.5
