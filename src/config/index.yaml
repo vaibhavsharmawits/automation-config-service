@@ -73,15 +73,6 @@ domain:
             flows: "./RET10/v-1.2.5/GROCERY/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET10/v-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:TRV14
-    versions:
-      - id: 2.0.0
-        reporting: false
-        usecase:
-          - name: Entry-Pass
-            flows: "./TRV14/V-2.0.0/entry-pass/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:TRV13
     versions:
       - id: 2.0.0
@@ -90,7 +81,14 @@ domain:
           - name: Hotel-Booking
             flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"          
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"   
+      - id: 2.0.1
+        reporting: false
+        usecase:
+          - name: Hotel-Booking-V2
+            flows: "./TRV13/V-2.0.1/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"                
   - name: ONDC:RET12
     versions:
       - id: 1.2.5
@@ -154,6 +152,15 @@ domain:
             flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
         supportedActions:
           $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:FIS11
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: metro-card-recharge
+            flows: "./FIS11/V-2.0.0/metroCardRecharge/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -170,7 +177,10 @@ usecases:
       version:
         - key: 2.0.0
           usecase:
-            - Hotel-Booking       
+            - Hotel-Booking    
+        - key: 2.0.1
+          usecase:
+            - Hotel-Booking-V2            
     - key: ONDC:TRV10
       version:
         - key: 2.1.0
@@ -241,3 +251,8 @@ usecases:
         - key: 2.0.0
           usecase:
             - transit-insurance
+    - key: ONDC:FIS11
+      version:
+        - key: 2.0.0
+          usecase:
+            - metro-card-recharge
