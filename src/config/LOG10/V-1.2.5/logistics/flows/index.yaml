@@ -5267,6 +5267,84 @@ flows:
     description: LBNP updates order details
     pair: on_update_LOGISTICS
     owner: BAP
+    input:
+      - name: delivery_section
+        label: Select section(s) to update
+        type: multiselect
+        values:
+          - location
+          - contact
+          - person
+      - name: delivery_location_gps
+        label: Enter delivery GPS coordinates
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.location.gps'
+        default: '12.4535,77.9283'
+        showIf: delivery_section contains "location"
+      - name: delivery_address_name
+        label: Enter delivery address
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.location.address.name'
+        default: My store name 2
+        showIf: delivery_section contains "location"
+      - name: delivery_address_building
+        label: Enter building name
+        type: text
+        payloadField: >-
+          $.message.fulfillments[?(@.type=='Delivery')].end.location.address.building
+        default: My building name 2
+        showIf: delivery_section contains "location"
+      - name: delivery_address_locality
+        label: Enter locality
+        type: text
+        payloadField: >-
+          $.message.fulfillments[?(@.type=='Delivery')].end.location.address.locality
+        default: My street name 2
+        showIf: delivery_section contains "location"
+      - name: delivery_address_city
+        label: Enter city
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.location.address.city'
+        default: my city name 2
+        showIf: delivery_section contains "location"
+      - name: delivery_address_state
+        label: Enter state
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.location.address.state'
+        default: my state 2
+        showIf: delivery_section contains "location"
+      - name: delivery_address_country
+        label: Enter country
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.location.address.country'
+        default: India
+        showIf: delivery_section contains "location"
+      - name: delivery_address_area_code
+        label: Enter area code
+        type: text
+        payloadField: >-
+          $.message.fulfillments[?(@.type=='Delivery')].end.location.address.area_code
+        default: 560001
+        showIf: delivery_section contains "location"
+      - name: delivery_contact_phone
+        label: Enter phone number
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.contact.phone'
+        default: 9123426789
+        showIf: end_section contains "contact"
+      - name: delivery_contact_email
+        label: Enter email address
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.contact.email'
+        default: xyz.qweq@gmail.com
+        showIf: end_section contains "contact"
+      - name: delivery_person_name
+        label: Enter receiver name
+        type: text
+        payloadField: '$.message.fulfillments[?(@.type==''Delivery'')].end.person.name'
+        default: person_name_2
+        showIf: delivery_section contains "person"
+    
   - key: on_update_DELIVERY_ADDRESS
     type: on_update
     unsolicited: false
@@ -5944,11 +6022,11 @@ flows:
 - id: RATE_CARD (P2P)
   description: Rate Card for point-to-point logistics operations
   sequence: 
-  - key: search_rate_card_LOGISTICS
+  - key: search_rate_card_P2P_LOGISTICS
     type: search
     unsolicited: false
     description: LBNP sends a search request
-    pair: on_search_rate_card_LOGISTICS
+    pair: on_search_rate_card_P2P_LOGISTICS
     owner: BAP
     expect: true
     input:
@@ -6043,7 +6121,7 @@ flows:
         name: "Exchange customer support contact details"
       - code: "021"
         name: "Differential weight charges"
-  - key: on_search_rate_card_LOGISTICS
+  - key: on_search_rate_card_P2P_LOGISTICS
     type: on_search
     unsolicited: false
     description: LSP responds with catalog
