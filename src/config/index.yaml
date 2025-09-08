@@ -32,11 +32,11 @@ domain:
     versions:
       - id: 2.0.0
         reporting: false
+        supportedActions:
+          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
         usecase:
           - name: unreserved-entry-pass
             flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -73,33 +73,40 @@ domain:
             flows: "./RET10/v-1.2.5/GROCERY/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET10/v-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:TRV14
+  - name: ONDC:TRV13
     versions:
       - id: 2.0.0
         reporting: false
         usecase:
-          - name: Entry-Pass
-            flows: "./TRV14/V-2.0.0/entry-pass/flows/index.yaml"
+          - name: Hotel-Booking
+            flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"   
+      - id: 2.0.1
+        reporting: false
+        usecase:
+          - name: Hotel-Booking-V2
+            flows: "./TRV13/V-2.0.1/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"                
   - name: ONDC:RET12
     versions:
       - id: 1.2.5
         reporting: false
         usecase:
           - name: FASHION
-            flows: "./RET13/V-1.2.5/BPC/flows/index.yaml"
+            flows: "./RET12/V-1.2.5/FASHION/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
+          $ref: "src/config/RET12/V-1.2.5/supportedActions/index.yaml"
   - name: ONDC:RET13
     versions:
       - id: 1.2.5
         reporting: false
+        supportedActions:
+          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
         usecase:
           - name: BPC
             flows: "./RET13/V-1.2.5/BPC/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
   - name: ONDC:RET14
     versions:
       - id: 1.2.5
@@ -136,6 +143,24 @@ domain:
             flows: "./RET18/V-1.2.5/Health&Wellness/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:FIS13
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: transit-insurance
+            flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:FIS11
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: metro-card-recharge
+            flows: "./FIS11/V-2.0.0/metroCardRecharge/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -148,12 +173,19 @@ usecases:
           usecase:
             - Metro
             - Bus
+    - key: ONDC:TRV13
+      version:
+        - key: 2.0.0
+          usecase:
+            - Hotel-Booking    
+        - key: 2.0.1
+          usecase:
+            - Hotel-Booking-V2            
     - key: ONDC:TRV10
       version:
         - key: 2.1.0
           usecase:
             - Ride-hailing
-    
     - key: ONDC:TRV14
       version:
         - key: 2.0.0
@@ -214,8 +246,13 @@ usecases:
         - key: 2.0.0
           usecase:
             - unreserved-entry-pass
-    - key: ONDC:RET15
+    - key: ONDC:FIS13
       version:
-        - key: 1.2.5
+        - key: 2.0.0
           usecase:
-            - APPLIANCES
+            - transit-insurance
+    - key: ONDC:FIS11
+      version:
+        - key: 2.0.0
+          usecase:
+            - metro-card-recharge

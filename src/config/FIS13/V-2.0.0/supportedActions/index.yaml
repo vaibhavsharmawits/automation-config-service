@@ -1,9 +1,9 @@
 supportedActions:
-  null: ["search","select"]
+  null: ["search"]
   search: ["on_search"]
-  on_search: ["search", "select","on_search"]
-  select: ["on_select","select"]
-  on_select: ["init","on_select","select"]
+  on_search: ["search", "select"]
+  select: ["on_select"]
+  on_select: ["init"]
   init: ["on_init"]
   on_init: ["init", "confirm"]
   confirm: ["on_confirm", "status"]
@@ -26,16 +26,16 @@ apiProperties:
     transaction_partner: ["search"]
   select:
     async_predecessor: null
-    transaction_partner: []
+    transaction_partner: ["search"]
   on_select:
     async_predecessor: null
-    transaction_partner: ["select"]
+    transaction_partner: ["select", "search", "on_search"]
   init:
     async_predecessor: null
-    transaction_partner: ["select", "on_select"]
+    transaction_partner: ["select", "search", "on_search", "on_select"]
   on_init:
     async_predecessor: "init"
-    transaction_partner: ["init", "select", "on_select"]
+    transaction_partner: ["init", "select", "search", "on_search", "on_select"]
   confirm:
     async_predecessor: null
     transaction_partner: ["init", "on_init"]
