@@ -24,9 +24,12 @@ supportedActions:
       "on_track",
       "update",
       "on_update",
+      "issue"
     ]
   cancel: ["on_cancel", "status"]
   on_cancel: ["cancel", "status", "on_status"]
+  issue: ["on_issue","issue"]
+  on_issue: ["issue", "on_issue","on_update"]
 
 apiProperties:
   search:
@@ -77,3 +80,4 @@ apiProperties:
   on_track:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm", "on_confirm", "track"]
+  
