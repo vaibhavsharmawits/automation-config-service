@@ -230,6 +230,22 @@ flows:
             label: Enter nominee name
             type: text
             payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: nominee_dob 
+            label: Enter nominee dob
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: apointee_name 
+            label: Enter apointee name
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: apointee_dob
+            label: Enter apointee dob
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: health_declratation 
+            label: Enter health declaration 
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value     
       - key: on_init_hospicash
         type: on_init
         unsolicited: false
