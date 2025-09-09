@@ -143,6 +143,15 @@ domain:
             flows: "./RET18/V-1.2.5/Health&Wellness/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:FIS11
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: metro-card-recharge
+            flows: "./FIS11/V-2.0.0/metroCardRecharge/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -223,3 +232,8 @@ usecases:
         - key: 1.2.5
           usecase:
             - HEALTH&WELLNESS
+    - key: ONDC:FIS11
+      version:
+        - key: 2.0.0
+          usecase:
+            - metro-card-recharge
