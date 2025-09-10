@@ -109,6 +109,33 @@ domain:
             flows: "./RET14/v-1.2.5/ELECTRONICS/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET14/v-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:FIS14
+    versions:
+      - id: 2.1.0
+        reporting: false
+        usecase:
+          - name: MUTUAL FUNDS
+            flows: "./FIS14/V-2.1.0/mutualFunds/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS14/V-2.1.0/supportedActions/index.yaml"
+  - name: ONDC:FIS10
+    versions:
+      - id: 2.1.0
+        reporting: false
+        usecase:
+          - name: GIFT CARDS
+            flows: "./FIS10/V-2.1.0/giftCard/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"
+  - name: ONDC:FIS12
+    versions:
+      - id: 2.0.2
+        reporting: false
+        usecase:
+          - name: GOLD LOAN
+            flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -167,3 +194,18 @@ usecases:
         - key: 1.2.5
           usecase:
             - ELECTRONICS
+    - key: ONDC:FIS14
+      version:
+        - key: 2.1.0
+          usecase:
+            - MUTUAL FUNDS
+    - key: ONDC:FIS10
+      version:
+        - key: 2.1.0
+          usecase:
+            - GIFT CARDS
+    - key: ONDC:FIS12
+      version:
+        - key: 2.0.2
+          usecase:
+            - GOLD LOAN
