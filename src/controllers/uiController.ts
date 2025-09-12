@@ -5,6 +5,7 @@ import { filterDomainData, getFileFromRefrence, filterByTags } from "../utils";
 export const getFlows = async (req: Request, res: Response) => {
   try {
     const query = req.query;
+    console.log("query", query);
     const config = await getConfigService();
 
     const filePath = filterDomainData(
