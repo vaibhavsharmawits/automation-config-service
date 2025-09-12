@@ -32,11 +32,11 @@ domain:
     versions:
       - id: 2.0.0
         reporting: false
+        supportedActions:
+          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
         usecase:
           - name: unreserved-entry-pass
             flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -73,33 +73,40 @@ domain:
             flows: "./RET10/v-1.2.5/GROCERY/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET10/v-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:TRV14
+  - name: ONDC:TRV13
     versions:
       - id: 2.0.0
         reporting: false
         usecase:
-          - name: Entry-Pass
-            flows: "./TRV14/V-2.0.0/entry-pass/flows/index.yaml"
+          - name: Hotel-Booking
+            flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"   
+      - id: 2.0.1
+        reporting: false
+        usecase:
+          - name: Hotel-Booking-V2
+            flows: "./TRV13/V-2.0.1/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"                
   - name: ONDC:RET12
     versions:
       - id: 1.2.5
         reporting: false
         usecase:
           - name: FASHION
-            flows: "./RET13/V-1.2.5/BPC/flows/index.yaml"
+            flows: "./RET12/V-1.2.5/FASHION/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
+          $ref: "src/config/RET12/V-1.2.5/supportedActions/index.yaml"
   - name: ONDC:RET13
     versions:
       - id: 1.2.5
         reporting: false
+        supportedActions:
+          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
         usecase:
           - name: BPC
             flows: "./RET13/V-1.2.5/BPC/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/RET13/V-1.2.5/supportedActions/index.yaml"
   - name: ONDC:RET14
     versions:
       - id: 1.2.5
@@ -109,33 +116,6 @@ domain:
             flows: "./RET14/v-1.2.5/ELECTRONICS/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET14/v-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:FIS14
-    versions:
-      - id: 2.1.0
-        reporting: false
-        usecase:
-          - name: MUTUAL FUNDS
-            flows: "./FIS14/V-2.1.0/mutualFunds/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/FIS14/V-2.1.0/supportedActions/index.yaml"
-  - name: ONDC:FIS10
-    versions:
-      - id: 2.1.0
-        reporting: false
-        usecase:
-          - name: GIFT CARDS
-            flows: "./FIS10/V-2.1.0/giftCard/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"
-  - name: ONDC:FIS12
-    versions:
-      - id: 2.0.2
-        reporting: false
-        usecase:
-          - name: GOLD LOAN
-            flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -148,12 +128,19 @@ usecases:
           usecase:
             - Metro
             - Bus
+    - key: ONDC:TRV13
+      version:
+        - key: 2.0.0
+          usecase:
+            - Hotel-Booking    
+        - key: 2.0.1
+          usecase:
+            - Hotel-Booking-V2            
     - key: ONDC:TRV10
       version:
         - key: 2.1.0
           usecase:
             - Ride-hailing
-    
     - key: ONDC:TRV14
       version:
         - key: 2.0.0
@@ -184,6 +171,11 @@ usecases:
         - key: 1.2.5
           usecase:
             - FASHION
+    - key: ONDC:RET18
+      version:
+        - key: 1.2.5
+          usecase:
+            - HEALTH&WELLNESS
     - key: ONDC:RET13
       version:
         - key: 1.2.5
@@ -194,18 +186,3 @@ usecases:
         - key: 1.2.5
           usecase:
             - ELECTRONICS
-    - key: ONDC:FIS14
-      version:
-        - key: 2.1.0
-          usecase:
-            - MUTUAL FUNDS
-    - key: ONDC:FIS10
-      version:
-        - key: 2.1.0
-          usecase:
-            - GIFT CARDS
-    - key: ONDC:FIS12
-      version:
-        - key: 2.0.2
-          usecase:
-            - GOLD LOAN

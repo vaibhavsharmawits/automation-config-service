@@ -1,0 +1,272 @@
+flows:
+  - id: Discovery_of_Insurer_Providers_and_Master_Policies
+    description: Discovery of Insurer Providers and Master Policies
+    sequence:
+      - key: search_insurence_provider
+        type: search
+        unsolicited: false
+        pair: on_search_insurence_provider
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: person_id
+            label: Enter person id
+            type: text
+            payloadField: $.message.intent.fulfillment.agent.person.id  
+      - key: on_search_insurence_provider 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Discovery_of_Products_from_Master_Policies (Transit Insurance)
+    description: Discovery of Products from Master Policies (Transit Insurance)
+    sequence:
+      - key: search_discover_product_transit
+        type: search
+        unsolicited: false
+        pair: on_search_discover_product_tranist
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: policy_name
+            label: Enter Policy
+            type: text
+            payloadField: $.message.catalog.descriptor.name
+      - key: on_search_discover_product_tranist 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Discovery_of_Products_from_Master_Policies (Hospicash Insurance)
+    description: Discovery of Products from Master Policies (Hospicash Insurance)
+    sequence:
+      - key: search_discover_product_hospicash
+        type: search
+        unsolicited: false
+        pair: on_search_discover_product_hospicash
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: policy_name
+            label: Enter Policy
+            type: text
+            payloadField: $.message.catalog.descriptor.name
+      - key: on_search_discover_product_hospicash 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+    
+  - id: Purchase_Journey_Transit_Insurance
+    description: Purchase Journey Transit Insurance
+    sequence:
+      - key: search_purchase_journey_transit
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_journey_transit
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: buyer_name
+            label: Enter buyer name
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: phone_number
+            label: Enter phone number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: pan_number
+            label: Enter pan number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: start_address
+            label: Enter start address
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: end_address
+            label: Enter end address
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+      - key: on_search_purchase_journey_transit
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: true
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Purchase_Journey_Hospicash_Insurance
+    description: Purchase Journey Hospicash Insurance
+    sequence:
+      - key: search_purchase_journey_hospicash
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_journey_hospicash
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: buyer_name
+            label: Enter buyer name
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: phone_number
+            label: Enter phone number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: pan_number
+            label: Enter pan number
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: dob
+            label: Enter date of birth
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: gender
+            label: Enter gender
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: email
+            label: Enter email
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: sum_insured
+            label: Enter sum insured
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+      - key: on_search_purchase_journey_hospicash
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select_hospicash
+        owner: BAP
+        expect: false
+      - key: on_select_hospicash
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_hospicash
+        type: init
+        unsolicited: false
+        pair: on_init_hospicash
+        owner: BAP
+        expect: true
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: nominee_dob 
+            label: Enter nominee dob
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: apointee_name 
+            label: Enter apointee name
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: apointee_dob
+            label: Enter apointee dob
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+          - name: health_declratation 
+            label: Enter health declaration 
+            type: text
+            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value     
+      - key: on_init_hospicash
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_hospicash
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_hospicash
+        owner: BAP
+        expect: false
+      - key: on_confirm_hospicash
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_hospicash
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false

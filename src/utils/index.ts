@@ -38,6 +38,7 @@ export function filterDomainData(
 
 export const getFileFromRefrence = async (filePath: string) => {
   try {
+    console.log("filePath", filePath);
     const config = await loadYAMLWithRefs(
       path.join(__dirname, "../config", filePath)
     );
@@ -58,6 +59,10 @@ export const filterByTags = (
 ): Item[] => {
   if (!options || options.length === 0) {
     return items;
+  }
+
+  if(options.length === 1 && options[0] === "WORKBENCH") {
+    return items.filter(item => !('tags' in item));
   }
 
   return items.filter(
