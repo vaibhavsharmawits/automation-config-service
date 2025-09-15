@@ -1,81 +1,6 @@
-flows:
-  - id: Gold_Loan_With_Account_Aggregator
-    description: Gold Loan with Account Aggregator - Complete loan application flow
-    tags: ["WORKBENCH"]
-    sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        pair: on_search
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: loan_amount
-            label: Enter loan amount
-            type: number
-            payloadField: $.message.intent.fulfillment.requirements[0].value
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: select_1
-        type: select
-        unsolicited: false
-        pair: on_select_1
-        owner: BAP
-        expect: false
-      - key: on_select_1
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: select_2
-        type: select
-        unsolicited: false
-        pair: on_select_2
-        owner: BAP
-        expect: false
-      - key: on_select_2
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: init
-        type: init
-        unsolicited: false
-        pair: on_init
-        owner: BAP
-        expect: false
-      - key: on_init
-        type: on_init
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: confirm
-        type: confirm
-        unsolicited: false
-        pair: on_confirm
-        owner: BAP
-        expect: false
-      - key: on_confirm
-        type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
- 
+flows: 
   - id: Gold_Loan_Without_Account_Aggregator
     description: Gold Loan without Account Aggregator - Selection and approval flow
-    tags: ["WORKBENCH"]
     sequence:
       - key: search
         type: search
@@ -98,12 +23,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
       - key: select_1
         type: select
         unsolicited: false
         pair: on_select_1
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -122,12 +60,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: loan_adjustment_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_adjustment_form
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -149,7 +100,6 @@ flows:
 
   - id: Gold_Loan_Foreclosure
     description: Gold Loan - Loan Foreclosure - Update and notification flow
-    tags: ["WORKBENCH"]
     sequence:
       - key: search
         type: search
@@ -172,12 +122,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
       - key: select_1
         type: select
         unsolicited: false
         pair: on_select_1
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -196,12 +159,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: loan_adjustment_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_adjustment_form
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -241,7 +217,6 @@ flows:
 
   - id: Gold_Loan_Missed_EMI
     description: Gold Loan - Missed-EMI Payment - Update and notification flow
-    tags: ["WORKBENCH"]
     sequence:
       - key: search
         type: search
@@ -264,12 +239,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
       - key: select_1
         type: select
         unsolicited: false
         pair: on_select_1
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -294,6 +282,7 @@ flows:
         pair: on_init
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -318,15 +307,6 @@ flows:
         pair: on_update
         owner: BAP
         expect: true
-        input:
-          - name: missed_emi_amount
-            label: Enter missed EMI amount
-            type: number
-            payloadField: $.message.update_target.fulfillment.requirements[0].value
-          - name: missed_emi_date
-            label: Enter missed EMI date
-            type: date
-            payloadField: $.message.update_target.fulfillment.requirements[1].value
       - key: on_update
         type: on_update
         unsolicited: false
@@ -343,7 +323,6 @@ flows:
 
   - id: Gold_Loan_Pre_Part_Payment
     description: Gold Loan - Pre-Part Payment - Update and notification flow
-    tags: ["WORKBENCH"]
     sequence:
       - key: search
         type: search
@@ -366,12 +345,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
       - key: select_1
         type: select
         unsolicited: false
         pair: on_select_1
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -390,12 +382,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: loan_adjustment_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_adjustment_form        
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
