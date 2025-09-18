@@ -10,13 +10,9 @@ flows:
         expect: true
         input:
           - name: city_code
-            label: Enter city code
+            label: Enter city code (PAN India "*")
             type: text
             payloadField: $.context.location.city.code
-          - name: loan_amount
-            label: Enter loan amount
-            type: number
-            payloadField: $.message.intent.fulfillment.requirements[0].value
       - key: on_search
         type: on_search
         unsolicited: false
@@ -35,19 +31,6 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
-      - key: select_1
-        type: select
-        unsolicited: false
-        pair: on_select_1
-        owner: BAP
-        expect: false
-        force_proceed: true
-      - key: on_select_1
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
       - key: select_2
         type: select
         unsolicited: false
@@ -61,7 +44,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: loan_adjustment_form
+      - key: kyc_verification_status
         label: form link provided in on_select
         type: HTML_FORM
         unsolicited: false
@@ -72,7 +55,26 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_adjustment_form
+            reference: $.reference_data.kyc_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -110,13 +112,9 @@ flows:
         expect: true
         input:
           - name: city_code
-            label: Enter city code
+            label: Enter city code (PAN India "*")
             type: text
             payloadField: $.context.location.city.code
-          - name: loan_amount
-            label: Enter loan amount
-            type: number
-            payloadField: $.message.intent.fulfillment.requirements[0].value
       - key: on_search
         type: on_search
         unsolicited: false
@@ -135,32 +133,20 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
-      - key: select_1
-        type: select
-        unsolicited: false
-        pair: on_select_1
-        owner: BAP
-        expect: false
-        force_proceed: true
-      - key: on_select_1
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
       - key: select_2
         type: select
         unsolicited: false
         pair: on_select_2
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_2
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: loan_adjustment_form
+      - key: kyc_verification_status
         label: form link provided in on_select
         type: HTML_FORM
         unsolicited: false
@@ -171,7 +157,26 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_adjustment_form
+            reference: $.reference_data.kyc_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -227,13 +232,9 @@ flows:
         expect: true
         input:
           - name: city_code
-            label: Enter city code
+            label: Enter city code (PAN India "*")
             type: text
             payloadField: $.context.location.city.code
-          - name: loan_amount
-            label: Enter loan amount
-            type: number
-            payloadField: $.message.intent.fulfillment.requirements[0].value
       - key: on_search
         type: on_search
         unsolicited: false
@@ -252,27 +253,46 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
-      - key: select_1
-        type: select
-        unsolicited: false
-        pair: on_select_1
-        owner: BAP
-        expect: false
-        force_proceed: true
-      - key: on_select_1
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
       - key: select_2
         type: select
         unsolicited: false
         pair: on_select_2
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_2
         type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: kyc_verification_status
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.kyc_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
         unsolicited: false
         pair: null
         owner: BPP
@@ -333,13 +353,9 @@ flows:
         expect: true
         input:
           - name: city_code
-            label: Enter city code
+            label: Enter city code (PAN India "*")
             type: text
             payloadField: $.context.location.city.code
-          - name: loan_amount
-            label: Enter loan amount
-            type: number
-            payloadField: $.message.intent.fulfillment.requirements[0].value
       - key: on_search
         type: on_search
         unsolicited: false
@@ -358,32 +374,20 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
-      - key: select_1
-        type: select
-        unsolicited: false
-        pair: on_select_1
-        owner: BAP
-        expect: false
-        force_proceed: true
-      - key: on_select_1
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
       - key: select_2
         type: select
         unsolicited: false
         pair: on_select_2
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_select_2
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: loan_adjustment_form
+      - key: kyc_verification_status
         label: form link provided in on_select
         type: HTML_FORM
         unsolicited: false
@@ -394,7 +398,26 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_adjustment_form        
+            reference: $.reference_data.kyc_verification_status        
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: init
         type: init
         unsolicited: false
