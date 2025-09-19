@@ -152,6 +152,15 @@ domain:
             flows: "./FIS11/V-2.0.0/metroCardRecharge/flows/index.yaml"
         supportedActions:
           $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:FIS12
+    versions:
+      - id: 2.0.2
+        reporting: false
+        usecase:
+          - name: GOLD LOAN
+            flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"        
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -237,3 +246,8 @@ usecases:
         - key: 2.0.0
           usecase:
             - metro-card-recharge
+    - key: ONDC:FIS12
+      version:
+        - key: 2.0.2
+          usecase:
+            - GOLD LOAN        
