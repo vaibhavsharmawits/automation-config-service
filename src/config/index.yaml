@@ -161,6 +161,15 @@ domain:
             flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
         supportedActions:
           $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"        
+  - name: ONDC:FIS13
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: transit-insurance
+            flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -250,4 +259,9 @@ usecases:
       version:
         - key: 2.0.2
           usecase:
-            - GOLD LOAN        
+            - GOLD LOAN     
+    - key: ONDC:FIS13
+      version:
+        - key: 2.0.0
+          usecase:
+            - transit-insurance   
