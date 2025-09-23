@@ -1,0 +1,114 @@
+flows:
+  - id: Airlines - Seller App Pagination Flow
+    description: Airlines - Seller App Pagination Flow
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Airlines - Purchase Journey(Code Based Flow)
+    description: Airlines - Purchase Journey(Code Based Flow)
+    sequence:
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: airline_select
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
