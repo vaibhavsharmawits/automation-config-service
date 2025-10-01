@@ -35,8 +35,17 @@ domain:
         usecase:
           - name: Airline
             flows: "./TRV12/V-2.0.0/airline/flows/index.yaml"
+          - name: Intercity
+            flows: "./TRV12/V-2.0.0/intercity/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"        
+          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"       
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: Intercity
+            flows: "./TRV12/V-2.0.0/intercity/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"     
   - name: ONDC:TRV14
     versions:
       - id: 2.0.0
@@ -97,7 +106,7 @@ domain:
           - name: Hotel-Booking-V2
             flows: "./TRV13/V-2.0.1/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"                
+          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"                 
   - name: ONDC:RET12
     versions:
       - id: 1.2.5
@@ -218,6 +227,7 @@ usecases:
       version:
         - key: 2.0.0
           usecase:
+            - Intercity       
             - Airline              
     - key: ONDC:TRV14
       version:
@@ -294,6 +304,7 @@ usecases:
         - key: 2.0.0
           usecase:
             - unreserved-entry-pass
+            - metro-card-recharge      
     - key: ONDC:FIS10
       version:
         - key: 2.1.0
