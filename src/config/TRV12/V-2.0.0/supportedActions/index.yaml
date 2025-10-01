@@ -1,7 +1,7 @@
 supportedActions:
-  null: ["search","on_select" ,"select","unsolicited_on_confirm", "confirm"]
+  null: ["search", "on_select", "select"]
   search: ["on_search"]
-  on_search: ["search", "select", "init","on_search"]
+  on_search: ["search", "select", "init", "on_search"]
   select: ["on_select"]
   on_select: ["init", "select"]
   init: ["on_init"]
@@ -10,15 +10,15 @@ supportedActions:
   on_confirm:
     ["status", "cancel", "on_status", "on_update", "update", "on_cancel"]
   status: ["on_status"]
-  on_status: ["status", "cancel", "on_update", "track", "on_status", "update", "rating"]
+  on_status:
+    ["status", "cancel", "on_update", "track", "on_status", "update", "rating"]
   on_update: ["status", "update", "on_status", "track", "cancel", "on_cancel"]
-  cancel: ["unsolicited_on_confirm", "on_cancel", "status", "on_confirm"]
+  cancel: ["on_cancel", "status", "on_confirm"]
   on_cancel: ["cancel", "status", "on_status"]
   track: ["on_track"]
   on_track: ["on_status", "on_update"]
-  update: ["unsolicited_on_confirm", "on_update"]
+  update: ["on_update"]
   rating: ["on_rating"]
-  unsolicited_on_confirm: ["cancel","update"]
 
 apiProperties:
   search:
@@ -28,9 +28,6 @@ apiProperties:
     async_predecessor: null
     transaction_partner: ["search"]
   select:
-    async_predecessor: null
-    transaction_partner: []
-  unsolicited_on_confirm:
     async_predecessor: null
     transaction_partner: []
   on_select:
@@ -44,11 +41,10 @@ apiProperties:
     transaction_partner: ["init", "select", "on_select"]
   confirm:
     async_predecessor: null
-    # transaction_partner: []
     transaction_partner: ["init", "on_init"]
   on_confirm:
     async_predecessor: "confirm"
-    transaction_partner: ["confirm"]
+    transaction_partner: ["init", "on_init", "confirm"]
   status:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm"]
@@ -74,5 +70,5 @@ apiProperties:
     async_predecessor: "update"
     transaction_partner: ["update"]
 rating:
-    async_predecessor: "on_status"
-    transaction_partner: ["on_status"]
+  async_predecessor: "on_status"
+  transaction_partner: ["on_status"]
