@@ -1,7 +1,7 @@
 supportedActions:
-  null: ["search", "select"]
+  null: ["search", "on_select", "select"]
   search: ["on_search"]
-  on_search: ["search", "select", "on_search"]
+  on_search: ["search", "select", "init", "on_search"]
   select: ["on_select"]
   on_select: ["init", "select"]
   init: ["on_init"]
@@ -10,13 +10,15 @@ supportedActions:
   on_confirm:
     ["status", "cancel", "on_status", "on_update", "update", "on_cancel"]
   status: ["on_status"]
-  on_status: ["status", "cancel", "on_update", "track", "on_status", "update"]
+  on_status:
+    ["status", "cancel", "on_update", "track", "on_status", "update", "rating"]
   on_update: ["status", "update", "on_status", "track", "cancel", "on_cancel"]
-  cancel: ["on_cancel", "status"]
+  cancel: ["on_cancel", "status", "on_confirm"]
   on_cancel: ["cancel", "status", "on_status"]
   track: ["on_track"]
   on_track: ["on_status", "on_update"]
   update: ["on_update"]
+  rating: ["on_rating"]
 
 apiProperties:
   search:
@@ -54,7 +56,7 @@ apiProperties:
     transaction_partner: ["confirm", "on_confirm"]
   on_cancel:
     async_predecessor: null
-    transaction_partner: ["confirm", "on_confirm"]
+    transaction_partner: ["confirm", "on_confirm", "cancel"]
   track:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
@@ -63,7 +65,10 @@ apiProperties:
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   update:
     async_predecessor: null
-    transaction_partner: ["status", "on_status"]
+    transaction_partner: ["confirm", "on_confirm"]
   on_update:
-    async_predecessor: null
-    transaction_partner: ["update", "status", "on_status"]
+    async_predecessor: "update"
+    transaction_partner: ["update"]
+rating:
+  async_predecessor: "on_status"
+  transaction_partner: ["on_status"]
