@@ -1,0 +1,744 @@
+flows:
+  - id: Intercity(Bus)_Station_Code_Based_Flow
+    description: Intercity(Bus) - Station Code Based Flow
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_BUS_201
+        type: status
+        unsolicited: false
+        pair: on_status_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_status_BUS_201
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited_201
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Intercity(Bus)_Cancel_Flow
+    description: Intercity(Bus) - Cancel Flow
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_BUS_211
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_BUS_211
+        owner: BAP
+        expect: false
+      - key: on_cancel_BUS_211
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_BUS_212
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_BUS_212
+        owner: BAP
+        expect: false
+      - key: on_cancel_BUS_212
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Intercity(Bus)_Error_Response(Soft Locking Time)
+    description: Intercity(Bus) - Error Response (Soft Locking Time)
+    sequence:
+      - key: select_BUS_221
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_221
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_select_BUS_221    
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        
+      - key: init_BUS_221
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_221
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_221
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Intercity(Bus)_Partial_Cancellation_Flow
+    description: Intercity(Bus) - Partial Cancellation Flow
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_BUS_231
+        type: update
+        unsolicited: false
+        pair: on_update_BUS_231
+        owner: BAP
+        expect: false
+      - key: on_update_BUS_231
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_BUS_232
+        type: update
+        unsolicited: false
+        pair: on_update_BUS_232
+        owner: BAP
+        expect: false
+      - key: on_update_BUS_232
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Intercity(Bus)_Seller_Cancellation
+    description: Intercity(Bus) - Seller Cancellation
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel_BUS_241
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Intercity(Bus)_Rating(Success)
+    description: Intercity(Bus) - Rating(Success)
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_BUS_251
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: rating_251
+        type: rating
+        unsolicited: true
+        pair: null
+        owner: BAP
+        expect: false
+  - id: Intercity(Bus)_Rating(Error Flow)
+    description: Intercity(Bus) - Rating(Error Flow)
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_BUS_261
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: rating_261
+        type: rating
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
+      - key: on_rating_261
+        type: on_rating
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+    
+ 
