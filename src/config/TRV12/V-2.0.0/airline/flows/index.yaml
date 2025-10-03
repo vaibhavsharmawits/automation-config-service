@@ -2,10 +2,10 @@ flows:
   - id: Airlines - Seller App Pagination Flow
     description: Airlines - Seller App Pagination Flow
     sequence:
-      - key: search_1
+      - key: search_1_Airline_200
         type: search
         unsolicited: false
-        pair: on_search_1
+        pair: on_search_1_Airline_200
         owner: BAP
         expect: true
         input:
@@ -21,25 +21,25 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_1
+      - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_search_2
+      - key: on_search_2_Airline_200
         type: on_search
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_search_3
+      - key: on_search_3_Airline_200
         type: on_search
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
-      - key: on_search_4
+      - key: on_search_4_Airline_200
         type: on_search
         unsolicited: true
         pair: null
@@ -48,65 +48,65 @@ flows:
   - id: Airlines - Purchase Journey(Code Based Flow)
     description: Airlines - Purchase Journey(Code Based Flow)
     sequence:
-      - key: select_1
+      - key: select_1_Airline_200
         type: select
         unsolicited: false
-        pair: on_select_1
+        pair: on_select_1_Airline_200
         owner: BAP
         expect: true
         input:
           - name: select_input
             label: Enter
             type: airline_select
-      - key: on_select_1
+      - key: on_select_1_Airline_200
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: select_2
+      - key: select_2_Airline_200
         type: select
         unsolicited: false
-        pair: on_select_2
+        pair: on_select_2_Airline_200
         owner: BAP
         expect: false
-      - key: on_select_2
+      - key: on_select_2_Airline_200
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_Airline_200
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_Airline_200
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_Airline_200
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: confirm
+      - key: confirm_Airline_200
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_Airline_200
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_Airline_200
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: cancel
+      - key: cancel_Airline_200
         type: cancel
         unsolicited: false
-        pair: on_cancel
+        pair: on_cancel_Airline_200
         owner: BAP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_Airline_200
         type: on_cancel
         unsolicited: false
         pair: null
