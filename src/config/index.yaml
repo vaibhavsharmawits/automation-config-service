@@ -38,14 +38,7 @@ domain:
           - name: Intercity
             flows: "./TRV12/V-2.0.0/intercity/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"       
-      - id: 2.0.0
-        reporting: false
-        usecase:
-          - name: Intercity
-            flows: "./TRV12/V-2.0.0/intercity/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"     
+          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"   
   - name: ONDC:TRV14
     versions:
       - id: 2.0.0
