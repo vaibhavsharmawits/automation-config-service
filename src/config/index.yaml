@@ -154,25 +154,15 @@ domain:
             flows: "./RET18/V-1.2.5/Health&Wellness/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"
-  - name: ONDC:FIS13
+  - name: ONDC:FIS10
     versions:
-      - id: 2.0.0
+      - id: 2.1.0
         reporting: false
         usecase:
-          - name: transit-insurance
-            flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
+          - name: gift-card
+            flows: "./FIS10/V-2.1.0/giftCard/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"
-  - name: ONDC:FIS12
-    versions:
-      - id: 2.0.2
-        reporting: false
-        usecase:
-          - name: GOLD LOAN
-            flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
-        supportedActions:
-          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
-
+          $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"  
   - name: ONDC:FIS11
     versions:
       - id: 2.0.0
@@ -182,15 +172,28 @@ domain:
             flows: "./FIS11/V-2.0.0/metroCardRecharge/flows/index.yaml"
         supportedActions:
           $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"
-  - name: ONDC:FIS10
+  - name: ONDC:FIS12
     versions:
-      - id: 2.1.0
+      - id: 2.0.2
         reporting: false
         usecase:
-          - name: gift-card
-            flows: "./FIS10/V-2.1.0/giftCard/flows/index.yaml"
+          - name: GOLD LOAN
+            flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"          
+          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
+  - name: ONDC:FIS13
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: transit-insurance
+            flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
+          - name: accidental-insurance
+            flows: "./FIS13/V-2.0.0/accidental-insurance/flows/index.yaml"
+          - name: hospicash-insurance
+            flows: "./FIS13/V-2.0.0/hospicash-insurance/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"        
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -267,16 +270,6 @@ usecases:
         - key: 1.2.5
           usecase:
             - ELECTRONICS
-    - key: ONDC:FIS12
-      version:
-        - key: 2.0.2
-          usecase:
-            - GOLD LOAN
-    - key: ONDC:FIS11
-      version:
-        - key: 2.0.0
-          usecase:
-            - metro-card-recharge
     - key: ONDC:RET15
       version:
         - key: 1.2.5
@@ -287,11 +280,6 @@ usecases:
         - key: 1.2.5
           usecase:
             - HOME&KITCHEN
-    - key: ONDC:FIS13
-      version:
-        - key: 2.0.0
-          usecase:
-            - transit-insurance
     - key: ONDC:TRV14
       version:
         - key: 2.0.0
@@ -302,4 +290,21 @@ usecases:
       version:
         - key: 2.1.0
           usecase:
-            - gift-card            
+            - gift-card  
+    - key: ONDC:FIS11
+      version:
+        - key: 2.0.0
+          usecase:
+            - metro-card-recharge      
+    - key: ONDC:FIS12
+      version:
+        - key: 2.0.2
+          usecase:
+            - GOLD LOAN
+    - key: ONDC:FIS13
+      version:
+        - key: 2.0.0
+          usecase:
+            - transit-insurance
+            - accidental-insurance
+            - hospicash-insurance    
