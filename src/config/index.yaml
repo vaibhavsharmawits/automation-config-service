@@ -29,6 +29,17 @@ domain:
             flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:TRV12
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: Airline
+            flows: "./TRV12/V-2.0.0/airline/flows/index.yaml"
+          - name: Intercity
+            flows: "./TRV12/V-2.0.0/intercity/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"        
   - name: ONDC:TRV13
     versions:
       - id: 2.0.0
@@ -209,7 +220,13 @@ usecases:
             - Hotel-Booking 
         - key: 2.0.1
           usecase:
-            - Hotel-Booking-V2           
+            - Hotel-Booking-V2 
+    - key: ONDC:TRV12
+      version:
+        - key: 2.0.0
+          usecase:
+            - Intercity       
+            - Airline                  
     - key: ONDC:RET10
       version:
         - key: 1.2.5
