@@ -56,7 +56,7 @@ apiProperties:
     transaction_partner: ["confirm", "on_confirm"]
   on_cancel:
     async_predecessor: null
-    transaction_partner: ["confirm", "on_confirm", "cancel"]
+    transaction_partner: ["confirm", "on_confirm"]
   track:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
