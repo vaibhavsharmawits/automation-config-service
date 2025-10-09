@@ -179,8 +179,12 @@ domain:
         usecase:
           - name: transit-insurance
             flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
+          - name: accidental-insurance
+            flows: "./FIS13/V-2.0.0/accidental-insurance/flows/index.yaml"
+          - name: hospicash-insurance
+            flows: "./FIS13/V-2.0.0/hospicash-insurance/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"
+          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"   
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -281,4 +285,6 @@ usecases:
       version:
         - key: 2.0.0
           usecase:
-            - transit-insurance   
+            - transit-insurance
+            - accidental-insurance
+            - hospicash-insurance  
