@@ -185,6 +185,15 @@ domain:
             flows: "./FIS13/V-2.0.0/hospicash-insurance/flows/index.yaml"
         supportedActions:
           $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"   
+  - name: ONDC:FIS10
+    versions:
+      - id: 2.1.0
+        reporting: false
+        usecase:
+          - name: gift-card
+            flows: "./FIS10/V-2.1.0/giftCard/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"              
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -288,3 +297,8 @@ usecases:
             - transit-insurance
             - accidental-insurance
             - hospicash-insurance  
+    - key: ONDC:FIS10
+      version:
+        - key: 2.1.0
+          usecase:
+            - gift-card                    
