@@ -1,0 +1,20 @@
+name: ONDC:TRV11
+versions:
+  - id: 2.0.0
+    reporting: true
+    usecase:
+      - name: Metro
+        flows: "./V-2.0.0/metro/flows/index.yaml"
+      - name: Bus
+        flows: "./V-2.0.0/bus/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV11/V-2.0.0/supportedActions/index.yaml"
+  - id: 2.0.1
+    reporting: true
+    usecase:
+      - name: Metro
+        flows: "./V-2.0.1/metro/flows/index.yaml"
+      - name: Bus
+        flows: "./V-2.0.1/bus/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
