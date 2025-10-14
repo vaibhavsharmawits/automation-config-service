@@ -1,6 +1,5 @@
 import { RedisService } from "ondc-automation-cache-lib";
-import path from "path";
-import { loadYAMLWithRefs } from "./configService";
+import { loadDecoupledConfig } from "./configService";
 
 const SESSION_EXPIRY = 3600; // 1 hour
 const configPath = "../config/index.yaml";
@@ -11,14 +10,9 @@ export const getConfigService = async () => {
     // const sessionData = await redisClient.get(sessionId);
     let sessionData = await RedisService.getKey("config");
     if (!sessionData) {
-      const config = await loadYAMLWithRefs(path.join(__dirname, configPath));
+      // Use the new loadDecoupledConfig function instead
+      const config = await loadDecoupledConfig();
       await setConfigService(config);
-      // .then(async (config: any) => {
-      //   console.log("setting session data", sessionData);
-      //   await setConfigService(config);
-      //   return config
-      // })
-      // .catch(console.error);
 
       console.log("console::::::::::…", config, typeof config);
       return config;
