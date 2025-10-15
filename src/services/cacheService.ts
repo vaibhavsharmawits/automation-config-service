@@ -34,3 +34,14 @@ export const setConfigService = async (config: any) => {
     throw new Error(`${error.message}`);
   }
 };
+
+export const deleteConfigService = async () => {
+  try {
+    const key : string = "config"
+    await RedisService.deleteKey(key);
+    console.log(`Key "${key}" deleted from cache`);
+    return `Key "${key}" deleted`;
+  } catch (error: any) {
+    throw new Error(`${error.message}`);
+  }
+};

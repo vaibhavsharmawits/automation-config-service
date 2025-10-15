@@ -1,0 +1,664 @@
+flows:
+  - id: ORDER_FLOW_BASE_LINE
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: delivery_type
+            label: Select delivery type
+            type: select
+            values:
+              - P2P
+              - P2H2P
+            payloadField: $.message.intent.item.descriptor.code
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Express Delivery
+              - Standard Delivery
+              - Immediate Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: status_LOGISTICS
+        type: status
+        unsolicited: false
+        description: LBNP statuss order details
+        pair: on_status_1_LOGISTICS
+        owner: BAP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: false
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: LBNP requests for tracking informatio
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+  - id: RTO_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: delivery_type
+            label: Select devlivery type
+            type: select
+            values:
+              - P2P
+              - P2H2P
+            payloadField: $.message.intent.item.descriptor.code
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Express Delivery
+              - Standard Delivery
+              - Immediate Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: status_LOGISTICS
+        type: status
+        unsolicited: false
+        description: LBNP statuss order details
+        pair: on_status_1_LOGISTICS
+        owner: BAP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: false
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_cancel_LOGISTICS
+        type: on_cancel
+        unsolicited: false
+        description: LSP provides order canceling information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_4_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+  - id: CASH_ON_DELIVERY_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_1_LOGISITCS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: delivery_type
+            label: Select devlivery type
+            type: select
+            values:
+              - P2P
+              - P2H2P
+            payloadField: $.message.intent.item.descriptor.code
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Express Delivery
+              - Standard Delivery
+              - Immediate Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: status_LOGISTICS
+        type: status
+        unsolicited: false
+        description: LBNP statuss order details
+        pair: on_status_1_LOGISTICS
+        owner: BAP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: false
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: LBNP requests for tracking informatio
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+  - id: PREPAID_PAYMENT_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: delivery_type
+            label: Select devlivery type
+            type: select
+            values:
+              - P2P
+              - P2H2P
+            payloadField: $.message.intent.item.descriptor.code
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Express Delivery
+              - Standard Delivery
+              - Immediate Delivery
+              - Next Day Delivery
+              - Same Day Delivery
+
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: status_LOGISTICS
+        type: status
+        unsolicited: false
+        description: LBNP statuss order details
+        pair: on_status_1_LOGISTICS
+        owner: BAP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: false
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: LBNP requests for tracking informatio
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+  - id: IMMEDIATE_DELIVERY_FLOW
+    description: User uses station code for searching bus
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: delivery_type
+            label: Select devlivery type
+            type: select
+            values:
+              - P2P
+            payloadField: $.message.intent.item.descriptor.code
+          - name: category
+            label: Select a category
+            type: select
+            values:
+              - Immediate Delivery
+            payloadField: $.message.intent.category.id
+          - name: paymentType
+            label: Select payment type
+            type: select
+            values:
+              - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
+            payloadField: $.message.intent.payment.type
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_5_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: LBNP requests for tracking informatio
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        unsolicited: true
+        description: LSP updates order status
+        pair: null
+        owner: BPP

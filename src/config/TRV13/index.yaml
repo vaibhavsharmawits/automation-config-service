@@ -1,0 +1,16 @@
+name: ONDC:TRV13
+versions:
+  - id: 2.0.0
+    reporting: false
+    usecase:
+      - name: Hotel-Booking
+        flows: "./V-2.0.0/hotel-booking/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"
+  - id: 2.0.1
+    reporting: false
+    usecase:
+      - name: Hotel-Booking-V2
+        flows: "./V-2.0.1/hotel-booking/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"

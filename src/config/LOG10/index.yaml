@@ -1,0 +1,9 @@
+name: ONDC:LOG10
+versions:
+  - id: 1.2.5
+    reporting: true
+    usecase:
+      - name: Logistics (P2P)
+        flows: "./V-1.2.5/logistics/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/LOG10/V-1.2.5/supportedActions/index.yaml"

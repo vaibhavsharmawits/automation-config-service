@@ -1,0 +1,9 @@
+name: ONDC:FIS10
+versions:
+  - id: 2.1.0
+    reporting: false
+    usecase:
+      - name: gift-card
+        flows: "./V-2.1.0/giftCard/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"
