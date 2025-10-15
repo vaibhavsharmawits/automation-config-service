@@ -20,6 +20,7 @@ export async function loadDecoupledConfig() {
     const domainDirs = entries.filter(entry => entry.isDirectory());
     
     for (const dir of domainDirs) {
+      try{
       const domainIndexPath = path.join(configDir, dir.name, "index.yaml");
       
       // Check if domain-specific index.yaml exists
@@ -40,30 +41,34 @@ export async function loadDecoupledConfig() {
         };
         mergedConfig.usecases.domain.push(domainUsecases);
       }
-    }
-    
-    // If there's still a main index.yaml, load it for backward compatibility
-    const mainIndexPath = path.join(configDir, "index.yaml");
-    if (fs.existsSync(mainIndexPath)) {
-      const mainConfig = await loadYAMLWithRefs(mainIndexPath);
-      
-      // Check if main config has the old structure and merge if needed
-      if (mainConfig.domain && Array.isArray(mainConfig.domain)) {
-        // Filter out domains that are already loaded from domain-specific files
-        const loadedDomains = new Set(mergedConfig.domain.map((d: any) => d.name));
-        const additionalDomains = mainConfig.domain.filter((d: any) => !loadedDomains.has(d.name));
-        
-        mergedConfig.domain.push(...additionalDomains);
-        
-        // Merge usecases too
-        if (mainConfig.usecases && mainConfig.usecases.domain) {
-          const additionalUsecases = mainConfig.usecases.domain.filter(
-            (u: any) => !loadedDomains.has(u.key)
-          );
-          mergedConfig.usecases.domain.push(...additionalUsecases);
-        }
+      }
+      catch(err){
+        console.error ("config loading failed for a domain ",err)
       }
     }
+    
+    // // If there's still a main index.yaml, load it for backward compatibility
+    // const mainIndexPath = path.join(configDir, "index.yaml");
+    // if (fs.existsSync(mainIndexPath)) {
+    //   const mainConfig = await loadYAMLWithRefs(mainIndexPath);
+      
+    //   // Check if main config has the old structure and merge if needed
+    //   if (mainConfig.domain && Array.isArray(mainConfig.domain)) {
+    //     // Filter out domains that are already loaded from domain-specific files
+    //     const loadedDomains = new Set(mergedConfig.domain.map((d: any) => d.name));
+    //     const additionalDomains = mainConfig.domain.filter((d: any) => !loadedDomains.has(d.name));
+        
+    //     mergedConfig.domain.push(...additionalDomains);
+        
+    //     // Merge usecases too
+    //     if (mainConfig.usecases && mainConfig.usecases.domain) {
+    //       const additionalUsecases = mainConfig.usecases.domain.filter(
+    //         (u: any) => !loadedDomains.has(u.key)
+    //       );
+    //       mergedConfig.usecases.domain.push(...additionalUsecases);
+    //     }
+    //   }
+    // }
     
     return mergedConfig;
   } catch (error) {

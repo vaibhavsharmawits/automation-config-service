@@ -1,0 +1,9 @@
+name: ONDC:RET14
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: ELECTRONICS
+        flows: "./v-1.2.5/ELECTRONICS/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RET14/v-1.2.5/supportedActions/index.yaml"

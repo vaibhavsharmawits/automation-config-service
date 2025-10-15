@@ -1,0 +1,9 @@
+name: ONDC:TRV10
+versions:
+  - id: 2.1.0
+    reporting: false
+    usecase:
+      - name: Ride-hailing
+        flows: "./V-2.1.0/ride-hailing/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"

@@ -1,0 +1,9 @@
+name: ONDC:RET18
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: HEALTH&WELLNESS
+        flows: "./V-1.2.5/Health&Wellness/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"

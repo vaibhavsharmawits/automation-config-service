@@ -1,0 +1,13 @@
+name: ONDC:FIS13
+versions:
+  - id: 2.0.0
+    reporting: false
+    usecase:
+      - name: transit-insurance
+        flows: "./V-2.0.0/transit-insurance/flows/index.yaml"
+      - name: accidental-insurance
+        flows: "./V-2.0.0/accidental-insurance/flows/index.yaml"
+      - name: hospicash-insurance
+        flows: "./V-2.0.0/hospicash-insurance/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"

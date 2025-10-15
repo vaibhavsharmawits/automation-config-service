@@ -5,7 +5,7 @@ import * as path from "path";
 
 import routes from "./routes";
 import { loadYAMLWithRefs } from "./services/configService";
-import { setConfigService,getConfigService } from "./services/cacheService";
+import { setConfigService,getConfigService,deleteConfigService } from "./services/cacheService";
 
 const configPath = "./config/index.yaml";
 
@@ -16,12 +16,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-  getConfigService().then((config)=>{
-    setConfigService(config)
-    console.log("config loaded from yamls")
-  })
-  .catch(console.error);
+deleteConfigService().then(()=> getConfigService().then((config)=>{
+   console.log("config loaded from yamls")
+})).catch(console.error)
 
 app.use(routes);
 
