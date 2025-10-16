@@ -25,7 +25,11 @@ export function filterDomainData(
           }
           for (const usecase of version.usecase) {
             if (usecase.name === usecaseName) {
-              return usecase[property] || null;
+              // Return both the property value and domain name for path resolution
+              return {
+                filePath: usecase[property],
+                domainName: domain.name
+              };
             }
           }
         }
@@ -36,12 +40,36 @@ export function filterDomainData(
   return null;
 }
 
-export const getFileFromRefrence = async (filePath: string) => {
+export const getFileFromRefrence = async (filePathData: any) => {
   try {
-    console.log("filePath", filePath);
-    const config = await loadYAMLWithRefs(
-      path.join(__dirname, "../config", filePath)
-    );
+    // Handle both old string format and new object format
+    let filePath: string;
+    let domainName: string | null = null;
+
+    if (typeof filePathData === 'string') {
+      filePath = filePathData;
+    } else if (filePathData && typeof filePathData === 'object') {
+      filePath = filePathData.filePath;
+      domainName = filePathData.domainName;
+    } else {
+      throw new Error("Invalid file path data");
+    }
+
+    console.log("filePath", filePath, "domainName", domainName);
+
+    // Resolve the full path
+    let fullPath: string;
+
+    if (domainName) {
+      // New decoupled structure: path is relative to domain folder
+      const domainFolder = domainName.replace('ONDC:', '');
+      fullPath = path.join(__dirname, "../config", domainFolder, filePath);
+    } else {
+      // Old structure or absolute path
+      fullPath = path.join(__dirname, "../config", filePath);
+    }
+
+    const config = await loadYAMLWithRefs(fullPath);
     return config;
   } catch (e) {
     console.error("error while fetching file", e);
