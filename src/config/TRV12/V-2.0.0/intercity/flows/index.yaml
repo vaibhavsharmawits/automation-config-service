@@ -57,7 +57,12 @@ flows:
         unsolicited: false
         pair: on_select_BUS_201
         owner: BAP
-        expect: false
+        expect: true
+        input:
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -70,6 +75,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
