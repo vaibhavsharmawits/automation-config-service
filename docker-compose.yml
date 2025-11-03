@@ -8,6 +8,9 @@ services:
     container_name: config-service-dev
     ports:
       - "${PORT:-5556}:${PORT:-5556}"
+    volumes:
+      - /s3-config/config:/app/src/config
+      - /s3-config/config:/app/dist/config
     env_file:
       - .env
     restart: always

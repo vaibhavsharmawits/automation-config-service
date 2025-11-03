@@ -1,0 +1,9 @@
+name: ONDC:FIS11
+versions:
+  - id: 2.0.0
+    reporting: false
+    usecase:
+      - name: metro-card-recharge
+        flows: "./V-2.0.0/metroCardRecharge/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"

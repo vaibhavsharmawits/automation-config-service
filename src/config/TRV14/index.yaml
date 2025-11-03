@@ -1,0 +1,9 @@
+name: ONDC:TRV14
+versions:
+  - id: 2.0.0
+    reporting: false
+    supportedActions:
+      $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+    usecase:
+      - name: unreserved-entry-pass
+        flows: "./V-2.0.0/unreserved-ticketing/flows/index.yaml"

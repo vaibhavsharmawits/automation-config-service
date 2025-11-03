@@ -1,0 +1,9 @@
+name: ONDC:RET10
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: GROCERY
+        flows: "./v-1.2.5/GROCERY/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RET10/v-1.2.5/supportedActions/index.yaml"

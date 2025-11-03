@@ -1,0 +1,9 @@
+name: ONDC:RET15
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: APPLIANCES
+        flows: "./v-1.2.5/APPLIANCES/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RET15/v-1.2.5/supportedActions/index.yaml"
