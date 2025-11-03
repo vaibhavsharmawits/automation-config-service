@@ -1,0 +1,11 @@
+name: ONDC:TRV12
+versions:
+  - id: 2.0.0
+    reporting: false
+    usecase:
+      - name: Airline
+        flows: "./V-2.0.0/airline/flows/index.yaml"
+      - name: Intercity
+        flows: "./V-2.0.0/intercity/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"

@@ -23,14 +23,13 @@ flows:
         pair: null
         owner: BPP
         expect: false
- 
-  - id: Discovery_of_Products_from_Master_Policies (Transit Insurance)
-    description: Discovery of Products from Master Policies (Transit Insurance)
+  - id: Discovery_of_Products_from_Master_Policies (Hospicash Insurance)
+    description: Discovery of Products from Master Policies (Hospicash Insurance)
     sequence:
-      - key: search_discover_product_transit
+      - key: search_discover_product_hospicash
         type: search
         unsolicited: false
-        pair: on_search_discover_product_tranist
+        pair: on_search_discover_product_hospicash
         owner: BAP
         expect: true
         input:
@@ -42,20 +41,19 @@ flows:
             label: Enter Policy
             type: text
             payloadField: $.message.catalog.descriptor.name
-      - key: on_search_discover_product_tranist 
+      - key: on_search_discover_product_hospicash 
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-     
-  - id: Purchase_Journey_Transit_Insurance
-    description: Purchase Journey Transit Insurance
+  - id: Purchase_Journey_Hospicash_Insurance
+    description: Purchase Journey Hospicash Insurance
     sequence:
-      - key: search_purchase_journey_transit
+      - key: search_purchase_journey_hospicash
         type: search
         unsolicited: false
-        pair: on_search_purchase_journey_transit
+        pair: on_search_purchase_journey_hospicash
         owner: BAP
         expect: true
         input:
@@ -75,15 +73,23 @@ flows:
             label: Enter pan number
             type: text
             payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: start_address
-            label: Enter start address
+          - name: dob
+            label: Enter date of birth
             type: text
             payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: end_address
-            label: Enter end address
+          - name: gender
+            label: Enter gender
             type: text
             payloadField: $.message.intent.provider.items[*].list[*].value
-      - key: on_search_purchase_journey_transit
+          - name: email
+            label: Enter email
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: sum_insured
+            label: Enter sum insured
+            type: text
+            payloadField: $.message.intent.provider.items[*].list[*].value
+      - key: on_search_purchase_journey_hospicash
         type: on_search
         unsolicited: false
         pair: null
@@ -92,16 +98,16 @@ flows:
       - key: select
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_hospicash
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_hospicash
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: true
-      - key: init
+      - key: init_hospicash
         type: init
         unsolicited: false
         input:
@@ -109,28 +115,28 @@ flows:
             label: Enter nominee name
             type: text
             payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
-        pair: on_init
+        pair: on_init_hospicash
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_hospicash
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: confirm
+      - key: confirm_hospicash
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_hospicash
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_hospicash
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_update
+      - key: on_update_hospicash
         type: on_update
         unsolicited: true
         pair: null

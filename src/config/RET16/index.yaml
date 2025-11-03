@@ -1,0 +1,9 @@
+name: ONDC:RET16
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: HOME&KITCHEN
+        flows: "./v-1.2.5/HOME&KITCHEN/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RET16/v-1.2.5/supportedActions/index.yaml"
