@@ -199,6 +199,8 @@ flows:
             type: select
             values:
               - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
             payloadField: $.message.intent.payment.type
           - name: city_code
             label: Enter city code
@@ -1275,6 +1277,8 @@ flows:
             type: select
             values:
               - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
             payloadField: $.message.intent.payment.type
           - name: city_code
             label: Enter city code
@@ -1437,6 +1441,8 @@ flows:
             type: select
             values:
               - POST-FULFILLMENT
+              - ON-ORDER
+              - ON-FULFILLMENT
             payloadField: $.message.intent.payment.type
           - name: city_code
             label: Enter city code
@@ -1767,6 +1773,8 @@ flows:
                 type: select
                 values:
                 - POST-FULFILLMENT
+                - ON-ORDER
+                - ON-FULFILLMENT
                 payloadField: $.message.intent.payment.type
               - name: city_code
                 label: Enter city code
@@ -1914,6 +1922,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2061,6 +2071,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2207,6 +2219,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2354,6 +2368,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2501,6 +2517,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2648,6 +2666,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2794,6 +2814,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
@@ -2953,6 +2975,8 @@ flows:
         type: select
         values:
         - POST-FULFILLMENT
+        - ON-ORDER
+        - ON-FULFILLMENT
         payloadField: $.message.intent.payment.type
       - name: city_code
         label: Enter city code
