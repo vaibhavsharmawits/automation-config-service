@@ -10,11 +10,11 @@ supportedActions:
   on_confirm: ["confirm", "status", "cancel", "on_status","update"]
   status: ["on_status"]
   on_status: ["status", "cancel"]
-  cancel: ["on_cancel", "status","on_update"]
+  cancel: ["on_cancel", "status", "on_update", "on_status"]
   on_cancel: ["cancel", "status","on_update","on_status"]
   update: ["on_update"]
   on_update: ["on_cancel", "update","on_status", "cancel"]
-  
+
 apiProperties:
   search:
     async_predecessor: null
