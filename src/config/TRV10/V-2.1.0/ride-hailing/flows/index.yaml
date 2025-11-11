@@ -114,7 +114,7 @@ flows:
   - id: OnDemand_Assign_driver_post_on_ confirm
     description: On-Demand - Assign driver post on-confirm
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
         pair: on_search
@@ -226,10 +226,10 @@ flows:
   - id: OnDemand_Purple_Tags_Assign_driver_on_onconfirm
     description: On-Demand - Purple Tags (Assign driver on on-confirm)
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
-        pair: on_search
+        pair: on_search_purple
         owner: BAP
         expect: true
         input:
@@ -241,7 +241,11 @@ flows:
             label: Enter start gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-      - key: on_search
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_purple
         type: on_search
         unsolicited: false
         pair: null
@@ -334,7 +338,7 @@ flows:
   - id: OnDemand_Assign_driver_post_onconfirmSelfPickup
     description: On-Demand - Assign driver post on-confirm(Self-Pickup)
     sequence:
-      - key: search
+      - key: search_ride
         type: search
         unsolicited: false
         pair: on_search
