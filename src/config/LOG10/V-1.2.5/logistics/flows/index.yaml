@@ -2070,6 +2070,17 @@ flows:
     pair: on_issue_resolved
     owner: BAP
     expect: false
+    input:
+      # - name: resolution_accept
+      #   label: Select a resolution
+      #   type: select
+      #   values:
+      #     - "R1-Refund"
+      #     - "R2-Replacement"
+      #   default: "R2-Replacement"
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
   - key: on_issue_resolved
     type: on_issue
     label: resolved
@@ -2085,6 +2096,14 @@ flows:
     description: Open an issue for IGM
     pair: null
     owner: BAP
+    expect: false
+  - key: on_update_refund_igm
+    type: on_update
+    label: on_update_igm
+    unsolicited: true
+    description: final on_update call after issue closed
+    pair: null
+    owner: BPP
     expect: false
 - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
   description: Standard point-to-point delivery flow including baseline features
@@ -2256,43 +2275,320 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_issue_need_more_info
+  - key: on_issue_resolution
     type: on_issue
-    label: need_more_info
+    label: resolution
     unsolicited: true
-    description: LSP provides more information
+    description: LSSA
     pair: null
     owner: BPP
-    expect: true
+    expect: false
+  - key: issue_resolution_reject
+    type: issue
+    label: resolution_reject
+    unsolicited: false
+    description: Open an issue for IGM
+    pair: on_issue_processing_1
+    owner: BAP
+    expect: false
+    input:
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text 
+  - key: on_issue_processing_1
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: anything
+    pair: null
+    owner: BPP
+    expect: false 
+  - key: on_issue_resolution_1
+    type: on_issue
+    label: resolution
+    unsolicited: true
+    description: LSSA
+    pair: null
+    owner: BPP
+    expect: false 
+  - key: issue_escalate
+    type: issue
+    label: escalate
+    unsolicited: false
+    description: Open an issue for IGM
+    pair: on_issue_processing_2
+    owner: BAP
+    expect: false
+  - key: on_issue_processing_2
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: anything
+    pair: null
+    owner: BPP
+    expect: false 
+  - key: on_issue_resolution_2
+    type: on_issue
+    label: resolution
+    unsolicited: true
+    description: LSSA
+    pair: null
+    owner: BPP
+    expect: false           
   - key: issue_resolution_accept
     type: issue
-    label: resolution accepted
+    label: resolution_accept
     unsolicited: false
     description: Open an issue for IGM
     pair: on_issue_resolved
     owner: BAP
     expect: false
+    input:
+      # - name: resolution_accept
+      #   label: Select a resolution
+      #   type: select
+      #   values:
+      #     - "R1-Refund"
+      #     - "R2-Replacement"
+      #   default: "R2-Replacement"
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
   - key: on_issue_resolved
     type: on_issue
-    label: provided
-    unsolicited: false
-    description: LSP
-    pair: null
-    owner: BPP
-    expect: false
-  - key: on_update_IGM
-    type: on_update
-    label: update_igm
-    unsolicited: true
-    description: LSP updates IGM with additional information
-    pair: null
-    owner: BPP
-    expect: false
-  - key: issue_resolution
-    type: issue
-    label: resolution
+    label: resolved
     unsolicited: false
     description: LSSA
+    pair: null
+    owner: BPP
+    expect: false
+  - key: issue_close
+    type: issue
+    label: close
+    unsolicited: false
+    description: Open an issue for IGM
+    pair: null
+    owner: BAP
+    expect: false
+  - key: on_update_refund_igm
+    type: on_update
+    label: on_update_igm
+    unsolicited: true
+    description: final on_update call after issue closed
+    pair: null
+    owner: BPP
+    expect: false
+
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION
+  description: Standard point-to-point delivery flow including baseline features
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: on_status_13_LOGISTICS
+    type: on_status
+    label: Agent-assigned
+    unsolicited: true
+    description: LSP updates order status [Agent-assigned]
+    pair: null
+    owner: BPP
+  - key: on_status_5_LOGISTICS
+    type: on_status
+    unsolicited: true
+    description: LSP updates order status (At-pickup)
+    label: At-pickup
+    pair: null
+    owner: BPP
+  - key: on_status_1_LOGISTICS
+    type: on_status
+    label: Order-picked-up
+    unsolicited: true
+    description: LSP updates order status [Order picked up]
+    pair: null
+    owner: BPP
+  - key: track_LOGISTICS
+    type: track
+    unsolicited: false
+    description: Buyer requests delivery tracking
+    pair: on_track_LOGISTICS
+    owner: BAP
+  - key: on_track_LOGISTICS
+    type: on_track
+    unsolicited: false
+    description: LSP provides order tracking information (gps or url)
+    pair: null
+    owner: BPP
+  - key: issue_open_2
+    type: issue
+    label: open
+    unsolicited: false
+    description: Open an issue for IGM
+    pair: on_issue_processing
+    owner: BAP
+    expect: false
+  - key: on_issue_processing
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: anything
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_issue_resolution_igm_3
+    type: on_issue
+    label: resolution
+    unsolicited: true
+    description: LSSA
+    pair: null
+    owner: BPP
+    expect: false
+  - key: issue_resolution_accept_igm_3
+    type: issue
+    label: resolution_accept
+    unsolicited: false
+    description: Open an issue for IGM
+    pair: on_issue_resolved_igm_3
+    owner: BAP
+    expect: false
+    input:
+      # - name: resolution_accept
+      #   label: Select a resolution
+      #   type: select
+      #   values:
+      #     - "R1-Refund"
+      #     - "R2-Replacement"
+      #   default: "R2-Replacement"
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
+  - key: on_issue_resolved_igm_3
+    type: on_issue
+    label: resolved
+    unsolicited: false
+    description: LSSA
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_12_LOGISTICS
+    type: on_status
+    label: At-delivery
+    unsolicited: true
+    description: LSP updates order status [At-delivery]
+    pair: null
+    owner: BPP
+  - key: on_status_3_LOGISTICS
+    type: on_status
+    label: Order-delivered
+    unsolicited: true
+    description: LSP updates order status [Order delivered]
+    pair: null
+    owner: BPP
+  - key: issue_close_igm_3
+    type: issue
+    label: close
+    unsolicited: false
+    description: Open an issue for IGM
     pair: null
     owner: BAP
     expect: false
