@@ -1,5 +1,6 @@
 flows: 
   - id: Gold_Loan_With_Account_Aggregator
+    tags: ["WORKBENCH"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -115,6 +116,7 @@ flows:
         expect: false
 
   - id: Gold_Loan_Without_Account_Aggregator
+    tags: ["WORKBENCH"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -212,6 +214,7 @@ flows:
         expect: false
 
   - id: Gold_Loan_Foreclosure
+    tags: ["WORKBENCH"]
     description: Gold Loan - Loan Foreclosure - Update and notification flow
     sequence:
       - key: search
@@ -327,6 +330,7 @@ flows:
         expect: false      
 
   - id: Gold_Loan_Missed_EMI
+    tags: ["WORKBENCH"]
     description: Gold Loan - Missed-EMI Payment - Update and notification flow
     sequence:
       - key: search
@@ -443,6 +447,7 @@ flows:
         expect: false
 
   - id: Gold_Loan_Pre_Part_Payment
+    tags: ["WORKBENCH"]
     description: Gold Loan - Pre-Part Payment - Update and notification flow
     sequence:
       - key: search

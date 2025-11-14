@@ -128,7 +128,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Cancel_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Intercity(Bus) - Cancel Flow
     sequence:
       - key: search_BUS_201
@@ -414,7 +414,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Seller_Cancellation
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Intercity(Bus) - Seller Cancellation
     sequence:
       - key: search_BUS_201

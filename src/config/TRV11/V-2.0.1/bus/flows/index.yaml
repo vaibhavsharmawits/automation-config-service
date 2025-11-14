@@ -1,6 +1,6 @@
 flows:
   - id: IntraCity_Purchase_Journey_FlowCode_Based
-    tags: ["PRAMAAN", "MANDATORY"]
+    tags: ["PRAMAAN", "MANDATORY","REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
       - key: search_BUS_201
@@ -194,7 +194,7 @@ flows:
         expect: false
      
   - id: IntraCity_User_Cancellation_Flow
-    tags: ["PRAMAAN", "MANDATORY","REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY","REPORTABLE","WORKBENCH"]
     description: IntraCity - User Cancellation Flow
     sequence:
       - key: search_BUS_201
@@ -629,7 +629,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Technical_Cancellation_Flow
-    tags: ["PRAMAAN", "MANDATORY","REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY","REPORTABLE","WORKBENCH"]
     description: IntraCity - Technical Cancellation Flow
     sequence:
       - key: search_BUS_201

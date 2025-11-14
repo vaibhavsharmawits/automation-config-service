@@ -1,6 +1,6 @@
 flows:
   - id: Discovery_Flow_full_catalog
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE",WORKBENCH]
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -118,7 +118,7 @@ flows:
         label: full catalog
         description: BPP returns the full catalog refresh
   - id: Discovery_Flow_incremental_catalog
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
     sequence:
       - key: search_inc
@@ -156,7 +156,7 @@ flows:
         expect: false
         description: Bap stops search for incremental changes
   - id: Delivery_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -387,7 +387,7 @@ flows:
         expect: false
         description: BPP sends the tracking information
   - id: Cancellation_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
@@ -452,7 +452,7 @@ flows:
         expect: false
         description: Seller Accepts cancellation
   - id: RTO_And_Part_Cancellation_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (RTO and Part Cancellation)
     sequence:
       - key: select
@@ -559,7 +559,7 @@ flows:
         expect: false
         description: RTO delivered
   - id: Return_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Return)
     sequence:
       - key: select
@@ -694,7 +694,7 @@ flows:
         expect: false
         description: Update request delivered
   - id: Cash_On_Delivery_Flow
-    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE"]
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Cash On Delivery)
     sequence:
       - key: select
@@ -1403,7 +1403,7 @@ flows:
         expect: false
         description: settlement trail update
   - id: Commercial_Model_For_BNP/SNP_Flow
-    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE"]
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Commercial model)
     sequence:
       - key: select
@@ -1470,7 +1470,7 @@ flows:
         expect: false
         description: BPP accepts order confirmation
   - id: Delivery_Flow_With_IGM_1
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1643,7 +1643,7 @@ flows:
         owner: BAP
         expect: false
   - id: Delivery_Flow_With_IGM_2
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select

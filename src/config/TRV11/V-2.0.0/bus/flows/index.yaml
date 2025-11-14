@@ -1,5 +1,6 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
+    tags: ["WORKBENCH","MANDATORY"]
     description: User uses station code for searching bus
     sequence:
       - key: search1_BUS_200
@@ -18,6 +19,7 @@ flows:
         pair: null
         owner: BPP
   - id: STATION_CODE_FLOW_ORDER
+    tags: ["WORKBENCH","MANDATORY"]
     description: User uses station code for searching bus
     sequence:
       - key: search1_BUS_200
@@ -130,6 +132,7 @@ flows:
         pair: null
         owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY"]
     description: User cancels the bus booking
     sequence:
       - key: search1_BUS_200
@@ -256,6 +259,7 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY"]
     description: User cancels the bus booking
     sequence:
       - key: search1_BUS_200
