@@ -1,5 +1,6 @@
 flows:
   - id: Hotel Booking
+    tags: ["PRAMAAN", "MANDATORY"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -136,6 +137,7 @@ flows:
         owner: BPP
         expect: false  
   - id: Hotel Booking TTL
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE"]
     description: Hotel Booking (ttl based) - Flow
     sequence:
       - key: search_1

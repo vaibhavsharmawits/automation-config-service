@@ -1,5 +1,6 @@
 flows:
   - id: Intercity(Bus)_Station_Code_Based_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Station Code Based Flow
     sequence:
       - key: search_BUS_201
@@ -127,6 +128,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Cancel_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Intercity(Bus) - Cancel Flow
     sequence:
       - key: search_BUS_201
@@ -252,6 +254,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Error_Response(Soft Locking Time)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Error Response (Soft Locking Time)
     sequence:
       - key: select_BUS_221
@@ -285,6 +288,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Partial_Cancellation_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Partial Cancellation Flow
     sequence:
       - key: search_BUS_201
@@ -410,6 +414,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Seller_Cancellation
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Intercity(Bus) - Seller Cancellation
     sequence:
       - key: search_BUS_201
@@ -517,6 +522,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Rating(Success)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Rating(Success)
     sequence:
       - key: search_BUS_201
@@ -630,6 +636,7 @@ flows:
         owner: BAP
         expect: false
   - id: Intercity(Bus)_Rating(Error Flow)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Rating(Error Flow)
     sequence:
       - key: search_BUS_201

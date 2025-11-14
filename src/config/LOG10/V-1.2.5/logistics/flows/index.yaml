@@ -679,6 +679,7 @@ flows:
     pair: null
     owner: BPP
 - id: CASH_ON_DELIVERY_FLOW
+  tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
   description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
   sequence:
   - key: search_1_LOGISITCS
@@ -1203,6 +1204,7 @@ flows:
     pair: null
     owner: BPP
 - id: SURGE_FEE_FLOW
+  tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP adds an additional surge charge due to any operational reason.
   sequence:
   - key: search_LOGISTICS
@@ -1537,6 +1539,7 @@ flows:
     pair: null
     owner: BPP
 - id: STATIC_OTP_PICKUP_DELIVERY
+
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
   sequence:
   - key: search_2_LOGISTICS
@@ -1700,6 +1703,7 @@ flows:
     pair: null
     owner: BPP
 - id: STATIC_OTP_RTO_DELIVERY
+  tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
   description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
   sequence:
   - key: search_3_LOGISTICS

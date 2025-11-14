@@ -1,5 +1,6 @@
 flows:
   - id: FULL_CATALOG
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -35,9 +36,8 @@ flows:
             options:
               - code: "discount"
                 name: "Discount"
-              # - code: "buyXgetY"
-              #   name: "BuyXGetY"
   - id: INCREMENTAL_CATALOG
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
     sequence:
       - key: search_1
@@ -82,6 +82,7 @@ flows:
             display: false
             default: stop
   - id: ORDER_FLOW
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Order Flow)
     sequence:
       - key: select
@@ -214,6 +215,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: OUT_OF_STOCK
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
       # - key: search
@@ -383,6 +385,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: BUYER_CANCEL
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
       # - key: search
@@ -480,6 +483,7 @@ flows:
         expect: false
         description: Seller confirms the cancellation of the order
   - id: RTO_PLUS_PART_CANCELLATION
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Seller Side Order Cancellation RTO)
     sequence:
       # - key: search
@@ -623,6 +627,7 @@ flows:
         owner: BPP
         expect: false
   - id: RETURN_FLOW
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Liquidation)
     sequence:
       - key: select
@@ -759,6 +764,7 @@ flows:
         owner: BAP
         expect: false
   - id: FORCE_CANCEL
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
       # - key: search
@@ -904,6 +910,7 @@ flows:
             default: "yes"
             display: false
   - id: OFFERS_FLOW
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
     sequence:
       # - key: search
@@ -1003,6 +1010,7 @@ flows:
         expect: false
         description: Seller confirms the cancellation of the order
   - id: SELF_PICKUP
+    tags: ["WORKBENCH", "MANDATORY"]
     description: User pickes the order themselfs
     sequence:
       # - key: search
@@ -1103,6 +1111,7 @@ flows:
         owner: BPP
         expect: false
   - id: SLOTTED_DELIVERY
+    tags: ["WORKBENCH", "MANDATORY"]
     description: User pickes the order themselfs
     sequence:
       - key: select
@@ -1218,6 +1227,7 @@ flows:
         owner: BPP
         expect: false
   - id: BUYER_DELIVERY
+    tags: ["WORKBENCH", "MANDATORY"]
     description: User uses station code for searching bus
     sequence:
       - key: select
@@ -1317,6 +1327,7 @@ flows:
         owner: BPP
         expect: false
   - id: BUYER INSTRUCTIONS AND ADDRESS UPDATE FLOW
+    tags: ["WORKBENCH", "MANDATORY"]
     description: User uses station code for searching bus
     sequence:
       # - key: search
@@ -1473,6 +1484,7 @@ flows:
         owner: BPP
         expect: false
   - id: MULTI_OPTION_FULFILLMENT_FLOW
+    tags: ["WORKBENCH", "MANDATORY"]
     description: User uses station code for searching bus
     sequence:
       # - key: search
@@ -1591,6 +1603,7 @@ flows:
         owner: BPP
         expect: false
   - id: COMMERCIAL_MODEL_FOR_BNP/SNP_FLOW
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE"]
     description: Retail 1.2.5 (Commercial model)
     sequence:
       - key: select
@@ -1672,6 +1685,7 @@ flows:
         expect: false
         description: BPP accepts order confirmation
   - id: DELIVERY_FLOW_WITH_IGM_1
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1895,6 +1909,7 @@ flows:
         owner: BPP
         expect: false
   - id: DELIVERY_FLOW_WITH_IGM_2
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select
@@ -2146,6 +2161,7 @@ flows:
         owner: BPP
         expect: false  
   - id: DELIVERY_FLOW_WITH_IGM_3
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Delivery with IGM 3)
     sequence: &base_line_flow
       - key: select
