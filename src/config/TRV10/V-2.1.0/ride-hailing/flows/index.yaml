@@ -341,7 +341,7 @@ flows:
       - key: search_ride
         type: search
         unsolicited: false
-        pair: on_search
+        pair: on_search_self_pickup
         owner: BAP
         expect: true
         input:
@@ -357,7 +357,7 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search
+      - key: on_search_self_pickup
         type: on_search
         unsolicited: false
         pair: null
@@ -390,16 +390,16 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm_driver_not_assigned
+        pair: on_confirm_self_pickup
         owner: BAP
         expect: false
-      - key: on_confirm_driver_not_assigned
+      - key: on_confirm_self_pickup
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_update_ride
+      - key: on_update_ride_self_pickup
         type: on_update
         unsolicited: true
         pair: null
@@ -675,21 +675,9 @@ flows:
         pair: on_confirm_ride
         owner: BAP
         expect: false
-      - key: on_confirm_ride
+      - key: on_confirm_technical
         type: on_confirm
         unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_status_unsolicited
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_status_ride_arrived
-        type: on_status
-        unsolicited: true
         pair: null
         owner: BPP
         expect: false
@@ -857,7 +845,7 @@ flows:
       - key: search
         type: search
         unsolicited: false
-        pair: on_search
+        pair: on_search_with_multiple_stops
         owner: BAP
         expect: true
         input:
@@ -877,7 +865,7 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search
+      - key: on_search_with_multiple_stops
         type: on_search
         unsolicited: false
         pair: null
