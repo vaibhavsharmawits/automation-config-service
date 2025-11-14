@@ -1,5 +1,6 @@
 flows:
   - id: IntraCity_Purchase_Journey_FlowCode_Based
+    tags: ["PRAMAAN", "MANDATORY"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
       - key: search_BUS_201
@@ -74,6 +75,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Search_Pagination_FlowCode_Based
+    tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Search Pagination Flow(Code Based)
     sequence:
       - key: search0_BUS_201
@@ -107,6 +109,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Unlimited_Passes_Flow_Code_Based
+    tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Unlimited Passes Flow (Code Based)
     sequence:
       - key: search_BUS_201
@@ -191,6 +194,7 @@ flows:
         expect: false
      
   - id: IntraCity_User_Cancellation_Flow
+    tags: ["PRAMAAN", "MANDATORY","REPORTABLE"]
     description: IntraCity - User Cancellation Flow
     sequence:
       - key: search_BUS_201
@@ -289,6 +293,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(With Update Call)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
       - key: search_BUS_201
@@ -375,6 +380,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_User_Based_Confirmation_flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - User Based Confirmation flow
     sequence:
       - key: search_BUS_201
@@ -461,6 +467,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(Without Update Call)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Vehicle Based Confirmation flow(Without Update Call)
     sequence:
       - key: search_BUS_201
@@ -535,6 +542,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(With Update & QR Call)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
       - key: search_BUS_201
@@ -621,6 +629,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Technical_Cancellation_Flow
+    tags: ["PRAMAAN", "MANDATORY","REPORTABLE"]
     description: IntraCity - Technical Cancellation Flow
     sequence:
       - key: search_BUS_201

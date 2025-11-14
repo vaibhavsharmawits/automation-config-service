@@ -1,5 +1,6 @@
 flows:
   - id: Discovery_of_Insurer_Providers_and_Master_Policies
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Discovery of Insurer Providers and Master Policies
     sequence:
       - key: search_insurence_provider
@@ -24,6 +25,7 @@ flows:
         owner: BPP
         expect: false
   - id: Discovery_of_Products_from_Master_Policies (Hospicash Insurance)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Discovery of Products from Master Policies (Hospicash Insurance)
     sequence:
       - key: search_discover_product_hospicash
@@ -48,6 +50,7 @@ flows:
         owner: BPP
         expect: false
   - id: Purchase_Journey_Hospicash_Insurance
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Purchase Journey Hospicash Insurance
     sequence:
       - key: search_purchase_journey_hospicash

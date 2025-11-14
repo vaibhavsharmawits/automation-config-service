@@ -1,5 +1,6 @@
 flows:
   - id: Discovery_of_Insurer_Providers_and_Master_Policies
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Discovery of Insurer Providers and Master Policies
     sequence:
       - key: search_insurence_provider
@@ -50,6 +51,7 @@ flows:
         expect: false
      
   - id: Purchase_Journey_Transit_Insurance
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Purchase Journey Transit Insurance
     sequence:
       - key: search_purchase_journey_transit

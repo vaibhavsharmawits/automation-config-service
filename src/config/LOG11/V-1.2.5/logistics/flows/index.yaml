@@ -164,6 +164,7 @@ flows:
               - code: "022"
                 name: "RTO (with return)"
   - id: ORDER_FLOW_BASE_LINE
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: This flow illustrates the logistics order process for Baseline Features to be implemented by all Network participants transacting on version v1.2.5.
     sequence:
       - key: search_LOGISTICS
@@ -512,6 +513,7 @@ flows:
         pair: null
         owner: BPP
   - id: WEIGHT_DIFFERENTIAL_FLOW
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: This flow illustrates scenarios where there is a discrepancy between the declared and actual weight of a shipment, the LSP identifies the difference and updates the corresponding weight differential charges.
     sequence:
       - key: search_LOGISTICS
@@ -892,6 +894,7 @@ flows:
         pair: null
         owner: BPP
   - id: CASH_ON_DELIVERY_FLOW
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: This flow illustrates the logistics process for Cash on Delivery (COD)/ Payment on Delivery (POD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
     sequence:
       - key: search_1_LOGISITCS
@@ -1561,6 +1564,7 @@ flows:
         pair: null
         owner: BPP
   - id: STATIC_OTP_RTO_DELIVERY
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
     sequence:
       - key: search_3_LOGISTICS
