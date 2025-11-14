@@ -1,5 +1,6 @@
 flows:
   - id: FEATURE_DISCOVERY
+    tags: ["WORKBENCH", "MANDATORY"]
     description: This flow illustrates the feature discovery flow among network participants for point-to-hub-to-point (P2H2P) logistics operations
     sequence:
       - key: search_LOGISTICS
@@ -164,6 +165,7 @@ flows:
               - code: "022"
                 name: "RTO (with return)"
   - id: ORDER_FLOW_BASE_LINE
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: This flow illustrates the logistics order process for Baseline Features to be implemented by all Network participants transacting on version v1.2.5.
     sequence:
       - key: search_LOGISTICS
@@ -319,6 +321,7 @@ flows:
         pair: null
         owner: BPP
   - id: RTO_FLOW
+    tags: ["WORKBENCH", "MANDATORY"]
     description: This flow illustrates the Return to Origin (RTO) process for Logistics Service Providers (LSPs) to handle situations where the buyer is unavailable, an accident occurs, or other unforeseen circumstances arise while the rider is out for delivery.
     sequence:
       - key: search_LOGISTICS
@@ -512,6 +515,7 @@ flows:
         pair: null
         owner: BPP
   - id: WEIGHT_DIFFERENTIAL_FLOW
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: This flow illustrates scenarios where there is a discrepancy between the declared and actual weight of a shipment, the LSP identifies the difference and updates the corresponding weight differential charges.
     sequence:
       - key: search_LOGISTICS
@@ -698,6 +702,7 @@ flows:
         pair: null
         owner: BPP
   - id: PICKUP_DELIVERY_ATTEMPT
+    tags: ["WORKBENCH", "MANDATORY"]
     description: This flow illustrates scenarios where the LSP initiates a pickup or delivery attempt but is unable to complete it due to reasons such as customer unavailability, restricted access, or operational constraints. In such cases, the LSP marks the attempt as failed, provides a reason code, and reschedules the task for a future date. All attempts, including timestamps, statuses, and reason codes, are recorded in the system to maintain a complete and auditable trail of logistics activity.
     sequence:
       - key: search_LOGISTICS
@@ -892,6 +897,7 @@ flows:
         pair: null
         owner: BPP
   - id: CASH_ON_DELIVERY_FLOW
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: This flow illustrates the logistics process for Cash on Delivery (COD)/ Payment on Delivery (POD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
     sequence:
       - key: search_1_LOGISITCS
@@ -1068,6 +1074,7 @@ flows:
         pair: null
         owner: BPP
   - id: PREPAID_PAYMENT_FLOW
+    tags: ["WORKBENCH", "MANDATORY"]
     description: This flow illustrates the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers. Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
     sequence:
       - key: search_LOGISTICS
@@ -1242,6 +1249,7 @@ flows:
         pair: null
         owner: BPP
   - id: CANCELLATION_TERMS_FLOW
+    tags: ["WORKBENCH", "MANDATORY"]
     description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
     sequence:
       - key: search_LOGISTICS
@@ -1406,6 +1414,7 @@ flows:
         pair: null
         owner: BPP
   - id: STATIC_OTP_PICKUP_DELIVERY
+    tags: ["WORKBENCH", "MANDATORY"]
     description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
     sequence:
       - key: search_2_LOGISTICS
@@ -1561,6 +1570,7 @@ flows:
         pair: null
         owner: BPP
   - id: STATIC_OTP_RTO_DELIVERY
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
     sequence:
       - key: search_3_LOGISTICS
@@ -1735,6 +1745,7 @@ flows:
         pair: null
         owner: BPP
   - id: ORDER_FLOW_EXCHANGE_CUSTOMER_SUPPORT_DETAILS
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features with customer support details
     sequence:
             - key: search_LOGISTICS
@@ -1884,6 +1895,7 @@ flows:
               pair: null
               owner: BPP
   - id: ORDER_FLOW_CODIFIED_STATIC_TERMS
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features with codifed static terms
     sequence:
     - key: search_LOGISTICS
@@ -2033,6 +2045,7 @@ flows:
       pair: null
       owner: BPP
   - id: ORDER_FLOW_RCM
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features with rcm self-declartion
     sequence:
     - key: search_LOGISTICS
@@ -2182,6 +2195,7 @@ flows:
       pair: null
       owner: BPP
   - id: ORDER_FLOW_BASE_LINE_PUBLIC_SPECIAL_CAPABILITIES
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features with public special capabilities
     sequence:
     - key: search_LOGISTICS
@@ -2330,6 +2344,7 @@ flows:
       pair: null
       owner: BPP
   - id: ORDER_FLOW_BASE_LINE_SLA_METRICS
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS_SLA
@@ -2479,6 +2494,7 @@ flows:
       pair: null
       owner: BP
   - id: ORDER_FLOW_BASE_LINE_SELLER_CREDS
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -2628,6 +2644,7 @@ flows:
       pair: null
       owner: BPP
   - id: E-WAY_BILL
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -2777,6 +2794,7 @@ flows:
       pair: null
       owner: BPP
   - id: E-POD
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -2937,6 +2955,7 @@ flows:
       pair: null
       owner: BPP
   - id: Call-Masking
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -3107,6 +3126,7 @@ flows:
       pair: null
       owner: BPP
   - id: RATE_CARD (P2H2P)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Rate Card for point-to-hub-to-point logistics operations
     sequence: 
     - key: search_rate_card_P2H2P_LOGISTICS
@@ -3281,7 +3301,8 @@ flows:
           name: "RTO (with return)"
 
   - id: REVERSE_QC
-    description: This flow illustrates the Return to Origin (RTO) process for Logistics Service Providers (LSPs) to handle situations where the buyer is unavailable, an accident occurs, or other unforeseen circumstances arise while the rider is out for delivery.
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: This flow illustrates the Reverse QC (QC) process for Logistics Service Providers (LSPs) to handle situations where the buyer is unavailable, an accident occurs, or other unforeseen circumstances arise while the rider is out for delivery.
     sequence:
       - key: search_REVERSE_QC_LOGISTICS
         type: search
@@ -3467,4 +3488,717 @@ flows:
         description: LSP updates order status [Order delivered]
         pair: null
         owner: BPP
-      
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: point-to-hub-to-point (P2H2P) delivery flow including baseline features
+    sequence:
+    - key: search_LOGISTICS
+      type: search
+      unsolicited: false
+      description: LBNP sends a search request
+      pair: on_search_LOGISTICS
+      owner: BAP
+      expect: true
+      input:
+      - name: retailCategory
+        label: Select retail item category
+        type: select
+        values:
+        
+        - Grocery
+        - Fashion
+        - BPC
+        - Electronics
+        - Appliances
+        - Home & Kitchen
+        - Health & Wellness
+        - Pharma
+        - Auto components
+        - C2C parcels
+      - name: category
+        label: Select a category
+        type: select
+        values:
+        - Standard Delivery
+        - Next Day Delivery
+        - Same Day Delivery
+        payloadField: $.message.intent.category.id
+      - name: paymentType
+        label: Select payment type
+        type: select
+        values:
+        - POST-FULFILLMENT
+        payloadField: $.message.intent.payment.type
+      - name: city_code
+        label: Enter city code
+        type: text
+        payloadField: $.context.city
+        default: "std:080"
+      - name: start_gps
+        label: Enter start gps coordinates
+        type: text
+        payloadField: $.message.intent.fulfillment.start.location.gps
+        default: 12.4535,77.9283
+      - name: end_gps
+        label: Enter end gps coordinates
+        type: text
+        payloadField: $.message.intent.fulfillment.end.location.gps
+        default: 12.4535,77.9283
+      - name: start_code
+        label: Enter start area code
+        type: text
+        payloadField: $.message.intent.fulfillment.start.location.address.area_code
+        default: "560001"
+      - name: end_code
+        label: Enter end area code
+        type: text
+        payloadField: $.message.intent.fulfillment.end.location.address.area_code
+        default: "560001"
+    - key: on_search_LOGISTICS
+      type: on_search
+      unsolicited: false
+      description: LSP responds with catalog
+      pair: null
+      owner: BPP
+    - key: init_LOGISTICS
+      type: init
+      unsolicited: false
+      description: LBNP selects and initializes order
+      pair: on_init_LOGISTICS
+      owner: BAP
+    - key: on_init_LOGISTICS
+      type: on_init
+      unsolicited: false
+      description: LSP acknowledges and provides quote breakup
+      pair: null
+      owner: BPP
+    - key: confirm_LOGISTICS
+      type: confirm
+      unsolicited: false
+      description: LBNP sends order confirmation
+      pair: on_confirm_LOGISTICS
+      owner: BAP
+    - key: on_confirm_LOGISTICS
+      type: on_confirm
+      unsolicited: false
+      description: LSP accepts the order
+      pair: null
+      owner: BPP
+    - key: update_LOGISTICS
+      type: update
+      unsolicited: false
+      description: LBNP updates order details
+      pair: on_update_LOGISTICS
+      owner: BAP
+    - key: on_update_LOGISTICS
+      type: on_update
+      unsolicited: false
+      description: LSP acknowledges order updates and searches for an agent.
+      pair: null
+      owner: BPP
+    - key: on_status_13_LOGISTICS
+      type: on_status
+      label: Agent-assigned
+      unsolicited: true
+      description: LSP updates order status [Agent-assigned]
+      pair: null
+      owner: BPP
+    - key: on_status_1_LOGISTICS
+      type: on_status
+      label: Order-picked-up
+      unsolicited: true
+      description: LSP updates order status [Order picked up]
+      pair: null
+      owner: BPP
+    - key: track_LOGISTICS
+      type: track
+      unsolicited: false
+      description: Buyer requests delivery tracking
+      pair: on_track_LOGISTICS
+      owner: BAP
+    - key: on_track_LOGISTICS
+      type: on_track
+      unsolicited: false
+      description: LSP provides order tracking information (gps or url)
+      pair: null
+      owner: BPP
+    - key: on_status_2_LOGISTICS
+      type: on_status
+      label: Out for delivery
+      unsolicited: true
+      description: LSP updates order status [Out for delivery]
+      pair: null
+      owner: BPP
+    - key: on_status_3_LOGISTICS
+      type: on_status
+      label: Order-delivered
+      unsolicited: true
+      description: LSP updates order status [Order delivered]
+      pair: null
+      owner: BPP
+    - key: issue_open
+      type: issue
+      label: open
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_processing
+      owner: BAP
+      expect: false
+    - key: on_issue_processing
+      type: on_issue
+      label: processing
+      unsolicited: false
+      description: anything
+      pair: null
+      owner: BPP
+      expect: false
+    - key: on_issue_need_more_info
+      type: on_issue
+      label: need_more_info
+      unsolicited: true
+      description: LSP provides more information
+      pair: null
+      owner: BPP
+      expect: true
+    - key: issue_info_provided
+      type: issue
+      label: info_provided
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_provided
+      owner: BAP
+      expect: false
+    - key: on_issue_provided
+      type: on_issue
+      label: provided
+      unsolicited: false
+      description: LSP
+      pair: null
+      owner: BPP
+      expect: false
+    - key: on_issue_resolution
+      type: on_issue
+      label: resolution
+      unsolicited: true
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false
+    - key: issue_resolution_accept
+      type: issue
+      label: resolution_accept
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_resolved
+      owner: BAP
+      expect: false
+      input:
+        # - name: resolution_accept
+        #   label: Select a resolution
+        #   type: select
+        #   values:
+        #     - "R1-Refund"
+        #     - "R2-Replacement"
+        #   default: "R2-Replacement"
+        - name: resolution_accept
+          label: Enter resolution ID
+          type: text
+    - key: on_issue_resolved
+      type: on_issue
+      label: resolved
+      unsolicited: false
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false
+    - key: issue_close
+      type: issue
+      label: close
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: null
+      owner: BAP
+      expect: false
+    - key: on_update_refund_igm
+      type: on_update
+      label: on_update_igm
+      unsolicited: true
+      description: final on_update call after issue closed
+      pair: null
+      owner: BPP
+      expect: false
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Standard point-to-point delivery flow including baseline features
+    sequence:
+    - key: search_LOGISTICS
+      type: search
+      unsolicited: false
+      description: LBNP sends a search request
+      pair: on_search_LOGISTICS
+      owner: BAP
+      expect: true
+      input:
+      - name: retailCategory
+        label: Select retail item category
+        type: select
+        values:
+        
+        - Grocery
+        - Fashion
+        - BPC
+        - Electronics
+        - Appliances
+        - Home & Kitchen
+        - Health & Wellness
+        - Pharma
+        - Auto components
+        - C2C parcels
+      - name: category
+        label: Select a category
+        type: select
+        values:
+        - Standard Delivery
+        - Next Day Delivery
+        - Same Day Delivery
+        payloadField: $.message.intent.category.id
+      - name: paymentType
+        label: Select payment type
+        type: select
+        values:
+        - POST-FULFILLMENT
+        payloadField: $.message.intent.payment.type
+      - name: city_code
+        label: Enter city code
+        type: text
+        payloadField: $.context.city
+        default: "std:080"
+      - name: start_gps
+        label: Enter start gps coordinates
+        type: text
+        payloadField: $.message.intent.fulfillment.start.location.gps
+        default: 12.4535,77.9283
+      - name: end_gps
+        label: Enter end gps coordinates
+        type: text
+        payloadField: $.message.intent.fulfillment.end.location.gps
+        default: 12.4535,77.9283
+      - name: start_code
+        label: Enter start area code
+        type: text
+        payloadField: $.message.intent.fulfillment.start.location.address.area_code
+        default: "560001"
+      - name: end_code
+        label: Enter end area code
+        type: text
+        payloadField: $.message.intent.fulfillment.end.location.address.area_code
+        default: "560001"
+    - key: on_search_LOGISTICS
+      type: on_search
+      unsolicited: false
+      description: LSP responds with catalog
+      pair: null
+      owner: BPP
+    - key: init_LOGISTICS
+      type: init
+      unsolicited: false
+      description: LBNP selects and initializes order
+      pair: on_init_LOGISTICS
+      owner: BAP
+    - key: on_init_LOGISTICS
+      type: on_init
+      unsolicited: false
+      description: LSP acknowledges and provides quote breakup
+      pair: null
+      owner: BPP
+    - key: confirm_LOGISTICS
+      type: confirm
+      unsolicited: false
+      description: LBNP sends order confirmation
+      pair: on_confirm_LOGISTICS
+      owner: BAP
+    - key: on_confirm_LOGISTICS
+      type: on_confirm
+      unsolicited: false
+      description: LSP accepts the order
+      pair: null
+      owner: BPP
+    - key: update_LOGISTICS
+      type: update
+      unsolicited: false
+      description: LBNP updates order details
+      pair: on_update_LOGISTICS
+      owner: BAP
+    - key: on_update_LOGISTICS
+      type: on_update
+      unsolicited: false
+      description: LSP acknowledges order updates and searches for an agent.
+      pair: null
+      owner: BPP
+    - key: on_status_13_LOGISTICS
+      type: on_status
+      label: Agent-assigned
+      unsolicited: true
+      description: LSP updates order status [Agent-assigned]
+      pair: null
+      owner: BPP
+    - key: on_status_1_LOGISTICS
+      type: on_status
+      label: Order-picked-up
+      unsolicited: true
+      description: LSP updates order status [Order picked up]
+      pair: null
+      owner: BPP
+    - key: track_LOGISTICS
+      type: track
+      unsolicited: false
+      description: Buyer requests delivery tracking
+      pair: on_track_LOGISTICS
+      owner: BAP
+    - key: on_track_LOGISTICS
+      type: on_track
+      unsolicited: false
+      description: LSP provides order tracking information (gps or url)
+      pair: null
+      owner: BPP
+    - key: on_status_2_LOGISTICS
+      type: on_status
+      label: Out for delivery
+      unsolicited: true
+      description: LSP updates order status [Out for delivery]
+      pair: null
+      owner: BPP
+    - key: on_status_3_LOGISTICS
+      type: on_status
+      label: Order-delivered
+      unsolicited: true
+      description: LSP updates order status [Order delivered]
+      pair: null
+      owner: BPP
+    - key: issue_open
+      type: issue
+      label: open
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_processing
+      owner: BAP
+      expect: false
+    - key: on_issue_processing
+      type: on_issue
+      label: processing
+      unsolicited: false
+      description: anything
+      pair: null
+      owner: BPP
+      expect: false
+    - key: on_issue_resolution
+      type: on_issue
+      label: resolution
+      unsolicited: true
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false
+    - key: issue_resolution_reject
+      type: issue
+      label: resolution_reject
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_processing_1
+      owner: BAP
+      expect: false
+      input:
+        - name: resolution_accept
+          label: Enter resolution ID
+          type: text 
+    - key: on_issue_processing_1
+      type: on_issue
+      label: processing
+      unsolicited: false
+      description: anything
+      pair: null
+      owner: BPP
+      expect: false 
+    - key: on_issue_resolution_1
+      type: on_issue
+      label: resolution
+      unsolicited: true
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false 
+    - key: issue_escalate
+      type: issue
+      label: escalate
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_processing_2
+      owner: BAP
+      expect: false
+    - key: on_issue_processing_2
+      type: on_issue
+      label: processing
+      unsolicited: false
+      description: anything
+      pair: null
+      owner: BPP
+      expect: false 
+    - key: on_issue_resolution_2
+      type: on_issue
+      label: resolution
+      unsolicited: true
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false           
+    - key: issue_resolution_accept
+      type: issue
+      label: resolution_accept
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_resolved
+      owner: BAP
+      expect: false
+      input:
+        # - name: resolution_accept
+        #   label: Select a resolution
+        #   type: select
+        #   values:
+        #     - "R1-Refund"
+        #     - "R2-Replacement"
+        #   default: "R2-Replacement"
+        - name: resolution_accept
+          label: Enter resolution ID
+          type: text
+    - key: on_issue_resolved
+      type: on_issue
+      label: resolved
+      unsolicited: false
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false
+    - key: issue_close
+      type: issue
+      label: close
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: null
+      owner: BAP
+      expect: false
+    - key: on_update_refund_igm
+      type: on_update
+      label: on_update_igm
+      unsolicited: true
+      description: final on_update call after issue closed
+      pair: null
+      owner: BPP
+      expect: false
+
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION
+    description: Standard point-to-point delivery flow including baseline features
+    sequence:
+    - key: search_LOGISTICS
+      type: search
+      unsolicited: false
+      description: LBNP sends a search request
+      pair: on_search_LOGISTICS
+      owner: BAP
+      expect: true
+      input:
+      - name: retailCategory
+        label: Select retail item category
+        type: select
+        values:
+        
+        - Grocery
+        - Fashion
+        - BPC
+        - Electronics
+        - Appliances
+        - Home & Kitchen
+        - Health & Wellness
+        - Pharma
+        - Auto components
+        - C2C parcels
+      - name: category
+        label: Select a category
+        type: select
+        values:
+        - Standard Delivery
+        - Next Day Delivery
+        - Same Day Delivery
+        payloadField: $.message.intent.category.id
+      - name: paymentType
+        label: Select payment type
+        type: select
+        values:
+        - POST-FULFILLMENT
+        payloadField: $.message.intent.payment.type
+      - name: city_code
+        label: Enter city code
+        type: text
+        payloadField: $.context.city
+        default: "std:080"
+      - name: start_gps
+        label: Enter start gps coordinates
+        type: text
+        payloadField: $.message.intent.fulfillment.start.location.gps
+        default: 12.4535,77.9283
+      - name: end_gps
+        label: Enter end gps coordinates
+        type: text
+        payloadField: $.message.intent.fulfillment.end.location.gps
+        default: 12.4535,77.9283
+      - name: start_code
+        label: Enter start area code
+        type: text
+        payloadField: $.message.intent.fulfillment.start.location.address.area_code
+        default: "560001"
+      - name: end_code
+        label: Enter end area code
+        type: text
+        payloadField: $.message.intent.fulfillment.end.location.address.area_code
+        default: "560001"
+    - key: on_search_LOGISTICS
+      type: on_search
+      unsolicited: false
+      description: LSP responds with catalog
+      pair: null
+      owner: BPP
+    - key: init_LOGISTICS
+      type: init
+      unsolicited: false
+      description: LBNP selects and initializes order
+      pair: on_init_LOGISTICS
+      owner: BAP
+    - key: on_init_LOGISTICS
+      type: on_init
+      unsolicited: false
+      description: LSP acknowledges and provides quote breakup
+      pair: null
+      owner: BPP
+    - key: confirm_LOGISTICS
+      type: confirm
+      unsolicited: false
+      description: LBNP sends order confirmation
+      pair: on_confirm_LOGISTICS
+      owner: BAP
+    - key: on_confirm_LOGISTICS
+      type: on_confirm
+      unsolicited: false
+      description: LSP accepts the order
+      pair: null
+      owner: BPP
+    - key: update_LOGISTICS
+      type: update
+      unsolicited: false
+      description: LBNP updates order details
+      pair: on_update_LOGISTICS
+      owner: BAP
+    - key: on_update_LOGISTICS
+      type: on_update
+      unsolicited: false
+      description: LSP acknowledges order updates and searches for an agent.
+      pair: null
+      owner: BPP
+    - key: on_status_13_LOGISTICS
+      type: on_status
+      label: Agent-assigned
+      unsolicited: true
+      description: LSP updates order status [Agent-assigned]
+      pair: null
+      owner: BPP
+    - key: on_status_1_LOGISTICS
+      type: on_status
+      label: Order-picked-up
+      unsolicited: true
+      description: LSP updates order status [Order picked up]
+      pair: null
+      owner: BPP
+    - key: track_LOGISTICS
+      type: track
+      unsolicited: false
+      description: Buyer requests delivery tracking
+      pair: on_track_LOGISTICS
+      owner: BAP
+    - key: on_track_LOGISTICS
+      type: on_track
+      unsolicited: false
+      description: LSP provides order tracking information (gps or url)
+      pair: null
+      owner: BPP
+    - key: issue_open_2
+      type: issue
+      label: open
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_processing
+      owner: BAP
+      expect: false
+    - key: on_issue_processing
+      type: on_issue
+      label: processing
+      unsolicited: false
+      description: anything
+      pair: null
+      owner: BPP
+      expect: false
+    - key: on_issue_resolution_igm_3
+      type: on_issue
+      label: resolution
+      unsolicited: true
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false
+    - key: issue_resolution_accept_igm_3
+      type: issue
+      label: resolution_accept
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: on_issue_resolved_igm_3
+      owner: BAP
+      expect: false
+      input:
+        # - name: resolution_accept
+        #   label: Select a resolution
+        #   type: select
+        #   values:
+        #     - "R1-Refund"
+        #     - "R2-Replacement"
+        #   default: "R2-Replacement"
+        - name: resolution_accept
+          label: Enter resolution ID
+          type: text
+    - key: on_issue_resolved_igm_3
+      type: on_issue
+      label: resolved
+      unsolicited: false
+      description: LSSA
+      pair: null
+      owner: BPP
+      expect: false
+    - key: on_status_2_LOGISTICS
+      type: on_status
+      label: Out for delivery
+      unsolicited: true
+      description: LSP updates order status [Out for delivery]
+      pair: null
+      owner: BPP
+    - key: on_status_3_LOGISTICS
+      type: on_status
+      label: Order-delivered
+      unsolicited: true
+      description: LSP updates order status [Order delivered]
+      pair: null
+      owner: BPP
+    - key: issue_close_igm_3
+      type: issue
+      label: close
+      unsolicited: false
+      description: Open an issue for IGM
+      pair: null
+      owner: BAP
+      expect: false
+        

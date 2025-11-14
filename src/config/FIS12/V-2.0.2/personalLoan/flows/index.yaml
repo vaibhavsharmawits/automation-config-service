@@ -1,5 +1,6 @@
 flows: 
   - id: Personal_Loan_With_AA_And_Monitoring_Consent
+    tags: ["WORKBENCH"]
     description: Personal Loan with Account Aggregator & monitoring consent
     sequence:
       - key: search_personal_loan 
@@ -222,6 +223,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Without_AA_And_Monitoring_Consent
+    tags: ["WORKBENCH"]
     description: Personal Loan flow without Account Aggregator
     sequence:
       - key: search_personal_loan
@@ -439,6 +441,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Without_Acount_Monitoring
+    tags: ["WORKBENCH"]
     description: Personal Loan with Account Aggregator & monitoring consent
     sequence:
       - key: search_personal_loan 
@@ -663,6 +666,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Offline
+    tags: ["WORKBENCH"]
     description: Personal Loan - Offline verification and processing
     sequence:
       - key: search_personal_loan 
@@ -804,6 +808,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Offline_And_Online
+    tags: ["WORKBENCH"]
     description: Personal Loan - Offline & Online Hybrid Verification
     sequence:
       - key: search_personal_loan
@@ -956,6 +961,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Foreclosure
+    tags: ["WORKBENCH"]
     description: Personal Loan - Loan Foreclosure
     sequence:
       - key: search_personal_loan 
@@ -1191,6 +1197,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Missed_EMI
+    tags: ["WORKBENCH"]
     description: Personal Loan - Missed EMI Payment
     sequence:
       - key: search_personal_loan 
@@ -1426,6 +1433,7 @@ flows:
         expect: false        
 
   - id: Personal_Loan_Pre_Part_Payment
+    tags: ["WORKBENCH"]
     description: Personal Loan - Pre-Part Payment
     sequence:
       - key: search_personal_loan 
@@ -1647,6 +1655,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Multiple_Offers
+    tags: ["WORKBENCH"]
     description: Personal Loan - Multiple Offers (Bureau Consent & AA Verification)
     sequence:
       - key: search_personal_loan

@@ -1,5 +1,6 @@
 flows:
   - id: Discovery_Flow_full_catalog
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -37,6 +38,7 @@ flows:
         label: full catalog
         description: BPP returns the full catalog refresh
   - id: Discovery_Flow_incremental_catalog
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
     sequence:
       - key: search_inc
@@ -68,6 +70,7 @@ flows:
         expect: false
         description: Bap stops search for incremental changes
   - id: Delivery_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -160,6 +163,7 @@ flows:
         expect: false
         description: Status updates - order delivered 
   - id: Out_Of_Stock_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
       - key: select_out_of_stock
@@ -269,6 +273,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Buyer_Cancellation_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
@@ -353,6 +358,7 @@ flows:
         expect: false
         description: Seller Accepts cancellation
   - id: Seller_Cancellation_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
@@ -466,6 +472,7 @@ flows:
         expect: false
         description: Status updates - rto order delivered
   - id: Seller_Cred_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -516,6 +523,7 @@ flows:
         expect: false
         description: Seller Accepts confirmation
   - id: Return_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Return)
     sequence:
       - key: select
@@ -643,6 +651,7 @@ flows:
         expect: false
         description: Update request delivered
   - id: Cash_On_Delivery_Flow
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Cash On Delivery)
     sequence:
       - key: select
@@ -728,6 +737,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Replacement_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Replacement)
     sequence:
       - key: select
@@ -876,6 +886,7 @@ flows:
         expect: false
         description: Status updates - order delivered for replacement
   - id: Cancel_Return_Request_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Cancel Return Request)
     sequence:
       - key: select
@@ -1005,6 +1016,7 @@ flows:
         expect: false
         description: Respond to cancel return request
   - id: Force_Cancellation_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
@@ -1134,6 +1146,7 @@ flows:
         expect: false
         description: settlement trail update
   - id: Delivery_Flow_With_IGM_1
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1317,6 +1330,7 @@ flows:
         owner: BPP
         expect: false
   - id: Delivery_Flow_With_IGM_2
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select
@@ -1528,6 +1542,7 @@ flows:
         owner: BPP
         expect: false
   - id: Delivery_Flow_With_IGM_3
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Delivery with IGM 3)
     sequence: &base_line_flow
       - key: select

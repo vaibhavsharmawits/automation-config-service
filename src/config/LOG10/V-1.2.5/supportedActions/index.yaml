@@ -1,35 +1,23 @@
 supportedActions:
-  "null": ["search","issue"]
-  search: ["on_search"]
-  on_search: ["search", "select", "init"]
-  select: ["on_select"]
-  on_select: ["init"]
-  init: ["on_init"]
-  on_init: ["init", "confirm"]
-  confirm: ["on_confirm", "status"]
-  on_confirm: ["confirm", "status", "cancel", "on_status", "track", "update"]
-  update: ["on_update"]
-  on_update: ["status", "on_status", "track", "cancel", "issue", "on_issue"]
-  status: ["on_status"]
-  track: ["on_track"]
-  on_track: ["on_track", "status", "on_status"]
-  on_status:
-    [
-      "status",
-      "cancel",
-      "track",
-      "on_status",
-      "on_cancel",
-      "on_track",
-      "update",
-      "on_update",
-      "issue",
-      "on_issue",
-    ]
-  cancel: ["on_cancel", "status", "issue", "on_issue"]
-  on_cancel: ["cancel", "status", "on_status", "issue", "on_issue"]
-  issue: ["on_issue","issue"]
-  on_issue: ["issue", "on_issue","on_update"]
+  "null": [ "search", "issue" ]
+  search: [ "on_search" ]
+  on_search: [ "search", "select", "init" ]
+  select: [ "on_select" ]
+  on_select: [ "init" ]
+  init: [ "on_init" ]
+  on_init: [ "init", "confirm" ]
+  confirm: [ "on_confirm", "status" ]
+  on_confirm: [ "confirm", "status", "cancel", "on_status", "track", "update" ]
+  update: [ "on_update" ]
+  on_update: [ "status", "on_status", "track", "cancel", "issue", "on_issue" ]
+  status: [ "on_status" ]
+  track: [ "on_track" ]
+  on_track: [ "on_track", "status", "on_status", "issue", "on_issue" ]
+  on_status: [ "status", "cancel", "track", "on_status", "on_cancel", "on_track", "update", "on_update", "issue", "on_issue" ]
+  cancel: [ "on_cancel", "status", "issue", "on_issue" ]
+  on_cancel: [ "cancel", "status", "on_status", "issue", "on_issue" ]
+  issue: [ "on_track","on_issue", "issue" , "on_update", "on_status" ]
+  on_issue: [ "issue", "on_issue", "on_update" , "on_status" ]
 
 apiProperties:
   search:
@@ -37,66 +25,52 @@ apiProperties:
     transaction_partner: []
   on_search:
     async_predecessor: "search"
-    transaction_partner: ["search"]
+    transaction_partner: [ "search" ]
   select:
     async_predecessor: null
     transaction_partner: []
   on_select:
     async_predecessor: "select"
-    transaction_partner: ["select"]
+    transaction_partner: [ "select" ]
   init:
     async_predecessor: null
     transaction_partner: []
   on_init:
     async_predecessor: "init"
-    transaction_partner: ["search", "on_search", "init"]
+    transaction_partner: [ "search", "on_search", "init" ]
   confirm:
     async_predecessor: null
-    transaction_partner: ["search", "on_search", "init", "on_init"]
+    transaction_partner: [ "search", "on_search", "init", "on_init" ]
   on_confirm:
     async_predecessor: "confirm"
-    transaction_partner: ["search", "on_search", "init", "on_init", "confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm" ]
   status:
     async_predecessor: null
-    transaction_partner: ["search", "on_search", "init", "on_init", "confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm" ]
   on_status:
     async_predecessor: null
-    transaction_partner: ["search", "on_search", "init", "on_init", "confirm", ]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm" ]
   update:
     async_predecessor: null
-    transaction_partner: ["search", "on_search", "init", "on_init", "confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm" ]
   on_update:
     async_predecessor: null
-    transaction_partner: ["search", "on_search", "init", "on_init", "confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm" ]
   cancel:
     async_predecessor: null
-    transaction_partner:
-      ["search", "on_search", "init", "on_init", "confirm", "on_confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm", "on_confirm" ]
   on_cancel:
     async_predecessor: null
-    transaction_partner:
-      ["search", "on_search", "init", "on_init", "confirm", "on_confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm", "on_confirm" ]
   track:
     async_predecessor: null
-    transaction_partner:
-      ["search", "on_search", "init", "on_init", "confirm", "on_confirm"]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm", "on_confirm" ]
   on_track:
     async_predecessor: null
-    transaction_partner:
-      [
-        "search",
-        "on_search",
-        "init",
-        "on_init",
-        "confirm",
-        "on_confirm",
-        "track",
-      ]
-issue:
-  async_predecessor: null
-  transaction_partner:
-    ["search", "on_search","select","on_select", "init", "on_init", "confirm", "on_confirm"]
-on_issue:
-  async_predecessor: null
-  transaction_partner:
-    ["search", "on_search","select","on_select", "init", "on_init", "confirm", "on_confirm",issue]
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm", "on_confirm", "track" ]
+  issue:
+    async_predecessor: null
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm", "on_confirm" ]
+  on_issue:
+    async_predecessor: null
+    transaction_partner: [ "search", "on_search", "init", "on_init", "confirm", "on_confirm", issue ]

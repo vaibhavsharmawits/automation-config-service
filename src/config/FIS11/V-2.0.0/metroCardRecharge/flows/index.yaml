@@ -1,5 +1,6 @@
 flows:
   - id: Discovery of Metro Card Recharge.
+    tags: ["WORKBENCH"]
     description: Discovery of Metro Card Recharge.
     sequence:
       - key: search
@@ -56,6 +57,7 @@ flows:
         owner: BPP
         expect: false
   - id: Metro Card Balance - Success
+    tags: ["WORKBENCH"]
     description: Discovery of Metro Card Balance (select/on_select & init_on_init calls are optional).
     sequence:
       - key: search
@@ -88,6 +90,7 @@ flows:
         owner: BPP
         expect: false
   - id: Metro Card Balance - Failure
+    tags: ["WORKBENCH"]
     description: Discovery of Metro Card Balance (select/on_select & init_on_init calls are optional).
     sequence:
       - key: search

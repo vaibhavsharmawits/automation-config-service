@@ -1,5 +1,6 @@
 flows:
   - id: OnDemand_Assign_driver_on_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Assign driver on on-confirm
     sequence:
       - key: search_ride
@@ -112,6 +113,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Assign_driver_post_on_ confirm
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Assign driver post on-confirm
     sequence:
       - key: search_ride
@@ -224,6 +226,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Purple_Tags_Assign_driver_on_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Purple Tags (Assign driver on on-confirm)
     sequence:
       - key: search_ride
@@ -336,6 +339,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Assign_driver_post_onconfirmSelfPickup
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Assign driver post on-confirm(Self-Pickup)
     sequence:
       - key: search_ride
@@ -448,6 +452,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Ride_cancellation_by_driver
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Ride cancellation by driver
     sequence:
       - key: search_ride
@@ -518,6 +523,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Ride_cancellation_by_rider
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Ride cancellation by rider
     sequence:
       - key: search_ride
@@ -618,6 +624,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Ride_Technical_Cancellation_Flow
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Technical Cancellation Flow
     sequence:
       - key: search_ride
@@ -706,6 +713,7 @@ flows:
         owner: BPP
         expect: false
   - id: Driver_not_found_on_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
     description: Driver not found on on_confirm
     sequence:
       - key: search_ride
@@ -770,6 +778,7 @@ flows:
         owner: BPP
         expect: false
   - id: Driver_not_found_post_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
     description: Driver not found post on_confirm
     sequence:
       - key: search_ride
@@ -840,6 +849,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Ride_with_multiple_stops
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Ride with multiple stops
     sequence:
       - key: search
@@ -956,6 +966,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Update_Stop
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Update Stop
     sequence:
       - key: search
@@ -1096,6 +1107,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Pre_Order_Bid
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Pre Order Bid
     sequence:
       - key: search_ride
@@ -1208,6 +1220,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Post_Order_Tip
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Post Order Tip
     sequence:
       - key: search_ride
@@ -1332,6 +1345,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Rental
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Rental
     sequence:
       - key: search_rental
@@ -1440,6 +1454,7 @@ flows:
         owner: BPP
         expect: false
   - id: Schedule_Rental
+    tags: ["WORKBENCH","MANDATORY"]
     description: Schedule - Rental
     sequence:
       - key: search_schedule_rental
@@ -1554,6 +1569,7 @@ flows:
         owner: BPP
         expect: false
   - id: Schedule_Trip
+    tags: ["WORKBENCH","MANDATORY"]
     description: Schedule - Trip
     sequence:
       - key: search_schedule_trip
@@ -1668,6 +1684,7 @@ flows:
         owner: BPP
         expect: false
   - id: OnDemand_Rentalwhen_end_stop_gps_coordinate_is_present
+    tags: ["WORKBENCH","MANDATORY"]
     description: On-Demand - Rental(when end stop gps coordinate is present)
     sequence:
       - key: search_rental_end
@@ -1780,6 +1797,7 @@ flows:
         owner: BPP
         expect: false
   - id: No_Acceptance_SoftCancel
+    tags: ["WORKBENCH","MANDATORY"]
     description: No Acceptance - Soft_Cancel
     sequence:
       - key: search_ride
@@ -1874,6 +1892,7 @@ flows:
         owner: BPP
         expect: false
   - id: No_Acceptance_SoftUpdate
+    tags: ["WORKBENCH","MANDATORY"]
     description: No Acceptance - Soft_Update
     sequence:
       - key: search
