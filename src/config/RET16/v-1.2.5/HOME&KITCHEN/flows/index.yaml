@@ -1,6 +1,6 @@
 flows:
   - id: Discovery_Flow_full_catalog
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -879,7 +879,7 @@ flows:
         expect: false
         description: settlement trail update
   - id: Delivery_Flow_With_IGM_1
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1063,7 +1063,7 @@ flows:
         owner: BPP
         expect: false
   - id: Delivery_Flow_With_IGM_2
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select

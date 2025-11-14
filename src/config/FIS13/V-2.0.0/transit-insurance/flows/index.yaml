@@ -26,6 +26,7 @@ flows:
         expect: false
  
   - id: Discovery_of_Products_from_Master_Policies (Transit Insurance)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Discovery of Products from Master Policies (Transit Insurance)
     sequence:
       - key: search_discover_product_transit
@@ -51,7 +52,7 @@ flows:
         expect: false
      
   - id: Purchase_Journey_Transit_Insurance
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Purchase Journey Transit Insurance
     sequence:
       - key: search_purchase_journey_transit
