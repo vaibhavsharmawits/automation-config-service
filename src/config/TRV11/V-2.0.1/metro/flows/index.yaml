@@ -1,6 +1,5 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
-    tags: ["WORKBENCH","MANDATORY"]
     description: User uses station code for searching metro
     sequence:
       - key: search1_METRO_201
@@ -19,7 +18,6 @@ flows:
         pair: null
         owner: BPP
   - id: STATION_CODE_FLOW_ORDER
-    tags: ["WORKBENCH","MANDATORY"]
     description: User uses station code for searching metro
     sequence:
       - key: search1_METRO_201
@@ -132,7 +130,6 @@ flows:
         pair: null
         owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
-    tags: ["WORKBENCH","MANDATORY"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -259,7 +256,6 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
-    tags: ["WORKBENCH","MANDATORY"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -388,7 +384,6 @@ flows:
         pair: null
         owner: BPP
   - id: DELAYED_CANCELLATION_FLOW_ACCEPTED
-    tags: ["WORKBENCH","MANDATORY"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -521,7 +516,6 @@ flows:
         pair: null
         owner: BPP
   - id: DELAYED_CANCELLATION_FLOW_REJECTED
-    tags: ["WORKBENCH","MANDATORY"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -654,7 +648,6 @@ flows:
         pair: null
         owner: BPP
   - id: END_STOP_UPDATE_FLOW
-    tags: ["WORKBENCH","MANDATORY"]
     description: End stop update flow
     sequence:
       - key: search1_METRO_201
@@ -759,6 +752,11 @@ flows:
         unsolicited: false
         pair: on_update_end_stop_1
         owner: BAP
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.order.fulfillments[*].stops[?(@.type=='END')].location.descriptor.code
       - key: on_update_end_stop_1
         type: on_update
         unsolicited: false
