@@ -379,7 +379,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_with_self_pickup
         type: init
         unsolicited: false
         pair: on_init
@@ -409,6 +409,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      # - key: on_status_unsolicited
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      # - key: on_status_ride_arrived
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: track
         type: track
         unsolicited: false
@@ -418,18 +430,6 @@ flows:
       - key: on_track
         type: on_track
         unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_status_unsolicited
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_status_ride_arrived
-        type: on_status
-        unsolicited: true
         pair: null
         owner: BPP
         expect: false
