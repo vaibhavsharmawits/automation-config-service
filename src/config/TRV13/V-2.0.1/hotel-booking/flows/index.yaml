@@ -1,5 +1,6 @@
 flows:
   - id: Hotel Booking Seller App Pagination Flow
+    tags: ["WORKBENCH","MANDATORY"]
     description: Hotel Booking - Seller App Pagination Flow
     sequence:
       - key: search_1
@@ -46,6 +47,7 @@ flows:
         owner: BPP
         expect: false      
   - id: Hotel Booking Purchase Journey
+    tags: ["WORKBENCH","MANDATORY"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_5
@@ -146,6 +148,7 @@ flows:
         owner: BPP
         expect: false  
   - id: Hotel Booking TTL
+    tags: ["WORKBENCH","MANDATORY"]
     description: Hotel Booking (ttl based) - Flow
     sequence:
       - key: search_6
