@@ -3697,6 +3697,14 @@ flows:
       pair: null
       owner: BAP
       expect: false
+      input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+        - "THUMBS_UP"
+        - "THUMBS_DOWN"
+        default: "THUMBS_UP"
     - key: on_update_refund_igm
       type: on_update
       label: on_update_igm
@@ -3963,6 +3971,14 @@ flows:
       pair: null
       owner: BAP
       expect: false
+      input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+        - "THUMBS_UP"
+        - "THUMBS_DOWN"
+        default: "THUMBS_UP"
     - key: on_update_refund_igm
       type: on_update
       label: on_update_igm
@@ -4178,4 +4194,12 @@ flows:
       pair: null
       owner: BAP
       expect: false
+      input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+        - "THUMBS_UP"
+        - "THUMBS_DOWN"
+        default: "THUMBS_UP"
         
