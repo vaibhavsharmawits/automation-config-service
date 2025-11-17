@@ -1,5 +1,6 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
+    tags: ["WORKBENCH","MANDATORY"]
     title: Fetching catalog of metro providers
     description: This flow illustrates the first search operation where the buyer app fetches for the catalog of metro providers consisting of routes and station codes available
     sequence:
@@ -19,6 +20,7 @@ flows:
         pair: null
         owner: BPP
   - id: STATION_CODE_FLOW_ORDER
+    tags: ["WORKBENCH","MANDATORY"]
     title: Purchase journey of metro tickets
     description: This flow illustrates a typical purchase journey where the journey starts with searching for a specific pair of stations all the way to getting the ticket and completion of the journey
     sequence:
@@ -132,6 +134,7 @@ flows:
         pair: null
         owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY"]
     title: Technical cancellation journey
     description: This flow illustrates the technical cancellation flow where the buyer app attempts to cancel the order transaction due to technical issues/ failures (viz. on_confirm response beyond ttl)
     sequence:
@@ -259,6 +262,7 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY"]
     title: User cancellation joureney
     description: This flow illustrates the user cancellation flow where the buyer intends to cancel their metro ticket
     sequence:
