@@ -5,11 +5,11 @@ supportedActions:
   select: ["on_select", "select"]
   on_select: ["init", "select", "on_status"]
   init: ["on_init"]
-  on_init: ["confirm"]
+  on_init: ["confirm","init"]
   confirm: ["on_confirm"]
   on_confirm: ["update", "on_update"]
   update: ["on_update"]
-  on_update: ["update","on_update"]
+  on_update: ["update","on_update","status"]
   status: ["on_status"]
   on_status: ["status", "init"]
 
