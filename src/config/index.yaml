@@ -29,6 +29,17 @@ domain:
             flows: "./TRV14/V-2.0.0/unreserved-ticketing/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV14/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:TRV12
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: Airline
+            flows: "./TRV12/V-2.0.0/airline/flows/index.yaml"
+          - name: Intercity
+            flows: "./TRV12/V-2.0.0/intercity/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV12/V-2.0.0/supportedActions/index.yaml"        
   - name: ONDC:TRV13
     versions:
       - id: 2.0.0
@@ -37,7 +48,14 @@ domain:
           - name: Hotel-Booking
             flows: "./TRV13/V-2.0.0/hotel-booking/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml"        
+          $ref: "src/config/TRV13/V-2.0.0/supportedActions/index.yaml" 
+      - id: 2.0.1
+        reporting: false
+        usecase:
+          - name: Hotel-Booking-V2
+            flows: "./TRV13/V-2.0.1/hotel-booking/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV13/V-2.0.1/supportedActions/index.yaml"           
   - name: ONDC:LOG10
     versions:
       - id: 1.2.5
@@ -136,6 +154,46 @@ domain:
             flows: "./RET18/V-1.2.5/Health&Wellness/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:FIS11
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: metro-card-recharge
+            flows: "./FIS11/V-2.0.0/metroCardRecharge/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS11/V-2.0.0/supportedActions/index.yaml"
+  - name: ONDC:FIS12
+    versions:
+      - id: 2.0.2
+        reporting: false
+        usecase:
+          - name: GOLD LOAN
+            flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"        
+  - name: ONDC:FIS13
+    versions:
+      - id: 2.0.0
+        reporting: false
+        usecase:
+          - name: transit-insurance
+            flows: "./FIS13/V-2.0.0/transit-insurance/flows/index.yaml"
+          - name: accidental-insurance
+            flows: "./FIS13/V-2.0.0/accidental-insurance/flows/index.yaml"
+          - name: hospicash-insurance
+            flows: "./FIS13/V-2.0.0/hospicash-insurance/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS13/V-2.0.0/supportedActions/index.yaml"   
+  - name: ONDC:FIS10
+    versions:
+      - id: 2.1.0
+        reporting: false
+        usecase:
+          - name: gift-card
+            flows: "./FIS10/V-2.1.0/giftCard/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/FIS10/V-2.1.0/supportedActions/index.yaml"              
 usecases:
   domain:
     - key: ONDC:TRV11
@@ -172,7 +230,16 @@ usecases:
       version:
         - key: 2.0.0
           usecase:
-            - Hotel-Booking        
+            - Hotel-Booking 
+        - key: 2.0.1
+          usecase:
+            - Hotel-Booking-V2 
+    - key: ONDC:TRV12
+      version:
+        - key: 2.0.0
+          usecase:
+            - Intercity       
+            - Airline                  
     - key: ONDC:RET10
       version:
         - key: 1.2.5
@@ -213,3 +280,25 @@ usecases:
         - key: 1.2.5
           usecase:
             - HEALTH&WELLNESS
+    - key: ONDC:FIS11
+      version:
+        - key: 2.0.0
+          usecase:
+            - metro-card-recharge
+    - key: ONDC:FIS12
+      version:
+        - key: 2.0.2
+          usecase:
+            - GOLD LOAN     
+    - key: ONDC:FIS13
+      version:
+        - key: 2.0.0
+          usecase:
+            - transit-insurance
+            - accidental-insurance
+            - hospicash-insurance  
+    - key: ONDC:FIS10
+      version:
+        - key: 2.1.0
+          usecase:
+            - gift-card                    

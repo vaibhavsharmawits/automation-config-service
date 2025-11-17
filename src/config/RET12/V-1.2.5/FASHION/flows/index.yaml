@@ -1124,3 +1124,555 @@ flows:
         owner: BAP
         expect: false
         description: settlement trail update
+  - id: Delivery_Flow_With_IGM_1
+    description: Retail 1.2.5 (Delivery with IGM 1)
+    sequence: &base_line_flow
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP select the item
+        input:
+          - name: fashion_select
+            type: ret10_grocery_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Respond to init
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered 
+      - key: issue_open
+        type: issue
+        label: open
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_processing
+        owner: BAP
+        expect: false
+      - key: on_issue_processing
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: anything
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_need_more_info
+        type: on_issue
+        label: need_more_info
+        unsolicited: true
+        description: LSP provides more information
+        pair: null
+        owner: BPP
+        expect: true
+      - key: issue_info_provided
+        type: issue
+        label: info_provided
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_provided
+        owner: BAP
+        expect: false
+      - key: on_issue_provided
+        type: on_issue
+        label: provided
+        unsolicited: false
+        description: LSP
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_resolved
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close
+        type: issue
+        label: close
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: null
+        owner: BAP
+        expect: false
+      - key: on_update_igm_return
+        type: on_update
+        label: on_update_igm
+        unsolicited: true
+        description: final on_update call after issue closed
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Delivery_Flow_With_IGM_2
+    description: Retail 1.2.5 (Delivery with IGM 2)
+    sequence: &base_line_flow
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP select the item
+        input:
+          - name: fashion_select
+            type: ret10_grocery_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Respond to init
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered 
+      - key: issue_open
+        type: issue
+        label: open
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_processing
+        owner: BAP
+        expect: false
+      - key: on_issue_processing
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: anything
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_reject
+        type: issue
+        label: resolution_reject
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_processing_1
+        owner: BAP
+        expect: false
+        input:
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text 
+      - key: on_issue_processing_1
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: anything
+        pair: null
+        owner: BPP
+        expect: false 
+      - key: on_issue_resolution_1
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false 
+      - key: issue_escalate
+        type: issue
+        label: escalate
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_processing_2
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_2
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: anything
+        pair: null
+        owner: BPP
+        expect: false 
+      - key: on_issue_resolution_2
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false           
+      - key: issue_resolution_accept
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_resolved
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close
+        type: issue
+        label: close
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: null
+        owner: BAP
+        expect: false
+      - key: on_update_igm_replacement
+        type: on_update
+        label: on_update_igm
+        unsolicited: true
+        description: final on_update call after issue closed
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Delivery_Flow_With_IGM_3
+    description: Retail 1.2.5 (Delivery with IGM 3)
+    sequence: &base_line_flow
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP select the item
+        input:
+          - name: fashion_select
+            type: ret10_grocery_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Respond to init
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered 
+      - key: issue_open_2
+        type: issue
+        label: open
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_processing
+        owner: BAP
+        expect: false
+      - key: on_issue_processing
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: anything
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_igm_3
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_igm_3
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: on_issue_resolved_igm_3
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_igm_3
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: LSSA
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_igm_3
+        type: issue
+        label: close
+        unsolicited: false
+        description: Open an issue for IGM
+        pair: null
+        owner: BAP
+        expect: false
+      - key: on_status_igm_3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered

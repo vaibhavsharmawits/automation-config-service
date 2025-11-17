@@ -11,7 +11,8 @@ supportedActions:
   on_confirm:
     ["confirm", "status", "cancel", "on_status", "track", "update", "on_update"]
   update: ["on_update", "on_status"]
-  on_update: ["status", "on_status", "track", "cancel", "update", "on_update"]
+  on_update:
+    ["status", "on_status", "track", "cancel", "update", "on_update", "issue"]
   status: ["on_status"]
   track: ["on_track"]
   on_track: ["on_track", "status", "on_status"]
@@ -25,9 +26,12 @@ supportedActions:
       "on_track",
       "update",
       "on_update",
+      "issue",
     ]
   cancel: ["on_cancel", "status", "cancel"]
   on_cancel: ["cancel", "status", "on_status", "update"]
+  issue: ["on_issue", "issue", "on_update", "on_status"]
+  on_issue: ["issue", "on_issue", "on_status"]
 
 apiProperties:
   search:

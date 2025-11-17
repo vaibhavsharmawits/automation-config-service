@@ -1,0 +1,37 @@
+{
+	"id": "automation-config-service-env",
+	"name": "Automation Config Service Environment",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"description": "Base URL for the automation config service",
+			"enabled": true
+		},
+		{
+			"key": "domain",
+			"value": "RET10",
+			"description": "Default domain for testing (Retail)",
+			"enabled": true
+		},
+		{
+			"key": "version",
+			"value": "v-1.2.5",
+			"description": "Default API version",
+			"enabled": true
+		},
+		{
+			"key": "usecase",
+			"value": "GROCERY",
+			"description": "Default use case for testing",
+			"enabled": true
+		},
+		{
+			"key": "flowId",
+			"value": "flow1",
+			"description": "Default flow ID for mock testing",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment"
+}
