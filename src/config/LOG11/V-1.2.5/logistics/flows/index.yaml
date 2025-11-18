@@ -4225,4 +4225,265 @@ flows:
         - "THUMBS_UP"
         - "THUMBS_DOWN"
         default: "THUMBS_UP"
+  - id: BUYER_SIDE_ORDER_CANCELLATION
+    description: Standard point-to-point cancellation flow
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+        - name: retailCategory
+          label: Select retail item category
+          type: select
+          values:
+          - F&B
+          - Grocery
+          - Fashion
+          - BPC
+          - Electronics
+          - Appliances
+          - Home & Kitchen
+          - Health & Wellness
+          - Pharma
+          - Auto components
+          - C2C parcels
+        - name: category
+          label: Select a category
+          type: select
+          values:
+          - Standard Delivery
+          - Next Day Delivery
+          - Same Day Delivery
+          payloadField: $.message.intent.category.id
+        - name: paymentType
+          label: Select payment type
+          type: select
+          values:
+          - POST-FULFILLMENT
+          - ON-ORDER
+          - ON-FULFILLMENT
+          payloadField: $.message.intent.payment.type
+        - name: city_code
+          label: Enter city code
+          type: text
+          payloadField: $.context.city
+          default: "std:080"
+        - name: start_gps
+          label: Enter start gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.gps
+          default: 12.4535,77.9283
+        - name: end_gps
+          label: Enter end gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.gps
+          default: 12.4535,77.9283
+        - name: start_code
+          label: Enter start area code
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          default: "560001"
+        - name: end_code
+          label: Enter end area code
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.address.area_code
+          default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: buyer_side_cancel_LOGISTICS
+        type: cancel
+        unsolicited: false
+        description: LBNP requests for order cancellation.
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "250"
+              - "251"
+              - "252"
+            default: "250"
+        pair: null
+        owner: BAP
+      - key: on_cancel_LOGISTICS
+        type: on_cancel
+        unsolicited: false
+        description: LSP acknowledges order cancellation.
+        pair: null
+        owner: BPP
+  - id: SELLER_SIDE_ORDER_CANCELLATION
+    description: Standard point-to-point cancellation flow
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+        - name: retailCategory
+          label: Select retail item category
+          type: select
+          values:
+          - F&B
+          - Grocery
+          - Fashion
+          - BPC
+          - Electronics
+          - Appliances
+          - Home & Kitchen
+          - Health & Wellness
+          - Pharma
+          - Auto components
+          - C2C parcels
+        - name: category
+          label: Select a category
+          type: select
+          values:
+          - Standard Delivery
+          - Next Day Delivery
+          - Same Day Delivery
+          payloadField: $.message.intent.category.id
+        - name: paymentType
+          label: Select payment type
+          type: select
+          values:
+          - POST-FULFILLMENT
+          - ON-ORDER
+          - ON-FULFILLMENT
+          payloadField: $.message.intent.payment.type
+        - name: city_code
+          label: Enter city code
+          type: text
+          payloadField: $.context.city
+          default: "std:080"
+        - name: start_gps
+          label: Enter start gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.gps
+          default: 12.4535,77.9283
+        - name: end_gps
+          label: Enter end gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.gps
+          default: 12.4535,77.9283
+        - name: start_code
+          label: Enter start area code
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          default: "560001"
+        - name: end_code
+          label: Enter end area code
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.address.area_code
+          default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        label: Out for pickup
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
+        pair: null
+        owner: BPP
+      - key: seller_side_on_cancel_LOGISTICS
+        type: on_cancel
+        unsolicited: true
+        description: LSP acknowledges order cancellation.
+        pair: null
+        owner: BPP
+        payloadField: $.message.order.cancellation_reason_id
         
