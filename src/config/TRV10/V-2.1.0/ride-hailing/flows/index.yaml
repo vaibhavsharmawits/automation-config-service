@@ -254,13 +254,13 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_with_purple_tags
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_with_purple_tags
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_with_purple_tags
         type: on_select
         unsolicited: false
         pair: null
@@ -320,7 +320,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update_ride
+      - key: on_update_ride_with_purple
         type: on_update
         unsolicited: true
         pair: null
