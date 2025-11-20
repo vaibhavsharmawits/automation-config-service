@@ -1,5 +1,6 @@
 flows:
   - id: Health_Insurance_Application
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Health Insurance Application
     sequence:
       - key: search
@@ -170,6 +171,7 @@ flows:
         owner: BPP
         expect: false
   - id: Health_Insurance_Application(PRE-ORDER)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Health Insurance Application(PRE-ORDER)
     sequence:
       - key: search
@@ -334,6 +336,7 @@ flows:
         owner: BPP
         expect: false
   - id: Claim_Health_Insurance
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Claim Health Insurance
     sequence:
       - key: search
@@ -528,6 +531,7 @@ flows:
         owner: BPP
         expect: false
   - id: Renew_Health_Insurance
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Renew Health Insurance
     sequence:
       - key: search
@@ -716,6 +720,7 @@ flows:
         owner: BPP
         expect: false
   - id: Cancel_Health_Insurance
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Cancel Health Insurance
     sequence:
       - key: search
