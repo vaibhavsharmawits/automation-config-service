@@ -144,6 +144,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -243,6 +268,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -361,6 +411,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -480,6 +555,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
