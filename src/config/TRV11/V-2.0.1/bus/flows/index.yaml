@@ -121,13 +121,25 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Unlimited_Passes_Flow_Code_Based
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
     description: IntraCity - Unlimited Passes Flow (Code Based)
     sequence:
-      - key: search_BUS_201
+      - key: search0_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+      - key: on_search_monthly_pass_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_monthly_pass_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_monthly_pass1_BUS_201
         owner: BAP
         expect: true
         input:
@@ -145,21 +157,17 @@ flows:
             label: Enter start station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search_BUS_201
+      - key: on_search_monthly_pass1_BUS_201
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: select_unlimited_pass
+      - key: select_unlimited_pass_BUS_201
         type: select
         unsolicited: false
         pair: on_select_unlimited_pass
@@ -169,12 +177,16 @@ flows:
           - name: item_count
             label: Enter ticket count
             type: text
-            payloadField: $.message.order.items[*].quantity.selected.counts
+            payloadField: $.message.order.items[*].quantity.selected.count
+          - name: item_id
+            label: Enter ticket count
+            type: text
+            payloadField: $.message.order.items[*].id
           - name: pan_id
             label: Enter Pan Id
             type: text
             payloadField: $.message.order.fulfillments[*].person.creds.id
-      - key: on_select_unlimited_pass
+      - key: on_select_unlimited_pass_BUS_201
         type: on_select
         unsolicited: false
         pair: null
@@ -195,10 +207,10 @@ flows:
       - key: confirm_BUS_201
         type: confirm
         unsolicited: false
-        pair: on_confirm_BUS_201
+        pair: on_confirm_monthly_pass_BUS_201
         owner: BAP
         expect: false
-      - key: on_confirm_BUS_201
+      - key: on_confirm_monthly_pass_BUS_201
         type: on_confirm
         unsolicited: false
         pair: null
