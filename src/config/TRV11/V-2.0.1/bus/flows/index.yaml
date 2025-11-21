@@ -1,5 +1,5 @@
 flows:
-  - id: IntraCity_Purchase_Journey_FlowCode_Based
+  - id: IntraCity_Purchase_Journey_Flow_Code_Based
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
@@ -120,14 +120,14 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: IntraCity_Unlimited_Passes_Flow_Code_Based
+  - id: IntraCity_Monthly_Passes_Flow_Code_Based
     tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
     description: IntraCity - Unlimited Passes Flow (Code Based)
     sequence:
       - key: search0_BUS_201
         type: search
         unsolicited: false
-        pair: on_search_BUS_201
+        pair: on_search_monthly_pass_BUS_201
         owner: BAP
         expect: true
       - key: on_search_monthly_pass_BUS_201
