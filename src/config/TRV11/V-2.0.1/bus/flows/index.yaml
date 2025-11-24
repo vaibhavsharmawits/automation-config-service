@@ -175,11 +175,11 @@ flows:
         expect: true
         input:
           - name: item_count
-            label: Enter ticket count
+            label: Enter Item count
             type: text
             payloadField: $.message.order.items[*].quantity.selected.count
           - name: item_id
-            label: Enter ticket count
+            label: Enter Item Id
             type: text
             payloadField: $.message.order.items[*].id
           - name: pan_id
