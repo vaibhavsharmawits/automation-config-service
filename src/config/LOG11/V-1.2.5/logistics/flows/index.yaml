@@ -290,6 +290,18 @@ flows:
         description: LSP updates order status [Order picked up]
         pair: null
         owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
       - key: on_status_7_LOGISTICS
         type: on_status
         label: In Transit
@@ -3989,6 +4001,7 @@ flows:
       expect: false
 
   - id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -4203,6 +4216,7 @@ flows:
         - "THUMBS_DOWN"
         default: "THUMBS_UP"
   - id: BUYER_SIDE_ORDER_CANCELLATION
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point cancellation flow
     sequence:
       - key: search_LOGISTICS
@@ -4334,6 +4348,7 @@ flows:
         pair: null
         owner: BPP
   - id: SELLER_SIDE_ORDER_CANCELLATION
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point cancellation flow
     sequence:
       - key: search_LOGISTICS
