@@ -4572,6 +4572,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_EXCHANGE_CUSTOMER_SUPPORT_DETAILS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with customer support details
   sequence:
   - key: search_LOGISTICS
@@ -4726,6 +4727,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_CODIFIED_STATIC_TERMS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with codifed static terms
   sequence:
   - key: search_LOGISTICS
@@ -4880,6 +4882,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_RCM
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with rcm self-declartion
   sequence:
   - key: search_LOGISTICS
@@ -5034,6 +5037,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_BASE_LINE_PUBLIC_SPECIAL_CAPABILITIES
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with public special capabilities
   sequence:
   - key: search_LOGISTICS
@@ -5188,6 +5192,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_BASE_LINE_SLA_METRICS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS_SLA
@@ -5342,6 +5347,7 @@ flows:
     pair: null
     owner: BP
 - id: ORDER_FLOW_BASE_LINE_SELLER_CREDS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5497,6 +5503,7 @@ flows:
     owner: BPP
 
 - id: UPDATE_DELIVERY_ADDRESS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5730,6 +5737,7 @@ flows:
     owner: BPP
 
 - id: SELLER_BUYER_INSTRUCTIONS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5873,6 +5881,7 @@ flows:
     owner: BPP
 
 - id: E-WAY_BILL
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -6028,6 +6037,7 @@ flows:
     owner: BPP
 
 - id: E-POD
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -6195,6 +6205,7 @@ flows:
     owner: BPP
 
 - id: Call-Masking
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -6350,6 +6361,7 @@ flows:
     owner: BPP
 
 - id: RATE_CARD (P2P)
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Rate Card for point-to-point logistics operations
   sequence: 
   - key: search_rate_card_P2P_LOGISTICS
@@ -6523,6 +6535,7 @@ flows:
       - code: "022"
         name: "RTO (with return)"
 - id: BUYER_SIDE_ORDER_CANCELLATION
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point cancellation flow
   sequence:
   - key: search_LOGISTICS
@@ -6655,6 +6668,7 @@ flows:
     pair: null
     owner: BPP
 - id: SELLER_SIDE_ORDER_CANCELLATION
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point cancellation flow
   sequence:
   - key: search_LOGISTICS
