@@ -16,7 +16,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -58,9 +58,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
+      - key: verification_status
+        label: verification status form
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -68,8 +68,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -132,7 +133,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -143,6 +144,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -156,9 +182,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
+      - key: verification_status
+        label: verification status form
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -166,8 +192,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -241,6 +268,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -254,9 +306,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
+      - key: verification_status
+        label: verification status form
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -264,8 +316,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -327,7 +380,8 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
+        force_proceed: true      
 
   - id: Gold_Loan_Missed_EMI
     tags: ["WORKBENCH"]
@@ -346,7 +400,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -357,6 +411,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -370,9 +449,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
+      - key: verification_status
+        label: verification status form
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -380,8 +459,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -445,6 +525,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Gold_Loan_Pre_Part_Payment
     tags: ["WORKBENCH"]
@@ -463,7 +544,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -474,6 +555,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -487,9 +593,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
+      - key: verification_status
+        label: verification status form
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -497,8 +603,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -561,3 +668,4 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
