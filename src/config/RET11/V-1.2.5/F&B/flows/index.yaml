@@ -1687,7 +1687,7 @@ flows:
         owner: BPP
         expect: false
         description: BPP accepts order confirmation
-  - id: DELIVERY_FLOW_WITH_IGM_1
+  - id: DELIVERY_FLOW_WITH_IGM(v-2.0.0)
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
@@ -1919,7 +1919,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: DELIVERY_FLOW_WITH_IGM_2
+  - id: DELIVERY_FLOW_WITH_IGM_Rejection(v-2.0.0)
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
@@ -2179,7 +2179,7 @@ flows:
         pair: null
         owner: BPP
         expect: false  
-  - id: DELIVERY_FLOW_WITH_IGM_3
+  - id: DELIVERY_FLOW_WITH_IGM_No_Action(v-2.0.0)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Delivery with IGM 3)
     sequence: &base_line_flow
