@@ -14,14 +14,23 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
+          - name: adult_ticket_count
+            label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+          - name: child_ticket_count
+            label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+          # Not Required as per schema
+          # - name: start_gps
+          #   label: Enter start gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          # - name: end_gps
+          #   label: Enter end gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -49,6 +58,62 @@ flows:
   - id: Airlines - Purchase Journey(Code Based Flow)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Airlines - Purchase Journey(Code Based Flow)
+    sequence:
+      - key: select_1_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: airline_select
+      - key: on_select_1_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_2_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_select_2_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_Airline_200
+        type: init
+        unsolicited: false
+        pair: on_init_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_init_Airline_200
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_Airline_200
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_confirm_Airline_200
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Airlines - Purchase Journey & Cancellation Flow
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Airlines - Purchase Journey & Cancellation Flow
     sequence:
       - key: select_1_Airline_200
         type: select
