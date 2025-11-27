@@ -868,7 +868,7 @@ flows:
         owner: BAP
         expect: false
         description: settlement trail update
-  - id: Delivery_Flow_With_IGM_1
+  - id: Delivery_Flow_With_IGM(v-2.0.0)
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1059,7 +1059,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Delivery_Flow_With_IGM_2
+  - id: Delivery_Flow_With_IGM_Rejection(v-2.0.0)
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select
@@ -1278,7 +1278,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Delivery_Flow_With_IGM_3
+  - id: Delivery_Flow_With_IGM_No_Action(v-2.0.0)
     description: Retail 1.2.5 (Delivery with IGM 3)
     sequence: &base_line_flow
       - key: select
