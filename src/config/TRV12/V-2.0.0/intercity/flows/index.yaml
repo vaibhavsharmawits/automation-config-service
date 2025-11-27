@@ -156,11 +156,6 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
@@ -333,11 +328,6 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
@@ -476,11 +466,6 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
@@ -601,11 +586,6 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
@@ -732,11 +712,6 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
