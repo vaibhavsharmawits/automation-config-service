@@ -3509,7 +3509,7 @@ flows:
         description: LSP updates order status [Order delivered]
         pair: null
         owner: BPP
-  - id: ORDER_FLOW_BASE_LINE_WITH_IGM
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM(v-2.0.0)
     tags: ["WORKBENCH", "MANDATORY"]
     description: point-to-hub-to-point (P2H2P) delivery flow including baseline features
     sequence:
@@ -3757,7 +3757,7 @@ flows:
       pair: null
       owner: BPP
       expect: false
-  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION(v-2.0.0)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
@@ -4034,7 +4034,7 @@ flows:
       owner: BPP
       expect: false
 
-  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION(v-2.0.0)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
