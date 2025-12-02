@@ -176,7 +176,7 @@ flows:
         input:
           - name: item_count
             label: Enter Item count
-            type: text
+            type: number
             payloadField: $.message.order.items[*].quantity.selected.count
           - name: item_id
             label: Enter Item Id
