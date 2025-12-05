@@ -4252,7 +4252,7 @@ flows:
         default: "THUMBS_UP"
   - id: ORDER_FLOW_BASE_LINE_WITH_IGM(v-1.0.0)
     tags: ["WORKBENCH", "MANDATORY"]
-    description: Standard point-to-point delivery flow including baseline features
+    description: point-to-hub-to-point (P2H2P) delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
       type: search
@@ -4385,6 +4385,20 @@ flows:
       description: LSP provides order tracking information (gps or url)
       pair: null
       owner: BPP
+    - key: on_status_2_LOGISTICS
+      type: on_status
+      label: Out for delivery
+      unsolicited: true
+      description: LSP updates order status [Out for delivery]
+      pair: null
+      owner: BPP
+    - key: on_status_3_LOGISTICS
+      type: on_status
+      label: Order-delivered
+      unsolicited: true
+      description: LSP updates order status [Order delivered]
+      pair: null
+      owner: BPP
     - key: issue_open_100
       type: issue
       label: open
@@ -4424,7 +4438,7 @@ flows:
           values:
             - "THUMBS_UP"
             - "THUMBS_DOWN"
-          default: "THUMBS_UP"      
+          default: "THUMBS_UP"
   - id: BUYER_SIDE_ORDER_CANCELLATION
     tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point cancellation flow
