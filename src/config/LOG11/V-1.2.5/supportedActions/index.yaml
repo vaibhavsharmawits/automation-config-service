@@ -11,8 +11,8 @@ supportedActions:
   update: ["on_update"]
   on_update: ["status", "on_status", "track", "cancel"]
   status: ["on_status"]
-  track: ["on_track", "issue"]
-  on_track: ["on_track", "status", "on_status", "issue", "on_issue"]
+  track: ["on_track"]
+  on_track: ["on_track", "status", "on_status", "issue", "on_issue", "issue"]
   on_status:
     [
       "status",
@@ -27,7 +27,7 @@ supportedActions:
     ]
   cancel: ["on_cancel", "status", "issue", "on_issue"]
   on_cancel: ["cancel", "status", "on_status", "issue", "on_issue"]
-  issue: ["on_track", "on_issue", "issue" , "on_update", "on_status", "on_cancel", "on_issue_status", "track"]
+  issue: ["on_track", "on_issue", "issue" , "on_update", "on_status", "on_cancel", "on_issue_status", "on_track"]
   on_issue: [ "issue", "on_issue", "on_update", "on_status", "on_issue_status"]
   on_issue_status: ["on_issue", "issue"]
 
