@@ -14,14 +14,27 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
+          - name: adult_ticket_count
+            label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+          - name: child_ticket_count
+            label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+          - name: journey_date
+            label: Enter Journey date
+            type: text
+            payloadField: $.message.intent.fulfillment.start.time.date
+          # Not Required as per schema
+          # - name: start_gps
+          #   label: Enter start gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          # - name: end_gps
+          #   label: Enter end gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -102,6 +115,74 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: Airlines - Cancellation by Buyer
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Airlines - Cancellation by Buyer
+    sequence:
+      - key: select_1_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: airline_select
+      - key: on_select_1_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_2_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_select_2_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_Airline_200
+        type: init
+        unsolicited: false
+        pair: on_init_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_init_Airline_200
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_Airline_200
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_confirm_Airline_200
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_Airline_201
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_Airline_201
+        owner: BAP
+        expect: false
+      - key: on_cancel_Airline_201
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: cancel_Airline_200
         type: cancel
         unsolicited: false
@@ -111,6 +192,68 @@ flows:
       - key: on_cancel_Airline_200
         type: on_cancel
         unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Airlines - Cancellation by Seller
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Airlines - Cancellation by Seller
+    sequence:
+      - key: select_1_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: airline_select
+      - key: on_select_1_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_2_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_select_2_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_Airline_200
+        type: init
+        unsolicited: false
+        pair: on_init_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_init_Airline_200
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_Airline_200
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_confirm_Airline_200
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel_Airline_203
+        type: on_cancel
+        unsolicited: true
         pair: null
         owner: BPP
         expect: false

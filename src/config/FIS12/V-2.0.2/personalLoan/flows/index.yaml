@@ -83,9 +83,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -93,8 +93,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
       - key: init_1_personal_loan
         type: init
         unsolicited: false
@@ -136,7 +137,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -147,7 +148,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -164,7 +165,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -175,7 +176,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -296,9 +297,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -306,8 +307,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
 
       - key: init_1_personal_loan
         type: init
@@ -352,7 +354,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -363,7 +365,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -380,7 +382,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -391,7 +393,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -524,9 +526,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -534,8 +536,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
       - key: init_1_personal_loan
         type: init
         unsolicited: false
@@ -577,7 +580,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -588,7 +591,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -605,7 +608,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -616,7 +619,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -750,9 +753,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -760,8 +763,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status  
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status  
             
       - key: init_offline_personal_loan
         type: init
@@ -890,9 +894,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -900,8 +904,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
 
       - key: init_offline_and_online_personal_loan
         type: init
@@ -918,7 +923,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -929,7 +934,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -1044,9 +1049,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1054,8 +1059,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
       - key: init_1_personal_loan
         type: init
         unsolicited: false
@@ -1097,7 +1103,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -1108,7 +1114,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -1125,7 +1131,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -1136,7 +1142,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -1280,9 +1286,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1290,8 +1296,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
       - key: init_1_personal_loan
         type: init
         unsolicited: false
@@ -1333,7 +1340,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -1344,7 +1351,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -1361,7 +1368,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -1372,7 +1379,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -1516,9 +1523,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1526,8 +1533,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
       - key: init_1_personal_loan
         type: init
         unsolicited: false
@@ -1569,7 +1577,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -1580,7 +1588,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -1597,7 +1605,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -1608,7 +1616,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
@@ -1770,9 +1778,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
+      - key: verification_status
+        label: verification_status
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1780,8 +1788,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status        
 
       - key: init_1_personal_loan
         type: init
@@ -1826,7 +1835,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: Mandate Details Status Form
         type: HTML_FORM
         unsolicited: false
@@ -1837,7 +1846,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan
         type: init
@@ -1854,7 +1863,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status
         label: loan agreement details form
         type: HTML_FORM
         unsolicited: false
@@ -1865,7 +1874,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            reference: $.reference_data.verification_status     
             
       - key: confirm_personal_loan
         type: confirm
