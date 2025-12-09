@@ -1848,6 +1848,10 @@ flows:
         pair: on_init
         owner: BAP
         expect: false
+        # input:
+        #   - name: select10_input
+        #     label: Enter
+        #     type: trv_select
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1995,11 +1999,11 @@ flows:
         pair: on_update_soft_update
         owner: BAP
         expect: false
-        # input:
-        #   - name: updated_end_gps
-        #     label: Enter updated end gps coordinates
-        #     type: text
-        #     payloadField: $.message.order.fulfillments[0].stops[0].location.gps
+        input:
+          - name: updated_end_gps
+            label: Enter updated end gps coordinates
+            type: text
+            payloadField: $.message.order.fulfillments[*].stops[*].location.gps
       - key: on_update_soft_update
         type: on_update
         unsolicited: false
