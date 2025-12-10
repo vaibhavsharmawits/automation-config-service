@@ -174,10 +174,6 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: item_count
-            label: Enter Item count
-            type: number
-            payloadField: $.message.order.items[*].quantity.selected.count
           - name: item_id
             label: Enter Item Id
             type: text
@@ -192,7 +188,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init_unlimited_pass_BUS_201
+      - key: init_BUS_201
         type: init
         unsolicited: false
         pair: on_init_BUS_201
