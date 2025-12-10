@@ -2,7 +2,7 @@ supportedActions:
   "": ["search", "select"]
   "null": ["search", "select"]
   search: ["on_search"]
-  on_search: ["search", "select", "init", "on_search"]
+  on_search: ["search", "select", "init", "on_search", "catalog_rejection"]
   select: ["on_select"]
   on_select: ["init", "select"]
   init: ["on_init"]
@@ -33,6 +33,7 @@ supportedActions:
   issue: ["on_issue", "issue", "on_update", "on_status", "on_issue_status"]
   on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
   on_issue_status: ["on_issue", "issue"]
+  catalog_rejection: []
 
 apiProperties:
   search:
