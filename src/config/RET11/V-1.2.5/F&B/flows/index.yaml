@@ -864,13 +864,21 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: cancel
+      - key: cancel_no
         type: cancel
         unsolicited: false
         pair: null
         owner: BAP
         expect: false
-        description: Buyer request for the cancellation of the order
+        description: Buyer side full order cancellation
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "052"
+            default: "052"
         # caceellation id "006"
       - key: cancel_force
         type: cancel
