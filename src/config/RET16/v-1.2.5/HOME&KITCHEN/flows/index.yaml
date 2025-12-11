@@ -1576,3 +1576,31 @@ flows:
               - "THUMBS_UP"
               - "THUMBS_DOWN"
             default: "THUMBS_UP"      
+  - id: Catalog_Rejection_Flow
+    description: Retail 1.2.5 (Catalog Validation & Rejection Flow)
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        description: Buyer requests catalog from seller
+
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller provides catalog (items & fulfillment details)
+
+      - key: catalog_rejection
+        type: catalog_rejection
+        unsolicited: false
+        pair: null
+        owner: BAP
+        expect: false
+        description: >
+          Buyer rejects catalog partially/fully with item/store-level
+          rejection details & reason codes
