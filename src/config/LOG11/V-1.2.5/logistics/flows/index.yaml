@@ -3400,28 +3400,25 @@ flows:
         type: init
         unsolicited: false
         description: LBNP selects and initializes order
-        pair: on_init_LOGISTICS
+        pair: on_init_REVERSE_QC_LOGISTICS
         owner: BAP
-      - key: on_init_LOGISTICS
+      - key: on_init_REVERSE_QC_LOGISTICS
         type: on_init
         unsolicited: false
         description: LSP acknowledges and provides quote breakup
         pair: null
         owner: BPP
-      - key: confirm_LOGISTICS
+      - key: confirm_REVERSE_QC_LOGISTICS
         type: confirm
         unsolicited: false
         description: LBNP sends order confirmation
-        pair: on_confirm_LOGISTICS
+        pair: on_confirm_REVERSE_QC_LOGISTICS
         owner: BAP
         input:
-          - name: returnToOrigin
-            label: Return to origin
-            type: select
-            values:
-              - "yes"
-              - "no"
-      - key: on_confirm_LOGISTICS
+          - name: item
+            label: Enter the item to be returned
+            type: text
+      - key: on_confirm_REVERSE_QC_LOGISTICS
         type: on_confirm
         unsolicited: false
         description: LSP accepts the order
@@ -3453,7 +3450,7 @@ flows:
         description: LSP updates order status [Out for pickup]
         pair: null
         owner: BPP
-      - key: on_status_1_LOGISTICS
+      - key: on_status_REVERSE_QC_LOGISTICS
         type: on_status
         label: Order picked up
         unsolicited: true
