@@ -7,7 +7,7 @@ supportedActions:
   init: ["on_init"]
   on_init: ["init", "confirm"]
   confirm: ["on_confirm", "status"]
-  on_confirm: ["confirm", "status", "cancel", "on_status", "update", "issue"]
+  on_confirm: ["confirm", "status", "cancel", "on_status", "update", "issue","on_cancel"]
   status: ["on_status"]
   on_status: ["status", "cancel", "issue"]
   cancel: ["on_cancel", "status", "on_update", "on_status"]
@@ -52,7 +52,7 @@ apiProperties:
     async_predecessor: null
     transaction_partner: ["confirm"]
   on_cancel:
-    async_predecessor: "cancel"
+    async_predecessor: null
     transaction_partner: ["confirm"]
   update:
     async_predecessor: null
