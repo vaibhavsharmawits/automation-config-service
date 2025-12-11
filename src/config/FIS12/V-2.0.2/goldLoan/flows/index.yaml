@@ -40,6 +40,31 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -47,21 +72,16 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        input:
-          - name: finvu_verification
-            label: Complete Account Aggregator Verification
-            type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified
       - key: on_select_2
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: verification status form
+      - key: Ekyc_details_form
+        label: Ekyc Details form
         type: DYNAMIC_FORM
-        unsolicited: false
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
@@ -182,10 +202,10 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: verification status form
+      - key: Ekyc_details_form
+        label: Ekyc Details form
         type: DYNAMIC_FORM
-        unsolicited: false
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
@@ -195,6 +215,7 @@ flows:
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
             reference: $.reference_data.verification_status
+      
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -306,10 +327,10 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: verification status form
+      - key: Ekyc_details_form
+        label: Ekyc Details form
         type: DYNAMIC_FORM
-        unsolicited: false
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
@@ -449,10 +470,10 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: verification status form
+      - key: Ekyc_details_form
+        label: Ekyc Details form
         type: DYNAMIC_FORM
-        unsolicited: false
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
@@ -593,10 +614,10 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: verification status form
+      - key: Ekyc_details_form
+        label: Ekyc Details form
         type: DYNAMIC_FORM
-        unsolicited: false
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
@@ -605,7 +626,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.verification_status        
+            reference: $.reference_data.verification_status    
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -669,3 +690,86 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
+  
+  - id: Gold_Loan_With_Multiple_offers
+    tags: ["WORKBENCH"]
+    description: Gold Loan with Multiple offers(Bureau consent & AA)
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_multiple_offer
+        type: select
+        unsolicited: false
+        pair: on_select_multiple_offer
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_multiple_offer
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form_1
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_gold_3
+        type: select
+        unsolicited: false
+        pair: on_select_gold_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_gold_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      
+    
+    

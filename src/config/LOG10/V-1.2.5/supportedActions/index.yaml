@@ -11,13 +11,14 @@ supportedActions:
   update: [ "on_update" ]
   on_update: [ "status", "on_status", "track", "cancel", "issue", "on_issue" ]
   status: [ "on_status" ]
-  track: [ "on_track" ]
+  track: [ "on_track"]
   on_track: [ "on_track", "status", "on_status", "issue", "on_issue" ]
   on_status: [ "status", "cancel", "track", "on_status", "on_cancel", "on_track", "update", "on_update", "issue", "on_issue" ]
   cancel: [ "on_cancel", "status", "issue", "on_issue" ]
   on_cancel: [ "cancel", "status", "on_status", "issue", "on_issue" ]
-  issue: [ "on_track","on_issue", "issue" , "on_update", "on_status" ]
-  on_issue: [ "issue", "on_issue", "on_update" , "on_status" ]
+  issue: [ "on_track","on_issue", "issue" , "on_update", "on_status", "on_issue_status" ]
+  on_issue: [ "issue", "on_issue", "on_update" , "on_status", "on_issue_status"]
+  on_issue_status: ["on_issue", "issue"]
 
 apiProperties:
   search:

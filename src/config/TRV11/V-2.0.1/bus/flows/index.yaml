@@ -44,6 +44,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -170,14 +174,10 @@ flows:
       - key: select_unlimited_pass_BUS_201
         type: select
         unsolicited: false
-        pair: on_select_unlimited_pass
+        pair: on_select_unlimited_pass_BUS_201
         owner: BAP
         expect: true
         input:
-          - name: item_count
-            label: Enter Item count
-            type: text
-            payloadField: $.message.order.items[*].quantity.selected.count
           - name: item_id
             label: Enter Item Id
             type: text
@@ -262,6 +262,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -361,6 +365,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -442,6 +450,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -529,6 +541,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -616,6 +632,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -691,6 +711,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -778,6 +802,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -833,7 +861,7 @@ flows:
         owner: BPP
         expect: false
 
-  - id: IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_1
+  - id: IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM(v-2.0.0)
     tags: ["MANDATORY", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
@@ -878,6 +906,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -1008,7 +1040,7 @@ flows:
       #   owner: BPP
       #   expect: false
 
-  - id: IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_2
+  - id: IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_Rejection(v-2.0.0)
     tags: ["MANDATORY", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
@@ -1053,6 +1085,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -1211,7 +1247,7 @@ flows:
       #   owner: BPP
       #   expect: false
 
-  - id: IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_3
+  - id: IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_No_Action(v-2.0.0)
     tags: ["MANDATORY", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
@@ -1256,6 +1292,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
