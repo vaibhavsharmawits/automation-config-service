@@ -1064,6 +1064,11 @@ flows:
         pair: on_update_soft_update
         owner: BAP
         expect: false
+        # input:
+        #   - name: update_end_gps
+        #     label: Enter updated end gps coordinates
+        #     type: text
+        #     payloadField: $.message.order.fulfillments[0].stops[?(@.type=='END')].location.gps
       - key: on_update_soft_update
         type: on_update
         unsolicited: false
@@ -1843,6 +1848,10 @@ flows:
         pair: on_init
         owner: BAP
         expect: false
+        # input:
+        #   - name: select10_input
+        #     label: Enter
+        #     type: trv_select
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1990,13 +1999,18 @@ flows:
         pair: on_update_soft_update
         owner: BAP
         expect: false
+        input:
+          - name: updated_end_gps
+            label: Enter updated end gps coordinates
+            type: text
+            payloadField: $.message.order.fulfillments[*].stops[*].location.gps
       - key: on_update_soft_update
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_status_ride_started
+      - key: on_status_ride_started_soft_update
         type: on_status
         unsolicited: true
         pair: null
