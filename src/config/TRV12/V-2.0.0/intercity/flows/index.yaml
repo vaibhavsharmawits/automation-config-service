@@ -24,17 +24,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -60,6 +60,10 @@ flows:
         owner: BAP
         expect: true
         input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
           - name: seat_count
             label: Enter Seat Count
             type: text
@@ -152,17 +156,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -187,6 +191,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -199,6 +212,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -312,17 +328,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -347,6 +363,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -359,6 +384,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -438,17 +466,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -473,6 +501,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -485,6 +522,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -546,17 +586,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -581,6 +621,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -593,6 +642,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -660,17 +712,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -695,6 +747,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -707,6 +768,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection        
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
