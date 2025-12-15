@@ -2097,30 +2097,30 @@ flows:
       - name: resolution_accept
         label: Enter resolution ID
         type: text
-      - key: on_issue_resolved
-        type: on_issue
-        label: resolved
-        unsolicited: false
-        description: The complaint is marked as resolved
-        pair: null
-        owner: BPP
-        expect: false
-      - key: issue_close
-        type: issue
-        label: close
-        unsolicited: false
-        description: Once resolved, the complaint is marked as closed
-        pair: null
-        owner: BAP
-        expect: false
-        input:
-          - name: rating
-            label: Select Rating
-            type: select
-            values:
-              - "THUMBS_UP"
-              - "THUMBS_DOWN"
-            default: "THUMBS_UP"
+  - key: on_issue_resolved
+    type: on_issue
+    label: resolved
+    unsolicited: false
+    description: The complaint is marked as resolved
+    pair: null
+    owner: BPP
+    expect: false
+  - key: issue_close
+    type: issue
+    label: close
+    unsolicited: false
+    description: Once resolved, the complaint is marked as closed
+    pair: null
+    owner: BAP
+    expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+          - "THUMBS_UP"
+          - "THUMBS_DOWN"
+        default: "THUMBS_UP"
   - key: on_update_refund_igm
     type: on_update
     label: on_update_igm
