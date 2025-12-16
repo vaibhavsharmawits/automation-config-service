@@ -2575,3 +2575,31 @@ flows:
         description: >
           Buyer rejects catalog partially/fully with item/store-level
           rejection details & reason codes
+  - id: INCREMENTAL_CATALOG_PULL
+    description: "(Search and Custom Menu (Incremental Pull)"
+    sequence:
+      - key: search_inc_pull
+        type: search
+        unsolicited: false
+        description: Bap begins search for incremental changes
+        pair: on_search_1
+        owner: BAP
+        expect: true
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        description: BPP returns the incremental changes
+        pair: null
+        owner: BPP
+      - key: on_search_3
+        type: on_search
+        unsolicited: true
+        description: BPP returns the incremental changes
+        pair: null
+        owner: BPP
+      - key: on_search_2
+        type: on_search
+        unsolicited: true
+        description: BPP returns the incremental changes
+        pair: null
+        owner: BPP
