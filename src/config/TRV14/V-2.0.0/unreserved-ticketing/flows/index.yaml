@@ -202,6 +202,146 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  
+  - id: purchase_journey_with_form (Multiple Tickets)
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    description: Purchase flow with form (select - on_status)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: first_form_testing
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.first_form_testing
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_form_submission
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  
+  - id: purchase_journey_without_form (Multiple Tickets)
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    description: purchase journey select to on_status without form
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select_without_form
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
+      - key: on_select_without_form
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        
   - id: technical_cancellation
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Technical Cancellation flow (soft & confirm cancel)
