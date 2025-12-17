@@ -1,5 +1,6 @@
-flows: 
+ flows: 
   - id: Gold_Loan_With_Account_Aggregator
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -15,7 +16,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -39,6 +40,31 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -50,25 +76,26 @@ flows:
           - name: finvu_verification
             label: Complete Account Aggregator Verification
             type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified
+            payloadField: $.context.aa_consent_verified        
       - key: on_select_2
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
-        unsolicited: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -115,6 +142,7 @@ flows:
         expect: false
 
   - id: Gold_Loan_Without_Account_Aggregator
+    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -130,7 +158,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -141,6 +169,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -154,18 +207,20 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
-        unsolicited: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
+      
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -211,7 +266,8 @@ flows:
         owner: BPP
         expect: false
 
-  - id: Gold_Loan_Foreclosure
+  - id: Gold_Loan_Foreclosure_Without_Account_Aggregator
+    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR"]
     description: Gold Loan - Loan Foreclosure - Update and notification flow
     sequence:
       - key: search
@@ -238,6 +294,31 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -251,18 +332,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
-        unsolicited: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -324,9 +406,172 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
+        force_proceed: true      
 
-  - id: Gold_Loan_Missed_EMI
+  - id: Gold_Loan_Foreclosure_With_Account_Aggregator
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    description: Gold Loan - Loan Foreclosure - Update and notification flow
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: consumer information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified        
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: true
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true      
+
+  - id: Gold_Loan_Missed_EMI_With_Account_Aggregator
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
     description: Gold Loan - Missed-EMI Payment - Update and notification flow
     sequence:
       - key: search
@@ -342,7 +587,7 @@ flows:
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -353,6 +598,194 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified        
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: true
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+  - id: Gold_Loan_Missed_EMI_Without_Account_Aggregator
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+    description: Gold Loan - Missed-EMI Payment - Update and notification flow
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: consumer information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
       - key: select_2
         type: select
         unsolicited: false
@@ -366,18 +799,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
-        type: HTML_FORM
-        unsolicited: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -441,9 +875,330 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
-  - id: Gold_Loan_Pre_Part_Payment
+  - id: Gold_Loan_Pre_Part_Payment_With_Account_Aggregator
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
     description: Gold Loan - Pre-Part Payment - Update and notification flow
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: consumer information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified        
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "92720"
+            default: "92720"
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+  - id: Gold_Loan_Pre_Part_Payment_Without_Account_Aggregator
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+    description: Gold Loan - Pre-Part Payment - Update and notification flow
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: consumer information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status    
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "92720"
+            default: "92720"
+      - key: on_update
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+  
+  - id: Gold_Loan_With_Multiple_offers_With_Account_Aggregator
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    description: Gold Loan with Multiple offers(Bureau consent & AA)
     sequence:
       - key: search
         type: search
@@ -469,21 +1224,21 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.consumer_information_form
-      - key: select_2
+      - key: select_multiple_offer
         type: select
         unsolicited: false
-        pair: on_select_2
+        pair: on_select_multiple_offer
         owner: BAP
         expect: false
         force_proceed: true
-      - key: on_select_2
+      - key: on_select_multiple_offer
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: kyc_verification_status
-        label: form link provided in on_select
+      - key: consumer_information_form_1
+        label: form link provided in on_search
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -493,7 +1248,76 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            reference: $.reference_data.consumer_information_form
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified        
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -538,21 +1362,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: update
-        type: update
-        unsolicited: false
-        pair: on_update
-        owner: BAP
-        expect: true
-      - key: on_update
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_update_unsolicited
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
+
+
+
+   
