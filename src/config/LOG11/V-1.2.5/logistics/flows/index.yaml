@@ -290,6 +290,18 @@ flows:
         description: LSP updates order status [Order picked up]
         pair: null
         owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
       - key: on_status_7_LOGISTICS
         type: on_status
         label: In Transit
@@ -1916,6 +1928,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2065,6 +2078,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2213,6 +2227,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2362,6 +2377,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2511,6 +2527,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2659,7 +2676,8 @@ flows:
         values:
         - Standard Delivery
         - Next Day Delivery
-        - Same Day Delivery
+        - Same Day Delivery 
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2808,6 +2826,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -2926,7 +2945,7 @@ flows:
     - key: on_update_E_POD_AT_DELIVERY_LOGISTICS
       type: on_update
       unsolicited: true
-      description: LSP acknowledges order updates and searches for an agent.
+      description: LSP updates order with  [Out for delivery]
       pair: null
       owner: BPP
     - key: on_status_3_LOGISTICS
@@ -2969,6 +2988,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -3140,6 +3160,7 @@ flows:
         - Immediate Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -3379,28 +3400,25 @@ flows:
         type: init
         unsolicited: false
         description: LBNP selects and initializes order
-        pair: on_init_LOGISTICS
+        pair: on_init_REVERSE_QC_LOGISTICS
         owner: BAP
-      - key: on_init_LOGISTICS
+      - key: on_init_REVERSE_QC_LOGISTICS
         type: on_init
         unsolicited: false
         description: LSP acknowledges and provides quote breakup
         pair: null
         owner: BPP
-      - key: confirm_LOGISTICS
+      - key: confirm_REVERSE_QC_LOGISTICS
         type: confirm
         unsolicited: false
         description: LBNP sends order confirmation
-        pair: on_confirm_LOGISTICS
+        pair: on_confirm_REVERSE_QC_LOGISTICS
         owner: BAP
         input:
-          - name: returnToOrigin
-            label: Return to origin
-            type: select
-            values:
-              - "yes"
-              - "no"
-      - key: on_confirm_LOGISTICS
+          - name: item
+            label: Enter the item to be returned
+            type: text
+      - key: on_confirm_REVERSE_QC_LOGISTICS
         type: on_confirm
         unsolicited: false
         description: LSP accepts the order
@@ -3432,7 +3450,7 @@ flows:
         description: LSP updates order status [Out for pickup]
         pair: null
         owner: BPP
-      - key: on_status_1_LOGISTICS
+      - key: on_status_REVERSE_QC_LOGISTICS
         type: on_status
         label: Order picked up
         unsolicited: true
@@ -3467,7 +3485,7 @@ flows:
         description: LSP updates order status [Order delivered]
         pair: null
         owner: BPP
-  - id: ORDER_FLOW_BASE_LINE_WITH_IGM
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM(v-2.0.0)
     description: point-to-hub-to-point (P2H2P) delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -3500,6 +3518,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express  Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -3618,7 +3637,7 @@ flows:
       type: issue
       label: open
       unsolicited: false
-      description: Open an issue for IGM
+      description: Create a complaint for the order
       pair: on_issue_processing
       owner: BAP
       expect: false
@@ -3626,7 +3645,7 @@ flows:
       type: on_issue
       label: processing
       unsolicited: false
-      description: anything
+      description: Respondent starts PROCESSING the complaint
       pair: null
       owner: BPP
       expect: false
@@ -3634,7 +3653,7 @@ flows:
       type: on_issue
       label: need_more_info
       unsolicited: true
-      description: LSP provides more information
+      description: Respondent requests for more information
       pair: null
       owner: BPP
       expect: true
@@ -3642,15 +3661,15 @@ flows:
       type: issue
       label: info_provided
       unsolicited: false
-      description: Open an issue for IGM
+      description: Complainant provides required information
       pair: on_issue_provided
       owner: BAP
       expect: false
     - key: on_issue_provided
       type: on_issue
-      label: provided
+      label: processing
       unsolicited: false
-      description: LSP
+      description: Respondent marks the action as PROCESSING
       pair: null
       owner: BPP
       expect: false
@@ -3658,7 +3677,7 @@ flows:
       type: on_issue
       label: resolution
       unsolicited: true
-      description: LSSA
+      description: Respondent proposes resolution for the complaint
       pair: null
       owner: BPP
       expect: false
@@ -3666,7 +3685,7 @@ flows:
       type: issue
       label: resolution_accept
       unsolicited: false
-      description: Open an issue for IGM
+      description: A resolution is accepted by the complainant
       pair: on_issue_resolved
       owner: BAP
       expect: false
@@ -3685,7 +3704,7 @@ flows:
       type: on_issue
       label: resolved
       unsolicited: false
-      description: LSSA
+      description: The complaint is marked as resolved
       pair: null
       owner: BPP
       expect: false
@@ -3693,10 +3712,18 @@ flows:
       type: issue
       label: close
       unsolicited: false
-      description: Open an issue for IGM
+      description: Once resolved, the complaint is marked as closed
       pair: null
       owner: BAP
       expect: false
+      input:
+        - name: rating
+          label: Select Rating
+          type: select
+          values:
+            - "THUMBS_UP"
+            - "THUMBS_DOWN"
+          default: "THUMBS_UP"
     - key: on_update_refund_igm
       type: on_update
       label: on_update_igm
@@ -3705,7 +3732,7 @@ flows:
       pair: null
       owner: BPP
       expect: false
-  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION(v-2.0.0)
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -3738,6 +3765,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express  Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -3856,7 +3884,7 @@ flows:
       type: issue
       label: open
       unsolicited: false
-      description: Open an issue for IGM
+      description: Create a complaint for the order
       pair: on_issue_processing
       owner: BAP
       expect: false
@@ -3864,7 +3892,7 @@ flows:
       type: on_issue
       label: processing
       unsolicited: false
-      description: anything
+      description: Respondent starts PROCESSING the complaint
       pair: null
       owner: BPP
       expect: false
@@ -3872,7 +3900,7 @@ flows:
       type: on_issue
       label: resolution
       unsolicited: true
-      description: LSSA
+      description: Respondent proposes resolution for the complaint
       pair: null
       owner: BPP
       expect: false
@@ -3880,35 +3908,35 @@ flows:
       type: issue
       label: resolution_reject
       unsolicited: false
-      description: Open an issue for IGM
+      description: The resolution is rejected by the complainant
       pair: on_issue_processing_1
       owner: BAP
       expect: false
       input:
         - name: resolution_accept
           label: Enter resolution ID
-          type: text 
+          type: text
     - key: on_issue_processing_1
       type: on_issue
       label: processing
       unsolicited: false
-      description: anything
+      description: Respondent marks the action as PROCESSING
       pair: null
       owner: BPP
-      expect: false 
+      expect: false
     - key: on_issue_resolution_1
       type: on_issue
       label: resolution
       unsolicited: true
-      description: LSSA
+      description: Respondent proposes updated resolution for the complaint
       pair: null
       owner: BPP
-      expect: false 
+      expect: false
     - key: issue_escalate
       type: issue
       label: escalate
       unsolicited: false
-      description: Open an issue for IGM
+      description: Complainant escalates the complaint not being satisfied with the resolution
       pair: on_issue_processing_2
       owner: BAP
       expect: false
@@ -3916,23 +3944,23 @@ flows:
       type: on_issue
       label: processing
       unsolicited: false
-      description: anything
+      description: Respondent marks the action as PROCESSING
       pair: null
       owner: BPP
-      expect: false 
+      expect: false
     - key: on_issue_resolution_2
       type: on_issue
       label: resolution
       unsolicited: true
-      description: LSSA
+      description: Respondent proposes updated resolution again for the complaint
       pair: null
       owner: BPP
-      expect: false           
+      expect: false
     - key: issue_resolution_accept
       type: issue
       label: resolution_accept
       unsolicited: false
-      description: Open an issue for IGM
+      description: A resolution is accepted by the complainant
       pair: on_issue_resolved
       owner: BAP
       expect: false
@@ -3951,7 +3979,7 @@ flows:
       type: on_issue
       label: resolved
       unsolicited: false
-      description: LSSA
+      description: The complaint is marked as resolved
       pair: null
       owner: BPP
       expect: false
@@ -3959,10 +3987,18 @@ flows:
       type: issue
       label: close
       unsolicited: false
-      description: Open an issue for IGM
+      description: Once resolved, the complaint is marked as closed
       pair: null
       owner: BAP
       expect: false
+      input:
+        - name: rating
+          label: Select Rating
+          type: select
+          values:
+            - "THUMBS_UP"
+            - "THUMBS_DOWN"
+          default: "THUMBS_UP"
     - key: on_update_refund_igm
       type: on_update
       label: on_update_igm
@@ -3972,7 +4008,8 @@ flows:
       owner: BPP
       expect: false
 
-  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION
+  - id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION(v-2.0.0)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Standard point-to-point delivery flow including baseline features
     sequence:
     - key: search_LOGISTICS
@@ -4005,6 +4042,7 @@ flows:
         - Standard Delivery
         - Next Day Delivery
         - Same Day Delivery
+        - Express  Delivery
         payloadField: $.message.intent.category.id
       - name: paymentType
         label: Select payment type
@@ -4109,7 +4147,7 @@ flows:
       type: issue
       label: open
       unsolicited: false
-      description: Open an issue for IGM
+      description: Create a complaint for the order
       pair: on_issue_processing
       owner: BAP
       expect: false
@@ -4117,7 +4155,7 @@ flows:
       type: on_issue
       label: processing
       unsolicited: false
-      description: anything
+      description: Respondent starts PROCESSING the complaint
       pair: null
       owner: BPP
       expect: false
@@ -4125,7 +4163,7 @@ flows:
       type: on_issue
       label: resolution
       unsolicited: true
-      description: LSSA
+      description: Respondent proposes resolution for the complaint
       pair: null
       owner: BPP
       expect: false
@@ -4133,7 +4171,7 @@ flows:
       type: issue
       label: resolution_accept
       unsolicited: false
-      description: Open an issue for IGM
+      description: A resolution is accepted by the complainant
       pair: on_issue_resolved_igm_3
       owner: BAP
       expect: false
@@ -4152,7 +4190,7 @@ flows:
       type: on_issue
       label: resolved
       unsolicited: false
-      description: LSSA
+      description: The complaint is marked as resolved
       pair: null
       owner: BPP
       expect: false
@@ -4174,8 +4212,279 @@ flows:
       type: issue
       label: close
       unsolicited: false
-      description: Open an issue for IGM
+      description: Once resolved, the complaint is marked as closed
       pair: null
       owner: BAP
       expect: false
+      input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+        - "THUMBS_UP"
+        - "THUMBS_DOWN"
+        default: "THUMBS_UP"
+  - id: BUYER_SIDE_ORDER_CANCELLATION
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Standard point-to-point cancellation flow
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+        - name: retailCategory
+          label: Select retail item category
+          type: select
+          values:
+          - F&B
+          - Grocery
+          - Fashion
+          - BPC
+          - Electronics
+          - Appliances
+          - Home & Kitchen
+          - Health & Wellness
+          - Pharma
+          - Auto components
+          - C2C parcels
+        - name: category
+          label: Select a category
+          type: select
+          values:
+          - Standard Delivery
+          - Next Day Delivery
+          - Same Day Delivery
+          payloadField: $.message.intent.category.id
+        - name: paymentType
+          label: Select payment type
+          type: select
+          values:
+          - POST-FULFILLMENT
+          - ON-ORDER
+          - ON-FULFILLMENT
+          payloadField: $.message.intent.payment.type
+        - name: city_code
+          label: Enter city code
+          type: text
+          payloadField: $.context.city
+          default: "std:080"
+        - name: start_gps
+          label: Enter start gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.gps
+          default: 12.4535,77.9283
+        - name: end_gps
+          label: Enter end gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.gps
+          default: 12.4535,77.9283
+        - name: start_code
+          label: Enter start area code
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          default: "560001"
+        - name: end_code
+          label: Enter end area code
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.address.area_code
+          default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: buyer_side_cancel_LOGISTICS
+        type: cancel
+        unsolicited: false
+        description: LBNP requests for order cancellation.
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "250"
+              - "251"
+              - "252"
+            default: "250"
+        pair: null
+        owner: BAP
+      - key: buyer_side_on_cancel_LOGISTICS
+        type: on_cancel
+        unsolicited: false
+        description: LSP acknowledges order cancellation.
+        pair: null
+        owner: BPP
+  - id: SELLER_SIDE_ORDER_CANCELLATION
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Standard point-to-point cancellation flow
+    sequence:
+      - key: search_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+        - name: retailCategory
+          label: Select retail item category
+          type: select
+          values:
+          - F&B
+          - Grocery
+          - Fashion
+          - BPC
+          - Electronics
+          - Appliances
+          - Home & Kitchen
+          - Health & Wellness
+          - Pharma
+          - Auto components
+          - C2C parcels
+        - name: category
+          label: Select a category
+          type: select
+          values:
+          - Standard Delivery
+          - Next Day Delivery
+          - Same Day Delivery
+          payloadField: $.message.intent.category.id
+        - name: paymentType
+          label: Select payment type
+          type: select
+          values:
+          - POST-FULFILLMENT
+          - ON-ORDER
+          - ON-FULFILLMENT
+          payloadField: $.message.intent.payment.type
+        - name: city_code
+          label: Enter city code
+          type: text
+          payloadField: $.context.city
+          default: "std:080"
+        - name: start_gps
+          label: Enter start gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.gps
+          default: 12.4535,77.9283
+        - name: end_gps
+          label: Enter end gps coordinates
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.gps
+          default: 12.4535,77.9283
+        - name: start_code
+          label: Enter start area code
+          type: text
+          payloadField: $.message.intent.fulfillment.start.location.address.area_code
+          default: "560001"
+        - name: end_code
+          label: Enter end area code
+          type: text
+          payloadField: $.message.intent.fulfillment.end.location.address.area_code
+          default: "560001"
+      - key: on_search_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_LOGISTICS
+        owner: BAP
+      - key: on_init_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_LOGISTICS
+        owner: BAP
+      - key: on_confirm_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        label: Out for pickup
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
+        pair: null
+        owner: BPP
+      - key: seller_side_on_cancel_LOGISTICS
+        type: on_cancel
+        unsolicited: true
+        description: LSP acknowledges order cancellation.
+        pair: null
+        owner: BPP
+        payloadField: $.message.order.cancellation_reason_id
         

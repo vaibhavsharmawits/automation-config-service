@@ -2,7 +2,7 @@ supportedActions:
   "": ["search", "select"]
   "null": ["search", "select"]
   search: ["on_search"]
-  on_search: ["search", "select", "init", "on_search"]
+  on_search: ["search", "select", "init", "on_search", "catalog_rejection"]
   select: ["on_select", "select"]
   on_select: ["init", "select"]
   init: ["on_init"]
@@ -11,7 +11,7 @@ supportedActions:
   on_confirm:
     ["confirm", "status", "cancel", "on_status", "track", "update", "on_update"]
   update: ["on_update", "update", "on_status"]
-  on_update: ["status", "on_status", "track", "cancel", "update", "on_update"]
+  on_update: ["status", "on_status", "track", "cancel", "update", "on_update", "issue"]
   status: ["on_status"]
   track: ["on_track"]
   on_track: ["on_track", "status", "on_status"]
@@ -29,8 +29,10 @@ supportedActions:
     ]
   cancel: ["on_cancel", "status", "cancel"]
   on_cancel: ["cancel", "status", "on_status", "update"]
-  issue: ["on_issue","issue"]
-  on_issue: ["issue", "on_issue","on_update"]
+  issue: ["on_issue", "issue", "on_update", "on_status", "on_issue_status"]
+  on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
+  on_issue_status: ["on_issue", "issue", "on_issue_status"]
+  catalog_rejection: []
 apiProperties:
   search:
     async_predecessor: null

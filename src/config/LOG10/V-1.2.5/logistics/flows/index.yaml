@@ -1020,7 +1020,7 @@ flows:
   - key: on_status_1_LOGISTICS
     type: on_status
     label: Order-picked-up
-    unsolicited: false
+    unsolicited: true
     description: LSP updates order status [Order-picked-up]
     pair: null
     owner: BPP
@@ -1866,7 +1866,7 @@ flows:
     description: LSP status update - [RTO Delivered]
     pair: null
     owner: BPP
-- id: ORDER_FLOW_BASE_LINE_WITH_IGM
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM(v-2.0.0)
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -1905,6 +1905,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2024,7 +2026,7 @@ flows:
     type: issue
     label: open
     unsolicited: false
-    description: Open an issue for IGM
+    description: Create a complaint for the order
     pair: on_issue_processing
     owner: BAP
     expect: false
@@ -2032,7 +2034,7 @@ flows:
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent starts PROCESSING the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2040,7 +2042,7 @@ flows:
     type: on_issue
     label: need_more_info
     unsolicited: true
-    description: LSP provides more information
+    description: Respondent requests for more information
     pair: null
     owner: BPP
     expect: true
@@ -2048,15 +2050,15 @@ flows:
     type: issue
     label: info_provided
     unsolicited: false
-    description: Open an issue for IGM
+    description: Complainant provides required information
     pair: on_issue_provided
     owner: BAP
     expect: false
   - key: on_issue_provided
     type: on_issue
-    label: provided
+    label: processing
     unsolicited: false
-    description: LSP
+    description: Respondent marks the action as PROCESSING
     pair: null
     owner: BPP
     expect: false
@@ -2064,7 +2066,7 @@ flows:
     type: on_issue
     label: resolution
     unsolicited: true
-    description: LSSA
+    description: Respondent proposes resolution for the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2072,7 +2074,7 @@ flows:
     type: issue
     label: resolution_accept
     unsolicited: false
-    description: Open an issue for IGM
+    description: A resolution is accepted by the complainant
     pair: on_issue_resolved
     owner: BAP
     expect: false
@@ -2091,7 +2093,7 @@ flows:
     type: on_issue
     label: resolved
     unsolicited: false
-    description: LSSA
+    description: The complaint is marked as resolved
     pair: null
     owner: BPP
     expect: false
@@ -2099,10 +2101,18 @@ flows:
     type: issue
     label: close
     unsolicited: false
-    description: Open an issue for IGM
+    description: Once resolved, the complaint is marked as closed
     pair: null
     owner: BAP
     expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+          - "THUMBS_UP"
+          - "THUMBS_DOWN"
+        default: "THUMBS_UP"
   - key: on_update_refund_igm
     type: on_update
     label: on_update_igm
@@ -2111,7 +2121,7 @@ flows:
     pair: null
     owner: BPP
     expect: false
-- id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION(v-2.0.0)
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2150,6 +2160,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2269,7 +2281,7 @@ flows:
     type: issue
     label: open
     unsolicited: false
-    description: Open an issue for IGM
+    description: Create a complaint for the order
     pair: on_issue_processing
     owner: BAP
     expect: false
@@ -2277,7 +2289,7 @@ flows:
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent starts PROCESSING the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2285,7 +2297,7 @@ flows:
     type: on_issue
     label: resolution
     unsolicited: true
-    description: LSSA
+    description: Respondent proposes resolution for the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2293,35 +2305,35 @@ flows:
     type: issue
     label: resolution_reject
     unsolicited: false
-    description: Open an issue for IGM
+    description: The resolution is rejected by the complainant
     pair: on_issue_processing_1
     owner: BAP
     expect: false
     input:
       - name: resolution_accept
         label: Enter resolution ID
-        type: text 
+        type: text
   - key: on_issue_processing_1
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent marks the action as PROCESSING
     pair: null
     owner: BPP
-    expect: false 
+    expect: false
   - key: on_issue_resolution_1
     type: on_issue
     label: resolution
     unsolicited: true
-    description: LSSA
+    description: Respondent proposes updated resolution for the complaint
     pair: null
     owner: BPP
-    expect: false 
+    expect: false
   - key: issue_escalate
     type: issue
     label: escalate
     unsolicited: false
-    description: Open an issue for IGM
+    description: Complainant escalates the complaint not being satisfied with the resolution
     pair: on_issue_processing_2
     owner: BAP
     expect: false
@@ -2329,23 +2341,23 @@ flows:
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent marks the action as PROCESSING
     pair: null
     owner: BPP
-    expect: false 
+    expect: false
   - key: on_issue_resolution_2
     type: on_issue
     label: resolution
     unsolicited: true
-    description: LSSA
+    description: Respondent proposes updated resolution again for the complaint
     pair: null
     owner: BPP
-    expect: false           
+    expect: false
   - key: issue_resolution_accept
     type: issue
     label: resolution_accept
     unsolicited: false
-    description: Open an issue for IGM
+    description: A resolution is accepted by the complainant
     pair: on_issue_resolved
     owner: BAP
     expect: false
@@ -2364,7 +2376,7 @@ flows:
     type: on_issue
     label: resolved
     unsolicited: false
-    description: LSSA
+    description: The complaint is marked as resolved
     pair: null
     owner: BPP
     expect: false
@@ -2372,10 +2384,18 @@ flows:
     type: issue
     label: close
     unsolicited: false
-    description: Open an issue for IGM
+    description: Once resolved, the complaint is marked as closed
     pair: null
     owner: BAP
     expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+          - "THUMBS_UP"
+          - "THUMBS_DOWN"
+        default: "THUMBS_UP"
   - key: on_update_refund_igm
     type: on_update
     label: on_update_igm
@@ -2385,7 +2405,7 @@ flows:
     owner: BPP
     expect: false
 
-- id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION(v-2.0.0)
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2424,6 +2444,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2529,7 +2551,7 @@ flows:
     type: issue
     label: open
     unsolicited: false
-    description: Open an issue for IGM
+    description: Create a complaint for the order
     pair: on_issue_processing
     owner: BAP
     expect: false
@@ -2537,7 +2559,7 @@ flows:
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent starts PROCESSING the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2545,7 +2567,7 @@ flows:
     type: on_issue
     label: resolution
     unsolicited: true
-    description: LSSA
+    description: Respondent proposes resolution for the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2553,7 +2575,7 @@ flows:
     type: issue
     label: resolution_accept
     unsolicited: false
-    description: Open an issue for IGM
+    description: A resolution is accepted by the complainant
     pair: on_issue_resolved_igm_3
     owner: BAP
     expect: false
@@ -2572,7 +2594,7 @@ flows:
     type: on_issue
     label: resolved
     unsolicited: false
-    description: LSSA
+    description: The complaint is marked as resolved
     pair: null
     owner: BPP
     expect: false
@@ -2594,10 +2616,18 @@ flows:
     type: issue
     label: close
     unsolicited: false
-    description: Open an issue for IGM
+    description: Once resolved, the complaint is marked as closed
     pair: null
     owner: BAP
     expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+        - "THUMBS_UP"
+        - "THUMBS_DOWN"
+        default: "THUMBS_UP"
 
 ## developer portal flows
 
@@ -2813,6 +2843,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2901,6 +2933,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2999,6 +3033,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -3142,6 +3178,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -3252,6 +3290,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4538,6 +4578,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_EXCHANGE_CUSTOMER_SUPPORT_DETAILS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with customer support details
   sequence:
   - key: search_LOGISTICS
@@ -4576,6 +4617,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4692,6 +4735,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_CODIFIED_STATIC_TERMS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with codifed static terms
   sequence:
   - key: search_LOGISTICS
@@ -4730,6 +4774,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4846,6 +4892,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_RCM
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with rcm self-declartion
   sequence:
   - key: search_LOGISTICS
@@ -4884,6 +4931,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5000,6 +5049,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_BASE_LINE_PUBLIC_SPECIAL_CAPABILITIES
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features with public special capabilities
   sequence:
   - key: search_LOGISTICS
@@ -5038,6 +5088,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5154,6 +5206,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_BASE_LINE_SLA_METRICS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS_SLA
@@ -5192,6 +5245,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5308,6 +5363,7 @@ flows:
     pair: null
     owner: BP
 - id: ORDER_FLOW_BASE_LINE_SELLER_CREDS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5346,6 +5402,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5463,6 +5521,7 @@ flows:
     owner: BPP
 
 - id: UPDATE_DELIVERY_ADDRESS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5501,6 +5560,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5696,6 +5757,7 @@ flows:
     owner: BPP
 
 - id: SELLER_BUYER_INSTRUCTIONS
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5734,6 +5796,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5839,6 +5903,7 @@ flows:
     owner: BPP
 
 - id: E-WAY_BILL
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5877,6 +5942,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5994,6 +6061,7 @@ flows:
     owner: BPP
 
 - id: E-POD
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -6032,6 +6100,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -6161,6 +6231,7 @@ flows:
     owner: BPP
 
 - id: Call-Masking
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -6199,6 +6270,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -6316,6 +6389,7 @@ flows:
     owner: BPP
 
 - id: RATE_CARD (P2P)
+  tags: ["WORKBENCH", "MANDATORY"]
   description: Rate Card for point-to-point logistics operations
   sequence: 
   - key: search_rate_card_P2P_LOGISTICS
@@ -6488,3 +6562,267 @@ flows:
         name: "Differential weight charges"
       - code: "022"
         name: "RTO (with return)"
+- id: BUYER_SIDE_ORDER_CANCELLATION
+  tags: ["WORKBENCH", "MANDATORY"]
+  description: Standard point-to-point cancellation flow
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: buyer_side_cancel_LOGISTICS
+    type: cancel
+    unsolicited: false
+    description: LBNP requests for order cancellation.
+    payloadField: $.message.order.cancellation_reason_id
+    input:
+      - name: cancellation_reason_id
+        label: Select a reason_id
+        type: select
+        values:
+          - "150"
+          - "151"
+          - "152"
+          - "153"
+        default: "151"
+    pair: null
+    owner: BAP
+  - key: buyer_side_on_cancel_LOGISTICS
+    type: on_cancel
+    unsolicited: false
+    description: LSP acknowledges order cancellation.
+    pair: null
+    owner: BPP
+- id: SELLER_SIDE_ORDER_CANCELLATION
+  tags: ["WORKBENCH", "MANDATORY"]
+  description: Standard point-to-point cancellation flow
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: on_status_13_LOGISTICS
+    type: on_status
+    label: Agent-assigned
+    unsolicited: true
+    description: LSP updates order status [Agent-assigned]
+    pair: null
+    owner: BPP
+  - key: on_status_5_LOGISTICS
+    type: on_status
+    unsolicited: true
+    description: LSP updates order status (At-pickup)
+    label: At-pickup
+    pair: null
+    owner: BPP
+  - key: seller_side_on_cancel_LOGISTICS
+    type: on_cancel
+    unsolicited: true
+    description: LSP acknowledges order cancellation.
+    pair: null
+    owner: BPP
+    payloadField: $.message.order.cancellation_reason_id
