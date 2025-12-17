@@ -170,8 +170,11 @@ domain:
         usecase:
           - name: GOLD LOAN
             flows: "./FIS12/V-2.0.2/goldLoan/flows/index.yaml"
+          - name: PERSONAL LOAN
+            flows: "./FIS12/V-2.0.2/personalLoan/flows/index.yaml"
         supportedActions:
-          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"        
+          $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
+
   - name: ONDC:FIS13
     versions:
       - id: 2.0.0
@@ -289,7 +292,8 @@ usecases:
       version:
         - key: 2.0.2
           usecase:
-            - GOLD LOAN     
+            - GOLD LOAN
+            - PERSONAL LOAN          
     - key: ONDC:FIS13
       version:
         - key: 2.0.0
