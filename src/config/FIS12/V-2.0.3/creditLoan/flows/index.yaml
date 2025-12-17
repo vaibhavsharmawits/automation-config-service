@@ -51,11 +51,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
