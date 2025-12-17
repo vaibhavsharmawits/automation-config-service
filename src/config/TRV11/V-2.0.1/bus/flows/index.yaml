@@ -44,6 +44,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -174,10 +178,6 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: item_count
-            label: Enter Item count
-            type: number
-            payloadField: $.message.order.items[*].quantity.selected.count
           - name: item_id
             label: Enter Item Id
             type: text
@@ -192,7 +192,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init_unlimited_pass_BUS_201
+      - key: init_BUS_201
         type: init
         unsolicited: false
         pair: on_init_BUS_201
@@ -262,6 +262,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -361,6 +365,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -442,6 +450,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -529,6 +541,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -616,6 +632,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -691,6 +711,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -778,6 +802,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -878,6 +906,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -912,7 +944,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -920,7 +952,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -928,7 +960,7 @@ flows:
         type: on_issue
         label: need_more_info
         unsolicited: true
-        description: LSP provides more information
+        description: Respondent requests for more information
         pair: null
         owner: BPP
         expect: true
@@ -936,15 +968,15 @@ flows:
         type: issue
         label: info_provided
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant provides required information
         pair: on_issue_provided
         owner: BAP
         expect: false
       - key: on_issue_provided
         type: on_issue
-        label: provided
+        label: processing
         unsolicited: false
-        description: LSP
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -952,7 +984,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -960,7 +992,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
@@ -979,7 +1011,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -987,7 +1019,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
@@ -1053,6 +1085,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -1087,7 +1123,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -1095,7 +1131,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1103,7 +1139,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1111,7 +1147,7 @@ flows:
         type: issue
         label: resolution_reject
         unsolicited: false
-        description: Open an issue for IGM
+        description: The resolution is rejected by the complainant
         pair: on_issue_processing_1
         owner: BAP
         expect: false
@@ -1123,7 +1159,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -1131,7 +1167,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes updated resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1139,7 +1175,7 @@ flows:
         type: issue
         label: escalate
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant escalates the complaint not being satisfied with the resolution
         pair: on_issue_processing_2
         owner: BAP
         expect: false
@@ -1147,7 +1183,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -1155,7 +1191,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes updated resolution again for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1163,7 +1199,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
@@ -1182,7 +1218,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1190,7 +1226,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
@@ -1256,6 +1292,10 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -1290,7 +1330,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -1298,7 +1338,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1306,7 +1346,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1314,7 +1354,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved_igm_3
         owner: BAP
         expect: false
@@ -1333,7 +1373,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1341,7 +1381,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false

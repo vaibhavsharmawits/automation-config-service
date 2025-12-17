@@ -202,6 +202,146 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  
+  - id: purchase_journey_with_form_Multiple_Tickets
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    description: Purchase flow with form (select - on_status)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: first_form_testing
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.first_form_testing
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_form_submission
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  
+  - id: purchase_journey_without_form_Multiple_Tickets
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    description: purchase journey select to on_status without form
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select_without_form
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
+      - key: on_select_without_form
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
   - id: technical_cancellation
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Technical Cancellation flow (soft & confirm cancel)
@@ -380,6 +520,111 @@ flows:
             label: Enter
             type: trv_select
       - key: on_select_without_form
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_technical_cancellation
+        owner: BAP
+        expect: false
+      - key: on_status_technical_cancellation
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_soft_user_cancellation
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_soft_user_cancellation
+        owner: BAP
+        expect: false
+      - key: on_cancel_soft_user_cancellation
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_confirm_user_cancellation
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_confirm_user_cancellation
+        owner: BAP
+        expect: false
+      - key: on_cancel_confirm_user_cancellation
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: User_Cancellation_FULL_With_Form
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    description: User Cancellation flow (soft & confirm cancel)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: first_form_testing
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.first_form_testing
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_form_submission
         type: on_select
         unsolicited: false
         pair: null
@@ -644,7 +889,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -652,7 +897,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -660,7 +905,7 @@ flows:
         type: on_issue
         label: need_more_info
         unsolicited: true
-        description: LSP provides more information
+        description: Respondent requests for more information
         pair: null
         owner: BPP
         expect: true
@@ -668,15 +913,15 @@ flows:
         type: issue
         label: info_provided
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant provides required information
         pair: on_issue_provided
         owner: BAP
         expect: false
       - key: on_issue_provided
         type: on_issue
-        label: provided
+        label: processing
         unsolicited: false
-        description: LSP
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -684,7 +929,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -692,7 +937,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
@@ -711,7 +956,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -719,7 +964,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
@@ -800,7 +1045,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -808,7 +1053,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -816,7 +1061,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -824,7 +1069,7 @@ flows:
         type: issue
         label: resolution_reject
         unsolicited: false
-        description: Open an issue for IGM
+        description: The resolution is rejected by the complainant
         pair: on_issue_processing_1
         owner: BAP
         expect: false
@@ -836,7 +1081,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -844,7 +1089,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes updated resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -852,7 +1097,7 @@ flows:
         type: issue
         label: escalate
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant escalates the complaint not being satisfied with the resolution
         pair: on_issue_processing_2
         owner: BAP
         expect: false
@@ -860,7 +1105,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -868,7 +1113,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes updated resolution again for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -876,7 +1121,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
@@ -895,7 +1140,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -903,7 +1148,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
@@ -984,7 +1229,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -992,7 +1237,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1000,7 +1245,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1008,7 +1253,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved_igm_3
         owner: BAP
         expect: false
@@ -1027,7 +1272,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1035,7 +1280,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
