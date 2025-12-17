@@ -9,3 +9,12 @@ versions:
         flows: "./V-2.0.2/personalLoan/flows/index.yaml"
     supportedActions:
       $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
+  - id: 2.0.3
+    reporting: false
+    usecase:
+      - name: PERSONAL LOAN
+        flows: "./V-2.0.3/personalLoan/flows/index.yaml"
+      - name: CREDIT CARD
+        flows: "./V-2.0.3/creditLoan/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS12/V-2.0.3/supportedActions/index.yaml"
