@@ -8,7 +8,16 @@ versions:
       - name: PERSONAL LOAN
         flows: "./V-2.0.2/personalLoan/flows/index.yaml"
     supportedActions:
-      $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml"
+      $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml" 
+       
+  - id: 2.2.1
+    reporting: false
+    usecase:
+      - name: PURCHASE FINANCE
+        flows: "./V-2.2.1/purchaseFinance/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS12/V-2.2.1/supportedActions/index.yaml"
+
   - id: 2.0.3
     reporting: false
     usecase:
