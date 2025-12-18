@@ -1,6 +1,6 @@
 flows:
   - id: Health_Insurance_Application
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY"] 
     description: Health Insurance Application
     sequence:
       - key: search
@@ -77,9 +77,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: manual_review_form
         label: form link provided in on_select
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -87,7 +87,32 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status  
+      - key: select2
+        type: select
+        force_proceed: true
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
       - key: init
         type: init
@@ -152,12 +177,25 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form  
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_confirm
         type: on_confirm
         unsolicited: false
@@ -248,9 +286,10 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: manual_review_form
         label: form link provided in on_select
-        type: HTML_FORM
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
         unsolicited: false
         pair: null
         owner: BPP
@@ -258,7 +297,32 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status  
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
       - key: init
         type: init
@@ -413,9 +477,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: manual_review_form
         label: form link provided in on_select
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -423,7 +487,31 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status  
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
       - key: init
         type: init
@@ -608,9 +696,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: manual_review_form
         label: form link provided in on_select
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -618,7 +706,31 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status  
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
       - key: init
         type: init
@@ -797,9 +909,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: manual_review_form
         label: form link provided in on_select
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -807,7 +919,32 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status  
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
       - key: init
         type: init
