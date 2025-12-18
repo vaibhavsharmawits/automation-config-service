@@ -1395,7 +1395,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv10_select
       - key: on_init_rental
         type: on_init
         unsolicited: false
@@ -1494,13 +1494,17 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_rental
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_rental
         owner: BAP
         expect: false
-      - key: on_init
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_select
+      - key: on_init_rental
         type: on_init
         unsolicited: false
         pair: null
