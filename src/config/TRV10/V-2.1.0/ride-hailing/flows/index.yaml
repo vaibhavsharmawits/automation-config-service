@@ -1380,6 +1380,10 @@ flows:
         pair: on_select_rental
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_select
       - key: on_select_rental
         type: on_select
         unsolicited: false
@@ -1392,10 +1396,6 @@ flows:
         pair: on_init_rental
         owner: BAP
         expect: false
-        input:
-          - name: select_input
-            label: Enter
-            type: trv10_select
       - key: on_init_rental
         type: on_init
         unsolicited: false
@@ -1488,6 +1488,10 @@ flows:
         pair: on_select_rental
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_select
       - key: on_select_rental
         type: on_select
         unsolicited: false
@@ -1500,10 +1504,6 @@ flows:
         pair: on_init_rental
         owner: BAP
         expect: false
-        input:
-          - name: select_input
-            label: Enter
-            type: trv10_select
       - key: on_init_rental
         type: on_init
         unsolicited: false
