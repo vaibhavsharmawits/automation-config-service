@@ -154,6 +154,15 @@ domain:
             flows: "./RET18/V-1.2.5/Health&Wellness/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET18/V-1.2.5/supportedActions/index.yaml"
+  - name: ONDC:AGR10
+    versions:
+      - id: 1.2.5
+        reporting: false
+        usecase:
+          - name: agriculture-input
+            flows: "./AGR10/v-1.2.5/AGRI_INPUT/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/AGR10/v-1.2.5/supportedActions/index.yaml"
   - name: ONDC:FIS11
     versions:
       - id: 2.0.0
@@ -283,6 +292,11 @@ usecases:
         - key: 1.2.5
           usecase:
             - HEALTH&WELLNESS
+    - key: ONDC:AGR10
+      version:
+        - key: 1.2.5
+          usecase:
+            - agriculture-input
     - key: ONDC:FIS11
       version:
         - key: 2.0.0
