@@ -3,12 +3,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -16,10 +33,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -134,6 +147,11 @@ flows:
         pair: on_search_monthly_pass_BUS_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search_monthly_pass_BUS_201
         type: on_search
         unsolicited: false
@@ -153,10 +171,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -221,12 +235,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - User Cancellation Flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -234,10 +265,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -324,12 +351,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -337,10 +381,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -409,12 +449,29 @@ flows:
     tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -422,10 +479,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -500,12 +553,29 @@ flows:
     tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - User Based Confirmation flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_catalog5_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -513,10 +583,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -591,12 +657,29 @@ flows:
     tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Vehicle Based Confirmation flow(Without Update Call)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -604,10 +687,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -670,12 +749,29 @@ flows:
     tags: ["WORKBENCH", "MANDATORY"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_catalog5_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -683,10 +779,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -761,12 +853,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Technical Cancellation Flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -774,10 +883,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -865,12 +970,29 @@ flows:
     tags: ["MANDATORY", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -878,10 +1000,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
