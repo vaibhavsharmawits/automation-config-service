@@ -146,6 +146,20 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order picked up
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+        description: BAP request to track the order
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP sends the tracking information
       - key: on_status_out_for_delivery
         type: on_status
         unsolicited: true
