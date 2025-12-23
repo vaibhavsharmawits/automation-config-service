@@ -104,7 +104,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Search_Pagination_FlowCode_Based
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Search Pagination Flow(Code Based)
     sequence:
       - key: search0_BUS_201
@@ -138,7 +138,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Monthly_Passes_Flow_Code_Based
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["PRAMAAN","WORKBENCH", "MANDATORY","REPORTABLE"]
     description: IntraCity - Unlimited Passes Flow (Code Based)
     sequence:
       - key: search0_BUS_201
@@ -446,7 +446,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(With Update Call)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
       - key: search0_BUS_201
@@ -550,7 +550,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_User_Based_Confirmation_flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - User Based Confirmation flow
     sequence:
       - key: search0_BUS_201
@@ -654,7 +654,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(Without Update Call)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Vehicle Based Confirmation flow(Without Update Call)
     sequence:
       - key: search0_BUS_201
@@ -746,7 +746,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(With Update & QR Call)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
       - key: search0_BUS_201
