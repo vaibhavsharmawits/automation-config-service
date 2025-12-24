@@ -1,6 +1,6 @@
 flows:
-  - id: Health_Insurance_Application
-    tags: ["WORKBENCH", "MANDATORY"] 
+  - id: Health_Insurance_Application(Individual)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Health Insurance Application
     sequence:
       - key: search
@@ -27,31 +27,6 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.individual_information_form
-      - key: search2
-        type: search
-        unsolicited: false
-        pair: on_search2
-        owner: BAP
-        force_proceed: true
-        expect: true
-      - key: on_search2
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: family_information_form
-        label: form link provided in on_search
-        type: HTML_FORM
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.family_information_form
       - key: search3
         type: search
         unsolicited: false
@@ -88,7 +63,13 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status  
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
       - key: select2
         type: select
         force_proceed: true
@@ -114,6 +95,12 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
       - key: init
         type: init
         unsolicited: false
@@ -188,7 +175,13 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.consumer_information_form  
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
       - key: confirm
         type: confirm
         unsolicited: false
@@ -208,7 +201,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Health_Insurance_Application(PRE-ORDER)
+  - id: Health_Insurance_Application(PRE-ORDER Individual)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Health Insurance Application(PRE-ORDER)
     sequence:
@@ -236,6 +229,1046 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.individual_information_form
+      - key: search3
+        type: search
+        unsolicited: false
+        pair: on_search3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: manual_review_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Proposer_Details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Proposer_Details_form
+      - key: init2
+        type: init
+        unsolicited: false
+        pair: on_init2
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init2
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.nominee_details_form
+      - key: init3
+        type: init
+        unsolicited: false
+        pair: on_init3
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Claim_Health_Insurance(Individual)
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Claim Health Insurance
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: individual_information_form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.individual_information_form
+      - key: search3
+        type: search
+        unsolicited: false
+        pair: on_search3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: manual_review_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Proposer_Details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Proposer_Details_form
+      - key: init2
+        type: init
+        unsolicited: false
+        pair: on_init2
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init2
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.nominee_details_form
+      - key: init3
+        type: init
+        unsolicited: false
+        pair: on_init3
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false   
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited2
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited3
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited4
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Renew_Health_Insurance(Individual)
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Renew Health Insurance
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: individual_information_form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.individual_information_form
+      - key: search3
+        type: search
+        unsolicited: false
+        pair: on_search3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: manual_review_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Proposer_Details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Proposer_Details_form
+      - key: init2
+        type: init
+        unsolicited: false
+        pair: on_init2
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init2
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.nominee_details_form
+      - key: init3
+        type: init
+        unsolicited: false
+        pair: on_init3
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false   
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited5
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited2
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited6
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Cancel_Health_Insurance(Individual)
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Cancel Health Insurance
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: individual_information_form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.individual_information_form
+      - key: search3
+        type: search
+        unsolicited: false
+        pair: on_search3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: manual_review_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: select2
+        type: select
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Proposer_Details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Proposer_Details_form
+      - key: init2
+        type: init
+        unsolicited: false
+        pair: on_init2
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init2
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.nominee_details_form
+      - key: init3
+        type: init
+        unsolicited: false
+        pair: on_init3
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false   
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  
+  
+
+
+  - id: Health_Insurance_Application(Family)
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Health Insurance Application
+    sequence:
+      - key: search2
+        type: search
+        unsolicited: false
+        pair: on_search2
+        owner: BAP
+        force_proceed: true
+        expect: true
+      - key: on_search2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: family_information_form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.family_information_form
+      - key: search3
+        type: search
+        unsolicited: false
+        pair: on_search3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: manual_review_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: select2
+        type: select
+        force_proceed: true
+        unsolicited: false
+        pair: on_select2
+        owner: BAP
+        expect: false
+      - key: on_select2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Proposer_Details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Proposer_Details_form
+      - key: init2
+        type: init
+        unsolicited: false
+        pair: on_init2
+        force_proceed: true
+        owner: BAP
+        expect: false
+      - key: on_init2
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.nominee_details_form
+      - key: init3
+        type: init
+        unsolicited: false
+        pair: on_init3
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Health_Insurance_Application(PRE-ORDER Family)
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Health Insurance Application(PRE-ORDER)
+    sequence:
       - key: search2
         type: search
         unsolicited: false
@@ -298,7 +1331,13 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status  
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
       - key: select2
         type: select
         unsolicited: false
@@ -324,6 +1363,12 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
       - key: init
         type: init
         unsolicited: false
@@ -387,6 +1432,24 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false     
       - key: confirm
         type: confirm
         unsolicited: false
@@ -398,35 +1461,11 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false
-  - id: Claim_Health_Insurance
+        expect: false      
+  - id: Claim_Health_Insurance(Family)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Claim Health Insurance
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: individual_information_form
-        label: form link provided in on_search
-        type: HTML_FORM
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.individual_information_form
       - key: search2
         type: search
         unsolicited: false
@@ -488,7 +1527,13 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status  
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
       - key: select2
         type: select
         unsolicited: false
@@ -513,6 +1558,12 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false       
       - key: init
         type: init
         unsolicited: false
@@ -576,6 +1627,24 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false   
       - key: confirm
         type: confirm
         unsolicited: false
@@ -617,35 +1686,11 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false
-  - id: Renew_Health_Insurance
+        expect: false      
+  - id: Renew_Health_Insurance(Family)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Renew Health Insurance
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: individual_information_form
-        label: form link provided in on_search
-        type: HTML_FORM
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.individual_information_form
       - key: search2
         type: search
         unsolicited: false
@@ -707,7 +1752,13 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status  
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
       - key: select2
         type: select
         unsolicited: false
@@ -732,6 +1783,12 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
       - key: init
         type: init
         unsolicited: false
@@ -795,6 +1852,24 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false   
       - key: confirm
         type: confirm
         unsolicited: false
@@ -830,35 +1905,11 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false
-  - id: Cancel_Health_Insurance
+        expect: false      
+  - id: Cancel_Health_Insurance(Family)
     tags: ["WORKBENCH", "MANDATORY"]
     description: Cancel Health Insurance
     sequence:
-      - key: search
-        type: search
-        unsolicited: false
-        pair: on_search
-        owner: BAP
-        expect: true
-      - key: on_search
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: individual_information_form
-        label: form link provided in on_search
-        type: HTML_FORM
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.individual_information_form
       - key: search2
         type: search
         unsolicited: false
@@ -920,7 +1971,13 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status  
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
       - key: select2
         type: select
         unsolicited: false
@@ -946,6 +2003,12 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             reference: $.reference_data.Ekyc_details_form
+      - key: on_status_unsolicited4
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false      
       - key: init
         type: init
         unsolicited: false
@@ -1009,6 +2072,24 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: consumer_information_form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: on_status_unsolicited5
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false   
       - key: confirm
         type: confirm
         unsolicited: false
@@ -1044,4 +2125,4 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false
+        expect: false      
