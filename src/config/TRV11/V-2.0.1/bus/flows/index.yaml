@@ -3,12 +3,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -16,10 +33,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -47,7 +60,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -91,7 +104,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Search_Pagination_FlowCode_Based
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Search Pagination Flow(Code Based)
     sequence:
       - key: search0_BUS_201
@@ -125,7 +138,7 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Monthly_Passes_Flow_Code_Based
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["PRAMAAN","WORKBENCH", "MANDATORY","REPORTABLE"]
     description: IntraCity - Unlimited Passes Flow (Code Based)
     sequence:
       - key: search0_BUS_201
@@ -134,6 +147,11 @@ flows:
         pair: on_search_monthly_pass_BUS_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search_monthly_pass_BUS_201
         type: on_search
         unsolicited: false
@@ -153,10 +171,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -221,12 +235,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - User Cancellation Flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -234,10 +265,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -265,7 +292,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -324,12 +351,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -337,10 +381,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -368,7 +408,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -406,15 +446,32 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(With Update Call)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -422,10 +479,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -453,7 +506,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -497,15 +550,32 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_User_Based_Confirmation_flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - User Based Confirmation flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_catalog5_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -513,10 +583,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -544,7 +610,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -588,15 +654,32 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(Without Update Call)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Vehicle Based Confirmation flow(Without Update Call)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -604,10 +687,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -635,7 +714,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -667,15 +746,32 @@ flows:
         owner: BPP
         expect: false
   - id: IntraCity_Vehicle_Based_Confirmation_flow(With Update & QR Call)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Vehicle Based Confirmation flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_catalog5_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -683,10 +779,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -714,7 +806,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -761,12 +853,29 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Technical Cancellation Flow
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -774,10 +883,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -805,7 +910,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -865,12 +970,29 @@ flows:
     tags: ["MANDATORY", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
+      - key: search0_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search0_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search0_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: true
+        expect: false
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -878,10 +1000,6 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -909,7 +1027,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -944,7 +1062,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -952,7 +1070,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -960,7 +1078,7 @@ flows:
         type: on_issue
         label: need_more_info
         unsolicited: true
-        description: LSP provides more information
+        description: Respondent requests for more information
         pair: null
         owner: BPP
         expect: true
@@ -968,15 +1086,15 @@ flows:
         type: issue
         label: info_provided
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant provides required information
         pair: on_issue_provided
         owner: BAP
         expect: false
       - key: on_issue_provided
         type: on_issue
-        label: provided
+        label: processing
         unsolicited: false
-        description: LSP
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -984,7 +1102,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -992,7 +1110,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
@@ -1011,7 +1129,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1019,7 +1137,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
@@ -1088,7 +1206,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -1123,7 +1241,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -1131,7 +1249,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1139,7 +1257,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1147,7 +1265,7 @@ flows:
         type: issue
         label: resolution_reject
         unsolicited: false
-        description: Open an issue for IGM
+        description: The resolution is rejected by the complainant
         pair: on_issue_processing_1
         owner: BAP
         expect: false
@@ -1159,7 +1277,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -1167,7 +1285,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes updated resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1175,7 +1293,7 @@ flows:
         type: issue
         label: escalate
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant escalates the complaint not being satisfied with the resolution
         pair: on_issue_processing_2
         owner: BAP
         expect: false
@@ -1183,7 +1301,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -1191,7 +1309,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes updated resolution again for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1199,7 +1317,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
@@ -1218,7 +1336,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1226,7 +1344,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
@@ -1295,7 +1413,7 @@ flows:
         input:
           - name: select_input
             label: Enter
-            type: trv_select
+            type: trv11_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -1330,7 +1448,7 @@ flows:
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
@@ -1338,7 +1456,7 @@ flows:
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1346,7 +1464,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1354,7 +1472,7 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved_igm_3
         owner: BAP
         expect: false
@@ -1373,7 +1491,7 @@ flows:
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1381,7 +1499,7 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
