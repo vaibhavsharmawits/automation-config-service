@@ -1380,19 +1380,23 @@ flows:
         pair: on_select_rental
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_select
       - key: on_select_rental
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_rental
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_rental
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_rental
         type: on_init
         unsolicited: false
         pair: null
@@ -1469,14 +1473,9 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: select_input
+            label: Enter
+            type: trv10_schedule_rental
       - key: on_search_schedule_rental
         type: on_search
         unsolicited: false
@@ -1489,19 +1488,23 @@ flows:
         pair: on_select_rental
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_select
       - key: on_select_rental
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_rental
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_rental
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_rental
         type: on_init
         unsolicited: false
         pair: null
@@ -1584,14 +1587,9 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: select_input
+            label: Enter
+            type: trv10_schedule
       - key: on_search_schedule_trip
         type: on_search
         unsolicited: false
@@ -1717,25 +1715,29 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_rental
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_rental
         owner: BAP
         expect: false
-      - key: on_select
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_select
+      - key: on_select_rental
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_rental
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_rental
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_rental
         type: on_init
         unsolicited: false
         pair: null
@@ -1744,10 +1746,10 @@ flows:
       - key: confirm
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_rental
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_rental
         type: on_confirm
         unsolicited: false
         pair: null
@@ -1848,10 +1850,6 @@ flows:
         pair: on_init
         owner: BAP
         expect: false
-        # input:
-        #   - name: select10_input
-        #     label: Enter
-        #     type: trv_select
       - key: on_init
         type: on_init
         unsolicited: false
