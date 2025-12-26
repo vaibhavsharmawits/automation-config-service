@@ -1,5 +1,6 @@
 flows:
   - id: Intercity(Bus)_Station_Code_Based_Flow
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
     description: Intercity(Bus) - Station Code Based Flow
     sequence:
       - key: search_BUS_201
@@ -23,17 +24,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -57,7 +58,16 @@ flows:
         unsolicited: false
         pair: on_select_BUS_201
         owner: BAP
-        expect: false
+        expect: true
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -70,6 +80,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -118,7 +131,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Intercity(Bus)_Cancel_Flow
+  - id: Intercity(Bus)_Cancel_Flow(Buyer)
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Intercity(Bus) - Cancel Flow
     sequence:
       - key: search_BUS_201
@@ -142,17 +156,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -177,6 +191,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -189,6 +212,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -244,6 +270,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Error_Response(Soft Locking Time)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Error Response (Soft Locking Time)
     sequence:
       - key: select_BUS_221
@@ -277,6 +304,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Partial_Cancellation_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Partial Cancellation Flow
     sequence:
       - key: search_BUS_201
@@ -300,17 +328,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -335,6 +363,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -347,6 +384,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -402,6 +442,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Seller_Cancellation
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Intercity(Bus) - Seller Cancellation
     sequence:
       - key: search_BUS_201
@@ -425,17 +466,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -460,6 +501,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -472,6 +522,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -509,6 +562,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Rating(Success)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Rating(Success)
     sequence:
       - key: search_BUS_201
@@ -532,17 +586,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -567,6 +621,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -579,6 +642,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -622,6 +688,7 @@ flows:
         owner: BAP
         expect: false
   - id: Intercity(Bus)_Rating(Error Flow)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Intercity(Bus) - Rating(Error Flow)
     sequence:
       - key: search_BUS_201
@@ -645,17 +712,17 @@ flows:
         pair: null
         owner: BPP
         expect: true
-        input:
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: search_BUS_202
         type: search
         unsolicited: false
         pair: on_search_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -680,6 +747,15 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -692,6 +768,9 @@ flows:
         pair: on_select_BUS_202
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection        
       - key: on_select_BUS_202
         type: on_select
         unsolicited: false
@@ -740,5 +819,137 @@ flows:
         pair: null
         owner: BPP
         expect: false
-    
+  - id: Intercity(Bus)_Station_Code_Based_Flow_Multiple_Tickets
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
+    description: Intercity(Bus) - Station Code Based Flow(Multiple Tickets)
+    sequence:
+      - key: search_BUS_201
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+      - key: on_search_BUS_201
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+      - key: search_BUS_202
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_202
+        owner: BAP
+        expect: false
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+      - key: on_search_BUS_202
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_BUS_203
+        type: search
+        unsolicited: false
+        pair: on_search_BUS_203
+        owner: BAP
+        expect: false
+      - key: on_search_BUS_203
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_201
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_201
+        owner: BAP
+        expect: true
+        input:
+          - name: selected_item
+            label: Select Item Id
+            type: text
+            payloadField: $.message.order.items[*].id
+          - name: seat_count
+            label: Enter Seat Count
+            type: text
+            payloadField: $.message.order.items[*].selected.count
+      - key: on_select_BUS_201
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_BUS_202
+        type: select
+        unsolicited: false
+        pair: on_select_BUS_202
+        owner: BAP
+        expect: false
+        input:
+          - name: seat_selection_count
+            type: trv12_bus_seat_selection
+      - key: on_select_BUS_202
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_BUS_201
+        type: init
+        unsolicited: false
+        pair: on_init_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_init_BUS_201
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_BUS_201
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_confirm_BUS_201
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_BUS_201
+        type: status
+        unsolicited: false
+        pair: on_status_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_status_BUS_201
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited_201
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+   
  
