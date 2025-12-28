@@ -180,6 +180,7 @@ flows:
             label: Select retail item category
             type: select
             values:
+              - Grocery
               - Fashion
               - BPC
               - Electronics
@@ -266,6 +267,210 @@ flows:
         pair: on_update_LOGISTICS
         owner: BAP
       - key: on_update_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: on_status_13_LOGISTICS
+        type: on_status
+        label: Agent-assigned
+        unsolicited: true
+        description: LSP updates order status [Agent-assigned]
+        pair: null
+        owner: BPP
+      - key: on_status_9_LOGISTICS
+        type: on_status
+        label: Out for pickup
+        unsolicited: true
+        description: LSP updates order status [Out for pickup]
+        pair: null
+        owner: BPP
+      - key: on_status_1_LOGISTICS
+        type: on_status
+        label: Order picked up
+        unsolicited: true
+        description: LSP updates order status [Order picked up]
+        pair: null
+        owner: BPP
+      - key: track_LOGISTICS
+        type: track
+        unsolicited: false
+        description: Buyer requests delivery tracking
+        pair: on_track_LOGISTICS
+        owner: BAP
+      - key: on_track_LOGISTICS
+        type: on_track
+        unsolicited: false
+        description: LSP provides order tracking information (gps or url)
+        pair: null
+        owner: BPP
+      - key: on_status_7_LOGISTICS
+        type: on_status
+        label: In Transit
+        unsolicited: true
+        description: LSP updates order status [In Transit]
+        pair: null
+        owner: BPP
+      - key: on_status_6_LOGISTICS
+        type: on_status
+        label: At destination hub
+        unsolicited: true
+        description: LSP updates order status [At destination hub]
+        pair: null
+        owner: BPP
+      - key: on_status_2_LOGISTICS
+        type: on_status
+        label: Out for delivery
+        unsolicited: true
+        description: LSP updates order status [Out for delivery]
+        pair: null
+        owner: BPP
+      - key: on_status_3_LOGISTICS
+        type: on_status
+        label: Order delivered
+        unsolicited: true
+        description: LSP updates order status [Order delivered]
+        pair: null
+        owner: BPP
+  - id: ORDER_FLOW_B2B
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
+    description: This flow illustrates the logistics order process for Baseline Features to be implemented by all Network participants transacting on version v1.2.5.
+    sequence:
+      - key: search_B2B_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_B2B_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: cold_storage
+            label: Do you want cold storage?
+            type: select
+            values:
+              - yes
+              - no
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="cold_storage")].value
+          - name: insurance_required
+            label: Do you want insurance?
+            type: select
+            values:
+              - yes
+              - no
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="insurance_required")].value
+          - name: insurance_owner
+            label: Select insurance owner?
+            type: select
+            values:
+              - lsp
+              - lbnp
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="insurance_owner")].value
+          - name: fulfillmentType
+            label: Select a fulfillment type
+            type: select
+            values:
+              - FTL
+              - PTL
+            payloadField: $.message.intent.fulfillment.type
+          - name: dangerous_goods
+            label: Dangerous Goods?
+            type: select
+            default: no
+            values:
+              - no
+              - yes
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="dangerous_goods")].value
+          - name: fragile_handling
+            label: Fragile Handling?
+            type: select
+            values:
+              - no
+              - yes
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="fragile_handling")].value
+          - name: transit_risk_owner
+            label: Select Transit Risk Owner?
+            type: select
+            values:
+              - lbnp
+              - lsp
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="transit_risk_owner")].value
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_B2B_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_B2B_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_B2B_LOGISTICS
+        owner: BAP
+      - key: on_init_B2B_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_B2B_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_B2B_LOGISTICS
+        owner: BAP
+      - key: on_confirm_B2B_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_B2B_LOGISTICS
         type: on_update
         unsolicited: false
         description: LSP acknowledges order updates and searches for an agent.
@@ -4699,4 +4904,169 @@ flows:
         pair: null
         owner: BPP
         payloadField: $.message.order.cancellation_reason_id
+  - id: B2B_ORDER_CANCELLATION
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
+    description: This flow illustrates the logistics order process for Baseline Features to be implemented by all Network participants transacting on version v1.2.5.
+    sequence:
+      - key: search_B2B_LOGISTICS
+        type: search
+        unsolicited: false
+        description: LBNP sends a search request
+        pair: on_search_B2B_LOGISTICS
+        owner: BAP
+        expect: true
+        input:
+          - name: retailCategory
+            label: Select retail item category
+            type: select
+            values:
+              - Grocery
+              - Fashion
+              - BPC
+              - Electronics
+              - Appliances
+              - Home & Kitchen
+              - Health & Wellness
+              - Pharma
+              - Auto components
+              - C2C parcels
+          - name: cold_storage
+            label: Do you want cold storage?
+            type: select
+            values:
+              - yes
+              - no
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="cold_storage")].value
+          - name: insurance_required
+            label: Do you want insurance?
+            type: select
+            values:
+              - yes
+              - no
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="insurance_required")].value
+          - name: insurance_owner
+            label: Select insurance owner?
+            type: select
+            values:
+              - lsp
+              - lbnp
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="insurance_owner")].value
+          - name: fulfillmentType
+            label: Select a fulfillment type
+            type: select
+            values:
+              - FTL
+              - PTL
+            payloadField: $.message.intent.fulfillment.type
+          - name: dangerous_goods
+            label: Dangerous Goods?
+            type: select
+            default: no
+            values:
+              - no
+              - yes
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="dangerous_goods")].value
+          - name: fragile_handling
+            label: Fragile Handling?
+            type: select
+            values:
+              - no
+              - yes
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="fragile_handling")].value
+          - name: transit_risk_owner
+            label: Select Transit Risk Owner?
+            type: select
+            values:
+              - lbnp
+              - lsp
+            payloadField: $.message.intent.fulfillment.tags[?(@.code=="special_req")].list[?(@.code=="transit_risk_owner")].value
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.city
+            default: "std:080"
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.gps
+            default: 12.4535,77.9283
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.gps
+            default: 12.4535,77.9283
+          - name: start_code
+            label: Enter start area code
+            type: text
+            payloadField: $.message.intent.fulfillment.start.location.address.area_code
+            default: "560001"
+          - name: end_code
+            label: Enter end area code
+            type: text
+            payloadField: $.message.intent.fulfillment.end.location.address.area_code
+            default: "560001"
+      - key: on_search_B2B_LOGISTICS
+        type: on_search
+        unsolicited: false
+        description: LSP responds with catalog
+        pair: null
+        owner: BPP
+      - key: init_B2B_LOGISTICS
+        type: init
+        unsolicited: false
+        description: LBNP selects and initializes order
+        pair: on_init_B2B_LOGISTICS
+        owner: BAP
+      - key: on_init_B2B_LOGISTICS
+        type: on_init
+        unsolicited: false
+        description: LSP acknowledges and provides quote breakup
+        pair: null
+        owner: BPP
+      - key: confirm_B2B_LOGISTICS
+        type: confirm
+        unsolicited: false
+        description: LBNP sends order confirmation
+        pair: on_confirm_B2B_LOGISTICS
+        owner: BAP
+      - key: on_confirm_B2B_LOGISTICS
+        type: on_confirm
+        unsolicited: false
+        description: LSP accepts the order
+        pair: null
+        owner: BPP
+      - key: update_LOGISTICS
+        type: update
+        unsolicited: false
+        description: LBNP updates order details
+        pair: on_update_LOGISTICS
+        owner: BAP
+      - key: on_update_B2B_LOGISTICS
+        type: on_update
+        unsolicited: false
+        description: LSP acknowledges order updates and searches for an agent.
+        pair: null
+        owner: BPP
+      - key: buyer_side_cancel_LOGISTICS
+        type: cancel
+        unsolicited: false
+        description: LBNP requests for order cancellation.
+        payloadField: $.message.order.cancellation_reason_id
+        input:
+          - name: cancellation_reason_id
+            label: Select a reason_id
+            type: select
+            values:
+              - "250"
+              - "251"
+              - "252"
+            default: "250"
+        pair: null
+        owner: BAP
+      - key: buyer_side_on_cancel_LOGISTICS
+        type: on_cancel
+        unsolicited: false
+        description: LSP acknowledges order cancellation.
+        pair: null
+        owner: BPP
         
