@@ -59,10 +59,67 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Airlines - Purchase Journey(Code Based Flow)
-    tags: ["WORKBENCH", "MANDATORY"]
+  - id: Purchase Journey(Code Based Flow)
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
     description: Airlines - Purchase Journey(Code Based Flow)
     sequence:
+      - key: search_1_Airline_200
+        type: search
+        unsolicited: false
+        pair: on_search_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: adult_ticket_count
+            label: Adult Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+          - name: child_ticket_count
+            label: Child Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+          - name: journey_date
+            label: Enter Journey date
+            type: text
+            payloadField: $.message.intent.fulfillment.start.time.date
+          # Not Required as per schema
+          # - name: start_gps
+          #   label: Enter start gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          # - name: end_gps
+          #   label: Enter end gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1_Airline_200
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
       - key: select_1_Airline_200
         type: select
         unsolicited: false
@@ -115,10 +172,67 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Airlines - Cancellation by Buyer
-    tags: ["WORKBENCH", "MANDATORY"]
+  - id: Cancellation by Buyer
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
     description: Airlines - Cancellation by Buyer
     sequence:
+      - key: search_1_Airline_200
+        type: search
+        unsolicited: false
+        pair: on_search_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: adult_ticket_count
+            label: Adult Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+          - name: child_ticket_count
+            label: Child Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+          - name: journey_date
+            label: Enter Journey date
+            type: text
+            payloadField: $.message.intent.fulfillment.start.time.date
+          # Not Required as per schema
+          # - name: start_gps
+          #   label: Enter start gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          # - name: end_gps
+          #   label: Enter end gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1_Airline_200
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
       - key: select_1_Airline_200
         type: select
         unsolicited: false
@@ -195,10 +309,67 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: Airlines - Cancellation by Seller
-    tags: ["WORKBENCH", "MANDATORY"]
+  - id: Cancellation by Seller
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
     description: Airlines - Cancellation by Seller
     sequence:
+      - key: search_1_Airline_200
+        type: search
+        unsolicited: false
+        pair: on_search_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: adult_ticket_count
+            label: Adult Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+          - name: child_ticket_count
+            label: Child Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+          - name: journey_date
+            label: Enter Journey date
+            type: text
+            payloadField: $.message.intent.fulfillment.start.time.date
+          # Not Required as per schema
+          # - name: start_gps
+          #   label: Enter start gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          # - name: end_gps
+          #   label: Enter end gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1_Airline_200
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
       - key: select_1_Airline_200
         type: select
         unsolicited: false
@@ -254,6 +425,119 @@ flows:
       - key: on_cancel_Airline_203
         type: on_cancel
         unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Purchase Journey(Multiple Tickets)
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
+    description: Airlines - Purchase Journey(Multiple Tickets)
+    sequence:
+      - key: search_1_Airline_200
+        type: search
+        unsolicited: false
+        pair: on_search_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: adult_ticket_count
+            label: Adult Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+          - name: child_ticket_count
+            label: Child Ticket Count
+            type: text
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+          - name: journey_date
+            label: Enter Journey date
+            type: text
+            payloadField: $.message.intent.fulfillment.start.time.date
+          # Not Required as per schema
+          # - name: start_gps
+          #   label: Enter start gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          # - name: end_gps
+          #   label: Enter end gps coordinates
+          #   type: text
+          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1_Airline_200
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4_Airline_200
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: select_1_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_1_Airline_200
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: airline_select
+      - key: on_select_1_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_Airline_200
+        type: select
+        unsolicited: false
+        pair: on_select_2_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_select_2_Airline_200
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_Airline_200
+        type: init
+        unsolicited: false
+        pair: on_init_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_init_Airline_200
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_Airline_200
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_Airline_200
+        owner: BAP
+        expect: false
+      - key: on_confirm_Airline_200
+        type: on_confirm
+        unsolicited: false
         pair: null
         owner: BPP
         expect: false
