@@ -688,6 +688,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: status_pre_order
+        type: status
+        unsolicited: false
+        pair: on_status_pre_order
+        owner: BAP
+        expect: false
+      - key: on_status_pre_order
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: cancel_technical
         type: cancel
         unsolicited: false
