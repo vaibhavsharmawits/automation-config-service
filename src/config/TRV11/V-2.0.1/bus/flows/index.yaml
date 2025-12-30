@@ -573,7 +573,7 @@ flows:
       - key: search_BUS_201
         type: search
         unsolicited: false
-        pair: on_search_catalog5_BUS_201
+        pair: on_search_BUS_201
         owner: BAP
         expect: false
         input:
@@ -595,7 +595,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search_catalog5_BUS_201
+      - key: on_search_BUS_201
         type: on_search
         unsolicited: false
         pair: null
@@ -769,7 +769,7 @@ flows:
       - key: search_BUS_201
         type: search
         unsolicited: false
-        pair: on_search_catalog5_BUS_201
+        pair: on_search_BUS_201
         owner: BAP
         expect: false
         input:
@@ -791,7 +791,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search_catalog5_BUS_201
+      - key: on_search_BUS_201
         type: on_search
         unsolicited: false
         pair: null
