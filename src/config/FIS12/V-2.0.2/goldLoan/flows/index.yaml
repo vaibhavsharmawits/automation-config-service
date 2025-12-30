@@ -47,6 +47,11 @@
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified                
       - key: on_select_adjust_loan_amount
         type: on_select
         unsolicited: false
@@ -72,11 +77,6 @@
         owner: BAP
         expect: false
         force_proceed: true
-        input:
-          - name: finvu_verification
-            label: Complete Account Aggregator Verification
-            type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified        
       - key: on_select_2
         type: on_select
         unsolicited: false
@@ -283,7 +283,7 @@
         owner: BPP
         expect: false
       - key: consumer_information_form
-        label: form link provided in on_select
+        label: consumer_information_form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -457,6 +457,11 @@
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified             
       - key: on_select_adjust_loan_amount
         type: on_select
         unsolicited: false
@@ -482,11 +487,6 @@
         owner: BAP
         expect: false
         force_proceed: true
-        input:
-          - name: finvu_verification
-            label: Complete Account Aggregator Verification
-            type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified        
       - key: on_select_2
         type: on_select
         unsolicited: false
@@ -618,6 +618,11 @@
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified             
       - key: on_select_adjust_loan_amount
         type: on_select
         unsolicited: false
@@ -642,12 +647,7 @@
         pair: on_select_2
         owner: BAP
         expect: false
-        force_proceed: true
-        input:
-          - name: finvu_verification
-            label: Complete Account Aggregator Verification
-            type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified        
+        force_proceed: true      
       - key: on_select_2
         type: on_select
         unsolicited: false
@@ -925,6 +925,11 @@
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified             
       - key: on_select_adjust_loan_amount
         type: on_select
         unsolicited: false
@@ -950,11 +955,7 @@
         owner: BAP
         expect: false
         force_proceed: true
-        input:
-          - name: finvu_verification
-            label: Complete Account Aggregator Verification
-            type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified        
+   
       - key: on_select_2
         type: on_select
         unsolicited: false
@@ -1269,6 +1270,11 @@
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified             
       - key: on_select_adjust_loan_amount
         type: on_select
         unsolicited: false
@@ -1293,12 +1299,7 @@
         pair: on_select_2
         owner: BAP
         expect: false
-        force_proceed: true
-        input:
-          - name: finvu_verification
-            label: Complete Account Aggregator Verification
-            type: FINVU_REDIRECT
-            payloadField: $.context.aa_consent_verified        
+        force_proceed: true      
       - key: on_select_2
         type: on_select
         unsolicited: false
@@ -1362,7 +1363,4 @@
         pair: null
         owner: BPP
         expect: false
-
-
-
    
