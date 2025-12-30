@@ -2014,3 +2014,795 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: OnDemand_Assign_driver_on_onconfirm_With_IGM(v-2.0.0)
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver on on-confirm
+    sequence:
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_open
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing
+        owner: BAP
+        expect: false
+      - key: on_issue_processing
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_need_more_info
+        type: on_issue
+        label: need_more_info
+        unsolicited: true
+        description: Respondent requests for more information
+        pair: null
+        owner: BPP
+        expect: true
+      - key: issue_info_provided
+        type: issue
+        label: info_provided
+        unsolicited: false
+        description: Complainant provides required information
+        pair: on_issue_provided
+        owner: BAP
+        expect: false
+      - key: on_issue_provided
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_update_igm_return
+      #   type: on_update
+      #   label: on_update_igm
+      #   unsolicited: true
+      #   description: final on_update call after issue closed
+      #   pair: null
+      #   owner: BPP
+      #   expect: false  
+  - id: OnDemand_Assign_driver_on_onconfirm_With_IGM_Rejection(v-2.0.0)
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver on on-confirm
+    sequence:
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_open
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing
+        owner: BAP
+        expect: false
+      - key: on_issue_processing
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_reject
+        type: issue
+        label: resolution_reject
+        unsolicited: false
+        description: The resolution is rejected by the complainant
+        pair: on_issue_processing_1
+        owner: BAP
+        expect: false
+        input:
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_processing_1
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_1
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_escalate
+        type: issue
+        label: escalate
+        unsolicited: false
+        description: Complainant escalates the complaint not being satisfied with the resolution
+        pair: on_issue_processing_2
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_2
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_2
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution again for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_update_igm_replacement
+      #   type: on_update
+      #   label: on_update_igm
+      #   unsolicited: true
+      #   description: final on_update call after issue closed
+      #   pair: null
+      #   owner: BPP
+      #   expect: false  
+  - id: OnDemand_Assign_driver_on_onconfirm_With_IGM_No_Action(v-2.0.0)
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver on on-confirm
+    sequence:
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_open_2
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing
+        owner: BAP
+        expect: false
+      - key: on_issue_processing
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_igm_3
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_igm_3
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_igm_3
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_igm_3
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_igm_3
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_status_igm_3
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order delivered  
+  - id: OnDemand_Assign_driver_on_onconfirm_With_IGM(v-1.0.0)
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver on on-confirm
+    sequence:
+      - key: search_ride
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_open_100
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_100
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_100
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolved_100
+        type: on_issue_status
+        label: resolved
+        unsolicited: true
+        description: The complaint is marked as resolved with a resolution
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_100
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"                          
