@@ -549,6 +549,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: cancel_soft_technical_cancellation
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_soft_technical_cancellation
+        owner: BAP
+        expect: false
+      - key: on_cancel_soft_technical_cancellation
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false    
       - key: cancel_confirm_technical_cancellation
         type: cancel
         unsolicited: false
