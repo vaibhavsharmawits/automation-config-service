@@ -14,27 +14,35 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: start_location
+            label: Enter start airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].location.descriptor.code
+          - name: end_location
+            label: Enter end airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[1].location.descriptor.code
+          - name: category
+            label: Select travel class
+            type: select
+            payloadField: $.message.intent.category.descriptor.code
+            values:
+              - ECONOMY
+              - BUSINESS
+              - FIRST_CLASS
+              - PREMIUM_ECONOMY
           - name: adult_ticket_count
             label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='ADULT_TICKET')].quantity.count
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
-            label: Enter Journey date
+            label: Enter Journey date (YYYY-MM-DD)
             type: text
-            payloadField: $.message.intent.fulfillment.start.time.date
-          # Not Required as per schema
-          # - name: start_gps
-          #   label: Enter start gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          # - name: end_gps
-          #   label: Enter end gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -74,27 +82,34 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: start_location
+            label: Enter start airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].location.descriptor.code
+          - name: end_location
+            label: Enter end airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[1].location.descriptor.code
+          - name: category
+            label: Select travel class
+            type: select
+            payloadField: $.message.intent.category.descriptor.code
+            values:
+              - ECONOMY
+              - BUSINESS
+              - FIRST_CLASS
           - name: adult_ticket_count
             label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='ADULT_TICKET')].quantity.count
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
-            label: Enter Journey date
+            label: Enter Journey date (YYYY-MM-DD)
             type: text
-            payloadField: $.message.intent.fulfillment.start.time.date
-          # Not Required as per schema
-          # - name: start_gps
-          #   label: Enter start gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          # - name: end_gps
-          #   label: Enter end gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -142,6 +157,10 @@ flows:
         pair: on_select_2_Airline_200
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection
+            label: Select Seats
+            type: airline_seat_select
       - key: on_select_2_Airline_200
         type: on_select
         unsolicited: false
@@ -187,27 +206,34 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: start_location
+            label: Enter start airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].location.descriptor.code
+          - name: end_location
+            label: Enter end airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[1].location.descriptor.code
+          - name: category
+            label: Select travel class
+            type: select
+            payloadField: $.message.intent.category.descriptor.code
+            values:
+              - ECONOMY
+              - BUSINESS
+              - FIRST_CLASS
           - name: adult_ticket_count
             label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='ADULT_TICKET')].quantity.count
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
-            label: Enter Journey date
+            label: Enter Journey date (YYYY-MM-DD)
             type: text
-            payloadField: $.message.intent.fulfillment.start.time.date
-          # Not Required as per schema
-          # - name: start_gps
-          #   label: Enter start gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          # - name: end_gps
-          #   label: Enter end gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -255,6 +281,10 @@ flows:
         pair: on_select_2_Airline_200
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection
+            label: Select Seats
+            type: airline_seat_select
       - key: on_select_2_Airline_200
         type: on_select
         unsolicited: false
@@ -324,27 +354,34 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: start_location
+            label: Enter start airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].location.descriptor.code
+          - name: end_location
+            label: Enter end airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[1].location.descriptor.code
+          - name: category
+            label: Select travel class
+            type: select
+            payloadField: $.message.intent.category.descriptor.code
+            values:
+              - ECONOMY
+              - BUSINESS
+              - FIRST_CLASS
           - name: adult_ticket_count
             label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='ADULT_TICKET')].quantity.count
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
-            label: Enter Journey date
+            label: Enter Journey date (YYYY-MM-DD)
             type: text
-            payloadField: $.message.intent.fulfillment.start.time.date
-          # Not Required as per schema
-          # - name: start_gps
-          #   label: Enter start gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          # - name: end_gps
-          #   label: Enter end gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -392,6 +429,10 @@ flows:
         pair: on_select_2_Airline_200
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection
+            label: Select Seats
+            type: airline_seat_select
       - key: on_select_2_Airline_200
         type: on_select
         unsolicited: false
@@ -443,27 +484,34 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+          - name: start_location
+            label: Enter start airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].location.descriptor.code
+          - name: end_location
+            label: Enter end airport code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[1].location.descriptor.code
+          - name: category
+            label: Select travel class
+            type: select
+            payloadField: $.message.intent.category.descriptor.code
+            values:
+              - ECONOMY
+              - BUSINESS
+              - FIRST_CLASS
           - name: adult_ticket_count
             label: Adult Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"ADULT_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='ADULT_TICKET')].quantity.count
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
-            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='"CHILD_TICKET"')].quantity.count
+            payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
-            label: Enter Journey date
+            label: Enter Journey date (YYYY-MM-DD)
             type: text
-            payloadField: $.message.intent.fulfillment.start.time.date
-          # Not Required as per schema
-          # - name: start_gps
-          #   label: Enter start gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          # - name: end_gps
-          #   label: Enter end gps coordinates
-          #   type: text
-          #   payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
         unsolicited: false
@@ -511,6 +559,10 @@ flows:
         pair: on_select_2_Airline_200
         owner: BAP
         expect: false
+        input:
+          - name: seat_selection
+            label: Select Seats
+            type: airline_seat_select
       - key: on_select_2_Airline_200
         type: on_select
         unsolicited: false
