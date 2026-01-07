@@ -38,7 +38,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -129,12 +139,12 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_time
-            label: Enter start time (check in)
+          - name: start_date
+            label: Enter start date (check in) (YYYY-MM-DD)
             type: text
             payloadField: $.message.intent.category.time.range.start
-          - name: end_time
-            label: Enter end time (check out)
+          - name: end_date
+            label: Enter end date (check out) (YYYY-MM-DD)
             type: text
             payloadField: $.message.intent.category.time.range.end
 
@@ -162,7 +172,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_3
         type: on_select
         unsolicited: false
@@ -256,7 +276,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_4
         type: on_select
         unsolicited: false
@@ -314,14 +344,6 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search_1
         type: on_search
         unsolicited: false
@@ -346,7 +368,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -404,14 +436,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+
       - key: on_search_1
         type: on_search
         unsolicited: false
@@ -436,7 +461,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -506,14 +541,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+
       - key: on_search_1
         type: on_search
         unsolicited: false
@@ -538,7 +566,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_1
         type: on_select
         unsolicited: false
@@ -602,14 +640,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+
       - key: on_search_1
         type: on_search
         unsolicited: false
@@ -634,7 +665,17 @@ flows:
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
+            required: false
             payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_1
         type: on_select
         unsolicited: false
