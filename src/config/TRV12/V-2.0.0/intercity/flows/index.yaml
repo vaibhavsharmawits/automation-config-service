@@ -267,6 +267,22 @@ flows:
         pair: on_cancel_BUS_211
         owner: BAP
         expect: false
+        input:
+          - name: cancellation_reason_id
+            label: Select Cancellation Reason Id
+            type: select
+            values:
+              - "001"
+              - "002"
+              - "003"
+              - "004"
+              - "005"
+              - "006"
+              - "007"
+              - "008"
+              - "009"
+            default: "001"
+            payloadField: $.message.cancellation_reason_id
       - key: on_cancel_BUS_211
         type: on_cancel
         unsolicited: false
