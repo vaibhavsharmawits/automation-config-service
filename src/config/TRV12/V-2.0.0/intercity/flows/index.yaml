@@ -35,6 +35,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -59,15 +63,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: true
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -167,6 +175,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -191,15 +203,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -339,6 +355,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -363,15 +383,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -477,6 +501,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -501,15 +529,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -597,6 +629,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -621,15 +657,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -723,6 +763,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -747,15 +791,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: false
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
@@ -855,6 +903,10 @@ flows:
             label: Enter end station code
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: journey_date
+            label: Enter Journey date (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[0].time.timestamp  
       - key: on_search_BUS_202
         type: on_search
         unsolicited: false
@@ -879,15 +931,19 @@ flows:
         pair: on_select_BUS_201
         owner: BAP
         expect: true
+        # input:
+        #   - name: selected_item
+        #     label: Select Item Id
+        #     type: text
+        #     payloadField: $.message.order.items[*].id
+        #   - name: seat_count
+        #     label: Enter Seat Count
+        #     type: text
+        #     payloadField: $.message.order.items[*].selected.count
         input:
-          - name: selected_item
-            label: Select Item Id
-            type: text
-            payloadField: $.message.order.items[*].id
-          - name: seat_count
-            label: Enter Seat Count
-            type: text
-            payloadField: $.message.order.items[*].selected.count
+          - name: select_input
+            label: Enter
+            type: intercity_select
       - key: on_select_BUS_201
         type: on_select
         unsolicited: false
