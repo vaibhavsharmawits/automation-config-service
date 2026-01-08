@@ -549,18 +549,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: cancel_soft_technical_cancellation
-        type: cancel
-        unsolicited: false
-        pair: on_cancel_soft_technical_cancellation
-        owner: BAP
-        expect: false
-      - key: on_cancel_soft_technical_cancellation
-        type: on_cancel
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false  
       - key: cancel_confirm_technical_cancellation
         type: cancel
         unsolicited: false
@@ -1023,6 +1011,14 @@ flows:
         pair: on_update_soft_partial_cancellation
         owner: BAP
         expect: false
+        input:
+          - name: select_item
+            label: Select Item
+            type: text
+          - name: select_quantity
+            label: Select Quantity
+            type: text
+
       - key: on_update_soft_partial_cancellation
         type: on_update
         unsolicited: false
@@ -1112,18 +1108,6 @@ flows:
         expect: false
       - key: on_confirm
         type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: status
-        type: status
-        unsolicited: false
-        pair: on_status_technical_cancellation
-        owner: BAP
-        expect: false
-      - key: on_status_technical_cancellation
-        type: on_status
         unsolicited: false
         pair: null
         owner: BPP
