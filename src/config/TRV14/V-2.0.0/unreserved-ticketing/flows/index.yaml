@@ -931,7 +931,7 @@ flows:
         owner: BPP
         expect: false
 
-  - id: User Cancellation (Partial)
+  - id: user_cancellation_partial
     tags: ["WORKBENCH", "MANDATORY"]
     description: Partial Cancellation flow (cancel 1 quantity of item)
     sequence:
@@ -1011,6 +1011,14 @@ flows:
         pair: on_update_soft_partial_cancellation
         owner: BAP
         expect: false
+        input:
+          - name: select_item
+            label: Select Item
+            type: text
+          - name: select_quantity
+            label: Select Quantity
+            type: text
+
       - key: on_update_soft_partial_cancellation
         type: on_update
         unsolicited: false
@@ -1100,18 +1108,6 @@ flows:
         expect: false
       - key: on_confirm
         type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: status
-        type: status
-        unsolicited: false
-        pair: on_status_technical_cancellation
-        owner: BAP
-        expect: false
-      - key: on_status_technical_cancellation
-        type: on_status
         unsolicited: false
         pair: null
         owner: BPP
