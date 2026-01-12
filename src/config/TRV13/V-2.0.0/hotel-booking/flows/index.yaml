@@ -252,23 +252,27 @@ flows:
         pair: on_search_4
         owner: BAP
         expect: true
+        # input:
+        #   - name: provider_id
+        #     label: Enter provider id
+        #     type: text
+        #     payloadField: $.message.intent.provider.id
+        #   - name: provider_name
+        #     label: Enter provider name
+        #     type: text
+        #     payloadField: $.message.intent.provider.descriptor.name
+        #   - name: start_time
+        #     label: Enter start time (check in)
+        #     type: text
+        #     payloadField: $.message.intent.provider.time.range.start
+        #   - name: end_time
+        #     label: Enter end time (check out)
+        #     type: text
+        #     payloadField: $.message.intent.provider.time.range.end
         input:
-          - name: provider_id
-            label: Enter provider id
-            type: text
-            payloadField: $.message.intent.provider.id
-          - name: provider_name
-            label: Enter provider name
-            type: text
-            payloadField: $.message.intent.provider.descriptor.name
-          - name: start_time
-            label: Enter start time (check in)
-            type: text
-            payloadField: $.message.intent.provider.time.range.start
-          - name: end_time
-            label: Enter end time (check out)
-            type: text
-            payloadField: $.message.intent.provider.time.range.end
+          - name: select_input
+            label: Enter
+            type: trv13_select_provider
       - key: on_search_4
         type: on_search
         unsolicited: false
