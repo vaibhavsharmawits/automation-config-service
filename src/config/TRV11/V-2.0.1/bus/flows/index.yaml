@@ -28,10 +28,6 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-          - name: bpp_uri
-            label: enter your bpp_uri
-            type: text
-            payloadField: $.context.bpp_uri
       - key: on_search_BUS_201
         type: on_search
         unsolicited: false
