@@ -9,9 +9,12 @@ supportedActions:
   confirm: ["on_confirm"]
   on_confirm: ["update", "on_update", "status", "on_status"]
   update: ["on_update"]
-  on_update: ["update", "on_update", "status", "on_status"]
+  on_update: ["update", "on_update", "status", "on_status", "issue"]
   status: ["on_status"]
-  on_status: ["status", "init", "on_update", "update"]
+  on_status: ["status", "init", "on_update", "update", "issue"]
+  issue: ["on_issue", "issue", "on_update", "on_status", on_issue_status]
+  on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
+  on_issue_status: ["on_issue", "issue"]
 
 apiProperties:
   search:
