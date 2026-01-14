@@ -35,6 +35,16 @@ flows:
             label: Enter quantity
             type: text
             payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Check In Time (yyyy-mm-dd)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start  
+          - name: end_time
+            label: Check Out Time (yyyy-mm-dd)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end  
           - name: add_on_id
             label: Enter add-on id (optional)
             type: text
