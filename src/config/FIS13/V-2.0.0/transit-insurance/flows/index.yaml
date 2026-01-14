@@ -98,6 +98,10 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: fis13_select
       - key: on_select
         type: on_select
         unsolicited: false
@@ -111,7 +115,7 @@ flows:
           - name: nominee_name 
             label: Enter nominee name
             type: text
-            payloadField: $.message.oder.fulfillments[*].tags[*].list[*].value
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="NOMINEE_NAME")].value
         pair: on_init
         owner: BAP
         expect: false
