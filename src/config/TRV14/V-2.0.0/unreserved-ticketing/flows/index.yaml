@@ -1142,7 +1142,7 @@ flows:
         expect: false
 
   - id: purchase_journey_without_form_with_IGM(v-2.0.0)
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["MANDATORY","WORKBENCH"]
     description: purchase journey select to on_status without form
     sequence:
       - key: search_incremental_pull
@@ -1328,7 +1328,7 @@ flows:
       #   expect: false  
 
   - id: purchase_journey_without_form_with_IGM_Rejection(v-2.0.0)
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["MANDATORY","WORKBENCH"]
     description: purchase journey select to on_status without form
     sequence:
       - key: search_incremental_pull
@@ -1542,7 +1542,7 @@ flows:
       #   expect: false  
 
   - id: purchase_journey_without_form_with_IGM_No_Action(v-2.0.0)
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["MANDATORY", "WORKBENCH"]
     description: purchase journey select to on_status without form
     sequence:
       - key: search_incremental_pull
