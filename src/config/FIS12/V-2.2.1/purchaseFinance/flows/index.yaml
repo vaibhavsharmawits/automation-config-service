@@ -173,7 +173,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -669,7 +670,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      # - key: manadate_details_form
+      # - key: Emanadate_verification_status
       #   label: manadate details form 
       #   type: HTML_FORM 
       #   unsolicited: false
@@ -680,7 +681,7 @@ flows:
       #     - name: form_submission_id
       #       label: Enter Form Submission id
       #       type: HTML_FORM
-      #       reference: $.reference_data.manadate_details_form
+      #       reference: $.reference_data.Emanadate_verification_status
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -947,7 +948,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -958,7 +959,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1245,7 +1246,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -1256,7 +1257,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1352,6 +1353,26 @@ flows:
         pair: null
         owner: BPP
         expect: false     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  
       - key: update_missed_Emi
         type: update
         unsolicited: false
@@ -1542,7 +1563,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -1553,7 +1574,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1839,7 +1860,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -1850,7 +1871,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2183,7 +2204,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -2194,7 +2215,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2718,7 +2739,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      # - key: manadate_details_form
+      # - key: Emanadate_verification_status
       #   label: manadate details form 
       #   type: HTML_FORM 
       #   unsolicited: false
@@ -2729,7 +2750,7 @@ flows:
       #     - name: form_submission_id
       #       label: Enter Form Submission id
       #       type: HTML_FORM
-      #       reference: $.reference_data.manadate_details_form
+      #       reference: $.reference_data.Emanadate_verification_status
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -3012,7 +3033,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -3023,7 +3044,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -3327,7 +3348,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -3338,7 +3359,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -3432,7 +3453,27 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false     
+        expect: false 
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      
       - key: update_missed_Emi
         type: update
         unsolicited: false
@@ -3640,7 +3681,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -3651,7 +3692,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -3955,7 +3996,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
         type: DYNAMIC_FORM 
         unsolicited: false
@@ -3966,7 +4007,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.manadate_details_form
+            reference: $.reference_data.Emanadate_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
