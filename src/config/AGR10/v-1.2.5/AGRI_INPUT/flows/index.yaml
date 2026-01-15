@@ -354,20 +354,6 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order picked up
-      - key: on_status_out_for_delivery
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order out for delivery
-      - key: on_status_order_delivered
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Status updates - order delivered
       - key: track
         type: track
         unsolicited: false
@@ -382,6 +368,20 @@ flows:
         owner: BPP
         expect: false
         description: BPP sends the tracking information
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered
   - id: Cancellation_Flow
     description: Retail 1.2.5 (Cancellation)
     sequence:
