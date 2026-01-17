@@ -103,7 +103,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -115,7 +115,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -208,7 +208,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -219,7 +219,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -393,7 +393,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -405,7 +405,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -608,7 +608,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -620,7 +620,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -695,7 +695,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -706,7 +706,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -885,7 +885,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -897,7 +897,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -994,7 +994,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1005,7 +1005,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1185,7 +1185,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -1197,7 +1197,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -1292,7 +1292,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1303,7 +1303,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -1503,7 +1503,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -1515,7 +1515,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1609,7 +1609,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1620,7 +1620,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1800,7 +1800,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -1812,7 +1812,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1906,7 +1906,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1917,7 +1917,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2144,7 +2144,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2156,7 +2156,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2250,7 +2250,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2261,7 +2261,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2458,7 +2458,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2470,7 +2470,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2678,7 +2678,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2690,7 +2690,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2764,7 +2764,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2775,7 +2775,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2971,7 +2971,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2983,7 +2983,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3079,7 +3079,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -3090,7 +3090,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -3286,7 +3286,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -3298,7 +3298,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3394,7 +3394,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -3405,7 +3405,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3620,7 +3620,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -3632,7 +3632,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3727,7 +3727,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -3738,7 +3738,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3934,7 +3934,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -3946,7 +3946,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -4042,7 +4042,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_verification_status
+      - key: E_sign_verification_status
         label: Mandate Details Status Form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -4053,7 +4053,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.Ekyc_details_verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
