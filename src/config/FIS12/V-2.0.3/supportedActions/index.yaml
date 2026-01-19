@@ -5,13 +5,13 @@ supportedActions:
   select: ["on_select", "select"]
   on_select: ["init", "select", "on_status"]
   init: ["on_init"]
-  on_init: ["confirm","init"]
+  on_init: ["confirm","init","on_status"]
   confirm: ["on_confirm"]
   on_confirm: ["update", "on_update","on_status","status"]
   update: ["on_update"]
   on_update: ["update","on_update","status"]
   status: ["on_status"]
-  on_status: ["status", "init","update"]
+  on_status: ["status", "init","update","confirm"]
 
 apiProperties:
   search:
@@ -50,4 +50,3 @@ apiProperties:
   on_status:
     async_predecessor: null
     transaction_partner: []
-

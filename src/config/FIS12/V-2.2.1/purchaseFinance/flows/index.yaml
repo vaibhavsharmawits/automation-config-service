@@ -103,7 +103,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -115,7 +115,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -123,19 +123,19 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance
+        # type: on_status
+        # unsolicited: false
+        # pair: null
+        # owner: BPP
+        # expect: false
       - key: select2_purchase_finance
         type: select
         unsolicited: false
@@ -162,9 +162,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -172,8 +172,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -187,8 +208,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -198,7 +219,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -206,19 +227,19 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: init3_purchase_finance
         type: init
         unsolicited: false
@@ -372,7 +393,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -384,7 +405,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -392,20 +413,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -587,7 +608,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -599,7 +620,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -608,20 +629,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -649,7 +670,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      # - key: manadate_details_form
+      # - key: Emanadate_verification_status
       #   label: manadate details form 
       #   type: HTML_FORM 
       #   unsolicited: false
@@ -660,7 +681,7 @@ flows:
       #     - name: form_submission_id
       #       label: Enter Form Submission id
       #       type: HTML_FORM
-      #       reference: $.reference_data.manadate_details_form
+      #       reference: $.reference_data.Emanadate_verification_status
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -674,8 +695,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -685,7 +706,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -693,20 +714,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init3_purchase_finance
         type: init
@@ -864,7 +885,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -876,7 +897,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -885,20 +906,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: select2_purchase_finance
@@ -927,9 +948,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -937,8 +958,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -952,8 +994,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -963,7 +1005,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -971,20 +1013,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: init3_purchase_finance
@@ -1143,7 +1185,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -1155,7 +1197,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -1164,20 +1206,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: select2_purchase_finance
         type: select
         unsolicited: false
@@ -1204,9 +1246,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -1214,8 +1256,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -1229,8 +1292,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -1240,7 +1303,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -1249,20 +1312,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init3_purchase_finance
         type: init
@@ -1290,6 +1353,26 @@ flows:
         pair: null
         owner: BPP
         expect: false     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  
       - key: update_missed_Emi
         type: update
         unsolicited: false
@@ -1420,7 +1503,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -1432,7 +1515,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1440,20 +1523,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: select2_purchase_finance
         type: select
         unsolicited: false
@@ -1480,9 +1563,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -1490,8 +1573,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -1505,8 +1609,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -1516,7 +1620,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1524,20 +1628,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: init3_purchase_finance
@@ -1696,7 +1800,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -1708,7 +1812,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1716,20 +1820,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: select2_purchase_finance
         type: select
         unsolicited: false
@@ -1756,9 +1860,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -1766,8 +1870,28 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init2_purchase_finance
         type: init
@@ -1782,8 +1906,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -1793,7 +1917,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1801,20 +1925,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: init3_purchase_finance
@@ -2020,7 +2144,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2032,7 +2156,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2040,20 +2164,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: select2_purchase_finance
         type: select
         unsolicited: false
@@ -2080,9 +2204,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -2090,8 +2214,28 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init2_purchase_finance
         type: init
@@ -2106,8 +2250,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -2117,7 +2261,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2125,20 +2269,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: init3_purchase_finance
@@ -2314,7 +2458,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2326,7 +2470,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2334,20 +2478,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -2534,7 +2678,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2546,7 +2690,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2554,20 +2698,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -2595,7 +2739,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      # - key: manadate_details_form
+      # - key: Emanadate_verification_status
       #   label: manadate details form 
       #   type: HTML_FORM 
       #   unsolicited: false
@@ -2606,7 +2750,7 @@ flows:
       #     - name: form_submission_id
       #       label: Enter Form Submission id
       #       type: HTML_FORM
-      #       reference: $.reference_data.manadate_details_form
+      #       reference: $.reference_data.Emanadate_verification_status
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -2620,8 +2764,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -2631,7 +2775,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2639,20 +2783,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: init3_purchase_finance
@@ -2827,7 +2971,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -2839,7 +2983,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -2848,20 +2992,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -2889,9 +3033,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -2899,8 +3043,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -2914,8 +3079,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -2925,7 +3090,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -2933,20 +3098,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       
       - key: init3_purchase_finance
@@ -3121,7 +3286,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -3133,7 +3298,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3142,20 +3307,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -3183,9 +3348,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -3193,8 +3358,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -3208,8 +3394,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -3219,7 +3405,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3228,20 +3414,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: init3_purchase_finance
         type: init
         unsolicited: false
@@ -3267,7 +3453,27 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false     
+        expect: false 
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      
       - key: update_missed_Emi
         type: update
         unsolicited: false
@@ -3414,7 +3620,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -3426,7 +3632,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3435,20 +3641,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: select2_purchase_finance
         type: select
         unsolicited: false
@@ -3475,9 +3681,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -3485,8 +3691,29 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -3500,8 +3727,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -3511,7 +3738,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3520,20 +3747,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1  
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1  
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init3_purchase_finance
         type: init
@@ -3707,7 +3934,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: Ekyc_details_form
+      - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
         unsolicited: false  
@@ -3719,7 +3946,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_form
+            reference: $.reference_data.Ekyc_details_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3728,20 +3955,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: select2_purchase_finance
         type: select
@@ -3769,9 +3996,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: manadate_details_form
+      - key: Emanadate_verification_status
         label: manadate details form 
-        type: HTML_FORM 
+        type: DYNAMIC_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -3779,8 +4006,28 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.manadate_details_form
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance2
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
+      # - key: on_status_purchase_finance2
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init2_purchase_finance
         type: init
@@ -3795,8 +4042,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: verification_status
-        label: Mandate Details Status Form
+      - key: E_sign_verification_status
+        label: E-sign Status Form
         type: DYNAMIC_FORM
         unsolicited: false
         pair: null
@@ -3806,7 +4053,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
+            reference: $.reference_data.E_sign_verification_status
       
       - key: on_status_unsolicited
         type: on_status
@@ -3815,20 +4062,20 @@ flows:
         owner: BPP
         expect: false
         force_proceed: true
-      - key: status_purchase_finance
-        type: status
-        unsolicited: false
-        pair: on_status_purchase_finance1
-        owner: BAP
-        expect: false
-        force_proceed: true
+      # - key: status_purchase_finance
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_purchase_finance1
+      #   owner: BAP
+      #   expect: false
+      #   force_proceed: true
 
-      - key: on_status_purchase_finance1  
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_purchase_finance1  
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       
       - key: init3_purchase_finance
         type: init
