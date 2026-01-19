@@ -100,7 +100,11 @@ flows:
             label: Enter policy id
             type: text
             payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
-  
+          - name: tenure
+            label: Enter tenure
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="TENURE")].value
+
       - key: on_search_purchase_journey_hospicash
         type: on_search
         unsolicited: false
