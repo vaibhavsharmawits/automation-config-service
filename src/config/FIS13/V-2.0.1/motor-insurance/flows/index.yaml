@@ -1,0 +1,933 @@
+flows:
+  - id: Motor_Insurance_Application
+    description: Motor Insurance Application
+    tags: ["WORKBENCH", "MANDATORY"]
+    sequence:
+      - key: search_motor
+        type: search
+        unsolicited: false
+        pair: on_search_motor
+        owner: BAP
+        expect: true
+      - key: on_search_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: vehicle_details_form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.vehicle_details_form
+      - key: search2_motor
+        type: search
+        unsolicited: false
+        pair: on_search2_motor
+        owner: BAP
+        force_proceed: true
+        expect: true
+      - key: on_search2_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: manual_review_form_motor
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.manual_review_form_motor
+      - key: status_motor
+        type: status
+        unsolicited: false
+        pair: on_status_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_status_motor
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select2_motor
+        type: select
+        unsolicited: false
+        pair: on_select2_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select2_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: pan_details_form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.pan_details_form  
+      - key: select3_motor
+        type: select
+        unsolicited: false
+        pair: on_select3_motor
+        owner: BAP
+        force_proceed: true
+        expect: true
+      - key: on_select3_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: kyc_details_form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.kyc_details_form      
+      - key: init_motor
+        type: init
+        unsolicited: false
+        pair: on_init_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: vehicle_nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.vehicle_nominee_details_form
+      - key: init2_motor
+        type: init
+        unsolicited: false
+        pair: on_init2_motor
+        force_proceed: true
+        owner: BAP
+        expect: false
+      - key: on_init2_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Personal_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Personal_Details_Form
+      - key: init3_motor
+        type: init
+        unsolicited: false
+        pair: on_init3_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Consumer_Information_Form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Consumer_Information_Form  
+      - key: confirm_motor
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_motor
+        owner: BAP
+        expect: false
+      - key: on_confirm_motor
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_motor
+        type: update
+        unsolicited: false
+        pair: on_update_motor
+        owner: BAP
+        expect: false
+      - key: on_update_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Motor_Insurance_Application(PRE-ORDER)
+    description: Motor Insurance Application(PRE-ORDER)
+    tags: ["WORKBENCH", "MANDATORY"]
+    sequence:
+      - key: search_motor
+        type: search
+        unsolicited: false
+        pair: on_search_motor
+        owner: BAP
+        expect: true
+      - key: on_search_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Vehicle_Details_Form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Vehicle_Details_Form
+      - key: search2_motor
+        type: search
+        unsolicited: false
+        pair: on_search2_motor
+        owner: BAP
+        force_proceed: true
+        expect: true
+      - key: on_search2_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: kyc_Details_Form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.kyc_details_Form
+      - key: status_motor
+        type: status
+        unsolicited: false
+        pair: on_status_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_status_motor
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Pan_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Pan_Details_form  
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: kyc_Details_Form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.kyc_Details_Form      
+      - key: init_motor
+        type: init
+        unsolicited: false
+        pair: on_init_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: vehicle_nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.vehicle_nominee_details_form
+      - key: init2_motor
+        type: init
+        unsolicited: false
+        pair: on_init2_motor
+        force_proceed: true
+        owner: BAP
+        expect: false
+      - key: on_init2_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Personal_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Personal_Details_Form
+      - key: init3_motor
+        type: init
+        unsolicited: false
+        pair: on_init3_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Consumer_Information_Form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Consumer_Information_Form  
+      - key: confirm_motor
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_motor
+        owner: BAP
+        expect: false
+      - key: on_confirm_motor
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Claim_Motor_Insurance
+    description: Claim Motor Insurance
+    tags: ["WORKBENCH", "MANDATORY"]
+    sequence:
+      - key: search_motor
+        type: search
+        unsolicited: false
+        pair: on_search_motor
+        owner: BAP
+        expect: true
+      - key: on_search_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Vehicle_Details_Form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Vehicle_Details_Form
+      - key: search2_motor
+        type: search
+        unsolicited: false
+        pair: on_search2_motor
+        owner: BAP
+        force_proceed: true
+        expect: true
+      - key: on_search2_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: kyc_Details_Form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.kyc_details_Form
+      - key: status_motor
+        type: status
+        unsolicited: false
+        pair: on_status_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_status_motor
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Pan_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Pan_Details_form  
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: kyc_Details_Form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.kyc_Details_Form      
+      - key: init_motor
+        type: init
+        unsolicited: false
+        pair: on_init_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: vehicle_nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.vehicle_nominee_details_form
+      - key: init2_motor
+        type: init
+        unsolicited: false
+        pair: on_init2_motor
+        force_proceed: true
+        owner: BAP
+        expect: false
+      - key: on_init2_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Personal_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Personal_Details_Form
+      - key: init3_motor
+        type: init
+        unsolicited: false
+        pair: on_init3_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Consumer_Information_Form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Consumer_Information_Form  
+      - key: confirm_motor
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_motor
+        owner: BAP
+        expect: false
+      - key: on_confirm_motor
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited2_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited3_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited_motor
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited4_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Cancel_Motor_Insurance
+    description: Cancel Motor Insurance
+    tags: ["WORKBENCH", "MANDATORY"]
+    sequence:
+      - key: search_motor
+        type: search
+        unsolicited: false
+        pair: on_search_motor
+        owner: BAP
+        expect: true
+      - key: on_search_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Vehicle_Details_Form
+        label: form link provided in on_search
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Vehicle_Details_Form
+      - key: search2_motor
+        type: search
+        unsolicited: false
+        pair: on_search2
+        owner: BAP
+        force_proceed: true
+        expect: true
+      - key: on_search2_motor
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: kyc_Details_Form
+        label: form link provided in on_select
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.kyc_details_Form
+      - key: status_motor
+        type: status
+        unsolicited: false
+        pair: on_status_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_status_motor
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Pan_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Pan_Details_form  
+      - key: select_motor
+        type: select
+        unsolicited: false
+        pair: on_select_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_select_motor
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: kyc_Details_Form
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.kyc_Details_Form      
+      - key: init_motor
+        type: init
+        unsolicited: false
+        pair: on_init_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: vehicle_nominee_details_form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.vehicle_nominee_details_form
+      - key: init2_motor
+        type: init
+        unsolicited: false
+        pair: on_init2_motor
+        force_proceed: true
+        owner: BAP
+        expect: false
+      - key: on_init2_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Personal_Details_Form
+        label: form link provided in on_init
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.Personal_Details_Form
+      - key: init3_motor
+        type: init
+        unsolicited: false
+        pair: on_init3_motor
+        owner: BAP
+        force_proceed: true
+        expect: false
+      - key: on_init3_motor
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Consumer_Information_Form
+        label: form link provided in on_init
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.Consumer_Information_Form  
+      - key: confirm_motor
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_motor
+        owner: BAP
+        expect: false
+      - key: on_confirm_motor
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_motor
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_motor
+        owner: BAP
+        expect: false
+      - key: on_cancel_motor
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_motor
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
