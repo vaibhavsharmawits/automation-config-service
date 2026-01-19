@@ -100,6 +100,18 @@ flows:
             label: Enter policy id
             type: text
             payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
+          - name: tenure
+            label: Enter tenure
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="TENURE")].value
+          - name: buyer_ped
+            label: Enter buyer ped
+            type: select
+            values:
+              - "TRUE"
+              - "FALSE"
+            default: "FALSE"
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_PED")].value
 
       - key: on_search_purchase_journey_accidental
         type: on_search
