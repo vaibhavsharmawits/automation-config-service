@@ -262,6 +262,117 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: purchase_journey_order_level_forms_culture_heritage
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    description: Purchase Journey:Order Level Forms (Additional Flow:Culture-Heritage)
+    sequence:
+      - key: search_incremental_pull
+        type: search
+        unsolicited: false
+        pair: on_search_incremental_pull_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.city.code
+      - key: on_search_incremental_pull_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_incremental_pull_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_incremental_pull_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        input:
+          - name: select_input
+            label: Enter
+            type: trv_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: first_form_testing
+        label: form link provided in on_select
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.first_form_testing
+      - key: select_form_submission
+        type: select
+        unsolicited: false
+        pair: on_select_form_submission
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_form_submission
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
   
   - id: purchase_journey_with_form_Multiple_Tickets
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
@@ -684,6 +795,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: cancel_soft_technical_cancellation
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_soft_technical_cancellation
+        owner: BAP
+        expect: false
+      - key: on_cancel_soft_technical_cancellation
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
       - key: cancel_confirm_technical_cancellation
         type: cancel
         unsolicited: false
@@ -1023,6 +1146,14 @@ flows:
         pair: on_update_soft_partial_cancellation
         owner: BAP
         expect: false
+        input:
+          - name: select_item
+            label: Select Item
+            type: text
+          - name: select_quantity
+            label: Select Quantity
+            type: text
+
       - key: on_update_soft_partial_cancellation
         type: on_update
         unsolicited: false
@@ -1112,18 +1243,6 @@ flows:
         expect: false
       - key: on_confirm
         type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: status
-        type: status
-        unsolicited: false
-        pair: on_status_technical_cancellation
-        owner: BAP
-        expect: false
-      - key: on_status_technical_cancellation
-        type: on_status
         unsolicited: false
         pair: null
         owner: BPP

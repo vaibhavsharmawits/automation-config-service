@@ -3,29 +3,12 @@ flows:
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: IntraCity - Purchase Journey Flow(Code Based)
     sequence:
-      - key: search0_BUS_201
-        type: search
-        unsolicited: false
-        pair: on_search0_BUS_201
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-      - key: on_search0_BUS_201
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
       - key: search_BUS_201
         type: search
         unsolicited: false
         pair: on_search_BUS_201
         owner: BAP
-        expect: false
+        expect: true
         input:
           - name: vehicle_category
             label: Select vehicle category
@@ -33,6 +16,10 @@ flows:
             values:
               - BUS
             payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -113,6 +100,11 @@ flows:
         pair: on_search_catalog1_BUS_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search_catalog1_BUS_201
         type: on_search
         unsolicited: false
