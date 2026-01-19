@@ -3,10 +3,10 @@ flows:
     tags: ["WORKBENCH", "MANDATORY"]
     description: Discovery of Insurer Providers and Master Policies
     sequence:
-      - key: search_insurence_provider
+      - key: search_insurence_hospicash_provider
         type: search
         unsolicited: false
-        pair: on_search_insurence_provider
+        pair: on_search_insurence_provider_hospicash
         owner: BAP
         expect: true
         input:
@@ -18,7 +18,7 @@ flows:
             label: Enter person id
             type: text
             payloadField: $.message.intent.fulfillment.agent.person.id  
-      - key: on_search_insurence_provider 
+      - key: on_search_insurence_provider_hospicash 
         type: on_search
         unsolicited: false
         pair: null
@@ -96,6 +96,11 @@ flows:
             label: Enter sum insured
             type: text
             payloadField: $.message.intent.provider.items[*].list[*].value
+          - name: policy_id
+            label: Enter policy id
+            type: text
+            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
+  
       - key: on_search_purchase_journey_hospicash
         type: on_search
         unsolicited: false
