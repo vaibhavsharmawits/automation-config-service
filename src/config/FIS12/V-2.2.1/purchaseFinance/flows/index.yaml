@@ -1,6 +1,6 @@
 flows: 
   - id: Purchase_Finance_Without_AA
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -287,7 +287,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_Single_Redirection_Without_AA
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -489,7 +489,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_Without_AA_Multiple_Offer
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -776,7 +776,7 @@ flows:
         expect: false
 
   - id: Purchase_Finance_Without_AA_Loan_Foreclosure
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -1055,6 +1055,25 @@ flows:
         pair: null
         owner: BPP
         expect: false     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
       - key: update_foreclosure
         type: update
         unsolicited: false
@@ -1076,7 +1095,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_Without_AA_Missed_EMI_Payment
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -1394,7 +1413,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_Without_AA_Pre_Part_Payment
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -1669,7 +1688,27 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false     
+        expect: false 
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      
       - key: update_prepart
         type: update
         unsolicited: false
@@ -1691,7 +1730,7 @@ flows:
         expect: false
  
   - id: Purchase_Finance_Without_AA_Cancellation
-    tags: ["WORKBENCH","WITHOUT_AA"]
+    tags: ["WORKBENCH","WITHOUT_AA","REPORTABLE"]
     description: Purchase Finance without Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -2020,7 +2059,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_With_AA
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -2332,7 +2371,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_Single_Redirection_With_AA
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -2554,7 +2593,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_With_AA_Multiple_Offer
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -2846,7 +2885,7 @@ flows:
         expect: false
 
   - id: Purchase_Finance_With_AA_Loan_Foreclosure
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -3140,6 +3179,26 @@ flows:
         pair: null
         owner: BPP
         expect: false     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  
       - key: update_loan_foreclosure
         type: update
         unsolicited: false
@@ -3161,7 +3220,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_With_AA_Missed_EMI_Payment
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -3495,7 +3554,7 @@ flows:
         expect: false
   
   - id: Purchase_Finance_With_AA_Pre_Part_Payment
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
@@ -3788,6 +3847,26 @@ flows:
         pair: null
         owner: BPP
         expect: false     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update1_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  
       - key: update_prepart
         type: update
         unsolicited: false
@@ -3809,7 +3888,7 @@ flows:
         expect: false
  
   - id: Purchase_Finance_With_AA_Cancellation
-    tags: ["WORKBENCH","WITH_AA"]
+    tags: ["WORKBENCH","WITH_AA","REPORTABLE"]
     description: Purchase Finance with Account Aggregator
     sequence:
       - key: search1_purchase_finance 
