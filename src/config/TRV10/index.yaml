@@ -7,3 +7,10 @@ versions:
         flows: "./V-2.1.0/ride-hailing/flows/index.yaml"
     supportedActions:
       $ref: "src/config/TRV10/V-2.1.0/supportedActions/index.yaml"
+  - id: 2.0.1
+    reporting: false
+    usecase:
+      - name: Ride-hailing
+        flows: "./V-2.0.1/ride-hailing/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/TRV10/V-2.0.1/supportedActions/index.yaml"    

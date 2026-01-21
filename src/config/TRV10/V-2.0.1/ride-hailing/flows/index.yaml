@@ -1,0 +1,1049 @@
+flows:
+  # - id: BPP_Collecting_payment_confirmation
+  #   tags: ["WORKBENCH","MANDATORY"]
+  #   description: BPP Collecting payment confirmation
+  #   sequence:
+  #     - key: search_ride
+  #       type: search
+  #       unsolicited: false
+  #       pair: on_search
+  #       owner: BAP
+  #       expect: true
+  #       input:
+  #         - name: city_code
+  #           label: Enter city code
+  #           type: text
+  #           payloadField: $.context.location.city.code
+  #         - name: start_gps
+  #           label: Enter start gps coordinates
+  #           type: text
+  #           payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+  #         - name: end_gps
+  #           label: Enter end gps coordinates
+  #           type: text
+  #           payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+  #     - key: on_search
+  #       type: on_search
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: select
+  #       type: select
+  #       unsolicited: false
+  #       pair: on_select
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_select
+  #       type: on_select
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: init
+  #       type: init
+  #       unsolicited: false
+  #       pair: on_init
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_init
+  #       type: on_init
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #     - key: payment_gateway_form
+  #       label: payment gateway form
+  #       type: HTML_FORM
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  #       input:
+  #         - name: form_submission_id
+  #           label: Enter Form Submission id
+  #           type: HTML_FORM
+  #           reference: $.reference_data.consumer_information_form  
+  #     - key: status
+  #       type: status
+  #       unsolicited: false
+  #       pair: on_status_solicited
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_status_solicited
+  #       type: on_status
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false  
+  #     - key: confirm
+  #       type: confirm
+  #       unsolicited: false
+  #       pair: on_confirm
+  #       owner: BAP
+  #       expect: false
+  #     - key: on_confirm
+  #       type: on_confirm
+  #       unsolicited: false
+  #       pair: null
+  #       owner: BPP
+  #       expect: false
+  - id: OnDemand_Assign_driver_on_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver on on-confirm
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+  - id: OnDemand_Assign_driver_post_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver post on-confirm
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_driver_not_assigned
+        owner: BAP
+        expect: false
+      - key: on_confirm_driver_not_assigned
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_ride
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Assign_driver_post_onconfirmSelfPickup
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver post on-confirm(Self-Pickup)
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_driver_not_assigned
+        owner: BAP
+        expect: false
+      - key: on_confirm_driver_not_assigned
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_ride
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
+      - key: track
+        type: track
+        unsolicited: false
+        pair: on_track
+        owner: BAP
+        expect: false
+      - key: on_track
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_ride
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Female_driver_flow
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Female driver flow
+    sequence:
+      - key: search_ride_female
+        type: search
+        unsolicited: false
+        pair: on_search_female
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_female
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+  - id: OnDemand_Ride_cancellation_by_driver
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Ride cancellation by driver
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_ride
+        owner: BAP
+        expect: false
+      - key: on_confirm_ride
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel_async
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: OnDemand_Ride_cancellation_by_rider
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Ride cancellation by rider
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_ride
+        owner: BAP
+        expect: false
+      - key: on_confirm_ride
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_ride_cancel
+        owner: BAP
+        expect: false
+        input:
+          - name: cancellation_reason_id
+            label: Select Cancellation Reason Id
+            type: select
+            values:
+              - "001"
+              - "002"
+              - "003"
+              - "004"
+              - "005"
+              - "011"
+              - "012"
+              - "013"
+              - "014"
+            default: "001"
+            payloadField: $.message.cancellation_reason_id
+      - key: on_cancel_ride_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_hard
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_hard
+        owner: BAP
+        expect: false
+      - key: on_cancel_hard
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Driver_not_found_on_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
+    description: Driver not found on on_confirm
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_driver_not_found
+        owner: BAP
+        expect: false
+      - key: on_confirm_driver_not_found
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Driver_not_found_post_onconfirm
+    tags: ["WORKBENCH","MANDATORY"]
+    description: Driver not found post on_confirm
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_driver_not_assigned
+        owner: BAP
+        expect: false
+      - key: on_confirm_driver_not_assigned
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel_rider_not_found
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false 
+  - id: OnDemand_Assign_driver_on_onconfirm_with_IGM(1.0.0)
+    tags: ["WORKBENCH","MANDATORY"]
+    description: On-Demand - Assign driver on on-confirm with IGM
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: track_ride
+        type: track
+        unsolicited: false
+        pair: on_track_ride
+        owner: BAP
+        expect: false
+      - key: on_track_ride
+        type: on_track
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_arrived
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_status_ride_started
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_solicited
+        owner: BAP
+        expect: false
+      - key: on_status_solicited
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_open_100
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_100
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_100
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolved_100
+        type: on_issue_status
+        label: resolved
+        unsolicited: true
+        description: The complaint is marked as resolved with a resolution
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_100
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"  
