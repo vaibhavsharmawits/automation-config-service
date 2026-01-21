@@ -1,6 +1,6 @@
 flows:
   - id: Intercity(Bus)_Station_Code_Based_Flow
-    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN", "REPORTABLE"]
     description: Intercity(Bus) - Station Code Based Flow
     sequence:
       - key: search_BUS_201
@@ -884,7 +884,7 @@ flows:
         owner: BPP
         expect: false
   - id: Intercity(Bus)_Station_Code_Based_Flow_Multiple_Tickets
-    tags: ["WORKBENCH", "MANDATORY","PRAAMAN"]
+    tags: ["WORKBENCH", "MANDATORY","PRAAMAN", "REPORTABLE"]
     description: Intercity(Bus) - Station Code Based Flow(Multiple Tickets)
     sequence:
       - key: search_BUS_201
