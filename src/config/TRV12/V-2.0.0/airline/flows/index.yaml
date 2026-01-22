@@ -41,7 +41,7 @@ flows:
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
-            type: text
+            type: date
             payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
@@ -108,7 +108,7 @@ flows:
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
-            type: text
+            type: date
             payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
@@ -232,7 +232,7 @@ flows:
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
-            type: text
+            type: date
             payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
@@ -380,7 +380,7 @@ flows:
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
-            type: text
+            type: date
             payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
@@ -510,7 +510,7 @@ flows:
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
-            type: text
+            type: date
             payloadField: $.message.intent.fulfillment.stops[0].time.timestamp
       - key: on_search_1_Airline_200
         type: on_search
