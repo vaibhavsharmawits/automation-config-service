@@ -121,7 +121,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -219,8 +218,7 @@
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.verification_status
-      
+            reference: $.reference_data.verification_status      
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
