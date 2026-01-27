@@ -40,9 +40,14 @@ flows:
             type: text
             payloadField: $.context.location.city.code
           - name: policy_name
-            label: Enter Policy
+            label: Enter Policy ID
             type: text
-            payloadField: $.message.catalog.descriptor.name
+            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
+
+          - name: provider_id
+            label: Enter Provider ID   
+            type: text
+            payloadField: $.message.intent.provider.id
       - key: on_search_discover_product_hospicash 
         type: on_search
         unsolicited: false
@@ -60,51 +65,11 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: buyer_name
-            label: Enter buyer name
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: phone_number
-            label: Enter phone number
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: pan_number
-            label: Enter pan number
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: dob
-            label: Enter date of birth
-            type: date
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: gender
-            label: Enter gender
-            type: select
-            values:
-              - "Male"
-              - "Female"
-            default: "Male"
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: email
-            label: Enter email
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: sum_insured
-            label: Enter sum insured
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: policy_id
-            label: Enter policy id
-            type: text
-            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
-          - name: tenure
-            label: Enter tenure
-            type: text
-            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="TENURE")].value
-
+          - name: hospicash_insurance_form
+            label: Hospicash Insurance Form 
+            type: search_hospicash_fis13
+            payloadField: ""
+        
       - key: on_search_purchase_journey_hospicash
         type: on_search
         unsolicited: false

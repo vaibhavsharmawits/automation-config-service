@@ -41,9 +41,13 @@ flows:
             type: text
             payloadField: $.context.location.city.code
           - name: policy_name
-            label: Enter Policy
+            label: Enter Policy ID
             type: text
-            payloadField: $.message.catalog.descriptor.name
+            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
+          - name: provider_id
+            label: Enter Provider ID
+            type: text
+            payloadField: $.message.intent.provider.id
       - key: on_search_discover_product_tranist 
         type: on_search
         unsolicited: false
@@ -62,35 +66,10 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: buyer_name
-            label: Enter buyer name
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: phone_number
-            label: Enter phone number
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: pan_number
-            label: Enter pan number
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: start_address
-            label: Enter start address
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: end_address
-            label: Enter end address
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: policy_id
-            label: Enter policy id
-            type: text
-            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
-
+          - name: search_transit_fis13
+            label: Enter
+            type: search_transit_fis13
+          
       - key: on_search_purchase_journey_transit
         type: on_search
         unsolicited: false
