@@ -1,54 +1,7 @@
 flows:
-  - id: Hotel Booking Seller App Pagination Flow
-    tags: ["WORKBENCH","MANDATORY"]
-    description: Hotel Booking - Seller App Pagination Flow
-    sequence:
-      - key: search_1
-        type: search
-        unsolicited: false
-        pair: on_search_1
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_1
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_search_2
-        type: on_search
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false  
-      - key: on_search_3
-        type: on_search
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false  
-      - key: on_search_4
-        type: on_search
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false      
-  - id: Hotel Booking Purchase Journey
-    tags: ["WORKBENCH","MANDATORY"]
-    description: Get a list of all the accommodations with delta changes
+  - id: Order to Confirm to Fulfillment (GPS Based)
+    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    description: Complete hotel booking journey from search to status check using GPS coordinates
     sequence:
       - key: search_5
         type: search
@@ -74,7 +27,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false     
+        expect: false
       - key: select
         type: select
         unsolicited: false
@@ -122,34 +75,11 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false  
-      - key: update
-        type: update
-        unsolicited: false
-        pair: on_update
-        owner: BAP
         expect: false
-      - key: on_update
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: cancel
-        type: cancel
-        unsolicited: false
-        pair: on_cancel
-        owner: BAP
-        expect: false
-      - key: on_cancel
-        type: on_cancel
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false  
-  - id: Hotel Booking TTL
-    tags: ["WORKBENCH","MANDATORY"]
-    description: Hotel Booking (ttl based) - Flow
+
+  - id: Incremental Catalog Refresh (TTL Based)
+    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    description: Incremental catalog refresh using TTL-based search
     sequence:
       - key: search_6
         type: search
@@ -184,6 +114,318 @@ flows:
         expect: true
       - key: on_search_7
         type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Hotel Booking Seller App Pagination Flow
+    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    description: Hotel Booking - Seller App Pagination Flow with multiple on_search responses
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Buyer Side Full Cancellation
+    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    description: Full booking journey with buyer-initiated cancellation
+    sequence:
+      - key: search_5
+        type: search
+        unsolicited: false
+        pair: on_search_5
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_5
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Merchant Side Full Cancellation
+    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    description: Full booking journey with merchant-initiated (unsolicited) cancellation
+    sequence:
+      - key: search_5
+        type: search
+        unsolicited: false
+        pair: on_search_5
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_5
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Order to Confirm to Fulfillment (Updates in Booking)
+    tags: ["PRAMAAN", "OPTIONAL", "WORKBENCH"]
+    description: Complete booking journey with update capability
+    sequence:
+      - key: search_5
+        type: search
+        unsolicited: false
+        pair: on_search_5
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+      - key: on_search_5
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: false
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update
+        owner: BAP
+        expect: false
+      - key: on_update
+        type: on_update
         unsolicited: false
         pair: null
         owner: BPP
