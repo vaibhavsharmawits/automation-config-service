@@ -324,14 +324,14 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.first_form_testing
-      - key: select_form_submission
+      - key: select_form_submission_cultural
         type: select
         unsolicited: false
-        pair: on_select_form_submission
+        pair: on_select_form_submission_culture
         owner: BAP
         expect: false
         force_proceed: true
-      - key: on_select_form_submission
+      - key: on_select_form_submission_culture
         type: on_select
         unsolicited: false
         pair: null
