@@ -1,6 +1,6 @@
 flows: 
   - id: Personal_Loan_With_AA_And_Monitoring_Consent
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan with Account Aggregator & monitoring consent
     sequence:
       - key: search_personal_loan 
@@ -220,7 +220,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Without_AA_And_Monitoring_Consent
-    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", ""WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE""]
     description: Personal Loan flow without Account Aggregator
     sequence:
       - key: search_personal_loan
@@ -440,7 +440,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Without_Acount_Monitoring
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan with Account Aggregator & monitoring consent
     sequence:
       - key: search_personal_loan 
@@ -679,7 +679,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Offline
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Offline verification and processing
     sequence:
       - key: search_personal_loan 
@@ -822,7 +822,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Offline_And_Online
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Offline & Online Hybrid Verification
     sequence:
       - key: search_personal_loan
@@ -980,8 +980,8 @@ flows:
         owner: BPP
         expect: false
 
-  - id: Personal_Loan_Foreclosure_Without_Account_Aggregator
-    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+  - id: Personal_Loan_Foreclosure_"WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"
+    tags: ["WORKBENCH", ""WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE""]
     description: Personal Loan - Loan Foreclosure
     sequence:
       - key: search_personal_loan 
@@ -1204,8 +1204,8 @@ flows:
         owner: BPP
         expect: false
 
-  - id: Personal_Loan_Missed_EMI_Without_Account_Aggregator
-    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+  - id: Personal_Loan_Missed_EMI_"WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"
+    tags: ["WORKBENCH", ""WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE""]
     description: Personal Loan - Missed EMI Payment
     sequence:
       - key: search_personal_loan 
@@ -1428,8 +1428,8 @@ flows:
         owner: BPP
         expect: false        
 
-  - id: Personal_Loan_Pre_Part_Payment_Without_Account_Aggregator
-    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+  - id: Personal_Loan_Pre_Part_Payment_"WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"
+    tags: ["WORKBENCH", ""WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE""]
     description: Personal Loan - Pre-Part Payment
     sequence:
       - key: search_personal_loan 
@@ -1646,7 +1646,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Foreclosure
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Loan Foreclosure
     sequence:
       - key: search_personal_loan 
@@ -1883,7 +1883,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Missed_EMI
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Missed EMI Payment
     sequence:
       - key: search_personal_loan 
@@ -2120,7 +2120,7 @@ flows:
         expect: false        
 
   - id: Personal_Loan_Pre_Part_Payment
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Pre-Part Payment
     sequence:
       - key: search_personal_loan 
