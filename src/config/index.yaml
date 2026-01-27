@@ -97,6 +97,13 @@ domain:
             flows: "./RET11/V-1.2.5/F&B/flows/index.yaml"
         supportedActions:
           $ref: "src/config/RET11/V-1.2.5/supportedActions/index.yaml"
+      - id: 1.2.0
+        reporting: false
+        usecase:
+          - name: F&B
+            flows: "./RET11/V-1.2.0/F&B/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/RET11/V-1.2.0/supportedActions/index.yaml"
   - name: ONDC:RET10
     versions:
       - id: 1.2.5
@@ -251,6 +258,9 @@ usecases:
             - Ride-hailing    
     - key: ONDC:RET11
       version:
+        - key: 1.2.0
+          usecase:
+            - F&B
         - key: 1.2.5
           usecase:
             - F&B
