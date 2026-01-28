@@ -1,6 +1,6 @@
 flows:
   - id: Order to Confirm to Fulfillment (GPS Based)
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Complete hotel booking journey from search to status check using GPS coordinates
     sequence:
       - key: search_5
@@ -28,58 +28,58 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_5
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_5
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_5
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_5
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_5
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_5
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: confirm
+      - key: confirm_5
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_5
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_5
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: status
+      - key: status_5
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_5
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_5
         type: on_status
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-  - id: Incremental Catalog Refresh (TTL Based)
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
-    description: Incremental catalog refresh using TTL-based search
+  - id: Hotel Booking (ttl based) booking
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Hotel booking flow using TTL-based incremental catalog refresh
     sequence:
       - key: search_6
         type: search
@@ -120,7 +120,7 @@ flows:
         expect: false
 
   - id: Hotel Booking Seller App Pagination Flow
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Hotel Booking - Seller App Pagination Flow with multiple on_search responses
     sequence:
       - key: search_1
@@ -168,7 +168,7 @@ flows:
         expect: false
 
   - id: Buyer Side Full Cancellation
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Full booking journey with buyer-initiated cancellation
     sequence:
       - key: search_5
@@ -196,61 +196,61 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_5
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_5
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_5
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_5
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_5
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_5
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: confirm
+      - key: confirm_5
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_5
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_5
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: status
+      - key: status_5
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_5
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_5
         type: on_status
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: cancel
+      - key: cancel_5
         type: cancel
         unsolicited: false
-        pair: on_cancel
+        pair: on_cancel_5
         owner: BAP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_5
         type: on_cancel
         unsolicited: false
         pair: null
@@ -258,7 +258,7 @@ flows:
         expect: false
 
   - id: Merchant Side Full Cancellation
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Full booking journey with merchant-initiated (unsolicited) cancellation
     sequence:
       - key: search_5
@@ -286,55 +286,55 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_5
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_5
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_5
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_5
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_5
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_5
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: confirm
+      - key: confirm_5
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_5
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_5
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: status
+      - key: status_5
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_5
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_5
         type: on_status
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: on_cancel
+      - key: on_cancel_unsolicited
         type: on_cancel
         unsolicited: true
         pair: null
@@ -342,7 +342,7 @@ flows:
         expect: false
 
   - id: Order to Confirm to Fulfillment (Updates in Booking)
-    tags: ["PRAMAAN", "OPTIONAL", "WORKBENCH"]
+    tags: ["REPORTABLE", "OPTIONAL", "WORKBENCH"]
     description: Complete booking journey with update capability
     sequence:
       - key: search_5
@@ -370,61 +370,61 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
+      - key: select_5
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_5
         owner: BAP
         expect: false
-      - key: on_select
+      - key: on_select_5
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_5
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_5
         owner: BAP
         expect: false
-      - key: on_init
+      - key: on_init_5
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: confirm
+      - key: confirm_5
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_5
         owner: BAP
         expect: false
-      - key: on_confirm
+      - key: on_confirm_5
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: status
+      - key: status_5
         type: status
         unsolicited: false
-        pair: on_status
+        pair: on_status_5
         owner: BAP
         expect: false
-      - key: on_status
+      - key: on_status_5
         type: on_status
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: update
+      - key: update_5
         type: update
         unsolicited: false
-        pair: on_update
+        pair: on_update_5
         owner: BAP
         expect: false
-      - key: on_update
+      - key: on_update_5
         type: on_update
         unsolicited: false
         pair: null
