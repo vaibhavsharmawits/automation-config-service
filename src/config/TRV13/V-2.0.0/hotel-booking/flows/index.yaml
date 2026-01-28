@@ -1,6 +1,6 @@
 flows:
   - id: Order to Confirm to Fulfillment (City Based)
-    tags: ["PRAMAAN", "MANDATORY","WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -102,7 +102,7 @@ flows:
         owner: BPP
         expect: false  
   - id: Incremental Catalog refresh
-    tags: ["PRAMAAN", "MANDATORY","WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -135,7 +135,7 @@ flows:
         owner: BPP
         expect: false    
   - id: Order to Confirm to Fulfillment (Time range Based)
-    tags: ["PRAMAAN", "OPTIONAL","WORKBENCH"]
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_3
@@ -236,7 +236,7 @@ flows:
         owner: BPP
         expect: false  
   - id: Order to Confirm to Fulfillment (Provider Specific)
-    tags: ["PRAMAAN", "OPTIONAL","WORKBENCH"]
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -361,7 +361,7 @@ flows:
         owner: BPP
         expect: false  
   - id: Order to Confirm to Fulfillment (Part Payment)
-    tags: ["PRAMAAN", "OPTIONAL","WORKBENCH"]
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -453,7 +453,7 @@ flows:
         owner: BPP
         expect: false  
   - id: Buyer side full cancellation
-    tags: ["PRAMAAN", "MANDATORY","WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -558,7 +558,7 @@ flows:
         owner: BPP
         expect: false 
   - id: Merchant side full cancellation
-    tags: ["PRAMAAN", "MANDATORY","WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -657,7 +657,7 @@ flows:
         owner: BPP
         expect: false 
   - id: Order to Confirm to Fulfillment (Updates in Booking)
-    tags: ["PRAMAAN", "OPTIONAL","WORKBENCH"]
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
