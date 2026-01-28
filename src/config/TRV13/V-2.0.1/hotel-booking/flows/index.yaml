@@ -34,6 +34,39 @@ flows:
         pair: on_select_5
         owner: BAP
         expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_5
         type: on_select
         unsolicited: false
@@ -202,6 +235,39 @@ flows:
         pair: on_select_5
         owner: BAP
         expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_5
         type: on_select
         unsolicited: false
@@ -292,6 +358,39 @@ flows:
         pair: on_select_5
         owner: BAP
         expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_5
         type: on_select
         unsolicited: false
@@ -376,6 +475,39 @@ flows:
         pair: on_select_5
         owner: BAP
         expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
       - key: on_select_5
         type: on_select
         unsolicited: false
