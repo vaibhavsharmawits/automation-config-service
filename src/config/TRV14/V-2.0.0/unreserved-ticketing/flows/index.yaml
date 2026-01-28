@@ -299,14 +299,14 @@ flows:
       - key: select
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_submission_cultural
         owner: BAP
         expect: true
         input:
           - name: select_input
             label: Enter
             type: trv_select
-      - key: on_select
+      - key: on_select_submission_cultural
         type: on_select
         unsolicited: false
         pair: null
