@@ -1,6 +1,6 @@
 flows:
   - id: Order to Confirm to Fulfillment (GPS Based)
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Complete hotel booking journey from search to status check using GPS coordinates
     sequence:
       - key: search_5
@@ -77,9 +77,9 @@ flows:
         owner: BPP
         expect: false
 
-  - id: Incremental Catalog Refresh (TTL Based)
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
-    description: Incremental catalog refresh using TTL-based search
+  - id: Hotel Booking (ttl based) booking
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Hotel booking flow using TTL-based incremental catalog refresh
     sequence:
       - key: search_6
         type: search
@@ -120,7 +120,7 @@ flows:
         expect: false
 
   - id: Hotel Booking Seller App Pagination Flow
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Hotel Booking - Seller App Pagination Flow with multiple on_search responses
     sequence:
       - key: search_1
@@ -168,7 +168,7 @@ flows:
         expect: false
 
   - id: Buyer Side Full Cancellation
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Full booking journey with buyer-initiated cancellation
     sequence:
       - key: search_5
@@ -258,7 +258,7 @@ flows:
         expect: false
 
   - id: Merchant Side Full Cancellation
-    tags: ["PRAMAAN", "MANDATORY", "WORKBENCH"]
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Full booking journey with merchant-initiated (unsolicited) cancellation
     sequence:
       - key: search_5
@@ -342,7 +342,7 @@ flows:
         expect: false
 
   - id: Order to Confirm to Fulfillment (Updates in Booking)
-    tags: ["PRAMAAN", "OPTIONAL", "WORKBENCH"]
+    tags: ["REPORTABLE", "OPTIONAL", "WORKBENCH"]
     description: Complete booking journey with update capability
     sequence:
       - key: search_5
