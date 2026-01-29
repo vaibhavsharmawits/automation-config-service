@@ -1,7 +1,7 @@
 supportedActions:
   null: ["search"]
   search: ["on_search"]
-  on_search: ["search", "select", "on_search"]
+  on_search: ["search", "select"]
   select: ["on_select"]
   on_select: ["init"]
   init: ["on_init"]
@@ -9,13 +9,16 @@ supportedActions:
   confirm: ["on_confirm", "status"]
   on_confirm: ["status", "cancel", "on_status", "on_update","update","on_cancel"]
   status: ["on_status"]
-  on_status: ["status", "cancel", "on_cancel", "on_update","track","on_status","update"]
-  on_update: ["status","update","on_status","track", "cancel", "on_cancel"]
+  on_status: ["status", "cancel", "on_update","track","on_status","update", "issue"]
+  on_update: ["status","update","on_status","track", "issue"]
   cancel: ["on_cancel", "status"]
   on_cancel: ["cancel", "status","on_status"]
   track: ["on_track"]
   on_track: ["on_status","on_update"]
   update: ["on_update"]
+  issue: ["on_issue", "issue", "on_update", "on_status", "on_issue_status"]
+  on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
+  on_issue_status: ["on_issue", "issue"]
 
 apiProperties:
   search:
@@ -28,7 +31,7 @@ apiProperties:
     async_predecessor: null
     transaction_partner: ["search"]
   on_select:
-    async_predecessor: "select"
+    async_predecessor: null
     transaction_partner: ["select", "search", "on_search"]
   init:
     async_predecessor: null
@@ -53,7 +56,7 @@ apiProperties:
     transaction_partner: ["confirm", "on_confirm"]
   on_cancel:
     async_predecessor: null
-    transaction_partner: ["confirm", "on_confirm"]
+    transaction_partner: ["confirm","on_confirm"]
   track:
     async_predecessor: null
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
@@ -62,7 +65,7 @@ apiProperties:
     transaction_partner: ["init", "on_init", "confirm", "on_confirm"]
   update:
     async_predecessor: null
-    transaction_partner: ["status", "on_status"]
+    transaction_partner: []
   on_update:
     async_predecessor: null
-    transaction_partner: ["update","status", "on_status"]
+    transaction_partner: []

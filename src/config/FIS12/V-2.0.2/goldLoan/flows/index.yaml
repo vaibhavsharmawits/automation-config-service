@@ -1,6 +1,6 @@
  flows: 
   - id: Gold_Loan_With_Account_Aggregator
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -121,7 +121,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -142,7 +141,7 @@
         expect: false
 
   - id: Gold_Loan_Without_Account_Aggregator
-    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -219,8 +218,7 @@
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.verification_status
-      
+            reference: $.reference_data.verification_status      
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -246,7 +244,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -267,7 +264,7 @@
         expect: false
 
   - id: Gold_Loan_Foreclosure_Without_Account_Aggregator
-    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Loan Foreclosure - Update and notification flow
     sequence:
       - key: search
@@ -370,7 +367,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -410,7 +406,7 @@
         force_proceed: true      
 
   - id: Gold_Loan_Foreclosure_With_Account_Aggregator
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Loan Foreclosure - Update and notification flow
     sequence:
       - key: search
@@ -531,7 +527,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -571,7 +566,7 @@
         force_proceed: true      
 
   - id: Gold_Loan_Missed_EMI_With_Account_Aggregator
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Missed-EMI Payment - Update and notification flow
     sequence:
       - key: search
@@ -692,7 +687,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -734,7 +728,7 @@
         force_proceed: true
 
   - id: Gold_Loan_Missed_EMI_Without_Account_Aggregator
-    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Missed-EMI Payment - Update and notification flow
     sequence:
       - key: search
@@ -837,7 +831,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -878,7 +871,7 @@
         force_proceed: true
 
   - id: Gold_Loan_Pre_Part_Payment_With_Account_Aggregator
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Pre-Part Payment - Update and notification flow
     sequence:
       - key: search
@@ -1000,7 +993,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1048,7 +1040,7 @@
         force_proceed: true
 
   - id: Gold_Loan_Pre_Part_Payment_Without_Account_Aggregator
-    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Pre-Part Payment - Update and notification flow
     sequence:
       - key: search
@@ -1151,7 +1143,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1198,7 +1189,7 @@
         force_proceed: true
   
   - id: Gold_Loan_With_Multiple_offers_With_Account_Aggregator
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan with Multiple offers(Bureau consent & AA)
     sequence:
       - key: search
@@ -1344,7 +1335,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1365,7 +1355,7 @@
         expect: false
 
   - id: Gold_Loan_With_Account_Aggregator_With_IGM(v-1.0.0)
-    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -1486,7 +1476,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false
@@ -1547,7 +1536,7 @@
             default: "THUMBS_UP" 
 
   - id: Gold_Loan_Without_Account_Aggregator_With_IGM(v-1.0.0)
-    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR"]
+    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan without Account Aggregator - Selection and approval flow
     sequence:
       - key: search
@@ -1651,7 +1640,6 @@
         pair: on_init
         owner: BAP
         expect: false
-        force_proceed: true
       - key: on_init
         type: on_init
         unsolicited: false

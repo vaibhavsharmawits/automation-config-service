@@ -43,6 +43,10 @@ flows:
             label: Enter Policy ID
             type: text
             payloadField: $.message.intent.provider.tags[*].list[*].value
+          - name: provider_id
+            label: Enter Provider ID
+            type: text
+            payloadField: $.message.intent.provider.id
       - key: on_search_discover_product_accidental 
         type: on_search
         unsolicited: false
@@ -60,58 +64,10 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: buyer_name
-            label: Enter buyer name
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: phone_number
-            label: Enter phone number
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: pan_number
-            label: Enter pan number
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: dob
-            label: Enter date of birth
-            type: date
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: gender
-            label: Enter gender
-            type: select
-            values:
-              - "Male"
-              - "Female"
-            default: "Male"
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: email
-            label: Enter email
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: sum_insured
-            label: Enter sum insured
-            type: text
-            payloadField: $.message.intent.provider.items[*].list[*].value
-          - name: policy_id
-            label: Enter policy id
-            type: text
-            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
-          - name: tenure
-            label: Enter tenure
-            type: text
-            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="TENURE")].value
-          - name: buyer_ped
-            label: Enter buyer ped
-            type: select
-            values:
-              - "TRUE"
-              - "FALSE"
-            default: "FALSE"
-            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_PED")].value
+          - name: accidental_insurance_form
+            label: Accidental Insurance Form
+            type: search_accidental_fis13
+            payloadField: ""
 
       - key: on_search_purchase_journey_accidental
         type: on_search
