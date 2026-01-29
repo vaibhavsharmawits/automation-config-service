@@ -111,6 +111,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -228,6 +236,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -345,6 +361,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -456,6 +480,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search_female
         type: on_search
         unsolicited: false
@@ -573,6 +605,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -648,6 +688,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -769,6 +817,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -838,6 +894,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
@@ -913,6 +977,14 @@ flows:
             label: Enter end gps coordinates
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
       - key: on_search
         type: on_search
         unsolicited: false
