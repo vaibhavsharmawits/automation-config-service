@@ -37,3 +37,11 @@ versions:
         flows: "./V-2.0.3/creditLoan/flows/index.yaml"
     supportedActions:
       $ref: "src/config/FIS12/V-2.0.3/supportedActions/index.yaml"
+
+  - id: 2.3.0
+    reporting: false
+    usecase:
+      - name: UNIFIED CREDIT
+        flows: "./V-2.3.0/unifiedCredit/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS12/V-2.3.0/supportedActions/index.yaml"
