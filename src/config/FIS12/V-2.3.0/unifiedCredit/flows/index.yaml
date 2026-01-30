@@ -2044,5 +2044,3266 @@ flows:
         expect: false
 
   
+  # purchase finance flows
 
+
+  - id: Purchase_Finance_With_AA
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance with Account Aggregator & monitoring consent
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_3
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_purchase_finance 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_purchase_finance_fulfillment 
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance_fulfillment 
+        owner: BAP
+        expect: false
+      - key: on_update_purchase_finance_fulfillment
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Purchase_Finance_Foreclosure_Without_AA"
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance - Loan Foreclosure
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_status_unsolicited_purchase_finance 
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+     
+      - key: on_status_purchase_finance
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Purchase_Finance_Missed_EMI_Without_AA
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance - Missed EMI Payment
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_status_unsolicited_purchase_finance 
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false        
+
+  - id: Purchase_Finance_Pre_Part_Payment_Without_AA
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance - Pre-Part Payment
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_status_unsolicited_purchase_finance 
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+     
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "92720"
+            default: "92720"        
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Purchase_Finance_Foreclosure
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance - Loan Foreclosure
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_3
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_purchase_finance 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_purchase_finance_fulfillment 
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance_fulfillment 
+        owner: BAP
+        expect: false
+      - key: on_update_purchase_finance_fulfillment
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Purchase_Finance_Missed_EMI
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance - Missed EMI Payment
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_3
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_purchase_finance 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_purchase_finance_fulfillment 
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance_fulfillment 
+        owner: BAP
+        expect: false
+      - key: on_update_purchase_finance_fulfillment
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false        
+
+  - id: Purchase_Finance_Pre_Part_Payment
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance - Pre-Part Payment
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_3
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_purchase_finance 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_purchase_finance_fulfillment 
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance_fulfillment 
+        owner: BAP
+        expect: false
+      - key: on_update_purchase_finance_fulfillment
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: update_purchase_finance
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance
+        owner: BAP
+        expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "92720"
+            default: "92720"        
+      - key: on_update_purchase_finance
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_purchase_finance
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Purchase_Finance_Multiple_Offers
+    tags: ["WORKBENCH"]
+    description: Purchase Finance - Multiple Offers (Bureau Consent & AA Verification)
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+       - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: search_purchase_finance_3
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_3
+        owner: BAP
+        expect: true
+        force_proceed: true
+      
+      - key: on_search_purchase_finance_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      
+      - key: search_purchase_finance_4
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_4
+        owner: BAP
+        expect: true
+        force_proceed: true
+      
+      - key: on_search_purchase_finance_4
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_purchase_finance 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_purchase_finance_fulfillment 
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance_fulfillment 
+        owner: BAP
+        expect: false
+      - key: on_update_purchase_finance_fulfillment
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Purchase_Finance_Without_AA
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "PURCHASE FINANCE"]
+    description: Purchase Finance with Account Aggregator & monitoring consent
+    sequence:
+      - key: search_purchase_finance 
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance 
+        owner: BAP
+        expect: true
+      - key: on_search_purchase_finance 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_purchase_finance_2
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_finance_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_purchase_finance_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_purchase_finance 
+        type: select
+        unsolicited: false
+        pair: on_select_1_purchase_finance 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_purchase_finance 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_purchase_finance
+        type: select
+        unsolicited: false
+        pair: on_select_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_purchase_finance
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_1_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: Ekyc_details_form_pf
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form        
+      - key: init_2_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_2_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: monitoring_consent_form_pf
+        label: Monitoring Consent & E-mandate details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.monitoring_consent_form
+      - key: init_3_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_3_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_agreement_form_pf
+        label: Loan Agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.loan_agreement_form     
+      - key: init_4_purchase_finance
+        type: init
+        unsolicited: false
+        pair: on_init_4_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_purchase_finance
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_purchase_finance
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_purchase_finance
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_purchase_finance
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_purchase_finance 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_purchase_finance_fulfillment 
+        type: update
+        unsolicited: false
+        pair: on_update_purchase_finance_fulfillment 
+        owner: BAP
+        expect: false
+      - key: on_update_purchase_finance_fulfillment
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  # invoice based loan flows
+
+  - id: Invoice_Based_Loan_With_AA
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan with Account Aggregator & monitoring consent
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_invoice_loan_2
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_invoice_loan_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Invoice_Based_Loan_Without_AA
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - flow without Account Aggregator
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Invoice_Based_Loan_Foreclosure_Without_AA"
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - Loan Foreclosure
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Invoice_Based_Loan_Missed_EMI_Without_AA
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - Missed EMI Payment
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Invoice_Based_Loan_Pre_Part_Payment_Without_AA
+    tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - Pre-Part Payment
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+ 
+  - id: Invoice_Based_Loan_Foreclosure
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - Loan Foreclosure
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_invoice_loan_2
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_invoice_loan_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
   
+  - id: Invoice_Based_Loan_Missed_EMI
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - Loan Foreclosure
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_invoice_loan_2
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_invoice_loan_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Invoice_Based_Loan_Pre_Part_Payment
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE", "INVOICE BASED LOAN"]
+    description: Invoice Based Loan - Loan Foreclosure
+    sequence:
+      - key: search_invoice_loan 
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan 
+        owner: BAP
+        expect: true
+      - key: on_search_invoice_loan 
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: search_invoice_loan_2
+        type: search
+        unsolicited: false
+        pair: on_search_invoice_loan_2
+        owner: BAP
+        expect: true
+        force_proceed: true
+      - key: on_search_invoice_loan_2
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1_invoice_loan 
+        type: select
+        unsolicited: false
+        pair: on_select_1_invoice_loan 
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1_invoice_loan 
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_2_invoice_loan
+        type: select
+        unsolicited: false
+        pair: on_select_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+      - key: on_select_2_invoice_loan
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_1_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_1_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_1_il
+        label: Invoice Form 1
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_1        
+      - key: init_2_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_2_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_2_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_2_il
+        label: Invoice Form 2
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_2
+      - key: init_3_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_3_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_3_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: invoice_form_3_il
+        label: Invoice Form 3
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.invoice_form_3     
+      - key: init_4_invoice_loan
+        type: init
+        unsolicited: false
+        pair: on_init_4_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_init_4_invoice_loan
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_invoice_loan
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_invoice_loan
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_confirm_invoice_loan
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+      - key: on_update_unsolicited_invoice_loan 
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: update_invoice_loan 
+        type: update
+        unsolicited: false
+        pair: on_update_invoice_loan 
+        owner: BAP
+        expect: false
+      - key: on_update_invoice_loan
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_unsolicited_invoice_loan
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+
+
+ 
