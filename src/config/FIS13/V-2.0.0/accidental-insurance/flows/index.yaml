@@ -10,10 +10,6 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: person_id
             label: Enter person id
             type: text
@@ -35,18 +31,10 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: policy_id
-            label: Enter Policy ID
-            type: text
-            payloadField: $.message.intent.provider.tags[*].list[*].value
-          - name: provider_id
-            label: Enter Provider ID
-            type: text
-            payloadField: $.message.intent.provider.id
+          - name: pasted_on_search
+            label: pasted_on_search
+            type: search_discover_product_fis13
+            payloadField: ""          
       - key: on_search_discover_product_accidental 
         type: on_search
         unsolicited: false
@@ -150,3 +138,119 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: CD_Balance_Error_Accidental_Insurance
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: CD Balance Error Accidental Insurance
+    sequence:
+      - key: search_cd_balance_error_accidental
+        type: search
+        unsolicited: false
+        pair: on_search_cd_balance_error_accidental
+        owner: BAP
+        expect: true
+        input:
+          - name: buyer_name
+            label: Enter buyer full name
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_NAME")].value
+
+          - name: buyer_phone_number
+            label: Enter buyer phone number
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_PHONE_NUMBER")].value
+
+          - name: buyer_pan_number
+            label: Enter buyer PAN number
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_PAN_NUMBER")].value
+
+          - name: buyer_dob
+            label: Enter buyer date of birth
+            type: date
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_DOB")].value
+
+          - name: buyer_gender
+            label: Select buyer gender
+            type: select
+            values:
+              - "Male"
+              - "Female"
+            default: "Male"
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_GENDER")].value
+
+          - name: sum_insured
+            label: Enter sum insured
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="SUM_INSURED")].value
+
+          - name: buyer_email
+            label: Enter buyer email
+            type: email
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="BUYER_EMAIL")].value
+
+          - name: tenure
+            label: Enter policy tenure
+            type: text
+            payloadField: $.message.intent.provider.items[*].tags[?(@.descriptor.code=="BAP_INPUTS")].list[?(@.descriptor.code=="TENURE")].value
+
+
+      - key: on_search_cd_balance_error_accidental
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_cd_balance_error
+        type: select
+        unsolicited: false
+        pair: on_select_cd_balance_error
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: fis13_select
+      - key: on_select_cd_balance_error
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+      - key: init_cd_balance_error
+        type: init
+        unsolicited: false
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[?(@.descriptor.code=="NOMINEE_DETAILS")].list[?(@.descriptor.code=="NOMINEE_NAME")].value
+          - name: nominee_dob 
+            label: Enter nominee DOB
+            type: date
+            payloadField: $.message.order.fulfillments[*].tags[?(@.descriptor.code=="NOMINEE_DETAILS")].list[?(@.descriptor.code=="NOMINEE_DOB")].value
+          - name: appointee_name
+            label: Enter appointee name
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[?(@.descriptor.code=="NOMINEE_DETAILS")].list[?(@.descriptor.code=="APPOINTEE_NAME")].value
+          - name: appointee_dob
+            label: Enter appointee DOB
+            type: date
+            payloadField: $.message.order.fulfillments[*].tags[?(@.descriptor.code=="NOMINEE_DETAILS")].list[?(@.descriptor.code=="APPOINTEE_DOB")].value
+          - name: nominee_good_health_declaration 
+            label: Enter nominee good health declaration
+            type: select
+            values:
+              - "Yes"
+              - "No"
+            default: "Yes"
+            payloadField: $.message.order.fulfillments[*].tags[?(@.descriptor.code=="NOMINEE_DETAILS")].list[?(@.descriptor.code=="GOOD_HEALTH_DECLARATION")].value
+        pair: on_init_cd_balance_error
+        owner: BAP
+        expect: false
+      - key: on_init_cd_balance_error
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
