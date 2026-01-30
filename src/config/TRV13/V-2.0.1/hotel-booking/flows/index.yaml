@@ -1,5 +1,5 @@
 flows:
-  - id: Order to Confirm to Fulfillment (GPS Based)
+  - id: Order to Confirm to Fulfillment (City Code)
     tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Complete hotel booking journey from search to status check using GPS coordinates
     sequence:
@@ -104,7 +104,7 @@ flows:
 
   - id: Hotel Booking (ttl based) booking
     tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
-    description: Hotel booking flow using TTL-based incremental catalog refresh
+    description: Hotel booking flow using Based on TTL
     sequence:
       - key: search_1
         type: search
