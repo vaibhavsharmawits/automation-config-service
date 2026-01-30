@@ -794,6 +794,119 @@ flows:
         pair: null
         owner: BPP
         expect: false
+  - id: Technical_cancellation_flow
+    tags: ["WORKBENCH","MANDATORY"]
+    description: Technical cancellation flow
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_gps
+            label: Enter start gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
+          - name: end_gps
+            label: Enter end gps coordinates
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+          - name: collected_by
+            label: Selected Collected By
+            type: select
+            values:
+              - BAP
+              - BPP
+            defaultValue: BPP
+            payloadField: $.message.intent.payment.collected_by  
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: trv10_201_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_ride_delay
+        owner: BAP
+        expect: false
+      - key: on_confirm_ride_delay
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status_ride_assigned
+        owner: BAP
+        expect: false
+      - key: on_status_ride_assigned
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_ride_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel_ride_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_hard
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_hard
+        owner: BAP
+        expect: false
+      - key: on_cancel_hard
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
   - id: Driver_not_found_on_onconfirm
     tags: ["WORKBENCH","MANDATORY"]
     description: Driver not found on on_confirm
