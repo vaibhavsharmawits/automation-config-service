@@ -1,0 +1,9 @@
+name: NIC2004:60232
+versions:
+  - id: 1.2.0
+    reporting: true
+    usecase:
+      - name: Logistics (NIC2004:60232)
+        flows: "./V-1.2.0/logistics/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/NIC2004:60232/V-1.2.0/supportedActions/index.yaml"
