@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getConfigService } from "../services/cacheService";
-import { filterDomainData, getFileFromRefrence } from "../utils";
+import { filterDomainData, getFileFromRefrence, getMockConfig } from "../utils";
 
 export const getFlow = async (req: Request, res: Response) => {
   try {
@@ -36,4 +36,71 @@ export const getScenarioFormData = async (_req: Request, res: Response) => {
   const config = await getConfigService();
 
   res.send(config.usecases);
+};
+
+
+export const getPlaygroundFlowConfig = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const { domain, version, usecase, flowId } = req.query;
+
+    // ---- Validation ----
+    if (!domain || !version || !usecase || !flowId) {
+      return res.status(400).send({
+        error: true,
+        message: "domain, version, usecase and flowId are required",
+      });
+    }
+
+    // ---- Load main config ----
+    const config = await getConfigService();
+
+    // ---- Resolve flows directory ----
+    const flowsDirPath = filterDomainData(
+      config,
+      domain as string,
+      version as string,
+      usecase as string,
+      "flows"
+    );
+
+    if (!flowsDirPath?.filePath || !flowsDirPath?.domainName) {
+      return res.status(404).send({
+        error: true,
+        message: "Flows configuration not found",
+      });
+    }
+
+    // ---- Build relative flow path ----
+    let baseFlowsPath = flowsDirPath.filePath.replace(/\/?index\.yaml$/, "");
+    baseFlowsPath = baseFlowsPath.replace(/^\.\//, "");
+
+    const flowFilePath = `${baseFlowsPath}/${flowId}.yaml`;
+
+    // ---- Load flow config ----
+    const flowData = await getMockConfig({
+      domainName: flowsDirPath.domainName,
+      filePath: flowFilePath,
+    });
+
+    if (!flowData) {
+      return res.status(404).send({
+        data: null,
+        message: "No flow found with the given flowId",
+      });
+    }
+
+    // ---- Success ----
+    return res.send({ data: flowData });
+
+  } catch (e) {
+    console.error("Error while fetching playground flow config", e);
+
+    return res.status(400).send({
+      error: true,
+      message: "Error while fetching playground flow config",
+    });
+  }
 };
