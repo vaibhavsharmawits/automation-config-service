@@ -14,13 +14,11 @@ export function filterDomainData(
     if (domain.name === domainName) {
       for (const version of domain.versions) {
         if (version.id === versionId) {
-          console.log("gettting here?");
           if (
             property === "supportedActions" ||
             property === "reporting" ||
             property === "devPortalFlows"
           ) {
-            console.log("wokring??????", version, property);
             return version[property];
           }
           for (const usecase of version.usecase) {
@@ -98,4 +96,37 @@ export const filterByTags = (
       Array.isArray(item.tags) &&
       options.every((option) => item.tags!.includes(option))
   );
+};
+
+export const getMockConfig = async (input: {
+  domainName: string;
+  filePath: string;
+}) => {
+  try {
+    const { domainName, filePath } = input;
+
+    if (!domainName || !filePath) {
+      throw new Error("domainName and filePath are required");
+    }
+
+    // Remove ONDC: prefix → folder name
+    const domainFolder = domainName.replace(/^ONDC:/, "");
+
+    // Normalize path (removes ./ automatically)
+    const normalizedPath = filePath.replace(/^\.\//, "");
+
+    const fullPath = path.join(
+      __dirname,
+      "../config",
+      domainFolder,
+      normalizedPath
+    );
+
+    console.log("Resolved mock config path:", fullPath);
+
+    return await loadYAMLWithRefs(fullPath);
+  } catch (e) {
+    console.error("Error while fetching mock config", e);
+    throw new Error("Error while fetching mock config");
+  }
 };
