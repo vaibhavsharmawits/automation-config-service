@@ -1,12 +1,12 @@
 flows:
-  - id: Order to Confirm to Fulfillment (GPS Based)
+  - id: Order to Confirm to Fulfillment (City Code)
     tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Complete hotel booking journey from search to status check using GPS coordinates
     sequence:
-      - key: search_5
+      - key: search_6
         type: search
         unsolicited: false
-        pair: on_search_5
+        pair: on_search_6
         owner: BAP
         expect: true
         input:
@@ -14,15 +14,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_5
+      - key: on_search_6
         type: on_search
         unsolicited: false
         pair: null
@@ -125,14 +117,6 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search_6
         type: on_search
         unsolicited: false
@@ -167,14 +151,6 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
       - key: on_search_1
         type: on_search
         unsolicited: false
@@ -204,10 +180,10 @@ flows:
     tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Full booking journey with buyer-initiated cancellation
     sequence:
-      - key: search_5
+      - key: search_6
         type: search
         unsolicited: false
-        pair: on_search_5
+        pair: on_search_6
         owner: BAP
         expect: true
         input:
@@ -215,15 +191,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_5
+      - key: on_search_6
         type: on_search
         unsolicited: false
         pair: null
@@ -327,10 +295,10 @@ flows:
     tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
     description: Full booking journey with merchant-initiated (unsolicited) cancellation
     sequence:
-      - key: search_5
+      - key: search_6
         type: search
         unsolicited: false
-        pair: on_search_5
+        pair: on_search_6
         owner: BAP
         expect: true
         input:
@@ -338,15 +306,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_5
+      - key: on_search_6
         type: on_search
         unsolicited: false
         pair: null
@@ -444,10 +404,10 @@ flows:
     tags: ["REPORTABLE", "OPTIONAL", "WORKBENCH"]
     description: Complete booking journey with update capability
     sequence:
-      - key: search_5
+      - key: search_6
         type: search
         unsolicited: false
-        pair: on_search_5
+        pair: on_search_6
         owner: BAP
         expect: true
         input:
@@ -455,15 +415,7 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_5
+      - key: on_search_6
         type: on_search
         unsolicited: false
         pair: null
