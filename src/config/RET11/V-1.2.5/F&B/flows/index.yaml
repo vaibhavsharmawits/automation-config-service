@@ -387,6 +387,46 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order delivered
+  - id: OUT_OF_STOCK(ERROR-CODE)
+    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    description: Retail 1.2.5 (Out Of Stock)
+    sequence:
+      - key: select_oos
+        type: select
+        unsolicited: false
+        pair: on_select_oos
+        owner: BAP
+        expect: true
+        input:
+          - label: Items
+            name: items
+            type: nestedSelect
+          - name: providerId
+            label: Enter provider id
+            type: text
+          - name: locationId
+            label: Enter location id
+            type: text
+          - name: gps
+            label: Enter gps coordinates
+            type: text
+            default: 77.1976,28.5671
+          - name: area_code
+            label: Enter area code
+            type: text
+            default: "560001"
+        description: BAP may add unavailable or out-of-stock items to the cart
+      - key: on_select_oos
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP returns item breakup when item is out of stock
+        input:
+          - label: Enter Item id for Out of stock item
+            name: oosItem
+            type: text         
   - id: BUYER_CANCEL
     tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
