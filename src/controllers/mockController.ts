@@ -93,7 +93,7 @@ export const getPlaygroundFlowConfig = async (
     }
 
     // ---- Success ----
-    return res.send({ data: flowData });
+    return res.send(flowData);
 
   } catch (e) {
     console.error("Error while fetching playground flow config", e);
