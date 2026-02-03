@@ -1,0 +1,9 @@
+name: ONDC:RET14
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: INVL
+        flows: "./v-1.2.5/INVL/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/INVL/v-1.2.5/supportedActions/index.yaml"
