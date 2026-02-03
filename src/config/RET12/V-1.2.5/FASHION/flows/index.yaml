@@ -290,11 +290,11 @@ flows:
     tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
-      - key: select
+      - key: select_out_of_stock
         type: select
         unsolicited: false
         input:
-          - name: grocery_select
+          - name: fashion_select
             type: ret10_grocery_select
         pair: on_select_out_of_stock
         owner: BAP
@@ -306,7 +306,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: BPP returns item breakup when item is out of stock      
+        description: BPP returns item breakup when item is out of stock   
   - id: Buyer_Cancellation_Flow
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Cancellation)
