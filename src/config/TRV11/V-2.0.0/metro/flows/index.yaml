@@ -547,37 +547,37 @@ flows:
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_METRO_200
+      - key: select_pass_METRO_200
         type: select
         unsolicited: false
         description: User selects the Monthly Pass
-        pair: on_select_METRO_200
+        pair: on_select_pass_METRO_200
         owner: BAP
-      - key: on_select_METRO_200
+      - key: on_select_pass_METRO_200
         type: on_select
         unsolicited: false
         description: Response with selected pass details
         pair: null
         owner: BPP
-      - key: init_METRO_200
+      - key: init_pass_METRO_200
         type: init
         unsolicited: false
         description: Consumer platform initializes the order
-        pair: on_init_METRO_200
+        pair: on_init_pass_METRO_200
         owner: BAP
-      - key: on_init_METRO_200
+      - key: on_init_pass_METRO_200
         type: on_init
         unsolicited: false
         description: Provider platform responds with order draft
         pair: null
         owner: BPP
-      - key: confirm_METRO_200
+      - key: confirm_pass_METRO_200
         type: confirm
         unsolicited: false
         description: Consumer platform confirms the booking
-        pair: on_confirm_METRO_200
+        pair: on_confirm_pass_METRO_200
         owner: BAP
-      - key: on_confirm_METRO_200
+      - key: on_confirm_pass_METRO_200
         type: on_confirm
         unsolicited: false
         description: Provider platform confirms the order
@@ -587,12 +587,12 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests order status
-        pair: on_status_active_METRO_200
+        pair: on_status_pass_METRO_200
         owner: BAP
-      - key: on_status_active_METRO_200
+      - key: on_status_pass_METRO_200
         type: on_status
         unsolicited: false
-        description: Provider platform responds with order status
+        description: Provider platform responds with pass status
         pair: null
         owner: BPP
       - key: cancel_soft_METRO_200
@@ -695,6 +695,18 @@ flows:
         type: on_confirm
         unsolicited: false
         description: Provider platform confirms the order
+        pair: null
+        owner: BPP
+      - key: status_expired_METRO_200
+        type: status
+        unsolicited: false
+        description: Check ticket status post-expiry
+        pair: on_status_expired_METRO_200
+        owner: BAP
+      - key: on_status_expired_METRO_200
+        type: on_status
+        unsolicited: false
+        description: Expired ticket status response with TICKET_EXPIRED state
         pair: null
         owner: BPP
       - key: cancel_soft_METRO_200
@@ -815,5 +827,17 @@ flows:
         type: on_cancel
         unsolicited: true
         description: Provider platform initiates unsolicited cancellation
+        pair: null
+        owner: BPP
+      - key: status_cancelled_METRO_200
+        type: status
+        unsolicited: false
+        description: BAP verifies cancellation status
+        pair: on_status_cancelled_METRO_200
+        owner: BAP
+      - key: on_status_cancelled_METRO_200
+        type: on_status
+        unsolicited: false
+        description: Cancellation status response
         pair: null
         owner: BPP
