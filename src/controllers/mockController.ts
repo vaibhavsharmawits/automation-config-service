@@ -15,7 +15,6 @@ export const getFlow = async (req: Request, res: Response) => {
 		);
 		let data = await getFileFromRefrence(filePath);
 		data = convertPlaygroundFlowConfig(data);
-		console.log(JSON.stringify(data));
 		const filteredFlow = data.flows?.filter(
 			(flow: any) => flow.id === query.flowId,
 		);
