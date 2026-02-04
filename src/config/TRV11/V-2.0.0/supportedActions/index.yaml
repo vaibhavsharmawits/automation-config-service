@@ -7,7 +7,7 @@ supportedActions:
   init: ["on_init"]
   on_init: ["init", "confirm"]
   confirm: ["on_confirm", "status"]
-  on_confirm: ["confirm", "status", "cancel", "on_status"]
+  on_confirm: ["confirm", "status", "cancel", "on_status", "on_cancel"]
   status: ["on_status"]
   on_status: ["status", "cancel"]
   cancel: ["on_cancel", "status"]

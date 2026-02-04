@@ -133,6 +133,108 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
+  - id: ORDER_TO_CONFIRM_TO_JOURNEY_COMPLETION_SJT
+    tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
+    title: Purchase journey of metro tickets (SJT)
+    description: This flow illustrates a Single Journey Ticket purchase from search to journey completion
+    sequence:
+      - key: search1_METRO_200
+        type: search
+        unsolicited: false
+        description: User searches over the network for metro providers
+        pair: on_search1_METRO_200
+        owner: BAP
+        expect: true
+      - key: on_search1_METRO_200
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_200
+        type: search
+        unsolicited: false
+        description: User searches for metro from one station to another
+        pair: on_search2_METRO_200
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_200
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: select_METRO_200
+        type: select
+        unsolicited: false
+        description: User selects the SJT ticket
+        pair: on_select_METRO_200
+        owner: BAP
+      - key: on_select_METRO_200
+        type: on_select
+        unsolicited: false
+        description: Response with selected ticket details
+        pair: null
+        owner: BPP
+      - key: init_METRO_200
+        type: init
+        unsolicited: false
+        description: Consumer platform initializes the order
+        pair: on_init_METRO_200
+        owner: BAP
+      - key: on_init_METRO_200
+        type: on_init
+        unsolicited: false
+        description: Provider platform responds with order draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_200
+        type: confirm
+        unsolicited: false
+        description: Consumer platform confirms the booking
+        pair: on_confirm_METRO_200
+        owner: BAP
+      - key: on_confirm_METRO_200
+        type: on_confirm
+        unsolicited: false
+        description: Provider platform confirms the order
+        pair: null
+        owner: BPP
+      - key: status_METRO_200
+        type: status
+        unsolicited: false
+        description: Consumer platform requests order status
+        pair: on_status_active_METRO_200
+        owner: BAP
+      - key: on_status_active_METRO_200
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with order status
+        pair: null
+        owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
     tags: ["WORKBENCH","MANDATORY", REPORTABLE]
     title: Technical cancellation journey
@@ -391,108 +493,6 @@ flows:
           the cancellation
         pair: null
         owner: BPP
-  - id: ORDER_TO_CONFIRM_TO_JOURNEY_COMPLETION_SJT
-    tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
-    title: Purchase journey of metro tickets (SJT)
-    description: This flow illustrates a Single Journey Ticket purchase from search to journey completion
-    sequence:
-      - key: search1_METRO_200
-        type: search
-        unsolicited: false
-        description: User searches over the network for metro providers
-        pair: on_search1_METRO_200
-        owner: BAP
-        expect: true
-      - key: on_search1_METRO_200
-        type: on_search
-        unsolicited: false
-        description: Response with all station codes
-        pair: null
-        owner: BPP
-      - key: search2_METRO_200
-        type: search
-        unsolicited: false
-        description: User searches for metro from one station to another
-        pair: on_search2_METRO_200
-        owner: BAP
-        expect: false
-        input:
-          - name: vehicle_category
-            label: Select vehicle category
-            type: select
-            values:
-              - METRO
-            payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_code
-            label: Enter start station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
-          - name: end_code
-            label: Enter end station code
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
-          - name: bpp_id
-            label: enter your bpp_id
-            type: text
-            payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
-        type: on_search
-        unsolicited: false
-        description: Response with start and end station code
-        pair: null
-        owner: BPP
-      - key: select_METRO_200
-        type: select
-        unsolicited: false
-        description: User selects the SJT ticket
-        pair: on_select_METRO_200
-        owner: BAP
-      - key: on_select_METRO_200
-        type: on_select
-        unsolicited: false
-        description: Response with selected ticket details
-        pair: null
-        owner: BPP
-      - key: init_METRO_200
-        type: init
-        unsolicited: false
-        description: Consumer platform initializes the order
-        pair: on_init_METRO_200
-        owner: BAP
-      - key: on_init_METRO_200
-        type: on_init
-        unsolicited: false
-        description: Provider platform responds with order draft
-        pair: null
-        owner: BPP
-      - key: confirm_METRO_200
-        type: confirm
-        unsolicited: false
-        description: Consumer platform confirms the booking
-        pair: on_confirm_METRO_200
-        owner: BAP
-      - key: on_confirm_METRO_200
-        type: on_confirm
-        unsolicited: false
-        description: Provider platform confirms the order
-        pair: null
-        owner: BPP
-      - key: status_METRO_200
-        type: status
-        unsolicited: false
-        description: Consumer platform requests order status
-        pair: on_status_active_METRO_200
-        owner: BAP
-      - key: on_status_active_METRO_200
-        type: on_status
-        unsolicited: false
-        description: Provider platform responds with order status
-        pair: null
-        owner: BPP
   - id: ORDER_TO_CONFIRM_MONTHLY_PASS
     tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
     title: Monthly Pass purchase journey
@@ -547,37 +547,37 @@ flows:
         description: Response with start and end station code
         pair: null
         owner: BPP
-      - key: select_METRO_200
+      - key: select_pass_METRO_200
         type: select
         unsolicited: false
         description: User selects the Monthly Pass
-        pair: on_select_METRO_200
+        pair: on_select_pass_METRO_200
         owner: BAP
-      - key: on_select_METRO_200
+      - key: on_select_pass_METRO_200
         type: on_select
         unsolicited: false
         description: Response with selected pass details
         pair: null
         owner: BPP
-      - key: init_METRO_200
+      - key: init_pass_METRO_200
         type: init
         unsolicited: false
         description: Consumer platform initializes the order
-        pair: on_init_METRO_200
+        pair: on_init_pass_METRO_200
         owner: BAP
-      - key: on_init_METRO_200
+      - key: on_init_pass_METRO_200
         type: on_init
         unsolicited: false
         description: Provider platform responds with order draft
         pair: null
         owner: BPP
-      - key: confirm_METRO_200
+      - key: confirm_pass_METRO_200
         type: confirm
         unsolicited: false
         description: Consumer platform confirms the booking
-        pair: on_confirm_METRO_200
+        pair: on_confirm_pass_METRO_200
         owner: BAP
-      - key: on_confirm_METRO_200
+      - key: on_confirm_pass_METRO_200
         type: on_confirm
         unsolicited: false
         description: Provider platform confirms the order
@@ -587,12 +587,12 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests order status
-        pair: on_status_active_METRO_200
+        pair: on_status_pass_METRO_200
         owner: BAP
-      - key: on_status_active_METRO_200
+      - key: on_status_pass_METRO_200
         type: on_status
         unsolicited: false
-        description: Provider platform responds with order status
+        description: Provider platform responds with pass status
         pair: null
         owner: BPP
       - key: cancel_soft_METRO_200
@@ -695,6 +695,18 @@ flows:
         type: on_confirm
         unsolicited: false
         description: Provider platform confirms the order
+        pair: null
+        owner: BPP
+      - key: status_expired_METRO_200
+        type: status
+        unsolicited: false
+        description: Check ticket status post-expiry
+        pair: on_status_expired_METRO_200
+        owner: BAP
+      - key: on_status_expired_METRO_200
+        type: on_status
+        unsolicited: false
+        description: Expired ticket status response with TICKET_EXPIRED state
         pair: null
         owner: BPP
       - key: cancel_soft_METRO_200
