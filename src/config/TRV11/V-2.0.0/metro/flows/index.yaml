@@ -697,13 +697,13 @@ flows:
         description: Provider platform confirms the order
         pair: null
         owner: BPP
-      - key: status_expired_METRO_200
+      - key: status_METRO_200
         type: status
         unsolicited: false
         description: Check ticket status post-expiry
-        pair: on_status_expired_METRO_200
+        pair: on_status_active_METRO_200
         owner: BAP
-      - key: on_status_expired_METRO_200
+      - key: on_status_active_METRO_200
         type: on_status
         unsolicited: false
         description: Expired ticket status response with TICKET_EXPIRED state
