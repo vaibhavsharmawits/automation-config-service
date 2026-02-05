@@ -1,0 +1,507 @@
+meta:
+  domain: ONDC:RET11
+  version: 1.2.0
+  flowId: Discovery_Flow_incremental_catalog
+transaction_data:
+  transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+  latest_timestamp: '1970-01-01T00:00:00.000Z'
+  bap_id: sample-bap-id
+  bap_uri: https://bap.example.com
+  bpp_id: sample-bpp-id
+  bpp_uri: https://bpp.example.com
+steps:
+  - api: search
+    action_id: search1
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: Bap starts search for incremental changes
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgaWYgKHNlc3Npb25EYXRhLmluY19tb2RlKSB7CiAgICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UuaW50ZW50LnRhZ3NbMF0ubGlzdFswXS52YWx1ZSA9ICJzdG9wIjsKICAgIH0KICAgIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQuY2l0eSA9ICIqIjsKCiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS5sb2coZSk7CiAgICByZXR1cm4gewogICAgICBjb250ZXh0OiBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LAogICAgICBlcnJvcjogZS5tZXNzYWdlID8/ICJ1bmtvd24iCiAgICB9CiAgfQp9Cg==
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET11
+          action: search
+          timestamp: '2026-01-20T09:05:17.039Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: b00ce1b2-b91d-4634-931e-7822bb0cd34c
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          intent:
+            payment:
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3'
+            tags:
+              - code: catalog_inc
+                list:
+                  - code: mode
+                    value: start
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        inc_mode: $.message.intent.tags[0].list[0].value
+      inputs: {}
+  - api: on_search
+    action_id: on_search1
+    owner: BPP
+    responseFor: search1
+    unsolicited: false
+    description: BPP returns the incremental changes
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5jaXR5ID0gIioiOwogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nWyJicHAvcHJvdmlkZXJzIl1bMF0ubG9jYXRpb25zWzBdLnRpbWUudGltZXN0YW1wID0KICAgICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC50aW1lc3RhbXA7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLmNhdGFsb2dbImJwcC9wcm92aWRlcnMiXVswXS5sb2NhdGlvbnNbMF0udGltZS5yYW5nZS5zdGFydCA9CiAgICAgIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQudGltZXN0YW1wOwogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nWyJicHAvcHJvdmlkZXJzIl1bMF0ubG9jYXRpb25zWzBdLnRpbWUucmFuZ2UuZW5kID0KICAgICAgZ2V0VGltZXN0YW1wRnJvbUR1cmF0aW9uKGRlZmF1bHRQYXlsb2FkLmNvbnRleHQudGltZXN0YW1wLCAiUFQ0NU0iKTsKCiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS5sb2coZSk7CiAgICByZXR1cm4gewogICAgICBjb250ZXh0OiBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LAogICAgICBlcnJvcjogZS5tZXNzYWdlID8/ICJ1bmtvd24iCiAgICB9CiAgfQp9Cg==
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET11
+          action: on_search
+          timestamp: '2026-01-20T10:27:04.570Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: 6a02cb20-722c-433e-ab13-da8621f5aaa6
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          catalog:
+            bpp/providers:
+              - id: P1
+                locations:
+                  - id: L1
+                    time:
+                      label: close
+                      timestamp: '2025-01-08T10:20:00.000Z'
+                      range:
+                        start: '2025-01-08T16:00:00.000Z'
+                        end: '2025-01-08T23:59:00.000Z'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+      inputs: {}
+  - api: on_search
+    action_id: on_search3
+    owner: BPP
+    responseFor: null
+    unsolicited: true
+    description: BPP returns the incremental changes
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5jaXR5ID0gIioiOwogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nWyJicHAvcHJvdmlkZXJzIl1bMF0ubG9jYXRpb25zWzBdLnRpbWUudGltZXN0YW1wID0KICAgICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC50aW1lc3RhbXA7CgogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUubG9nKGUpOwogICAgcmV0dXJuIHsKICAgICAgY29udGV4dDogZGVmYXVsdFBheWxvYWQuY29udGV4dCwKICAgICAgZXJyb3I6IGUubWVzc2FnZSA/PyAidW5rb3duIgogICAgfQogIH0KfQo=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET11
+          action: on_search
+          timestamp: '2026-01-21T06:31:01.772Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: 66bf003d-d761-4a00-9162-6633e64f8ea7
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          catalog:
+            bpp/providers:
+              - id: P1
+                locations:
+                  - id: L1
+                    time:
+                      label: open
+                      timestamp: '2025-01-08T08:30:00.000Z'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+      inputs: {}
+  - api: on_search
+    action_id: on_search_2
+    owner: BPP
+    responseFor: null
+    unsolicited: true
+    description: BPP returns the incremental changes
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5jaXR5ID0gIioiOwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUubG9nKGUpOwogICAgcmV0dXJuIHsKICAgICAgY29udGV4dDogZGVmYXVsdFBheWxvYWQuY29udGV4dCwKICAgICAgZXJyb3I6IGUubWVzc2FnZSA/PyAidW5rb3duIgogICAgfQogIH0KfQo=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET11
+          action: on_search
+          timestamp: '2026-01-21T06:32:25.391Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: 2b0f3f6e-5d21-4858-b791-039b86194a14
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          catalog:
+            bpp/providers:
+              - id: P1
+                items:
+                  - id: I1
+                    time:
+                      label: enable
+                      timestamp: '2025-01-08T07:30:00.000Z'
+                    descriptor:
+                      name: Farm House Pizza
+                      symbol: https://snp.com/images/i1.png
+                      short_desc: Farm House Pizza
+                      long_desc: Farm House Pizza
+                      images:
+                        - https://snp.com/images/i1.png
+                    quantity:
+                      unitized:
+                        measure:
+                          unit: unit
+                          value: '1'
+                      available:
+                        count: '99'
+                      maximum:
+                        count: '99'
+                    price:
+                      currency: INR
+                      value: '259.00'
+                      maximum_value: '259.00'
+                      tags:
+                        - code: range
+                          list:
+                            - code: lower
+                              value: '259.00'
+                            - code: upper
+                              value: '894.00'
+                    category_id: F&B
+                    category_ids:
+                      - '5:1'
+                    fulfillment_id: F1
+                    location_id: L1
+                    related: false
+                    recommended: true
+                    '@ondc/org/returnable': false
+                    '@ondc/org/cancellable': false
+                    '@ondc/org/return_window': PT1H
+                    '@ondc/org/seller_pickup_return': false
+                    '@ondc/org/time_to_ship': PT45M
+                    '@ondc/org/available_on_cod': false
+                    '@ondc/org/contact_details_consumer_care': Ramesh,ramesh@abc.com,18004254444
+                    tags:
+                      - code: type
+                        list:
+                          - code: type
+                            value: item
+                      - code: custom_group
+                        list:
+                          - code: id
+                            value: CG1
+                      - code: timing
+                        list:
+                          - code: day_from
+                            value: '1'
+                          - code: day_to
+                            value: '5'
+                          - code: time_from
+                            value: '1800'
+                          - code: time_to
+                            value: '2200'
+                      - code: veg_nonveg
+                        list:
+                          - code: veg
+                            value: 'yes'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+      inputs: {}
+  - api: search
+    action_id: search_1
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: Bap stops search for incremental changes
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUubG9nKGUpOwogICAgcmV0dXJuIHsKICAgICAgY29udGV4dDogZGVmYXVsdFBheWxvYWQuY29udGV4dCwKICAgICAgZXJyb3I6IGUubWVzc2FnZSA/PyAidW5rb3duIgogICAgfQogIH0KfQo=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET11
+          action: search
+          timestamp: '2026-01-21T07:04:52.209Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: cf8ad8f5-da54-4f86-87d5-1ec92141f823
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          intent:
+            payment:
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3'
+            tags:
+              - code: catalog_inc
+                list:
+                  - code: mode
+                    value: stop
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+      inputs: {}
+transaction_history:
+  - action_id: search1
+    payload:
+      context:
+        domain: ONDC:RET11
+        action: search
+        timestamp: '2026-01-29T06:28:15.462Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: 03eb5303-1788-4d46-a9d4-10af42513cd2
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        intent:
+          payment:
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3'
+          tags:
+            - code: catalog_inc
+              list:
+                - code: mode
+                  value: start
+    saved_info: {}
+  - action_id: on_search1
+    payload:
+      context:
+        domain: ONDC:RET11
+        action: on_search
+        timestamp: '2026-01-29T06:28:15.472Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: 03eb5303-1788-4d46-a9d4-10af42513cd2
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        catalog:
+          bpp/providers:
+            - id: P1
+              locations:
+                - id: L1
+                  time:
+                    label: close
+                    timestamp: '2026-01-29T06:28:15.472Z'
+                    range:
+                      start: '2026-01-29T06:28:15.472Z'
+                      end: '2026-01-29T07:13:15.472Z'
+    saved_info: {}
+  - action_id: on_search3
+    payload:
+      context:
+        domain: ONDC:RET11
+        action: on_search
+        timestamp: '2026-01-29T06:28:15.482Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: 03f5c2c7-72e0-4f7b-b5bf-eebda450eb59
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        catalog:
+          bpp/providers:
+            - id: P1
+              locations:
+                - id: L1
+                  time:
+                    label: open
+                    timestamp: '2026-01-29T06:28:15.482Z'
+    saved_info: {}
+  - action_id: on_search_2
+    payload:
+      context:
+        domain: ONDC:RET11
+        action: on_search
+        timestamp: '2026-01-29T06:28:15.490Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: dd876481-83ed-45bc-87c2-e6a23d335fb1
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        catalog:
+          bpp/providers:
+            - id: P1
+              items:
+                - id: I1
+                  time:
+                    label: enable
+                    timestamp: '2025-01-08T07:30:00.000Z'
+                  descriptor:
+                    name: Farm House Pizza
+                    symbol: https://snp.com/images/i1.png
+                    short_desc: Farm House Pizza
+                    long_desc: Farm House Pizza
+                    images:
+                      - https://snp.com/images/i1.png
+                  quantity:
+                    unitized:
+                      measure:
+                        unit: unit
+                        value: '1'
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '259.00'
+                    maximum_value: '259.00'
+                    tags:
+                      - code: range
+                        list:
+                          - code: lower
+                            value: '259.00'
+                          - code: upper
+                            value: '894.00'
+                  category_id: F&B
+                  category_ids:
+                    - '5:1'
+                  fulfillment_id: F1
+                  location_id: L1
+                  related: false
+                  recommended: true
+                  '@ondc/org/returnable': false
+                  '@ondc/org/cancellable': false
+                  '@ondc/org/return_window': PT1H
+                  '@ondc/org/seller_pickup_return': false
+                  '@ondc/org/time_to_ship': PT45M
+                  '@ondc/org/available_on_cod': false
+                  '@ondc/org/contact_details_consumer_care': Ramesh,ramesh@abc.com,18004254444
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: item
+                    - code: custom_group
+                      list:
+                        - code: id
+                          value: CG1
+                    - code: timing
+                      list:
+                        - code: day_from
+                          value: '1'
+                        - code: day_to
+                          value: '5'
+                        - code: time_from
+                          value: '1800'
+                        - code: time_to
+                          value: '2200'
+                    - code: veg_nonveg
+                      list:
+                        - code: veg
+                          value: 'yes'
+    saved_info: {}
+  - action_id: search_1
+    payload:
+      context:
+        domain: ONDC:RET11
+        action: search
+        timestamp: '2026-01-29T06:28:15.499Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: 255a7961-cb4c-45cc-9b7d-cdd0bb84bef2
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        intent:
+          payment:
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3'
+          tags:
+            - code: catalog_inc
+              list:
+                - code: mode
+                  value: stop
+    saved_info: {}
+validationLib: ''
+helperLib: >-
+  ZnVuY3Rpb24gZ2V0VGltZXN0YW1wRnJvbUR1cmF0aW9uKAogIGRhdGUsCiAgZHVyYXRpb24KKSB7CiAgY29uc29sZS5sb2coImR1cmF0aW9OIiwgZHVyYXRpb24pOwogIGNvbnN0IGR1cmF0aW9uUmVnZXggPSAvUCg/OihcZCspRCk/KD86VCg/OihcZCspSCk/KD86KFxkKylNKT8oPzooXGQrKVMpPyk/LzsKICBjb25zdCBtYXRjaCA9IGR1cmF0aW9uLm1hdGNoKGR1cmF0aW9uUmVnZXgpOwoKICBpZiAoIW1hdGNoKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoIkludmFsaWQgSVNPIDg2MDEgZHVyYXRpb24gZm9ybWF0Iik7CiAgfQoKICBjb25zdCBkYXlzID0gbWF0Y2hbMV0gPyBwYXJzZUludChtYXRjaFsxXSwgMTApIHx8IDAgOiAwOwogIGNvbnN0IGhvdXJzID0gbWF0Y2hbMl0gPyBwYXJzZUludChtYXRjaFsyXSwgMTApIHx8IDAgOiAwOwogIGNvbnN0IG1pbnV0ZXMgPSBtYXRjaFszXSA/IHBhcnNlSW50KG1hdGNoWzNdLCAxMCkgfHwgMCA6IDA7CiAgY29uc3Qgc2Vjb25kcyA9IG1hdGNoWzRdID8gcGFyc2VJbnQobWF0Y2hbNF0sIDEwKSB8fCAwIDogMDsKCiAgY29uc3QgZnV0dXJlRGF0ZSA9IG5ldyBEYXRlKGRhdGUpOwogIGZ1dHVyZURhdGUuc2V0RGF0ZShmdXR1cmVEYXRlLmdldERhdGUoKSArIGRheXMpOwogIGZ1dHVyZURhdGUuc2V0SG91cnMoZnV0dXJlRGF0ZS5nZXRIb3VycygpICsgaG91cnMpOwogIGZ1dHVyZURhdGUuc2V0TWludXRlcyhmdXR1cmVEYXRlLmdldE1pbnV0ZXMoKSArIG1pbnV0ZXMpOwogIGZ1dHVyZURhdGUuc2V0U2Vjb25kcyhmdXR1cmVEYXRlLmdldFNlY29uZHMoKSArIHNlY29uZHMpOwoKICByZXR1cm4gZnV0dXJlRGF0ZS50b0lTT1N0cmluZygpOwp9Cgo=
