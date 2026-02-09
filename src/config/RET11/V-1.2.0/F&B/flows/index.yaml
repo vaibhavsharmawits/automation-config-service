@@ -1,43 +1,43 @@
 flows:
   - type: playground
     id: Delivery_Flow
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Delivery Flow for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/Delivery_Flow.yaml"
   - type: playground
     id: Cancellation_Flow
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Cancellation Flow for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/Cancellation_Flow.yaml"
   - type: playground
     id: Discovery_Flow_full_catalog
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Discovery Flow (Full Catalog) for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/Discovery_Flow_full_catalog.yaml"
   - type: playground
     id: Discovery_Flow_incremental_catalog
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Discovery Flow (Incremental Catalog) for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/Discovery_Flow_incremental_catalog.yaml"
   - type: playground
     id: Out_of_Stock_Flow
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Out of Stock Flow for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/Out_of_Stock_Flow.yaml"
   - type: playground
     id: Return_Flow
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Return Flow for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/Return_Flow.yaml"
   - type: playground
     id: RTO_And_Part_Cancellation_Flow
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH", "PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: RTO and Part Cancellation Flow for F&B
     config:
       $ref: "src/config/RET11/v-1.2.0/F&B/flows/RTO_And_Part_Cancellation_Flow.yaml"
