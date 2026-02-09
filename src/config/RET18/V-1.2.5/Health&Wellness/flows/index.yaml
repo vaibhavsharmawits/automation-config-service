@@ -179,7 +179,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Self_Pickup_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Self Pickup)
     sequence:
       - key: select
@@ -251,7 +251,7 @@ flows:
         expect: false
         description: Status updates - order self pickup complete
   - id: Slotted_Delivery_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Slotted Delivery)
     sequence:
       - key: select

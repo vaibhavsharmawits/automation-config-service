@@ -12,6 +12,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -31,6 +36,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -81,6 +91,10 @@ flows:
         description: User selects the station code
         pair: on_select_BUS_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
@@ -144,6 +158,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -194,6 +213,10 @@ flows:
         description: User selects the station code
         pair: on_select_BUS_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
@@ -232,7 +255,7 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_BUS_200
+      - key: status_tech_cancel_BUS_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -271,6 +294,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -321,6 +349,10 @@ flows:
         description: User selects the station code
         pair: on_select_BUS_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
