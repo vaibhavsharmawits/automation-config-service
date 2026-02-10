@@ -1,6 +1,6 @@
 flows:
   - id: Seller_App_Fulfilling
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH","REPORTABLE"]
     description: Seller App fulfilling - Standard gift card purchase flow
     sequence:
       - key: search
@@ -70,7 +70,7 @@ flows:
         expect: false
 
   - id: Buyer_App_Fulfilling_Code_On_Confirm
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH","REPORTABLE"]
     description: Buyer app fulfilling with code in on_confirm
     sequence:
       - key: search
@@ -140,7 +140,7 @@ flows:
         expect: false
 
   - id: Buyer_App_Fulfilling_Code_On_Update
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH","REPORTABLE"]
     description: Buyer app fulfilling with code in on_update
     sequence:
       - key: search
@@ -204,7 +204,7 @@ flows:
         expect: false
 
   - id: Physical_Store_Based_Gift_Cards
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH","REPORTABLE"]
     description: Physical store based gift cards
     sequence:
       - key: search
@@ -274,7 +274,7 @@ flows:
         expect: false
 
   - id: Seller_Cancellation
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH","REPORTABLE"]
     description: Seller Cancellation flow
     sequence:
       - key: search
@@ -338,7 +338,7 @@ flows:
         expect: false
 
   - id: Update_Receiver_Info
-    tags: ["WORKBENCH"]
+    tags: ["WORKBENCH","REPORTABLE"]
     description: Update Receiver Info flow
     sequence:
       - key: search
