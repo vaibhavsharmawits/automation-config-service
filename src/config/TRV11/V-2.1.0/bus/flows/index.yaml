@@ -72,11 +72,11 @@ flows:
             type: text
             payloadField: $.context.location.city.code
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
@@ -184,11 +184,11 @@ flows:
             type: text
             payloadField: $.context.location.city.code  
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
@@ -307,11 +307,11 @@ flows:
             defaultValue: BPP
             payloadField: $.message.intent.payment.collected_by   
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
@@ -418,11 +418,11 @@ flows:
             defaultValue: BPP
             payloadField: $.message.intent.payment.collected_by   
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
@@ -517,11 +517,11 @@ flows:
             type: text
             payloadField: $.context.location.city.code  
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
@@ -629,11 +629,11 @@ flows:
             type: text
             payloadField: $.context.location.city.code   
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
@@ -753,11 +753,11 @@ flows:
             type: text
             payloadField: $.context.location.city.code
           - name: start_code
-            label: Enter start station code
+            label: Enter start station code (Eg:- MOCK_STATION_1)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
           - name: end_code
-            label: Enter end station code
+            label: Enter end station code (Eg:- MOCK_STATION_5)
             type: text
             payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
           - name: bpp_id
