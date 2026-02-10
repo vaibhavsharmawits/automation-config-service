@@ -1,43 +1,43 @@
 flows:
   - type: playground
-    id: Delivery_Flow
+    id: Order_to_confirm_to_fulfillment_(Prepaid)
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Delivery Flow for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Delivery_Flow.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Order_to_confirm_to_fulfillment_(Prepaid).yaml"
   - type: playground
-    id: Cancellation_Flow
+    id: Buyer_Side_Order_Cancellation
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Cancellation Flow for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Cancellation_Flow.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Buyer_Side_Order_Cancellation.yaml"
   - type: playground
-    id: Discovery_Flow_full_catalog
+    id: Search_and_Custom_Menu_(Full_Catalog_City)
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Discovery Flow (Full Catalog) for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Discovery_Flow_full_catalog.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Search_and_Custom_Menu_(Full_Catalog_City).yaml"
   - type: playground
-    id: Discovery_Flow_incremental_catalog
+    id: Search_and_Custom_Menu_(Incremental_Push)
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Discovery Flow (Incremental Catalog) for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Discovery_Flow_incremental_catalog.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Search_and_Custom_Menu_(Incremental_Push).yaml"
   - type: playground
-    id: Out_of_Stock_Flow
+    id: Out_of_Stock(Error_code)
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Out of Stock Flow for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Out_of_Stock_Flow.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Out_of_Stock(Error_code).yaml"
   - type: playground
-    id: Return_Flow
+    id: Buyer_Initiated_Return_(Full_Order_and_Partial_Order)
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: Return Flow for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Return_Flow.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Buyer_Initiated_Return_(Full_Order_and_Partial_Order).yaml"
   - type: playground
-    id: RTO_And_Part_Cancellation_Flow
+    id: Merchant_Side_RTO_and_Part_Order_Cancellation_Flow
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
     description: RTO and Part Cancellation Flow for Grocery
     config:
-      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/RTO_And_Part_Cancellation_Flow.yaml"
+      $ref: "src/config/RET10/v-1.2.0/GROCERY/flows/Merchant_Side_RTO_and_Part_Order_Cancellation_Flow.yaml"
