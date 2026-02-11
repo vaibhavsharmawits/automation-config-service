@@ -755,6 +755,11 @@ flows:
         pair: on_update
         owner: BAP
         expect: false
+        input:
+          - name: email
+            label: Enter Email 
+            type: text
+            payloadField: ""
       - key: on_update
         type: on_update
         unsolicited: false
