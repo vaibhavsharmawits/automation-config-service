@@ -708,6 +708,166 @@
         expect: false
         force_proceed: true
 
+  - id: Gold_Loan_Missed_EMI_With_Account_Aggregator
+    tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
+    description: Gold Loan - missed emi payment with account aggregator
+    sequence:
+      - key: search
+        type: search
+        unsolicited: false
+        pair: on_search
+        owner: BAP
+        expect: true
+      - key: on_search
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: consumer_information_form
+        label: consumer information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.consumer_information_form
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_adjust_loan_amount
+        type: select
+        unsolicited: false
+        pair: on_select_adjust_loan_amount
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified             
+      - key: on_select_adjust_loan_amount
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: loan_amount_adjustment_form
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+      - key: select_2
+        type: select
+        unsolicited: false
+        pair: on_select_2
+        owner: BAP
+        expect: false
+        force_proceed: true
+      - key: on_select_2
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: verification_status
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+      - key: status
+        type: status
+        unsolicited: false
+        pair: on_status
+        owner: BAP
+        expect: true
+      - key: on_status
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update
+        type: update
+        unsolicited: false
+        pair: on_update_missed_emi
+        owner: BAP
+        expect: true
+      - key: on_update_missed_emi
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_update_missed_emi_unsolicited
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true      
+
   - id: Gold_Loan_Pre_Part_Payment_With_Account_Aggregator
     tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Gold Loan - Pre-Part Payment - Update and notification flow
