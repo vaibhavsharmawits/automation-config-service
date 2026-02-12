@@ -710,14 +710,14 @@ flows:
     tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Offline verification and processing
     sequence:
-      - key: search_personal_loan_3
+      - key: search_personal_loan_5
         type: search
         unsolicited: false
-        pair: on_search_personal_loan_3
+        pair: on_search_personal_loan_5
         owner: BAP
         expect: true
 
-      - key: on_search_personal_loan_3
+      - key: on_search_personal_loan_5
         type: on_search
         unsolicited: false
         pair: null

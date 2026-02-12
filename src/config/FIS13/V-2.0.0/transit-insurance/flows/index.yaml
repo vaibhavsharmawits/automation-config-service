@@ -1,6 +1,6 @@
 flows:
   - id: Discovery_of_Insurer_Providers_and_Master_Policies
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Discovery of Insurer Providers and Master Policies
     sequence:
       - key: search_insurence_transit_provider
@@ -10,10 +10,6 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: person_id
             label: Enter person id
             type: text
@@ -26,7 +22,7 @@ flows:
         expect: false
  
   - id: Discovery_of_Products_from_Master_Policies (Transit Insurance)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Discovery of Products from Master Policies (Transit Insurance)
     sequence:
       - key: search_discover_product_transit
@@ -36,18 +32,11 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: policy_name
-            label: Enter Policy ID
-            type: text
-            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
-          - name: provider_id
-            label: Enter Provider ID
-            type: text
-            payloadField: $.message.intent.provider.id
+          - name: pasted_on_search
+            label: pasted_on_search
+            type: search_discover_product_fis13
+            payloadField: ""
+          
       - key: on_search_discover_product_tranist 
         type: on_search
         unsolicited: false
@@ -124,6 +113,59 @@ flows:
       - key: on_update
         type: on_update
         unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: CD_Balance_Error_Transit_Insurance
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+    description: CD Balance Error Transit Insurance
+    sequence:
+      - key: search_purchase_journey_transit
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_journey_transit
+        owner: BAP
+        expect: true
+        input:
+          - name: search_transit_fis13
+            label: Enter
+            type: search_transit_fis13
+      - key: on_search_purchase_journey_transit
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: fis13_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+      - key: init
+        type: init
+        unsolicited: false
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="NOMINEE_NAME")].value
+        pair: on_init_cd_balance_error
+        owner: BAP
+        expect: false
+      - key: on_init_cd_balance_error
+        type: on_init
+        unsolicited: false
         pair: null
         owner: BPP
         expect: false

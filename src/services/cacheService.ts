@@ -18,7 +18,6 @@ export const getConfigService = async () => {
 			// Use the existing loadDecoupledConfig function
 			const config = await loadDecoupledConfig();
 			await setConfigService(config);
-			console.log("console::::::::::…", config, typeof config);
 			return config;
 		} else {
 			return configCache;
@@ -27,7 +26,7 @@ export const getConfigService = async () => {
 		// If loading fails, try to return cached version if available
 		if (configCache) {
 			console.warn(
-				`Config loading failed: ${error.message}. Using cached version.`
+				`Config loading failed: ${error.message}. Using cached version.`,
 			);
 			return configCache;
 		}

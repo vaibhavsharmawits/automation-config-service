@@ -1,6 +1,6 @@
 flows:
   - id: Discovery_of_Insurer_Providers_and_Master_Policies
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Discovery of Insurer Providers and Master Policies
     sequence:
       - key: search_insurence_hospicash_provider
@@ -9,11 +9,7 @@ flows:
         pair: on_search_insurence_provider_hospicash
         owner: BAP
         expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
+        input:          
           - name: person_id
             label: Enter person id
             type: text
@@ -25,7 +21,7 @@ flows:
         owner: BPP
         expect: false
   - id: Discovery_of_Products_from_Master_Policies (Hospicash Insurance)
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Discovery of Products from Master Policies (Hospicash Insurance)
     sequence:
       - key: search_discover_product_hospicash
@@ -35,19 +31,11 @@ flows:
         owner: BAP
         expect: true
         input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: policy_name
-            label: Enter Policy ID
-            type: text
-            payloadField: $.message.intent.provider.tags[?(@.descriptor.code=="MASTER_POLICY")].list[?(@.descriptor.code=="POLICY_ID")].value
-
-          - name: provider_id
-            label: Enter Provider ID   
-            type: text
-            payloadField: $.message.intent.provider.id
+          - name: pasted_on_search
+            label: pasted_on_search
+            type: search_discover_product_fis13
+            payloadField: ""
+          
       - key: on_search_discover_product_hospicash 
         type: on_search
         unsolicited: false
@@ -144,6 +132,81 @@ flows:
       - key: on_update_hospicash
         type: on_update
         unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+  - id: CD_Balance_Error_Hospicash_Insurance
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+    description: CD Balance Error Hospicash Insurance
+    sequence:
+      - key: search_purchase_journey_hospicash
+        type: search
+        unsolicited: false
+        pair: on_search_purchase_journey_hospicash
+        owner: BAP
+        expect: true
+        input:
+          - name: hospicash_insurance_form
+            label: Hospicash Insurance Form 
+            type: search_hospicash_fis13
+            payloadField: ""
+        
+      - key: on_search_purchase_journey_hospicash
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select_hospicash
+        owner: BAP
+        expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: fis13_select
+      - key: on_select_hospicash
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: true
+      - key: init_hospicash
+        type: init
+        unsolicited: false
+        input:
+          - name: nominee_name 
+            label: Enter nominee name
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="NOMINEE_NAME")].value
+          - name: nominee_dob 
+            label: Enter nominee DOB
+            type: date
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="NOMINEE_DOB")].value
+          - name: nominee_appointee_name
+            label: Enter nominee appointee name
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="APPOINTEE_NAME")].value
+          - name: nominee_appointee_dob 
+            label: Enter nominee appointee DOB
+            type: date
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="APPOINTEE_DOB")].value
+          - name: nominee_good_health_declaration 
+            label: Enter nominee good health declaration
+            type: select
+            values:
+              - "Yes"
+              - "No"
+            default: "Yes"
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="GOOD_HEALTH_DECLARATION")].value
+        pair: on_init_cd_balance_error
+        owner: BAP
+        expect: false
+      - key: on_init_cd_balance_error
+        type: on_init
+        unsolicited: false
         pair: null
         owner: BPP
         expect: false
