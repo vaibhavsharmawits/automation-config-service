@@ -13,6 +13,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -33,6 +38,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -83,6 +93,10 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -145,6 +159,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -193,6 +212,10 @@ flows:
         description: User selects the SJT ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -249,6 +272,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -299,6 +327,10 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -377,6 +409,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -427,6 +464,10 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -505,6 +546,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -553,6 +599,10 @@ flows:
         description: User selects the Monthly Pass
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -619,6 +669,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -667,6 +722,10 @@ flows:
         description: User selects the ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -745,6 +804,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -793,6 +857,10 @@ flows:
         description: User selects the ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: select_input
+            label: Enter
+            type: trv11_select
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
