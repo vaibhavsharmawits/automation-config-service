@@ -93,6 +93,15 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -208,6 +217,15 @@ flows:
         description: User selects the SJT ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -319,6 +337,15 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -452,6 +479,15 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -583,6 +619,15 @@ flows:
         description: User selects the Monthly Pass
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -702,6 +747,15 @@ flows:
         description: User selects the ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -833,6 +887,15 @@ flows:
         description: User selects the ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
