@@ -92,9 +92,14 @@ flows:
         pair: on_select_BUS_200
         owner: BAP
         input:
-          - name: select_input
-            label: Enter
-            type: trv11_select
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
@@ -214,9 +219,14 @@ flows:
         pair: on_select_BUS_200
         owner: BAP
         input:
-          - name: select_input
-            label: Enter
-            type: trv11_select
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
@@ -350,9 +360,14 @@ flows:
         pair: on_select_BUS_200
         owner: BAP
         input:
-          - name: select_input
-            label: Enter
-            type: trv11_select
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
