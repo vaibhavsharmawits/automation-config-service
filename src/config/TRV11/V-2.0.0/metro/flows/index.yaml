@@ -144,9 +144,9 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_active_METRO_200
+        pair: on_status_complete_METRO_200
         owner: BAP
-      - key: on_status_active_METRO_200
+      - key: on_status_complete_METRO_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
@@ -260,9 +260,9 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests order status
-        pair: on_status_active_METRO_200
+        pair: on_status_complete_METRO_200
         owner: BAP
-      - key: on_status_active_METRO_200
+      - key: on_status_complete_METRO_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with order status
