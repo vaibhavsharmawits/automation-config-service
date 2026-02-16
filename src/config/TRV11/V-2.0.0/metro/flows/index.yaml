@@ -55,7 +55,7 @@ flows:
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_Sjt_METRO_200
+        pair: on_search2_Rjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -81,7 +81,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_Sjt_METRO_200
+      - key: on_search2_Rjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
