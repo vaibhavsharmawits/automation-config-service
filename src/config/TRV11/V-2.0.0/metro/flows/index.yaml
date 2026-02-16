@@ -384,7 +384,7 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO_200
+      - key: status_tech_cancel_METRO_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -400,9 +400,9 @@ flows:
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_METRO_200
+        pair: on_cancel_tech_METRO_200
         owner: BAP
-      - key: on_cancel_METRO_200
+      - key: on_cancel_tech_METRO_200
         type: on_cancel
         unsolicited: false
         description:
