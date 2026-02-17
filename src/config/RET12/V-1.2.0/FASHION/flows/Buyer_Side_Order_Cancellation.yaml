@@ -52,9 +52,9 @@ steps:
             fulfillments:
               - end:
                   location:
-                    gps: 19.131140,72.834091
+                    gps: 12.966545,77.592074
                     address:
-                      area_code: '400053'
+                      area_code: '560027'
       saveData:
         bapId: $.context.bap_id
         message_id: $.context.message_id
@@ -66,7 +66,7 @@ steps:
         RET10Catalog: >-
           EVAL#ZnVuY3Rpb24gZ2V0U2F2ZShlKXtyZXR1cm57Y2F0YWxvZzp7ImJwcC9mdWxmaWxsbWVudHMiOlt7aWQ6IkYxIix0eXBlOiJEZWxpdmVyeSJ9LHtpZDoiRjIiLHR5cGU6IlNlbGYtUGlja3VwIn0se2lkOiJGMzI4MjIiLHR5cGU6IkJ1eWVyLURlbGl2ZXJ5In0sXSwiYnBwL2Rlc2NyaXB0b3IiOntuYW1lOiJNb2NrIFNlbGxlciBOUCIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIixzaG9ydF9kZXNjOiJTZWxsZXIgTWFya2V0cGxhY2UiLGxvbmdfZGVzYzoiU2VsbGVyIE1hcmtldHBsYWNlIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIl0sdGFnczpbe2NvZGU6ImJwcF90ZXJtcyIsbGlzdDpbe2NvZGU6Im5wX3R5cGUiLHZhbHVlOiJNU04ifSxdfSxdfSwiYnBwL3Byb3ZpZGVycyI6W3t0aW1lOntsYWJlbDoiZW5hYmxlIix0aW1lc3RhbXA6IjIwMjQtMTItMjNUMDY6NTU6NDUuMDM1WiJ9LHJhdGluZzoiNCIsZGVzY3JpcHRvcjp7bmFtZToiU3RvcmUgMSIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyIsc2hvcnRfZGVzYzoiU3RvcmUgMSIsbG9uZ19kZXNjOiJTdG9yZSAxIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyJdfSx0dGw6IlAxRCIsbG9jYXRpb25zOlt7aWQ6IkwxIix0aW1lOntsYWJlbDoiZW5hYmxlIix0aW1lc3RhbXA6IjIwMjQtMTItMjNUMDY6NTU6NDUuMDM1WiIsZGF5czoiMSwyLDMsNCw1LDYsNyIsc2NoZWR1bGU6e2hvbGlkYXlzOltdfSxyYW5nZTp7c3RhcnQ6IjAwMDAiLGVuZDoiMjM1OSJ9fSxncHM6IjE5LjEyOTA3Niw3Mi44MjU4MDMiLGFkZHJlc3M6e3N0cmVldDoiMSAmIDIsQU1BUiBKWU9USSBDSFMuQkxERy4sT1BQLk5BTkQgS1JJUEEgSEFMTCIsbG9jYWxpdHk6IkFOREhFUkkgRk9VUiBCVU5HTE9XIEFNQVIgSllPVEkgQ0hTIixjaXR5OiJtb2NrLXNlbGxlci1jaXR5IixzdGF0ZToibW9jay1zdGF0ZSIsYXJlYV9jb2RlOiI0MDAwNTMifSxjaXJjbGU6e2dwczoiMTkuMTI5MDc2LDcyLjgyNTgwMyIscmFkaXVzOnt1bml0OiJrbSIsdmFsdWU6IjMifX19LF0sZnVsZmlsbG1lbnRzOlt7aWQ6IkYxIix0eXBlOiJEZWxpdmVyeSIsY29udGFjdDp7cGhvbmU6Ijk1OTQ2NjM3MTAiLGVtYWlsOiJub2JvZHlAbm9tYWlsLmNvbSJ9fSx7aWQ6IkYyIix0eXBlOiJTZWxmLVBpY2t1cCIsY29udGFjdDp7cGhvbmU6Ijk1OTQ2NjM5OTkiLGVtYWlsOiJtb2NrQG5vbWFpbC5jb20ifX0se2lkOiJGMzI4MjIiLHR5cGU6IkJ1eWVyLURlbGl2ZXJ5Iixjb250YWN0OntwaG9uZToiOTU5NDY2Mzg4OCIsZW1haWw6Im1vY2syQG5vbWFpbC5jb20ifX0sXSxpdGVtczpbe2Rlc2NyaXB0b3I6e25hbWU6IlBsYWluIEF0dGEiLGNvZGU6IjE6OTc4MDIwMTM3OTYyIixzeW1ib2w6Imh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLHNob3J0X2Rlc2M6IlBsYWluIEF0dGEiLGxvbmdfZGVzYzoiUGxhaW4gQXR0YSIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdfSxyYXRpbmc6IjQuMCIscHJpY2U6e2N1cnJlbmN5OiJJTlIiLHZhbHVlOiIyMDAuMDAiLG1heGltdW1fdmFsdWU6IjIwMC4wMCJ9LHF1YW50aXR5Ont1bml0aXplZDp7bWVhc3VyZTp7dW5pdDoia2lsb2dyYW0iLHZhbHVlOiIzIn19LGF2YWlsYWJsZTp7Y291bnQ6Ijk5In0sbWF4aW11bTp7Y291bnQ6Ijk5In19LGNhdGVnb3J5X2lkOiJBdHRhLCBGbG91cnMgYW5kIFNvb2ppIixmdWxmaWxsbWVudF9pZDoiRjEiLGxvY2F0aW9uX2lkOiJMMSIsIkBvbmRjL29yZy9yZXR1cm5hYmxlIjohMCwiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjohMCwiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiJQN0QiLCJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiExLCJAb25kYy9vcmcvdGltZV90b19zaGlwIjoiUFQ1TSIsIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjohMCwiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoiUmFtZXNoLHJhbWVzaEBhYmMuY29tLDE4MDA0MjU0NDQ0IiwiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjp7bWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiJJVEMiLG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoiSVRDIFF1YWxpdHkgQ2FyZSBDZWxsLFAuTyBCb3ggTm8uNTkyLEJhbmdhbG9yZS01NjAwMDUiLGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiJBc2hpcndhZCBBdHRhIixtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiIwMS8yMDIzIn0sdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkxIixwYXJlbnRfaXRlbV9pZDoiVjEifSx7ZGVzY3JpcHRvcjp7bmFtZToiUGxhaW4gQXR0YSIsY29kZToiMTo0NzQxMzE4MTkxODk0IixzeW1ib2w6Imh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLHNob3J0X2Rlc2M6IlBsYWluIEF0dGEiLGxvbmdfZGVzYzoiUGxhaW4gQXR0YSIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdfSxyYXRpbmc6IjMuMCIscHJpY2U6e2N1cnJlbmN5OiJJTlIiLHZhbHVlOiIzMDAuMDAiLG1heGltdW1fdmFsdWU6IjMwMC4wMCJ9LHF1YW50aXR5Ont1bml0aXplZDp7bWVhc3VyZTp7dW5pdDoia2lsb2dyYW0iLHZhbHVlOiI1In19LGF2YWlsYWJsZTp7Y291bnQ6Ijk5In0sbWF4aW11bTp7Y291bnQ6Ijk5In19LGNhdGVnb3J5X2lkOiJBdHRhLCBGbG91cnMgYW5kIFNvb2ppIixmdWxmaWxsbWVudF9pZDoiRjEiLGxvY2F0aW9uX2lkOiJMMSIsIkBvbmRjL29yZy9yZXR1cm5hYmxlIjohMCwiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjohMCwiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiJQN0QiLCJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiExLCJAb25kYy9vcmcvdGltZV90b19zaGlwIjoiUFQ1TSIsIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjohMCwiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoiUmFtZXNoLHJhbWVzaEBhYmMuY29tLDE4MDA0MjU0NDQ0IiwiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjp7bWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiJJVEMiLG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoiSVRDIFF1YWxpdHkgQ2FyZSBDZWxsLFAuTyBCb3ggTm8uNTkyLEJhbmdhbG9yZS01NjAwMDUiLGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiJBc2hpcndhZCBBdHRhIixtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiIwMS8yMDIzIn0sdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkyIixwYXJlbnRfaXRlbV9pZDoiVjEifSx7ZGVzY3JpcHRvcjp7bmFtZToiQWxwaGFuc28gTWFuZ28iLGNvZGU6IjE6NzM5NjM3Mzk3NTk1NyIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIixzaG9ydF9kZXNjOiJBbHBoYW5zbyIsbG9uZ19kZXNjOiJBbHBoYW5zbyBNYW5nbyBmcmVzaGx5IGhhbmQgcGlja2VkIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl19LHJhdGluZzoiMy4wIixwcmljZTp7Y3VycmVuY3k6IklOUiIsdmFsdWU6IjI1MC4wMCIsbWF4aW11bV92YWx1ZToiMjUwLjAwIn0scXVhbnRpdHk6e3VuaXRpemVkOnttZWFzdXJlOnt1bml0OiJraWxvZ3JhbSIsdmFsdWU6IjEifX0sYXZhaWxhYmxlOntjb3VudDoiOTkifSxtYXhpbXVtOntjb3VudDoiOTkifX0sY2F0ZWdvcnlfaWQ6IkZydWl0cyBhbmQgVmVnZXRhYmxlcyIsZnVsZmlsbG1lbnRfaWQ6IkYxIixsb2NhdGlvbl9pZDoiTDEiLCJAb25kYy9vcmcvcmV0dXJuYWJsZSI6ITEsIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6ITEsIkBvbmRjL29yZy9yZXR1cm5fd2luZG93IjoiUDFEIiwiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjohMSwiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6IlBUNU0iLCJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6ITAsIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6IlJhbWVzaCxyYW1lc2hAYWJjLmNvbSwxODAwNDI1NDQ0NCIsdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkzIn0sXSx0YWdzOlt7Y29kZToidGltaW5nIixsaXN0Olt7Y29kZToidHlwZSIsdmFsdWU6IkFsbCJ9LHtjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImRheV9mcm9tIix2YWx1ZToiMSJ9LHtjb2RlOiJkYXlfdG8iLHZhbHVlOiI3In0se2NvZGU6InRpbWVfZnJvbSIsdmFsdWU6IjAwMDAifSx7Y29kZToidGltZV90byIsdmFsdWU6IjIzNTkifSxdfSx7Y29kZToic2VydmljZWFiaWxpdHkiLGxpc3Q6W3tjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImNhdGVnb3J5Iix2YWx1ZToiQXR0YSwgRmxvdXJzIGFuZCBTb29qaSJ9LHtjb2RlOiJ0eXBlIix2YWx1ZToiMTEifSx7Y29kZToidW5pdCIsdmFsdWU6InBpbmNvZGUifSx7Y29kZToidmFsIix2YWx1ZToiNTYwMDAxLTU2MDA3Niw1NjAwODMifSxdfSx7Y29kZToic2VydmljZWFiaWxpdHkiLGxpc3Q6W3tjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImNhdGVnb3J5Iix2YWx1ZToiRnJ1aXRzIGFuZCBWZWdldGFibGVzIn0se2NvZGU6InR5cGUiLHZhbHVlOiIxMCJ9LHtjb2RlOiJ2YWwiLHZhbHVlOiIzIn0se2NvZGU6InVuaXQiLHZhbHVlOiJrbSJ9LF19LF0sY2F0ZWdvcmllczpbe2lkOiJWMSIsdGFnczpbe2NvZGU6InR5cGUiLGxpc3Q6W3tjb2RlOiJ0eXBlIix2YWx1ZToidmFyaWFudF9ncm91cCJ9LF19LHtjb2RlOiJhdHRyIixsaXN0Olt7Y29kZToibmFtZSIsdmFsdWU6Iml0ZW0ucXVhbnRpdHkudW5pdGl6ZWQubWVhc3VyZSJ9LHtjb2RlOiJzZXEiLHZhbHVlOiIxIn0sXX0sXSxkZXNjcmlwdG9yOntuYW1lOiJQbGFpbiBBdHRhIn19LF0saWQ6IlAxIixvZmZlcnM6W3tpZDoiRkxBVDUwIixkZXNjcmlwdG9yOntjb2RlOiJkaXNjb3VudCIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL29mZmVyMi1iYW5uZXIucG5nIl19LGxvY2F0aW9uX2lkczpbIkwxIl0saXRlbV9pZHM6WyJJMSIsIkkyIiwiSTMiXSx0aW1lOntsYWJlbDoidmFsaWQiLHJhbmdlOntzdGFydDoiMjAyNC0xMi0yM1QwNjo1NTo0NS4wMzVaIixlbmQ6IjIwMzAtMTItMjNUMDg6MTI6MTUuMDMzWiJ9fSx0YWdzOlt7Y29kZToicXVhbGlmaWVyIixsaXN0Olt7Y29kZToibWluX3ZhbHVlIix2YWx1ZToiMTAwLjAwIn0sXX0se2NvZGU6ImJlbmVmaXQiLGxpc3Q6W3tjb2RlOiJ2YWx1ZV90eXBlIix2YWx1ZToiYW1vdW50In0se2NvZGU6InZhbHVlIix2YWx1ZToiLTUwLjAwIn0sXX0se2NvZGU6Im1ldGEiLGxpc3Q6W3tjb2RlOiJhZGRpdGl2ZSIsdmFsdWU6Im5vIn0se2NvZGU6ImF1dG8iLHZhbHVlOiJubyJ9LF19LF19LHtpZDoiYnV5MmdldDMiLGRlc2NyaXB0b3I6e2NvZGU6ImJ1eVhnZXRZIixpbWFnZXM6WyJodHRwczovL3NucC5jb20vaW1hZ2VzL29mZmVyMS1iYW5uZXIud2VicCJdfSxsb2NhdGlvbl9pZHM6WyJMMSJdLGNhdGVnb3J5X2lkczpbXSxpdGVtX2lkczpbIkkxIiwiSTIiLCJJMyJdLHRpbWU6e2xhYmVsOiJ2YWxpZCIscmFuZ2U6e3N0YXJ0OiIyMDI1LTAxLTAxVDE2OjAwOjAwLjAwMFoiLGVuZDoiMjAzMC0wMS0wMVQyMzowMDowMC4wMDBaIn19LHRhZ3M6W3tjb2RlOiJxdWFsaWZpZXIiLGxpc3Q6W3tjb2RlOiJpdGVtX2NvdW50Iix2YWx1ZToiMiJ9LF19LHtjb2RlOiJiZW5lZml0IixsaXN0Olt7Y29kZToiaXRlbV9jb3VudCIsdmFsdWU6IjEifSx7Y29kZToiaXRlbV9pZCIsdmFsdWU6IkkyIn0se2NvZGU6Iml0ZW1fdmFsdWUiLHZhbHVlOiIwLjAwIn0sXX0se2NvZGU6Im1ldGEiLGxpc3Q6W3tjb2RlOiJhZGRpdGl2ZSIsdmFsdWU6Im5vIn0se2NvZGU6ImF1dG8iLHZhbHVlOiJubyJ9LF19LF19LF19LF19fX0=
       inputs:
-        id: ExampleInputId
+        id: ret10_grocery_select
         jsonSchema:
           $schema: http://json-schema.org/draft-07/schema#
           type: object
@@ -142,47 +142,47 @@ steps:
             fulfillments:
               - id: F1
                 type: Delivery
-                '@ondc/org/provider_name': LSP or Provider Name
+                '@ondc/org/provider_name': Seller Business
                 tracking: true
                 '@ondc/org/category': Standard Delivery
-                '@ondc/org/TAT': P2D
+                '@ondc/org/TAT': P3D
                 state:
                   descriptor:
                     code: Serviceable
             quote:
               price:
-                value: '100.00'
+                value: '2756.75'
                 currency: INR
               breakup:
                 - '@ondc/org/item_id': I1
                   '@ondc/org/item_quantity':
                     count: 1
-                  title: Plain Atta
+                  title: Butterfly Beautiful 13 Gold Necklace
                   '@ondc/org/title_type': item
                   price:
                     currency: INR
-                    value: '100.00'
+                    value: '2260.00'
                   item:
                     quantity:
                       available:
                         count: '99'
                       maximum:
-                        count: '99'
+                        count: '10'
                     price:
                       currency: INR
-                      value: '100.00'
+                      value: '2260.00'
                 - '@ondc/org/item_id': F1
                   title: Delivery charges
                   '@ondc/org/title_type': delivery
                   price:
                     currency: INR
-                    value: '00.00'
+                    value: '493.75'
                 - '@ondc/org/item_id': F1
                   title: Convenience Fee
                   '@ondc/org/title_type': misc
                   price:
                     currency: INR
-                    value: '00.00'
+                    value: '3.00'
               ttl: P1D
             items:
               - id: I1
@@ -243,17 +243,17 @@ steps:
             billing:
               address:
                 building: my building name or house
-                city: Mumbai
-                state: Maharashtra
+                city: Bengaluru
+                state: Karnataka
                 country: IND
-                area_code: '400053'
+                area_code: '560027'
                 locality: my street name
                 name: my house or door or floor
               phone: '9898989898'
-              name: ONDC buyer
+              name: ONDC Buyer
               email: nobody@nomail.com
-              created_at: '2024-12-23T07:01:43.145Z'
-              updated_at: '2024-12-23T07:01:43.145Z'
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
             fulfillments:
               - id: F1
                 type: Delivery
@@ -262,15 +262,15 @@ steps:
                     email: nobody@nomail.com
                     phone: '9898989898'
                   location:
-                    gps: 19.131140,72.834091
+                    gps: 12.966545,77.592074
                     address:
-                      building: mock-building
-                      city: mock-city
-                      state: mock-state
+                      building: my building name or house
+                      city: Bengaluru
+                      state: Karnataka
                       country: IND
-                      area_code: '400053'
-                      locality: mock-locality
-                      name: mock-house-name
+                      area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
       saveData:
         transactionId: $.context.transaction_id
         latestTimestamp: $.context.timestamp
@@ -328,17 +328,17 @@ steps:
             billing:
               address:
                 building: my building name or house
-                city: Mumbai
-                state: Maharashtra
+                city: Bengaluru
+                state: Karnataka
                 country: IND
-                area_code: '400053'
+                area_code: '560027'
                 locality: my street name
                 name: my house or door or floor
               phone: '9898989898'
-              name: ONDC buyer
+              name: ONDC Buyer
               email: nobody@nomail.com
-              created_at: '2024-12-23T07:01:43.145Z'
-              updated_at: '2024-12-23T07:01:43.145Z'
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
             fulfillments:
               - id: F1
                 type: Delivery
@@ -347,19 +347,19 @@ steps:
                     email: nobody@nomail.com
                     phone: '9898989898'
                   location:
-                    gps: 19.131140,72.834091
+                    gps: 12.966545,77.592074
                     address:
                       building: my building name or house
-                      city: Mumbai
-                      state: Maharashtra
+                      city: Bengaluru
+                      state: Karnataka
                       country: IND
-                      area_code: '400053'
+                      area_code: '560027'
                       locality: my street name
                       name: my house or door or floor
                 tracking: true
             quote:
               price:
-                value: '100'
+                value: '2756.75'
                 currency: INR
               breakup:
                 - '@ondc/org/item_id': I1
@@ -369,23 +369,23 @@ steps:
                   '@ondc/org/title_type': item
                   price:
                     currency: INR
-                    value: '100.00'
+                    value: '2260.00'
                   item:
                     price:
                       currency: INR
-                      value: '100.00'
-                - '@ondc/org/item_id': I1
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
                   title: Delivery charges
                   '@ondc/org/title_type': delivery
                   price:
                     currency: INR
-                    value: '00.00'
-                - '@ondc/org/item_id': I1
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
                   title: Convenience Fee
                   '@ondc/org/title_type': misc
                   price:
                     currency: INR
-                    value: '00.00'
+                    value: '3.00'
               ttl: P1D
             payment:
               '@ondc/org/buyer_app_finder_fee_type': percent
@@ -405,9 +405,9 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: 00ABCCH7409R1ZZ
+                    value: 37ABACA6712B1Z6
                   - code: provider_tax_number
-                    value: ABCDE1234F
+                    value: USYDS6482D
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -456,17 +456,17 @@ steps:
             billing:
               address:
                 building: my building name or house
-                city: Mumbai
-                state: Maharashtra
+                city: Bengaluru
+                state: Karnataka
                 country: IND
-                area_code: '400053'
+                area_code: '560027'
                 locality: my street name
                 name: my house or door or floor
               phone: '9898989898'
               name: ONDC buyer
               email: nobody@nomail.com
-              created_at: '2024-12-23T07:01:43.145Z'
-              updated_at: '2024-12-23T07:01:43.145Z'
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
             items:
               - id: I1
                 quantity:
@@ -477,8 +477,7 @@ steps:
               locations:
                 - id: L1
             fulfillments:
-              - '@ondc/org/category': Standard Delivery
-                '@ondc/org/TAT': P2D
+              - '@ondc/org/TAT': P3D
                 id: F1
                 tracking: true
                 end:
@@ -488,67 +487,66 @@ steps:
                   person:
                     name: ONDC Buyer
                   location:
-                    gps: 19.131140,72.834091
+                    gps: 12.966545,77.592074
                     address:
                       building: my building name or house
-                      city: Mumbai
-                      state: Maharashtra
+                      city: Bengaluru
+                      state: Karnataka
                       country: IND
-                      area_code: '400053'
+                      area_code: '560027'
                       locality: my street name
                       name: my house or door or floor
                 type: Delivery
             payment:
               params:
-                amount: '100.00'
+                amount: '2756.75'
                 currency: INR
                 transaction_id: order_PjggJp7MccQmAa
               status: PAID
               type: ON-ORDER
               collected_by: BAP
+              uri: https://razorpay.com/
+              tl_method: http/get
               '@ondc/org/buyer_app_finder_fee_type': percent
               '@ondc/org/buyer_app_finder_fee_amount': '3.0'
-              '@ondc/org/settlement_basis': delivery
-              '@ondc/org/settlement_window': P1D
-              '@ondc/org/withholding_amount': '00.00'
               '@ondc/org/settlement_details':
                 - settlement_counterparty: seller-app
                   settlement_phase: sale-amount
                   settlement_type: neft
                   beneficiary_name: xxxx
-                  settlement_bank_account_no: xxxx
-                  settlement_ifsc_code: xxxx
-                  bank_name: xxxx
-                  branch_name: xxxx
+                  settlement_bank_account_no: XXXX
+                  settlement_ifsc_code: XXXX
+                  bank_name: XXXX
+                  branch_name: XXXX
             quote:
               price:
                 currency: INR
-                value: '100.00'
+                value: '2756.75'
               breakup:
                 - '@ondc/org/item_id': I1
                   '@ondc/org/item_quantity':
                     count: 1
-                  title: Plain Atta
+                  title: Butterfly Beutiful 13 Gold Necklace
                   '@ondc/org/title_type': item
                   price:
                     currency: INR
-                    value: '100'
+                    value: '2260.00'
                   item:
                     price:
                       currency: INR
-                      value: '100.00'
-                - '@ondc/org/item_id': I1
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
                   title: Delivery charges
                   '@ondc/org/title_type': delivery
                   price:
                     currency: INR
-                    value: '00.00'
-                - '@ondc/org/item_id': I1
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
                   title: Convenience Fee
                   '@ondc/org/title_type': misc
                   price:
                     currency: INR
-                    value: '00.00'
+                    value: '3.00'
               ttl: P1D
             tags:
               - code: bpp_terms
@@ -556,9 +554,9 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: np-number
+                    value: 37ABACA6712B1Z6
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: USYDS6482D
               - code: bap_terms
                 list:
                   - code: accept_bpp_terms
@@ -567,9 +565,9 @@ steps:
                     value: >-
                       https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                   - code: tax_number
-                    value: 00ABCCH7409R1ZZ
-            created_at: '2024-12-23T07:03:30.516Z'
-            updated_at: '2024-12-23T07:03:30.516Z'
+                    value: 37BABCA6712B1Z6
+            created_at: '2024-08-14T09:11:00.810Z'
+            updated_at: '2024-08-14T09:11:00.810Z'
       saveData:
         transactionId: $.context.transaction_id
         latestTimestamp: $.context.timestamp
@@ -629,44 +627,40 @@ steps:
             billing:
               address:
                 building: my building name or house
-                city: Mumbai
-                state: Maharashtra
+                city: Bengaluru
+                state: Karnataka
                 country: IND
-                area_code: '400053'
+                area_code: '560027'
                 locality: my street name
                 name: my house or door or floor
               phone: '9898989898'
               name: ONDC buyer
               email: nobody@nomail.com
-              created_at: '2024-12-23T07:01:43.145Z'
-              updated_at: '2024-12-23T07:01:43.145Z'
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
             fulfillments:
               - id: F1
-                '@ondc/org/provider_name': Store 1
+                '@ondc/org/provider_name': Seller Business
+                '@ondc/org/TAT': P3D
                 state:
                   descriptor:
                     code: Pending
                 type: Delivery
                 tracking: true
-                '@ondc/org/TAT': PT60M
                 start:
                   location:
                     id: L1
                     descriptor:
-                      name: ABC Store
-                    gps: 19.129076,72.825803
+                      name: Seller Business
+                    gps: 12.925810,77.583624
                     address:
                       building: my building name or house
-                      city: Mumbai
-                      state: Maharashtra
                       country: IND
-                      area_code: '400053'
                       locality: my street name
+                      city: Bengaluru
+                      area_code: '560011'
+                      state: Karnataka
                       name: my house or door or floor
-                  time:
-                    range:
-                      start: '2024-12-23T07:03:32.230Z'
-                      end: '2024-12-23T07:08:32.230Z'
                   contact:
                     phone: '9594663710'
                     email: nobody@nomail.com
@@ -677,54 +671,50 @@ steps:
                     email: nobody@nomail.com
                     phone: '9898989898'
                   location:
-                    gps: 19.131140,72.834091
+                    gps: 12.966545,77.592074
                     address:
                       building: my building name or house
-                      city: Mumbai
-                      state: Maharashtra
+                      city: Bengaluru
+                      state: Karnataka
                       country: IND
-                      area_code: '400053'
+                      area_code: '560027'
                       locality: my street name
                       name: my house or door or floor
-                  time:
-                    range:
-                      start: '2024-12-23T07:33:32.230Z'
-                      end: '2024-12-23T07:04:32.230Z'
             quote:
               price:
                 currency: INR
-                value: '100.00'
+                value: '2756.75'
               breakup:
                 - '@ondc/org/item_id': I1
                   '@ondc/org/item_quantity':
                     count: 1
-                  title: Plain Atta
+                  title: Butterfly Beautiful 13 Gold Necklace
                   '@ondc/org/title_type': item
                   price:
                     currency: INR
-                    value: '100'
+                    value: '2260.00'
                   item:
                     price:
                       currency: INR
-                      value: '100.00'
-                - '@ondc/org/item_id': I1
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
                   title: Delivery charges
                   '@ondc/org/title_type': delivery
                   price:
                     currency: INR
-                    value: '00.00'
-                - '@ondc/org/item_id': I1
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
                   title: Convenience Fee
                   '@ondc/org/title_type': misc
                   price:
                     currency: INR
-                    value: '00.00'
+                    value: '3.00'
               ttl: P1D
             payment:
               params:
-                amount: '100.00'
+                amount: '2756.75'
                 currency: INR
-                transaction_id: order_PjggJp7MccQmAa
+                transaction_id: order_Okj0iihMKJod0V
               status: PAID
               type: ON-ORDER
               collected_by: BAP
@@ -745,20 +735,17 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: 00ABCCH7409R1ZZ
+                    value: 37ABACA6712B1Z6
                   - code: provider_tax_number
-                    value: ABCDE1234F
+                    value: USYDS6482D
                   - code: accept_bap_terms
                     value: 'Y'
               - code: bap_terms
                 list:
-                  - code: static_terms
-                    value: >-
-                      https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                   - code: tax_number
-                    value: gst_number_of_buyerNP
-            created_at: '2024-12-23T07:03:30.516Z'
-            updated_at: '2024-12-23T07:03:32.230Z'
+                    value: 37ABACA6712B1Z6
+            created_at: '2024-08-14T09:11:00.810Z'
+            updated_at: '2024-08-14T09:11:01.239Z'
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -778,7 +765,7 @@ steps:
     description: please add relevant description
     mock:
       generate: >-
-        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyX2lkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpbnB1dHMgPSBzZXNzaW9uRGF0YS51c2VyX2lucHV0czsKICBpZiAoIWlucHV0cykgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIGNvbnN0IHJlYXNvbklkID0gaW5wdXRzPy5jYW5jZWxsYXRpb25fcmVhc29uX2lkID8/ICIwMDEiOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UuY2FuY2VsbGF0aW9uX3JlYXNvbl9pZCA9IHJlYXNvbklkOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXJfaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIAogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -810,7 +797,33 @@ steps:
         bppUri: $.context.bpp_uri
         message_id: $.context.message_id
         cancellation_reason_id: $.message.cancellation_reason_id
-      inputs: {}
+      inputs:
+        id: ExampleInputId
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            cancellation_reason_id:
+              type: string
+              enum:
+                - '002'
+                - '011'
+                - '013'
+                - '014'
+                - '016'
+                - '018'
+                - '021'
+                - '022'
+                - '023'
+                - '024'
+                - '051'
+                - '052'
+                - '053'
+              default: '002'
+          required:
+            - cancellation_reason_id
+          additionalProperties: false
+          default: {}
   - api: on_cancel
     action_id: on_cancel
     owner: BPP
@@ -843,36 +856,36 @@ steps:
           order:
             state: Cancelled
             items:
-              - id: 839cb128-34bd-444d-9ffc-05903e62b35a
+              - id: I1
                 quantity:
                   count: 0
-                fulfillment_id: c4b2dd74-9ccd-4ec1-b8f8-58d36dd8ce33
-              - id: 839cb128-34bd-444d-9ffc-05903e62b35a
+                fulfillment_id: F1
+              - id: I1
                 quantity:
-                  count: 1
-                fulfillment_id: 0b562bd4-57fa-452b-8573-142d18ad326e
+                  count: 2
+                fulfillment_id: C1
             provider:
-              id: 5b3981a7-512d-4ac4-bd75-ea48eff89a53
+              id: P1
               locations:
-                - id: 668e238e1b106d310473ddb0
+                - id: L1
             billing:
               address:
-                name: Tanishq Mishra
-                building: New_Building
-                locality: 6th Cross Road
+                building: my building name or house
                 city: Bengaluru
                 state: Karnataka
                 country: IND
                 area_code: '560027'
-              phone: '9399788618'
-              name: Tanishq Mishra
-              email: mishratanishq619@gmail.com
-              created_at: '2024-08-08T07:40:37.071Z'
-              updated_at: '2024-08-08T07:40:37.071Z'
+                locality: my street name
+                name: my house or door or floor
+              phone: '9898989898'
+              name: ONDC buyer
+              email: nobody@nomail.com
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
             fulfillments:
-              - id: c4b2dd74-9ccd-4ec1-b8f8-58d36dd8ce33
+              - id: F1
                 '@ondc/org/provider_name': Seller Business
-                '@ondc/org/TAT': PT96H
+                '@ondc/org/TAT': P3D
                 state:
                   descriptor:
                     code: Cancelled
@@ -880,48 +893,51 @@ steps:
                 tracking: false
                 start:
                   location:
-                    id: 668e238e1b106d310473ddb0
+                    id: L1
                     descriptor:
                       name: Seller Business
-                    gps: 12.92580970146639,77.58362409712942
+                    gps: 12.925810,77.583624
                     address:
-                      locality: Jayanagar
+                      building: my building name or house
+                      country: IND
+                      locality: my street name
                       city: Bengaluru
                       area_code: '560011'
                       state: Karnataka
+                      name: my house or door or floor
                   contact:
-                    email: test@gmail.com
-                    phone: '9876543210'
+                    phone: '9594663710'
+                    email: nobody@nomail.com
                 end:
                   person:
-                    name: Tanishq Mishra
+                    name: John Doe
                   contact:
-                    email: mishratanishq619@gmail.com
-                    phone: '9399788618'
+                    email: nobody@nomail.com
+                    phone: '9898989898'
                   location:
                     gps: 12.966545,77.592074
                     address:
-                      name: Tanishq Mishra
-                      building: New_Building
-                      locality: 6th Cross Road
+                      building: my building name or house
                       city: Bengaluru
                       state: Karnataka
                       country: IND
                       area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
                 tags:
                   - code: cancel_request
                     list:
                       - code: reason_id
                         value: '001'
                       - code: initiated_by
-                        value: buyerNP.com
+                        value: dev-automation.ondc.org
                   - code: precancel_state
                     list:
                       - code: fulfillment_state
                         value: Pending
                       - code: updated_at
-                        value: '2024-08-08T07:41:05.125Z'
-              - id: 0b562bd4-57fa-452b-8573-142d18ad326e
+                        value: '2024-08-14T09:11:01.239Z'
+              - id: C1
                 type: Cancel
                 state:
                   descriptor:
@@ -930,19 +946,9 @@ steps:
                   - code: quote_trail
                     list:
                       - code: type
-                        value: misc
-                      - code: id
-                        value: c4b2dd74-9ccd-4ec1-b8f8-58d36dd8ce33
-                      - code: currency
-                        value: INR
-                      - code: value
-                        value: '-100.00'
-                  - code: quote_trail
-                    list:
-                      - code: type
                         value: delivery
                       - code: id
-                        value: c4b2dd74-9ccd-4ec1-b8f8-58d36dd8ce33
+                        value: F1
                       - code: currency
                         value: INR
                       - code: value
@@ -950,9 +956,19 @@ steps:
                   - code: quote_trail
                     list:
                       - code: type
+                        value: misc
+                      - code: id
+                        value: F1
+                      - code: currency
+                        value: INR
+                      - code: value
+                        value: '-3.00'
+                  - code: quote_trail
+                    list:
+                      - code: type
                         value: item
                       - code: id
-                        value: 839cb128-34bd-444d-9ffc-05903e62b35a
+                        value: I1
                       - code: currency
                         value: INR
                       - code: value
@@ -960,40 +976,38 @@ steps:
             quote:
               price:
                 currency: INR
-                value: '0'
+                value: '0.00'
               breakup:
-                - '@ondc/org/item_id': 839cb128-34bd-444d-9ffc-05903e62b35a
+                - '@ondc/org/item_id': I1
                   '@ondc/org/item_quantity':
-                    count: 0
-                  title: Butterfly Beutiful 12 Gold Necklace
+                    count: 1
+                  title: Butterfly Beautiful 13 Gold Necklace
                   '@ondc/org/title_type': item
                   price:
                     currency: INR
-                    value: '0'
+                    value: '0.00'
                   item:
                     price:
                       currency: INR
                       value: '2260.00'
-                - '@ondc/org/item_id': c4b2dd74-9ccd-4ec1-b8f8-58d36dd8ce33
+                - '@ondc/org/item_id': F1
                   title: Delivery charges
                   '@ondc/org/title_type': delivery
                   price:
                     currency: INR
-                    value: '0'
-                - '@ondc/org/item_id': c4b2dd74-9ccd-4ec1-b8f8-58d36dd8ce33
+                    value: '0.00'
+                - '@ondc/org/item_id': F1
                   title: Convenience Fee
                   '@ondc/org/title_type': misc
                   price:
                     currency: INR
-                    value: '0'
+                    value: '0.00'
               ttl: P1D
             payment:
-              uri: https://razorpay.com/
-              tl_method: http/get
               params:
-                amount: '2853.75'
+                amount: '2756.75'
                 currency: INR
-                transaction_id: 043e401b-8dc8-457a-b4cd-5a32180c4e05
+                transaction_id: order_Okj0iihMKJod0V
               status: PAID
               type: ON-ORDER
               collected_by: BAP
@@ -1003,17 +1017,16 @@ steps:
                 - settlement_counterparty: seller-app
                   settlement_phase: sale-amount
                   settlement_type: neft
-                  upi_address: gft@oksbi
-                  settlement_bank_account_no: '34234343434'
-                  settlement_ifsc_code: SBIN0000123
-                  beneficiary_name: Seller Name
-                  bank_name: SBI
-                  branch_name: Nellore
-            id: 2024-08-08-250723
-            created_at: '2024-08-08T07:41:04.771Z'
-            updated_at: '2024-08-08T07:41:39.871Z'
+                  beneficiary_name: xxxx
+                  settlement_bank_account_no: xxxx
+                  settlement_ifsc_code: xxxx
+                  bank_name: xxxx
+                  branch_name: xxxx
+            id: O1
+            created_at: '2024-08-14T09:11:00.810Z'
+            updated_at: '2024-08-14T09:12:02.456Z'
             cancellation:
-              cancelled_by: buyerNP.com
+              cancelled_by: dev-automation.ondc.org
               reason:
                 id: '001'
       saveData:
@@ -1034,9 +1047,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: select
-        timestamp: '2026-02-04T13:05:29.527Z'
+        timestamp: '2026-02-17T06:10:34.173Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 44ccba8a-21aa-4b1d-b8bb-f9cd3efb9896
+        message_id: f7e0094f-6fdf-4693-a16b-4ca8a475026a
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1056,21 +1069,26 @@ transaction_history:
               quantity:
                 count: 1
               location: L1
+            - id: I1
+              quantity:
+                count: 1
+              location: L1
           fulfillments:
             - end:
                 location:
                   gps: 19.129076,72.825803
                   address:
                     area_code: '400053'
+    action: select
     saved_info: {}
   - action_id: on_select
     payload:
       context:
         domain: ONDC:RET12
         action: on_select
-        timestamp: '2026-02-04T13:05:29.552Z'
+        timestamp: '2026-02-17T06:10:34.198Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 44ccba8a-21aa-4b1d-b8bb-f9cd3efb9896
+        message_id: f7e0094f-6fdf-4693-a16b-4ca8a475026a
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1088,15 +1106,32 @@ transaction_history:
           fulfillments:
             - id: F1
               type: Delivery
-              '@ondc/org/provider_name': LSP or Provider Name
+              '@ondc/org/provider_name': Seller Business
               tracking: true
               '@ondc/org/category': Standard Delivery
-              '@ondc/org/TAT': P2D
+              '@ondc/org/TAT': P3D
               state:
                 descriptor:
                   code: Serviceable
           quote:
             breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '200.00'
+                item:
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '200.00'
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 1
@@ -1128,20 +1163,23 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '400.00'
             ttl: P1D
           items:
             - id: I1
               fulfillment_id: F1
+            - id: I1
+              fulfillment_id: F1
+    action: on_select
     saved_info: {}
   - action_id: init
     payload:
       context:
         domain: ONDC:RET12
         action: init
-        timestamp: '2026-02-04T13:05:29.566Z'
+        timestamp: '2026-02-17T06:10:34.213Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 6df35e56-9682-489e-af60-db1112df62e5
+        message_id: 1455c01c-60dc-41b5-a8d6-20ae3916499c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1161,20 +1199,24 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
-              city: Mumbai
-              state: Maharashtra
+              city: Bengaluru
+              state: Karnataka
               country: IND
-              area_code: '400053'
+              area_code: '560027'
               locality: my street name
               name: my house or door or floor
             phone: '9898989898'
-            name: ONDC buyer
+            name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:05:24.569Z'
-            updated_at: '2026-02-04T13:05:24.569Z'
+            created_at: '2026-02-17T06:10:29.218Z'
+            updated_at: '2026-02-17T06:10:29.218Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1193,15 +1235,16 @@ transaction_history:
                     locality: mock-locality
                     name: mock-house-name
           offers: []
+    action: init
     saved_info: {}
   - action_id: on_init
     payload:
       context:
         domain: ONDC:RET12
         action: on_init
-        timestamp: '2026-02-04T13:05:29.579Z'
+        timestamp: '2026-02-17T06:10:34.226Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 6df35e56-9682-489e-af60-db1112df62e5
+        message_id: 1455c01c-60dc-41b5-a8d6-20ae3916499c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1221,20 +1264,24 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
-              city: Mumbai
-              state: Maharashtra
+              city: Bengaluru
+              state: Karnataka
               country: IND
-              area_code: '400053'
+              area_code: '560027'
               locality: my street name
               name: my house or door or floor
             phone: '9898989898'
-            name: ONDC buyer
+            name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:05:24.569Z'
-            updated_at: '2026-02-04T13:05:24.569Z'
+            created_at: '2026-02-17T06:10:29.218Z'
+            updated_at: '2026-02-17T06:10:29.218Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1267,6 +1314,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '200.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '200.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1281,7 +1340,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '400.00'
             ttl: P1D
           payment:
             '@ondc/org/buyer_app_finder_fee_type': percent
@@ -1301,18 +1360,19 @@ transaction_history:
                 - code: np_type
                   value: MSN
                 - code: tax_number
-                  value: 00ABCCH7409R1ZZ
+                  value: 37ABACA6712B1Z6
                 - code: provider_tax_number
-                  value: ABCDE1234F
+                  value: USYDS6482D
+    action: on_init
     saved_info: {}
   - action_id: confirm
     payload:
       context:
         domain: ONDC:RET12
         action: confirm
-        timestamp: '2026-02-04T13:05:29.591Z'
+        timestamp: '2026-02-17T06:10:34.238Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 33137cd5-ebed-47a8-947d-7675abc9beb8
+        message_id: 8d20c384-81ba-4ba2-81c8-c8321e95d40e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1323,23 +1383,27 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '600245'
+          id: '870062'
           state: Created
           billing:
             address:
               building: my building name or house
-              city: Mumbai
-              state: Maharashtra
+              city: Bengaluru
+              state: Karnataka
               country: IND
-              area_code: '400053'
+              area_code: '560027'
               locality: my street name
               name: my house or door or floor
             phone: '9898989898'
-            name: ONDC buyer
+            name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:05:24.569Z'
-            updated_at: '2026-02-04T13:05:24.569Z'
+            created_at: '2026-02-17T06:10:29.218Z'
+            updated_at: '2026-02-17T06:10:29.218Z'
           items:
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
             - id: I1
               fulfillment_id: F1
               quantity:
@@ -1369,31 +1433,42 @@ transaction_history:
                     name: mock-house-name
               tracking: true
               '@ondc/org/category': Standard Delivery
-              '@ondc/org/TAT': P2D
+              '@ondc/org/TAT': P3D
           payment:
             params:
-              amount: '200.00'
+              amount: '400.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
             type: ON-ORDER
             collected_by: BAP
+            uri: https://razorpay.com/
+            tl_method: http/get
             '@ondc/org/buyer_app_finder_fee_type': percent
             '@ondc/org/buyer_app_finder_fee_amount': '3.0'
-            '@ondc/org/settlement_basis': delivery
-            '@ondc/org/settlement_window': P1D
-            '@ondc/org/withholding_amount': '00.00'
             '@ondc/org/settlement_details':
               - settlement_counterparty: seller-app
                 settlement_phase: sale-amount
                 settlement_type: neft
                 beneficiary_name: xxxx
-                settlement_bank_account_no: xxxx
-                settlement_ifsc_code: xxxx
-                bank_name: xxxx
-                branch_name: xxxx
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
           quote:
             breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '200.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '200.00'
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 1
@@ -1420,7 +1495,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '400.00'
             ttl: P1D
           tags:
             - code: bpp_terms
@@ -1432,18 +1507,19 @@ transaction_history:
                   value: >-
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
-                  value: 00ABCCH7409R1ZZ
-          created_at: '2026-02-04T13:05:29.594Z'
-          updated_at: '2026-02-04T13:05:29.594Z'
+                  value: 37BABCA6712B1Z6
+          created_at: '2026-02-17T06:10:34.243Z'
+          updated_at: '2026-02-17T06:10:34.243Z'
+    action: confirm
     saved_info: {}
   - action_id: on_confirm
     payload:
       context:
         domain: ONDC:RET12
         action: on_confirm
-        timestamp: '2026-02-04T13:05:29.600Z'
+        timestamp: '2026-02-17T06:10:34.250Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 33137cd5-ebed-47a8-947d-7675abc9beb8
+        message_id: 8d20c384-81ba-4ba2-81c8-c8321e95d40e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1454,7 +1530,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '600245'
+          id: '870062'
           state: Created
           provider:
             id: P1
@@ -1465,20 +1541,24 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
-              city: Mumbai
-              state: Maharashtra
+              city: Bengaluru
+              state: Karnataka
               country: IND
-              area_code: '400053'
+              area_code: '560027'
               locality: my street name
               name: my house or door or floor
             phone: '9898989898'
-            name: ONDC buyer
+            name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:05:24.569Z'
-            updated_at: '2026-02-04T13:05:24.569Z'
+            created_at: '2026-02-17T06:10:29.218Z'
+            updated_at: '2026-02-17T06:10:29.218Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1486,7 +1566,7 @@ transaction_history:
               state:
                 descriptor:
                   code: Pending
-              '@ondc/org/TAT': P2D
+              '@ondc/org/TAT': P3D
               '@ondc/org/provider_name': Store 1
               start:
                 location:
@@ -1533,6 +1613,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '200.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '200.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1547,39 +1639,38 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '400.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '400.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
             type: ON-ORDER
             collected_by: BAP
+            uri: https://razorpay.com/
+            tl_method: http/get
             '@ondc/org/buyer_app_finder_fee_type': percent
             '@ondc/org/buyer_app_finder_fee_amount': '3.0'
-            '@ondc/org/settlement_basis': delivery
-            '@ondc/org/settlement_window': P1D
-            '@ondc/org/withholding_amount': '00.00'
             '@ondc/org/settlement_details':
               - settlement_counterparty: seller-app
                 settlement_phase: sale-amount
                 settlement_type: neft
                 beneficiary_name: xxxx
-                settlement_bank_account_no: xxxx
-                settlement_ifsc_code: xxxx
-                bank_name: xxxx
-                branch_name: xxxx
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
           tags:
             - code: bpp_terms
               list:
                 - code: np_type
                   value: MSN
                 - code: tax_number
-                  value: 00ABCCH7409R1ZZ
+                  value: 37ABACA6712B1Z6
                 - code: provider_tax_number
-                  value: ABCDE1234F
+                  value: USYDS6482D
                 - code: accept_bap_terms
                   value: 'Y'
             - code: bap_terms
@@ -1588,18 +1679,19 @@ transaction_history:
                   value: >-
                     https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
-                  value: 00ABCCH7409R1ZZ
-          created_at: '2026-02-04T13:05:29.594Z'
-          updated_at: '2026-02-04T13:05:29.605Z'
+                  value: 37BABCA6712B1Z6
+          created_at: '2026-02-17T06:10:34.243Z'
+          updated_at: '2026-02-17T06:10:34.252Z'
+    action: on_confirm
     saved_info: {}
   - action_id: cancel
     payload:
       context:
         domain: ONDC:RET12
         action: cancel
-        timestamp: '2026-02-04T13:05:29.612Z'
+        timestamp: '2026-02-17T06:10:36.552Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 6ac60c30-1598-459b-a5b4-5b1cdbb3fbc2
+        message_id: def2b1ed-e22e-4c0a-b036-6b98091faf6c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1609,17 +1701,18 @@ transaction_history:
         city: '*'
         core_version: 1.2.0
       message:
-        order_id: '600245'
-        cancellation_reason_id: '051'
+        order_id: '870062'
+        cancellation_reason_id: '016'
+    action: cancel
     saved_info: {}
   - action_id: on_cancel
     payload:
       context:
         domain: ONDC:RET12
         action: on_cancel
-        timestamp: '2026-02-04T13:05:29.624Z'
+        timestamp: '2026-02-17T06:10:36.570Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 6ac60c30-1598-459b-a5b4-5b1cdbb3fbc2
+        message_id: def2b1ed-e22e-4c0a-b036-6b98091faf6c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1637,6 +1730,14 @@ transaction_history:
               quantity:
                 count: 0
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 0
+            - id: I1
+              quantity:
+                count: 1
+              fulfillment_id: cancel_id_8189
+            - id: I1
               quantity:
                 count: 1
               fulfillment_id: cancel_id_8189
@@ -1647,17 +1748,17 @@ transaction_history:
           billing:
             address:
               building: my building name or house
-              city: Mumbai
-              state: Maharashtra
+              city: Bengaluru
+              state: Karnataka
               country: IND
-              area_code: '400053'
+              area_code: '560027'
               locality: my street name
               name: my house or door or floor
             phone: '9898989898'
-            name: ONDC buyer
+            name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:05:24.569Z'
-            updated_at: '2026-02-04T13:05:24.569Z'
+            created_at: '2026-02-17T06:10:29.218Z'
+            updated_at: '2026-02-17T06:10:29.218Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1665,7 +1766,7 @@ transaction_history:
               state:
                 descriptor:
                   code: Cancelled
-              '@ondc/org/TAT': P2D
+              '@ondc/org/TAT': P3D
               '@ondc/org/provider_name': Store 1
               start:
                 location:
@@ -1702,7 +1803,7 @@ transaction_history:
                 - code: cancel_request
                   list:
                     - code: reason_id
-                      value: '051'
+                      value: '016'
                     - code: initiated_by
                       value: bap
                 - code: precancel_state
@@ -1710,7 +1811,7 @@ transaction_history:
                     - code: fulfillment_state
                       value: Pending
                     - code: updated_at
-                      value: '2026-02-04T13:05:29.633Z'
+                      value: '2026-02-17T06:10:36.576Z'
             - id: cancel_id_8189
               type: Cancel
               state:
@@ -1727,8 +1828,30 @@ transaction_history:
                       value: INR
                     - code: value
                       value: '-200.00'
+                - code: quote_trail
+                  list:
+                    - code: type
+                      value: item
+                    - code: id
+                      value: I1
+                    - code: currency
+                      value: INR
+                    - code: value
+                      value: '-200.00'
           quote:
             breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 0
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '200.00'
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 0
@@ -1759,33 +1882,33 @@ transaction_history:
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '400.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
             type: ON-ORDER
             collected_by: BAP
+            uri: https://razorpay.com/
+            tl_method: http/get
             '@ondc/org/buyer_app_finder_fee_type': percent
             '@ondc/org/buyer_app_finder_fee_amount': '3.0'
-            '@ondc/org/settlement_basis': delivery
-            '@ondc/org/settlement_window': P1D
-            '@ondc/org/withholding_amount': '00.00'
             '@ondc/org/settlement_details':
               - settlement_counterparty: seller-app
                 settlement_phase: sale-amount
                 settlement_type: neft
                 beneficiary_name: xxxx
-                settlement_bank_account_no: xxxx
-                settlement_ifsc_code: xxxx
-                bank_name: xxxx
-                branch_name: xxxx
-          id: '600245'
-          created_at: '2026-02-04T13:05:29.594Z'
-          updated_at: '2026-02-04T13:05:29.633Z'
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
+          id: '870062'
+          created_at: '2026-02-17T06:10:34.243Z'
+          updated_at: '2026-02-17T06:10:36.576Z'
           cancellation:
             cancelled_by: sample-bap-id
             reason:
-              id: '051'
+              id: '016'
+    action: on_cancel
     saved_info: {}
 validationLib: ''
 helperLib: ''
