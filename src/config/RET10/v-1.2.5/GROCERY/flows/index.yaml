@@ -1,6 +1,6 @@
 flows:
   - id: Discovery_Flow_full_catalog
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE",WORKBENCH]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", WORKBENCH]
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -387,7 +387,7 @@ flows:
         expect: false
         description: BPP sends the tracking information
   - id: Out_Of_Stock_Flow(Error-code)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
       - key: select
@@ -408,7 +408,7 @@ flows:
         expect: false
         description: BPP returns item breakup when item is out of stock
   - id: Cancellation_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
@@ -473,7 +473,7 @@ flows:
         expect: false
         description: Seller Accepts cancellation
   - id: RTO_And_Part_Cancellation_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (RTO and Part Cancellation)
     sequence:
       - key: select
@@ -580,7 +580,7 @@ flows:
         expect: false
         description: RTO delivered
   - id: Return_Flow
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Return)
     sequence:
       - key: select
@@ -715,7 +715,7 @@ flows:
         expect: false
         description: Update request delivered
   - id: Cash_On_Delivery_Flow
-    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Cash On Delivery)
     sequence:
       - key: select
@@ -822,7 +822,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Self_Pickup_Flow
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Self Pickup)
     sequence:
       - key: select
@@ -894,7 +894,7 @@ flows:
         expect: false
         description: Status updates - order self pickup complete
   - id: Slotted_Delivery_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Slotted Delivery)
     sequence:
       - key: select
@@ -987,7 +987,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Buyer_Delivery_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Delivery Flow)
     sequence:
       - key: select
@@ -1073,7 +1073,7 @@ flows:
         expect: false
         description: Buyer updates order delivered
   - id: Buyer_Instructions_And_Delivery_Update_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Instructions)
     sequence:
       - key: select
@@ -1294,7 +1294,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Forced_Cancellation_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -1424,7 +1424,7 @@ flows:
         expect: false
         description: settlement trail update
   - id: Commercial_Model_For_BNP/SNP_Flow
-    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Commercial model)
     sequence:
       - key: select
@@ -1491,7 +1491,7 @@ flows:
         expect: false
         description: BPP accepts order confirmation
   - id: Delivery_Flow_With_IGM(v-2.0.0)
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1582,7 +1582,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open
         type: issue
         label: open
@@ -1683,7 +1683,7 @@ flows:
         owner: BPP
         expect: false
   - id: Delivery_Flow_With_IGM_Rejection(v-2.0.0)
-    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select
@@ -1774,7 +1774,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open
         type: issue
         label: open
@@ -1994,7 +1994,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open_2
         type: issue
         label: open
@@ -2161,7 +2161,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open_100
         type: issue
         label: open
