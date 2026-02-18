@@ -13,6 +13,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -33,6 +38,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -45,7 +55,7 @@ flows:
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Rjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -71,7 +81,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
+      - key: on_search2_Rjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
@@ -83,6 +93,15 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -125,9 +144,9 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
-        pair: on_status_active_METRO_200
+        pair: on_status_complete_METRO_200
         owner: BAP
-      - key: on_status_active_METRO_200
+      - key: on_status_complete_METRO_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with the status of the order
@@ -145,6 +164,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -155,7 +179,7 @@ flows:
         type: search
         unsolicited: false
         description: User searches for metro from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Sjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -181,7 +205,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
+      - key: on_search2_Sjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
@@ -193,6 +217,15 @@ flows:
         description: User selects the SJT ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -227,9 +260,9 @@ flows:
         type: status
         unsolicited: false
         description: Consumer platform requests order status
-        pair: on_status_active_METRO_200
+        pair: on_status_complete_METRO_200
         owner: BAP
-      - key: on_status_active_METRO_200
+      - key: on_status_complete_METRO_200
         type: on_status
         unsolicited: false
         description: Provider platform responds with order status
@@ -249,6 +282,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -261,7 +299,7 @@ flows:
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Sjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -287,7 +325,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
+      - key: on_search2_Sjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
@@ -299,6 +337,15 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -337,7 +384,7 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO_200
+      - key: status_tech_cancel_METRO_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -353,9 +400,9 @@ flows:
         type: cancel
         unsolicited: false
         description: User cancels the booking
-        pair: on_cancel_METRO_200
+        pair: on_cancel_tech_METRO_200
         owner: BAP
-      - key: on_cancel_METRO_200
+      - key: on_cancel_tech_METRO_200
         type: on_cancel
         unsolicited: false
         description:
@@ -364,7 +411,7 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
-    tags: ["WORKBENCH","MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH","MANDATORY"]
     title: User cancellation joureney
     description: This flow illustrates the user cancellation flow where the buyer intends to cancel their metro ticket
     sequence:
@@ -377,6 +424,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -389,7 +441,7 @@ flows:
         description:
           User searches over the network to avail the metro mode of transport
           from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Sjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -415,7 +467,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
+      - key: on_search2_Sjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
@@ -427,6 +479,15 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -494,7 +555,7 @@ flows:
         pair: null
         owner: BPP
   - id: ORDER_TO_CONFIRM_MONTHLY_PASS
-    tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH", "MANDATORY"]
     title: Monthly Pass purchase journey
     description: This flow illustrates a Monthly Pass purchase from search to completion with cancellation
     sequence:
@@ -505,6 +566,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -515,7 +581,7 @@ flows:
         type: search
         unsolicited: false
         description: User searches for metro from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Sjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -541,7 +607,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
+      - key: on_search2_Sjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
@@ -553,6 +619,15 @@ flows:
         description: User selects the Monthly Pass
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -608,7 +683,7 @@ flows:
         pair: null
         owner: BPP
   - id: TICKET_EXPIRY_CANCELLATION_FLOW
-    tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH", "MANDATORY"]
     title: Cancellation after ticket expiry
     description: This flow illustrates full cancellation after ticket expires but remains unused
     sequence:
@@ -619,6 +694,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -629,7 +709,7 @@ flows:
         type: search
         unsolicited: false
         description: User searches for metro from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Sjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -667,6 +747,15 @@ flows:
         description: User selects the ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
@@ -734,7 +823,7 @@ flows:
         pair: null
         owner: BPP
   - id: MERCHANT_SIDE_CANCELLATION_FLOW
-    tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH", "MANDATORY"]
     title: Merchant Side Cancellation
     description: This flow illustrates seller-initiated cancellation due to ticket rejection, unavailability or delays
     sequence:
@@ -745,6 +834,11 @@ flows:
         pair: on_search1_METRO_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_200
         type: on_search
         unsolicited: false
@@ -755,7 +849,7 @@ flows:
         type: search
         unsolicited: false
         description: User searches for metro from one station to another
-        pair: on_search2_METRO_200
+        pair: on_search2_Sjt_METRO_200
         owner: BAP
         expect: false
         input:
@@ -781,7 +875,7 @@ flows:
             label: enter your bpp_id
             type: text
             payloadField: $.context.bpp_id
-      - key: on_search2_METRO_200
+      - key: on_search2_Sjt_METRO_200
         type: on_search
         unsolicited: false
         description: Response with start and end station code
@@ -793,6 +887,15 @@ flows:
         description: User selects the ticket
         pair: on_select_METRO_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_METRO_200
         type: on_select
         unsolicited: false
