@@ -1,7 +1,13 @@
 flows:
   - type: playground
     id: Discovery_flow_broadcast_search
-    tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
+    tags: ["WORKBENCH","MANDATORY"]
     description: Discovery Flow for EB2B
     config:
       $ref: "src/config/RETeB2B/v-1.2.5/EB2B/flows/Discovery_flow_broadcast_search.yaml"
+  - type: playground
+    id: Order_to_confirm_to_fulfillment
+    tags: ["WORKBENCH","MANDATORY"]
+    description:  Delivery Flow for EB2B
+    config:
+      $ref: "src/config/RETeB2B/v-1.2.5/EB2B/flows/Order_to_confirm_to_fulfillment.yaml"
