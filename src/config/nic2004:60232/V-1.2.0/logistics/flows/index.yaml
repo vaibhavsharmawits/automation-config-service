@@ -8,19 +8,19 @@ flows:
   - type: playground
     id: BUYER_SIDE_ORDER_CANCELLATION
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
-    description: Cancellation Flow for Grocery
+    description: Cancellation Flow for Logistics
     config:
       $ref: "src/config/nic2004:60232/V-1.2.0/logistics/flows/BUYER_SIDE_ORDER_CANCELLATION.yaml"
   - type: playground
-    id: order_flow_baseline (without rts)
+    id: ORDER_FLOW_BASELINE(without rts)
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
-    description: Discovery Flow (Full Catalog) for Grocery
+    description: Delivery Flow without rts Logistics
     config:
       $ref: "src/config/nic2004:60232/V-1.2.0/logistics/flows/ORDER_FLOW_BASELINE(without rts).yaml"
   - type: playground
-    id: RTO Flow
+    id: RTO_FLOW
     tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
-    description: Discovery Flow (Incremental Catalog) for Grocery
+    description: RTO Flow for Logistics
     config:
       $ref: "src/config/nic2004:60232/V-1.2.0/logistics/flows/RTO_FLOW.yaml"
   
