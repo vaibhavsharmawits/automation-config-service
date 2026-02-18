@@ -18,6 +18,14 @@ domain:
             flows: "./TRV11/V-2.0.1/bus/flows/index.yaml"
         supportedActions:
           $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
+      - id: 2.1.0
+        usecase:
+          - name: Metro
+            flows: "./TRV11/V-2.1.0/metro/flows/index.yaml"
+          - name: Bus
+            flows: "./TRV11/V-2.1.0/bus/flows/index.yaml"
+        supportedActions:
+          $ref: "src/config/TRV11/V-2.1.0/supportedActions/index.yaml"    
     supportedActions:
       $ref: "src/config/TRV11/V-2.0.1/supportedActions/index.yaml"
   - name: ONDC:TRV14
@@ -238,6 +246,10 @@ usecases:
           usecase:
             - Metro
             - Bus
+        - key: 2.1.0
+          usecase:
+            - Metro
+            - Bus    
     - key: ONDC:LOG10
       version:
         - key: 1.2.5
