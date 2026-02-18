@@ -430,7 +430,7 @@ flows:
         expect: false
         description: Buyer updates order delivered
   - id: Buyer_Instructions_And_Delivery_Update_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Instructions)
     sequence:
       - key: select
@@ -972,7 +972,7 @@ flows:
         expect: false
         description: Status updates - rto order delivered
   - id: Seller_Cred_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -1023,7 +1023,7 @@ flows:
         expect: false
         description: Seller Accepts confirmation
   - id: Force_Cancellation_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
