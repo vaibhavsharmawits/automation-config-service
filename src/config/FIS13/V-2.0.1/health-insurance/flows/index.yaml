@@ -1,6 +1,6 @@
 flows:
   - id: Health_Insurance_Application(Individual)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Health Insurance Application
     sequence:
       - key: search
@@ -69,7 +69,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: select2
         type: select
         force_proceed: true
@@ -100,7 +100,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -181,7 +181,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -202,7 +202,7 @@ flows:
         owner: BPP
         expect: false
   - id: Health_Insurance_Application(PRE-ORDER-Individual)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Health Insurance Application(PRE-ORDER)
     sequence:
       - key: search
@@ -242,37 +242,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: false
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: manual_review_form
-        label: form link provided in on_select
-        type: DYNAMIC_FORM
-        payloadField: "form_submission_id"
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
-      - key: on_status_unsolicited3
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false       
       - key: select2
         type: select
         unsolicited: false
@@ -303,7 +272,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -384,7 +353,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -396,9 +365,9 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false  
+        expect: false
   - id: Claim_Health_Insurance(Individual)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Claim Health Insurance
     sequence:
       - key: search
@@ -467,7 +436,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: select2
         type: select
         unsolicited: false
@@ -497,7 +466,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -578,7 +547,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false   
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -620,9 +589,9 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false  
+        expect: false
   - id: Renew_Health_Insurance(Individual)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Renew Health Insurance
     sequence:
       - key: search
@@ -691,7 +660,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: select2
         type: select
         unsolicited: false
@@ -721,7 +690,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -802,7 +771,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false   
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -838,9 +807,9 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false  
+        expect: false
   - id: Cancel_Health_Insurance(Individual)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Cancel Health Insurance
     sequence:
       - key: search
@@ -909,7 +878,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: select2
         type: select
         unsolicited: false
@@ -940,7 +909,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -1021,7 +990,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false   
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -1058,12 +1027,9 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  
-  
-
 
   - id: Health_Insurance_Application(Family)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Health Insurance Application
     sequence:
       - key: search2
@@ -1081,7 +1047,7 @@ flows:
         expect: false
       - key: family_information_form
         label: form link provided in on_search
-        type: HTML_FORM
+        type: HTML_FORM_MULTI
         unsolicited: false
         pair: null
         owner: BPP
@@ -1089,7 +1055,7 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: HTML_FORM_MULTI
             reference: $.reference_data.family_information_form
       - key: search4
         type: search
@@ -1133,7 +1099,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: select2
         type: select
         force_proceed: true
@@ -1164,7 +1130,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -1245,7 +1211,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -1266,7 +1232,7 @@ flows:
         owner: BPP
         expect: false
   - id: Health_Insurance_Application(PRE-ORDER-Family)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Health Insurance Application(PRE-ORDER)
     sequence:
       - key: search2
@@ -1284,7 +1250,7 @@ flows:
         expect: false
       - key: family_information_form
         label: form link provided in on_search
-        type: HTML_FORM
+        type: HTML_FORM_MULTI
         unsolicited: false
         pair: null
         owner: BPP
@@ -1292,7 +1258,7 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: HTML_FORM_MULTI
             reference: $.reference_data.family_information_form
       - key: search4
         type: search
@@ -1307,37 +1273,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: false
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: manual_review_form
-        label: form link provided in on_select
-        type: DYNAMIC_FORM
-        payloadField: "form_submission_id"
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-        input:
-          - name: form_submission_id
-            label: Enter Form Submission id
-            type: DYNAMIC_FORM
-            reference: $.reference_data.verification_status
-      - key: on_status_unsolicited3
-        type: on_status
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false       
       - key: select2
         type: select
         unsolicited: false
@@ -1368,7 +1303,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -1449,7 +1384,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false     
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -1461,9 +1396,9 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
   - id: Claim_Health_Insurance(Family)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Claim Health Insurance
     sequence:
       - key: search2
@@ -1481,7 +1416,7 @@ flows:
         expect: false
       - key: family_information_form
         label: form link provided in on_search
-        type: HTML_FORM
+        type: HTML_FORM_MULTI
         unsolicited: false
         pair: null
         owner: BPP
@@ -1489,7 +1424,7 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: HTML_FORM_MULTI
             reference: $.reference_data.family_information_form
       - key: search4
         type: search
@@ -1533,7 +1468,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: select2
         type: select
         unsolicited: false
@@ -1563,7 +1498,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false       
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -1644,7 +1579,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false   
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -1686,9 +1621,9 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
   - id: Renew_Health_Insurance(Family)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Renew Health Insurance
     sequence:
       - key: search2
@@ -1706,7 +1641,7 @@ flows:
         expect: false
       - key: family_information_form
         label: form link provided in on_search
-        type: HTML_FORM
+        type: HTML_FORM_MULTI
         unsolicited: false
         pair: null
         owner: BPP
@@ -1714,7 +1649,7 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: HTML_FORM_MULTI
             reference: $.reference_data.family_information_form
       - key: search4
         type: search
@@ -1758,7 +1693,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: select2
         type: select
         unsolicited: false
@@ -1788,7 +1723,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -1869,7 +1804,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false   
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -1905,9 +1840,9 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
   - id: Cancel_Health_Insurance(Family)
-    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Cancel Health Insurance
     sequence:
       - key: search2
@@ -1925,7 +1860,7 @@ flows:
         expect: false
       - key: family_information_form
         label: form link provided in on_search
-        type: HTML_FORM
+        type: HTML_FORM_MULTI
         unsolicited: false
         pair: null
         owner: BPP
@@ -1933,7 +1868,7 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
+            type: HTML_FORM_MULTI
             reference: $.reference_data.family_information_form
       - key: search4
         type: search
@@ -1977,7 +1912,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: select2
         type: select
         unsolicited: false
@@ -2008,7 +1943,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
       - key: init
         type: init
         unsolicited: false
@@ -2089,7 +2024,7 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false   
+        expect: false
       - key: confirm
         type: confirm
         unsolicited: false
@@ -2125,4 +2060,4 @@ flows:
         unsolicited: true
         pair: null
         owner: BPP
-        expect: false      
+        expect: false
