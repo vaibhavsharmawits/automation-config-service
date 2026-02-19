@@ -595,7 +595,7 @@ flows:
         expect: false
         description: Status updates - order delivered 
   - id: Purchase_Finance_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
     description: Retail 1.2.5 (purchase finance)
     sequence: &base_line_flow
       - key: select
@@ -688,7 +688,7 @@ flows:
         expect: false
         description: Status updates - order delivered 
   - id: Customization_Input_Text_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
     description: Retail 1.2.5 (Customization input)
     sequence: &base_line_flow
       - key: select_input
@@ -784,7 +784,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Force_Cancellation_Flow
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "MANDATORY","REPORTABLE"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
