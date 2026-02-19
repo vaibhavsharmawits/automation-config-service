@@ -1,6 +1,6 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
-    tags: ["WORKBENCH","MANDATORY"]
+    tags: ["WORKBENCH","OPTIONAL"]
     title: Fetching catalog of metro providers
     description: This flow illustrates the first search operation where the buyer app fetches for the catalog of metro providers consisting of routes and station codes available
     sequence:
@@ -25,7 +25,7 @@ flows:
         pair: null
         owner: BPP
   - id: ORDER_TO_CONFIRM_TO_JOURNEY_COMPLETION_RJT
-    tags: ["WORKBENCH","MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     title: Purchase journey of metro tickets
     description: This flow illustrates a typical purchase journey where the journey starts with searching for a specific pair of stations all the way to getting the ticket and completion of the journey
     sequence:
@@ -153,7 +153,7 @@ flows:
         pair: null
         owner: BPP
   - id: ORDER_TO_CONFIRM_TO_JOURNEY_COMPLETION_SJT
-    tags: ["WORKBENCH", "MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     title: Purchase journey of metro tickets (SJT)
     description: This flow illustrates a Single Journey Ticket purchase from search to journey completion
     sequence:
@@ -269,7 +269,7 @@ flows:
         pair: null
         owner: BPP
   - id: TECHNICAL_CANCELLATION_FLOW
-    tags: ["WORKBENCH","MANDATORY", REPORTABLE]
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     title: Technical cancellation journey
     description: This flow illustrates the technical cancellation flow where the buyer app attempts to cancel the order transaction due to technical issues/ failures (viz. on_confirm response beyond ttl)
     sequence:
@@ -411,7 +411,7 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
-    tags: ["WORKBENCH","MANDATORY"]
+    tags: ["WORKBENCH","OPTIONAL"]
     title: User cancellation joureney
     description: This flow illustrates the user cancellation flow where the buyer intends to cancel their metro ticket
     sequence:
@@ -555,7 +555,7 @@ flows:
         pair: null
         owner: BPP
   - id: ORDER_TO_CONFIRM_MONTHLY_PASS
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     title: Monthly Pass purchase journey
     description: This flow illustrates a Monthly Pass purchase from search to completion with cancellation
     sequence:
@@ -683,7 +683,7 @@ flows:
         pair: null
         owner: BPP
   - id: TICKET_EXPIRY_CANCELLATION_FLOW
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     title: Cancellation after ticket expiry
     description: This flow illustrates full cancellation after ticket expires but remains unused
     sequence:
@@ -823,7 +823,7 @@ flows:
         pair: null
         owner: BPP
   - id: MERCHANT_SIDE_CANCELLATION_FLOW
-    tags: ["WORKBENCH", "MANDATORY"]
+    tags: ["WORKBENCH", "OPTIONAL"]
     title: Merchant Side Cancellation
     description: This flow illustrates seller-initiated cancellation due to ticket rejection, unavailability or delays
     sequence:
