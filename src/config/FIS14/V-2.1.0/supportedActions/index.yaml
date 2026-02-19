@@ -1,0 +1,56 @@
+supportedActions:
+  null: ["search"]
+  search: ["on_search"]
+  on_search: ["select"]
+  select: ["on_select", "select"]
+  on_select: ["init", "select", "on_status", "status"]
+  init: ["on_init"]
+  on_init: ["confirm", "init"]
+  confirm: ["on_confirm"]
+  on_confirm: ["update", "on_update", "status", "on_status", "issue"]
+  update: ["on_update"]
+  on_update: ["update", "on_update", "status", "on_status", "issue"]
+  status: ["on_status"]
+  on_status: ["status", "init", "on_update", "update", "issue"]
+  issue: ["on_issue", "issue", "on_update", "on_status", "on_issue_status", "on_confirm"]
+  on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
+  on_issue_status: ["on_issue", "issue"]
+
+apiProperties:
+  search:
+    async_predecessor: null
+    transaction_partner: []
+  on_search:
+    async_predecessor: "search"
+    transaction_partner: ["search"]
+  select:
+    async_predecessor: null
+    transaction_partner: ["on_search"]
+  on_select:
+    async_predecessor: null
+    transaction_partner: ["select"]
+  init:
+    async_predecessor: null
+    transaction_partner: ["on_select"]
+  on_init:
+    async_predecessor: "init"
+    transaction_partner: ["init"]
+  confirm:
+    async_predecessor: null
+    transaction_partner: ["on_init"]
+  on_confirm:
+    async_predecessor: "confirm"
+    transaction_partner: ["confirm"]
+  update:
+    async_predecessor: null
+    transaction_partner: [] 
+  on_update:
+    async_predecessor: null
+    transaction_partner: ["update", "on_confirm"]
+  status:
+    async_predecessor: null
+    transaction_partner: ["on_select"]
+  on_status:
+    async_predecessor: null
+    transaction_partner: []
+
