@@ -1,0 +1,9 @@
+name: ONDC:FIS14
+versions:
+  - id: 2.1.0
+    reporting: false
+    usecase:
+      - name: MUTUAL FUNDS
+        flows: "./V-2.1.0/mutualFunds/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS14/V-2.1.0/supportedActions/index.yaml" 
