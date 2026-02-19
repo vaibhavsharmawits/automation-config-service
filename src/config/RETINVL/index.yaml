@@ -1,0 +1,9 @@
+name: ONDC:RETINVL
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: RETINVL
+        flows: "./v-1.2.5/RETINVL/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RETINVL/v-1.2.5/supportedActions/index.yaml"
