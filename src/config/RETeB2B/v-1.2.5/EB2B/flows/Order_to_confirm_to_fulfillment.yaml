@@ -17,7 +17,7 @@ steps:
     unsolicited: false
     description: First Select where items are selected
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCWNvbnN0IGlucHV0cyA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwoJY29uc29sZS5sb2coIkluY29taW5nIHNlc3Npb24gaW5wdXRzOiIsIEpTT04uc3RyaW5naWZ5KGlucHV0cykpOwoKCWlmICghaW5wdXRzKSB7CgkJY29uc29sZS5sb2coIk5vIGlucHV0cyBmb3VuZCwgcmV0dXJuaW5nIGRlZmF1bHQgcGF5bG9hZCIpOwoJCXJldHVybiBkZWZhdWx0UGF5bG9hZDsKCX0KCglpZiAoIWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgPSBbe31dOwoJfQoKCWlmICghZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0pIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IHt9OwoJfQoKCWNvbnN0IGN1c3RvbWVyID0gewoJCWlkOiBpbnB1dHMuY3VzdG9tZXJfaWQsCgkJcGVyc29uOiB7CgkJCWNyZWRzOiBbCgkJCQl7CgkJCQkJaWQ6IGlucHV0cy5nc3RfbnVtYmVyLAoJCQkJCXR5cGU6ICJHU1RJTiIKCQkJCX0sCgkJCQl7CgkJCQkJaWQ6IGlucHV0cy5wYW5fbnVtYmVyLAoJCQkJCXR5cGU6ICJQQU4iCgkJCQl9CgkJCV0KCQl9LAoJCW9yZ2FuaXphdGlvbjogewoJCQlkZXNjcmlwdG9yOiB7CgkJCQluYW1lOiBpbnB1dHMuc2hvcF9uYW1lCgkJCX0sCgkJCWFkZHJlc3M6IGlucHV0cy5hZGRyZXNzLAoJCQljaXR5OiB7CgkJCQljb2RlOiBpbnB1dHMuY2l0eV9jb2RlCgkJCX0sCgkJCXN0YXRlOiB7CgkJCQljb2RlOiBpbnB1dHMuc3RhdGVfY29kZQoJCQl9CgkJfSwKCQljb250YWN0OiB7CgkJCXBob25lOiBpbnB1dHMucGhvbmUsCgkJCWVtYWlsOiBpbnB1dHMuZW1haWwKCQl9Cgl9OwoKCWNvbnNvbGUubG9nKCJDb25zdHJ1Y3RlZCBjdXN0b21lciBvYmplY3Q6IiwgSlNPTi5zdHJpbmdpZnkoY3VzdG9tZXIpKTsKCglkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lciA9IGN1c3RvbWVyOwoKCWRlZmF1bHRQYXlsb2FkLmNvbnRleHQuY2l0eSA9IGlucHV0cy5jaXR5X2NvZGU7CgoJY29uc29sZS5sb2coIkN1c3RvbWVyIGFwcGVuZGVkIHRvIHBheWxvYWQiKTsKCWNvbnNvbGUubG9nKCJGaW5hbCBwYXlsb2FkOiIsIEpTT04uc3RyaW5naWZ5KGRlZmF1bHRQYXlsb2FkLCBudWxsLCAyKSk7CgoJcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cg==
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCWNvbnN0IGlucHV0cyA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwoJY29uc29sZS5sb2coIkluY29taW5nIHNlc3Npb24gaW5wdXRzOiIsIEpTT04uc3RyaW5naWZ5KGlucHV0cykpOwoKCWlmICghaW5wdXRzKSB7CgkJY29uc29sZS5sb2coIk5vIGlucHV0cyBmb3VuZCwgcmV0dXJuaW5nIGRlZmF1bHQgcGF5bG9hZCIpOwoJCXJldHVybiBkZWZhdWx0UGF5bG9hZDsKCX0KCglpZiAoIWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgPSBbe31dOwoJfQoKCWlmICghZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0pIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IHt9OwoJfQoKCWNvbnN0IGN1c3RvbWVyID0gewoJCWlkOiBpbnB1dHMuY3VzdG9tZXJfaWQsCgkJcGVyc29uOiB7CgkJCWNyZWRzOiBbCgkJCQl7CgkJCQkJaWQ6IGlucHV0cy5nc3RfbnVtYmVyLAoJCQkJCXR5cGU6ICJHU1RJTiIKCQkJCX0sCgkJCQl7CgkJCQkJaWQ6IGlucHV0cy5wYW5fbnVtYmVyLAoJCQkJCXR5cGU6ICJQQU4iCgkJCQl9CgkJCV0KCQl9LAoJCW9yZ2FuaXphdGlvbjogewoJCQlkZXNjcmlwdG9yOiB7CgkJCQluYW1lOiBpbnB1dHMuc2hvcF9uYW1lCgkJCX0sCgkJCWFkZHJlc3M6IGlucHV0cy5hZGRyZXNzLAoJCQljaXR5OiB7CgkJCQljb2RlOiBpbnB1dHMuY2l0eV9jb2RlCgkJCX0sCgkJCXN0YXRlOiB7CgkJCQljb2RlOiBpbnB1dHMuc3RhdGVfY29kZQoJCQl9CgkJfSwKCQljb250YWN0OiB7CgkJCXBob25lOiBpbnB1dHMucGhvbmUsCgkJCWVtYWlsOiBpbnB1dHMuZW1haWwKCQl9Cgl9OwoKCWNvbnNvbGUubG9nKCJDb25zdHJ1Y3RlZCBjdXN0b21lciBvYmplY3Q6IiwgSlNPTi5zdHJpbmdpZnkoY3VzdG9tZXIpKTsKCglkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lciA9IGN1c3RvbWVyOwoKCWRlZmF1bHRQYXlsb2FkLmNvbnRleHQuY2l0eSA9IGlucHV0cy5jaXR5X2NvZGU7CgoJCgljb25zb2xlLmxvZygiRmluYWwgcGF5bG9hZDoiLCBKU09OLnN0cmluZ2lmeShkZWZhdWx0UGF5bG9hZCwgbnVsbCwgMikpOwoJCgoJcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
@@ -59,10 +59,10 @@ steps:
         message_id: $.context.message_id
         selected_items: $.message.order.items[*]
         payload_city: $.context.city
-        selected_fulfillments: $.message.order.fulfillments[*]
         selected_offers: $.message.order.offers[*]
         provider: $.message.order.provider
         RET10Catalog: EVAL#ZnVuY3Rpb24gZ2V0U2F2ZShlKXtyZXR1cm57Y2F0YWxvZzp7ImJwcC9mdWxmaWxsbWVudHMiOlt7aWQ6IkYxIix0eXBlOiJEZWxpdmVyeSJ9LHtpZDoiRjIiLHR5cGU6IlNlbGYtUGlja3VwIn0se2lkOiJGMzI4MjIiLHR5cGU6IkJ1eWVyLURlbGl2ZXJ5In0sXSwiYnBwL2Rlc2NyaXB0b3IiOntuYW1lOiJNb2NrIFNlbGxlciBOUCIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIixzaG9ydF9kZXNjOiJTZWxsZXIgTWFya2V0cGxhY2UiLGxvbmdfZGVzYzoiU2VsbGVyIE1hcmtldHBsYWNlIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIl0sdGFnczpbe2NvZGU6ImJwcF90ZXJtcyIsbGlzdDpbe2NvZGU6Im5wX3R5cGUiLHZhbHVlOiJNU04ifSxdfSxdfSwiYnBwL3Byb3ZpZGVycyI6W3t0aW1lOntsYWJlbDoiZW5hYmxlIix0aW1lc3RhbXA6IjIwMjQtMTItMjNUMDY6NTU6NDUuMDM1WiJ9LHJhdGluZzoiNCIsZGVzY3JpcHRvcjp7bmFtZToiU3RvcmUgMSIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyIsc2hvcnRfZGVzYzoiU3RvcmUgMSIsbG9uZ19kZXNjOiJTdG9yZSAxIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyJdfSx0dGw6IlAxRCIsbG9jYXRpb25zOlt7aWQ6IkwxIix0aW1lOntsYWJlbDoiZW5hYmxlIix0aW1lc3RhbXA6IjIwMjQtMTItMjNUMDY6NTU6NDUuMDM1WiIsZGF5czoiMSwyLDMsNCw1LDYsNyIsc2NoZWR1bGU6e2hvbGlkYXlzOltdfSxyYW5nZTp7c3RhcnQ6IjAwMDAiLGVuZDoiMjM1OSJ9fSxncHM6IjE5LjEyOTA3Niw3Mi44MjU4MDMiLGFkZHJlc3M6e3N0cmVldDoiMSAmIDIsQU1BUiBKWU9USSBDSFMuQkxERy4sT1BQLk5BTkQgS1JJUEEgSEFMTCIsbG9jYWxpdHk6IkFOREhFUkkgRk9VUiBCVU5HTE9XIEFNQVIgSllPVEkgQ0hTIixjaXR5OiJtb2NrLXNlbGxlci1jaXR5IixzdGF0ZToibW9jay1zdGF0ZSIsYXJlYV9jb2RlOiI0MDAwNTMifSxjaXJjbGU6e2dwczoiMTkuMTI5MDc2LDcyLjgyNTgwMyIscmFkaXVzOnt1bml0OiJrbSIsdmFsdWU6IjMifX19LF0sZnVsZmlsbG1lbnRzOlt7aWQ6IkYxIix0eXBlOiJEZWxpdmVyeSIsY29udGFjdDp7cGhvbmU6Ijk1OTQ2NjM3MTAiLGVtYWlsOiJub2JvZHlAbm9tYWlsLmNvbSJ9fSx7aWQ6IkYyIix0eXBlOiJTZWxmLVBpY2t1cCIsY29udGFjdDp7cGhvbmU6Ijk1OTQ2NjM5OTkiLGVtYWlsOiJtb2NrQG5vbWFpbC5jb20ifX0se2lkOiJGMzI4MjIiLHR5cGU6IkJ1eWVyLURlbGl2ZXJ5Iixjb250YWN0OntwaG9uZToiOTU5NDY2Mzg4OCIsZW1haWw6Im1vY2syQG5vbWFpbC5jb20ifX0sXSxpdGVtczpbe2Rlc2NyaXB0b3I6e25hbWU6IlBsYWluIEF0dGEiLGNvZGU6IjE6OTc4MDIwMTM3OTYyIixzeW1ib2w6Imh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLHNob3J0X2Rlc2M6IlBsYWluIEF0dGEiLGxvbmdfZGVzYzoiUGxhaW4gQXR0YSIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdfSxyYXRpbmc6IjQuMCIscHJpY2U6e2N1cnJlbmN5OiJJTlIiLHZhbHVlOiIyMDAuMDAiLG1heGltdW1fdmFsdWU6IjIwMC4wMCJ9LHF1YW50aXR5Ont1bml0aXplZDp7bWVhc3VyZTp7dW5pdDoia2lsb2dyYW0iLHZhbHVlOiIzIn19LGF2YWlsYWJsZTp7Y291bnQ6Ijk5In0sbWF4aW11bTp7Y291bnQ6Ijk5In19LGNhdGVnb3J5X2lkOiJBdHRhLCBGbG91cnMgYW5kIFNvb2ppIixmdWxmaWxsbWVudF9pZDoiRjEiLGxvY2F0aW9uX2lkOiJMMSIsIkBvbmRjL29yZy9yZXR1cm5hYmxlIjohMCwiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjohMCwiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiJQN0QiLCJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiExLCJAb25kYy9vcmcvdGltZV90b19zaGlwIjoiUFQ1TSIsIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjohMCwiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoiUmFtZXNoLHJhbWVzaEBhYmMuY29tLDE4MDA0MjU0NDQ0IiwiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjp7bWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiJJVEMiLG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoiSVRDIFF1YWxpdHkgQ2FyZSBDZWxsLFAuTyBCb3ggTm8uNTkyLEJhbmdhbG9yZS01NjAwMDUiLGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiJBc2hpcndhZCBBdHRhIixtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiIwMS8yMDIzIn0sdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkxIixwYXJlbnRfaXRlbV9pZDoiVjEifSx7ZGVzY3JpcHRvcjp7bmFtZToiUGxhaW4gQXR0YSIsY29kZToiMTo0NzQxMzE4MTkxODk0IixzeW1ib2w6Imh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLHNob3J0X2Rlc2M6IlBsYWluIEF0dGEiLGxvbmdfZGVzYzoiUGxhaW4gQXR0YSIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdfSxyYXRpbmc6IjMuMCIscHJpY2U6e2N1cnJlbmN5OiJJTlIiLHZhbHVlOiIzMDAuMDAiLG1heGltdW1fdmFsdWU6IjMwMC4wMCJ9LHF1YW50aXR5Ont1bml0aXplZDp7bWVhc3VyZTp7dW5pdDoia2lsb2dyYW0iLHZhbHVlOiI1In19LGF2YWlsYWJsZTp7Y291bnQ6Ijk5In0sbWF4aW11bTp7Y291bnQ6Ijk5In19LGNhdGVnb3J5X2lkOiJBdHRhLCBGbG91cnMgYW5kIFNvb2ppIixmdWxmaWxsbWVudF9pZDoiRjEiLGxvY2F0aW9uX2lkOiJMMSIsIkBvbmRjL29yZy9yZXR1cm5hYmxlIjohMCwiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjohMCwiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiJQN0QiLCJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiExLCJAb25kYy9vcmcvdGltZV90b19zaGlwIjoiUFQ1TSIsIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjohMCwiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoiUmFtZXNoLHJhbWVzaEBhYmMuY29tLDE4MDA0MjU0NDQ0IiwiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjp7bWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiJJVEMiLG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoiSVRDIFF1YWxpdHkgQ2FyZSBDZWxsLFAuTyBCb3ggTm8uNTkyLEJhbmdhbG9yZS01NjAwMDUiLGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiJBc2hpcndhZCBBdHRhIixtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiIwMS8yMDIzIn0sdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkyIixwYXJlbnRfaXRlbV9pZDoiVjEifSx7ZGVzY3JpcHRvcjp7bmFtZToiQWxwaGFuc28gTWFuZ28iLGNvZGU6IjE6NzM5NjM3Mzk3NTk1NyIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIixzaG9ydF9kZXNjOiJBbHBoYW5zbyIsbG9uZ19kZXNjOiJBbHBoYW5zbyBNYW5nbyBmcmVzaGx5IGhhbmQgcGlja2VkIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl19LHJhdGluZzoiMy4wIixwcmljZTp7Y3VycmVuY3k6IklOUiIsdmFsdWU6IjI1MC4wMCIsbWF4aW11bV92YWx1ZToiMjUwLjAwIn0scXVhbnRpdHk6e3VuaXRpemVkOnttZWFzdXJlOnt1bml0OiJraWxvZ3JhbSIsdmFsdWU6IjEifX0sYXZhaWxhYmxlOntjb3VudDoiOTkifSxtYXhpbXVtOntjb3VudDoiOTkifX0sY2F0ZWdvcnlfaWQ6IkZydWl0cyBhbmQgVmVnZXRhYmxlcyIsZnVsZmlsbG1lbnRfaWQ6IkYxIixsb2NhdGlvbl9pZDoiTDEiLCJAb25kYy9vcmcvcmV0dXJuYWJsZSI6ITEsIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6ITEsIkBvbmRjL29yZy9yZXR1cm5fd2luZG93IjoiUDFEIiwiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjohMSwiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6IlBUNU0iLCJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6ITAsIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6IlJhbWVzaCxyYW1lc2hAYWJjLmNvbSwxODAwNDI1NDQ0NCIsdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkzIn0sXSx0YWdzOlt7Y29kZToidGltaW5nIixsaXN0Olt7Y29kZToidHlwZSIsdmFsdWU6IkFsbCJ9LHtjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImRheV9mcm9tIix2YWx1ZToiMSJ9LHtjb2RlOiJkYXlfdG8iLHZhbHVlOiI3In0se2NvZGU6InRpbWVfZnJvbSIsdmFsdWU6IjAwMDAifSx7Y29kZToidGltZV90byIsdmFsdWU6IjIzNTkifSxdfSx7Y29kZToic2VydmljZWFiaWxpdHkiLGxpc3Q6W3tjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImNhdGVnb3J5Iix2YWx1ZToiQXR0YSwgRmxvdXJzIGFuZCBTb29qaSJ9LHtjb2RlOiJ0eXBlIix2YWx1ZToiMTEifSx7Y29kZToidW5pdCIsdmFsdWU6InBpbmNvZGUifSx7Y29kZToidmFsIix2YWx1ZToiNTYwMDAxLTU2MDA3Niw1NjAwODMifSxdfSx7Y29kZToic2VydmljZWFiaWxpdHkiLGxpc3Q6W3tjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImNhdGVnb3J5Iix2YWx1ZToiRnJ1aXRzIGFuZCBWZWdldGFibGVzIn0se2NvZGU6InR5cGUiLHZhbHVlOiIxMCJ9LHtjb2RlOiJ2YWwiLHZhbHVlOiIzIn0se2NvZGU6InVuaXQiLHZhbHVlOiJrbSJ9LF19LF0sY2F0ZWdvcmllczpbe2lkOiJWMSIsdGFnczpbe2NvZGU6InR5cGUiLGxpc3Q6W3tjb2RlOiJ0eXBlIix2YWx1ZToidmFyaWFudF9ncm91cCJ9LF19LHtjb2RlOiJhdHRyIixsaXN0Olt7Y29kZToibmFtZSIsdmFsdWU6Iml0ZW0ucXVhbnRpdHkudW5pdGl6ZWQubWVhc3VyZSJ9LHtjb2RlOiJzZXEiLHZhbHVlOiIxIn0sXX0sXSxkZXNjcmlwdG9yOntuYW1lOiJQbGFpbiBBdHRhIn19LF0saWQ6IlAxIixvZmZlcnM6W3tpZDoiRkxBVDUwIixkZXNjcmlwdG9yOntjb2RlOiJkaXNjb3VudCIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL29mZmVyMi1iYW5uZXIucG5nIl19LGxvY2F0aW9uX2lkczpbIkwxIl0saXRlbV9pZHM6WyJJMSIsIkkyIiwiSTMiXSx0aW1lOntsYWJlbDoidmFsaWQiLHJhbmdlOntzdGFydDoiMjAyNC0xMi0yM1QwNjo1NTo0NS4wMzVaIixlbmQ6IjIwMzAtMTItMjNUMDg6MTI6MTUuMDMzWiJ9fSx0YWdzOlt7Y29kZToicXVhbGlmaWVyIixsaXN0Olt7Y29kZToibWluX3ZhbHVlIix2YWx1ZToiMTAwLjAwIn0sXX0se2NvZGU6ImJlbmVmaXQiLGxpc3Q6W3tjb2RlOiJ2YWx1ZV90eXBlIix2YWx1ZToiYW1vdW50In0se2NvZGU6InZhbHVlIix2YWx1ZToiLTUwLjAwIn0sXX0se2NvZGU6Im1ldGEiLGxpc3Q6W3tjb2RlOiJhZGRpdGl2ZSIsdmFsdWU6Im5vIn0se2NvZGU6ImF1dG8iLHZhbHVlOiJubyJ9LF19LF19LHtpZDoiYnV5MmdldDMiLGRlc2NyaXB0b3I6e2NvZGU6ImJ1eVhnZXRZIixpbWFnZXM6WyJodHRwczovL3NucC5jb20vaW1hZ2VzL29mZmVyMS1iYW5uZXIud2VicCJdfSxsb2NhdGlvbl9pZHM6WyJMMSJdLGNhdGVnb3J5X2lkczpbXSxpdGVtX2lkczpbIkkxIiwiSTIiLCJJMyJdLHRpbWU6e2xhYmVsOiJ2YWxpZCIscmFuZ2U6e3N0YXJ0OiIyMDI1LTAxLTAxVDE2OjAwOjAwLjAwMFoiLGVuZDoiMjAzMC0wMS0wMVQyMzowMDowMC4wMDBaIn19LHRhZ3M6W3tjb2RlOiJxdWFsaWZpZXIiLGxpc3Q6W3tjb2RlOiJpdGVtX2NvdW50Iix2YWx1ZToiMiJ9LF19LHtjb2RlOiJiZW5lZml0IixsaXN0Olt7Y29kZToiaXRlbV9jb3VudCIsdmFsdWU6IjEifSx7Y29kZToiaXRlbV9pZCIsdmFsdWU6IkkyIn0se2NvZGU6Iml0ZW1fdmFsdWUiLHZhbHVlOiIwLjAwIn0sXX0se2NvZGU6Im1ldGEiLGxpc3Q6W3tjb2RlOiJhZGRpdGl2ZSIsdmFsdWU6Im5vIn0se2NvZGU6ImF1dG8iLHZhbHVlOiJubyJ9LF19LF19LF19LF19fX0=
+        fulfillments: $.message.order.fulfillments
       inputs:
         id: RetailerCustomerInput
         jsonSchema:
@@ -115,7 +115,7 @@ steps:
     unsolicited: false
     description: On-select response to select
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBjcmVhdGVRdW90ZSgKICBzZWxlY3RlZEl0ZW1zLAogIHNlc3Npb25EYXRhLAogIGRlZmF1bHRQYXlsb2FkLAogIGZ1bGZpbGxtZW50cywKICBjYW5jZWxsZWQgPSBmYWxzZQopIHsKICBsZXQgdG90YWxQcmljZSA9IDA7CiAgbGV0IHRvdGFsUXVhbnRpdHkgPSAwOwogIGxldCBicmVha3VwT2JqZWN0ID0gW107CgogIGNvbnN0IGNhdGFsb2dJdGVtcyA9CiAgICBzZXNzaW9uRGF0YS5SRVQxMENhdGFsb2cuY2F0YWxvZ1siYnBwL3Byb3ZpZGVycyJdWzBdLml0ZW1zOwoKICBmb3IgKGNvbnN0IHNlbGVjdGVkSXRlbSBvZiBzZWxlY3RlZEl0ZW1zID8/IFtdKSB7CiAgICBjb25zdCBmdWxmaWxsbWVudCA9IGZ1bGZpbGxtZW50cy5maW5kKAogICAgICAoZikgPT4gZi5pZCA9PT0gc2VsZWN0ZWRJdGVtLmZ1bGZpbGxtZW50X2lkCiAgICApOwoKICAgIGlmICghZnVsZmlsbG1lbnQgfHwgZnVsZmlsbG1lbnQudHlwZSAhPT0gIkRlbGl2ZXJ5IikgY29udGludWU7CgogICAgY29uc3QgY2F0YWxvZ0l0ZW0gPSBjYXRhbG9nSXRlbXMuZmluZCgKICAgICAgKGkpID0+IGkuaWQgPT09IHNlbGVjdGVkSXRlbS5pZAogICAgKTsKICAgIGlmICghY2F0YWxvZ0l0ZW0pIGNvbnRpbnVlOwoKICAgIGNvbnN0IHF1YW50aXR5ID0gc2VsZWN0ZWRJdGVtLmNvdW50ID8/IDE7CiAgICBjb25zdCBpdGVtUHJpY2UgPQogICAgICBwYXJzZUZsb2F0KGNhdGFsb2dJdGVtLnByaWNlLnZhbHVlKSAqIHF1YW50aXR5OwoKICAgIHRvdGFsUHJpY2UgKz0gaXRlbVByaWNlOwogICAgdG90YWxRdWFudGl0eSArPSBxdWFudGl0eTsKCiAgICBicmVha3VwT2JqZWN0LnB1c2goewogICAgICAiQG9uZGMvb3JnL2l0ZW1faWQiOiBjYXRhbG9nSXRlbS5pZCwKICAgICAgIkBvbmRjL29yZy9pdGVtX3F1YW50aXR5IjogeyBjb3VudDogcXVhbnRpdHkgfSwKICAgICAgdGl0bGU6IGNhdGFsb2dJdGVtLmRlc2NyaXB0b3IubmFtZSwKICAgICAgIkBvbmRjL29yZy90aXRsZV90eXBlIjogIml0ZW0iLAogICAgICBwcmljZTogewogICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICB2YWx1ZTogaXRlbVByaWNlLnRvRml4ZWQoMiksCiAgICAgIH0sCiAgICAgIGl0ZW06IHsKICAgICAgICBxdWFudGl0eTogY2F0YWxvZ0l0ZW0ucXVhbnRpdHksCiAgICAgICAgcHJpY2U6IGNhdGFsb2dJdGVtLnByaWNlLAogICAgICB9LAogICAgfSk7CiAgfQoKICByZXR1cm4gewogICAgYnJlYWt1cDogYnJlYWt1cE9iamVjdCwKICAgIHByaWNlOiB7CiAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgdmFsdWU6IHRvdGFsUHJpY2UudG9GaXhlZCgyKSwKICAgIH0sCiAgICB0dGw6ICJQMUQiLAogIH07Cn0KCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoCiAgICBzZXNzaW9uRGF0YS5jdXN0b21lcl9pZCAmJgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHM/Lmxlbmd0aAogICkgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIgPSB7CiAgICAgIGlkOiBBcnJheS5pc0FycmF5KHNlc3Npb25EYXRhLmN1c3RvbWVyX2lkKQogICAgICAgID8gc2Vzc2lvbkRhdGEuY3VzdG9tZXJfaWRbMF0KICAgICAgICA6IHNlc3Npb25EYXRhLmN1c3RvbWVyX2lkLAogICAgfTsKICB9CiAgY29uc29sZS5sb2coInNlc3Npb24gZGF0YSIsSlNPTi5zdHJpbmdpZnkoc2Vzc2lvbkRhdGEpKQogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQo=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBjcmVhdGVRdW90ZSgKICBzZWxlY3RlZEl0ZW1zLAogIHNlc3Npb25EYXRhLAogIGRlZmF1bHRQYXlsb2FkLAogIGZ1bGZpbGxtZW50cywKICBjYW5jZWxsZWQgPSBmYWxzZQopIHsKICBsZXQgdG90YWxQcmljZSA9IDA7CiAgbGV0IGJyZWFrdXBPYmplY3QgPSBbXTsKCiAgY29uc3QgY2F0YWxvZ0l0ZW1zID0KICAgIHNlc3Npb25EYXRhPy5SRVQxMENhdGFsb2c/LmNhdGFsb2c/LlsiYnBwL3Byb3ZpZGVycyJdPy5bMF0/Lml0ZW1zIHx8IFtdOwoKICBmb3IgKGNvbnN0IHNlbGVjdGVkSXRlbSBvZiBzZWxlY3RlZEl0ZW1zID8/IFtdKSB7CiAgICBjb25zdCBmdWxmaWxsbWVudCA9IGZ1bGZpbGxtZW50cz8uZmluZCgKICAgICAgKGYpID0+IGYuaWQgPT09IHNlbGVjdGVkSXRlbS5mdWxmaWxsbWVudF9pZAogICAgKTsKCiAgICBpZiAoIWZ1bGZpbGxtZW50IHx8IGZ1bGZpbGxtZW50LnR5cGUgIT09ICJEZWxpdmVyeSIpIGNvbnRpbnVlOwoKICAgIGNvbnN0IGNhdGFsb2dJdGVtID0gY2F0YWxvZ0l0ZW1zLmZpbmQoCiAgICAgIChpKSA9PiBpLmlkID09PSBzZWxlY3RlZEl0ZW0uaWQKICAgICk7CiAgICBpZiAoIWNhdGFsb2dJdGVtKSBjb250aW51ZTsKCiAgICAvLyDinIUgRklYOiBoYW5kbGUgbmVzdGVkIHF1YW50aXR5IHN0cnVjdHVyZQogICAgY29uc3QgcXVhbnRpdHkgPQogICAgICBzZWxlY3RlZEl0ZW0/LnF1YW50aXR5Py5jb3VudCA/PwogICAgICBzZWxlY3RlZEl0ZW0/LmNvdW50ID8/CiAgICAgIDE7CgogICAgY29uc3QgaXRlbVByaWNlID0KICAgICAgcGFyc2VGbG9hdChjYXRhbG9nSXRlbS5wcmljZS52YWx1ZSkgKiBxdWFudGl0eTsKCiAgICB0b3RhbFByaWNlICs9IGl0ZW1QcmljZTsKCiAgICBicmVha3VwT2JqZWN0LnB1c2goewogICAgICAiQG9uZGMvb3JnL2l0ZW1faWQiOiBjYXRhbG9nSXRlbS5pZCwKICAgICAgIkBvbmRjL29yZy9pdGVtX3F1YW50aXR5IjogeyBjb3VudDogcXVhbnRpdHkgfSwKICAgICAgdGl0bGU6IGNhdGFsb2dJdGVtLmRlc2NyaXB0b3IubmFtZSwKICAgICAgIkBvbmRjL29yZy90aXRsZV90eXBlIjogIml0ZW0iLAogICAgICBwcmljZTogewogICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICB2YWx1ZTogaXRlbVByaWNlLnRvRml4ZWQoMiksCiAgICAgIH0sCiAgICAgIGl0ZW06IHsKICAgICAgICBxdWFudGl0eTogY2F0YWxvZ0l0ZW0ucXVhbnRpdHksCiAgICAgICAgcHJpY2U6IGNhdGFsb2dJdGVtLnByaWNlLAogICAgICB9LAogICAgfSk7CiAgfQoKICByZXR1cm4gewogICAgYnJlYWt1cDogYnJlYWt1cE9iamVjdCwKICAgIHByaWNlOiB7CiAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgdmFsdWU6IHRvdGFsUHJpY2UudG9GaXhlZCgyKSwKICAgIH0sCiAgICB0dGw6ICJQMUQiLAogIH07Cn0KCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnNvbGUubG9nKCJTRVNTSU9OIERBVEE6IiwgSlNPTi5zdHJpbmdpZnkoc2Vzc2lvbkRhdGEpKTsKCiAgY29uc3QgY3VzdG9tZXJJZCA9CiAgICBzZXNzaW9uRGF0YT8uZnVsZmlsbG1lbnRzPy5bMF0/LlswXT8uY3VzdG9tZXI/LmlkOwoKICBpZiAoCiAgICBjdXN0b21lcklkICYmCiAgICBkZWZhdWx0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI/LmZ1bGZpbGxtZW50cz8ubGVuZ3RoCiAgKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lciA9IHsKICAgICAgaWQ6IGN1c3RvbWVySWQsCiAgICB9OwogIH0KCiAgY29uc29sZS5sb2coIkZJTkFMIFBBWUxPQUQ6IiwgSlNPTi5zdHJpbmdpZnkoZGVmYXVsdFBheWxvYWQpKTsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0KCg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: ZnVuY3Rpb24gbWVldFJlcXVpcmVtZW50cyhzZXNzaW9uRGF0YSl7CiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2l0ZW1zCiAgaWYgKCFzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcyB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9pdGVtcyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXlsb2FkX2NpdHkKICBpZiAoIXNlc3Npb25EYXRhLnBheWxvYWRfY2l0eSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheWxvYWRfY2l0eSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUEFZTE9BRF9DSVRZIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cyB8fAogICAgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcHJvdmlkZXIKICBpZiAoIXNlc3Npb25EYXRhLnByb3ZpZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcHJvdmlkZXIgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BST1ZJREVSIiwKICAgIH07CiAgfQoKICAvLyBBbGwgcmVxdWlyZW1lbnRzIHNhdGlzZmllZAogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGRlc2NyaXB0aW9uOiAiQWxsIENoZWNrcyBwYXNzZXMgc3VjY2Vzc2Z1bGx5IiwKICAgIGNvZGU6ICIyMDAiLAogIH07Cn0K
       defaultPayload:
@@ -209,9 +209,9 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         quote: $.message.order.quote
-        on_select_fulfillments: $.message.order.fulfillments[*]
         on_select_items: $.message.order.items[*]
         tat: $.message.order.fulfillments[0]["@ondc/org/TAT"]
+        fulfillments: $.message.order.fulfillments
       inputs: {}
   - api: init
     action_id: init
@@ -220,7 +220,7 @@ steps:
     unsolicited: false
     description: "Init "
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIgPSB7CiAgICBpZDogc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzPy5bMF0/LmN1c3RvbWVyPy5pZAogIH07CgogIGNvbnNvbGUubG9nKCJzZXNzaW9uIGRhdGEiLCBKU09OLnN0cmluZ2lmeShzZXNzaW9uRGF0YSkpOwogIGNvbnNvbGUubG9nKAogICAgImN1c3RvbWVyIGlkIiwKICAgIHNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cz8uWzBdPy5jdXN0b21lcj8uaWQKICApOwoKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0KCg==
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCiAgY29uc29sZS5sb2coInNlc3Npb24gZGF0YSIsIEpTT04uc3RyaW5naWZ5KHNlc3Npb25EYXRhKSk7CgogIGNvbnN0IGN1c3RvbWVySWQgPQogICAgc2Vzc2lvbkRhdGE/LmZ1bGZpbGxtZW50cz8uWzBdPy5bMF0/LmN1c3RvbWVyPy5pZDsKCiAgY29uc29sZS5sb2coImN1c3RvbWVyIGlkIiwgY3VzdG9tZXJJZCk7CgogIGlmICgKICAgIGN1c3RvbWVySWQgJiYKICAgIGRlZmF1bHRQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcj8uZnVsZmlsbG1lbnRzPy5sZW5ndGgKICApIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0gewogICAgICBpZDogY3VzdG9tZXJJZAogICAgfTsKICB9CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQoKCg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpewogIC8vIENoZWNrIGZvciBzZWxlY3RlZF9pdGVtcwogIGlmICghc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXMgfHwgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gc2VsZWN0ZWRfaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX0lURU1TIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcGF5bG9hZF9jaXR5CiAgaWYgKCFzZXNzaW9uRGF0YS5wYXlsb2FkX2NpdHkpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBwYXlsb2FkX2NpdHkgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BBWUxPQURfQ0lUWSIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2Z1bGZpbGxtZW50cwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5zZWxlY3RlZF9mdWxmaWxsbWVudHMgfHwKICAgIHNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cy5sZW5ndGggPT09IDAKICApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9mdWxmaWxsbWVudHMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX0ZVTEZJTExNRU5UUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHByb3ZpZGVyCiAgaWYgKCFzZXNzaW9uRGF0YS5wcm92aWRlcikgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHByb3ZpZGVyIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19QUk9WSURFUiIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHF1b3RlCiAgaWYgKCFzZXNzaW9uRGF0YS5xdW90ZSB8fCB0eXBlb2Ygc2Vzc2lvbkRhdGEucXVvdGUgIT09ICJvYmplY3QiKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcXVvdGUgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1FVT1RFIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igb25fc2VsZWN0X2Z1bGZpbGxtZW50cwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzIHx8CiAgICBzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIG9uX3NlbGVjdF9mdWxmaWxsbWVudHMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX09OX1NFTEVDVF9GVUxGSUxMTUVOVFMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvbl9zZWxlY3RfaXRlbXMKICBpZiAoCiAgICAhc2Vzc2lvbkRhdGEub25fc2VsZWN0X2l0ZW1zIHx8CiAgICBzZXNzaW9uRGF0YS5vbl9zZWxlY3RfaXRlbXMubGVuZ3RoID09PSAwCiAgKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gb25fc2VsZWN0X2l0ZW1zIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19PTl9TRUxFQ1RfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciB0YXQKICBpZiAoIXNlc3Npb25EYXRhLnRhdCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHRhdCBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfVEFUIiwKICAgIH07CiAgfQoKICAvLyBBbGwgcmVxdWlyZW1lbnRzIHNhdGlzZmllZAogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGRlc2NyaXB0aW9uOiAiQWxsIENoZWNrcyBwYXNzZWQgc3VjY2Vzc2Z1bGx5IiwKICAgIGNvZGU6ICIyMDAiLAogIH07Cn0K
       defaultPayload:
@@ -266,9 +266,9 @@ steps:
               phone: "9876543210"
               created_at: 2025-01-08T09:00:00.000Z
               updated_at: 2025-01-08T09:00:00.000Z
-            payments:
-              - type: ON-FULFILLMENT
-                collected_by: BPP
+            payment:
+              type: ON-FULFILLMENT
+              collected_by: BPP
             fulfillments:
               - id: F1
                 type: Delivery
@@ -408,7 +408,7 @@ steps:
                     currency: INR
                     value: "0.00"
               ttl: P1D
-            payments:
+            payment:
               - type: ON-ORDER
                 collected_by: BPP
                 uri: https://snp.com/pg
@@ -1968,16 +1968,16 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: select
-        timestamp: 2026-02-19T08:27:02.336Z
+        timestamp: 2026-02-19T12:31:53.577Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 863564e1-32a6-47f6-9ba8-f456aaa03efe
+        message_id: 9d9e69dd-c30d-45e0-b211-3d973f02096b
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:011
         core_version: 1.2.5
       message:
         order:
@@ -1999,7 +1999,7 @@ transaction_history:
                   address:
                     area_code: "400053"
               customer:
-                id: CUST-2024-001234
+                id: CUST-2024-0015421
                 person:
                   creds:
                     - id: 29AABCU9603R1ZM
@@ -2011,7 +2011,7 @@ transaction_history:
                     name: Sharma Kirana Store
                   address: 123, MG Road, Koramangala
                   city:
-                    code: std:080
+                    code: std:011
                   state:
                     code: KA
                 contact:
@@ -2024,9 +2024,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_select
-        timestamp: 2026-02-19T08:27:02.382Z
+        timestamp: 2026-02-19T12:31:53.638Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 863564e1-32a6-47f6-9ba8-f456aaa03efe
+        message_id: 9d9e69dd-c30d-45e0-b211-3d973f02096b
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2054,6 +2054,8 @@ transaction_history:
               state:
                 descriptor:
                   code: Serviceable
+              customer:
+                id: CUST-2024-0015421
           quote:
             price:
               currency: INR
@@ -2110,9 +2112,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: init
-        timestamp: 2026-02-19T08:27:02.418Z
+        timestamp: 2026-02-19T12:31:53.698Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: aa0070d9-fbdb-4d6e-98b4-c28137feac71
+        message_id: 01093d06-10c7-42da-9f31-eaa9191f87fc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2149,9 +2151,9 @@ transaction_history:
             phone: "9876543210"
             created_at: 2025-01-08T09:00:00.000Z
             updated_at: 2025-01-08T09:00:00.000Z
-          payments:
-            - type: ON-FULFILLMENT
-              collected_by: BPP
+          payment:
+            type: ON-FULFILLMENT
+            collected_by: BPP
           fulfillments:
             - id: F1
               type: Delivery
@@ -2169,7 +2171,7 @@ transaction_history:
                 contact:
                   phone: "9876543210"
               customer:
-                id: CUST-2024-001234
+                id: CUST-2024-0015421
     action: init
     saved_info: {}
   - action_id: on_init
@@ -2177,9 +2179,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_init
-        timestamp: 2026-02-19T08:27:02.461Z
+        timestamp: 2026-02-19T12:31:53.761Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: aa0070d9-fbdb-4d6e-98b4-c28137feac71
+        message_id: 01093d06-10c7-42da-9f31-eaa9191f87fc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2231,8 +2233,7 @@ transaction_history:
                     area_code: "560001"
                 contact:
                   phone: "9876543210"
-              customer:
-                id: CUST-2024-001234
+              customer: {}
           quote:
             price:
               currency: INR
@@ -2275,7 +2276,7 @@ transaction_history:
                   currency: INR
                   value: "0.00"
             ttl: P1D
-          payments:
+          payment:
             - type: ON-ORDER
               collected_by: BPP
               uri: https://snp.com/pg
@@ -2312,9 +2313,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: confirm
-        timestamp: 2026-02-19T08:27:02.501Z
+        timestamp: 2026-02-19T12:31:53.823Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: b0cd4a1a-9a85-44ca-b369-0ef688b2261b
+        message_id: 81405b08-3d71-41ca-abbe-8339c729026f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2356,8 +2357,7 @@ transaction_history:
               type: Delivery
               "@ondc/org/TAT": P2D
               tracking: false
-              customer:
-                id: CUST-2024-001234
+              customer: {}
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -2463,9 +2463,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_confirm
-        timestamp: 2026-02-19T08:27:02.539Z
+        timestamp: 2026-02-19T12:31:53.901Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: b0cd4a1a-9a85-44ca-b369-0ef688b2261b
+        message_id: 81405b08-3d71-41ca-abbe-8339c729026f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2539,8 +2539,7 @@ transaction_history:
                 contact:
                   phone: "9876543210"
                   email: sharma.kirana@email.com
-              customer:
-                id: CUST-2024-001234
+              customer: {}
           quote:
             price:
               currency: INR
@@ -2631,9 +2630,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-02-19T08:27:02.577Z
+        timestamp: 2026-02-19T12:31:53.977Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 5d9d5ca9-0dc4-4b18-b4d0-25a117a9beb3
+        message_id: 695319a8-bc50-4994-91bc-c5f8bfe47de2
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2695,8 +2694,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-02-19T08:37:02.583Z
-                    end: 2026-02-19T08:47:02.583Z
+                    start: 2026-02-19T12:41:53.982Z
+                    end: 2026-02-19T12:51:53.982Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -2713,10 +2712,9 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-02-19T08:47:02.583Z
-                    end: 2026-02-21T08:37:02.583Z
-              customer:
-                id: CUST-2024-001234
+                    start: 2026-02-19T12:51:53.982Z
+                    end: 2026-02-21T12:41:53.982Z
+              customer: {}
               tags:
                 - code: routing
                   list:
@@ -2798,7 +2796,7 @@ transaction_history:
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
           created_at: 2025-01-08T09:05:00.000Z
-          updated_at: 2026-02-19T08:27:02.582Z
+          updated_at: 2026-02-19T12:31:53.982Z
     action: on_status
     saved_info: {}
   - action_id: on_status_packed
@@ -2806,9 +2804,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-02-19T08:27:02.617Z
+        timestamp: 2026-02-19T12:31:54.035Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 5331ce08-fd85-43ff-ac8e-d3c3676bc4c7
+        message_id: 286b810b-5ccf-46c3-b81e-5b7c01647b86
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2870,8 +2868,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-02-19T08:37:02.583Z
-                    end: 2026-02-19T08:47:02.583Z
+                    start: 2026-02-19T12:41:53.982Z
+                    end: 2026-02-19T12:51:53.982Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -2888,10 +2886,9 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-02-19T08:47:02.583Z
-                    end: 2026-02-21T08:37:02.583Z
-              customer:
-                id: CUST-2024-001234
+                    start: 2026-02-19T12:51:53.982Z
+                    end: 2026-02-21T12:41:53.982Z
+              customer: {}
               tags:
                 - code: routing
                   list:
@@ -2973,7 +2970,7 @@ transaction_history:
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
           created_at: 2025-01-08T09:05:00.000Z
-          updated_at: 2026-02-19T08:27:02.622Z
+          updated_at: 2026-02-19T12:31:54.040Z
     action: on_status
     saved_info: {}
   - action_id: on_status_agent_assigned
@@ -2981,9 +2978,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-02-19T08:27:02.664Z
+        timestamp: 2026-02-19T12:31:54.114Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 67cf7d73-f75c-45c6-86a8-7f34dc89fbf2
+        message_id: 73486750-ad41-492a-9cf3-b21fd9d0820f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3047,8 +3044,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-02-19T08:37:02.583Z
-                    end: 2026-02-19T08:47:02.583Z
+                    start: 2026-02-19T12:41:53.982Z
+                    end: 2026-02-19T12:51:53.982Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -3065,10 +3062,9 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-02-19T08:47:02.583Z
-                    end: 2026-02-21T08:37:02.583Z
-              customer:
-                id: CUST-2024-001234
+                    start: 2026-02-19T12:51:53.982Z
+                    end: 2026-02-21T12:41:53.982Z
+              customer: {}
               tags:
                 - code: routing
                   list:
@@ -3153,7 +3149,7 @@ transaction_history:
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
           created_at: 2025-01-08T09:05:00.000Z
-          updated_at: 2026-02-19T08:27:02.677Z
+          updated_at: 2026-02-19T12:31:54.131Z
     action: on_status
     saved_info: {}
   - action_id: on_status_picked
@@ -3161,9 +3157,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-02-19T08:27:02.708Z
+        timestamp: 2026-02-19T12:31:54.188Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: a26864c5-c436-4a8e-85f3-57efc99f58b0
+        message_id: 51654ca6-2e8a-4e9c-b365-38087dcb82a2
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3225,9 +3221,9 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-02-19T08:37:02.583Z
-                    end: 2026-02-19T08:47:02.583Z
-                  timestamp: 2026-02-19T08:27:02.714Z
+                    start: 2026-02-19T12:41:53.982Z
+                    end: 2026-02-19T12:51:53.982Z
+                  timestamp: 2026-02-19T12:31:54.195Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -3244,10 +3240,9 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-02-19T08:47:02.583Z
-                    end: 2026-02-21T08:37:02.583Z
-              customer:
-                id: CUST-2024-001234
+                    start: 2026-02-19T12:51:53.982Z
+                    end: 2026-02-21T12:41:53.982Z
+              customer: {}
               tags:
                 - code: routing
                   list:
@@ -3335,7 +3330,7 @@ transaction_history:
             - url: https://invoice_url
               label: Invoice
           created_at: 2025-01-08T09:05:00.000Z
-          updated_at: 2026-02-19T08:27:02.713Z
+          updated_at: 2026-02-19T12:31:54.195Z
     action: on_status
     saved_info: {}
   - action_id: track
@@ -3343,9 +3338,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: track
-        timestamp: 2026-02-19T08:27:02.748Z
+        timestamp: 2026-02-19T12:31:54.250Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: bcd0d4de-f192-4a7b-8f9f-d9f86eb1c626
+        message_id: 1540751e-b016-4318-9c57-ab983d2e2e9d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3363,9 +3358,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_track
-        timestamp: 2026-02-19T08:27:02.780Z
+        timestamp: 2026-02-19T12:31:54.309Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: a26864c5-c436-4a8e-85f3-57efc99f58b0
+        message_id: 51654ca6-2e8a-4e9c-b365-38087dcb82a2
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3386,9 +3381,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-02-19T08:27:02.816Z
+        timestamp: 2026-02-19T12:31:54.372Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 86ca9135-8331-4122-a54e-357d4944efb2
+        message_id: 4c5ac859-b5e3-451e-ad3b-b31fe900fb8f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3450,8 +3445,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-02-19T08:37:02.583Z
-                    end: 2026-02-19T08:47:02.583Z
+                    start: 2026-02-19T12:41:53.982Z
+                    end: 2026-02-19T12:51:53.982Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -3468,10 +3463,9 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-02-19T08:47:02.583Z
-                    end: 2026-02-21T08:37:02.583Z
-              customer:
-                id: CUST-2024-001234
+                    start: 2026-02-19T12:51:53.982Z
+                    end: 2026-02-21T12:41:53.982Z
+              customer: {}
               tags:
                 - code: routing
                   list:
@@ -3559,7 +3553,7 @@ transaction_history:
             - url: https://invoice_url
               label: Invoice
           created_at: 2025-01-08T09:05:00.000Z
-          updated_at: 2026-02-19T08:27:02.819Z
+          updated_at: 2026-02-19T12:31:54.392Z
     action: on_status
     saved_info: {}
   - action_id: on_status_order_delivered
@@ -3567,9 +3561,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-02-19T08:27:02.848Z
+        timestamp: 2026-02-19T12:31:54.434Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 8bc8a5bb-4c3c-4ea3-9e37-f56b6ef81107
+        message_id: 6d3974a5-89fb-4c03-a087-f4efc99722d6
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3631,8 +3625,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-02-19T08:37:02.583Z
-                    end: 2026-02-19T08:47:02.583Z
+                    start: 2026-02-19T12:41:53.982Z
+                    end: 2026-02-19T12:51:53.982Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -3649,11 +3643,10 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-02-19T08:47:02.583Z
-                    end: 2026-02-21T08:37:02.583Z
-                  timestamp: 2026-02-19T08:27:02.863Z
-              customer:
-                id: CUST-2024-001234
+                    start: 2026-02-19T12:51:53.982Z
+                    end: 2026-02-21T12:41:53.982Z
+                  timestamp: 2026-02-19T12:31:54.455Z
+              customer: {}
               tags:
                 - code: routing
                   list:
@@ -3741,7 +3734,7 @@ transaction_history:
             - url: https://invoice_url
               label: Invoice
           created_at: 2025-01-08T09:05:00.000Z
-          updated_at: 2026-02-19T08:27:02.862Z
+          updated_at: 2026-02-19T12:31:54.455Z
     action: on_status
     saved_info: {}
 validationLib: ""
