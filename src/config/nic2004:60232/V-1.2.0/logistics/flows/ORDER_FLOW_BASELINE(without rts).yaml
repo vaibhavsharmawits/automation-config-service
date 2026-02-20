@@ -179,7 +179,7 @@ steps:
   - api: on_search
     action_id: on_search_1
     owner: BPP
-    responseFor: null
+    responseFor: search_1
     unsolicited: false
     description: please add relevant description
     mock:
@@ -416,7 +416,7 @@ steps:
   - api: on_init
     action_id: on_init_1
     owner: BPP
-    responseFor: null
+    responseFor: init_1
     unsolicited: false
     description: please add relevant description
     mock:
@@ -516,7 +516,7 @@ steps:
               - fulfillment_state:
                   descriptor:
                     code: Pending
-                    short_desc: '008'
+                    short_desc: 008
                 cancellation_fee:
                   percentage: '0.00'
                   amount:
@@ -791,7 +791,7 @@ steps:
   - api: on_confirm
     action_id: on_confirm_1
     owner: BPP
-    responseFor: null
+    responseFor: confirm_1
     unsolicited: false
     description: please add relevant description
     mock:
@@ -2126,7 +2126,7 @@ transaction_history:
             - fulfillment_state:
                 descriptor:
                   code: Pending
-                  short_desc: '008'
+                  short_desc: 008
               cancellation_fee:
                 percentage: '0.00'
                 amount:
@@ -2371,7 +2371,7 @@ transaction_history:
             - fulfillment_state:
                 descriptor:
                   code: Pending
-                  short_desc: '008'
+                  short_desc: 008
               cancellation_fee:
                 percentage: '0.00'
                 amount:
