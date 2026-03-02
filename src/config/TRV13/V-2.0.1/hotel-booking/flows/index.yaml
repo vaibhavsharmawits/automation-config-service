@@ -517,6 +517,12 @@ flows:
         pair: on_update_5
         owner: BAP
         expect: false
+        input:
+          - name: email
+            label: Enter email
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="contact.email")].value
+
       - key: on_update_5
         type: on_update
         unsolicited: false
