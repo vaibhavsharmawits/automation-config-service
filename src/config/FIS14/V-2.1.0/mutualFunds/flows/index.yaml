@@ -148,18 +148,13 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: payment_mandate_form
-    label: Payment Mandate Setup
-    type: HTML_FORM
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
     input:
-    - name: form_submission_id
-      label: Enter Payment Form ID
-      type: HTML_FORM
-      reference: $.reference_data.payment_mandate_form
+      - name: payment_status  
+        label: Select Payment Status
+        type: select
+        values:
+          - "PAID"
+          - "NOT_PAID"    
   - key: on_status_unsolicited
     type: on_status
     unsolicited: true
@@ -646,15 +641,105 @@ flows:
     expect: false
 - id: SIP_Cancellation_By_Investor
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, USER_INITIATED]
-  description: Investor-initiated SIP cancellation (2 APIs)
+  description: Investor-initiated SIP cancellation - full flow from SIP setup to cancellation
   sequence:
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
   - key: update
     type: update
     unsolicited: false
     pair: on_update
     owner: BAP
     expect: false
-  - key: on_update
+  - key: on_update_cancel
     type: on_update
     unsolicited: false
     pair: null
@@ -662,9 +747,99 @@ flows:
     expect: false
 - id: SIP_Auto_Cancellation
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, UNSOLICITED]
-  description: Auto-cancellation of SIP by system (1 API)
+  description: Auto-cancellation of SIP by the system - full SIP setup then auto cancellation
   sequence:
-  - key: on_update
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_auto_cancel
     type: on_update
     unsolicited: true
     pair: null
@@ -673,15 +848,105 @@ flows:
     force_proceed: true
 - id: SIP_Modification_Pause
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, USER_INITIATED]
-  description: Pause an active SIP (2 APIs)
+  description: Pause an active SIP - full SIP setup then pause modification
   sequence:
-  - key: update
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: update_pause
     type: update
     unsolicited: false
     pair: on_update
     owner: BAP
     expect: false
-  - key: on_update
+  - key: on_update_pause
     type: on_update
     unsolicited: false
     pair: null
@@ -689,15 +954,105 @@ flows:
     expect: false
 - id: SIP_Modification_Change_Amount
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, USER_INITIATED]
-  description: Change SIP instalment amount (2 APIs)
+  description: Change SIP instalment amount - full SIP setup then amount modification
   sequence:
-  - key: update
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: update_amount
     type: update
     unsolicited: false
     pair: on_update
     owner: BAP
     expect: false
-  - key: on_update
+  - key: on_update_amount
     type: on_update
     unsolicited: false
     pair: null
@@ -705,9 +1060,99 @@ flows:
     expect: false
 - id: SIP_Completion
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, UNSOLICITED]
-  description: SIP completion notification (1 API)
+  description: SIP completion - full SIP setup then completion notification from BPP
   sequence:
-  - key: on_update
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_completed
     type: on_update
     unsolicited: true
     pair: null
@@ -816,8 +1261,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_redemption
+    type: on_select_redemption
     unsolicited: false
     pair: null
     owner: BPP
@@ -846,8 +1291,8 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
-    type: on_update
+  - key: on_update_redemption
+    type: on_update_redemption
     unsolicited: true
     pair: null
     owner: BPP
@@ -864,8 +1309,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_redemption
+    type: on_select_redemption
     unsolicited: false
     pair: null
     owner: BPP
@@ -894,8 +1339,8 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
-    type: on_update
+  - key: on_update_redemption
+    type: on_update_redemption
     unsolicited: true
     pair: null
     owner: BPP
@@ -912,8 +1357,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_redemption
+    type: on_select_redemption
     unsolicited: false
     pair: null
     owner: BPP
@@ -942,8 +1387,8 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
-    type: on_update
+  - key: on_update_redemption
+    type: on_update_redemption
     unsolicited: true
     pair: null
     owner: BPP
@@ -960,8 +1405,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_redemption
+    type: on_select_redemption
     unsolicited: false
     pair: null
     owner: BPP
@@ -1015,8 +1460,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_redemption
+    type: on_select_redemption
     unsolicited: false
     pair: null
     owner: BPP
@@ -1045,8 +1490,8 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
-    type: on_update
+  - key: on_update_redemption
+    type: on_update_redemption
     unsolicited: true
     pair: null
     owner: BPP
@@ -1232,17 +1677,87 @@ flows:
     expect: false
     force_proceed: true
 - id: Cart_Lumpsum_Investment_Part_Failure
-  tags: [WORKBENCH, CART_FLOWS, UNSOLICITED]
-  description: Cart with partial failure scenario (2 APIs)
+  tags: [WORKBENCH, CART_FLOWS, HYBRID]
+  description: Cart lumpsum purchase where one item fails - full flow from cart setup to failure notification
   sequence:
-  - key: on_update_1
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_url_form
+    label: Payment
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: payment_status
+        label: Select Payment Status
+        type: select
+        values:
+          - "PAID"
+          - "NOT_PAID"
+  - key: on_status
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_part_success
     type: on_update
     unsolicited: true
     pair: null
     owner: BPP
     expect: false
     force_proceed: true
-  - key: on_update_2
+  - key: on_update_part_failure
     type: on_update
     unsolicited: true
     pair: null
@@ -1250,9 +1765,99 @@ flows:
     expect: false
     force_proceed: true
 - id: Cart_SIP_Instalment
-  tags: [WORKBENCH, CART_FLOWS, UNSOLICITED]
-  description: Cart-based SIP instalment processing (5 APIs)
+  tags: [WORKBENCH, CART_FLOWS, HYBRID]
+  description: Cart-based SIP instalment processing - full cart SIP setup then instalment deduction
   sequence:
+  - key: search
+    type: search
+    unsolicited: false
+    pair: on_search
+    owner: BAP
+    expect: true
+  - key: on_search
+    type: on_search
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
   - key: on_update_initiate
     type: on_update
     unsolicited: true
@@ -1260,7 +1865,7 @@ flows:
     owner: BPP
     expect: false
     force_proceed: true
-  - key: on_confirm
+  - key: on_confirm_instalment
     type: on_confirm
     unsolicited: true
     pair: null
@@ -1274,7 +1879,7 @@ flows:
     owner: BPP
     expect: false
     force_proceed: true
-  - key: on_status
+  - key: on_status_instalment
     type: on_status
     unsolicited: true
     pair: null
@@ -1299,8 +1904,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_switch
+    type: on_select_switch
     unsolicited: false
     pair: null
     owner: BPP
@@ -1347,8 +1952,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_stp
+    type: on_select_stp
     unsolicited: false
     pair: null
     owner: BPP
@@ -1413,8 +2018,8 @@ flows:
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select
-    type: on_select
+  - key: on_select_swp
+    type: on_select_swp
     unsolicited: false
     pair: null
     owner: BPP
