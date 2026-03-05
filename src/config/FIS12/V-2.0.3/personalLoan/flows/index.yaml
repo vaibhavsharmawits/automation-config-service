@@ -295,11 +295,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -503,8 +503,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -514,8 +514,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
-
+            reference: $.reference_data.personal_loan_information_form       
+  
       - key: select_2_personal_loan_3
         type: select
         unsolicited: false
@@ -531,7 +531,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -559,18 +559,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_1_personal_loan_3
         type: init
@@ -587,7 +588,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
+      - key: manadate_details_form_pl
         label: manadate details form 
         type: HTML_FORM 
         unsolicited: false
@@ -615,9 +616,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -625,8 +626,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -643,9 +644,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -653,8 +654,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
               
       - key: confirm_personal_loan_3
         type: confirm
@@ -711,22 +712,22 @@ flows:
     tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Offline verification and processing
     sequence:
-      - key: search_personal_loan_5
+      - key: search_personal_loan_3
         type: search
         unsolicited: false
-        pair: on_search_personal_loan_5
+        pair: on_search_personal_loan_3
         owner: BAP
         expect: true
 
-      - key: on_search_personal_loan_5
+      - key: on_search_personal_loan_3
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -736,8 +737,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
-
+            reference: $.reference_data.personal_loan_information_form       
+   
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -760,11 +761,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -773,7 +774,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -784,7 +785,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_amount_adjustment_form
+            reference: $.reference_data.loan_amount_adjustment_form        
 
       - key: select_3_personal_loan_3
         type: select
@@ -801,18 +802,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status  
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_offline_personal_loan_3
         type: init
@@ -876,8 +878,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -887,8 +889,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
-
+            reference: $.reference_data.personal_loan_information_form       
+ 
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -911,11 +913,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -924,7 +926,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -952,18 +954,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_1_personal_loan_3
         type: init
@@ -980,7 +983,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
+      - key: manadate_details_form_pl
         label: manadate details form 
         type: HTML_FORM 
         unsolicited: false
@@ -1008,9 +1011,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1018,8 +1021,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -1036,9 +1039,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1046,9 +1049,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
-
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -1125,8 +1128,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -1136,22 +1140,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form         
-
-      - key: select_1_personal_loan_3
-        type: select
-        unsolicited: false
-        pair: on_select_1_personal_loan_3
-        owner: BAP
-        expect: false
-        force_proceed: true
-
-      - key: on_select_1_personal_loan_3
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+            reference: $.reference_data.personal_loan_information_form            
 
       - key: select_2_personal_loan_3
         type: select
@@ -1160,11 +1149,6 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -1173,7 +1157,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -1201,18 +1185,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status        
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_1_personal_loan_3
         type: init
@@ -1229,7 +1214,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
+      - key: manadate_details_form_pl
         label: manadate details form 
         type: HTML_FORM 
         unsolicited: false
@@ -1257,9 +1242,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1267,8 +1252,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -1285,9 +1270,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1295,9 +1280,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
-
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -1374,8 +1359,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -1385,7 +1370,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
+            reference: $.reference_data.personal_loan_information_form       
 
       - key: select_1_personal_loan_3
         type: select
@@ -1409,6 +1394,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -1417,7 +1407,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -1428,7 +1418,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_amount_adjustment_form
+            reference: $.reference_data.loan_amount_adjustment_form        
 
       - key: select_3_personal_loan_3
         type: select
@@ -1445,18 +1435,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_1_personal_loan_3
         type: init
@@ -1473,7 +1464,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
+      - key: manadate_details_form_pl
         label: manadate details form 
         type: HTML_FORM 
         unsolicited: false
@@ -1501,9 +1492,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1511,8 +1502,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -1529,9 +1520,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1539,9 +1530,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
-
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -1618,8 +1609,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -1629,8 +1620,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
-
+            reference: $.reference_data.personal_loan_information_form       
+    
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -1661,7 +1652,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -1672,7 +1663,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_amount_adjustment_form
+            reference: $.reference_data.loan_amount_adjustment_form        
+
 
       - key: select_3_personal_loan_3
         type: select
@@ -1689,18 +1681,20 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
+
 
       - key: init_1_personal_loan_3
         type: init
@@ -1717,7 +1711,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
+
+      - key: manadate_details_form_pl
         label: manadate details form 
         type: HTML_FORM 
         unsolicited: false
@@ -1745,9 +1740,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1755,8 +1750,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -1773,9 +1768,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -1783,9 +1778,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status     
-
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -1862,8 +1857,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -1873,8 +1868,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
-
+            reference: $.reference_data.personal_loan_information_form       
+   
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -1897,11 +1892,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -1910,7 +1905,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -1921,7 +1916,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_amount_adjustment_form
+            reference: $.reference_data.loan_amount_adjustment_form        
 
       - key: select_3_personal_loan_3
         type: select
@@ -1938,18 +1933,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_1_personal_loan_3
         type: init
@@ -1966,9 +1962,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
-        label: manadate details form
-        type: HTML_FORM
+      - key: manadate_details_form_pl
+        label: manadate details form 
+        type: HTML_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -1994,9 +1990,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -2004,8 +2000,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -2022,9 +2018,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -2032,9 +2028,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
-
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -2097,8 +2093,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -2108,8 +2104,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form       
-
+            reference: $.reference_data.personal_loan_information_form       
+    
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -2132,11 +2128,6 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
-        # input:
-        #   - name: finvu_verification
-        #     label: Complete Account Aggregator Verification
-        #     type: FINVU_REDIRECT
-        #     payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -2145,7 +2136,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: loan_amount_adjustment_form
+      - key: loan_amount_adjustment_form_pl
         label: loan amount adjustment form
         type: HTML_FORM
         unsolicited: false
@@ -2156,7 +2147,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.loan_amount_adjustment_form
+            reference: $.reference_data.loan_amount_adjustment_form        
 
       - key: select_3_personal_loan_3
         type: select
@@ -2173,18 +2164,19 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
-        label: kyc_verification_status
-        type: HTML_FORM
-        unsolicited: false
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
         pair: null
         owner: BPP
         expect: false
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
 
       - key: init_1_personal_loan_3
         type: init
@@ -2201,9 +2193,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: manadate_details_form
-        label: manadate details form
-        type: HTML_FORM
+      - key: manadate_details_form_pl
+        label: manadate details form 
+        type: HTML_FORM 
         unsolicited: false
         pair: null
         owner: BPP
@@ -2229,9 +2221,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: verification_status_e_mandate
         label: Mandate Details Status Form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -2239,8 +2231,8 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
 
       - key: init_3_personal_loan_3
         type: init
@@ -2257,9 +2249,9 @@ flows:
         owner: BPP
         expect: false
 
-      - key: kyc_verification_status
+      - key: loan_agreement_esign_form
         label: loan agreement details form
-        type: HTML_FORM
+        type: DYNAMIC_FORM
         unsolicited: false
         pair: null
         owner: BPP
@@ -2267,9 +2259,9 @@ flows:
         input:
           - name: form_submission_id
             label: Enter Form Submission id
-            type: HTML_FORM
-            reference: $.reference_data.kyc_verification_status
-
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -2332,8 +2324,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_pl
-        label: consumer information form
+      - key: personal_loan_information_form
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -2343,8 +2335,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form          
-
+            reference: $.reference_data.personal_loan_information_form       
+    
       - key: select_bureau_consent_personal_loan_3
         type: select
         unsolicited: false
@@ -2361,7 +2353,7 @@ flows:
         expect: false
 
       - key: consumer_information_form_1
-        label: form link provided in on_search
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -2371,8 +2363,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form      
-
+            reference: $.reference_data.personal_loan_information_form       
+  
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -2395,6 +2387,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
 
       - key: on_select_2_personal_loan_3
         type: on_select
@@ -2402,6 +2399,180 @@ flows:
         pair: null
         owner: BPP
         expect: false
+
+      - key: loan_amount_adjustment_form_pl
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+
+      - key: select_3_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_3_personal_loan_3
+        owner: BAP
+        expect: false
         force_proceed: true
 
-   
+      - key: on_select_3_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
+
+      - key: init_1_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_1_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_init_1_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: manadate_details_form_pl
+        label: manadate details form 
+        type: HTML_FORM 
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.manadate_details_form
+
+      - key: init_2_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_2_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_init_2_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: verification_status_e_mandate
+        label: Mandate Details Status Form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+
+      - key: init_3_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_3_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_init_3_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: loan_agreement_esign_form
+        label: loan agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+              
+      - key: confirm_personal_loan_3
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_confirm_personal_loan_3
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false      
+
+      - key: on_update_unsolicited_personal_loan_3
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+      - key: update_personal_loan_fulfillment_3
+        type: update
+        unsolicited: false
+        pair: on_update_personal_loan_fulfillment_3
+        owner: BAP
+        expect: false
+
+      - key: on_update_personal_loan_fulfillment_3
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: status_personal_loan_3
+        type: status
+        unsolicited: false
+        pair: on_status_personal_loan_3
+        owner: BAP
+        expect: true
+
+      - key: on_status_personal_loan_3
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
