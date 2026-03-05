@@ -238,7 +238,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: payment_form
+      - key: payment_form_motor
         label: payment link provided in on_confirm
         type: DYNAMIC_FORM
         unsolicited: false
@@ -249,7 +249,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.payment_form
+            reference: $.reference_data.payment_form_motor
       - key: on_update_unsolicited_motor
         type: on_update
         unsolicited: true
@@ -746,7 +746,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: payment_form
+      - key: payment_form_motor
         label: payment link provided in on_confirm
         type: DYNAMIC_FORM
         unsolicited: false
@@ -757,7 +757,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.payment_form
+            reference: $.reference_data.payment_form_motor
       - key: on_update_unsolicited_motor
         type: on_update
         unsolicited: true
@@ -1027,7 +1027,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: payment_form
+      - key: payment_form_motor
         label: payment link provided in on_confirm
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1038,7 +1038,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.payment_form
+            reference: $.reference_data.payment_form_motor
       - key: on_update_unsolicited_motor
         type: on_update
         unsolicited: true
