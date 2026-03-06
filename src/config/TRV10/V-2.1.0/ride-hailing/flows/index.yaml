@@ -152,6 +152,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -265,6 +270,11 @@ flows:
         pair: on_select_with_purple_tags
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select_with_purple_tags
         type: on_select
         unsolicited: false
@@ -378,6 +388,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -491,6 +506,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -562,6 +582,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -663,6 +688,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -764,6 +794,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -829,6 +864,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -904,6 +944,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -1021,6 +1066,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -1163,6 +1213,11 @@ flows:
         pair: on_select_preorder
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select_preorder
         type: on_select
         unsolicited: false
@@ -1276,6 +1331,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -1398,9 +1458,10 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: select_input
-            label: Enter
-            type: trv10_select
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select_rental
         type: on_select
         unsolicited: false
@@ -1506,9 +1567,10 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: select_input
-            label: Enter
-            type: trv10_select
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select_rental
         type: on_select
         unsolicited: false
@@ -1619,6 +1681,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -1739,9 +1806,10 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: select_input
-            label: Enter
-            type: trv10_select
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select_rental
         type: on_select
         unsolicited: false
@@ -1855,6 +1923,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -1954,6 +2027,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -2066,6 +2144,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -2278,6 +2361,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -2518,6 +2606,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
@@ -2705,6 +2798,11 @@ flows:
         pair: on_select
         owner: BAP
         expect: false
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
       - key: on_select
         type: on_select
         unsolicited: false
