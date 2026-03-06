@@ -38,6 +38,7 @@ flows:
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
+            required: false
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
@@ -105,6 +106,7 @@ flows:
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
+            required: false
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
@@ -229,6 +231,7 @@ flows:
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
+            required: false
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
@@ -377,6 +380,7 @@ flows:
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
+            required: false
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
@@ -507,6 +511,7 @@ flows:
           - name: child_ticket_count
             label: Child Ticket Count
             type: text
+            required: false
             payloadField: $.message.intent.provider.items[?(@.descriptor.code=='CHILD_TICKET')].quantity.count
           - name: journey_date
             label: Enter Journey date (YYYY-MM-DD)
