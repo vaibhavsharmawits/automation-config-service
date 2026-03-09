@@ -92,10 +92,10 @@ flows:
       - key: status_5
         type: status
         unsolicited: false
-        pair: on_status_5
+        pair: on_status_city_code
         owner: BAP
         expect: false
-      - key: on_status_5
+      - key: on_status_city_code
         type: on_status
         unsolicited: false
         pair: null
@@ -517,6 +517,12 @@ flows:
         pair: on_update_5
         owner: BAP
         expect: false
+        input:
+          - name: email
+            label: Enter email
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="contact.email")].value
+
       - key: on_update_5
         type: on_update
         unsolicited: false
