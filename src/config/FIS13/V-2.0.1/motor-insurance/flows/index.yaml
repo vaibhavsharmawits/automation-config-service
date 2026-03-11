@@ -764,6 +764,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: claim_form_motor
+        label: claim insurance form link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.claim_form_motor  
       - key: on_update_unsolicited2_motor
         type: on_update
         unsolicited: true
@@ -1057,7 +1069,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: on_update_unsolicited_motor
+      - key: on_update_unsolicited5_motor
         type: on_update
         unsolicited: true
         pair: null
