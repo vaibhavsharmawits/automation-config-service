@@ -1559,6 +1559,13 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "5000"
+            default: "5000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
@@ -3552,6 +3559,13 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "5000"
+            default: "5000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
@@ -5326,6 +5340,13 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: select
+            values:
+              - "5000"
+            default: "5000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
