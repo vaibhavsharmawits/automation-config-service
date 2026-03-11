@@ -4,7 +4,7 @@ meta:
   flowId: Search_and_Custom_Menu_(Full_Catalog_City)
 transaction_data:
   transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
-  latest_timestamp: '1970-01-01T00:00:00.000Z'
+  latest_timestamp: "1970-01-01T00:00:00.000Z"
   bap_id: sample-bap-id
   bap_uri: https://bap.example.com
   bpp_id: sample-bpp-id
@@ -27,30 +27,30 @@ steps:
         context:
           domain: ONDC:RET16
           action: search
-          timestamp: '2026-01-20T09:05:17.039Z'
+          timestamp: "2026-01-20T09:05:17.039Z"
           transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
           message_id: b00ce1b2-b91d-4634-931e-7822bb0cd34c
           bap_id: sample-bap-id
           bap_uri: https://bap.example.com
           ttl: PT30S
           country: IND
-          city: '*'
+          city: "*"
           core_version: 1.2.0
         message:
           intent:
             payment:
-              '@ondc/org/buyer_app_finder_fee_type': percent
-              '@ondc/org/buyer_app_finder_fee_amount': '3'
+              "@ondc/org/buyer_app_finder_fee_type": percent
+              "@ondc/org/buyer_app_finder_fee_amount": "3"
             tags:
               - code: bap_terms
                 list:
                   - code: static_terms
-                    value: ' https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf'
+                    value: " https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf"
                   - code: static_terms_new
                     value: >-
                       https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                   - code: effective_date
-                    value: '2025-02-01T00:00:00.000Z'
+                    value: "2025-02-01T00:00:00.000Z"
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -90,7 +90,7 @@ steps:
         context:
           domain: ONDC:RET16
           action: on_search
-          timestamp: '2026-01-20T10:27:04.570Z'
+          timestamp: "2026-01-20T10:27:04.570Z"
           transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
           message_id: 6a02cb20-722c-433e-ab13-da8621f5aaa6
           bap_id: sample-bap-id
@@ -99,21 +99,15 @@ steps:
           bpp_id: sample-bpp-id
           bpp_uri: https://bpp.example.com
           country: IND
-          city: '*'
+          city: "*"
           core_version: 1.2.0
         message:
           catalog:
             bpp/fulfillments:
               - id: F1
                 type: Delivery
-                contact:
-                  phone: '9876543210'
-                  email: test@gmail.com
               - id: F2
                 type: Self-Pickup
-                contact:
-                  phone: '7980274499'
-                  email: appliance@example.com
             bpp/descriptor:
               name: Mock Seller NP
               symbol: https://sellerNP.com/images/np.png
@@ -127,12 +121,13 @@ steps:
                     - code: np_type
                       value: MSN
                     - code: accept_bap_terms
-                      value: 'Y'
+                      value: "Y"
             bpp/providers:
               - id: P1
                 time:
                   label: enable
-                  timestamp: '2024-08-13T06:46:19.736Z'
+                  timestamp: "2024-08-13T06:46:19.736Z"
+                rating: "4"
                 ttl: PT24H
                 locations:
                   - id: L1
@@ -140,23 +135,23 @@ steps:
                     address:
                       city: Bengaluru
                       state: Karnataka
-                      area_code: '560011'
+                      area_code: "560011"
                       street: Jayanagar
                       locality: Jayanagar
                     time:
                       label: enable
-                      timestamp: '2024-08-13T06:46:19.736Z'
+                      timestamp: "2024-08-13T06:46:19.736Z"
                       days: 1,2,3,4,5
                       schedule:
                         holidays: []
                       range:
-                        start: '0000'
-                        end: '2359'
+                        start: "0000"
+                        end: "2359"
                     circle:
                       gps: 12.925810,77.583624
                       radius:
                         unit: km
-                        value: '5'
+                        value: "5"
                 descriptor:
                   name: Store 1
                   symbol: https://sellerNP.com/images/store1.png
@@ -178,54 +173,61 @@ steps:
                           - code: name
                             value: item.tags.attribute.colour
                           - code: seq
-                            value: '1'
+                            value: "1"
                 items:
                   - id: I1
+                    rating: "4"
                     time:
                       label: enable
-                      timestamp: '2024-08-12T05:30:48.998Z'
-                    rating: '4'
+                      timestamp: "2024-08-12T05:30:48.998Z"
                     descriptor:
-                      name: Whirlpool 7.5 kg Fully Automatic Washing Machine
+                      name: MINISO Two-Layer Drawer Organizer
                       symbol: https://sellerNP.com/images/i1.png
                       short_desc: >-
-                        Fully Automatic Top Load Washing Machine with 7.5 kg
-                        capacity
+                        Hard, tough and durable cosmetic storage and organizer,
+                        Two-Layer Drawer Organizer Cosmetic Storage Box, White,
+                        Rectangular
                       long_desc: >-
-                        Whirlpool 7.5 kg Fully Automatic Washing Machine with
-                        6th Sense Technology
+                        Introducing the MINISO Two-Layer Drawer Organizer
+                        Cosmetic Storage Box in a sleek, modern White,
+                        Rectangular design. Crafted with toughness and
+                        durability in mind, this organizer is built to withstand
+                        daily use, ensuring your items stay secure and
+                        protected.Its compact design offers simplicity and
+                        perfection, allowing you to maximize space while
+                        maintaining an elegant aesthetic.
                       images:
                         - https://sellerNP.com/images/i1.png
-                      code: '3:8904123051111'
+                      code: "3:9501101530007"
                     quantity:
                       unitized:
                         measure:
                           unit: unit
-                          value: '1'
+                          value: "1"
                       available:
-                        count: '99'
+                        count: "99"
                       maximum:
-                        count: '8'
+                        count: "8"
                     price:
                       currency: INR
-                      value: '35000'
-                      maximum_value: '35000'
-                    category_id: Washing Machine
+                      value: "2260"
+                      maximum_value: "2260"
+                    category_id: Kitchen Storage and Containers
                     location_id: L1
                     fulfillment_id: F1
-                    '@ondc/org/returnable': true
-                    '@ondc/org/cancellable': true
-                    '@ondc/org/available_on_cod': false
-                    '@ondc/org/time_to_ship': P2D
-                    '@ondc/org/seller_pickup_return': true
-                    '@ondc/org/return_window': P7D
-                    '@ondc/org/contact_details_consumer_care': Seller Business,test@gmail.com,9876543210
-                    '@ondc/org/statutory_reqs_packaged_commodities':
+                    "@ondc/org/returnable": true
+                    "@ondc/org/cancellable": true
+                    "@ondc/org/available_on_cod": false
+                    "@ondc/org/time_to_ship": P2D
+                    "@ondc/org/seller_pickup_return": true
+                    "@ondc/org/return_window": P7D
+                    "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                    "@ondc/org/statutory_reqs_packaged_commodities":
                       manufacturer_or_packer_name: Seller Business
                       manufacturer_or_packer_address: >-
                         Seller Building Address, Jayanagar, Bengaluru,
                         Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Whirlpool Washing Machine
+                      common_or_generic_name_of_commodity: Kitchen Storage and Containers
                       month_year_of_manufacture_packing_import: NA
                     tags:
                       - code: origin
@@ -235,93 +237,69 @@ steps:
                       - code: attribute
                         list:
                           - code: brand
-                            value: Whirlpool 7.5 kg Fully Automatic Washing Machine
-                          - code: weight
-                            value: '32'
-                          - code: model
-                            value: Stainwash Ultra
+                            value: MINISO Two-Layer Drawer Organizer
                           - code: colour
-                            value: '#EEF6F7'
+                            value: "#FFFFFF"
                           - code: colour_name
-                            value: catskill white
-                          - code: special_feature
-                            value: frequency
-                          - code: breadth
-                            value: '12.3'
-                          - code: length
-                            value: '18.5'
-                          - code: height
-                            value: '101.5'
-                          - code: includes
-                            value: Power Cord, Inlet Pipe
-                          - code: type
-                            value: full-auto
-                          - code: refurbished
-                            value: 'no'
-                          - code: warranty
-                            value: '4'
-                          - code: energy_rating
-                            value: '3'
-                          - code: extended_warranty
-                            value: '3'
-                          - code: installation_detail
-                            value: Available
-                          - code: wattage
-                            value: '720'
-                          - code: voltage
-                            value: '230'
-                      - code: type
-                        list:
-                          - code: type
-                            value: item
-                      - code: custom_group
-                        list:
-                          - code: id
-                            value: CG1
+                            value: brown
+                          - code: material
+                            value: thermoplastic
                   - id: I2
+                    rating: "3"
                     time:
                       label: enable
-                      timestamp: '2024-08-12T10:27:48.913Z'
-                    rating: '4'
+                      timestamp: "2024-08-12T10:27:48.913Z"
                     descriptor:
-                      name: Singer Simple Sewing Machine
+                      name: Doms Art Apps Nxt Kit With Plastic Carry Case
                       symbol: https://sellerNP.com/images/i1.png
-                      short_desc: Heavy-duty electric sewing machine.
+                      short_desc: >-
+                        Coloring & Art Smart Kit Use For Sketching, Writing,
+                        Shading, Colouring, Highlighting.Non-Toxic, Easy To Use
+                        & Safe For Childrens.
                       long_desc: >-
-                        Singer Heavy Duty 4452 Sewing Machine with 32 Built-in
-                        Stitches
+                        Introducing our comprehensive combination kit, designed
+                        to satisfy all your creative needs! Whether you're
+                        sketching, writing, shading, coloring, or highlighting,
+                        this kit has everything you need to unleash your
+                        imagination.You'll find 12 watercolor pens for vibrant
+                        and fluid artwork, 12 bi-color crayons for versatile
+                        coloring options, 12 jumbo oil pastels for smooth and
+                        blendable textures, 8 bi-color pencils for precise
+                        drawing and shading, and 12 plastic crayons for bold and
+                        durable lines.
                       images:
                         - https://sellerNP.com/images/i1.png
-                      code: '3:00037431885883'
+                      code: "3:7845632198471"
                     quantity:
                       unitized:
                         measure:
                           unit: unit
-                          value: '1'
+                          value: "1"
                       available:
-                        count: '99'
+                        count: "99"
                       maximum:
-                        count: '10'
+                        count: "10"
                     price:
                       currency: INR
-                      value: '18000'
-                      maximum_value: '18000'
-                    category_id: Electric Sewing Machine
+                      value: "2460"
+                      maximum_value: "2460"
+                    category_id: Stationery
                     location_id: L1
+                    parent_item_id: V1
                     fulfillment_id: F1
-                    '@ondc/org/returnable': true
-                    '@ondc/org/cancellable': true
-                    '@ondc/org/available_on_cod': false
-                    '@ondc/org/time_to_ship': P2D
-                    '@ondc/org/seller_pickup_return': true
-                    '@ondc/org/return_window': P7D
-                    '@ondc/org/contact_details_consumer_care': Seller Business,test@gmail.com,9876543210
-                    '@ondc/org/statutory_reqs_packaged_commodities':
+                    "@ondc/org/returnable": true
+                    "@ondc/org/cancellable": true
+                    "@ondc/org/available_on_cod": false
+                    "@ondc/org/time_to_ship": P2D
+                    "@ondc/org/seller_pickup_return": true
+                    "@ondc/org/return_window": P7D
+                    "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                    "@ondc/org/statutory_reqs_packaged_commodities":
                       manufacturer_or_packer_name: Seller Business
                       manufacturer_or_packer_address: >-
                         Seller Building Address, Jayanagar, Bengaluru,
                         Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Singer Heavy Duty 4452
+                      common_or_generic_name_of_commodity: Plastic Crayons
                       month_year_of_manufacture_packing_import: NA
                     tags:
                       - code: origin
@@ -331,85 +309,74 @@ steps:
                       - code: attribute
                         list:
                           - code: brand
-                            value: Singer Simple Sewing Machine
-                          - code: model
-                            value: '3232'
-                          - code: special_feature
-                            value: laser
-                          - code: weight
-                            value: '6.9'
-                          - code: length
-                            value: '7.3'
-                          - code: breadth
-                            value: '15.5'
-                          - code: height
-                            value: '41'
-                          - code: includes
-                            value: Automatic Needle Threader, Adjustable Presser Foot
-                          - code: refurbished
-                            value: 'no'
-                          - code: warranty
-                            value: '2'
-                          - code: energy_rating
-                            value: '4'
-                          - code: extended_warranty
-                            value: '2'
-                          - code: wattage
-                            value: '320'
-                          - code: voltage
-                            value: '220'
-                      - code: type
-                        list:
-                          - code: type
-                            value: item
-                      - code: custom_group
-                        list:
-                          - code: id
-                            value: CG1
+                            value: Doms Art Apps Nxt Kit With Plastic Carry Case
+                          - code: colour
+                            value: "#00FF00"
+                          - code: colour_name
+                            value: white
+                          - code: material
+                            value: thermoplastic
                   - id: I3
-                    time:
-                      label: enable
-                      timestamp: '2024-08-12T10:27:48.913Z'
-                    rating: '4'
+                    rating: "4"
                     descriptor:
-                      name: Philips Viva AirFryer HD9225-50
+                      name: >-
+                        Polyset Elegance Plastic Laundry Basket - Assorted
+                        Colour, 53 L
+                      code: "3:6213574890238"
                       symbol: https://sellerNP.com/images/i1.png
-                      short_desc: Air fryer for healthy cooking
+                      short_desc: >-
+                        Polyset’s Laundry Basket made from virgin plastic is
+                        very tough, durable and long-lasting. It has a large
+                        space enough to keep all the dirty clothes in one place.
                       long_desc: >-
-                        Philips Viva Collection Air Fryer with Rapid Air
-                        Technology
+                        This Polyset Laundry Basket comes in large size, which
+                        gives you more space for storing multiple items like
+                        clothes, toys, groceries, kitchen and bathing
+                        accessories, Ideal for family use in the Laundry Room,
+                        Bedroom or Bathroom, its comes with Lid for protecting
+                        your articles from dust. To add to it, the design and
+                        colour are so attractive, that it immediately gels with
+                        the interior of the house, be it Bathroom, Bedroom etc.
+                        Easily portable cross ventilating body keeps your items
+                        free module formation. And it gives you extra-large
+                        space to store your products. And this is made from
+                        tough plastic which provides immense strength to the
+                        product.
                       images:
                         - https://sellerNP.com/images/i1.png
-                      code: '3:8710103539209'
-                    quantity:
-                      unitized:
-                        measure:
-                          unit: unit
-                          value: '1'
-                      available:
-                        count: '99'
-                      maximum:
-                        count: '99'
                     price:
                       currency: INR
-                      value: '15000'
-                      maximum_value: '15000'
-                    category_id: Electric Air Fryer
-                    location_id: L1
+                      value: "499.00"
+                      maximum_value: "1199.00"
+                    parent_item_id: V1
+                    category_id: Closet/Laundry/Shoe Organization
                     fulfillment_id: F1
-                    '@ondc/org/returnable': true
-                    '@ondc/org/cancellable': true
-                    '@ondc/org/available_on_cod': false
-                    '@ondc/org/time_to_ship': P3D
-                    '@ondc/org/seller_pickup_return': false
-                    '@ondc/org/return_window': P20D
-                    '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                    '@ondc/org/statutory_reqs_packaged_commodities':
+                    location_id: L1
+                    time:
+                      label: enable
+                      timestamp: "2024-08-12T10:27:48.913Z"
+                    quantity:
+                      available:
+                        count: "99"
+                      maximum:
+                        count: "99"
+                      unitized:
+                        measure:
+                          value: "1"
+                          unit: unit
+                    "@ondc/org/returnable": true
+                    "@ondc/org/seller_pickup_return": false
+                    "@ondc/org/return_window": P3D
+                    "@ondc/org/cancellable": true
+                    "@ondc/org/time_to_ship": P1D
+                    "@ondc/org/available_on_cod": false
+                    "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
+                    "@ondc/org/statutory_reqs_packaged_commodities":
                       manufacturer_or_packer_name: Seller Business
                       manufacturer_or_packer_address: >-
                         Seller Building Address, Jayanagar, Bengaluru,
                         Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Philips Air Fryer
+                      common_or_generic_name_of_commodity: Laundry Basket
                       month_year_of_manufacture_packing_import: NA
                     tags:
                       - code: origin
@@ -419,80 +386,76 @@ steps:
                       - code: attribute
                         list:
                           - code: brand
-                            value: Philips Viva AirFryer HD9225-50
-                          - code: model
-                            value: HD9220/50
-                          - code: special_feature
-                            value: frequency
-                          - code: weight
-                            value: '7'
-                          - code: length
-                            value: '3'
-                          - code: breadth
-                            value: '31.5'
-                          - code: height
-                            value: '28'
-                          - code: includes
-                            value: Recipe Booklet, Double Layer Rack
-                          - code: refurbished
-                            value: 'no'
-                          - code: warranty
-                            value: '1'
-                          - code: energy_rating
-                            value: '3'
-                          - code: extended_warranty
-                            value: '1'
-                          - code: wattage
-                            value: '320'
-                          - code: voltage
-                            value: '220'
+                            value: >-
+                              Polyset Elegance Plastic Laundry Basket - Assorted
+                              Colour, 53 L
+                          - code: colour
+                            value: "#964B00"
+                          - code: colour_name
+                            value: brown
+                          - code: material
+                            value: polyethylene
                   - id: I4
-                    time:
-                      label: enable
-                      timestamp: '2024-08-12T10:27:48.913Z'
-                    rating: '4'
+                    rating: "4"
                     descriptor:
-                      name: Philips Mixer Grinder
+                      name: >-
+                        Pigeon by Stovekraft Mini Fruit & Vegetable Chopper With
+                        3 Blades
+                      code: "3:4012789543165"
                       symbol: https://sellerNP.com/images/i1.png
-                      short_desc: Fastest and Finest Mixing Grinder
+                      short_desc: >-
+                        This compact kitchen appliance is designed to help cut
+                        down your kitchen chores. A simple pull of the rope in
+                        this Pigeon Handy vegetable and fruit chopper cuts food
+                        items down into small pieces.
                       long_desc: >-
-                        The Philips Mixer Grinder is a versatile kitchen
-                        appliance designed to simplify your cooking tasks.
-                        Equipped with powerful motors and durable stainless
-                        steel blades, it effortlessly grinds, blends, and mixes
-                        a variety of ingredients.
+                        The chopper’s tough body can withstand being put into
+                        the dishwasher. Durable design, a convenient usage made
+                        of ABS plastic, this chopper is sturdy and durable. It
+                        does not require electricity to be in use. Chop fruits
+                        and vegetables. This chopper uses its three stainless
+                        steel blades and relies on a unique string function to
+                        chop fruits and vegetables with ease. It is easy to use.
+                        Get things started by putting the blade in the Centre of
+                        the bowl. Cut vegetables or fruits to medium size before
+                        putting them into this bowl to avoid jamming the blades.
+                        Put the contents in, close the lid, and sting the rope
+                        quickly to cut food items into small pieces. Then, take
+                        the blade system out before you remove the chopped food.
                       images:
                         - https://sellerNP.com/images/i1.png
-                      code: '3:887775600280'
-                    quantity:
-                      unitized:
-                        measure:
-                          unit: unit
-                          value: '1'
-                      available:
-                        count: '99'
-                      maximum:
-                        count: '99'
                     price:
                       currency: INR
-                      value: '599.00'
-                      maximum_value: '1199.00'
-                    category_id: Mixer Grinder
-                    location_id: L1
+                      value: "599.00"
+                      maximum_value: "1199.00"
+                    category_id: Kitchen Tools
                     fulfillment_id: F1
-                    '@ondc/org/returnable': true
-                    '@ondc/org/cancellable': true
-                    '@ondc/org/available_on_cod': false
-                    '@ondc/org/time_to_ship': P1D
-                    '@ondc/org/seller_pickup_return': false
-                    '@ondc/org/return_window': P3D
-                    '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                    '@ondc/org/statutory_reqs_packaged_commodities':
+                    location_id: L1
+                    time:
+                      label: enable
+                      timestamp: "2024-08-12T10:27:48.913Z"
+                    quantity:
+                      available:
+                        count: "99"
+                      maximum:
+                        count: "99"
+                      unitized:
+                        measure:
+                          value: "1"
+                          unit: unit
+                    "@ondc/org/returnable": true
+                    "@ondc/org/seller_pickup_return": false
+                    "@ondc/org/return_window": P3D
+                    "@ondc/org/cancellable": true
+                    "@ondc/org/time_to_ship": P1D
+                    "@ondc/org/available_on_cod": false
+                    "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
+                    "@ondc/org/statutory_reqs_packaged_commodities":
                       manufacturer_or_packer_name: Seller Business
                       manufacturer_or_packer_address: >-
                         Seller Building Address, Jayanagar, Bengaluru,
                         Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Mixer Grinder
+                      common_or_generic_name_of_commodity: Vegetable Chopper
                       month_year_of_manufacture_packing_import: NA
                     tags:
                       - code: origin
@@ -502,252 +465,35 @@ steps:
                       - code: attribute
                         list:
                           - code: brand
-                            value: Philips Mixer Grinder
-                          - code: model
-                            value: MXPH-1007
-                          - code: special_feature
-                            value: frequency
-                          - code: weight
-                            value: '8'
-                          - code: length
-                            value: '1.5'
-                          - code: breadth
-                            value: '20.5'
-                          - code: height
-                            value: '15'
-                          - code: includes
-                            value: Mixer Pots-3
-                          - code: refurbished
-                            value: 'no'
-                          - code: warranty
-                            value: '1'
-                          - code: energy_rating
-                            value: '2'
-                          - code: wattage
-                            value: '750'
-                          - code: voltage
-                            value: '230'
-                  - id: I5
-                    time:
-                      label: enable
-                      timestamp: '2024-08-12T10:27:48.913Z'
-                    rating: '4'
-                    descriptor:
-                      name: LG 1.5 Ton 3 Start Dual Inverter Split AC
-                      symbol: https://sellerNP.com/images/i1.png
-                      short_desc: 3 Start Dual Inverter Split AC
-                      long_desc: >-
-                        3 Start Dual Inverter Split AC, 6 in 1 cooling 2 way
-                        swing
-                      images:
-                        - https://sellerNP.com/images/i1.png
-                      code: '3:8806091608222'
-                    quantity:
-                      unitized:
-                        measure:
-                          unit: unit
-                          value: '1'
-                      available:
-                        count: '99'
-                      maximum:
-                        count: '99'
-                    price:
-                      currency: INR
-                      value: '599.00'
-                      maximum_value: '1199.00'
-                    parent_item_id: V1
-                    category_id: Air Conditioner
-                    location_id: L1
-                    fulfillment_id: F1
-                    '@ondc/org/returnable': true
-                    '@ondc/org/cancellable': true
-                    '@ondc/org/available_on_cod': false
-                    '@ondc/org/time_to_ship': P1D
-                    '@ondc/org/seller_pickup_return': false
-                    '@ondc/org/return_window': P3D
-                    '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                    '@ondc/org/statutory_reqs_packaged_commodities':
-                      manufacturer_or_packer_name: Seller Business
-                      manufacturer_or_packer_address: >-
-                        Seller Building Address, Jayanagar, Bengaluru,
-                        Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: LG Air Conditioner
-                      month_year_of_manufacture_packing_import: NA
-                    tags:
-                      - code: origin
-                        list:
-                          - code: country
-                            value: IND
-                      - code: attribute
-                        list:
-                          - code: brand
-                            value: LG 1.5 Ton 3 Start Dual Inverter Split AC
-                          - code: model
-                            value: TS-Q18JNXE3
-                          - code: special_feature
-                            value: frequency
-                          - code: weight
-                            value: '32.5'
-                          - code: length
-                            value: '18.9'
-                          - code: breadth
-                            value: '83.7'
-                          - code: height
-                            value: '30.8'
-                          - code: includes
-                            value: Indoor Unit, Outdoor Unit, Remote
-                          - code: type
-                            value: split
-                          - code: refurbished
-                            value: 'no'
-                          - code: warranty
-                            value: '5'
-                          - code: energy_rating
-                            value: '3'
-                          - code: installation_detail
-                            value: Available
-                          - code: wattage
-                            value: '1482'
-                          - code: voltage
-                            value: '230'
+                            value: >-
+                              Pigeon by Stovekraft Mini Fruit & Vegetable
+                              Chopper With 3 Blades
                           - code: colour
-                            value: '#FF0000'
+                            value: "#00FF00"
                           - code: colour_name
-                            value: red
-                  - id: I6
-                    time:
-                      label: enable
-                      timestamp: '2024-08-12T10:27:48.913Z'
-                    rating: '4'
-                    descriptor:
-                      name: Samsung 1.5 Ton 5 Star WindFree Inverter Split AC
-                      symbol: https://sellerNP.com/images/i1.png
-                      short_desc: 5 Star WindFree Inverter Split AC
-                      long_desc: >-
-                        5 Star WindFree Inverter Split AC, 6 in 1 cooling 2 way
-                        swing
-                      images:
-                        - https://sellerNP.com/images/i1.png
-                      code: '3:8806091608222'
-                    quantity:
-                      unitized:
-                        measure:
-                          unit: unit
-                          value: '1'
-                      available:
-                        count: '99'
-                      maximum:
-                        count: '99'
-                    price:
-                      currency: INR
-                      value: '599.00'
-                      maximum_value: '1199.00'
-                    parent_item_id: V1
-                    category_id: Air Conditioner
-                    location_id: L1
-                    fulfillment_id: F1
-                    '@ondc/org/returnable': true
-                    '@ondc/org/cancellable': true
-                    '@ondc/org/available_on_cod': false
-                    '@ondc/org/time_to_ship': P1D
-                    '@ondc/org/seller_pickup_return': false
-                    '@ondc/org/return_window': P3D
-                    '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                    '@ondc/org/statutory_reqs_packaged_commodities':
-                      manufacturer_or_packer_name: Seller Business
-                      manufacturer_or_packer_address: >-
-                        Seller Building Address, Jayanagar, Bengaluru,
-                        Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Air Conditioner
-                      month_year_of_manufacture_packing_import: NA
-                    tags:
-                      - code: origin
-                        list:
-                          - code: country
-                            value: IND
-                      - code: attribute
-                        list:
-                          - code: brand
-                            value: Samsung 1.5 Ton 5 Star WindFree Inverter Split AC
-                          - code: model
-                            value: TS-A18JNXE3
-                          - code: special_feature
-                            value: frequency
-                          - code: weight
-                            value: '32.5'
-                          - code: length
-                            value: '18.9'
-                          - code: breadth
-                            value: '83.7'
-                          - code: height
-                            value: '30.8'
-                          - code: includes
-                            value: Indoor Unit, Outdoor Unit, Remote
-                          - code: type
-                            value: split
-                          - code: refurbished
-                            value: 'no'
-                          - code: warranty
-                            value: '5'
-                          - code: energy_rating
-                            value: '3'
-                          - code: installation_detail
-                            value: Available
-                          - code: wattage
-                            value: '1482'
-                          - code: voltage
-                            value: '230'
-                          - code: colour
-                            value: '#000000'
-                          - code: colour_name
-                            value: black
-                  - id: C1
-                    descriptor:
-                      name: Custom_Input
-                    quantity:
-                      unitized:
-                        measure:
-                          unit: unit
-                          value: '1'
-                      available:
-                        count: '99'
-                      maximum:
-                        count: '99'
-                    price:
-                      currency: INR
-                      value: '0.0'
-                      maximum_value: '0.0'
-                    category_id: Refrigerator
-                    related: true
-                    tags:
-                      - code: type
-                        list:
-                          - code: type
-                            value: customization
-                      - code: parent
-                        list:
-                          - code: id
-                            value: CG1
+                            value: green
+                          - code: material
+                            value: polypropylene
                 fulfillments:
                   - id: F1
                     type: Delivery
                     contact:
-                      phone: '9876543210'
+                      phone: "9876543210"
                       email: test@gmail.com
                   - id: F2
                     type: Self-Pickup
                     contact:
-                      phone: '7980274499'
-                      email: appliance@example.com
+                      email: home@example.com
+                      phone: "7980271122"
                 tags:
                   - code: serviceability
                     list:
                       - code: location
                         value: L1
                       - code: category
-                        value: Washing Machine
+                        value: Kitchen Storage and Containers
                       - code: type
-                        value: '11'
+                        value: "11"
                       - code: unit
                         value: pincode
                       - code: val
@@ -757,21 +503,21 @@ steps:
                       - code: location
                         value: L1
                       - code: category
-                        value: Electric Sewing Machine
+                        value: Stationery
                       - code: type
-                        value: '10'
-                      - code: unit
-                        value: km
+                        value: "12"
                       - code: val
-                        value: '15'
+                        value: IND
+                      - code: unit
+                        value: country
                   - code: serviceability
                     list:
                       - code: location
                         value: L1
                       - code: category
-                        value: Electric Air Fryer
+                        value: Closet/Laundry/Shoe Organization
                       - code: type
-                        value: '12'
+                        value: "12"
                       - code: unit
                         value: country
                       - code: val
@@ -781,37 +527,13 @@ steps:
                       - code: location
                         value: L1
                       - code: category
-                        value: Mixer Grinder
+                        value: Kitchen Tools
                       - code: type
-                        value: '12'
+                        value: "12"
                       - code: unit
                         value: country
                       - code: val
                         value: IND
-                  - code: serviceability
-                    list:
-                      - code: location
-                        value: L1
-                      - code: category
-                        value: Air Conditioner
-                      - code: type
-                        value: '12'
-                      - code: unit
-                        value: country
-                      - code: val
-                        value: IND
-                  - code: serviceability
-                    list:
-                      - code: location
-                        value: d7682d57-4a6d-4b01-98e6-b911301fb176
-                      - code: category
-                        value: Refrigerator
-                      - code: type
-                        value: '10'
-                      - code: unit
-                        value: km
-                      - code: val
-                        value: '15'
                   - code: timing
                     list:
                       - code: type
@@ -819,13 +541,13 @@ steps:
                       - code: location
                         value: L1
                       - code: day_from
-                        value: '1'
+                        value: "1"
                       - code: day_to
-                        value: '5'
+                        value: "5"
                       - code: time_from
-                        value: '0900'
+                        value: "0000"
                       - code: time_to
-                        value: '2100'
+                        value: "2359"
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -843,7 +565,7 @@ steps:
             area_code:
               type: string
               description: Enter the area code
-              default: '144203'
+              default: "144203"
           required:
             - area_code
           additionalProperties: true
@@ -854,9 +576,9 @@ transaction_history:
       context:
         domain: ONDC:RET16
         action: search
-        timestamp: '2026-03-03T07:26:04.852Z'
+        timestamp: "2026-03-09T12:46:48.728Z"
         transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
-        message_id: acb0bd95-2d43-464c-99db-46ca2a099053
+        message_id: 8f5745d3-f68c-47b4-811c-96d03e520635
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -866,18 +588,18 @@ transaction_history:
       message:
         intent:
           payment:
-            '@ondc/org/buyer_app_finder_fee_type': percent
-            '@ondc/org/buyer_app_finder_fee_amount': '3'
+            "@ondc/org/buyer_app_finder_fee_type": percent
+            "@ondc/org/buyer_app_finder_fee_amount": "3"
           tags:
             - code: bap_terms
               list:
                 - code: static_terms
-                  value: ' https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf'
+                  value: " https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf"
                 - code: static_terms_new
                   value: >-
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: effective_date
-                  value: '2026-03-13T07:26:04.860Z'
+                  value: "2026-03-19T12:46:48.744Z"
     action: search
     saved_info: {}
   - action_id: on_search1
@@ -885,9 +607,9 @@ transaction_history:
       context:
         domain: ONDC:RET16
         action: on_search
-        timestamp: '2026-03-03T07:26:06.728Z'
+        timestamp: "2026-03-09T12:46:49.539Z"
         transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
-        message_id: acb0bd95-2d43-464c-99db-46ca2a099053
+        message_id: 8f5745d3-f68c-47b4-811c-96d03e520635
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -901,14 +623,8 @@ transaction_history:
           bpp/fulfillments:
             - id: F1
               type: Delivery
-              contact:
-                phone: '9876543210'
-                email: test@gmail.com
             - id: F2
               type: Self-Pickup
-              contact:
-                phone: '7980274499'
-                email: appliance@example.com
           bpp/descriptor:
             name: Mock Seller NP
             symbol: https://sellerNP.com/images/np.png
@@ -922,12 +638,13 @@ transaction_history:
                   - code: np_type
                     value: MSN
                   - code: accept_bap_terms
-                    value: 'Y'
+                    value: "Y"
           bpp/providers:
             - id: P1
               time:
                 label: enable
-                timestamp: '2024-08-13T06:46:19.736Z'
+                timestamp: "2024-08-13T06:46:19.736Z"
+              rating: "4"
               ttl: PT24H
               locations:
                 - id: L1
@@ -935,23 +652,23 @@ transaction_history:
                   address:
                     city: Bengaluru
                     state: Karnataka
-                    area_code: '144203'
+                    area_code: "144203"
                     street: Jayanagar
                     locality: Jayanagar
                   time:
                     label: enable
-                    timestamp: '2024-08-13T06:46:19.736Z'
+                    timestamp: "2024-08-13T06:46:19.736Z"
                     days: 1,2,3,4,5
                     schedule:
                       holidays: []
                     range:
-                      start: '0000'
-                      end: '2359'
+                      start: "0000"
+                      end: "2359"
                   circle:
                     gps: 12.925810,77.583624
                     radius:
                       unit: km
-                      value: '5'
+                      value: "5"
               descriptor:
                 name: Store 1
                 symbol: https://sellerNP.com/images/store1.png
@@ -973,54 +690,60 @@ transaction_history:
                         - code: name
                           value: item.tags.attribute.colour
                         - code: seq
-                          value: '1'
+                          value: "1"
               items:
                 - id: I1
+                  rating: "4"
                   time:
                     label: enable
-                    timestamp: '2024-08-12T05:30:48.998Z'
-                  rating: '4'
+                    timestamp: "2024-08-12T05:30:48.998Z"
                   descriptor:
-                    name: Whirlpool 7.5 kg Fully Automatic Washing Machine
+                    name: MINISO Two-Layer Drawer Organizer
                     symbol: https://sellerNP.com/images/i1.png
                     short_desc: >-
-                      Fully Automatic Top Load Washing Machine with 7.5 kg
-                      capacity
+                      Hard, tough and durable cosmetic storage and organizer,
+                      Two-Layer Drawer Organizer Cosmetic Storage Box, White,
+                      Rectangular
                     long_desc: >-
-                      Whirlpool 7.5 kg Fully Automatic Washing Machine with 6th
-                      Sense Technology
+                      Introducing the MINISO Two-Layer Drawer Organizer Cosmetic
+                      Storage Box in a sleek, modern White, Rectangular design.
+                      Crafted with toughness and durability in mind, this
+                      organizer is built to withstand daily use, ensuring your
+                      items stay secure and protected.Its compact design offers
+                      simplicity and perfection, allowing you to maximize space
+                      while maintaining an elegant aesthetic.
                     images:
                       - https://sellerNP.com/images/i1.png
-                    code: '3:8904123051111'
+                    code: "3:9501101530007"
                   quantity:
                     unitized:
                       measure:
                         unit: unit
-                        value: '1'
+                        value: "1"
                     available:
-                      count: '99'
+                      count: "99"
                     maximum:
-                      count: '8'
+                      count: "8"
                   price:
                     currency: INR
-                    value: '35000'
-                    maximum_value: '35000'
-                  category_id: Washing Machine
+                    value: "2260"
+                    maximum_value: "2260"
+                  category_id: Kitchen Storage and Containers
                   location_id: L1
                   fulfillment_id: F1
-                  '@ondc/org/returnable': true
-                  '@ondc/org/cancellable': true
-                  '@ondc/org/available_on_cod': false
-                  '@ondc/org/time_to_ship': P2D
-                  '@ondc/org/seller_pickup_return': true
-                  '@ondc/org/return_window': P7D
-                  '@ondc/org/contact_details_consumer_care': Seller Business,test@gmail.com,9876543210
-                  '@ondc/org/statutory_reqs_packaged_commodities':
+                  "@ondc/org/returnable": true
+                  "@ondc/org/cancellable": true
+                  "@ondc/org/available_on_cod": false
+                  "@ondc/org/time_to_ship": P2D
+                  "@ondc/org/seller_pickup_return": true
+                  "@ondc/org/return_window": P7D
+                  "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                  "@ondc/org/statutory_reqs_packaged_commodities":
                     manufacturer_or_packer_name: Seller Business
                     manufacturer_or_packer_address: >-
                       Seller Building Address, Jayanagar, Bengaluru, Karnataka,
                       India - 560011
-                    common_or_generic_name_of_commodity: Whirlpool Washing Machine
+                    common_or_generic_name_of_commodity: Kitchen Storage and Containers
                     month_year_of_manufacture_packing_import: NA
                   tags:
                     - code: origin
@@ -1030,93 +753,68 @@ transaction_history:
                     - code: attribute
                       list:
                         - code: brand
-                          value: Whirlpool 7.5 kg Fully Automatic Washing Machine
-                        - code: weight
-                          value: '32'
-                        - code: model
-                          value: Stainwash Ultra
+                          value: MINISO Two-Layer Drawer Organizer
                         - code: colour
-                          value: '#EEF6F7'
+                          value: "#FFFFFF"
                         - code: colour_name
-                          value: catskill white
-                        - code: special_feature
-                          value: frequency
-                        - code: breadth
-                          value: '12.3'
-                        - code: length
-                          value: '18.5'
-                        - code: height
-                          value: '101.5'
-                        - code: includes
-                          value: Power Cord, Inlet Pipe
-                        - code: type
-                          value: full-auto
-                        - code: refurbished
-                          value: 'no'
-                        - code: warranty
-                          value: '4'
-                        - code: energy_rating
-                          value: '3'
-                        - code: extended_warranty
-                          value: '3'
-                        - code: installation_detail
-                          value: Available
-                        - code: wattage
-                          value: '720'
-                        - code: voltage
-                          value: '230'
-                    - code: type
-                      list:
-                        - code: type
-                          value: item
-                    - code: custom_group
-                      list:
-                        - code: id
-                          value: CG1
+                          value: brown
+                        - code: material
+                          value: thermoplastic
                 - id: I2
+                  rating: "3"
                   time:
                     label: enable
-                    timestamp: '2024-08-12T10:27:48.913Z'
-                  rating: '4'
+                    timestamp: "2024-08-12T10:27:48.913Z"
                   descriptor:
-                    name: Singer Simple Sewing Machine
+                    name: Doms Art Apps Nxt Kit With Plastic Carry Case
                     symbol: https://sellerNP.com/images/i1.png
-                    short_desc: Heavy-duty electric sewing machine.
+                    short_desc: >-
+                      Coloring & Art Smart Kit Use For Sketching, Writing,
+                      Shading, Colouring, Highlighting.Non-Toxic, Easy To Use &
+                      Safe For Childrens.
                     long_desc: >-
-                      Singer Heavy Duty 4452 Sewing Machine with 32 Built-in
-                      Stitches
+                      Introducing our comprehensive combination kit, designed to
+                      satisfy all your creative needs! Whether you're sketching,
+                      writing, shading, coloring, or highlighting, this kit has
+                      everything you need to unleash your imagination.You'll
+                      find 12 watercolor pens for vibrant and fluid artwork, 12
+                      bi-color crayons for versatile coloring options, 12 jumbo
+                      oil pastels for smooth and blendable textures, 8 bi-color
+                      pencils for precise drawing and shading, and 12 plastic
+                      crayons for bold and durable lines.
                     images:
                       - https://sellerNP.com/images/i1.png
-                    code: '3:00037431885883'
+                    code: "3:7845632198471"
                   quantity:
                     unitized:
                       measure:
                         unit: unit
-                        value: '1'
+                        value: "1"
                     available:
-                      count: '99'
+                      count: "99"
                     maximum:
-                      count: '10'
+                      count: "10"
                   price:
                     currency: INR
-                    value: '18000'
-                    maximum_value: '18000'
-                  category_id: Electric Sewing Machine
+                    value: "2460"
+                    maximum_value: "2460"
+                  category_id: Stationery
                   location_id: L1
+                  parent_item_id: V1
                   fulfillment_id: F1
-                  '@ondc/org/returnable': true
-                  '@ondc/org/cancellable': true
-                  '@ondc/org/available_on_cod': false
-                  '@ondc/org/time_to_ship': P2D
-                  '@ondc/org/seller_pickup_return': true
-                  '@ondc/org/return_window': P7D
-                  '@ondc/org/contact_details_consumer_care': Seller Business,test@gmail.com,9876543210
-                  '@ondc/org/statutory_reqs_packaged_commodities':
+                  "@ondc/org/returnable": true
+                  "@ondc/org/cancellable": true
+                  "@ondc/org/available_on_cod": false
+                  "@ondc/org/time_to_ship": P2D
+                  "@ondc/org/seller_pickup_return": true
+                  "@ondc/org/return_window": P7D
+                  "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                  "@ondc/org/statutory_reqs_packaged_commodities":
                     manufacturer_or_packer_name: Seller Business
                     manufacturer_or_packer_address: >-
                       Seller Building Address, Jayanagar, Bengaluru, Karnataka,
                       India - 560011
-                    common_or_generic_name_of_commodity: Singer Heavy Duty 4452
+                    common_or_generic_name_of_commodity: Plastic Crayons
                     month_year_of_manufacture_packing_import: NA
                   tags:
                     - code: origin
@@ -1126,85 +824,73 @@ transaction_history:
                     - code: attribute
                       list:
                         - code: brand
-                          value: Singer Simple Sewing Machine
-                        - code: model
-                          value: '3232'
-                        - code: special_feature
-                          value: laser
-                        - code: weight
-                          value: '6.9'
-                        - code: length
-                          value: '7.3'
-                        - code: breadth
-                          value: '15.5'
-                        - code: height
-                          value: '41'
-                        - code: includes
-                          value: Automatic Needle Threader, Adjustable Presser Foot
-                        - code: refurbished
-                          value: 'no'
-                        - code: warranty
-                          value: '2'
-                        - code: energy_rating
-                          value: '4'
-                        - code: extended_warranty
-                          value: '2'
-                        - code: wattage
-                          value: '320'
-                        - code: voltage
-                          value: '220'
-                    - code: type
-                      list:
-                        - code: type
-                          value: item
-                    - code: custom_group
-                      list:
-                        - code: id
-                          value: CG1
+                          value: Doms Art Apps Nxt Kit With Plastic Carry Case
+                        - code: colour
+                          value: "#00FF00"
+                        - code: colour_name
+                          value: white
+                        - code: material
+                          value: thermoplastic
                 - id: I3
-                  time:
-                    label: enable
-                    timestamp: '2024-08-12T10:27:48.913Z'
-                  rating: '4'
+                  rating: "4"
                   descriptor:
-                    name: Philips Viva AirFryer HD9225-50
+                    name: >-
+                      Polyset Elegance Plastic Laundry Basket - Assorted Colour,
+                      53 L
+                    code: "3:6213574890238"
                     symbol: https://sellerNP.com/images/i1.png
-                    short_desc: Air fryer for healthy cooking
+                    short_desc: >-
+                      Polyset’s Laundry Basket made from virgin plastic is very
+                      tough, durable and long-lasting. It has a large space
+                      enough to keep all the dirty clothes in one place.
                     long_desc: >-
-                      Philips Viva Collection Air Fryer with Rapid Air
-                      Technology
+                      This Polyset Laundry Basket comes in large size, which
+                      gives you more space for storing multiple items like
+                      clothes, toys, groceries, kitchen and bathing accessories,
+                      Ideal for family use in the Laundry Room, Bedroom or
+                      Bathroom, its comes with Lid for protecting your articles
+                      from dust. To add to it, the design and colour are so
+                      attractive, that it immediately gels with the interior of
+                      the house, be it Bathroom, Bedroom etc. Easily portable
+                      cross ventilating body keeps your items free module
+                      formation. And it gives you extra-large space to store
+                      your products. And this is made from tough plastic which
+                      provides immense strength to the product.
                     images:
                       - https://sellerNP.com/images/i1.png
-                    code: '3:8710103539209'
-                  quantity:
-                    unitized:
-                      measure:
-                        unit: unit
-                        value: '1'
-                    available:
-                      count: '99'
-                    maximum:
-                      count: '99'
                   price:
                     currency: INR
-                    value: '15000'
-                    maximum_value: '15000'
-                  category_id: Electric Air Fryer
-                  location_id: L1
+                    value: "499.00"
+                    maximum_value: "1199.00"
+                  parent_item_id: V1
+                  category_id: Closet/Laundry/Shoe Organization
                   fulfillment_id: F1
-                  '@ondc/org/returnable': true
-                  '@ondc/org/cancellable': true
-                  '@ondc/org/available_on_cod': false
-                  '@ondc/org/time_to_ship': P3D
-                  '@ondc/org/seller_pickup_return': false
-                  '@ondc/org/return_window': P20D
-                  '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                  '@ondc/org/statutory_reqs_packaged_commodities':
+                  location_id: L1
+                  time:
+                    label: enable
+                    timestamp: "2024-08-12T10:27:48.913Z"
+                  quantity:
+                    available:
+                      count: "99"
+                    maximum:
+                      count: "99"
+                    unitized:
+                      measure:
+                        value: "1"
+                        unit: unit
+                  "@ondc/org/returnable": true
+                  "@ondc/org/seller_pickup_return": false
+                  "@ondc/org/return_window": P3D
+                  "@ondc/org/cancellable": true
+                  "@ondc/org/time_to_ship": P1D
+                  "@ondc/org/available_on_cod": false
+                  "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
+                  "@ondc/org/statutory_reqs_packaged_commodities":
                     manufacturer_or_packer_name: Seller Business
                     manufacturer_or_packer_address: >-
                       Seller Building Address, Jayanagar, Bengaluru, Karnataka,
                       India - 560011
-                    common_or_generic_name_of_commodity: Philips Air Fryer
+                    common_or_generic_name_of_commodity: Laundry Basket
                     month_year_of_manufacture_packing_import: NA
                   tags:
                     - code: origin
@@ -1214,157 +900,76 @@ transaction_history:
                     - code: attribute
                       list:
                         - code: brand
-                          value: Philips Viva AirFryer HD9225-50
-                        - code: model
-                          value: HD9220/50
-                        - code: special_feature
-                          value: frequency
-                        - code: weight
-                          value: '7'
-                        - code: length
-                          value: '3'
-                        - code: breadth
-                          value: '31.5'
-                        - code: height
-                          value: '28'
-                        - code: includes
-                          value: Recipe Booklet, Double Layer Rack
-                        - code: refurbished
-                          value: 'no'
-                        - code: warranty
-                          value: '1'
-                        - code: energy_rating
-                          value: '3'
-                        - code: extended_warranty
-                          value: '1'
-                        - code: wattage
-                          value: '320'
-                        - code: voltage
-                          value: '220'
+                          value: >-
+                            Polyset Elegance Plastic Laundry Basket - Assorted
+                            Colour, 53 L
+                        - code: colour
+                          value: "#964B00"
+                        - code: colour_name
+                          value: brown
+                        - code: material
+                          value: polyethylene
                 - id: I4
-                  time:
-                    label: enable
-                    timestamp: '2024-08-12T10:27:48.913Z'
-                  rating: '4'
+                  rating: "4"
                   descriptor:
-                    name: Philips Mixer Grinder
+                    name: >-
+                      Pigeon by Stovekraft Mini Fruit & Vegetable Chopper With 3
+                      Blades
+                    code: "3:4012789543165"
                     symbol: https://sellerNP.com/images/i1.png
-                    short_desc: Fastest and Finest Mixing Grinder
+                    short_desc: >-
+                      This compact kitchen appliance is designed to help cut
+                      down your kitchen chores. A simple pull of the rope in
+                      this Pigeon Handy vegetable and fruit chopper cuts food
+                      items down into small pieces.
                     long_desc: >-
-                      The Philips Mixer Grinder is a versatile kitchen appliance
-                      designed to simplify your cooking tasks. Equipped with
-                      powerful motors and durable stainless steel blades, it
-                      effortlessly grinds, blends, and mixes a variety of
-                      ingredients.
+                      The chopper’s tough body can withstand being put into the
+                      dishwasher. Durable design, a convenient usage made of ABS
+                      plastic, this chopper is sturdy and durable. It does not
+                      require electricity to be in use. Chop fruits and
+                      vegetables. This chopper uses its three stainless steel
+                      blades and relies on a unique string function to chop
+                      fruits and vegetables with ease. It is easy to use. Get
+                      things started by putting the blade in the Centre of the
+                      bowl. Cut vegetables or fruits to medium size before
+                      putting them into this bowl to avoid jamming the blades.
+                      Put the contents in, close the lid, and sting the rope
+                      quickly to cut food items into small pieces. Then, take
+                      the blade system out before you remove the chopped food.
                     images:
                       - https://sellerNP.com/images/i1.png
-                    code: '3:887775600280'
-                  quantity:
-                    unitized:
-                      measure:
-                        unit: unit
-                        value: '1'
-                    available:
-                      count: '99'
-                    maximum:
-                      count: '99'
                   price:
                     currency: INR
-                    value: '599.00'
-                    maximum_value: '1199.00'
-                  category_id: Mixer Grinder
-                  location_id: L1
+                    value: "599.00"
+                    maximum_value: "1199.00"
+                  category_id: Kitchen Tools
                   fulfillment_id: F1
-                  '@ondc/org/returnable': true
-                  '@ondc/org/cancellable': true
-                  '@ondc/org/available_on_cod': false
-                  '@ondc/org/time_to_ship': P1D
-                  '@ondc/org/seller_pickup_return': false
-                  '@ondc/org/return_window': P3D
-                  '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                  '@ondc/org/statutory_reqs_packaged_commodities':
-                    manufacturer_or_packer_name: Seller Business
-                    manufacturer_or_packer_address: >-
-                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
-                      India - 560011
-                    common_or_generic_name_of_commodity: Mixer Grinder
-                    month_year_of_manufacture_packing_import: NA
-                  tags:
-                    - code: origin
-                      list:
-                        - code: country
-                          value: IND
-                    - code: attribute
-                      list:
-                        - code: brand
-                          value: Philips Mixer Grinder
-                        - code: model
-                          value: MXPH-1007
-                        - code: special_feature
-                          value: frequency
-                        - code: weight
-                          value: '8'
-                        - code: length
-                          value: '1.5'
-                        - code: breadth
-                          value: '20.5'
-                        - code: height
-                          value: '15'
-                        - code: includes
-                          value: Mixer Pots-3
-                        - code: refurbished
-                          value: 'no'
-                        - code: warranty
-                          value: '1'
-                        - code: energy_rating
-                          value: '2'
-                        - code: wattage
-                          value: '750'
-                        - code: voltage
-                          value: '230'
-                - id: I5
+                  location_id: L1
                   time:
                     label: enable
-                    timestamp: '2024-08-12T10:27:48.913Z'
-                  rating: '4'
-                  descriptor:
-                    name: LG 1.5 Ton 3 Start Dual Inverter Split AC
-                    symbol: https://sellerNP.com/images/i1.png
-                    short_desc: 3 Start Dual Inverter Split AC
-                    long_desc: 3 Start Dual Inverter Split AC, 6 in 1 cooling 2 way swing
-                    images:
-                      - https://sellerNP.com/images/i1.png
-                    code: '3:8806091608222'
+                    timestamp: "2024-08-12T10:27:48.913Z"
                   quantity:
+                    available:
+                      count: "99"
+                    maximum:
+                      count: "99"
                     unitized:
                       measure:
+                        value: "1"
                         unit: unit
-                        value: '1'
-                    available:
-                      count: '99'
-                    maximum:
-                      count: '99'
-                  price:
-                    currency: INR
-                    value: '599.00'
-                    maximum_value: '1199.00'
-                  parent_item_id: V1
-                  category_id: Air Conditioner
-                  location_id: L1
-                  fulfillment_id: F1
-                  '@ondc/org/returnable': true
-                  '@ondc/org/cancellable': true
-                  '@ondc/org/available_on_cod': false
-                  '@ondc/org/time_to_ship': P1D
-                  '@ondc/org/seller_pickup_return': false
-                  '@ondc/org/return_window': P3D
-                  '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                  '@ondc/org/statutory_reqs_packaged_commodities':
+                  "@ondc/org/returnable": true
+                  "@ondc/org/seller_pickup_return": false
+                  "@ondc/org/return_window": P3D
+                  "@ondc/org/cancellable": true
+                  "@ondc/org/time_to_ship": P1D
+                  "@ondc/org/available_on_cod": false
+                  "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
+                  "@ondc/org/statutory_reqs_packaged_commodities":
                     manufacturer_or_packer_name: Seller Business
                     manufacturer_or_packer_address: >-
                       Seller Building Address, Jayanagar, Bengaluru, Karnataka,
                       India - 560011
-                    common_or_generic_name_of_commodity: LG Air Conditioner
+                    common_or_generic_name_of_commodity: Vegetable Chopper
                     month_year_of_manufacture_packing_import: NA
                   tags:
                     - code: origin
@@ -1374,173 +979,35 @@ transaction_history:
                     - code: attribute
                       list:
                         - code: brand
-                          value: LG 1.5 Ton 3 Start Dual Inverter Split AC
-                        - code: model
-                          value: TS-Q18JNXE3
-                        - code: special_feature
-                          value: frequency
-                        - code: weight
-                          value: '32.5'
-                        - code: length
-                          value: '18.9'
-                        - code: breadth
-                          value: '83.7'
-                        - code: height
-                          value: '30.8'
-                        - code: includes
-                          value: Indoor Unit, Outdoor Unit, Remote
-                        - code: type
-                          value: split
-                        - code: refurbished
-                          value: 'no'
-                        - code: warranty
-                          value: '5'
-                        - code: energy_rating
-                          value: '3'
-                        - code: installation_detail
-                          value: Available
-                        - code: wattage
-                          value: '1482'
-                        - code: voltage
-                          value: '230'
+                          value: >-
+                            Pigeon by Stovekraft Mini Fruit & Vegetable Chopper
+                            With 3 Blades
                         - code: colour
-                          value: '#FF0000'
+                          value: "#00FF00"
                         - code: colour_name
-                          value: red
-                - id: I6
-                  time:
-                    label: enable
-                    timestamp: '2024-08-12T10:27:48.913Z'
-                  rating: '4'
-                  descriptor:
-                    name: Samsung 1.5 Ton 5 Star WindFree Inverter Split AC
-                    symbol: https://sellerNP.com/images/i1.png
-                    short_desc: 5 Star WindFree Inverter Split AC
-                    long_desc: >-
-                      5 Star WindFree Inverter Split AC, 6 in 1 cooling 2 way
-                      swing
-                    images:
-                      - https://sellerNP.com/images/i1.png
-                    code: '3:8806091608222'
-                  quantity:
-                    unitized:
-                      measure:
-                        unit: unit
-                        value: '1'
-                    available:
-                      count: '99'
-                    maximum:
-                      count: '99'
-                  price:
-                    currency: INR
-                    value: '599.00'
-                    maximum_value: '1199.00'
-                  parent_item_id: V1
-                  category_id: Air Conditioner
-                  location_id: L1
-                  fulfillment_id: F1
-                  '@ondc/org/returnable': true
-                  '@ondc/org/cancellable': true
-                  '@ondc/org/available_on_cod': false
-                  '@ondc/org/time_to_ship': P1D
-                  '@ondc/org/seller_pickup_return': false
-                  '@ondc/org/return_window': P3D
-                  '@ondc/org/contact_details_consumer_care': Moaz,support@gmail.com,2343453434
-                  '@ondc/org/statutory_reqs_packaged_commodities':
-                    manufacturer_or_packer_name: Seller Business
-                    manufacturer_or_packer_address: >-
-                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
-                      India - 560011
-                    common_or_generic_name_of_commodity: Air Conditioner
-                    month_year_of_manufacture_packing_import: NA
-                  tags:
-                    - code: origin
-                      list:
-                        - code: country
-                          value: IND
-                    - code: attribute
-                      list:
-                        - code: brand
-                          value: Samsung 1.5 Ton 5 Star WindFree Inverter Split AC
-                        - code: model
-                          value: TS-A18JNXE3
-                        - code: special_feature
-                          value: frequency
-                        - code: weight
-                          value: '32.5'
-                        - code: length
-                          value: '18.9'
-                        - code: breadth
-                          value: '83.7'
-                        - code: height
-                          value: '30.8'
-                        - code: includes
-                          value: Indoor Unit, Outdoor Unit, Remote
-                        - code: type
-                          value: split
-                        - code: refurbished
-                          value: 'no'
-                        - code: warranty
-                          value: '5'
-                        - code: energy_rating
-                          value: '3'
-                        - code: installation_detail
-                          value: Available
-                        - code: wattage
-                          value: '1482'
-                        - code: voltage
-                          value: '230'
-                        - code: colour
-                          value: '#000000'
-                        - code: colour_name
-                          value: black
-                - id: C1
-                  descriptor:
-                    name: Custom_Input
-                  quantity:
-                    unitized:
-                      measure:
-                        unit: unit
-                        value: '1'
-                    available:
-                      count: '99'
-                    maximum:
-                      count: '99'
-                  price:
-                    currency: INR
-                    value: '0.0'
-                    maximum_value: '0.0'
-                  category_id: Refrigerator
-                  related: true
-                  tags:
-                    - code: type
-                      list:
-                        - code: type
-                          value: customization
-                    - code: parent
-                      list:
-                        - code: id
-                          value: CG1
+                          value: green
+                        - code: material
+                          value: polypropylene
               fulfillments:
                 - id: F1
                   type: Delivery
                   contact:
-                    phone: '9876543210'
+                    phone: "9876543210"
                     email: test@gmail.com
                 - id: F2
                   type: Self-Pickup
                   contact:
-                    phone: '7980274499'
-                    email: appliance@example.com
+                    email: home@example.com
+                    phone: "7980271122"
               tags:
                 - code: serviceability
                   list:
                     - code: location
                       value: L1
                     - code: category
-                      value: Washing Machine
+                      value: Kitchen Storage and Containers
                     - code: type
-                      value: '11'
+                      value: "11"
                     - code: unit
                       value: pincode
                     - code: val
@@ -1550,21 +1017,21 @@ transaction_history:
                     - code: location
                       value: L1
                     - code: category
-                      value: Electric Sewing Machine
+                      value: Stationery
                     - code: type
-                      value: '10'
-                    - code: unit
-                      value: km
+                      value: "12"
                     - code: val
-                      value: '15'
+                      value: IND
+                    - code: unit
+                      value: country
                 - code: serviceability
                   list:
                     - code: location
                       value: L1
                     - code: category
-                      value: Electric Air Fryer
+                      value: Closet/Laundry/Shoe Organization
                     - code: type
-                      value: '12'
+                      value: "12"
                     - code: unit
                       value: country
                     - code: val
@@ -1574,37 +1041,13 @@ transaction_history:
                     - code: location
                       value: L1
                     - code: category
-                      value: Mixer Grinder
+                      value: Kitchen Tools
                     - code: type
-                      value: '12'
+                      value: "12"
                     - code: unit
                       value: country
                     - code: val
                       value: IND
-                - code: serviceability
-                  list:
-                    - code: location
-                      value: L1
-                    - code: category
-                      value: Air Conditioner
-                    - code: type
-                      value: '12'
-                    - code: unit
-                      value: country
-                    - code: val
-                      value: IND
-                - code: serviceability
-                  list:
-                    - code: location
-                      value: d7682d57-4a6d-4b01-98e6-b911301fb176
-                    - code: category
-                      value: Refrigerator
-                    - code: type
-                      value: '10'
-                    - code: unit
-                      value: km
-                    - code: val
-                      value: '15'
                 - code: timing
                   list:
                     - code: type
@@ -1612,15 +1055,15 @@ transaction_history:
                     - code: location
                       value: L1
                     - code: day_from
-                      value: '1'
+                      value: "1"
                     - code: day_to
-                      value: '5'
+                      value: "5"
                     - code: time_from
-                      value: '0900'
+                      value: "0000"
                     - code: time_to
-                      value: '2100'
+                      value: "2359"
     action: on_search
     saved_info: {}
-validationLib: ''
+validationLib: ""
 helperLib: >-
-  CmNvbnN0IFJFVDEzQlBDMTI1Q2F0YWxvZyA9IEpTT04ucGFyc2UoCiAgSlNPTi5zdHJpbmdpZnkoewogICAgY2F0YWxvZzogewogICAgImJwcC9mdWxmaWxsbWVudHMiOiBbCiAgICAgIHsKICAgICAgICBpZDogIkYxIiwKICAgICAgICB0eXBlOiAiRGVsaXZlcnkiLAogICAgICB9LAogICAgXSwKICAgICJicHAvZGVzY3JpcHRvciI6IHsKICAgICAgbmFtZTogIk1vY2sgU2VsbGVyIE5QIiwKICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyIsCiAgICAgIHNob3J0X2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICBsb25nX2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyJdLAogICAgICB0YWdzOiBbCiAgICAgICAgewogICAgICAgICAgY29kZTogImJwcF90ZXJtcyIsCiAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAibnBfdHlwZSIsCiAgICAgICAgICAgICAgdmFsdWU6ICJNU04iLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICB9LAogICAgICBdLAogICAgfSwKICAgICJicHAvcHJvdmlkZXJzIjogWwogICAgICB7CiAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgdGltZTogewogICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICB9LAogICAgICAgIHR0bDogIlBUMjRIIiwKICAgICAgICBsb2NhdGlvbnM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJMMSIsCiAgICAgICAgICAgIGdwczogIjEyLjkyNTgxMCw3Ny41ODM2MjQiLAogICAgICAgICAgICBhZGRyZXNzOiB7CiAgICAgICAgICAgICAgY2l0eTogIkJlbmdhbHVydSIsCiAgICAgICAgICAgICAgc3RhdGU6ICJLYXJuYXRha2EiLAogICAgICAgICAgICAgIGFyZWFfY29kZTogIjU2MDAxMSIsCiAgICAgICAgICAgICAgc3RyZWV0OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICBsb2NhbGl0eTogIkpheWFuYWdhciIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICAgICAgICBkYXlzOiAiMSwyLDMsNCw1IiwKICAgICAgICAgICAgICBzY2hlZHVsZTogewogICAgICAgICAgICAgICAgaG9saWRheXM6IFtdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgIHN0YXJ0OiAiMDAwMCIsCiAgICAgICAgICAgICAgICBlbmQ6ICIyMzU5IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBjaXJjbGU6IHsKICAgICAgICAgICAgICBncHM6ICIxMi45MjU4MTAsNzcuNTgzNjI0IiwKICAgICAgICAgICAgICByYWRpdXM6IHsKICAgICAgICAgICAgICAgIHVuaXQ6ICJrbSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjUiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgbmFtZTogIlN0b3JlIDEiLAogICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL3N0b3JlMS5wbmciLAogICAgICAgICAgc2hvcnRfZGVzYzogIlN0b3JlIDEiLAogICAgICAgICAgbG9uZ19kZXNjOiAiU3RvcmUgMSIsCiAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL3N0b3JlMS5wbmciXSwKICAgICAgICB9LAogICAgICAgIGNhdGVnb3JpZXM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJWMSIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBuYW1lOiAiVmFyaWFudCBHcm91cCAxIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInZhcmlhbnRfZ3JvdXAiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJuYW1lIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIml0ZW0udGFncy5hdHRyaWJ1dGUucGxhdGluZyIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2VxIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICBdLAogICAgICAgIGl0ZW1zOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAiSTEiLAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMDU6MzA6NDguOTk4WiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgbmFtZTogIkFIQSBQSEEgQkhBIDMyJSIsCiAgICAgICAgICAgICAgY29kZTogIjE6ODgwOTMyNjMzMzY2MSIsCiAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgc2hvcnRfZGVzYzogIldlZWtlbmQgRXhmb2xpYXRpbmcgRmFjaWFsIiwKICAgICAgICAgICAgICBsb25nX2Rlc2M6ICJBIHBvd2VyZnVsIHBlZWxpbmcgdHJpbyBvZiAyNSUgQUhBLCA1JSBQSEEgJiAyJSBCSEEgdGhhdCBwcm92aWRlcyBtdWx0aS1sZXZlbCBleGZvbGlhdGlvbiwgYm90aCBvbiB0aGUgc3VyZmFjZSAmIGluc2lkZSB0aGUgcG9yZXMsIGdpdmluZyB5b3UgYSBoZWFsdGh5LCBwbHVtcCwgYW5kIGdsb3dpbmcgc2tpbi5GcmFncmFuY2UgZnJlZS4gTm9uLWNvbWVkb2dlbmljIDMwbWwiLAogICAgICAgICAgICAgIGltYWdlczogWwogICAgICAgICAgICAgICAgImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciCiAgICAgICAgICAgICAgXQogICAgICAgICAgICB9LAogICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgIHVuaXQ6ICJtaWxpbGV0ZXIiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjMwIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgbWF4aW11bTogewogICAgICAgICAgICAgICAgY291bnQ6ICI4IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMjYwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJTa2luIENhcmUgLSBGYWNlIENsZWFuc2VycyIsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IGZhbHNlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQVDVNIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6ICJNaW5pbWFsaXN0IEN1c3RvbWVyIENhcmUsaGVscEBiZW1pbmltYWxpc3QuY28sOTc3MjM0NjU1NSIsCiAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiQUhBcyAoQWxwaGEgSHlkcm94eSBBY2lkcykgYW5kIEJIQXMgKEJldGEgSHlkcm94eSBBY2lkcykgYW5kIFBIQSAoUG9seWh5ZHJveHkgQWNpZCkiLAogICAgICAgICAgICAgIG1vbnRoX3llYXJfb2ZfbWFudWZhY3R1cmVfcGFja2luZ19pbXBvcnQ6ICIwMy8yMDI0IgogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1pbmltYWxpc3QiCiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAiSTIiLAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgbmFtZTogIk1hcnVsYSBPaWwgMDUlIE1vaXN0dXJpemVyIiwKICAgICAgICAgICAgICBjb2RlOiAiMTo4OTA2MTI4MTAwNDM2IiwKICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiRGVlcCAmIEludGVuc2UgTW9pc3R1cml6YXRpb24uIFRyZWF0cyBEcnluZXNzLCBSb3VnaG5lc3MgYW5kIEZsYWtpbmVzcyIsCiAgICAgICAgICAgICAgbG9uZ19kZXNjOiAiQW4gZXZlcnlkYXkgbW9pc3R1cml6aW5nIGNyZWFtIHdpdGggNSUgTWFydWxhIE9pbCwgcGFpcmVkIHdpdGggVml0YW1pbiBGIGFuZCBWaXRhbWluIEUgdG8gbm91cmlzaCwgbW9pc3R1cml6ZSBhbmQgaW1wcm92ZSBza2luIHNvZnRuZXNzLiBJdCdzIGEgaGVhdnkgY3JlYW0sIHN1aXRhYmxlIGZvciBkcnkvZGFtYWdlZCB0byBub3JtYWwgc2tpbiB0eXBlcy5GcmFncmFuY2UgZnJlZSAgICBOb24tY29tZWRvZ2VuaWMgICAgIDUwZyIsCiAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICB1bml0aXplZDogewogICAgICAgICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAgICAgICB1bml0OiAiZ3JhbSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNTAiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICBjb3VudDogIjEwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjIzNjAiLAogICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMzYwIiwKICAgICAgICAgICAgfSwKCiAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiU2tpbiBDYXJlIC0gTG90aW9ucywgTW9pc3R1cmlzZXJzLCBhbmQgQ3JlYW1zIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9yZXR1cm5hYmxlIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQN0QiLAogICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogZmFsc2UsCiAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlBUNU0iLAogICAgICAgICAgICAiQG9uZGMvb3JnL2F2YWlsYWJsZV9vbl9jb2QiOiB0cnVlLAoKCiAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgIlNlbGxlciBCdXNpbmVzcyx0ZXN0QGdtYWlsLmNvbSw5ODc2NTQzMjEwIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiTWFydWxhIE9pbCIsCiAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIjAzLzIwMjQiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCgogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1pbmFtaWxpc3QiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJJMyIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBuYW1lOiAiTmlhY2luYW1pZGUgMDUlIiwKICAgICAgICAgICAgICBjb2RlOiAiMTo4OTA2MTI4MTAwMTA4IiwKICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiSHlkcmF0ZXMsIFJlcGFpcnMgJiBTb290aGVzIFNraW4iLAogICAgICAgICAgICAgIGxvbmdfZGVzYzogIkEgbm91cmlzaGluZyAmIGh5ZHJhdGluZyBkYWlseSBzZXJ1bSB0aGF0IHJlcGFpcnMgZGFtYWdlZCBiYXJyaWVyICYgc29vdGhlcyBzZW5zaXRpdmUgc2tpbi4gSWRlYWwgZm9yIHBlb3BsZSB3aXRoIGRyeSwgc2Vuc2l0aXZlIHNraW4gJiB0aG9zZSB3aG8gZmluZCBOaWFjaW5hbWlkZSAxMCUgYSBsaXR0bGUgc3Ryb25nLkZyYWdyYW5jZSBmcmVlICAgIE5vbi1jb21lZG9nZW5pYyAzMG1sIiwKICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjQ5OS4wMCIsCiAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjExOTkuMDAiLAogICAgICAgICAgICB9LAogICAgICAgICAgICAiY2F0ZWdvcnlfaWQiOiAiU2tpbiBDYXJlIC0gTG90aW9ucywgTW9pc3R1cmlzZXJzLCBhbmQgQ3JlYW1zIiwKICAgICAgICAgICAgImZ1bGZpbGxtZW50X2lkIjogIjEiLAogICAgICAgICAgICAibG9jYXRpb25faWQiOiAiMSIsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IGZhbHNlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQVDVNIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6ICJNaW5pbWFsaXN0IEN1c3RvbWVyIENhcmUsc3VwcG9ydEBnbWFpbC5jb20sMjM0MzQ1MzQzNCIsCiAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgIm1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZSI6ICJNaW5pbWFsaXN0IiwKICAgICAgICAgICAgICAibWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzIjogIlNlbGxlciBCdWlsZGluZyBBZGRyZXNzLCBKYXlhbmFnYXIsIEJlbmdhbHVydSwgS2FybmF0YWthLCBJbmRpYSAtIDU2MDAxMSIsCiAgICAgICAgICAgICAgImNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5IjogIk5pYWNpbmFtaWRlIiwKICAgICAgICAgICAgICAibW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydCI6ICIwMy8yMDI0IgogICAgICAgICAgICB9LAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1pbmltYWxpc3QiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICBdLAogICAgICAgIGZ1bGZpbGxtZW50czogWwogICAgICAgICAgewogICAgICAgICAgICBpZDogIkYxIiwKICAgICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICAgICAgY29udGFjdDogewogICAgICAgICAgICAgIHBob25lOiAiOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgZW1haWw6ICJ0ZXN0QGdtYWlsLmNvbSIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgY3JlZHM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJnaS0xMjM0NTY3OCIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBjb2RlOiAiU29jaWFsIFNlY3RvciIsCiAgICAgICAgICAgICAgc2hvcnRfZGVzYzogIkdJIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgdXJsOiAiaHR0cHM6Ly9hYmNkLmNkbi5jb20vaW1hZ2VzL2JhZGdlLWltZyIsCiAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmVyaWZpY2F0aW9uIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2ZXJpZnlfdXJsIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImh0dHBzOi8vYWJjZC5naS5jb20vdmVyaWZ5P2lkPWdpLTEyMzQ1Njc4JyIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmVyaWZpZXIiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiQ1NQLUFCQyIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiaXNzdWVyIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIkV4YW1wbGUgQXV0aG9yaXR5IiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWxpZF9mcm9tIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjIwMjMtMDYtMDNUMDA6MDA6MDA6MDAwWiIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsaWRfdG8iLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMjAyNC0wNi0wM1QyMzo1OTo1OTo5OTlaIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgICB0YWdzOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGNvZGU6ICJzZXJ2aWNlYWJpbGl0eSIsCiAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgdmFsdWU6ICJTa2luIENhcmUgLSBMb3Rpb25zLCBNb2lzdHVyaXNlcnMsIGFuZCBDcmVhbXMiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjExIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAicGluY29kZSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiNTYwMDAxLTU2MDA3Niw1NjAwODMiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiU2tpbiBDYXJlIC0gRmFjZSBDbGVhbnNlcnMiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgY29kZTogInRpbWluZyIsCiAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIkFsbCIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAiZGF5X2Zyb20iLAogICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJkYXlfdG8iLAogICAgICAgICAgICAgICAgdmFsdWU6ICI2IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX2Zyb20iLAogICAgICAgICAgICAgICAgdmFsdWU6ICIwMDAwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX3RvIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiMjM1OSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgfSwKICAgIF0sCiAgfSwKICB9KQopOwoK
+  CmNvbnN0IFJFVDE2SE9NRUtJVENIRU4xMjVDYXRhbG9nID0gSlNPTi5wYXJzZSgKICBKU09OLnN0cmluZ2lmeSh7CiAgICBjYXRhbG9nOiB7CiAgICAgICJicHAvZnVsZmlsbG1lbnRzIjogWwogICAgICAgIHsKICAgICAgICAgIGlkOiAiRjEiLAogICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgIGlkOiAiRjIiLAogICAgICAgICAgdHlwZTogIlNlbGYtUGlja3VwIiwKICAgICAgICB9LAogICAgICBdLAogICAgICAiYnBwL2Rlc2NyaXB0b3IiOiB7CiAgICAgICAgbmFtZTogIk1vY2sgU2VsbGVyIE5QIiwKICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIiwKICAgICAgICBzaG9ydF9kZXNjOiAiU2VsbGVyIE1hcmtldHBsYWNlIiwKICAgICAgICBsb25nX2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIl0sCiAgICAgICAgdGFnczogWwogICAgICAgICAgewogICAgICAgICAgICBjb2RlOiAiYnBwX3Rlcm1zIiwKICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJucF90eXBlIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiTVNOIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhY2NlcHRfYmFwX3Rlcm1zIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiWSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgfSwKICAgICAgImJwcC9wcm92aWRlcnMiOiBbCiAgICAgICAgewogICAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICAgIH0sCiAgICAgICAgICByYXRpbmc6ICI0IiwKICAgICAgICAgIHR0bDogIlBUMjRIIiwKICAgICAgICAgIGxvY2F0aW9uczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJMMSIsCiAgICAgICAgICAgICAgZ3BzOiAiMTIuOTI1ODEwLDc3LjU4MzYyNCIsCiAgICAgICAgICAgICAgYWRkcmVzczogewogICAgICAgICAgICAgICAgY2l0eTogIkJlbmdhbHVydSIsCiAgICAgICAgICAgICAgICBzdGF0ZTogIkthcm5hdGFrYSIsCiAgICAgICAgICAgICAgICBhcmVhX2NvZGU6ICI1NjAwMTEiLAogICAgICAgICAgICAgICAgc3RyZWV0OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICAgIGxvY2FsaXR5OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTNUMDY6NDY6MTkuNzM2WiIsCiAgICAgICAgICAgICAgICBkYXlzOiAiMSwyLDMsNCw1IiwKICAgICAgICAgICAgICAgIHNjaGVkdWxlOiB7CiAgICAgICAgICAgICAgICAgIGhvbGlkYXlzOiBbXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICByYW5nZTogewogICAgICAgICAgICAgICAgICBzdGFydDogIjAwMDAiLAogICAgICAgICAgICAgICAgICBlbmQ6ICIyMzU5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBjaXJjbGU6IHsKICAgICAgICAgICAgICAgIGdwczogIjEyLjkyNTgxMCw3Ny41ODM2MjQiLAogICAgICAgICAgICAgICAgcmFkaXVzOiB7CiAgICAgICAgICAgICAgICAgIHVuaXQ6ICJrbSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICBuYW1lOiAiU3RvcmUgMSIsCiAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9zdG9yZTEucG5nIiwKICAgICAgICAgICAgc2hvcnRfZGVzYzogIlN0b3JlIDEiLAogICAgICAgICAgICBsb25nX2Rlc2M6ICJTdG9yZSAxIiwKICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9zdG9yZTEucG5nIl0sCiAgICAgICAgICB9LAogICAgICAgICAgY2F0ZWdvcmllczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJWMSIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlZhcmlhbnQgR3JvdXAgMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAidmFyaWFudF9ncm91cCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJuYW1lIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiaXRlbS50YWdzLmF0dHJpYnV0ZS5jb2xvdXIiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogInNlcSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgICAgaXRlbXM6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGlkOiAiSTEiLAogICAgICAgICAgICAgIHJhdGluZzogIjQiLAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMDU6MzA6NDguOTk4WiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICBuYW1lOiAiTUlOSVNPIFR3by1MYXllciBEcmF3ZXIgT3JnYW5pemVyIiwKICAgICAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICAgIkhhcmQsIHRvdWdoIGFuZCBkdXJhYmxlIGNvc21ldGljIHN0b3JhZ2UgYW5kIG9yZ2FuaXplciwgVHdvLUxheWVyIERyYXdlciBPcmdhbml6ZXIgQ29zbWV0aWMgU3RvcmFnZSBCb3gsIFdoaXRlLCBSZWN0YW5ndWxhciIsCiAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICJJbnRyb2R1Y2luZyB0aGUgTUlOSVNPIFR3by1MYXllciBEcmF3ZXIgT3JnYW5pemVyIENvc21ldGljIFN0b3JhZ2UgQm94IGluIGEgc2xlZWssIG1vZGVybiBXaGl0ZSwgUmVjdGFuZ3VsYXIgZGVzaWduLiBDcmFmdGVkIHdpdGggdG91Z2huZXNzIGFuZCBkdXJhYmlsaXR5IGluIG1pbmQsIHRoaXMgb3JnYW5pemVyIGlzIGJ1aWx0IHRvIHdpdGhzdGFuZCBkYWlseSB1c2UsIGVuc3VyaW5nIHlvdXIgaXRlbXMgc3RheSBzZWN1cmUgYW5kIHByb3RlY3RlZC5JdHMgY29tcGFjdCBkZXNpZ24gb2ZmZXJzIHNpbXBsaWNpdHkgYW5kIHBlcmZlY3Rpb24sIGFsbG93aW5nIHlvdSB0byBtYXhpbWl6ZSBzcGFjZSB3aGlsZSBtYWludGFpbmluZyBhbiBlbGVnYW50IGFlc3RoZXRpYy4iLAogICAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciXSwKICAgICAgICAgICAgICAgIGNvZGU6ICIzOjk1MDExMDE1MzAwMDciLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICB1bml0OiAidW5pdCIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgbWF4aW11bTogewogICAgICAgICAgICAgICAgICBjb3VudDogIjgiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHByaWNlOiB7CiAgICAgICAgICAgICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJLaXRjaGVuIFN0b3JhZ2UgYW5kIENvbnRhaW5lcnMiLAogICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVzaW5lc3MsdGVzdEBnbWFpbC5jb20sOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6CiAgICAgICAgICAgICAgICAgICJLaXRjaGVuIFN0b3JhZ2UgYW5kIENvbnRhaW5lcnMiLAogICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTUlOSVNPIFR3by1MYXllciBEcmF3ZXIgT3JnYW5pemVyICIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiI0ZGRkZGRiIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJicm93biIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ0aGVybW9wbGFzdGljIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJMiIsCiAgICAgICAgICAgICAgcmF0aW5nOiAiMyIsCiAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQxMDoyNzo0OC45MTNaIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgIG5hbWU6ICJEb21zIEFydCBBcHBzIE54dCBLaXQgV2l0aCBQbGFzdGljIENhcnJ5IENhc2UiLAogICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgICAiQ29sb3JpbmcgJiBBcnQgU21hcnQgS2l0IFVzZSBGb3IgU2tldGNoaW5nLCBXcml0aW5nLCBTaGFkaW5nLCBDb2xvdXJpbmcsIEhpZ2hsaWdodGluZy5Ob24tVG94aWMsIEVhc3kgVG8gVXNlICYgU2FmZSBGb3IgQ2hpbGRyZW5zLiIsCiAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICJJbnRyb2R1Y2luZyBvdXIgY29tcHJlaGVuc2l2ZSBjb21iaW5hdGlvbiBraXQsIGRlc2lnbmVkIHRvIHNhdGlzZnkgYWxsIHlvdXIgY3JlYXRpdmUgbmVlZHMhIFdoZXRoZXIgeW91J3JlIHNrZXRjaGluZywgd3JpdGluZywgc2hhZGluZywgY29sb3JpbmcsIG9yIGhpZ2hsaWdodGluZywgdGhpcyBraXQgaGFzIGV2ZXJ5dGhpbmcgeW91IG5lZWQgdG8gdW5sZWFzaCB5b3VyIGltYWdpbmF0aW9uLllvdSdsbCBmaW5kIDEyIHdhdGVyY29sb3IgcGVucyBmb3IgdmlicmFudCBhbmQgZmx1aWQgYXJ0d29yaywgMTIgYmktY29sb3IgY3JheW9ucyBmb3IgdmVyc2F0aWxlIGNvbG9yaW5nIG9wdGlvbnMsIDEyIGp1bWJvIG9pbCBwYXN0ZWxzIGZvciBzbW9vdGggYW5kIGJsZW5kYWJsZSB0ZXh0dXJlcywgOCBiaS1jb2xvciBwZW5jaWxzIGZvciBwcmVjaXNlIGRyYXdpbmcgYW5kIHNoYWRpbmcsIGFuZCAxMiBwbGFzdGljIGNyYXlvbnMgZm9yIGJvbGQgYW5kIGR1cmFibGUgbGluZXMuIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgICBjb2RlOiAiMzo3ODQ1NjMyMTk4NDcxIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgICB1bml0aXplZDogewogICAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICIxMCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcHJpY2U6IHsKICAgICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiMjQ2MCIsCiAgICAgICAgICAgICAgICBtYXhpbXVtX3ZhbHVlOiAiMjQ2MCIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBjYXRlZ29yeV9pZDogIlN0YXRpb25lcnkiLAogICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVzaW5lc3MsdGVzdEBnbWFpbC5jb20sOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJQbGFzdGljIENyYXlvbnMiLAogICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiRG9tcyBBcnQgQXBwcyBOeHQgS2l0IFdpdGggUGxhc3RpYyBDYXJyeSBDYXNlICIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzAwRkYwMCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ3aGl0ZSIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ0aGVybW9wbGFzdGljIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJMyIsCiAgICAgICAgICAgICAgcmF0aW5nOiAiNCIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlBvbHlzZXQgRWxlZ2FuY2UgUGxhc3RpYyBMYXVuZHJ5IEJhc2tldCAtIEFzc29ydGVkIENvbG91ciwgNTMgTCIsCiAgICAgICAgICAgICAgICBjb2RlOiAiMzo2MjEzNTc0ODkwMjM4IiwKICAgICAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICAgIlBvbHlzZXTigJlzIExhdW5kcnkgQmFza2V0IG1hZGUgZnJvbSB2aXJnaW4gcGxhc3RpYyBpcyB2ZXJ5IHRvdWdoLCBkdXJhYmxlIGFuZCBsb25nLWxhc3RpbmcuIEl0IGhhcyBhIGxhcmdlIHNwYWNlIGVub3VnaCB0byBrZWVwIGFsbCB0aGUgZGlydHkgY2xvdGhlcyBpbiBvbmUgcGxhY2UuIiwKICAgICAgICAgICAgICAgIGxvbmdfZGVzYzoKICAgICAgICAgICAgICAgICAgIlRoaXMgUG9seXNldCBMYXVuZHJ5IEJhc2tldCBjb21lcyBpbiBsYXJnZSBzaXplLCB3aGljaCBnaXZlcyB5b3UgbW9yZSBzcGFjZSBmb3Igc3RvcmluZyBtdWx0aXBsZSBpdGVtcyBsaWtlIGNsb3RoZXMsIHRveXMsIGdyb2Nlcmllcywga2l0Y2hlbiBhbmQgYmF0aGluZyBhY2Nlc3NvcmllcywgSWRlYWwgZm9yIGZhbWlseSB1c2UgaW4gdGhlIExhdW5kcnkgUm9vbSwgQmVkcm9vbSBvciBCYXRocm9vbSwgaXRzIGNvbWVzIHdpdGggTGlkIGZvciBwcm90ZWN0aW5nIHlvdXIgYXJ0aWNsZXMgZnJvbSBkdXN0LiBUbyBhZGQgdG8gaXQsIHRoZSBkZXNpZ24gYW5kIGNvbG91ciBhcmUgc28gYXR0cmFjdGl2ZSwgdGhhdCBpdCBpbW1lZGlhdGVseSBnZWxzIHdpdGggdGhlIGludGVyaW9yIG9mIHRoZSBob3VzZSwgYmUgaXQgQmF0aHJvb20sIEJlZHJvb20gZXRjLiBFYXNpbHkgcG9ydGFibGUgY3Jvc3MgdmVudGlsYXRpbmcgYm9keSBrZWVwcyB5b3VyIGl0ZW1zIGZyZWUgbW9kdWxlIGZvcm1hdGlvbi4gQW5kIGl0IGdpdmVzIHlvdSBleHRyYS1sYXJnZSBzcGFjZSB0byBzdG9yZSB5b3VyIHByb2R1Y3RzLiBBbmQgdGhpcyBpcyBtYWRlIGZyb20gdG91Z2ggcGxhc3RpYyB3aGljaCBwcm92aWRlcyBpbW1lbnNlIHN0cmVuZ3RoIHRvIHRoZSBwcm9kdWN0LiIsCiAgICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcHJpY2U6IHsKICAgICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiNDk5LjAwIiwKICAgICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIxMTk5LjAwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiQ2xvc2V0L0xhdW5kcnkvU2hvZSBPcmdhbml6YXRpb24iLAogICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQM0QiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlAxRCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgICAiRGFpbHl3ZWFyIEZhc2hpb24sc3VwcG9ydEBnbWFpbC5jb20sMjM0MzQ1MzQzNCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJMYXVuZHJ5IEJhc2tldCIsCiAgICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYnJhbmQiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6CiAgICAgICAgICAgICAgICAgICAgICAgICJQb2x5c2V0IEVsZWdhbmNlIFBsYXN0aWMgTGF1bmRyeSBCYXNrZXQgLSBBc3NvcnRlZCBDb2xvdXIsIDUzIEwiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIiM5NjRCMDAiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91cl9uYW1lIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiYnJvd24iLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogIm1hdGVyaWFsIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAicG9seWV0aHlsZW5lIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJNCIsCiAgICAgICAgICAgICAgcmF0aW5nOiAiNCIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlBpZ2VvbiBieSBTdG92ZWtyYWZ0IE1pbmkgRnJ1aXQgJiBWZWdldGFibGUgQ2hvcHBlciBXaXRoIDMgQmxhZGVzIiwKICAgICAgICAgICAgICAgIGNvZGU6ICIzOjQwMTI3ODk1NDMxNjUiLAogICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgICAiVGhpcyBjb21wYWN0IGtpdGNoZW4gYXBwbGlhbmNlIGlzIGRlc2lnbmVkIHRvIGhlbHAgY3V0IGRvd24geW91ciBraXRjaGVuIGNob3Jlcy4gQSBzaW1wbGUgcHVsbCBvZiB0aGUgcm9wZSBpbiB0aGlzIFBpZ2VvbiBIYW5keSB2ZWdldGFibGUgYW5kIGZydWl0IGNob3BwZXIgY3V0cyBmb29kIGl0ZW1zIGRvd24gaW50byBzbWFsbCBwaWVjZXMuICIsCiAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICJUaGUgY2hvcHBlcuKAmXMgdG91Z2ggYm9keSBjYW4gd2l0aHN0YW5kIGJlaW5nIHB1dCBpbnRvIHRoZSBkaXNod2FzaGVyLiBEdXJhYmxlIGRlc2lnbiwgYSBjb252ZW5pZW50IHVzYWdlIG1hZGUgb2YgQUJTIHBsYXN0aWMsIHRoaXMgY2hvcHBlciBpcyBzdHVyZHkgYW5kIGR1cmFibGUuIEl0IGRvZXMgbm90IHJlcXVpcmUgZWxlY3RyaWNpdHkgdG8gYmUgaW4gdXNlLiBDaG9wIGZydWl0cyBhbmQgdmVnZXRhYmxlcy4gVGhpcyBjaG9wcGVyIHVzZXMgaXRzIHRocmVlIHN0YWlubGVzcyBzdGVlbCBibGFkZXMgYW5kIHJlbGllcyBvbiBhIHVuaXF1ZSBzdHJpbmcgZnVuY3Rpb24gdG8gY2hvcCBmcnVpdHMgYW5kIHZlZ2V0YWJsZXMgd2l0aCBlYXNlLiBJdCBpcyBlYXN5IHRvIHVzZS4gR2V0IHRoaW5ncyBzdGFydGVkIGJ5IHB1dHRpbmcgdGhlIGJsYWRlIGluIHRoZSBDZW50cmUgb2YgdGhlIGJvd2wuIEN1dCB2ZWdldGFibGVzIG9yIGZydWl0cyB0byBtZWRpdW0gc2l6ZSBiZWZvcmUgcHV0dGluZyB0aGVtIGludG8gdGhpcyBib3dsIHRvIGF2b2lkIGphbW1pbmcgdGhlIGJsYWRlcy4gUHV0IHRoZSBjb250ZW50cyBpbiwgY2xvc2UgdGhlIGxpZCwgYW5kIHN0aW5nIHRoZSByb3BlIHF1aWNrbHkgdG8gY3V0IGZvb2QgaXRlbXMgaW50byBzbWFsbCBwaWVjZXMuIFRoZW4sIHRha2UgdGhlIGJsYWRlIHN5c3RlbSBvdXQgYmVmb3JlIHlvdSByZW1vdmUgdGhlIGNob3BwZWQgZm9vZC4gIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgdmFsdWU6ICI1OTkuMDAiLAogICAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjExOTkuMDAiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJLaXRjaGVuIFRvb2xzIiwKICAgICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgICB0aW1lc3RhbXA6ICIyMDI0LTA4LTEyVDEwOjI3OjQ4LjkxM1oiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgIHVuaXQ6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiBmYWxzZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDNEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQMUQiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY29udGFjdF9kZXRhaWxzX2NvbnN1bWVyX2NhcmUiOgogICAgICAgICAgICAgICAgIkRhaWx5d2VhciBGYXNoaW9uLHN1cHBvcnRAZ21haWwuY29tLDIzNDM0NTM0MzQiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1aWxkaW5nIEFkZHJlc3MsIEpheWFuYWdhciwgQmVuZ2FsdXJ1LCBLYXJuYXRha2EsIEluZGlhIC0gNTYwMDExIiwKICAgICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiVmVnZXRhYmxlIENob3BwZXIiLAogICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOgogICAgICAgICAgICAgICAgICAgICAgICAiUGlnZW9uIGJ5IFN0b3Zla3JhZnQgTWluaSBGcnVpdCAmIFZlZ2V0YWJsZSBDaG9wcGVyIFdpdGggMyBCbGFkZXPCoCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzAwRkYwMCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJncmVlbiIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJwb2x5cHJvcHlsZW5lIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICAgIGZ1bGZpbGxtZW50czogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJGMSIsCiAgICAgICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICAgICAgICBjb250YWN0OiB7CiAgICAgICAgICAgICAgICBwaG9uZTogIjk4NzY1NDMyMTAiLAogICAgICAgICAgICAgICAgZW1haWw6ICJ0ZXN0QGdtYWlsLmNvbSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvbnRhY3Q6IHsKICAgICAgICAgICAgICAgIGVtYWlsOiAiaG9tZUBleGFtcGxlLmNvbSIsCiAgICAgICAgICAgICAgICBwaG9uZTogIjc5ODAyNzExMjIiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgaWQ6ICJGMiIsCiAgICAgICAgICAgICAgdHlwZTogIlNlbGYtUGlja3VwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIktpdGNoZW4gU3RvcmFnZSBhbmQgQ29udGFpbmVycyIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMTEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogInBpbmNvZGUiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNTYwMDAxLTU2MDA3Niw1NjAwODMiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInNlcnZpY2VhYmlsaXR5IiwKICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJsb2NhdGlvbiIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJTdGF0aW9uZXJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxMiIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogImNvdW50cnkuIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJzZXJ2aWNlYWJpbGl0eSIsCiAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIkwxIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJjYXRlZ29yeSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiQ2xvc2V0L0xhdW5kcnkvU2hvZSBPcmdhbml6YXRpb24iLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWwiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIktpdGNoZW4gVG9vbHMiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWwiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAidGltaW5nIiwKICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJBbGwiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiZGF5X2Zyb20iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImRheV90byIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidGltZV9mcm9tIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIwMDAwIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX3RvIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIyMzU5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJvcmRlcl92YWx1ZSIsCiAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAibWluX3ZhbHVlIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgICAgXSwKICAgIH0sCiAgfSkKKTsKCg==
