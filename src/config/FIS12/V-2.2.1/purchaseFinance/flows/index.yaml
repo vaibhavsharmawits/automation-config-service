@@ -917,6 +917,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_foreclosure
         type: on_update
         unsolicited: true
@@ -1240,6 +1253,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_missed_Emi
         type: on_update
         unsolicited: true
@@ -1572,6 +1598,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
       - key: on_update_unsolicited_prepart
         type: on_update
         unsolicited: true
@@ -2881,6 +2919,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_foreclosure
         type: on_update
         unsolicited: true
@@ -3223,6 +3274,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_missed_Emi
         type: on_update
         unsolicited: true
@@ -3572,6 +3636,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_prepart
         type: on_update
         unsolicited: true
@@ -4691,6 +4768,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_foreclosure
         type: on_update
         unsolicited: true
@@ -5020,6 +5110,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_missed_Emi
         type: on_update
         unsolicited: true
@@ -5345,14 +5448,26 @@ flows:
             label: Select Pre Part Payment Amount
             type: select
             values:
-              - "5000"
-            default: "5000"
+              - "20000"
+            default: "20000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_confirm
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form  
       - key: on_update_unsolicited_prepart
         type: on_update
         unsolicited: true
