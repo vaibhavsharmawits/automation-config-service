@@ -35,10 +35,9 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: Item_id
-            label: Select Item_ID
-            type: text
-            payloadField: $.message.order.items[0].id
+          - name: select_input
+            label: Enter
+            type: trv10_select
       - key: on_select
         type: on_select
         unsolicited: false
