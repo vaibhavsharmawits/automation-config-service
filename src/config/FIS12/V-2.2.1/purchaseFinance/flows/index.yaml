@@ -351,19 +351,19 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.personal_details_information_form      
-      - key: search3_purchase_finance 
-        type: search
-        unsolicited: false
-        pair: on_search3_purchase_finance 
-        owner: BAP
-        expect: true
-        force_proceed: true
-      - key: on_search3_purchase_finance 
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: search3_purchase_finance 
+      #   type: search
+      #   unsolicited: false
+      #   pair: on_search3_purchase_finance 
+      #   owner: BAP
+      #   expect: true
+      #   force_proceed: true
+      # - key: on_search3_purchase_finance 
+      #   type: on_search
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
       - key: search4_purchase_finance 
         type: search
         unsolicited: false
