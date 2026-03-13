@@ -2339,6 +2339,11 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified 
       - key: on_search4_purchase_finance 
         type: on_search
         unsolicited: false
