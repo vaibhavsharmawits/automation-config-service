@@ -126,13 +126,14 @@
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false
+        expect: false  
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        force_proceed: true
       - key: on_confirm
         type: on_confirm
         unsolicited: false
@@ -397,6 +398,19 @@
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form_gold_loan
+        label: Payment URL form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.payment_url_form
       - key: on_update_foreclosure_unsolicited
         type: on_update
         unsolicited: true
@@ -557,6 +571,19 @@
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form_gold_loan
+        label: Payment URL form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.payment_url_form
       - key: on_update_foreclosure_unsolicited
         type: on_update
         unsolicited: true
@@ -699,7 +726,19 @@
         pair: null
         owner: BPP
         expect: false
-
+      - key: payment_url_form_gold_loan
+        label: Payment URL form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.payment_url_form
       - key: on_update_missed_emi_unsolicited
         type: on_update
         unsolicited: true
@@ -710,7 +749,7 @@
 
   - id: Gold_Loan_Missed_EMI_With_Account_Aggregator
     tags: ["WORKBENCH", "WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
-    description: Gold Loan - missed emi payment with account aggregator
+    description: Gold Loan - Loan Foreclosure - Update and notification flow
     sequence:
       - key: search
         type: search
@@ -860,6 +899,19 @@
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form_gold_loan
+        label: Payment URL form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.payment_url_form
       - key: on_update_missed_emi_unsolicited
         type: on_update
         unsolicited: true
@@ -1029,6 +1081,19 @@
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form_gold_loan
+        label: Payment URL form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.payment_url_form
       - key: on_update_pre_part_payment_unsolicited
         type: on_update
         unsolicited: true
@@ -1115,7 +1180,7 @@
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.verification_status    
+            reference: $.reference_data.verification_status
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1178,6 +1243,19 @@
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form_gold_loan
+        label: Payment URL form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.payment_url_form
       - key: on_update_pre_part_payment_unsolicited
         type: on_update
         unsolicited: true
