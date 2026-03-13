@@ -266,7 +266,7 @@ flows:
         owner: BPP
         expect: false
 
-  - id: Personal_Loan_Sachet_Insurance_with_AA_And_Monitoring_Consent
+  - id: Personal_Loan_&_Sachet_Insurance_with_AA_And_Monitoring_Consent
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan & Sachet Insurance with AA and Monitoring Consent
     sequence:
@@ -744,7 +744,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        
+
       - key: status_personal_loan_3
         type: status
         unsolicited: false
@@ -1448,7 +1448,7 @@ flows:
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_foreclosure_pl
         type: on_update
         unsolicited: false
         pair: null
@@ -1469,7 +1469,7 @@ flows:
             payloadField: "form_submission_id"
             reference: $.reference_data.payment_url_form
 
-      - key: on_update_unsolicited_personal_loan_3
+      - key: on_update_foreclosure_unsolicitated
         type: on_update
         unsolicited: true
         pair: null
@@ -2022,7 +2022,7 @@ flows:
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_missed_emi_pl
         type: on_update
         unsolicited: false
         pair: null
@@ -2043,7 +2043,7 @@ flows:
             payloadField: "form_submission_id"
             reference: $.reference_data.payment_url_form
 
-      - key: on_update_unsolicited_personal_loan_3
+      - key: on_update_unsolicited_missed_emi_pl
         type: on_update
         unsolicited: true
         pair: null
@@ -2565,7 +2565,7 @@ flows:
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_pre_part_payment
         type: on_update
         unsolicited: false
         pair: null
@@ -2586,7 +2586,7 @@ flows:
             payloadField: "form_submission_id"
             reference: $.reference_data.payment_url_form
 
-      - key: on_update_unsolicited_personal_loan_3
+      - key: on_update_unsolicited_pre_part_payment
         type: on_update
         unsolicited: true
         pair: null
