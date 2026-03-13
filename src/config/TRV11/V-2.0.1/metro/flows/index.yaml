@@ -12,6 +12,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -31,6 +36,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -53,10 +63,7 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
+          
           - name: start_code
             label: Enter start station code
             type: text
@@ -81,6 +88,11 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details 
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -144,6 +156,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -166,10 +183,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -196,6 +209,11 @@ flows:
           order
         pair: on_init_without_select_METRO_201
         owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
       - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
@@ -244,7 +262,12 @@ flows:
           in the city
         pair: on_search1_METRO_201
         owner: BAP
-        expect: true_201_201
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -267,10 +290,7 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
+          
           - name: start_code
             label: Enter start station code
             type: text
@@ -295,6 +315,11 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -371,7 +396,12 @@ flows:
           in the city
         pair: on_search1_METRO_201
         owner: BAP
-        expect: true_201_201
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -394,10 +424,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -424,6 +450,11 @@ flows:
           order
         pair: on_init_without_select_METRO_201
         owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
       - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
@@ -487,6 +518,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -509,10 +545,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -537,6 +569,11 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -616,6 +653,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -638,10 +680,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -668,6 +706,11 @@ flows:
           order
         pair: on_init_without_select_METRO_201
         owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
       - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
@@ -733,6 +776,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -755,10 +803,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -783,6 +827,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -866,6 +916,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -888,10 +943,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -918,6 +969,11 @@ flows:
           order
         pair: on_init_without_select_METRO_201
         owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
       - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
@@ -987,6 +1043,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1009,10 +1070,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -1037,6 +1094,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -1120,6 +1183,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1142,10 +1210,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -1172,6 +1236,11 @@ flows:
           order
         pair: on_init_without_select_METRO_201
         owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
       - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
@@ -1241,6 +1310,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1263,10 +1337,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -1291,6 +1361,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -1378,6 +1454,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1400,10 +1481,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -1430,6 +1507,11 @@ flows:
           order
         pair: on_init_without_select_METRO_201
         owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
       - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
@@ -1503,6 +1585,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1525,10 +1612,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -1553,6 +1636,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -1716,6 +1805,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1738,10 +1832,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -1766,6 +1856,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -1957,6 +2053,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -1979,10 +2080,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -2007,6 +2104,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -2144,6 +2247,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -2166,10 +2274,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -2194,6 +2298,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false

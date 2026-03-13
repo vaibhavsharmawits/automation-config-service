@@ -22,7 +22,7 @@ supportedActions:
       "on_update",
       "cancel",
     ]
-  cancel: ["on_cancel", "status"]
+  cancel: ["on_cancel", "status", "on_update"]
   on_cancel: ["cancel", "status", "on_status", "on_update"]
   track: ["on_track"]
   on_track: ["on_status", "on_update"]
