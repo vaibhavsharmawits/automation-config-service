@@ -15,8 +15,8 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: consumer_information_form_cc
-        label: consumer information form
+      - key: credit_card_information_form
+        label: credit card information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -26,7 +26,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.consumer_information_form      
+            reference: $.reference_data.credit_card_information_form      
       - key: select_cc 
         type: select
         unsolicited: false
