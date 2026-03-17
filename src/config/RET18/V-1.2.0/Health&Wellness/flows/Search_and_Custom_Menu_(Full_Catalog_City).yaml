@@ -106,8 +106,6 @@ steps:
             bpp/fulfillments:
               - id: F1
                 type: Delivery
-              - id: F2
-                type: Self-Pickup
             bpp/descriptor:
               name: Mock Seller NP
               symbol: https://sellerNP.com/images/np.png
@@ -120,14 +118,11 @@ steps:
                   list:
                     - code: np_type
                       value: MSN
-                    - code: accept_bap_terms
-                      value: "Y"
             bpp/providers:
               - id: P1
                 time:
                   label: enable
                   timestamp: "2024-08-13T06:46:19.736Z"
-                rating: "4"
                 ttl: PT24H
                 locations:
                   - id: L1
@@ -153,7 +148,7 @@ steps:
                         unit: km
                         value: "5"
                 descriptor:
-                  name: Store 1
+                  name: Seller Business
                   symbol: https://sellerNP.com/images/store1.png
                   short_desc: Store 1
                   long_desc: Store 1
@@ -171,34 +166,24 @@ steps:
                       - code: attr
                         list:
                           - code: name
-                            value: item.tags.attribute.colour
+                            value: item.tags.attribute.brand
                           - code: seq
                             value: "1"
                 items:
                   - id: I1
-                    rating: "4"
                     time:
                       label: enable
-                      timestamp: "2024-08-12T05:30:48.998Z"
+                      timestamp: "2025-01-08T07:30:00.000Z"
+                    rating: "4"
+                    parent_item_id: V1
                     descriptor:
-                      name: MINISO Two-Layer Drawer Organizer
-                      symbol: https://sellerNP.com/images/i1.png
-                      short_desc: >-
-                        Hard, tough and durable cosmetic storage and organizer,
-                        Two-Layer Drawer Organizer Cosmetic Storage Box, White,
-                        Rectangular
-                      long_desc: >-
-                        Introducing the MINISO Two-Layer Drawer Organizer
-                        Cosmetic Storage Box in a sleek, modern White,
-                        Rectangular design. Crafted with toughness and
-                        durability in mind, this organizer is built to withstand
-                        daily use, ensuring your items stay secure and
-                        protected.Its compact design offers simplicity and
-                        perfection, allowing you to maximize space while
-                        maintaining an elegant aesthetic.
+                      name: Calcium and Vitamin D3 tablets
+                      symbol: https://snp.com/images/i1.png
+                      short_desc: Calcium and Vitamin D3 tablets
+                      long_desc: Calcium and Vitamin D3 tablets
                       images:
-                        - https://sellerNP.com/images/i1.png
-                      code: "3:9501101530007"
+                        - https://snp.com/images/i1.png
+                      code: 1:XXXXXXXXXXXXX
                     quantity:
                       unitized:
                         measure:
@@ -207,69 +192,69 @@ steps:
                       available:
                         count: "99"
                       maximum:
-                        count: "8"
+                        count: "99"
                     price:
                       currency: INR
-                      value: "2260"
-                      maximum_value: "2260"
-                    category_id: Kitchen Storage and Containers
+                      value: "65.00"
+                      maximum_value: "65.0"
+                    category_id: Nutrition and Fitness Supplements
                     location_id: L1
                     fulfillment_id: F1
                     "@ondc/org/returnable": true
                     "@ondc/org/cancellable": true
                     "@ondc/org/available_on_cod": false
-                    "@ondc/org/time_to_ship": P2D
+                    "@ondc/org/time_to_ship": PT45M
                     "@ondc/org/seller_pickup_return": true
-                    "@ondc/org/return_window": P7D
-                    "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                    "@ondc/org/return_window": PT1H
+                    "@ondc/org/contact_details_consumer_care": Ramesh,ramesh@abc.com,18004254444
                     "@ondc/org/statutory_reqs_packaged_commodities":
-                      manufacturer_or_packer_name: Seller Business
+                      manufacturer_or_packer_name: Pure and Cure Healthcare Pvt Ltd
                       manufacturer_or_packer_address: >-
-                        Seller Building Address, Jayanagar, Bengaluru,
-                        Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Kitchen Storage and Containers
-                      month_year_of_manufacture_packing_import: NA
+                        Plot No 26A-30, Sector 8A, IIE, SIDCUL, Ranipur,
+                        Haridwar-249403
+                      mfg_license_no: 51/UA/SC/P-2013
+                      common_or_generic_name_of_commodity: Shelcal HD
+                      multiple_products_name_number_or_qty: "15"
+                      month_year_of_manufacture_packing_import: Mar-24
+                      expiry_date: Feb-25
+                    "@ondc/org/statutory_reqs_prepackaged_food":
+                      ingredients_info: >
+                        Every film-coated tablet contains: 1250 mg Calcium
+                        Carbonate from an organic source (powdered oyster shell)
+                        equivalent to Elemental Calcium 500 mg, Vitamin D3 I.P
+                        500 IU, Colors: lake of sunset yellow FCF and titanium
+                        dioxide I.P
                     tags:
                       - code: origin
                         list:
                           - code: country
                             value: IND
+                      - code: image
+                        list:
+                          - code: type
+                            value: back_image
+                          - code: url
+                            value: https://snp.com/ondc/images/I1-back.jpg
                       - code: attribute
                         list:
                           - code: brand
-                            value: MINISO Two-Layer Drawer Organizer
-                          - code: colour
-                            value: "#FFFFFF"
-                          - code: colour_name
-                            value: brown
-                          - code: material
-                            value: thermoplastic
+                            value: Ayur Herb
+                          - code: prescription_required
+                            value: "no"
                   - id: I2
+                    time:
+                      label: enable
+                      timestamp: "2025-01-08T07:30:00.000Z"
                     rating: "3"
-                    time:
-                      label: enable
-                      timestamp: "2024-08-12T10:27:48.913Z"
+                    parent_item_id: V1
                     descriptor:
-                      name: Doms Art Apps Nxt Kit With Plastic Carry Case
-                      symbol: https://sellerNP.com/images/i1.png
-                      short_desc: >-
-                        Coloring & Art Smart Kit Use For Sketching, Writing,
-                        Shading, Colouring, Highlighting.Non-Toxic, Easy To Use
-                        & Safe For Childrens.
-                      long_desc: >-
-                        Introducing our comprehensive combination kit, designed
-                        to satisfy all your creative needs! Whether you're
-                        sketching, writing, shading, coloring, or highlighting,
-                        this kit has everything you need to unleash your
-                        imagination.You'll find 12 watercolor pens for vibrant
-                        and fluid artwork, 12 bi-color crayons for versatile
-                        coloring options, 12 jumbo oil pastels for smooth and
-                        blendable textures, 8 bi-color pencils for precise
-                        drawing and shading, and 12 plastic crayons for bold and
-                        durable lines.
+                      name: Himalaya Ashvagandha Tablets
+                      symbol: https://snp.com/images/i1.png
+                      short_desc: General Wellness Tablets
+                      long_desc: Himalaya Wellness Pure Herbs Ashvagandha 60 Tablets
                       images:
-                        - https://sellerNP.com/images/i1.png
-                      code: "3:7845632198471"
+                        - https://snp.com/images/i1.png
+                      code: 1:XXXXXXXXXXXXX
                     quantity:
                       unitized:
                         measure:
@@ -278,261 +263,143 @@ steps:
                       available:
                         count: "99"
                       maximum:
-                        count: "10"
+                        count: "99"
                     price:
                       currency: INR
-                      value: "2460"
-                      maximum_value: "2460"
-                    category_id: Stationery
+                      value: "180.00"
+                      maximum_value: "180.00"
+                    category_id: Nutrition and Fitness Supplements
                     location_id: L1
-                    parent_item_id: V1
                     fulfillment_id: F1
                     "@ondc/org/returnable": true
                     "@ondc/org/cancellable": true
                     "@ondc/org/available_on_cod": false
-                    "@ondc/org/time_to_ship": P2D
+                    "@ondc/org/time_to_ship": PT45M
                     "@ondc/org/seller_pickup_return": true
-                    "@ondc/org/return_window": P7D
-                    "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                    "@ondc/org/return_window": PT1H
+                    "@ondc/org/contact_details_consumer_care": Ramesh,ramesh@abc.com,18004254444
                     "@ondc/org/statutory_reqs_packaged_commodities":
-                      manufacturer_or_packer_name: Seller Business
+                      manufacturer_or_packer_name: The Himalaya Drug Company
                       manufacturer_or_packer_address: >-
-                        Seller Building Address, Jayanagar, Bengaluru,
-                        Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Plastic Crayons
-                      month_year_of_manufacture_packing_import: NA
+                        Plot No 26A-30, Sector 8A, IIE, SIDCUL, Ranipur,
+                        Haridwar-249403
+                      mfg_license_no: AYU/1234
+                      common_or_generic_name_of_commodity: Shelcal HD
+                      multiple_products_name_number_or_qty: "15"
+                      month_year_of_manufacture_packing_import: Mar-24
+                      expiry_date: Feb-25
+                    "@ondc/org/statutory_reqs_prepackaged_food":
+                      ingredients_info: >
+                        Every film-coated tablet contains: 1250 mg Calcium
+                        Carbonate from an organic source (powdered oyster shell)
+                        equivalent to Elemental Calcium 500 mg, Vitamin D3 I.P
+                        500 IU, Colors: lake of sunset yellow FCF and titanium
+                        dioxide I.P
                     tags:
                       - code: origin
                         list:
                           - code: country
                             value: IND
+                      - code: image
+                        list:
+                          - code: type
+                            value: back_image
+                          - code: url
+                            value: https://snp.com/ondc/images/I1-back.jpg
                       - code: attribute
                         list:
                           - code: brand
-                            value: Doms Art Apps Nxt Kit With Plastic Carry Case
-                          - code: colour
-                            value: "#00FF00"
-                          - code: colour_name
-                            value: white
-                          - code: material
-                            value: thermoplastic
+                            value: Himalaya Wellness
+                          - code: prescription_required
+                            value: "no"
                   - id: I3
-                    rating: "4"
-                    descriptor:
-                      name: >-
-                        Polyset Elegance Plastic Laundry Basket - Assorted
-                        Colour, 53 L
-                      code: "3:6213574890238"
-                      symbol: https://sellerNP.com/images/i1.png
-                      short_desc: >-
-                        Polyset’s Laundry Basket made from virgin plastic is
-                        very tough, durable and long-lasting. It has a large
-                        space enough to keep all the dirty clothes in one place.
-                      long_desc: >-
-                        This Polyset Laundry Basket comes in large size, which
-                        gives you more space for storing multiple items like
-                        clothes, toys, groceries, kitchen and bathing
-                        accessories, Ideal for family use in the Laundry Room,
-                        Bedroom or Bathroom, its comes with Lid for protecting
-                        your articles from dust. To add to it, the design and
-                        colour are so attractive, that it immediately gels with
-                        the interior of the house, be it Bathroom, Bedroom etc.
-                        Easily portable cross ventilating body keeps your items
-                        free module formation. And it gives you extra-large
-                        space to store your products. And this is made from
-                        tough plastic which provides immense strength to the
-                        product.
-                      images:
-                        - https://sellerNP.com/images/i1.png
-                    price:
-                      currency: INR
-                      value: "499.00"
-                      maximum_value: "1199.00"
+                    time:
+                      label: enable
+                      timestamp: "2025-01-08T07:30:00.000Z"
+                    rating: "3"
                     parent_item_id: V1
-                    category_id: Closet/Laundry/Shoe Organization
-                    fulfillment_id: F1
-                    location_id: L1
-                    time:
-                      label: enable
-                      timestamp: "2024-08-12T10:27:48.913Z"
+                    descriptor:
+                      name: Optimum Nutrition Gold Standard Whey Protein
+                      symbol: https://snp.com/images/i1.png
+                      short_desc: 100% Whey Protein Powder
+                      long_desc: 24g Protein, 5.5g BCAAs, Double Rich Chocolate flavour
+                      images:
+                        - https://snp.com/images/i1.png
+                      code: 1:XXXXXXXXXXXXX
                     quantity:
+                      unitized:
+                        measure:
+                          unit: unit
+                          value: "1"
                       available:
                         count: "99"
                       maximum:
                         count: "99"
-                      unitized:
-                        measure:
-                          value: "1"
-                          unit: unit
-                    "@ondc/org/returnable": true
-                    "@ondc/org/seller_pickup_return": false
-                    "@ondc/org/return_window": P3D
-                    "@ondc/org/cancellable": true
-                    "@ondc/org/time_to_ship": P1D
-                    "@ondc/org/available_on_cod": false
-                    "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
-                    "@ondc/org/statutory_reqs_packaged_commodities":
-                      manufacturer_or_packer_name: Seller Business
-                      manufacturer_or_packer_address: >-
-                        Seller Building Address, Jayanagar, Bengaluru,
-                        Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Laundry Basket
-                      month_year_of_manufacture_packing_import: NA
-                    tags:
-                      - code: origin
-                        list:
-                          - code: country
-                            value: IND
-                      - code: attribute
-                        list:
-                          - code: brand
-                            value: >-
-                              Polyset Elegance Plastic Laundry Basket - Assorted
-                              Colour, 53 L
-                          - code: colour
-                            value: "#964B00"
-                          - code: colour_name
-                            value: brown
-                          - code: material
-                            value: polyethylene
-                  - id: I4
-                    rating: "4"
-                    descriptor:
-                      name: >-
-                        Pigeon by Stovekraft Mini Fruit & Vegetable Chopper With
-                        3 Blades
-                      code: "3:4012789543165"
-                      symbol: https://sellerNP.com/images/i1.png
-                      short_desc: >-
-                        This compact kitchen appliance is designed to help cut
-                        down your kitchen chores. A simple pull of the rope in
-                        this Pigeon Handy vegetable and fruit chopper cuts food
-                        items down into small pieces.
-                      long_desc: >-
-                        The chopper’s tough body can withstand being put into
-                        the dishwasher. Durable design, a convenient usage made
-                        of ABS plastic, this chopper is sturdy and durable. It
-                        does not require electricity to be in use. Chop fruits
-                        and vegetables. This chopper uses its three stainless
-                        steel blades and relies on a unique string function to
-                        chop fruits and vegetables with ease. It is easy to use.
-                        Get things started by putting the blade in the Centre of
-                        the bowl. Cut vegetables or fruits to medium size before
-                        putting them into this bowl to avoid jamming the blades.
-                        Put the contents in, close the lid, and sting the rope
-                        quickly to cut food items into small pieces. Then, take
-                        the blade system out before you remove the chopped food.
-                      images:
-                        - https://sellerNP.com/images/i1.png
                     price:
                       currency: INR
-                      value: "599.00"
-                      maximum_value: "1199.00"
-                    category_id: Kitchen Tools
-                    fulfillment_id: F1
+                      value: "180.00"
+                      maximum_value: "180.00"
+                    category_id: Nutrition and Fitness Supplements
                     location_id: L1
-                    time:
-                      label: enable
-                      timestamp: "2024-08-12T10:27:48.913Z"
-                    quantity:
-                      available:
-                        count: "99"
-                      maximum:
-                        count: "99"
-                      unitized:
-                        measure:
-                          value: "1"
-                          unit: unit
+                    fulfillment_id: F1
                     "@ondc/org/returnable": true
-                    "@ondc/org/seller_pickup_return": false
-                    "@ondc/org/return_window": P3D
                     "@ondc/org/cancellable": true
-                    "@ondc/org/time_to_ship": P1D
                     "@ondc/org/available_on_cod": false
-                    "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
+                    "@ondc/org/time_to_ship": PT45M
+                    "@ondc/org/seller_pickup_return": true
+                    "@ondc/org/return_window": PT1H
+                    "@ondc/org/contact_details_consumer_care": Ramesh,ramesh@abc.com,18004254444
                     "@ondc/org/statutory_reqs_packaged_commodities":
-                      manufacturer_or_packer_name: Seller Business
+                      manufacturer_or_packer_name: The Himalaya Drug Company
                       manufacturer_or_packer_address: >-
-                        Seller Building Address, Jayanagar, Bengaluru,
-                        Karnataka, India - 560011
-                      common_or_generic_name_of_commodity: Vegetable Chopper
-                      month_year_of_manufacture_packing_import: NA
+                        Plot No 26A-30, Sector 8A, IIE, SIDCUL, Ranipur,
+                        Haridwar-249403
+                      mfg_license_no: AYU/1234
+                      common_or_generic_name_of_commodity: Shelcal HD
+                      multiple_products_name_number_or_qty: "15"
+                      month_year_of_manufacture_packing_import: Mar-24
+                      expiry_date: Feb-25
+                    "@ondc/org/statutory_reqs_prepackaged_food":
+                      ingredients_info: >
+                        Protein Blend (Whey Protein Isolate, Whey Protein
+                        Concentrate), Cocoa, Lecithin, Natural and Artificial
+                        flavour, Acesulfame Potassium
                     tags:
                       - code: origin
                         list:
                           - code: country
                             value: IND
+                      - code: image
+                        list:
+                          - code: type
+                            value: back_image
+                          - code: url
+                            value: https://snp.com/ondc/images/I1-back.jpg
                       - code: attribute
                         list:
                           - code: brand
-                            value: >-
-                              Pigeon by Stovekraft Mini Fruit & Vegetable
-                              Chopper With 3 Blades
-                          - code: colour
-                            value: "#00FF00"
-                          - code: colour_name
-                            value: green
-                          - code: material
-                            value: polypropylene
+                            value: Shellcal HD
+                          - code: prescription_required
+                            value: "no"
                 fulfillments:
                   - id: F1
                     type: Delivery
                     contact:
                       phone: "9876543210"
                       email: test@gmail.com
-                  - id: F2
-                    type: Self-Pickup
-                    contact:
-                      email: home@example.com
-                      phone: "7980271122"
                 tags:
                   - code: serviceability
                     list:
                       - code: location
                         value: L1
                       - code: category
-                        value: Kitchen Storage and Containers
+                        value: Nutrition and Fitness Supplements
                       - code: type
                         value: "11"
                       - code: unit
                         value: pincode
                       - code: val
-                        value: 560001-560076,560083
-                  - code: serviceability
-                    list:
-                      - code: location
-                        value: L1
-                      - code: category
-                        value: Stationery
-                      - code: type
-                        value: "12"
-                      - code: val
-                        value: IND
-                      - code: unit
-                        value: country
-                  - code: serviceability
-                    list:
-                      - code: location
-                        value: L1
-                      - code: category
-                        value: Closet/Laundry/Shoe Organization
-                      - code: type
-                        value: "12"
-                      - code: unit
-                        value: country
-                      - code: val
-                        value: IND
-                  - code: serviceability
-                    list:
-                      - code: location
-                        value: L1
-                      - code: category
-                        value: Kitchen Tools
-                      - code: type
-                        value: "12"
-                      - code: unit
-                        value: country
-                      - code: val
+                        value": 560001-560076,560083
                         value: IND
                   - code: timing
                     list:
@@ -576,9 +443,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: search
-        timestamp: "2026-03-09T12:46:48.728Z"
+        timestamp: "2026-03-17T07:02:01.146Z"
         transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
-        message_id: 8f5745d3-f68c-47b4-811c-96d03e520635
+        message_id: 773828d9-9689-479d-afed-e89a90535363
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -599,7 +466,7 @@ transaction_history:
                   value: >-
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: effective_date
-                  value: "2026-03-19T12:46:48.744Z"
+                  value: "2026-03-27T07:02:01.164Z"
     action: search
     saved_info: {}
   - action_id: on_search1
@@ -607,9 +474,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: on_search
-        timestamp: "2026-03-09T12:46:49.539Z"
+        timestamp: "2026-03-17T07:02:02.385Z"
         transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
-        message_id: 8f5745d3-f68c-47b4-811c-96d03e520635
+        message_id: 773828d9-9689-479d-afed-e89a90535363
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -623,8 +490,6 @@ transaction_history:
           bpp/fulfillments:
             - id: F1
               type: Delivery
-            - id: F2
-              type: Self-Pickup
           bpp/descriptor:
             name: Mock Seller NP
             symbol: https://sellerNP.com/images/np.png
@@ -637,14 +502,11 @@ transaction_history:
                 list:
                   - code: np_type
                     value: MSN
-                  - code: accept_bap_terms
-                    value: "Y"
           bpp/providers:
             - id: P1
               time:
                 label: enable
                 timestamp: "2024-08-13T06:46:19.736Z"
-              rating: "4"
               ttl: PT24H
               locations:
                 - id: L1
@@ -670,7 +532,7 @@ transaction_history:
                       unit: km
                       value: "5"
               descriptor:
-                name: Store 1
+                name: Seller Business
                 symbol: https://sellerNP.com/images/store1.png
                 short_desc: Store 1
                 long_desc: Store 1
@@ -688,33 +550,24 @@ transaction_history:
                     - code: attr
                       list:
                         - code: name
-                          value: item.tags.attribute.colour
+                          value: item.tags.attribute.brand
                         - code: seq
                           value: "1"
               items:
                 - id: I1
-                  rating: "4"
                   time:
                     label: enable
-                    timestamp: "2024-08-12T05:30:48.998Z"
+                    timestamp: "2025-01-08T07:30:00.000Z"
+                  rating: "4"
+                  parent_item_id: V1
                   descriptor:
-                    name: MINISO Two-Layer Drawer Organizer
-                    symbol: https://sellerNP.com/images/i1.png
-                    short_desc: >-
-                      Hard, tough and durable cosmetic storage and organizer,
-                      Two-Layer Drawer Organizer Cosmetic Storage Box, White,
-                      Rectangular
-                    long_desc: >-
-                      Introducing the MINISO Two-Layer Drawer Organizer Cosmetic
-                      Storage Box in a sleek, modern White, Rectangular design.
-                      Crafted with toughness and durability in mind, this
-                      organizer is built to withstand daily use, ensuring your
-                      items stay secure and protected.Its compact design offers
-                      simplicity and perfection, allowing you to maximize space
-                      while maintaining an elegant aesthetic.
+                    name: Calcium and Vitamin D3 tablets
+                    symbol: https://snp.com/images/i1.png
+                    short_desc: Calcium and Vitamin D3 tablets
+                    long_desc: Calcium and Vitamin D3 tablets
                     images:
-                      - https://sellerNP.com/images/i1.png
-                    code: "3:9501101530007"
+                      - https://snp.com/images/i1.png
+                    code: 1:XXXXXXXXXXXXX
                   quantity:
                     unitized:
                       measure:
@@ -723,68 +576,69 @@ transaction_history:
                     available:
                       count: "99"
                     maximum:
-                      count: "8"
+                      count: "99"
                   price:
                     currency: INR
-                    value: "2260"
-                    maximum_value: "2260"
-                  category_id: Kitchen Storage and Containers
+                    value: "65.00"
+                    maximum_value: "65.0"
+                  category_id: Nutrition and Fitness Supplements
                   location_id: L1
                   fulfillment_id: F1
                   "@ondc/org/returnable": true
                   "@ondc/org/cancellable": true
                   "@ondc/org/available_on_cod": false
-                  "@ondc/org/time_to_ship": P2D
+                  "@ondc/org/time_to_ship": PT45M
                   "@ondc/org/seller_pickup_return": true
-                  "@ondc/org/return_window": P7D
-                  "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                  "@ondc/org/return_window": PT1H
+                  "@ondc/org/contact_details_consumer_care": Ramesh,ramesh@abc.com,18004254444
                   "@ondc/org/statutory_reqs_packaged_commodities":
-                    manufacturer_or_packer_name: Seller Business
+                    manufacturer_or_packer_name: Pure and Cure Healthcare Pvt Ltd
                     manufacturer_or_packer_address: >-
-                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
-                      India - 560011
-                    common_or_generic_name_of_commodity: Kitchen Storage and Containers
-                    month_year_of_manufacture_packing_import: NA
+                      Plot No 26A-30, Sector 8A, IIE, SIDCUL, Ranipur,
+                      Haridwar-249403
+                    mfg_license_no: 51/UA/SC/P-2013
+                    common_or_generic_name_of_commodity: Shelcal HD
+                    multiple_products_name_number_or_qty: "15"
+                    month_year_of_manufacture_packing_import: Mar-24
+                    expiry_date: Feb-25
+                  "@ondc/org/statutory_reqs_prepackaged_food":
+                    ingredients_info: >
+                      Every film-coated tablet contains: 1250 mg Calcium
+                      Carbonate from an organic source (powdered oyster shell)
+                      equivalent to Elemental Calcium 500 mg, Vitamin D3 I.P 500
+                      IU, Colors: lake of sunset yellow FCF and titanium dioxide
+                      I.P
                   tags:
                     - code: origin
                       list:
                         - code: country
                           value: IND
+                    - code: image
+                      list:
+                        - code: type
+                          value: back_image
+                        - code: url
+                          value: https://snp.com/ondc/images/I1-back.jpg
                     - code: attribute
                       list:
                         - code: brand
-                          value: MINISO Two-Layer Drawer Organizer
-                        - code: colour
-                          value: "#FFFFFF"
-                        - code: colour_name
-                          value: brown
-                        - code: material
-                          value: thermoplastic
+                          value: Ayur Herb
+                        - code: prescription_required
+                          value: "no"
                 - id: I2
+                  time:
+                    label: enable
+                    timestamp: "2025-01-08T07:30:00.000Z"
                   rating: "3"
-                  time:
-                    label: enable
-                    timestamp: "2024-08-12T10:27:48.913Z"
+                  parent_item_id: V1
                   descriptor:
-                    name: Doms Art Apps Nxt Kit With Plastic Carry Case
-                    symbol: https://sellerNP.com/images/i1.png
-                    short_desc: >-
-                      Coloring & Art Smart Kit Use For Sketching, Writing,
-                      Shading, Colouring, Highlighting.Non-Toxic, Easy To Use &
-                      Safe For Childrens.
-                    long_desc: >-
-                      Introducing our comprehensive combination kit, designed to
-                      satisfy all your creative needs! Whether you're sketching,
-                      writing, shading, coloring, or highlighting, this kit has
-                      everything you need to unleash your imagination.You'll
-                      find 12 watercolor pens for vibrant and fluid artwork, 12
-                      bi-color crayons for versatile coloring options, 12 jumbo
-                      oil pastels for smooth and blendable textures, 8 bi-color
-                      pencils for precise drawing and shading, and 12 plastic
-                      crayons for bold and durable lines.
+                    name: Himalaya Ashvagandha Tablets
+                    symbol: https://snp.com/images/i1.png
+                    short_desc: General Wellness Tablets
+                    long_desc: Himalaya Wellness Pure Herbs Ashvagandha 60 Tablets
                     images:
-                      - https://sellerNP.com/images/i1.png
-                    code: "3:7845632198471"
+                      - https://snp.com/images/i1.png
+                    code: 1:XXXXXXXXXXXXX
                   quantity:
                     unitized:
                       measure:
@@ -793,260 +647,143 @@ transaction_history:
                     available:
                       count: "99"
                     maximum:
-                      count: "10"
+                      count: "99"
                   price:
                     currency: INR
-                    value: "2460"
-                    maximum_value: "2460"
-                  category_id: Stationery
+                    value: "180.00"
+                    maximum_value: "180.00"
+                  category_id: Nutrition and Fitness Supplements
                   location_id: L1
-                  parent_item_id: V1
                   fulfillment_id: F1
                   "@ondc/org/returnable": true
                   "@ondc/org/cancellable": true
                   "@ondc/org/available_on_cod": false
-                  "@ondc/org/time_to_ship": P2D
+                  "@ondc/org/time_to_ship": PT45M
                   "@ondc/org/seller_pickup_return": true
-                  "@ondc/org/return_window": P7D
-                  "@ondc/org/contact_details_consumer_care": Seller Business,test@gmail.com,9876543210
+                  "@ondc/org/return_window": PT1H
+                  "@ondc/org/contact_details_consumer_care": Ramesh,ramesh@abc.com,18004254444
                   "@ondc/org/statutory_reqs_packaged_commodities":
-                    manufacturer_or_packer_name: Seller Business
+                    manufacturer_or_packer_name: The Himalaya Drug Company
                     manufacturer_or_packer_address: >-
-                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
-                      India - 560011
-                    common_or_generic_name_of_commodity: Plastic Crayons
-                    month_year_of_manufacture_packing_import: NA
+                      Plot No 26A-30, Sector 8A, IIE, SIDCUL, Ranipur,
+                      Haridwar-249403
+                    mfg_license_no: AYU/1234
+                    common_or_generic_name_of_commodity: Shelcal HD
+                    multiple_products_name_number_or_qty: "15"
+                    month_year_of_manufacture_packing_import: Mar-24
+                    expiry_date: Feb-25
+                  "@ondc/org/statutory_reqs_prepackaged_food":
+                    ingredients_info: >
+                      Every film-coated tablet contains: 1250 mg Calcium
+                      Carbonate from an organic source (powdered oyster shell)
+                      equivalent to Elemental Calcium 500 mg, Vitamin D3 I.P 500
+                      IU, Colors: lake of sunset yellow FCF and titanium dioxide
+                      I.P
                   tags:
                     - code: origin
                       list:
                         - code: country
                           value: IND
+                    - code: image
+                      list:
+                        - code: type
+                          value: back_image
+                        - code: url
+                          value: https://snp.com/ondc/images/I1-back.jpg
                     - code: attribute
                       list:
                         - code: brand
-                          value: Doms Art Apps Nxt Kit With Plastic Carry Case
-                        - code: colour
-                          value: "#00FF00"
-                        - code: colour_name
-                          value: white
-                        - code: material
-                          value: thermoplastic
+                          value: Himalaya Wellness
+                        - code: prescription_required
+                          value: "no"
                 - id: I3
-                  rating: "4"
-                  descriptor:
-                    name: >-
-                      Polyset Elegance Plastic Laundry Basket - Assorted Colour,
-                      53 L
-                    code: "3:6213574890238"
-                    symbol: https://sellerNP.com/images/i1.png
-                    short_desc: >-
-                      Polyset’s Laundry Basket made from virgin plastic is very
-                      tough, durable and long-lasting. It has a large space
-                      enough to keep all the dirty clothes in one place.
-                    long_desc: >-
-                      This Polyset Laundry Basket comes in large size, which
-                      gives you more space for storing multiple items like
-                      clothes, toys, groceries, kitchen and bathing accessories,
-                      Ideal for family use in the Laundry Room, Bedroom or
-                      Bathroom, its comes with Lid for protecting your articles
-                      from dust. To add to it, the design and colour are so
-                      attractive, that it immediately gels with the interior of
-                      the house, be it Bathroom, Bedroom etc. Easily portable
-                      cross ventilating body keeps your items free module
-                      formation. And it gives you extra-large space to store
-                      your products. And this is made from tough plastic which
-                      provides immense strength to the product.
-                    images:
-                      - https://sellerNP.com/images/i1.png
-                  price:
-                    currency: INR
-                    value: "499.00"
-                    maximum_value: "1199.00"
+                  time:
+                    label: enable
+                    timestamp: "2025-01-08T07:30:00.000Z"
+                  rating: "3"
                   parent_item_id: V1
-                  category_id: Closet/Laundry/Shoe Organization
-                  fulfillment_id: F1
-                  location_id: L1
-                  time:
-                    label: enable
-                    timestamp: "2024-08-12T10:27:48.913Z"
+                  descriptor:
+                    name: Optimum Nutrition Gold Standard Whey Protein
+                    symbol: https://snp.com/images/i1.png
+                    short_desc: 100% Whey Protein Powder
+                    long_desc: 24g Protein, 5.5g BCAAs, Double Rich Chocolate flavour
+                    images:
+                      - https://snp.com/images/i1.png
+                    code: 1:XXXXXXXXXXXXX
                   quantity:
+                    unitized:
+                      measure:
+                        unit: unit
+                        value: "1"
                     available:
                       count: "99"
                     maximum:
                       count: "99"
-                    unitized:
-                      measure:
-                        value: "1"
-                        unit: unit
-                  "@ondc/org/returnable": true
-                  "@ondc/org/seller_pickup_return": false
-                  "@ondc/org/return_window": P3D
-                  "@ondc/org/cancellable": true
-                  "@ondc/org/time_to_ship": P1D
-                  "@ondc/org/available_on_cod": false
-                  "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
-                  "@ondc/org/statutory_reqs_packaged_commodities":
-                    manufacturer_or_packer_name: Seller Business
-                    manufacturer_or_packer_address: >-
-                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
-                      India - 560011
-                    common_or_generic_name_of_commodity: Laundry Basket
-                    month_year_of_manufacture_packing_import: NA
-                  tags:
-                    - code: origin
-                      list:
-                        - code: country
-                          value: IND
-                    - code: attribute
-                      list:
-                        - code: brand
-                          value: >-
-                            Polyset Elegance Plastic Laundry Basket - Assorted
-                            Colour, 53 L
-                        - code: colour
-                          value: "#964B00"
-                        - code: colour_name
-                          value: brown
-                        - code: material
-                          value: polyethylene
-                - id: I4
-                  rating: "4"
-                  descriptor:
-                    name: >-
-                      Pigeon by Stovekraft Mini Fruit & Vegetable Chopper With 3
-                      Blades
-                    code: "3:4012789543165"
-                    symbol: https://sellerNP.com/images/i1.png
-                    short_desc: >-
-                      This compact kitchen appliance is designed to help cut
-                      down your kitchen chores. A simple pull of the rope in
-                      this Pigeon Handy vegetable and fruit chopper cuts food
-                      items down into small pieces.
-                    long_desc: >-
-                      The chopper’s tough body can withstand being put into the
-                      dishwasher. Durable design, a convenient usage made of ABS
-                      plastic, this chopper is sturdy and durable. It does not
-                      require electricity to be in use. Chop fruits and
-                      vegetables. This chopper uses its three stainless steel
-                      blades and relies on a unique string function to chop
-                      fruits and vegetables with ease. It is easy to use. Get
-                      things started by putting the blade in the Centre of the
-                      bowl. Cut vegetables or fruits to medium size before
-                      putting them into this bowl to avoid jamming the blades.
-                      Put the contents in, close the lid, and sting the rope
-                      quickly to cut food items into small pieces. Then, take
-                      the blade system out before you remove the chopped food.
-                    images:
-                      - https://sellerNP.com/images/i1.png
                   price:
                     currency: INR
-                    value: "599.00"
-                    maximum_value: "1199.00"
-                  category_id: Kitchen Tools
-                  fulfillment_id: F1
+                    value: "180.00"
+                    maximum_value: "180.00"
+                  category_id: Nutrition and Fitness Supplements
                   location_id: L1
-                  time:
-                    label: enable
-                    timestamp: "2024-08-12T10:27:48.913Z"
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    unitized:
-                      measure:
-                        value: "1"
-                        unit: unit
+                  fulfillment_id: F1
                   "@ondc/org/returnable": true
-                  "@ondc/org/seller_pickup_return": false
-                  "@ondc/org/return_window": P3D
                   "@ondc/org/cancellable": true
-                  "@ondc/org/time_to_ship": P1D
                   "@ondc/org/available_on_cod": false
-                  "@ondc/org/contact_details_consumer_care": Dailywear Fashion,support@gmail.com,2343453434
+                  "@ondc/org/time_to_ship": PT45M
+                  "@ondc/org/seller_pickup_return": true
+                  "@ondc/org/return_window": PT1H
+                  "@ondc/org/contact_details_consumer_care": Ramesh,ramesh@abc.com,18004254444
                   "@ondc/org/statutory_reqs_packaged_commodities":
-                    manufacturer_or_packer_name: Seller Business
+                    manufacturer_or_packer_name: The Himalaya Drug Company
                     manufacturer_or_packer_address: >-
-                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
-                      India - 560011
-                    common_or_generic_name_of_commodity: Vegetable Chopper
-                    month_year_of_manufacture_packing_import: NA
+                      Plot No 26A-30, Sector 8A, IIE, SIDCUL, Ranipur,
+                      Haridwar-249403
+                    mfg_license_no: AYU/1234
+                    common_or_generic_name_of_commodity: Shelcal HD
+                    multiple_products_name_number_or_qty: "15"
+                    month_year_of_manufacture_packing_import: Mar-24
+                    expiry_date: Feb-25
+                  "@ondc/org/statutory_reqs_prepackaged_food":
+                    ingredients_info: >
+                      Protein Blend (Whey Protein Isolate, Whey Protein
+                      Concentrate), Cocoa, Lecithin, Natural and Artificial
+                      flavour, Acesulfame Potassium
                   tags:
                     - code: origin
                       list:
                         - code: country
                           value: IND
+                    - code: image
+                      list:
+                        - code: type
+                          value: back_image
+                        - code: url
+                          value: https://snp.com/ondc/images/I1-back.jpg
                     - code: attribute
                       list:
                         - code: brand
-                          value: >-
-                            Pigeon by Stovekraft Mini Fruit & Vegetable Chopper
-                            With 3 Blades
-                        - code: colour
-                          value: "#00FF00"
-                        - code: colour_name
-                          value: green
-                        - code: material
-                          value: polypropylene
+                          value: Shellcal HD
+                        - code: prescription_required
+                          value: "no"
               fulfillments:
                 - id: F1
                   type: Delivery
                   contact:
                     phone: "9876543210"
                     email: test@gmail.com
-                - id: F2
-                  type: Self-Pickup
-                  contact:
-                    email: home@example.com
-                    phone: "7980271122"
               tags:
                 - code: serviceability
                   list:
                     - code: location
                       value: L1
                     - code: category
-                      value: Kitchen Storage and Containers
+                      value: Nutrition and Fitness Supplements
                     - code: type
                       value: "11"
                     - code: unit
                       value: pincode
                     - code: val
-                      value: 560001-560076,560083
-                - code: serviceability
-                  list:
-                    - code: location
-                      value: L1
-                    - code: category
-                      value: Stationery
-                    - code: type
-                      value: "12"
-                    - code: val
-                      value: IND
-                    - code: unit
-                      value: country
-                - code: serviceability
-                  list:
-                    - code: location
-                      value: L1
-                    - code: category
-                      value: Closet/Laundry/Shoe Organization
-                    - code: type
-                      value: "12"
-                    - code: unit
-                      value: country
-                    - code: val
-                      value: IND
-                - code: serviceability
-                  list:
-                    - code: location
-                      value: L1
-                    - code: category
-                      value: Kitchen Tools
-                    - code: type
-                      value: "12"
-                    - code: unit
-                      value: country
-                    - code: val
+                      value": 560001-560076,560083
                       value: IND
                 - code: timing
                   list:
@@ -1066,4 +803,4 @@ transaction_history:
     saved_info: {}
 validationLib: ""
 helperLib: >-
-  CmNvbnN0IFJFVDE2SE9NRUtJVENIRU4xMjVDYXRhbG9nID0gSlNPTi5wYXJzZSgKICBKU09OLnN0cmluZ2lmeSh7CiAgICBjYXRhbG9nOiB7CiAgICAgICJicHAvZnVsZmlsbG1lbnRzIjogWwogICAgICAgIHsKICAgICAgICAgIGlkOiAiRjEiLAogICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgIGlkOiAiRjIiLAogICAgICAgICAgdHlwZTogIlNlbGYtUGlja3VwIiwKICAgICAgICB9LAogICAgICBdLAogICAgICAiYnBwL2Rlc2NyaXB0b3IiOiB7CiAgICAgICAgbmFtZTogIk1vY2sgU2VsbGVyIE5QIiwKICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIiwKICAgICAgICBzaG9ydF9kZXNjOiAiU2VsbGVyIE1hcmtldHBsYWNlIiwKICAgICAgICBsb25nX2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIl0sCiAgICAgICAgdGFnczogWwogICAgICAgICAgewogICAgICAgICAgICBjb2RlOiAiYnBwX3Rlcm1zIiwKICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJucF90eXBlIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiTVNOIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhY2NlcHRfYmFwX3Rlcm1zIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiWSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgfSwKICAgICAgImJwcC9wcm92aWRlcnMiOiBbCiAgICAgICAgewogICAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICAgIH0sCiAgICAgICAgICByYXRpbmc6ICI0IiwKICAgICAgICAgIHR0bDogIlBUMjRIIiwKICAgICAgICAgIGxvY2F0aW9uczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJMMSIsCiAgICAgICAgICAgICAgZ3BzOiAiMTIuOTI1ODEwLDc3LjU4MzYyNCIsCiAgICAgICAgICAgICAgYWRkcmVzczogewogICAgICAgICAgICAgICAgY2l0eTogIkJlbmdhbHVydSIsCiAgICAgICAgICAgICAgICBzdGF0ZTogIkthcm5hdGFrYSIsCiAgICAgICAgICAgICAgICBhcmVhX2NvZGU6ICI1NjAwMTEiLAogICAgICAgICAgICAgICAgc3RyZWV0OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICAgIGxvY2FsaXR5OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTNUMDY6NDY6MTkuNzM2WiIsCiAgICAgICAgICAgICAgICBkYXlzOiAiMSwyLDMsNCw1IiwKICAgICAgICAgICAgICAgIHNjaGVkdWxlOiB7CiAgICAgICAgICAgICAgICAgIGhvbGlkYXlzOiBbXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICByYW5nZTogewogICAgICAgICAgICAgICAgICBzdGFydDogIjAwMDAiLAogICAgICAgICAgICAgICAgICBlbmQ6ICIyMzU5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBjaXJjbGU6IHsKICAgICAgICAgICAgICAgIGdwczogIjEyLjkyNTgxMCw3Ny41ODM2MjQiLAogICAgICAgICAgICAgICAgcmFkaXVzOiB7CiAgICAgICAgICAgICAgICAgIHVuaXQ6ICJrbSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICBuYW1lOiAiU3RvcmUgMSIsCiAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9zdG9yZTEucG5nIiwKICAgICAgICAgICAgc2hvcnRfZGVzYzogIlN0b3JlIDEiLAogICAgICAgICAgICBsb25nX2Rlc2M6ICJTdG9yZSAxIiwKICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9zdG9yZTEucG5nIl0sCiAgICAgICAgICB9LAogICAgICAgICAgY2F0ZWdvcmllczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJWMSIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlZhcmlhbnQgR3JvdXAgMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAidmFyaWFudF9ncm91cCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJuYW1lIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiaXRlbS50YWdzLmF0dHJpYnV0ZS5jb2xvdXIiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogInNlcSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgICAgaXRlbXM6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGlkOiAiSTEiLAogICAgICAgICAgICAgIHJhdGluZzogIjQiLAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMDU6MzA6NDguOTk4WiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICBuYW1lOiAiTUlOSVNPIFR3by1MYXllciBEcmF3ZXIgT3JnYW5pemVyIiwKICAgICAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICAgIkhhcmQsIHRvdWdoIGFuZCBkdXJhYmxlIGNvc21ldGljIHN0b3JhZ2UgYW5kIG9yZ2FuaXplciwgVHdvLUxheWVyIERyYXdlciBPcmdhbml6ZXIgQ29zbWV0aWMgU3RvcmFnZSBCb3gsIFdoaXRlLCBSZWN0YW5ndWxhciIsCiAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICJJbnRyb2R1Y2luZyB0aGUgTUlOSVNPIFR3by1MYXllciBEcmF3ZXIgT3JnYW5pemVyIENvc21ldGljIFN0b3JhZ2UgQm94IGluIGEgc2xlZWssIG1vZGVybiBXaGl0ZSwgUmVjdGFuZ3VsYXIgZGVzaWduLiBDcmFmdGVkIHdpdGggdG91Z2huZXNzIGFuZCBkdXJhYmlsaXR5IGluIG1pbmQsIHRoaXMgb3JnYW5pemVyIGlzIGJ1aWx0IHRvIHdpdGhzdGFuZCBkYWlseSB1c2UsIGVuc3VyaW5nIHlvdXIgaXRlbXMgc3RheSBzZWN1cmUgYW5kIHByb3RlY3RlZC5JdHMgY29tcGFjdCBkZXNpZ24gb2ZmZXJzIHNpbXBsaWNpdHkgYW5kIHBlcmZlY3Rpb24sIGFsbG93aW5nIHlvdSB0byBtYXhpbWl6ZSBzcGFjZSB3aGlsZSBtYWludGFpbmluZyBhbiBlbGVnYW50IGFlc3RoZXRpYy4iLAogICAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciXSwKICAgICAgICAgICAgICAgIGNvZGU6ICIzOjk1MDExMDE1MzAwMDciLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICB1bml0OiAidW5pdCIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgbWF4aW11bTogewogICAgICAgICAgICAgICAgICBjb3VudDogIjgiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHByaWNlOiB7CiAgICAgICAgICAgICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJLaXRjaGVuIFN0b3JhZ2UgYW5kIENvbnRhaW5lcnMiLAogICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVzaW5lc3MsdGVzdEBnbWFpbC5jb20sOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6CiAgICAgICAgICAgICAgICAgICJLaXRjaGVuIFN0b3JhZ2UgYW5kIENvbnRhaW5lcnMiLAogICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTUlOSVNPIFR3by1MYXllciBEcmF3ZXIgT3JnYW5pemVyICIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiI0ZGRkZGRiIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJicm93biIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ0aGVybW9wbGFzdGljIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJMiIsCiAgICAgICAgICAgICAgcmF0aW5nOiAiMyIsCiAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQxMDoyNzo0OC45MTNaIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgIG5hbWU6ICJEb21zIEFydCBBcHBzIE54dCBLaXQgV2l0aCBQbGFzdGljIENhcnJ5IENhc2UiLAogICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgICAiQ29sb3JpbmcgJiBBcnQgU21hcnQgS2l0IFVzZSBGb3IgU2tldGNoaW5nLCBXcml0aW5nLCBTaGFkaW5nLCBDb2xvdXJpbmcsIEhpZ2hsaWdodGluZy5Ob24tVG94aWMsIEVhc3kgVG8gVXNlICYgU2FmZSBGb3IgQ2hpbGRyZW5zLiIsCiAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICJJbnRyb2R1Y2luZyBvdXIgY29tcHJlaGVuc2l2ZSBjb21iaW5hdGlvbiBraXQsIGRlc2lnbmVkIHRvIHNhdGlzZnkgYWxsIHlvdXIgY3JlYXRpdmUgbmVlZHMhIFdoZXRoZXIgeW91J3JlIHNrZXRjaGluZywgd3JpdGluZywgc2hhZGluZywgY29sb3JpbmcsIG9yIGhpZ2hsaWdodGluZywgdGhpcyBraXQgaGFzIGV2ZXJ5dGhpbmcgeW91IG5lZWQgdG8gdW5sZWFzaCB5b3VyIGltYWdpbmF0aW9uLllvdSdsbCBmaW5kIDEyIHdhdGVyY29sb3IgcGVucyBmb3IgdmlicmFudCBhbmQgZmx1aWQgYXJ0d29yaywgMTIgYmktY29sb3IgY3JheW9ucyBmb3IgdmVyc2F0aWxlIGNvbG9yaW5nIG9wdGlvbnMsIDEyIGp1bWJvIG9pbCBwYXN0ZWxzIGZvciBzbW9vdGggYW5kIGJsZW5kYWJsZSB0ZXh0dXJlcywgOCBiaS1jb2xvciBwZW5jaWxzIGZvciBwcmVjaXNlIGRyYXdpbmcgYW5kIHNoYWRpbmcsIGFuZCAxMiBwbGFzdGljIGNyYXlvbnMgZm9yIGJvbGQgYW5kIGR1cmFibGUgbGluZXMuIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgICBjb2RlOiAiMzo3ODQ1NjMyMTk4NDcxIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgICB1bml0aXplZDogewogICAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICIxMCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcHJpY2U6IHsKICAgICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiMjQ2MCIsCiAgICAgICAgICAgICAgICBtYXhpbXVtX3ZhbHVlOiAiMjQ2MCIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBjYXRlZ29yeV9pZDogIlN0YXRpb25lcnkiLAogICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVzaW5lc3MsdGVzdEBnbWFpbC5jb20sOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJQbGFzdGljIENyYXlvbnMiLAogICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiRG9tcyBBcnQgQXBwcyBOeHQgS2l0IFdpdGggUGxhc3RpYyBDYXJyeSBDYXNlICIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzAwRkYwMCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ3aGl0ZSIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ0aGVybW9wbGFzdGljIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJMyIsCiAgICAgICAgICAgICAgcmF0aW5nOiAiNCIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlBvbHlzZXQgRWxlZ2FuY2UgUGxhc3RpYyBMYXVuZHJ5IEJhc2tldCAtIEFzc29ydGVkIENvbG91ciwgNTMgTCIsCiAgICAgICAgICAgICAgICBjb2RlOiAiMzo2MjEzNTc0ODkwMjM4IiwKICAgICAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICAgIlBvbHlzZXTigJlzIExhdW5kcnkgQmFza2V0IG1hZGUgZnJvbSB2aXJnaW4gcGxhc3RpYyBpcyB2ZXJ5IHRvdWdoLCBkdXJhYmxlIGFuZCBsb25nLWxhc3RpbmcuIEl0IGhhcyBhIGxhcmdlIHNwYWNlIGVub3VnaCB0byBrZWVwIGFsbCB0aGUgZGlydHkgY2xvdGhlcyBpbiBvbmUgcGxhY2UuIiwKICAgICAgICAgICAgICAgIGxvbmdfZGVzYzoKICAgICAgICAgICAgICAgICAgIlRoaXMgUG9seXNldCBMYXVuZHJ5IEJhc2tldCBjb21lcyBpbiBsYXJnZSBzaXplLCB3aGljaCBnaXZlcyB5b3UgbW9yZSBzcGFjZSBmb3Igc3RvcmluZyBtdWx0aXBsZSBpdGVtcyBsaWtlIGNsb3RoZXMsIHRveXMsIGdyb2Nlcmllcywga2l0Y2hlbiBhbmQgYmF0aGluZyBhY2Nlc3NvcmllcywgSWRlYWwgZm9yIGZhbWlseSB1c2UgaW4gdGhlIExhdW5kcnkgUm9vbSwgQmVkcm9vbSBvciBCYXRocm9vbSwgaXRzIGNvbWVzIHdpdGggTGlkIGZvciBwcm90ZWN0aW5nIHlvdXIgYXJ0aWNsZXMgZnJvbSBkdXN0LiBUbyBhZGQgdG8gaXQsIHRoZSBkZXNpZ24gYW5kIGNvbG91ciBhcmUgc28gYXR0cmFjdGl2ZSwgdGhhdCBpdCBpbW1lZGlhdGVseSBnZWxzIHdpdGggdGhlIGludGVyaW9yIG9mIHRoZSBob3VzZSwgYmUgaXQgQmF0aHJvb20sIEJlZHJvb20gZXRjLiBFYXNpbHkgcG9ydGFibGUgY3Jvc3MgdmVudGlsYXRpbmcgYm9keSBrZWVwcyB5b3VyIGl0ZW1zIGZyZWUgbW9kdWxlIGZvcm1hdGlvbi4gQW5kIGl0IGdpdmVzIHlvdSBleHRyYS1sYXJnZSBzcGFjZSB0byBzdG9yZSB5b3VyIHByb2R1Y3RzLiBBbmQgdGhpcyBpcyBtYWRlIGZyb20gdG91Z2ggcGxhc3RpYyB3aGljaCBwcm92aWRlcyBpbW1lbnNlIHN0cmVuZ3RoIHRvIHRoZSBwcm9kdWN0LiIsCiAgICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcHJpY2U6IHsKICAgICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiNDk5LjAwIiwKICAgICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIxMTk5LjAwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiQ2xvc2V0L0xhdW5kcnkvU2hvZSBPcmdhbml6YXRpb24iLAogICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQM0QiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlAxRCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgICAiRGFpbHl3ZWFyIEZhc2hpb24sc3VwcG9ydEBnbWFpbC5jb20sMjM0MzQ1MzQzNCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJMYXVuZHJ5IEJhc2tldCIsCiAgICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYnJhbmQiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6CiAgICAgICAgICAgICAgICAgICAgICAgICJQb2x5c2V0IEVsZWdhbmNlIFBsYXN0aWMgTGF1bmRyeSBCYXNrZXQgLSBBc3NvcnRlZCBDb2xvdXIsIDUzIEwiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIiM5NjRCMDAiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91cl9uYW1lIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiYnJvd24iLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogIm1hdGVyaWFsIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAicG9seWV0aHlsZW5lIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJNCIsCiAgICAgICAgICAgICAgcmF0aW5nOiAiNCIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlBpZ2VvbiBieSBTdG92ZWtyYWZ0IE1pbmkgRnJ1aXQgJiBWZWdldGFibGUgQ2hvcHBlciBXaXRoIDMgQmxhZGVzIiwKICAgICAgICAgICAgICAgIGNvZGU6ICIzOjQwMTI3ODk1NDMxNjUiLAogICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgICAiVGhpcyBjb21wYWN0IGtpdGNoZW4gYXBwbGlhbmNlIGlzIGRlc2lnbmVkIHRvIGhlbHAgY3V0IGRvd24geW91ciBraXRjaGVuIGNob3Jlcy4gQSBzaW1wbGUgcHVsbCBvZiB0aGUgcm9wZSBpbiB0aGlzIFBpZ2VvbiBIYW5keSB2ZWdldGFibGUgYW5kIGZydWl0IGNob3BwZXIgY3V0cyBmb29kIGl0ZW1zIGRvd24gaW50byBzbWFsbCBwaWVjZXMuICIsCiAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICJUaGUgY2hvcHBlcuKAmXMgdG91Z2ggYm9keSBjYW4gd2l0aHN0YW5kIGJlaW5nIHB1dCBpbnRvIHRoZSBkaXNod2FzaGVyLiBEdXJhYmxlIGRlc2lnbiwgYSBjb252ZW5pZW50IHVzYWdlIG1hZGUgb2YgQUJTIHBsYXN0aWMsIHRoaXMgY2hvcHBlciBpcyBzdHVyZHkgYW5kIGR1cmFibGUuIEl0IGRvZXMgbm90IHJlcXVpcmUgZWxlY3RyaWNpdHkgdG8gYmUgaW4gdXNlLiBDaG9wIGZydWl0cyBhbmQgdmVnZXRhYmxlcy4gVGhpcyBjaG9wcGVyIHVzZXMgaXRzIHRocmVlIHN0YWlubGVzcyBzdGVlbCBibGFkZXMgYW5kIHJlbGllcyBvbiBhIHVuaXF1ZSBzdHJpbmcgZnVuY3Rpb24gdG8gY2hvcCBmcnVpdHMgYW5kIHZlZ2V0YWJsZXMgd2l0aCBlYXNlLiBJdCBpcyBlYXN5IHRvIHVzZS4gR2V0IHRoaW5ncyBzdGFydGVkIGJ5IHB1dHRpbmcgdGhlIGJsYWRlIGluIHRoZSBDZW50cmUgb2YgdGhlIGJvd2wuIEN1dCB2ZWdldGFibGVzIG9yIGZydWl0cyB0byBtZWRpdW0gc2l6ZSBiZWZvcmUgcHV0dGluZyB0aGVtIGludG8gdGhpcyBib3dsIHRvIGF2b2lkIGphbW1pbmcgdGhlIGJsYWRlcy4gUHV0IHRoZSBjb250ZW50cyBpbiwgY2xvc2UgdGhlIGxpZCwgYW5kIHN0aW5nIHRoZSByb3BlIHF1aWNrbHkgdG8gY3V0IGZvb2QgaXRlbXMgaW50byBzbWFsbCBwaWVjZXMuIFRoZW4sIHRha2UgdGhlIGJsYWRlIHN5c3RlbSBvdXQgYmVmb3JlIHlvdSByZW1vdmUgdGhlIGNob3BwZWQgZm9vZC4gIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgdmFsdWU6ICI1OTkuMDAiLAogICAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjExOTkuMDAiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJLaXRjaGVuIFRvb2xzIiwKICAgICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgICB0aW1lc3RhbXA6ICIyMDI0LTA4LTEyVDEwOjI3OjQ4LjkxM1oiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgIHVuaXQ6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiBmYWxzZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDNEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQMUQiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY29udGFjdF9kZXRhaWxzX2NvbnN1bWVyX2NhcmUiOgogICAgICAgICAgICAgICAgIkRhaWx5d2VhciBGYXNoaW9uLHN1cHBvcnRAZ21haWwuY29tLDIzNDM0NTM0MzQiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1aWxkaW5nIEFkZHJlc3MsIEpheWFuYWdhciwgQmVuZ2FsdXJ1LCBLYXJuYXRha2EsIEluZGlhIC0gNTYwMDExIiwKICAgICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiVmVnZXRhYmxlIENob3BwZXIiLAogICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOgogICAgICAgICAgICAgICAgICAgICAgICAiUGlnZW9uIGJ5IFN0b3Zla3JhZnQgTWluaSBGcnVpdCAmIFZlZ2V0YWJsZSBDaG9wcGVyIFdpdGggMyBCbGFkZXPCoCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzAwRkYwMCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJncmVlbiIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJwb2x5cHJvcHlsZW5lIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICAgIGZ1bGZpbGxtZW50czogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJGMSIsCiAgICAgICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICAgICAgICBjb250YWN0OiB7CiAgICAgICAgICAgICAgICBwaG9uZTogIjk4NzY1NDMyMTAiLAogICAgICAgICAgICAgICAgZW1haWw6ICJ0ZXN0QGdtYWlsLmNvbSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvbnRhY3Q6IHsKICAgICAgICAgICAgICAgIGVtYWlsOiAiaG9tZUBleGFtcGxlLmNvbSIsCiAgICAgICAgICAgICAgICBwaG9uZTogIjc5ODAyNzExMjIiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgaWQ6ICJGMiIsCiAgICAgICAgICAgICAgdHlwZTogIlNlbGYtUGlja3VwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIktpdGNoZW4gU3RvcmFnZSBhbmQgQ29udGFpbmVycyIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMTEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogInBpbmNvZGUiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNTYwMDAxLTU2MDA3Niw1NjAwODMiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInNlcnZpY2VhYmlsaXR5IiwKICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJsb2NhdGlvbiIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJTdGF0aW9uZXJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxMiIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogImNvdW50cnkuIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJzZXJ2aWNlYWJpbGl0eSIsCiAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIkwxIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJjYXRlZ29yeSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiQ2xvc2V0L0xhdW5kcnkvU2hvZSBPcmdhbml6YXRpb24iLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWwiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIktpdGNoZW4gVG9vbHMiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWwiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAidGltaW5nIiwKICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJBbGwiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiZGF5X2Zyb20iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImRheV90byIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidGltZV9mcm9tIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIwMDAwIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX3RvIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIyMzU5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJvcmRlcl92YWx1ZSIsCiAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAibWluX3ZhbHVlIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgICAgXSwKICAgIH0sCiAgfSkKKTsKCg==
+  CmNvbnN0IFJFVDE4SEVBTFRIMTI1Q2F0YWxvZyA9IEpTT04ucGFyc2UoCiAgSlNPTi5zdHJpbmdpZnkoewogICAgY2F0YWxvZzogewogICAgICAiYnBwL2Z1bGZpbGxtZW50cyI6IFsKICAgICAgICB7CiAgICAgICAgICBpZDogIkYxIiwKICAgICAgICAgIHR5cGU6ICJEZWxpdmVyeSIsCiAgICAgICAgfSwKICAgICAgXSwKICAgICAgImJwcC9kZXNjcmlwdG9yIjogewogICAgICAgIG5hbWU6ICJNb2NrIFNlbGxlciBOUCIsCiAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyIsCiAgICAgICAgc2hvcnRfZGVzYzogIlNlbGxlciBNYXJrZXRwbGFjZSIsCiAgICAgICAgbG9uZ19kZXNjOiAiU2VsbGVyIE1hcmtldHBsYWNlIiwKICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyJdLAogICAgICAgIHRhZ3M6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgY29kZTogImJwcF90ZXJtcyIsCiAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAibnBfdHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIk1TTiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgfSwKICAgICAgImJwcC9wcm92aWRlcnMiOiBbCiAgICAgICAgewogICAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICAgIH0sCiAgICAgICAgICB0dGw6ICJQVDI0SCIsCiAgICAgICAgICBsb2NhdGlvbnM6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGlkOiAiTDEiLAogICAgICAgICAgICAgIGdwczogIjEyLjkyNTgxMCw3Ny41ODM2MjQiLAogICAgICAgICAgICAgIGFkZHJlc3M6IHsKICAgICAgICAgICAgICAgIGNpdHk6ICJCZW5nYWx1cnUiLAogICAgICAgICAgICAgICAgc3RhdGU6ICJLYXJuYXRha2EiLAogICAgICAgICAgICAgICAgYXJlYV9jb2RlOiAiNTYwMDExIiwKICAgICAgICAgICAgICAgIHN0cmVldDogIkpheWFuYWdhciIsCiAgICAgICAgICAgICAgICBsb2NhbGl0eTogIkpheWFuYWdhciIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgICB0aW1lc3RhbXA6ICIyMDI0LTA4LTEzVDA2OjQ2OjE5LjczNloiLAogICAgICAgICAgICAgICAgZGF5czogIjEsMiwzLDQsNSIsCiAgICAgICAgICAgICAgICBzY2hlZHVsZTogewogICAgICAgICAgICAgICAgICBob2xpZGF5czogW10sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgICAgc3RhcnQ6ICIwMDAwIiwKICAgICAgICAgICAgICAgICAgZW5kOiAiMjM1OSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgY2lyY2xlOiB7CiAgICAgICAgICAgICAgICBncHM6ICIxMi45MjU4MTAsNzcuNTgzNjI0IiwKICAgICAgICAgICAgICAgIHJhZGl1czogewogICAgICAgICAgICAgICAgICB1bml0OiAia20iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjUiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9zdG9yZTEucG5nIiwKICAgICAgICAgICAgc2hvcnRfZGVzYzogIlN0b3JlIDEiLAogICAgICAgICAgICBsb25nX2Rlc2M6ICJTdG9yZSAxIiwKICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9zdG9yZTEucG5nIl0sCiAgICAgICAgICB9LAogICAgICAgICAgY2F0ZWdvcmllczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJWMSIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlZhcmlhbnQgR3JvdXAgMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAidmFyaWFudF9ncm91cCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJuYW1lIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiaXRlbS50YWdzLmF0dHJpYnV0ZS5icmFuZCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2VxIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgICBpdGVtczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJJMSIsCiAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQwNTozMDo0OC45OThaIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgIG5hbWU6ICJCdXR0ZXJmbHkgQmVhdXRpZnVsIDEyIEdvbGQgTmVja2xhY2UiLAogICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgICAiMThLVCBCdXR0ZXJmbHkgQmVhdXRpZnVsIDEyIEdvbGQgTmVja2xhY2UgUGVuZGFudCB3aXRoIGdvbGQgZmluaXNoaW5nIiwKICAgICAgICAgICAgICAgIGxvbmdfZGVzYzoKICAgICAgICAgICAgICAgICAgIlRoaXMgaXMgMThLVCBCdXR0ZXJmbHkgQmVhdXRpZnVsIDEyIEdvbGQgTmVja2xhY2UgUGVuZGFudCB3aXRoIGdvbGQgZmluaXNoaW5nIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgICBjb2RlOiAiNDo3MTEzIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgICB1bml0aXplZDogewogICAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICI4IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgdmFsdWU6ICIyMjYwIiwKICAgICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMjYwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiTmVja2xhY2VzIiwKICAgICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlAyRCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9yZXR1cm5fd2luZG93IjogIlA3RCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1c2luZXNzLHRlc3RAZ21haWwuY29tLDk4NzY1NDMyMTAiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1aWxkaW5nIEFkZHJlc3MsIEpheWFuYWdhciwgQmVuZ2FsdXJ1LCBLYXJuYXRha2EsIEluZGlhIC0gNTYwMDExIiwKICAgICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OgogICAgICAgICAgICAgICAgICAiQnV0dGVyZmx5IEJlYXV0aWZ1bCAxMiBHb2xkIE5lY2tsYWNlIiwKICAgICAgICAgICAgICAgIG1vbnRoX3llYXJfb2ZfbWFudWZhY3R1cmVfcGFja2luZ19pbXBvcnQ6ICJOQSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJvcmlnaW4iLAogICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvdW50cnkiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiYXR0cmlidXRlIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb2xvdXJfbmFtZSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImdvbGQiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImdlbmRlciIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImZlbWFsZSIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiI0MwQzBDMCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYmFzZV9tZXRhbCIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInNpbHZlciIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAicGxhdGluZyIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImdvbGQiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogInNpemUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICI1IiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJicmFuZCIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImpld2VsbGVyeSBicmFuZCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGlkOiAiSTIiLAogICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBwYXJlbnRfaXRlbV9pZDogIlYxIiwKICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICBuYW1lOiAiQnV0dGVyZmx5IE5lY2tsYWNlIDJuZCIsCiAgICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICAgIHNob3J0X2Rlc2M6ICIxOEtUIEJ1dHRlcmZseSBOZWNrbGFjZSBQZW5kYW50IHdpdGggZ29sZCBmaW5pc2hpbmciLAogICAgICAgICAgICAgICAgbG9uZ19kZXNjOgogICAgICAgICAgICAgICAgICAiVGhpcyBpcyAxOEtUIEJ1dHRlcmZseSBOZWNrbGFjZSBQZW5kYW50IHdpdGggZ29sZCBmaW5pc2hpbmciLAogICAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciXSwKICAgICAgICAgICAgICAgIGNvZGU6ICI0OjcxMTMiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICB1bml0OiAidW5pdCIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgbWF4aW11bTogewogICAgICAgICAgICAgICAgICBjb3VudDogIjEwIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgdmFsdWU6ICIyMzYwIiwKICAgICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMzYwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiTmVja2xhY2VzIiwKICAgICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlAyRCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IHRydWUsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9yZXR1cm5fd2luZG93IjogIlA3RCIsCiAgICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1c2luZXNzLHRlc3RAZ21haWwuY29tLDk4NzY1NDMyMTAiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1aWxkaW5nIEFkZHJlc3MsIEpheWFuYWdhciwgQmVuZ2FsdXJ1LCBLYXJuYXRha2EsIEluZGlhIC0gNTYwMDExIiwKICAgICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiQnV0dGVyZmx5IE5lY2tsYWNlIDJuZCIsCiAgICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJnb2xkIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJnZW5kZXIiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJmZW1hbGUiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIiNDMEMwQzAiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJhc2VfbWV0YWwiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJzaWx2ZXIiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogInBsYXRpbmciLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJzaWx2ZXIiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogInNpemUiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICI1IiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJicmFuZCIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImpld2VsbGVyeSBicmFuZCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGlkOiAiSTMiLAogICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgIG5hbWU6ICJTbGVlcGluZyBSYWJiaXQgUHJpbnRlZCBPdmVyc2l6ZWQgVC1zaGlydCBmb3IgTWVuIC0gYmxhY2svUyIsCiAgICAgICAgICAgICAgICBjb2RlOiAiNDo2MTA5MTAwMCIsCiAgICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICAgIHNob3J0X2Rlc2M6CiAgICAgICAgICAgICAgICAgICJIZXkhIEhvdyB5b3UgZG9pbj8gSSdtIHlvdXIgbGF0ZXN0IGZhdm9yaXRlIFByaW50ZWQgT3ZlcnNpemVkIFQtc2hpcnQuIEkgaGF2ZSBiZWVuIG1hZGUgdXNpbmcgY290dG9uIHBvbHkgc28geW91IGNhbiBmZWVsIGF0IGVhc2Ugd2l0aCBteSBzb2Z0ICYgc3RyZXRjaGFibGUgbmF0dXJlLiBNeSBib2xkIHByaW50cyBvbiB0aGUgYmFjayBhcmUgc3VyZSB0byBlbmhhbmNlIHlvdXIgc3R5bGUgYW5kIG1hdGNoIHlvdXIgY29vbCB2aWJlLiBCcmVhdGhhYmlsaXR5ICYgbW9pc3R1cmUgYWJzb3JiZW5jeSBhcmUgdHdvIG9mIG15IGIiLAogICAgICAgICAgICAgICAgbG9uZ19kZXNjOgogICAgICAgICAgICAgICAgICAiSGV5ISBIb3cgeW91IGRvaW4/IEknbSB5b3VyIGxhdGVzdCBmYXZvcml0ZSBQcmludGVkIE92ZXJzaXplZCBULXNoaXJ0LiBJIGhhdmUgYmVlbiBtYWRlIHVzaW5nIGNvdHRvbiBwb2x5IHNvIHlvdSBjYW4gZmVlbCBhdCBlYXNlIHdpdGggbXkgc29mdCAmIHN0cmV0Y2hhYmxlIG5hdHVyZS4gTXkgYm9sZCBwcmludHMgb24gdGhlIGJhY2sgYXJlIHN1cmUgdG8gZW5oYW5jZSB5b3VyIHN0eWxlIGFuZCBtYXRjaCB5b3VyIGNvb2wgdmliZS4gQnJlYXRoYWJpbGl0eSAmIG1vaXN0dXJlIGFic29yYmVuY3kgYXJlIHR3byBvZiBteSBiZXN0IGZlYXR1cmVzLCBoZW5jZSwgeW91IGNhbiByZWx5IG9uIG1lIHRvIGtlZXAgeW91IGZlZWxpbmcgY29tZnkgJiBkcnkgYXQgYWxsIHRpbWVzLiBTbyB3aGVuIGFyZSB3ZSBtZWV0aW5nIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgdmFsdWU6ICI0OTkuMDAiLAogICAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjExOTkuMDAiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJUIFNoaXJ0cyIsCiAgICAgICAgICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICAgICAgICAgICAgbG9jYXRpb25faWQ6ICJMMSIsCiAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQxMDoyNzo0OC45MTNaIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHJlbGF0ZWQ6IHRydWUsCiAgICAgICAgICAgICAgcmVjb21tZW5kZWQ6IHRydWUsCiAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgIHVuaXQ6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiBmYWxzZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDNEIiwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjogdHJ1ZSwKICAgICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQMUQiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICJAb25kYy9vcmcvY29udGFjdF9kZXRhaWxzX2NvbnN1bWVyX2NhcmUiOgogICAgICAgICAgICAgICAgIkRhaWx5d2VhciBGYXNoaW9uLHN1cHBvcnRAZ21haWwuY29tLDIzNDM0NTM0MzQiLAogICAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6CiAgICAgICAgICAgICAgICAgICJTbGVlcGluZyBSYWJiaXQgUHJpbnRlZCBPdmVyc2l6ZWQgVC1zaGlydCBmb3IgTWVuIiwKICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczogImluZGlhIiwKICAgICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OgogICAgICAgICAgICAgICAgICAiU2xlZXBpbmcgUmFiYml0IFByaW50ZWQgT3ZlcnNpemVkIFQtc2hpcnQgZm9yIE1lbiIsCiAgICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiZ2VuZGVyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAibWFsZSIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzAwMDAwMCIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2l6ZSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIlMiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiYmV5b3VuZyIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2l6ZV9jaGFydCIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZToKICAgICAgICAgICAgICAgICAgICAgICAgImh0dHBzOi8vYm9keWFuZHNvdWwubXUvbWVkaWEvc2l6ZV9jaGFydC9tZW53ZWJjb20uanBnIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJmYWJyaWMiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJjb3R0b24iLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91cl9uYW1lIiwKICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiYmxhY2siLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgICAgZnVsZmlsbG1lbnRzOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBpZDogIkYxIiwKICAgICAgICAgICAgICB0eXBlOiAiRGVsaXZlcnkiLAogICAgICAgICAgICAgIGNvbnRhY3Q6IHsKICAgICAgICAgICAgICAgIHBob25lOiAiOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgICBlbWFpbDogInRlc3RAZ21haWwuY29tIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBpZDogIkYzIiwKICAgICAgICAgICAgICB0eXBlOiAiQnV5ZXItRGVsaXZlcnkiLAogICAgICAgICAgICAgIGNvbnRhY3Q6IHsKICAgICAgICAgICAgICAgIHBob25lOiAiOTg4NjA5ODg2MCIsCiAgICAgICAgICAgICAgICBlbWFpbDogInRlc3RAZ21haWwuY29tIgogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0KICAgICAgICAgIF0sCiAgICAgICAgICBjcmVkczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgaWQ6ICJnaS0xMjM0NTY3OCIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgY29kZTogIlNvY2lhbCBTZWN0b3IiLAogICAgICAgICAgICAgICAgc2hvcnRfZGVzYzogIkdJIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHVybDogImh0dHBzOi8vYWJjZC5jZG4uY29tL2ltYWdlcy9iYWRnZS1pbWciLAogICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInZlcmlmaWNhdGlvbiIsCiAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmVyaWZ5X3VybCIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImh0dHBzOi8vYWJjZC5naS5jb20vdmVyaWZ5P2lkPWdpLTEyMzQ1Njc4JyIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmVyaWZpZXIiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJDU1AtQUJDIiwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJpc3N1ZXIiLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJFeGFtcGxlIEF1dGhvcml0eSIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsaWRfZnJvbSIsCiAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjIwMjMtMDYtMDNUMDA6MDA6MDA6MDAwWiIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsaWRfdG8iLAogICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIyMDI0LTA2LTAzVDIzOjU5OjU5Ojk5OVoiLAogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgICAgdGFnczogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInNlcnZpY2VhYmlsaXR5IiwKICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJsb2NhdGlvbiIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY2F0ZWdvcnk6ICJOZWNrbGFjZXMiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIiIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMTEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogInBpbmNvZGUiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNTYwMDAxLTU2MDA3Niw1NjAwODMiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInNlcnZpY2VhYmlsaXR5IiwKICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJsb2NhdGlvbiIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICJUIFNoaXJ0cyIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMTIiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogImNvdW50cnkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJ0aW1pbmciLAogICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIkFsbCIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIkwxIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJkYXlfZnJvbSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICBjb2RlOiAiZGF5X3RvIiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICI1IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX2Zyb20iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjAwMDAiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgY29kZTogInRpbWVfdG8iLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjIzNTkiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBdLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICAgIG9mZmVyczogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGlkOiAiRkxBVDUwIiwKICAgICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgICAgY29kZTogImRpc2NvdW50IiwKICAgICAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9vZmZlcjItYmFubmVyLnBuZyJdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIGxvY2F0aW9uX2lkczogWyJMMSJdLAogICAgICAgICAgICAgICAgaXRlbV9pZHM6IFsiSTEiLCAiSTIiLCAiSTMiXSwKICAgICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgICAgbGFiZWw6ICJ2YWxpZCIsCiAgICAgICAgICAgICAgICAgIHJhbmdlOiB7CiAgICAgICAgICAgICAgICAgICAgc3RhcnQ6ICIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoiLAogICAgICAgICAgICAgICAgICAgIGVuZDogIjIwMzAtMTItMjNUMDg6MTI6MTUuMDMzWiIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogInF1YWxpZmllciIsCiAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWluX3ZhbHVlIiwKICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxMDAuMDAiLAogICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJlbmVmaXQiLAogICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInZhbHVlX3R5cGUiLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImFtb3VudCIsCiAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsdWUiLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIi01MC4wMCIsCiAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWV0YSIsCiAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYWRkaXRpdmUiLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIm5vIiwKICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdXRvIiwKICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJubyIsCiAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgaWQ6ICJidXkyZ2V0MyIsCiAgICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICAgIGNvZGU6ICJidXlYZ2V0WSIsCiAgICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NucC5jb20vaW1hZ2VzL29mZmVyMS1iYW5uZXIud2VicCJdLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIGxvY2F0aW9uX2lkczogWyJMMSJdLAogICAgICAgICAgICAgICAgY2F0ZWdvcnlfaWRzOiBbXSwKICAgICAgICAgICAgICAgIGl0ZW1faWRzOiBbIkkxIiwgIkkyIiwgIkkzIl0sCiAgICAgICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICAgIGxhYmVsOiAidmFsaWQiLAogICAgICAgICAgICAgICAgICByYW5nZTogewogICAgICAgICAgICAgICAgICAgIHN0YXJ0OiAiMjAyNS0wMS0wMVQxNjowMDowMC4wMDBaIiwKICAgICAgICAgICAgICAgICAgICBlbmQ6ICIyMDMwLTAxLTAxVDIzOjAwOjAwLjAwMFoiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJxdWFsaWZpZXIiLAogICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIml0ZW1fY291bnQiLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjIiLAogICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJlbmVmaXQiLAogICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIml0ZW1fY291bnQiLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIml0ZW1faWQiLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIkkyIiwKICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJpdGVtX3ZhbHVlIiwKICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIwLjAwIiwKICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJtZXRhIiwKICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJhZGRpdGl2ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAibm8iLAogICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImF1dG8iLAogICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIm5vIiwKICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAvLyB7CiAgICAgICAgICAgICAgLy8gCWlkOiAiY29tYm8xIiwKICAgICAgICAgICAgICAvLyAJZGVzY3JpcHRvcjogewogICAgICAgICAgICAgIC8vIAkJY29kZTogImNvbWJvIiwKICAgICAgICAgICAgICAvLyAJCWltYWdlczogWyJodHRwczovL3NucC5jb20vaW1hZ2VzL29mZmVyMS1iYW5uZXIud2VicCJdLAogICAgICAgICAgICAgIC8vIAl9LAogICAgICAgICAgICAgIC8vIAlsb2NhdGlvbl9pZHM6IFsiTDEiXSwKICAgICAgICAgICAgICAvLyAJY2F0ZWdvcnlfaWRzOiBbIkMxIl0sCiAgICAgICAgICAgICAgLy8gCWl0ZW1faWRzOiBbIkkxIiwgIkkyIiwgIkkzIl0sCiAgICAgICAgICAgICAgLy8gCXRpbWU6IHsKICAgICAgICAgICAgICAvLyAJCWxhYmVsOiAidmFsaWQiLAogICAgICAgICAgICAgIC8vIAkJcmFuZ2U6IHsKICAgICAgICAgICAgICAvLyAJCQlzdGFydDogIjIwMjUtMDEtMDFUMTY6MDA6MDAuMDAwWiIsCiAgICAgICAgICAgICAgLy8gCQkJZW5kOiAiMjAzMC0wMS0wMVQyMzowMDowMC4wMDBaIiwKICAgICAgICAgICAgICAvLyAJCX0sCiAgICAgICAgICAgICAgLy8gCX0sCiAgICAgICAgICAgICAgLy8gCXRhZ3M6IFsKICAgICAgICAgICAgICAvLyAJCXsKICAgICAgICAgICAgICAvLyAJCQljb2RlOiAicXVhbGlmaWVyIiwKICAgICAgICAgICAgICAvLyAJCQlsaXN0OiBbCiAgICAgICAgICAgICAgLy8gCQkJCXsKICAgICAgICAgICAgICAvLyAJCQkJCWNvZGU6ICJpdGVtX2lkIiwKICAgICAgICAgICAgICAvLyAJCQkJCXZhbHVlOiAiSTEsSTIsSTMiLAogICAgICAgICAgICAgIC8vIAkJCQl9LAogICAgICAgICAgICAgIC8vIAkJCV0sCiAgICAgICAgICAgICAgLy8gCQl9LAogICAgICAgICAgICAgIC8vIAkJewogICAgICAgICAgICAgIC8vIAkJCWNvZGU6ICJiZW5lZml0IiwKICAgICAgICAgICAgICAvLyAJCQlsaXN0OiBbCiAgICAgICAgICAgICAgLy8gCQkJCXsKICAgICAgICAgICAgICAvLyAJCQkJCWNvZGU6ICJ2YWx1ZV90eXBlIiwKICAgICAgICAgICAgICAvLyAJCQkJCXZhbHVlOiAiYW1vdW50IiwKICAgICAgICAgICAgICAvLyAJCQkJfSwKICAgICAgICAgICAgICAvLyAJCQkJewogICAgICAgICAgICAgIC8vIAkJCQkJY29kZTogInZhbHVlIiwKICAgICAgICAgICAgICAvLyAJCQkJCXZhbHVlOiAiLTc1LjAwIiwKICAgICAgICAgICAgICAvLyAJCQkJfSwKICAgICAgICAgICAgICAvLyAJCQldLAogICAgICAgICAgICAgIC8vIAkJfSwKICAgICAgICAgICAgICAvLyAJCXsKICAgICAgICAgICAgICAvLyAJCQljb2RlOiAibWV0YSIsCiAgICAgICAgICAgICAgLy8gCQkJbGlzdDogWwogICAgICAgICAgICAgIC8vIAkJCQl7CiAgICAgICAgICAgICAgLy8gCQkJCQljb2RlOiAiYWRkaXRpdmUiLAogICAgICAgICAgICAgIC8vIAkJCQkJdmFsdWU6ICJubyIsCiAgICAgICAgICAgICAgLy8gCQkJCX0sCiAgICAgICAgICAgICAgLy8gCQkJCXsKICAgICAgICAgICAgICAvLyAJCQkJCWNvZGU6ICJhdXRvIiwKICAgICAgICAgICAgICAvLyAJCQkJCXZhbHVlOiAibm8iLAogICAgICAgICAgICAgIC8vIAkJCQl9LAogICAgICAgICAgICAgIC8vIAkJCV0sCiAgICAgICAgICAgICAgLy8gCQl9LAogICAgICAgICAgICAgIC8vIAldLAogICAgICAgICAgICAgIC8vIH0sCiAgICAgICAgICAgIF0KICAgICAgICB9LAogICAgICBdLAogICAgfSwKICB9KQopOwoK
