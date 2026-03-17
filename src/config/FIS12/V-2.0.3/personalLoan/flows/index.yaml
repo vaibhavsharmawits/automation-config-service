@@ -760,7 +760,7 @@ flows:
         expect: false
 
   - id: Personal_Loan_Offline
-    tags: ["WORKBENCH","WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
+    tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Offline verification and processing
     sequence:
       - key: search_personal_loan_3
