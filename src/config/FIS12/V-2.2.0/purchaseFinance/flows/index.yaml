@@ -34,6 +34,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -71,6 +75,10 @@ flows:
         pair: on_select_purchase_finance 
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
         force_proceed: true
       - key: on_select_purchase_finance 
         type: on_select
@@ -321,6 +329,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -339,19 +351,6 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.personal_details_information_form      
-      - key: search3_purchase_finance 
-        type: search
-        unsolicited: false
-        pair: on_search3_purchase_finance 
-        owner: BAP
-        expect: true
-        force_proceed: true
-      - key: on_search3_purchase_finance 
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
       - key: search4_purchase_finance 
         type: search
         unsolicited: false
@@ -365,7 +364,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      
       - key: select_purchase_finance 
         type: select
         unsolicited: false
@@ -373,6 +371,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -468,18 +470,26 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      # - key: Emanadate_verification_status
-      #   label: manadate details form 
-      #   type: HTML_FORM 
-      #   unsolicited: false
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   input:
-      #     - name: form_submission_id
-      #       label: Enter Form Submission id
-      #       type: HTML_FORM
-      #       reference: $.reference_data.Emanadate_verification_status
+      - key: Emanadate_verification_status
+        label: manadate details form 
+        type: DYNAMIC_FORM 
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -608,6 +618,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -646,6 +660,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -885,6 +903,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_foreclosure
         type: on_update
         unsolicited: true
@@ -927,6 +958,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -965,6 +1000,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -1001,7 +1040,6 @@ flows:
         pair: null
         owner: BPP
         expect: false
-
       - key: Ekyc_details_verification_status
         label: Ekyc Details form
         type: DYNAMIC_FORM
@@ -1014,8 +1052,7 @@ flows:
             label: Enter Form Submission id
             type: DYNAMIC_FORM
             payloadField: "form_submission_id"
-            reference: $.reference_data.Ekyc_details_verification_status
-      
+            reference: $.reference_data.Ekyc_details_verification_status    
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1120,8 +1157,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: DYNAMIC_FORM
-            reference: $.reference_data.E_sign_verification_status
-      
+            reference: $.reference_data.E_sign_verification_status   
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
@@ -1203,6 +1239,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_missed_Emi
         type: on_update
         unsolicited: true
@@ -1245,6 +1294,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -1283,6 +1336,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -1514,12 +1571,31 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
       - key: on_update_unsolicited_prepart
         type: on_update
         unsolicited: true
@@ -1562,6 +1638,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -1599,6 +1679,10 @@ flows:
         pair: on_select_purchase_finance 
         owner: BAP
         expect: false
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
         force_proceed: true
       - key: on_select_purchase_finance 
         type: on_select
@@ -1891,6 +1975,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -1949,6 +2037,11 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
+
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -2203,6 +2296,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -2238,7 +2335,7 @@ flows:
       - key: search4_purchase_finance 
         type: search
         unsolicited: false
-        pair: on_search6_purchase_finance  
+        pair: on_search4_purchase_finance 
         owner: BAP
         expect: true
         force_proceed: true
@@ -2247,13 +2344,12 @@ flows:
             label: Complete Account Aggregator Verification
             type: FINVU_REDIRECT
             payloadField: $.context.aa_consent_verified 
-      - key: on_search6_purchase_finance  
+      - key: on_search4_purchase_finance 
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-    
       - key: select_purchase_finance 
         type: select
         unsolicited: false
@@ -2261,6 +2357,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -2354,18 +2454,26 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      # - key: Emanadate_verification_status
-      #   label: manadate details form 
-      #   type: HTML_FORM 
-      #   unsolicited: false
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   input:
-      #     - name: form_submission_id
-      #       label: Enter Form Submission id
-      #       type: HTML_FORM
-      #       reference: $.reference_data.Emanadate_verification_status
+      - key: Emanadate_verification_status
+        label: manadate details form 
+        type: DYNAMIC_FORM 
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Emanadate_verification_status
+      - key: on_status_unsolicited
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
       - key: init2_purchase_finance
         type: init
         unsolicited: false
@@ -2495,6 +2603,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -2554,6 +2666,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -2788,6 +2904,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_foreclosure
         type: on_update
         unsolicited: true
@@ -2830,6 +2959,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -2889,6 +3022,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -3122,6 +3259,19 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_missed_Emi
         type: on_update
         unsolicited: true
@@ -3164,6 +3314,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -3223,6 +3377,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -3450,12 +3608,32 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+      - key: payment_url_form
+        label: payment link provided in on_update
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.payment_url_form 
+      
       - key: on_update_unsolicited_prepart
         type: on_update
         unsolicited: true
@@ -3498,6 +3676,10 @@ flows:
         owner: BAP
         expect: true
         force_proceed: true
+        input:
+          - name: search_input
+            label: Enter Search Input
+            type: fis12_search_pl
       - key: on_search2_purchase_finance 
         type: on_search
         unsolicited: false
@@ -3516,7 +3698,6 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.personal_details_information_form      
-      
       
       - key: search3_purchase_finance 
         type: search
@@ -3557,6 +3738,10 @@ flows:
         owner: BAP
         expect: false
         force_proceed: true
+        input:
+          - name: select_input
+            label: Enter
+            type: fis12_select_pl
       - key: on_select_purchase_finance 
         type: on_select
         unsolicited: false
@@ -3809,6 +3994,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+
 
   
 
