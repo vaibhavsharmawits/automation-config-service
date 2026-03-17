@@ -249,7 +249,7 @@ flows:
         unsolicited: false
         description: Provider platform responds with the status of the order
         pair: null
-        owner: BPP
+        owner: BPP  
   - id: TECHNICAL_CANCELLATION_FLOW
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User cancels the metro booking
@@ -1265,18 +1265,6 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_tech_cancel_METRO_201
-        type: status
-        unsolicited: false
-        description: Consumer platform requests for the status of the order
-        pair: on_status_active_METRO_201
-        owner: BAP
-      - key: on_status_active_METRO_201
-        type: on_status
-        unsolicited: false
-        description: Provider platform responds with the status of the order
-        pair: null
-        owner: BPP
       - key: cancel_hard_METRO_201
         type: cancel
         unsolicited: false
@@ -1790,7 +1778,7 @@ flows:
       #   pair: null
       #   owner: BPP
       #   expect: false  
-  - id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0)(W/O Select)
+  - id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0) (W/O Select)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
     sequence:
@@ -1996,7 +1984,8 @@ flows:
       #   pair: null
       #   owner: BPP
       #   expect: false  
-     
+
+
   - id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
@@ -2244,7 +2233,7 @@ flows:
       #   pair: null
       #   owner: BPP
       #   expect: false  
-  - id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)(W/O Select)
+  - id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)(W/O select)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
     sequence:
@@ -2350,7 +2339,7 @@ flows:
         unsolicited: false
         description: Provider platform responds with the status of the order
         pair: null
-        owner: BPP 
+        owner: BPP
       - key: issue_open_metro_201
         type: issue
         label: open
@@ -2478,6 +2467,8 @@ flows:
       #   pair: null
       #   owner: BPP
       #   expect: false  
+ 
+
 
   - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
@@ -2673,7 +2664,8 @@ flows:
       #   owner: BPP
       #   expect: false
       #   description: Status updates - order delivered   
-  - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)(W/O Select)
+  
+  - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)(W/O select)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
     sequence:
@@ -2854,7 +2846,7 @@ flows:
       #   owner: BPP
       #   expect: false
       #   description: Status updates - order delivered   
-    
+
   - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
@@ -3015,6 +3007,7 @@ flows:
               - "THUMBS_UP"
               - "THUMBS_DOWN"
             default: "THUMBS_UP"          
+
   - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)(W/O Select)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
@@ -3121,7 +3114,7 @@ flows:
         unsolicited: false
         description: Provider platform responds with the status of the order
         pair: null
-        owner: BPP 
+        owner: BPP
       - key: issue_open_metro_100
         type: issue
         label: open
@@ -3162,3 +3155,7 @@ flows:
               - "THUMBS_UP"
               - "THUMBS_DOWN"
             default: "THUMBS_UP"          
+
+
+  
+
