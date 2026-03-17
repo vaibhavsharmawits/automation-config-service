@@ -895,7 +895,7 @@ flows:
         description:
           Provider platform cancels the booking and provides the details of
           the cancellation
-        pair: cancel_METRO_201
+        pair: null
         owner: BPP
       - key: on_update_accepted_METRO_201
         type: on_update
@@ -1162,7 +1162,7 @@ flows:
         description:
           Provider platform cancels the booking and provides the details of
           the cancellation
-        pair: cancel_hard_METRO_201
+        pair: null
         owner: BPP
       - key: on_status_cancel_METRO_201
         type: on_status
@@ -1277,7 +1277,7 @@ flows:
         description:
           Provider platform cancels the booking and provides the details of
           the cancellation
-        pair: cancel_hard_METRO_201
+        pair: null
         owner: BPP
       - key: on_status_cancel_METRO_201
         type: on_status
@@ -1428,7 +1428,6 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-
   - id: END_STOP_UPDATE_FLOW (W/O Select)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: End stop update flow
