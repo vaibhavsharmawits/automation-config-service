@@ -2,10 +2,26 @@ name: ONDC:FIS12
 versions:
   - id: 2.0.2
     reporting: false
-    supportedActions:
-      $ref: src/config/FIS12/V-2.0.2/supportedActions/index.yaml
     usecase:
       - name: GOLD LOAN
-        flows: /V-2.0.2/goldLoan/flows/index.yaml
+        flows: "./V-2.0.2/goldLoan/flows/index.yaml"
       - name: PERSONAL LOAN
-        flows: /V-2.0.2/personalLoan/flows/index.yaml
+        flows: "./V-2.0.2/personalLoan/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS12/V-2.0.2/supportedActions/index.yaml" 
+
+  - id: 2.2.0
+    reporting: false
+    usecase:
+      - name: PURCHASE FINANCE
+        flows: "./V-2.2.0/purchaseFinance/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS12/V-2.2.0/supportedActions/index.yaml"
+       
+  - id: 2.2.1
+    reporting: false
+    usecase:
+      - name: PURCHASE FINANCE
+        flows: "./V-2.2.1/purchaseFinance/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS12/V-2.2.1/supportedActions/index.yaml"
