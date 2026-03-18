@@ -7,11 +7,18 @@ flows:
       $ref: "src/config/RETeB2B/v-1.2.5/EB2B/flows/Discovery_flow_broadcast_search.yaml"
       
   - type: playground
-    id: Order_to_confirm_to_fulfillment
+    id: Order_to_confirm_to_fulfillment(Prepaid)
     tags: ["WORKBENCH","MANDATORY"]
     description:  Delivery Flow for EB2B
     config:
       $ref: "src/config/RETeB2B/v-1.2.5/EB2B/flows/Order_to_confirm_to_fulfillment.yaml"
+
+  - type: playground
+    id: Order_to_confirm_to_fulfillment(cod)
+    tags: ["WORKBENCH","MANDATORY"]
+    description:  Delivery Flow for EB2B
+    config:
+      $ref: "src/config/RETeB2B/v-1.2.5/EB2B/flows/Order_to_confirm_to_fulfillment(cod).yaml"
 
   - type: playground
     id: Merchant_Side_RTO_and_Part_Order_Cancellation_Flow

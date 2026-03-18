@@ -75,24 +75,28 @@ flows:
   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
   description: Create new SIP investment with new folio number
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
   - key: on_select
     type: on_select
     unsolicited: false
@@ -173,24 +177,28 @@ flows:
   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
   description: Create SIP investment using investor's existing folio number
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select_existing_folio
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_existing_folio
     type: on_select
@@ -252,24 +260,28 @@ flows:
   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
   description: Create SIP with full KYC process for new folio (20 APIs)
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -643,24 +655,28 @@ flows:
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, USER_INITIATED]
   description: Investor-initiated SIP cancellation - full flow from SIP setup to cancellation
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -749,24 +765,28 @@ flows:
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, UNSOLICITED]
   description: Auto-cancellation of SIP by the system - full SIP setup then auto cancellation
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -1062,24 +1082,28 @@ flows:
   tags: [WORKBENCH, SIP_MANAGEMENT_FLOWS, UNSOLICITED]
   description: SIP completion - full SIP setup then completion notification from BPP
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -1168,7 +1192,11 @@ flows:
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -1257,12 +1285,16 @@ flows:
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_redemption
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_redemption
-    type: on_select_redemption
+    type: on_select
     unsolicited: false
     pair: null
     owner: BPP
@@ -1305,12 +1337,16 @@ flows:
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_redemption
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_redemption
-    type: on_select_redemption
+    type: on_select
     unsolicited: false
     pair: null
     owner: BPP
@@ -1353,12 +1389,16 @@ flows:
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_redemption
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_redemption
-    type: on_select_redemption
+    type: on_select
     unsolicited: false
     pair: null
     owner: BPP
@@ -1401,12 +1441,16 @@ flows:
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_redemption
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_redemption
-    type: on_select_redemption
+    type: on_select
     unsolicited: false
     pair: null
     owner: BPP
@@ -1456,12 +1500,16 @@ flows:
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_redemption
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_redemption
-    type: on_select_redemption
+    type: on_select
     unsolicited: false
     pair: null
     owner: BPP
@@ -2226,24 +2274,28 @@ flows:
   tags: [WORKBENCH, REPORTABLE, LUMPSUM_FLOWS, USER_INITIATED]
   description: Lumpsum investment using investor's existing folio number
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_existing_folio
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select_existing_folio
     type: on_select
@@ -2286,24 +2338,28 @@ flows:
   tags: [WORKBENCH, REPORTABLE, LUMPSUM_FLOWS, USER_INITIATED]
   description: Create new lumpsum investment with new folio number
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -2371,24 +2427,28 @@ flows:
   tags: [WORKBENCH, REPORTABLE, LUMPSUM_FLOWS, USER_INITIATED]
   description: Lumpsum investment with full KYC process for new folio
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -2491,24 +2551,28 @@ flows:
   tags: [WORKBENCH, LUMPSUM_FLOWS, USER_INITIATED]
   description: Lumpsum investment where payment is handled by buyer app
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select
@@ -2551,24 +2615,28 @@ flows:
   tags: [WORKBENCH, LUMPSUM_FLOWS, HYBRID]
   description: Lumpsum investment with payment retry mechanism
   sequence:
-  - key: search
-    type: search
-    unsolicited: false
-    pair: on_search
-    owner: BAP
-    expect: true
-  - key: on_search
-    type: on_search
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
+  # - key: search
+  #   type: search
+  #   unsolicited: false
+  #   pair: on_search
+  #   owner: BAP
+  #   expect: true
+  # - key: on_search
+  #   type: on_search
+  #   unsolicited: false
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
   - key: select
     type: select
     unsolicited: false
     pair: on_select
     owner: BAP
-    expect: false
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
     force_proceed: true
   - key: on_select
     type: on_select

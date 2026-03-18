@@ -1574,10 +1574,10 @@ flows:
         input:
           - name: pre_part_payment
             label: Select Pre Part Payment Amount
-            type: select
+            type: text
             values:
-              - "5000"
-            default: "5000"
+              - "20000"
+            default: "20000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
@@ -3611,10 +3611,10 @@ flows:
         input:
           - name: pre_part_payment
             label: Select Pre Part Payment Amount
-            type: select
+            type: text
             values:
-              - "5000"
-            default: "5000"
+              - "20000"
+            default: "20000"
       - key: on_update_prepart
         type: on_update
         unsolicited: false
@@ -5431,7 +5431,7 @@ flows:
         input:
           - name: pre_part_payment
             label: Select Pre Part Payment Amount
-            type: select
+            type: text
             values:
               - "20000"
             default: "20000"
