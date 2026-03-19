@@ -1823,6 +1823,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_update_ride_assigned
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
