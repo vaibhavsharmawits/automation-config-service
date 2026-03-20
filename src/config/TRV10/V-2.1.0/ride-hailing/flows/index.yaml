@@ -1212,7 +1212,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: init
+      - key: init_pre_order_bid
         type: init
         unsolicited: false
         pair: on_init
@@ -1754,7 +1754,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
-  - id: OnDemand_Rentalwhen_end_stop_gps_coordinate_is_present
+  - id: OnDemand_Rentalwhen_end_stop_gps_coordinate_is_present 
     tags: ["WORKBENCH","MANDATORY","REPORTABLE"]
     description: On-Demand - Rental(when end stop gps coordinate is present)
     sequence:
@@ -1823,6 +1823,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_update_ride_assigned
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
       - key: on_status_unsolicited
         type: on_status
         unsolicited: true
