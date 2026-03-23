@@ -1585,18 +1585,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_foreclosure_pl
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_foreclosure_pl
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: payment_url_form_pl
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1852,7 +1852,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_foreclosure_pl
         owner: BAP
         expect: true
 
@@ -1863,7 +1863,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2138,18 +2138,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_missed_emi_pl
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_missed_emi_pl
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2405,7 +2405,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_missed_emi_pl
         owner: BAP
         expect: true
 
@@ -2416,7 +2416,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2677,18 +2677,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_pre_part_payment
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_pre_part_payment
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2929,7 +2929,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_pre_part_payment
         owner: BAP
         expect: true
 
@@ -2940,7 +2940,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
