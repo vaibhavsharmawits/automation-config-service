@@ -143,6 +143,12 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
+      - key: unsolicited_on_status_complete_METRO_201
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP  
   - id: STATION_CODE_FLOW_ORDER (W/O Select)
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
