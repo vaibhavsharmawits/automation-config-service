@@ -150,6 +150,12 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
+      - key: unsoliciated_on_status_BUS_200
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP  
   - id: TECHNICAL_CANCELLATION_FLOW
     tags: ["WORKBENCH","MANDATORY", REPORTABLE]
     description: User cancels the bus booking
