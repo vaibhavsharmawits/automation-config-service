@@ -1937,7 +1937,7 @@ steps:
     description: Seller Accepts cancellation
     mock:
       generate: >-
-        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpbnB1dHMgPSBzZXNzaW9uRGF0YS51c2VyX2lucHV0czsKCWlmICghaW5wdXRzKSByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgaWYgKHNlc3Npb25EYXRhLm9yZGVyX2lkKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGE/LnByb3ZpZGVyKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyID0gc2Vzc2lvbkRhdGEucHJvdmlkZXJbMF07CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGEuYmlsbGluZykgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKICB9CgogIGlmIChzZXNzaW9uRGF0YS5wYXltZW50KSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwogIH0KCiAgbGV0IG5ld0l0ZW1zID0gW107CgogIHNlc3Npb25EYXRhLml0ZW1zLmZvckVhY2goKGl0ZW0pID0+IHsKICAgIG5ld0l0ZW1zLnB1c2goewogICAgICAuLi5pdGVtLAogICAgICBmdWxmaWxsbWVudF9pZDogaXRlbS5mdWxmaWxsbWVudF9pZCwKICAgICAgcXVhbnRpdHk6IHsKICAgICAgICBjb3VudDogMCwKICAgICAgfSwKICAgIH0pOwogICAgbmV3SXRlbXMucHVzaCh7CiAgICAgIC4uLml0ZW0sCiAgICAgIGZ1bGZpbGxtZW50X2lkOiAiQzEiLAogICAgICBxdWFudGl0eTogewogICAgICAgIGNvdW50OiBpdGVtLnF1YW50aXR5LmNvdW50LAogICAgICB9LAogICAgfSk7CiAgfSk7CgogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBuZXdJdGVtczsKCiAgaWYgKHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cykgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gPSB7CiAgICAgIC4uLnNlc3Npb25EYXRhLmZ1bGZpbGxtZW50c1swXSwKICAgICAgc3RhdGU6IHsKICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICBjb2RlOiAiQ2FuY2VsbGVkIiwKICAgICAgICB9LAogICAgICB9LAogICAgICB0YWdzOiBbCiAgICAgICAgewogICAgICAgICAgY29kZTogImNhbmNlbF9yZXF1ZXN0IiwKICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJyZWFzb25faWQiLAogICAgICAgICAgICAgIHZhbHVlOiBpbnB1dHM/LmlzRm9yY2VDYW5jZWwgPT09ICJ0cnVlIiA/ICIwNTIiIDogIjAwMSIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAiaW5pdGlhdGVkX2J5IiwKICAgICAgICAgICAgICB2YWx1ZTogZGVmYXVsdFBheWxvYWQuY29udGV4dC5iYXBfaWQsCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgY29kZTogInByZWNhbmNlbF9zdGF0ZSIsCiAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAiZnVsZmlsbG1lbnRfc3RhdGUiLAogICAgICAgICAgICAgIHZhbHVlOiBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHNbMF0uc3RhdGUuZGVzY3JpcHRvci5jb2RlLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInVwZGF0ZWRfYXQiLAogICAgICAgICAgICAgIHZhbHVlOiBzZXNzaW9uRGF0YT8ub3JkZXJfY3JlYXRlZF9hdFswXSwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgICAgXSwKICAgIH07CgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMV0gPSB7CiAgICAgIGlkOiAiQzEiLAogICAgICB0eXBlOiAiQ2FuY2VsIiwKICAgICAgc3RhdGU6IHsKICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICBjb2RlOiAiQ2FuY2VsbGVkIiwKICAgICAgICB9LAogICAgICB9LAogICAgICB0YWdzOiBnZW5lcmF0ZVF1b3RlVHJhaWwoCiAgICAgICAgc2Vzc2lvbkRhdGEucXVvdGVbMF0uYnJlYWt1cCwKICAgICAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zLAogICAgICAgIHt9CiAgICAgICksCiAgICB9OwogIH0KCiAgaWYgKHNlc3Npb25EYXRhLnF1b3RlKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlID0gYnVpbGRSZXRhaWxRdW90ZSgKICAgICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcywKICAgICAgb25fc2VhcmNoX2l0ZW1zLAogICAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cywKICAgICAgewogICAgICAgIG9mZmVyczogc2Vzc2lvbkRhdGE/Lm9mZmVycywKICAgICAgICBpbml0YWxPZmZlcnM6IG9uX3NlYXJjaF9vZmZlcnMsCiAgICAgICAgZnVsZmlsbG1lbnRTdGF0ZToKICAgICAgICAgIHNlc3Npb25EYXRhPy5vcmRlcl9zdGF0ZSA9PT0gIkNyZWF0ZWQiID8gIlBSRSIgOiAiUE9TVCIsCiAgICAgIH0KICAgICk7CiAgfQoKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNhbmNlbGxhdGlvbiA9IHsKICAgIGNhbmNlbGxlZF9ieTogZGVmYXVsdFBheWxvYWQuY29udGV4dC5iYXBfaWQsCiAgICByZWFzb246IHsKICAgICAgaWQ6IHNlc3Npb25EYXRhLmNhbmNlbGxhdGlvbl9yZWFzb25faWRbMF0sCiAgICB9LAogIH07CgogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9CiAgICBzZXNzaW9uRGF0YS5vcmRlcl9jcmVhdGVkX2F0WzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IGRlZmF1bHRQYXlsb2FkLmNvbnRleHQudGltZXN0YW1wOwoKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpbnB1dHMgPSBzZXNzaW9uRGF0YS51c2VyX2lucHV0czsKCWlmICghaW5wdXRzKSByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgaWYgKHNlc3Npb25EYXRhLm9yZGVyX2lkKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGE/LnByb3ZpZGVyKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyID0gc2Vzc2lvbkRhdGEucHJvdmlkZXJbMF07CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGEuYmlsbGluZykgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKICB9CgogIGlmIChzZXNzaW9uRGF0YS5wYXltZW50KSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwogIH0KCiAgbGV0IG5ld0l0ZW1zID0gW107CgogIHNlc3Npb25EYXRhLml0ZW1zLmZvckVhY2goKGl0ZW0pID0+IHsKICAgIG5ld0l0ZW1zLnB1c2goewogICAgICAuLi5pdGVtLAogICAgICBmdWxmaWxsbWVudF9pZDogaXRlbS5mdWxmaWxsbWVudF9pZCwKICAgICAgcXVhbnRpdHk6IHsKICAgICAgICBjb3VudDogMCwKICAgICAgfSwKICAgIH0pOwogICAgbmV3SXRlbXMucHVzaCh7CiAgICAgIC4uLml0ZW0sCiAgICAgIGZ1bGZpbGxtZW50X2lkOiAiQzEiLAogICAgICBxdWFudGl0eTogewogICAgICAgIGNvdW50OiBpdGVtLnF1YW50aXR5LmNvdW50LAogICAgICB9LAogICAgfSk7CiAgfSk7CgogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBuZXdJdGVtczsKCiAgICBpZiAoc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzKSB7CiAgICBjb25zdCBmID0gc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzWzBdOwogICAgY29uc3QgdGltZSA9IG5ldyBEYXRlKG5ldyBEYXRlKCkuZ2V0VGltZSgpICsgMTAgKiAxMDAwICogNjApOwogICAgY29uc3Qgc3RhcnRfZW5kID0gbmV3IERhdGUodGltZS5nZXRUaW1lKCkgKyAxMCAqIDEwMDAgKiA2MCkudG9JU09TdHJpbmcoKTsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdID0gewogICAgICAuLi5mLAogICAgICBzdGF0ZTogewogICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgIGNvZGU6ICJDYW5jZWxsZWQiLAogICAgICAgIH0sCiAgICAgICAgfSwKICAgICAgICBzdGFydDogewogICAgICAgICAgICAuLi5mLnN0YXJ0LAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICByYW5nZTogewogICAgICAgICAgICAgICAgICAgIHN0YXJ0OiB0aW1lLnRvSVNPU3RyaW5nKCksCiAgICAgICAgICAgICAgICAgICAgZW5kOiBzdGFydF9lbmQsCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgIH0sCiAgICAgICAgZW5kOiB7CiAgICAgICAgICAgIC4uLmYuZW5kLAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICByYW5nZTogewogICAgICAgICAgICAgICAgICAgIHN0YXJ0OiBzdGFydF9lbmQsCiAgICAgICAgICAgICAgICAgICAgZW5kOiBuZXcgRGF0ZSgKICAgICAgICAgICAgICAgICAgICAgICAgdGltZS5nZXRUaW1lKCkgKwogICAgICAgICAgICAgICAgICAgICAgICAxMDAwICogaXNvRHVyVG9TZWMoZlsiQG9uZGMvb3JnL1RBVCJdIHx8ICJQVDBIIikKICAgICAgICAgICAgICAgICAgICApLnRvSVNPU3RyaW5nKCksCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgIH0sCiAgICAgIHRhZ3M6IFsKICAgICAgICB7CiAgICAgICAgICBjb2RlOiAiY2FuY2VsX3JlcXVlc3QiLAogICAgICAgICAgbGlzdDogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInJlYXNvbl9pZCIsCiAgICAgICAgICAgICAgdmFsdWU6IGlucHV0cz8uaXNGb3JjZUNhbmNlbCA9PT0gInRydWUiID8gIjA1MiIgOiAiMDAxIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJpbml0aWF0ZWRfYnkiLAogICAgICAgICAgICAgIHZhbHVlOiBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmJhcF9pZCwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICBjb2RlOiAicHJlY2FuY2VsX3N0YXRlIiwKICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJmdWxmaWxsbWVudF9zdGF0ZSIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50c1swXS5zdGF0ZS5kZXNjcmlwdG9yLmNvZGUsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAidXBkYXRlZF9hdCIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhPy5vcmRlcl9jcmVhdGVkX2F0WzBdLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICB9LAogICAgICBdLAogICAgfTsKCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1sxXSA9IHsKICAgICAgaWQ6ICJDMSIsCiAgICAgIHR5cGU6ICJDYW5jZWwiLAogICAgICBzdGF0ZTogewogICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgIGNvZGU6ICJDYW5jZWxsZWQiLAogICAgICAgIH0sCiAgICAgIH0sCiAgICAgIHRhZ3M6IGdlbmVyYXRlUXVvdGVUcmFpbCgKICAgICAgICBzZXNzaW9uRGF0YS5xdW90ZVswXS5icmVha3VwLAogICAgICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMsCiAgICAgICAge30KICAgICAgKSwKICAgIH07CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGEucXVvdGUpIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSBidWlsZFJldGFpbFF1b3RlKAogICAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zLAogICAgICBvbl9zZWFyY2hfaXRlbXMsCiAgICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzLAogICAgICB7CiAgICAgICAgb2ZmZXJzOiBzZXNzaW9uRGF0YT8ub2ZmZXJzLAogICAgICAgIGluaXRhbE9mZmVyczogb25fc2VhcmNoX29mZmVycywKICAgICAgICBmdWxmaWxsbWVudFN0YXRlOgogICAgICAgICAgc2Vzc2lvbkRhdGE/Lm9yZGVyX3N0YXRlID09PSAiQ3JlYXRlZCIgPyAiUFJFIiA6ICJQT1NUIiwKICAgICAgfQogICAgKTsKICB9CgogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY2FuY2VsbGF0aW9uID0gewogICAgY2FuY2VsbGVkX2J5OiBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmJhcF9pZCwKICAgIHJlYXNvbjogewogICAgICBpZDogc2Vzc2lvbkRhdGEuY2FuY2VsbGF0aW9uX3JlYXNvbl9pZFswXSwKICAgIH0sCiAgfTsKCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5jcmVhdGVkX2F0ID0KICAgIHNlc3Npb25EYXRhLm9yZGVyX2NyZWF0ZWRfYXRbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gZGVmYXVsdFBheWxvYWQuY29udGV4dC50aW1lc3RhbXA7CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQoKY29uc3QgaXNvRHVyVG9TZWMgPSAoZHVyYXRpb24pID0+IHsKICAgIGNvbnN0IGR1clJFID0KICAgICAgICAvUCgoXGQrKVkpPygoXGQrKU0pPygoXGQrKVcpPygoXGQrKUQpP1Q/KChcZCspSCk/KChcZCspTSk/KChcZCspUyk/LzsKCiAgICBjb25zdCBzcGxpdFRpbWUgPSBkdXJSRS5leGVjKGR1cmF0aW9uKTsKICAgIGlmICghc3BsaXRUaW1lKSB7CiAgICAgICAgcmV0dXJuIDA7CiAgICB9CgogICAgY29uc3QgeWVhcnMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bMl0pIHx8IDA7CiAgICBjb25zdCBtb250aHMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bNF0pIHx8IDA7CiAgICBjb25zdCB3ZWVrcyA9IE51bWJlcihzcGxpdFRpbWU/Lls2XSkgfHwgMDsKICAgIGNvbnN0IGRheXMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bOF0pIHx8IDA7CiAgICBjb25zdCBob3VycyA9IE51bWJlcihzcGxpdFRpbWU/LlsxMF0pIHx8IDA7CiAgICBjb25zdCBtaW51dGVzID0gTnVtYmVyKHNwbGl0VGltZT8uWzEyXSkgfHwgMDsKICAgIGNvbnN0IHNlY29uZHMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bMTRdKSB8fCAwOwoKICAgIGNvbnN0IHJlc3VsdCA9CiAgICAgICAgeWVhcnMgKiAzMTUzNjAwMCArCiAgICAgICAgbW9udGhzICogMjYyODI4OCArCiAgICAgICAgd2Vla3MgKiA2MDQ4MDAgKwogICAgICAgIGRheXMgKiA4NjQwMCArCiAgICAgICAgaG91cnMgKiAzNjAwICsKICAgICAgICBtaW51dGVzICogNjAgKwogICAgICAgIHNlY29uZHM7CgogICAgcmV0dXJuIHJlc3VsdDsKfTs=
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -2154,9 +2154,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: select
-        timestamp: '2026-02-13T13:08:17.421Z'
+        timestamp: '2026-03-23T12:04:15.996Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 8d600cb9-0e27-4969-8bc5-9611a54bb220
+        message_id: e1ad25ed-313c-4764-a0ab-e7bb2268a66e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2172,7 +2172,7 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -2224,6 +2224,20 @@ transaction_history:
                   list:
                     - code: id
                       value: CG3
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
           fulfillments:
             - end:
                 location:
@@ -2237,9 +2251,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: on_select
-        timestamp: '2026-02-13T13:08:17.452Z'
+        timestamp: '2026-03-23T12:04:16.058Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 8d600cb9-0e27-4969-8bc5-9611a54bb220
+        message_id: e1ad25ed-313c-4764-a0ab-e7bb2268a66e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2255,7 +2269,7 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               tags:
@@ -2303,6 +2317,19 @@ transaction_history:
                     - code: id
                       value: CG3
               fulfillment_id: F1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
+              fulfillment_id: F1
           fulfillments:
             - id: F1
               type: Delivery
@@ -2316,16 +2343,16 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: '730.20'
+              value: '688.20'
             breakup:
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Farm House Pizza
+                title: Mexican Patty Sandwich
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '269'
+                  value: '229'
                 item:
                   parent_item_id: P0
                   quantity:
@@ -2335,18 +2362,18 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '269.00'
+                    value: '229.00'
                   tags:
                     - code: type
                       list:
                         - code: type
                           value: item
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 title: Tax
                 '@ondc/org/title_type': tax
                 price:
                   currency: INR
-                  value: '13.45'
+                  value: '11.45'
                 item:
                   parent_item_id: P0
                   tags:
@@ -2486,6 +2513,50 @@ transaction_history:
                       list:
                         - code: id
                           value: CG3
+              - '@ondc/org/item_id': C1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: New Hand Tossed
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0'
+                item:
+                  parent_item_id: P0
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '0.00'
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
+              - '@ondc/org/item_id': C1
+                title: Tax
+                '@ondc/org/title_type': tax
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  parent_item_id: P0
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -2506,9 +2577,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: init
-        timestamp: '2026-02-13T13:08:17.470Z'
+        timestamp: '2026-03-23T12:04:16.088Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 4e4d2cc5-6a3c-45f9-812c-371d8f112d82
+        message_id: b9576d63-d381-43ae-a372-272281059db9
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2524,7 +2595,7 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -2580,6 +2651,21 @@ transaction_history:
                     - code: id
                       value: CG3
               fulfillment_id: F1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
+              fulfillment_id: F1
           billing:
             name: ONDC buyer
             address:
@@ -2592,8 +2678,8 @@ transaction_history:
               area_code: '400053'
             email: nobody@nomail.com
             phone: '9886098860'
-            created_at: '2026-02-13T13:08:17.470Z'
-            updated_at: '2026-02-13T13:08:17.470Z'
+            created_at: '2026-03-23T12:04:16.088Z'
+            updated_at: '2026-03-23T12:04:16.088Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -2617,9 +2703,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: on_init
-        timestamp: '2026-02-13T13:08:17.496Z'
+        timestamp: '2026-03-23T12:04:16.115Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 4e4d2cc5-6a3c-45f9-812c-371d8f112d82
+        message_id: b9576d63-d381-43ae-a372-272281059db9
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2635,7 +2721,7 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -2707,6 +2793,25 @@ transaction_history:
                     - code: return_to_origin
                       value: 'yes'
               fulfillment_id: F1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
+                - code: rto_action
+                  list:
+                    - code: return_to_origin
+                      value: 'yes'
+              fulfillment_id: F1
           billing:
             name: ONDC buyer
             address:
@@ -2719,8 +2824,8 @@ transaction_history:
               area_code: '400053'
             email: nobody@nomail.com
             phone: '9886098860'
-            created_at: '2026-02-13T13:08:17.470Z'
-            updated_at: '2026-02-13T13:08:17.470Z'
+            created_at: '2026-03-23T12:04:16.088Z'
+            updated_at: '2026-03-23T12:04:16.088Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -2741,16 +2846,16 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: '730.20'
+              value: '688.20'
             breakup:
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Farm House Pizza
+                title: Mexican Patty Sandwich
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '269'
+                  value: '229'
                 item:
                   parent_item_id: P0
                   quantity:
@@ -2760,18 +2865,18 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '269.00'
+                    value: '229.00'
                   tags:
                     - code: type
                       list:
                         - code: type
                           value: item
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 title: Tax
                 '@ondc/org/title_type': tax
                 price:
                   currency: INR
-                  value: '13.45'
+                  value: '11.45'
                 item:
                   parent_item_id: P0
                   tags:
@@ -2911,6 +3016,50 @@ transaction_history:
                       list:
                         - code: id
                           value: CG3
+              - '@ondc/org/item_id': C1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: New Hand Tossed
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0'
+                item:
+                  parent_item_id: P0
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '0.00'
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
+              - '@ondc/org/item_id': C1
+                title: Tax
+                '@ondc/org/title_type': tax
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  parent_item_id: P0
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -2983,9 +3132,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: confirm
-        timestamp: '2026-02-13T13:08:17.522Z'
+        timestamp: '2026-03-23T12:04:16.141Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 6bd889d2-80e1-451d-b5b1-8cafdf03897f
+        message_id: d5dc9ba5-27d1-4feb-83fc-8e4de8a3190e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2996,14 +3145,14 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '586673'
+          id: '827620'
           state: Created
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -3059,6 +3208,21 @@ transaction_history:
                     - code: id
                       value: CG3
               fulfillment_id: F1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
+              fulfillment_id: F1
           billing:
             name: ONDC buyer
             address:
@@ -3071,8 +3235,8 @@ transaction_history:
               area_code: '400053'
             email: nobody@nomail.com
             phone: '9886098860'
-            created_at: '2026-02-13T13:08:17.470Z'
-            updated_at: '2026-02-13T13:08:17.470Z'
+            created_at: '2026-03-23T12:04:16.088Z'
+            updated_at: '2026-03-23T12:04:16.088Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3097,16 +3261,16 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: '730.20'
+              value: '688.20'
             breakup:
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Farm House Pizza
+                title: Mexican Patty Sandwich
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '269'
+                  value: '229'
                 item:
                   parent_item_id: P0
                   quantity:
@@ -3116,18 +3280,18 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '269.00'
+                    value: '229.00'
                   tags:
                     - code: type
                       list:
                         - code: type
                           value: item
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 title: Tax
                 '@ondc/org/title_type': tax
                 price:
                   currency: INR
-                  value: '13.45'
+                  value: '11.45'
                 item:
                   parent_item_id: P0
                   tags:
@@ -3267,6 +3431,50 @@ transaction_history:
                       list:
                         - code: id
                           value: CG3
+              - '@ondc/org/item_id': C1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: New Hand Tossed
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0'
+                item:
+                  parent_item_id: P0
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '0.00'
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
+              - '@ondc/org/item_id': C1
+                title: Tax
+                '@ondc/org/title_type': tax
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  parent_item_id: P0
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3284,7 +3492,7 @@ transaction_history:
             params:
               currency: INR
               transaction_id: '3937'
-              amount: '730.20'
+              amount: '688.20'
             status: PAID
             type: ON-ORDER
             collected_by: BAP
@@ -3320,8 +3528,8 @@ transaction_history:
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: 12ABCDE3456FGZJ
-          created_at: '2026-02-13T13:08:17.528Z'
-          updated_at: '2026-02-13T13:08:17.528Z'
+          created_at: '2026-03-23T12:04:16.146Z'
+          updated_at: '2026-03-23T12:04:16.146Z'
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -3329,9 +3537,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: on_confirm
-        timestamp: '2026-02-13T13:08:17.538Z'
+        timestamp: '2026-03-23T12:04:16.168Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 6bd889d2-80e1-451d-b5b1-8cafdf03897f
+        message_id: d5dc9ba5-27d1-4feb-83fc-8e4de8a3190e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3342,14 +3550,14 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '586673'
+          id: '827620'
           state: Created
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -3405,6 +3613,21 @@ transaction_history:
                     - code: id
                       value: CG3
               fulfillment_id: F1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
+              fulfillment_id: F1
           billing:
             name: ONDC buyer
             address:
@@ -3417,8 +3640,8 @@ transaction_history:
               area_code: '400053'
             email: nobody@nomail.com
             phone: '9886098860'
-            created_at: '2026-02-13T13:08:17.470Z'
-            updated_at: '2026-02-13T13:08:17.470Z'
+            created_at: '2026-03-23T12:04:16.088Z'
+            updated_at: '2026-03-23T12:04:16.088Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3461,16 +3684,16 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: '730.20'
+              value: '688.20'
             breakup:
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Farm House Pizza
+                title: Mexican Patty Sandwich
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '269'
+                  value: '229'
                 item:
                   parent_item_id: P0
                   quantity:
@@ -3480,18 +3703,18 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '269.00'
+                    value: '229.00'
                   tags:
                     - code: type
                       list:
                         - code: type
                           value: item
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 title: Tax
                 '@ondc/org/title_type': tax
                 price:
                   currency: INR
-                  value: '13.45'
+                  value: '11.45'
                 item:
                   parent_item_id: P0
                   tags:
@@ -3631,6 +3854,50 @@ transaction_history:
                       list:
                         - code: id
                           value: CG3
+              - '@ondc/org/item_id': C1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: New Hand Tossed
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0'
+                item:
+                  parent_item_id: P0
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '0.00'
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
+              - '@ondc/org/item_id': C1
+                title: Tax
+                '@ondc/org/title_type': tax
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  parent_item_id: P0
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3648,7 +3915,7 @@ transaction_history:
             params:
               currency: INR
               transaction_id: '3937'
-              amount: '730.20'
+              amount: '688.20'
             status: PAID
             type: ON-ORDER
             collected_by: BAP
@@ -3715,8 +3982,8 @@ transaction_history:
                     https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: 12ABCDE3456FGZJ
-          created_at: '2026-02-13T13:08:17.528Z'
-          updated_at: '2026-02-13T13:08:17.557Z'
+          created_at: '2026-03-23T12:04:16.146Z'
+          updated_at: '2026-03-23T12:04:16.172Z'
     action: on_confirm
     saved_info: {}
   - action_id: cancel
@@ -3724,9 +3991,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: cancel
-        timestamp: '2026-02-13T13:08:17.586Z'
+        timestamp: '2026-03-23T12:04:16.194Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: f3a5111d-5ce2-4b2d-93d9-dc2a528ccf7b
+        message_id: fc197c05-8236-4c81-8d55-34aafe56e438
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3736,7 +4003,7 @@ transaction_history:
         city: '*'
         core_version: 1.2.0
       message:
-        order_id: '586673'
+        order_id: '827620'
         cancellation_reason_id: '016'
     action: cancel
     saved_info: {}
@@ -3745,9 +4012,9 @@ transaction_history:
       context:
         domain: ONDC:RET11
         action: on_cancel
-        timestamp: '2026-02-13T13:08:19.702Z'
+        timestamp: '2026-03-23T12:04:18.053Z'
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: f3a5111d-5ce2-4b2d-93d9-dc2a528ccf7b
+        message_id: fc197c05-8236-4c81-8d55-34aafe56e438
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3758,14 +4025,14 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '586673'
+          id: '827620'
           state: Cancelled
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -3776,7 +4043,7 @@ transaction_history:
                     - code: type
                       value: item
               fulfillment_id: F1
-            - id: I1
+            - id: I2
               parent_item_id: P0
               location_id: L1
               quantity:
@@ -3876,6 +4143,36 @@ transaction_history:
                   list:
                     - code: id
                       value: CG3
+              fulfillment_id: C1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 0
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
+              fulfillment_id: F1
+            - id: C1
+              parent_item_id: P0
+              location_id: L1
+              quantity:
+                count: 1
+              tags:
+                - code: type
+                  list:
+                    - code: type
+                      value: customization
+                - code: parent
+                  list:
+                    - code: id
+                      value: CG1
               fulfillment_id: C1
           billing:
             name: ONDC buyer
@@ -3889,8 +4186,8 @@ transaction_history:
               area_code: '400053'
             email: nobody@nomail.com
             phone: '9886098860'
-            created_at: '2026-02-13T13:08:17.470Z'
-            updated_at: '2026-02-13T13:08:17.470Z'
+            created_at: '2026-03-23T12:04:16.088Z'
+            updated_at: '2026-03-23T12:04:16.088Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3915,6 +4212,10 @@ transaction_history:
                 contact:
                   phone: '9594663710'
                   email: nobody@nomail.com
+                time:
+                  range:
+                    start: '2026-03-23T12:14:18.062Z'
+                    end: '2026-03-23T12:24:18.062Z'
               end:
                 contact:
                   phone: '9886098860'
@@ -3930,6 +4231,10 @@ transaction_history:
                     state: my state
                     country: IND
                     area_code: '400053'
+                time:
+                  range:
+                    start: '2026-03-23T12:24:18.062Z'
+                    end: '2026-03-23T13:14:18.062Z'
               tags:
                 - code: cancel_request
                   list:
@@ -3942,7 +4247,7 @@ transaction_history:
                     - code: fulfillment_state
                       value: Pending
                     - code: updated_at
-                      value: '2026-02-13T13:08:17.528Z'
+                      value: '2026-03-23T12:04:16.146Z'
             - id: C1
               type: Cancel
               state:
@@ -3958,11 +4263,11 @@ transaction_history:
                     - code: parent_item_id
                       value: P0
                     - code: id
-                      value: I1
+                      value: I2
                     - code: currency
                       value: INR
                     - code: value
-                      value: '-269'
+                      value: '-229'
                 - code: quote_trail
                   list:
                     - code: type
@@ -3972,11 +4277,11 @@ transaction_history:
                     - code: parent_item_id
                       value: P0
                     - code: id
-                      value: I1
+                      value: I2
                     - code: currency
                       value: INR
                     - code: value
-                      value: '-13.45'
+                      value: '-11.45'
                 - code: quote_trail
                   list:
                     - code: type
@@ -4058,10 +4363,10 @@ transaction_history:
               currency: INR
               value: '0.00'
             breakup:
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 0
-                title: Farm House Pizza
+                title: Mexican Patty Sandwich
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
@@ -4075,13 +4380,13 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '269.00'
+                    value: '229.00'
                   tags:
                     - code: type
                       list:
                         - code: type
                           value: item
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 title: Tax
                 '@ondc/org/title_type': tax
                 price:
@@ -4226,12 +4531,56 @@ transaction_history:
                       list:
                         - code: id
                           value: CG3
+              - '@ondc/org/item_id': C1
+                '@ondc/org/item_quantity':
+                  count: 0
+                title: New Hand Tossed
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0'
+                item:
+                  parent_item_id: P0
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '0.00'
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
+              - '@ondc/org/item_id': C1
+                title: Tax
+                '@ondc/org/title_type': tax
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  parent_item_id: P0
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: customization
+                    - code: parent
+                      list:
+                        - code: id
+                          value: CG1
             ttl: P1D
           payment:
             params:
               currency: INR
               transaction_id: '3937'
-              amount: '730.20'
+              amount: '688.20'
             status: PAID
             type: ON-ORDER
             collected_by: BAP
@@ -4249,8 +4598,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-13T13:08:17.528Z'
-          updated_at: '2026-02-13T13:08:19.702Z'
+          created_at: '2026-03-23T12:04:16.146Z'
+          updated_at: '2026-03-23T12:04:18.053Z'
           cancellation:
             cancelled_by: sample-bap-id
             reason:
