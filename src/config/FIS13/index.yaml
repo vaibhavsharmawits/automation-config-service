@@ -11,3 +11,12 @@ versions:
         flows: /V-2.0.0/accidental-insurance/flows/index.yaml
       - name: hospicash-insurance
         flows: /V-2.0.0/hospicash-insurance/flows/index.yaml
+  - id: 2.0.1
+    reporting: false
+    usecase:
+       - name: HEALTH INSURANCE
+         flows: "./V-2.0.1/health-insurance/flows/index.yaml"
+       - name: MOTOR INSURANCE
+         flows: "./V-2.0.1/motor-insurance/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/FIS13/V-2.0.1/supportedActions/index.yaml"   
