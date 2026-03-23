@@ -121,7 +121,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -185,7 +184,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -221,7 +219,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -388,7 +385,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -452,7 +448,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -488,7 +483,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -636,7 +630,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -700,7 +693,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -730,6 +722,428 @@ flows:
         expect: false
         force_proceed: true
               
+      - key: confirm_personal_loan_3
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_personal_loan_3
+        owner: BAP
+        expect: false
+
+      - key: on_confirm_personal_loan_3
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: status_personal_loan_3
+        type: status
+        unsolicited: false
+        pair: on_status_personal_loan_3
+        owner: BAP
+        expect: true
+
+      - key: on_status_personal_loan_3
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Personal_Loan_Without_Account_Monitoring
+    tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
+    description: Personal Loan with Account Aggregator & monitoring consent
+    sequence:
+      - key: search_personal_loan_3
+        type: search
+        unsolicited: false
+        pair: on_search_personal_loan_3
+        owner: BAP
+        expect: true
+
+      - key: on_search_personal_loan_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: personal_loan_information_form
+        label: personal loan information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.personal_loan_information_form       
+
+      - key: select_1_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_1_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_select_1_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: select_2_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_2_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+
+      - key: on_select_2_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: loan_amount_adjustment_form_pl
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+
+      - key: select_3_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_3_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_select_3_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
+
+      - key: on_status_kyc_verification
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+      - key: init_1_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_1_personal_loan_3
+        owner: BAP
+        expect: false
+
+      - key: on_init_1_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: manadate_details_form_pl
+        label: manadate details form 
+        type: HTML_FORM 
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.manadate_details_form
+
+      - key: init_2_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_2_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_init_2_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: verification_status_e_mandate
+        label: Mandate Details Status Form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.verification_status
+
+      - key: on_status_emandate_verification
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+      - key: init_3_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_3_personal_loan_3
+        owner: BAP
+        expect: false
+
+      - key: on_init_3_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: loan_agreement_esign_form
+        label: loan agreement details form
+        type: DYNAMIC_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            reference: $.reference_data.loan_agreement_esign_form     
+
+      - key: on_status_esign_verification
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+              
+      - key: confirm_personal_loan_3
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_personal_loan_3
+        owner: BAP
+        expect: false
+
+      - key: on_confirm_personal_loan_3
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false     
+
+      - key: on_update_unsolicited_personal_loan_3
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+      - key: update_personal_loan_fulfillment_3
+        type: update
+        unsolicited: false
+        pair: on_update_personal_loan_fulfillment_3
+        owner: BAP
+        expect: false
+
+      - key: on_update_personal_loan_fulfillment_3
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: status_personal_loan_3
+        type: status
+        unsolicited: false
+        pair: on_status_personal_loan_3
+        owner: BAP
+        expect: true
+
+      - key: on_status_personal_loan_3
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Personal_Loan_Offline_Online_Flow
+    tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
+    description: Personal Loan - Offline verification and processing
+    sequence:
+      - key: search_personal_loan_3
+        type: search
+        unsolicited: false
+        pair: on_search_personal_loan_3
+        owner: BAP
+        expect: true
+
+      - key: on_search_personal_loan_3
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: personal_loan_information_form
+        label: personal loan information form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.personal_loan_information_form       
+   
+      - key: select_1_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_1_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_select_1_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: select_2_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_2_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+        input:
+          - name: finvu_verification
+            label: Complete Account Aggregator Verification
+            type: FINVU_REDIRECT
+            payloadField: $.context.aa_consent_verified
+
+      - key: on_select_2_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: loan_amount_adjustment_form_pl
+        label: loan amount adjustment form
+        type: HTML_FORM
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: HTML_FORM
+            reference: $.reference_data.loan_amount_adjustment_form        
+
+      - key: select_3_personal_loan_3
+        type: select
+        unsolicited: false
+        pair: on_select_3_personal_loan_3
+        owner: BAP
+        expect: false
+        force_proceed: true
+
+      - key: on_select_3_personal_loan_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+      - key: kyc_verification_status_pl
+        label: Ekyc Details form
+        type: DYNAMIC_FORM
+        unsolicited: false  
+        pair: null
+        owner: BPP
+        expect: false
+        input:
+          - name: form_submission_id
+            label: Enter Form Submission id
+            type: DYNAMIC_FORM
+            payloadField: "form_submission_id"
+            reference: $.reference_data.Ekyc_details_form      
+
+      - key: on_status_kyc_verification
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        force_proceed: true
+
+      - key: init_offline_personal_loan_3
+        type: init
+        unsolicited: false
+        pair: on_init_offline_personal_loan_3
+        owner: BAP
+        expect: false
+
+      - key: on_init_online_offline_personal_loan_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
       - key: confirm_personal_loan_3
         type: confirm
         unsolicited: false
@@ -881,7 +1295,6 @@ flows:
         pair: on_init_offline_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_offline_personal_loan_3
         type: on_init
@@ -1041,7 +1454,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -1105,7 +1517,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -1141,7 +1552,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -1175,18 +1585,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_foreclosure_pl
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_foreclosure_pl
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1206,6 +1616,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Foreclosure_Without_Account_Aggregator
     tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -1310,7 +1721,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -1374,7 +1784,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -1410,7 +1819,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -1444,7 +1852,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_foreclosure_pl
         owner: BAP
         expect: true
 
@@ -1455,7 +1863,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1475,6 +1883,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Missed_EMI_With_Account_Aggregator
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -1598,7 +2007,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -1662,7 +2070,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -1698,7 +2105,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -1732,18 +2138,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_missed_emi_pl
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_missed_emi_pl
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -1763,6 +2169,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Missed_EMI_Without_Account_Aggregator
     tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -1794,21 +2201,6 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.personal_loan_information_form       
-    
-      - key: select_1_personal_loan_3
-        type: select
-        unsolicited: false
-        pair: on_select_1_personal_loan_3
-        owner: BAP
-        expect: false
-        force_proceed: true
-
-      - key: on_select_1_personal_loan_3
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
 
       - key: select_2_personal_loan_3
         type: select
@@ -1876,14 +2268,12 @@ flows:
         expect: false
         force_proceed: true
 
-
       - key: init_1_personal_loan_3
         type: init
         unsolicited: false
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -1948,7 +2338,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -1983,8 +2372,6 @@ flows:
         unsolicited: false
         pair: on_confirm_personal_loan_3
         owner: BAP
-        expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2018,7 +2405,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_missed_emi_pl
         owner: BAP
         expect: true
 
@@ -2029,7 +2416,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2049,6 +2436,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Pre_Part_Payment_With_Account_Aggregator
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -2172,7 +2560,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2236,7 +2623,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2272,7 +2658,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2292,18 +2677,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_pre_part_payment
         owner: BAP
         expect: true
 
-      - key: on_update_personal_loan_3
+      - key: on_update_pre_part_payment
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2323,6 +2708,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Pre_Part_Payment_Without_Account_Aggregator
     tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -2354,21 +2740,6 @@ flows:
             label: Enter Form Submission id
             type: HTML_FORM
             reference: $.reference_data.personal_loan_information_form       
-    
-      - key: select_1_personal_loan_3
-        type: select
-        unsolicited: false
-        pair: on_select_1_personal_loan_3
-        owner: BAP
-        expect: false
-        force_proceed: true
-
-      - key: on_select_1_personal_loan_3
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
 
       - key: select_2_personal_loan_3
         type: select
@@ -2441,7 +2812,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2505,7 +2875,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2541,7 +2910,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2561,7 +2929,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_personal_loan_3
+        pair: on_update_pre_part_payment
         owner: BAP
         expect: true
 
@@ -2572,7 +2940,7 @@ flows:
         owner: BPP
         expect: false
 
-      - key: payment_url_form_personal_loan
+      - key: payment_url_form
         label: Payment URL form
         type: DYNAMIC_FORM
         unsolicited: false
@@ -2592,6 +2960,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Multiple_Offers_With_Account_Aggregator_&_Monitoring_Consent
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE","WITH_MONITORING_CONSENT"]
@@ -2609,7 +2978,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false
+        expect: false    
 
       - key: personal_loan_information_form
         label: personal loan information form
@@ -2622,7 +2991,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.personal_loan_information_form       
+            reference: $.reference_data.personal_loan_information_form
     
       - key: select_bureau_consent_personal_loan_3
         type: select
@@ -2639,8 +3008,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: consumer_information_form_1
-        label: personal loan information form
+      - key: multiple_bureau_information_form
+        label: multiple_bureau_information_form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -2650,8 +3019,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.personal_loan_information_form       
-  
+            reference: $.reference_data.multiple_bureau_information_form           
+
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
@@ -2743,7 +3112,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2807,7 +3175,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2843,7 +3210,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
