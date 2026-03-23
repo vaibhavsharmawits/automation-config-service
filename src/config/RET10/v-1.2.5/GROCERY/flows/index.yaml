@@ -1590,7 +1590,7 @@ flows:
         description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
-        expect: false
+        expect: true
       - key: on_issue_processing
         type: on_issue
         label: processing
@@ -1782,7 +1782,7 @@ flows:
         description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
-        expect: false
+        expect: true
       - key: on_issue_processing
         type: on_issue
         label: processing
