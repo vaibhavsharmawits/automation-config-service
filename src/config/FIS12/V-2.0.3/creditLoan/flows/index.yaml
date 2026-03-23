@@ -61,19 +61,19 @@ flows:
         expect: false
         force_proceed: true
 
-      - key: status_cc_1
-        type: status
-        unsolicited: false
-        pair: on_status_cc_1
-        owner: BAP
-        expect: true
+      # - key: status_cc_1
+      #   type: status
+      #   unsolicited: false
+      #   pair: on_status_cc_1
+      #   owner: BAP
+      #   expect: true
 
-      - key: on_status_cc_1
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+      # - key: on_status_cc_1
+      #   type: on_status
+      #   unsolicited: false
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
 
       - key: init_cc
         type: init
