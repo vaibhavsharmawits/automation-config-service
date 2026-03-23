@@ -121,7 +121,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -185,7 +184,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -221,7 +219,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -388,7 +385,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -452,7 +448,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -488,7 +483,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -636,7 +630,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -700,7 +693,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -736,7 +728,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -881,7 +872,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -945,7 +935,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -981,7 +970,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -1148,7 +1136,6 @@ flows:
         pair: on_init_offline_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_online_offline_personal_loan_3
         type: on_init
@@ -1308,7 +1295,6 @@ flows:
         pair: on_init_offline_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_offline_personal_loan_3
         type: on_init
@@ -1468,7 +1454,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -1532,7 +1517,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -1568,7 +1552,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -1633,6 +1616,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Foreclosure_Without_Account_Aggregator
     tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -1737,7 +1721,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -1801,7 +1784,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -1837,7 +1819,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2026,7 +2007,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2090,7 +2070,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2126,7 +2105,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2191,6 +2169,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Missed_EMI_Without_Account_Aggregator
     tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -2289,14 +2268,12 @@ flows:
         expect: false
         force_proceed: true
 
-
       - key: init_1_personal_loan_3
         type: init
         unsolicited: false
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2361,7 +2338,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2396,8 +2372,6 @@ flows:
         unsolicited: false
         pair: on_confirm_personal_loan_3
         owner: BAP
-        expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2462,6 +2436,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Pre_Part_Payment_With_Account_Aggregator
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -2585,7 +2560,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2649,7 +2623,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2685,7 +2658,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2736,6 +2708,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Pre_Part_Payment_Without_Account_Aggregator
     tags: ["WORKBENCH", "WITHOUT_ACCOUNT_AGGREGATOR","REPORTABLE"]
@@ -2839,7 +2812,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -2903,7 +2875,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -2939,7 +2910,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
@@ -2990,6 +2960,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        force_proceed: true
 
   - id: Personal_Loan_Multiple_Offers_With_Account_Aggregator_&_Monitoring_Consent
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE","WITH_MONITORING_CONSENT"]
@@ -3141,7 +3112,6 @@ flows:
         pair: on_init_1_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_1_personal_loan_3
         type: on_init
@@ -3205,7 +3175,6 @@ flows:
         pair: on_init_3_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_init_3_personal_loan_3
         type: on_init
@@ -3241,7 +3210,6 @@ flows:
         pair: on_confirm_personal_loan_3
         owner: BAP
         expect: false
-        force_proceed: true
 
       - key: on_confirm_personal_loan_3
         type: on_confirm
