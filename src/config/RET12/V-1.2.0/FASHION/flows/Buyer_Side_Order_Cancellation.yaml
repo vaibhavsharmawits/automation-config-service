@@ -18,7 +18,7 @@ steps:
     description: First Select where items are selected
     mock:
       generate: >-
-        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCWNvbnN0IGlucHV0cyA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwoJaWYgKCFpbnB1dHMpIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKCWlmIChpbnB1dHMucHJvdmlkZXIpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gaW5wdXRzLnByb3ZpZGVyOwoJfQoJaWYgKGlucHV0cy5wcm92aWRlcl9sb2NhdGlvbiAmJiBBcnJheS5pc0FycmF5KGlucHV0cy5wcm92aWRlcl9sb2NhdGlvbikpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmxvY2F0aW9ucyA9CgkJCWlucHV0cy5wcm92aWRlcl9sb2NhdGlvbi5tYXAoKGxvY2F0aW9uKSA9PiB7CgkJCQlyZXR1cm4gewoJCQkJCWlkOiBsb2NhdGlvbiwKCQkJCX07CgkJCX0pOwoJfSBlbHNlIGlmICgKCQlpbnB1dHMucHJvdmlkZXJfbG9jYXRpb24gJiYKCQl0eXBlb2YgaW5wdXRzLnByb3ZpZGVyX2xvY2F0aW9uID09PSAic3RyaW5nIgoJKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5sb2NhdGlvbnMgPSBbCgkJCXsKCQkJCWlkOiBpbnB1dHMucHJvdmlkZXJfbG9jYXRpb24sCgkJCX0sCgkJXTsKCX0KCWlmIChpbnB1dHMubG9jYXRpb25fZ3BzKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uZW5kLmxvY2F0aW9uLmdwcyA9CgkJCWlucHV0cy5sb2NhdGlvbl9ncHM7Cgl9CglpZiAoaW5wdXRzLmxvY2F0aW9uX3Bpbl9jb2RlKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uZW5kLmxvY2F0aW9uLmFkZHJlc3MuYXJlYV9jb2RlID0KCQkJaW5wdXRzLmxvY2F0aW9uX3Bpbl9jb2RlOwoJCWRlZmF1bHRQYXlsb2FkLmNvbnRleHQuY2l0eSA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzLmNpdHlfY29kZTsKCX0KCWlmIChpbnB1dHMuaXRlbXMpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gaW5wdXRzLml0ZW1zLm1hcCgoaXRlbSkgPT4gewoJCQlyZXR1cm4gewoJCQkJaWQ6IGl0ZW0uaXRlbUlkLAoJCQkJcXVhbnRpdHk6IHsKCQkJCQljb3VudDogaXRlbS5xdWFudGl0eSwKCQkJCX0sCgkJCQlsb2NhdGlvbjogaXRlbS5sb2NhdGlvbiwKCQkJfTsKCQl9KTsKCX0KCWNvbnN0IGlucHV0S2V5cyA9IE9iamVjdC5rZXlzKGlucHV0cyk7Cgljb25zdCBvZmZlcnMgPSBpbnB1dEtleXMuZmlsdGVyKChrKSA9PiBrLnN0YXJ0c1dpdGgoIm9mZmVyc18iKSk7CglpZiAob2ZmZXJzLmxlbmd0aCA+IDApIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLm9mZmVycyA9IG9mZmVycwoJCQkuZmlsdGVyKChvZmZlcikgPT4gaW5wdXRzW29mZmVyXSAhPT0gZmFsc2UgJiYgaW5wdXRzW29mZmVyXSAhPT0gbnVsbCkKCQkJLm1hcCgob2ZmZXIpID0+IHsKCQkJCXJldHVybiB7CgkJCQkJaWQ6IG9mZmVyLnJlcGxhY2UoIm9mZmVyc18iLCAiIiksCgkJCQkJLy8gdGFnczogWwoJCQkJCS8vIAl7CgkJCQkJLy8gCQljb2RlOiAic2VsZWN0aW9uIiwKCQkJCQkvLyAJCWxpc3Q6IFsKCQkJCQkvLyAJCQl7CgkJCQkJLy8gCQkJCWNvZGU6ICJhcHBseSIsCgkJCQkJLy8gCQkJCXZhbHVlOiAieWVzIiwKCQkJCQkvLyAJCQl9LAoJCQkJCS8vIAkJXSwKCQkJCQkvLyAJfSwKCQkJCQkvLyBdLAoJCQkJfTsKCQkJfSk7Cgl9CglyZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCWNvbnN0IGlucHV0cyA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwoJaWYgKCFpbnB1dHMpIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKCWlmIChpbnB1dHMucHJvdmlkZXIpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gaW5wdXRzLnByb3ZpZGVyOwoJfQoJaWYgKGlucHV0cy5wcm92aWRlcl9sb2NhdGlvbiAmJiBBcnJheS5pc0FycmF5KGlucHV0cy5wcm92aWRlcl9sb2NhdGlvbikpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmxvY2F0aW9ucyA9CgkJCWlucHV0cy5wcm92aWRlcl9sb2NhdGlvbi5tYXAoKGxvY2F0aW9uKSA9PiB7CgkJCQlyZXR1cm4gewoJCQkJCWlkOiBsb2NhdGlvbiwKCQkJCX07CgkJCX0pOwoJfSBlbHNlIGlmICgKCQlpbnB1dHMucHJvdmlkZXJfbG9jYXRpb24gJiYKCQl0eXBlb2YgaW5wdXRzLnByb3ZpZGVyX2xvY2F0aW9uID09PSAic3RyaW5nIgoJKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5sb2NhdGlvbnMgPSBbCgkJCXsKCQkJCWlkOiBpbnB1dHMucHJvdmlkZXJfbG9jYXRpb24sCgkJCX0sCgkJXTsKCX0KCWlmIChpbnB1dHMubG9jYXRpb25fZ3BzKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uZW5kLmxvY2F0aW9uLmdwcyA9CgkJCWlucHV0cy5sb2NhdGlvbl9ncHM7Cgl9CglpZiAoaW5wdXRzLmxvY2F0aW9uX3Bpbl9jb2RlKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uZW5kLmxvY2F0aW9uLmFkZHJlc3MuYXJlYV9jb2RlID0KCQkJaW5wdXRzLmxvY2F0aW9uX3Bpbl9jb2RlOwoJCWRlZmF1bHRQYXlsb2FkLmNvbnRleHQuY2l0eSA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzLmNpdHlfY29kZTsKCX0KCWlmIChpbnB1dHMuaXRlbXMpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gaW5wdXRzLml0ZW1zLm1hcCgoaXRlbSkgPT4gewoJCQlyZXR1cm4gewoJCQkJaWQ6IGl0ZW0uaXRlbUlkLAoJCQkJcXVhbnRpdHk6IHsKCQkJCQljb3VudDogaXRlbS5xdWFudGl0eSwKCQkJCX0sCgkJCQlsb2NhdGlvbl9pZDogaXRlbS5sb2NhdGlvbiwKCQkJfTsKCQl9KTsKCX0KCWNvbnN0IGlucHV0S2V5cyA9IE9iamVjdC5rZXlzKGlucHV0cyk7Cgljb25zdCBvZmZlcnMgPSBpbnB1dEtleXMuZmlsdGVyKChrKSA9PiBrLnN0YXJ0c1dpdGgoIm9mZmVyc18iKSk7CglpZiAob2ZmZXJzLmxlbmd0aCA+IDApIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLm9mZmVycyA9IG9mZmVycwoJCQkuZmlsdGVyKChvZmZlcikgPT4gaW5wdXRzW29mZmVyXSAhPT0gZmFsc2UgJiYgaW5wdXRzW29mZmVyXSAhPT0gbnVsbCkKCQkJLm1hcCgob2ZmZXIpID0+IHsKCQkJCXJldHVybiB7CgkJCQkJaWQ6IG9mZmVyLnJlcGxhY2UoIm9mZmVyc18iLCAiIiksCgkJCQkJLy8gdGFnczogWwoJCQkJCS8vIAl7CgkJCQkJLy8gCQljb2RlOiAic2VsZWN0aW9uIiwKCQkJCQkvLyAJCWxpc3Q6IFsKCQkJCQkvLyAJCQl7CgkJCQkJLy8gCQkJCWNvZGU6ICJhcHBseSIsCgkJCQkJLy8gCQkJCXZhbHVlOiAieWVzIiwKCQkJCQkvLyAJCQl9LAoJCQkJCS8vIAkJXSwKCQkJCQkvLyAJfSwKCQkJCQkvLyBdLAoJCQkJfTsKCQkJfSk7Cgl9CglyZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -113,7 +113,7 @@ steps:
     description: On-select response to select
     mock:
       generate: >-
-        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBjcmVhdGVRdW90ZSgKCXNlbGVjdGVkSXRlbXMsCglzZXNzaW9uRGF0YSwKCWRlZmF1bHRQYXlsb2FkLAoJZnVsZmlsbG1lbnRzLAoJY2FuY2VsbGVkID0gZmFsc2UKKSB7CgoJbGV0IHRvdGFsUHJpY2UgPSAwOwoJbGV0IHRvdGFsUXVhbnRpdHkgPSAwOwoJbGV0IGl0ZW1TZXQgPSBuZXcgU2V0KCk7CglsZXQgYnJlYWt1cE9iamVjdCA9IFtdOwoJY29uc3QgY2F0YWxvZ0l0ZW1zID0gc2Vzc2lvbkRhdGEuUkVUMTBDYXRhbG9nLmNhdGFsb2dbCgkJImJwcC9wcm92aWRlcnMiCgldWzBdLml0ZW1zLmZpbHRlcigoaSkgPT4gewoJCWNvbnN0IGlkTWFwID0gc2VsZWN0ZWRJdGVtcy5tYXAoKGl0ZW0pID0+IGl0ZW0uaWQpOwoJCXJldHVybiBpZE1hcC5pbmNsdWRlcyhpLmlkKTsKCX0pOwoJCglmb3IgKGNvbnN0IHNlbGVjdGVkSXRlbSBvZiBzZWxlY3RlZEl0ZW1zID8/IFtdKSB7CgkJY29uc3QgZnVsZmlsbG1lbnQgPSBmdWxmaWxsbWVudHMuZmluZCgKCQkJKGYpID0+IGYuaWQgPT09IHNlbGVjdGVkSXRlbS5mdWxmaWxsbWVudF9pZAoJCSk7CgkJaWYgKAoJCQkhZnVsZmlsbG1lbnQgfHwKCQkJIVsiRGVsaXZlcnkiLCAiU2VsZi1QaWNrdXAiLCAiQnV5ZXItRGVsaXZlcnkiXS5pbmNsdWRlcygKCQkJCWZ1bGZpbGxtZW50LnR5cGUgPz8gIiIKCQkJKQoJCSkgewoJCQljb250aW51ZTsKCQl9CgkJY29uc3QgY2F0YWxvZ0l0ZW0gPSBjYXRhbG9nSXRlbXMuZmluZCgoaSkgPT4gaS5pZCA9PT0gc2VsZWN0ZWRJdGVtLmlkKTsKCQlpZiAoIWNhdGFsb2dJdGVtKSBjb250aW51ZTsgLy8gU2tpcCBpZiBpdGVtIG5vdCBmb3VuZCBpbiBjYXRhbG9nCgoJCWNvbnN0IHF1YW50aXR5ID0gY2FuY2VsbGVkID8gMCA6IHNlbGVjdGVkSXRlbS5jb3VudCA/PyAxOwoJCWNvbnN0IHByaWNlID0gcGFyc2VGbG9hdChjYXRhbG9nSXRlbS5wcmljZS52YWx1ZSkgKiBxdWFudGl0eTsKCQl0b3RhbFByaWNlICs9IHByaWNlOwoKCQljb25zdCBicmVha3VwQ2xvbmUgPSBKU09OLnBhcnNlKAoJCQlKU09OLnN0cmluZ2lmeShicmVha3VwSXRlbSkKCQkpOwoJCWJyZWFrdXBDbG9uZVsiQG9uZGMvb3JnL2l0ZW1faWQiXSA9IGNhdGFsb2dJdGVtLmlkOwoJCWJyZWFrdXBDbG9uZS50aXRsZSA9IGNhdGFsb2dJdGVtLmRlc2NyaXB0b3IubmFtZTsKCQlicmVha3VwQ2xvbmVbIkBvbmRjL29yZy9pdGVtX3F1YW50aXR5Il0uY291bnQgPSBxdWFudGl0eTsKCQlicmVha3VwQ2xvbmUucHJpY2UudmFsdWUgPSBgJHtwcmljZS50b0ZpeGVkKDIpfWA7CgkJYnJlYWt1cENsb25lLml0ZW0ucHJpY2UudmFsdWUgPSBjYXRhbG9nSXRlbS5wcmljZS52YWx1ZTsKCQlicmVha3VwT2JqZWN0LnB1c2goYnJlYWt1cENsb25lKTsKCgkJaWYgKHNlc3Npb25EYXRhLm91dF9vZl9zdG9ja19pdGVtX2lkcz8uaW5jbHVkZXMoY2F0YWxvZ0l0ZW0uaWQpKSB7CgkJCWJyZWFrdXBDbG9uZS5pdGVtLnF1YW50aXR5LmF2YWlsYWJsZS5jb3VudCA9ICIwIjsKCQkJYnJlYWt1cENsb25lLml0ZW0ucXVhbnRpdHkubWF4aW11bS5jb3VudCA9ICIwIjsKCQkJYnJlYWt1cENsb25lWyJAb25kYy9vcmcvdGl0bGVfdHlwZSJdID0gIml0ZW0iOwoJCQlkZWZhdWx0UGF5bG9hZC5lcnJvciA9IHsKCQkJCXR5cGU6ICJET01BSU4tRVJST1IiLAoJCQkJY29kZTogIjQwMDAyIiwKCQkJCW1lc3NhZ2U6IGBJdGVtIHdpdGggaWQ6ICR7Y2F0YWxvZ0l0ZW0uaWR9IGlzIG91dCBvZiBzdG9ja2AsCgkJCX07CgkJfSBlbHNlIHsKCQkJdG90YWxRdWFudGl0eSArPSBzZWxlY3RlZEl0ZW0uY291bnQgPz8gMDsKCQkJaWYgKHF1YW50aXR5ID4gMCkgaXRlbVNldC5hZGQoY2F0YWxvZ0l0ZW0uaWQpOwoJCX0KCgkJaWYgKHNlc3Npb25EYXRhLnNlYXJjaF9iYXBfdGVybXM/Lmxpc3Q/LnNvbWUodCA9PiB0LmNvZGUgPT09ICIwMEEiKSkgewoJCQlmb3IgKGNvbnN0IGZlZSBvZiBucEZlZXNicmVha3VwKSB7CgkJCQljb25zdCBmZWVDbG9uZSA9IEpTT04ucGFyc2UoSlNPTi5zdHJpbmdpZnkoZmVlKSk7CgkJCQlmZWVDbG9uZVsiQG9uZGMvb3JnL2l0ZW1faWQiXSA9IGNhdGFsb2dJdGVtLmlkOwoJCQkJYnJlYWt1cE9iamVjdC5wdXNoKGZlZUNsb25lKTsKCQkJCXRvdGFsUHJpY2UgKz0gcGFyc2VGbG9hdChmZWVDbG9uZS5wcmljZS52YWx1ZSA/PyAiMCIpOwoJCQl9CgkJfQoJfQoKCWJyZWFrdXBPYmplY3QucHVzaChicmVha3VwWzBdKTsKCWJyZWFrdXBPYmplY3QucHVzaChicmVha3VwWzFdKTsKCWlmIChzZXNzaW9uRGF0YS5zZWxlY3RlZF9vZmZlcnMgJiYgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfb2ZmZXJzLmxlbmd0aCA+IDApIHsKCQlsZXQgb2ZmZXJRdW90ZSA9CgkJCW9mZmVyUXVvdGVzWwoJCQkJc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfb2ZmZXJzWzBdLmlkCgkJCV07CgoJCWNvbnN0IG9mZmVySWQgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9vZmZlcnNbMF0uaWQ7CgoJCWlmIChvZmZlcklkID09PSAiRkxBVDUwIiAmJiB0b3RhbFF1YW50aXR5ID4gMCkgewoJCQlicmVha3VwT2JqZWN0LnB1c2gob2ZmZXJRdW90ZSk7CgkJCWxldCBvZmZlclByaWNlID0gcGFyc2VGbG9hdChvZmZlclF1b3RlLnByaWNlLnZhbHVlKTsKCQkJaWYgKGNhbmNlbGxlZCkgb2ZmZXJQcmljZSA9IDA7CgkJCXRvdGFsUHJpY2UgKz0gb2ZmZXJQcmljZTsKCQl9IGVsc2UgaWYgKG9mZmVySWQgPT09ICJjb21ibzEiICYmIGl0ZW1TZXQuc2l6ZSA+PSAzKSB7CgkJCWJyZWFrdXBPYmplY3QucHVzaChvZmZlclF1b3RlKTsKCQkJbGV0IG9mZmVyUHJpY2UgPSBwYXJzZUZsb2F0KG9mZmVyUXVvdGUucHJpY2UudmFsdWUpOwoJCQlpZiAoY2FuY2VsbGVkKSBvZmZlclByaWNlID0gMDsKCQkJdG90YWxQcmljZSArPSBvZmZlclByaWNlOwoJCX0gZWxzZSBpZiAoCgkJCW9mZmVySWQgPT09ICJidXkyZ2V0MyIgJiYKCQkJdG90YWxRdWFudGl0eSA+PSAyICYmCgkJCSFzZXNzaW9uRGF0YS5vdXRfb2Zfc3RvY2tfaXRlbV9pZHM/LmluY2x1ZGVzKCJJMiIpCgkJKSB7CgkJCWlmIChjYW5jZWxsZWQpIHsKCQkJCS8vQHRzLWlnbm9yZQoJCQkJb2ZmZXJRdW90ZVsiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiXSA9IHsKCQkJCQljb3VudDogMCwKCQkJCX07CgkJCX0KCQkJYnJlYWt1cE9iamVjdC5wdXNoKG9mZmVyUXVvdGUpOwoJCX0KCX0KCXJldHVybiB7CgkJYnJlYWt1cDogYnJlYWt1cE9iamVjdCwKCQlwcmljZTogewoJCQljdXJyZW5jeTogIklOUiIsCgkJCXZhbHVlOiBgJHt0b3RhbFByaWNlLnRvRml4ZWQoMil9YCwKCQl9LAoJCXR0bDogIlAxRCIsCgl9Owp9Cgpjb25zdCBicmVha3VwSXRlbSA9IHsKICAiQG9uZGMvb3JnL2l0ZW1faWQiOiAiSTEiLAogICJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSI6IHsKICAgIGNvdW50OiAxLAogIH0sCiAgdGl0bGU6ICJQbGFpbiBBdHRhIiwKICAiQG9uZGMvb3JnL3RpdGxlX3R5cGUiOiAiaXRlbSIsCiAgcHJpY2U6IHsKICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgIHZhbHVlOiAiMTAwLjAwIiwKICB9LAogIGl0ZW06IHsKICAgIHF1YW50aXR5OiB7CiAgICAgIGF2YWlsYWJsZTogewogICAgICAgIGNvdW50OiAiOTkiLAogICAgICB9LAogICAgICBtYXhpbXVtOiB7CiAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgIH0sCiAgICB9LAogICAgcHJpY2U6IHsKICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICB2YWx1ZTogIjEwMC4wMCIsCiAgICB9LAogIH0sCn07Cgpjb25zdCBicmVha3VwID0gWwogIHsKICAgICJAb25kYy9vcmcvaXRlbV9pZCI6ICJGMSIsCiAgICB0aXRsZTogIkRlbGl2ZXJ5IGNoYXJnZXMiLAogICAgIkBvbmRjL29yZy90aXRsZV90eXBlIjogImRlbGl2ZXJ5IiwKICAgIHByaWNlOiB7CiAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgdmFsdWU6ICIwMC4wMCIsCiAgICB9LAogIH0sCiAgewogICAgIkBvbmRjL29yZy9pdGVtX2lkIjogIkYxIiwKICAgIHRpdGxlOiAiQ29udmVuaWVuY2UgRmVlIiwKICAgICJAb25kYy9vcmcvdGl0bGVfdHlwZSI6ICJtaXNjIiwKICAgIHByaWNlOiB7CiAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgdmFsdWU6ICIwMC4wMCIsCiAgICB9LAogIH0sCl07Cgphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZSgKICBkZWZhdWx0UGF5bG9hZCwKICBzZXNzaW9uRGF0YQopIHsKICBjb25zdCBzZWxlY3RlZEl0ZW1zT2JqID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXM7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcyA9IHNlbGVjdGVkSXRlbXNPYmoubWFwKChpdGVtKSA9PiB7CiAgICByZXR1cm4gewogICAgICBpZDogaXRlbS5pZCwKICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICB9OwogIH0pOwogIGNvbnN0IHF1b3RlID0gY3JlYXRlUXVvdGUoCiAgICBzZWxlY3RlZEl0ZW1zT2JqLm1hcCgoaXRlbSkgPT4gewogICAgICByZXR1cm4gewogICAgICAgIGlkOiBpdGVtLmlkLAogICAgICAgIGNvdW50OiBpdGVtLnF1YW50aXR5LmNvdW50LAogICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICB9OwogICAgfSksCiAgICBzZXNzaW9uRGF0YSwKICAgIGRlZmF1bHRQYXlsb2FkLAogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMKICApOwoJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZSA9IHF1b3RlOwoJZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gc2Vzc2lvbkRhdGEubWVzc2FnZV9pZFswXTsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0K
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBjcmVhdGVRdW90ZSgKCXNlbGVjdGVkSXRlbXMsCglzZXNzaW9uRGF0YSwKCWRlZmF1bHRQYXlsb2FkLAoJZnVsZmlsbG1lbnRzLAoJY2FuY2VsbGVkID0gZmFsc2UKKSB7CgoJbGV0IHRvdGFsUHJpY2UgPSAwOwoJbGV0IHRvdGFsUXVhbnRpdHkgPSAwOwoJbGV0IGl0ZW1TZXQgPSBuZXcgU2V0KCk7CglsZXQgYnJlYWt1cE9iamVjdCA9IFtdOwoJY29uc3QgY2F0YWxvZ0l0ZW1zID0gUkVUMTJGQVNISU9OMTI1Q2F0YWxvZy5jYXRhbG9nWwoJCSJicHAvcHJvdmlkZXJzIgoJXVswXS5pdGVtcy5maWx0ZXIoKGkpID0+IHsKCQljb25zdCBpZE1hcCA9IHNlbGVjdGVkSXRlbXMubWFwKChpdGVtKSA9PiBpdGVtLmlkKTsKCQlyZXR1cm4gaWRNYXAuaW5jbHVkZXMoaS5pZCk7Cgl9KTsKCQoJZm9yIChjb25zdCBzZWxlY3RlZEl0ZW0gb2Ygc2VsZWN0ZWRJdGVtcyA/PyBbXSkgewoJCWNvbnN0IGZ1bGZpbGxtZW50ID0gZnVsZmlsbG1lbnRzLmZpbmQoCgkJCShmKSA9PiBmLmlkID09PSBzZWxlY3RlZEl0ZW0uZnVsZmlsbG1lbnRfaWQKCQkpOwoJCWlmICgKCQkJIWZ1bGZpbGxtZW50IHx8CgkJCSFbIkRlbGl2ZXJ5IiwgIlNlbGYtUGlja3VwIiwgIkJ1eWVyLURlbGl2ZXJ5Il0uaW5jbHVkZXMoCgkJCQlmdWxmaWxsbWVudC50eXBlID8/ICIiCgkJCSkKCQkpIHsKCQkJY29udGludWU7CgkJfQoJCWNvbnN0IGNhdGFsb2dJdGVtID0gY2F0YWxvZ0l0ZW1zLmZpbmQoKGkpID0+IGkuaWQgPT09IHNlbGVjdGVkSXRlbS5pZCk7CgkJaWYgKCFjYXRhbG9nSXRlbSkgY29udGludWU7IC8vIFNraXAgaWYgaXRlbSBub3QgZm91bmQgaW4gY2F0YWxvZwoKCQljb25zdCBxdWFudGl0eSA9IGNhbmNlbGxlZCA/IDAgOiBzZWxlY3RlZEl0ZW0uY291bnQgPz8gMTsKCQljb25zdCBwcmljZSA9IHBhcnNlRmxvYXQoY2F0YWxvZ0l0ZW0ucHJpY2UudmFsdWUpICogcXVhbnRpdHk7CgkJdG90YWxQcmljZSArPSBwcmljZTsKCgkJY29uc3QgYnJlYWt1cENsb25lID0gSlNPTi5wYXJzZSgKCQkJSlNPTi5zdHJpbmdpZnkoYnJlYWt1cEl0ZW0pCgkJKTsKCQlicmVha3VwQ2xvbmVbIkBvbmRjL29yZy9pdGVtX2lkIl0gPSBjYXRhbG9nSXRlbS5pZDsKCQlicmVha3VwQ2xvbmUudGl0bGUgPSBjYXRhbG9nSXRlbS5kZXNjcmlwdG9yLm5hbWU7CgkJYnJlYWt1cENsb25lWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdLmNvdW50ID0gcXVhbnRpdHk7CgkJYnJlYWt1cENsb25lLnByaWNlLnZhbHVlID0gYCR7cHJpY2UudG9GaXhlZCgyKX1gOwoJCWJyZWFrdXBDbG9uZS5pdGVtLnByaWNlLnZhbHVlID0gY2F0YWxvZ0l0ZW0ucHJpY2UudmFsdWU7CgkJYnJlYWt1cE9iamVjdC5wdXNoKGJyZWFrdXBDbG9uZSk7CgoJCWlmIChzZXNzaW9uRGF0YS5vdXRfb2Zfc3RvY2tfaXRlbV9pZHM/LmluY2x1ZGVzKGNhdGFsb2dJdGVtLmlkKSkgewoJCQlicmVha3VwQ2xvbmUuaXRlbS5xdWFudGl0eS5hdmFpbGFibGUuY291bnQgPSAiMCI7CgkJCWJyZWFrdXBDbG9uZS5pdGVtLnF1YW50aXR5Lm1heGltdW0uY291bnQgPSAiMCI7CgkJCWJyZWFrdXBDbG9uZVsiQG9uZGMvb3JnL3RpdGxlX3R5cGUiXSA9ICJpdGVtIjsKCQkJZGVmYXVsdFBheWxvYWQuZXJyb3IgPSB7CgkJCQl0eXBlOiAiRE9NQUlOLUVSUk9SIiwKCQkJCWNvZGU6ICI0MDAwMiIsCgkJCQltZXNzYWdlOiBgSXRlbSB3aXRoIGlkOiAke2NhdGFsb2dJdGVtLmlkfSBpcyBvdXQgb2Ygc3RvY2tgLAoJCQl9OwoJCX0gZWxzZSB7CgkJCXRvdGFsUXVhbnRpdHkgKz0gc2VsZWN0ZWRJdGVtLmNvdW50ID8/IDA7CgkJCWlmIChxdWFudGl0eSA+IDApIGl0ZW1TZXQuYWRkKGNhdGFsb2dJdGVtLmlkKTsKCQl9CgoJCWlmIChzZXNzaW9uRGF0YS5zZWFyY2hfYmFwX3Rlcm1zPy5saXN0Py5zb21lKHQgPT4gdC5jb2RlID09PSAiMDBBIikpIHsKCQkJZm9yIChjb25zdCBmZWUgb2YgbnBGZWVzYnJlYWt1cCkgewoJCQkJY29uc3QgZmVlQ2xvbmUgPSBKU09OLnBhcnNlKEpTT04uc3RyaW5naWZ5KGZlZSkpOwoJCQkJZmVlQ2xvbmVbIkBvbmRjL29yZy9pdGVtX2lkIl0gPSBjYXRhbG9nSXRlbS5pZDsKCQkJCWJyZWFrdXBPYmplY3QucHVzaChmZWVDbG9uZSk7CgkJCQl0b3RhbFByaWNlICs9IHBhcnNlRmxvYXQoZmVlQ2xvbmUucHJpY2UudmFsdWUgPz8gIjAiKTsKCQkJfQoJCX0KCX0KCglicmVha3VwT2JqZWN0LnB1c2goYnJlYWt1cFswXSk7CglicmVha3VwT2JqZWN0LnB1c2goYnJlYWt1cFsxXSk7CglpZiAoc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfb2ZmZXJzICYmIHNlc3Npb25EYXRhLnNlbGVjdGVkX29mZmVycy5sZW5ndGggPiAwKSB7CgkJbGV0IG9mZmVyUXVvdGUgPQoJCQlvZmZlclF1b3Rlc1sKCQkJCXNlc3Npb25EYXRhLnNlbGVjdGVkX29mZmVyc1swXS5pZAoJCQldOwoKCQljb25zdCBvZmZlcklkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfb2ZmZXJzWzBdLmlkOwoKCQlpZiAob2ZmZXJJZCA9PT0gIkZMQVQ1MCIgJiYgdG90YWxRdWFudGl0eSA+IDApIHsKCQkJYnJlYWt1cE9iamVjdC5wdXNoKG9mZmVyUXVvdGUpOwoJCQlsZXQgb2ZmZXJQcmljZSA9IHBhcnNlRmxvYXQob2ZmZXJRdW90ZS5wcmljZS52YWx1ZSk7CgkJCWlmIChjYW5jZWxsZWQpIG9mZmVyUHJpY2UgPSAwOwoJCQl0b3RhbFByaWNlICs9IG9mZmVyUHJpY2U7CgkJfSBlbHNlIGlmIChvZmZlcklkID09PSAiY29tYm8xIiAmJiBpdGVtU2V0LnNpemUgPj0gMykgewoJCQlicmVha3VwT2JqZWN0LnB1c2gob2ZmZXJRdW90ZSk7CgkJCWxldCBvZmZlclByaWNlID0gcGFyc2VGbG9hdChvZmZlclF1b3RlLnByaWNlLnZhbHVlKTsKCQkJaWYgKGNhbmNlbGxlZCkgb2ZmZXJQcmljZSA9IDA7CgkJCXRvdGFsUHJpY2UgKz0gb2ZmZXJQcmljZTsKCQl9IGVsc2UgaWYgKAoJCQlvZmZlcklkID09PSAiYnV5MmdldDMiICYmCgkJCXRvdGFsUXVhbnRpdHkgPj0gMiAmJgoJCQkhc2Vzc2lvbkRhdGEub3V0X29mX3N0b2NrX2l0ZW1faWRzPy5pbmNsdWRlcygiSTIiKQoJCSkgewoJCQlpZiAoY2FuY2VsbGVkKSB7CgkJCQkvL0B0cy1pZ25vcmUKCQkJCW9mZmVyUXVvdGVbIkBvbmRjL29yZy9pdGVtX3F1YW50aXR5Il0gPSB7CgkJCQkJY291bnQ6IDAsCgkJCQl9OwoJCQl9CgkJCWJyZWFrdXBPYmplY3QucHVzaChvZmZlclF1b3RlKTsKCQl9Cgl9CglyZXR1cm4gewoJCWJyZWFrdXA6IGJyZWFrdXBPYmplY3QsCgkJcHJpY2U6IHsKCQkJY3VycmVuY3k6ICJJTlIiLAoJCQl2YWx1ZTogYCR7dG90YWxQcmljZS50b0ZpeGVkKDIpfWAsCgkJfSwKCQl0dGw6ICJQMUQiLAoJfTsKfQoKY29uc3QgYnJlYWt1cEl0ZW0gPSB7CiAgIkBvbmRjL29yZy9pdGVtX2lkIjogIkkxIiwKICAiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiOiB7CiAgICBjb3VudDogMSwKICB9LAogIHRpdGxlOiAiUGxhaW4gQXR0YSIsCiAgIkBvbmRjL29yZy90aXRsZV90eXBlIjogIml0ZW0iLAogIHByaWNlOiB7CiAgICBjdXJyZW5jeTogIklOUiIsCiAgICB2YWx1ZTogIjEwMC4wMCIsCiAgfSwKICBpdGVtOiB7CiAgICBxdWFudGl0eTogewogICAgICBhdmFpbGFibGU6IHsKICAgICAgICBjb3VudDogIjk5IiwKICAgICAgfSwKICAgICAgbWF4aW11bTogewogICAgICAgIGNvdW50OiAiOTkiLAogICAgICB9LAogICAgfSwKICAgIHByaWNlOiB7CiAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgdmFsdWU6ICIxMDAuMDAiLAogICAgfSwKICB9LAp9OwoKY29uc3QgYnJlYWt1cCA9IFsKICB7CiAgICAiQG9uZGMvb3JnL2l0ZW1faWQiOiAiRjEiLAogICAgdGl0bGU6ICJEZWxpdmVyeSBjaGFyZ2VzIiwKICAgICJAb25kYy9vcmcvdGl0bGVfdHlwZSI6ICJkZWxpdmVyeSIsCiAgICBwcmljZTogewogICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgIHZhbHVlOiAiMDAuMDAiLAogICAgfSwKICB9LAogIHsKICAgICJAb25kYy9vcmcvaXRlbV9pZCI6ICJGMSIsCiAgICB0aXRsZTogIkNvbnZlbmllbmNlIEZlZSIsCiAgICAiQG9uZGMvb3JnL3RpdGxlX3R5cGUiOiAibWlzYyIsCiAgICBwcmljZTogewogICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgIHZhbHVlOiAiMDAuMDAiLAogICAgfSwKICB9LApdOwoKYXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoCiAgZGVmYXVsdFBheWxvYWQsCiAgc2Vzc2lvbkRhdGEKKSB7CiAgY29uc3Qgc2VsZWN0ZWRJdGVtc09iaiA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX2l0ZW1zOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBzZWxlY3RlZEl0ZW1zT2JqLm1hcCgoaXRlbSkgPT4gewogICAgcmV0dXJuIHsKICAgICAgaWQ6IGl0ZW0uaWQsCiAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgfTsKICB9KTsKICBjb25zdCBxdW90ZSA9IGNyZWF0ZVF1b3RlKAogICAgc2VsZWN0ZWRJdGVtc09iai5tYXAoKGl0ZW0pID0+IHsKICAgICAgcmV0dXJuIHsKICAgICAgICBpZDogaXRlbS5pZCwKICAgICAgICBjb3VudDogaXRlbS5xdWFudGl0eS5jb3VudCwKICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgfTsKICAgIH0pLAogICAgc2Vzc2lvbkRhdGEsCiAgICBkZWZhdWx0UGF5bG9hZCwKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzCiAgKTsKCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSBxdW90ZTsKCWRlZmF1bHRQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cg==
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -1047,9 +1047,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: select
-        timestamp: '2026-02-17T06:10:34.173Z'
+        timestamp: '2026-03-23T07:51:26.582Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: f7e0094f-6fdf-4693-a16b-4ca8a475026a
+        message_id: aba9c511-fa04-41ae-a051-0d882d1611cc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1068,11 +1068,11 @@ transaction_history:
             - id: I1
               quantity:
                 count: 1
-              location: L1
-            - id: I1
+              location_id: L1
+            - id: I2
               quantity:
                 count: 1
-              location: L1
+              location_id: L1
           fulfillments:
             - end:
                 location:
@@ -1086,9 +1086,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: on_select
-        timestamp: '2026-02-17T06:10:34.198Z'
+        timestamp: '2026-03-23T07:51:26.606Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: f7e0094f-6fdf-4693-a16b-4ca8a475026a
+        message_id: aba9c511-fa04-41ae-a051-0d882d1611cc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1118,11 +1118,11 @@ transaction_history:
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Beautiful 12 Gold Necklace
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2260.00'
                 item:
                   quantity:
                     available:
@@ -1131,15 +1131,15 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '200.00'
-              - '@ondc/org/item_id': I1
+                    value: '2260'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2360.00'
                 item:
                   quantity:
                     available:
@@ -1148,7 +1148,7 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1163,12 +1163,12 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '400.00'
+              value: '4620.00'
             ttl: P1D
           items:
             - id: I1
               fulfillment_id: F1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
     action: on_select
     saved_info: {}
@@ -1177,9 +1177,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: init
-        timestamp: '2026-02-17T06:10:34.213Z'
+        timestamp: '2026-03-23T07:51:26.622Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 1455c01c-60dc-41b5-a8d6-20ae3916499c
+        message_id: 20fc51fa-7452-4b8d-8ac6-e4e9ed8bd3a8
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1199,10 +1199,12 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
-            - id: I1
+              location_id: L1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
+              location_id: L1
           billing:
             address:
               building: my building name or house
@@ -1215,8 +1217,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-17T06:10:29.218Z'
-            updated_at: '2026-02-17T06:10:29.218Z'
+            created_at: '2026-03-23T07:51:21.627Z'
+            updated_at: '2026-03-23T07:51:21.627Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1242,9 +1244,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: on_init
-        timestamp: '2026-02-17T06:10:34.226Z'
+        timestamp: '2026-03-23T07:51:26.634Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 1455c01c-60dc-41b5-a8d6-20ae3916499c
+        message_id: 20fc51fa-7452-4b8d-8ac6-e4e9ed8bd3a8
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1264,10 +1266,12 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
-            - id: I1
+              location_id: L1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
+              location_id: L1
           billing:
             address:
               building: my building name or house
@@ -1280,8 +1284,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-17T06:10:29.218Z'
-            updated_at: '2026-02-17T06:10:29.218Z'
+            created_at: '2026-03-23T07:51:21.627Z'
+            updated_at: '2026-03-23T07:51:21.627Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1305,27 +1309,27 @@ transaction_history:
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Beautiful 12 Gold Necklace
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2260.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
-              - '@ondc/org/item_id': I1
+                    value: '2260'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2360.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1340,7 +1344,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '400.00'
+              value: '4620.00'
             ttl: P1D
           payment:
             '@ondc/org/buyer_app_finder_fee_type': percent
@@ -1370,9 +1374,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: confirm
-        timestamp: '2026-02-17T06:10:34.238Z'
+        timestamp: '2026-03-23T07:51:26.646Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 8d20c384-81ba-4ba2-81c8-c8321e95d40e
+        message_id: b278a843-a8bd-46d9-95fd-3fef4fe1b671
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1383,7 +1387,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '870062'
+          id: '349387'
           state: Created
           billing:
             address:
@@ -1397,17 +1401,19 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-17T06:10:29.218Z'
-            updated_at: '2026-02-17T06:10:29.218Z'
+            created_at: '2026-03-23T07:51:21.627Z'
+            updated_at: '2026-03-23T07:51:21.627Z'
           items:
             - id: I1
               fulfillment_id: F1
               quantity:
                 count: 1
-            - id: I1
+              location_id: L1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
+              location_id: L1
           provider:
             id: P1
             locations:
@@ -1436,7 +1442,7 @@ transaction_history:
               '@ondc/org/TAT': P3D
           payment:
             params:
-              amount: '400.00'
+              amount: '4620.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -1460,27 +1466,27 @@ transaction_history:
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Beautiful 12 Gold Necklace
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2260.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
-              - '@ondc/org/item_id': I1
+                    value: '2260'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2360.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1495,7 +1501,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '400.00'
+              value: '4620.00'
             ttl: P1D
           tags:
             - code: bpp_terms
@@ -1508,8 +1514,8 @@ transaction_history:
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: 37BABCA6712B1Z6
-          created_at: '2026-02-17T06:10:34.243Z'
-          updated_at: '2026-02-17T06:10:34.243Z'
+          created_at: '2026-03-23T07:51:26.654Z'
+          updated_at: '2026-03-23T07:51:26.654Z'
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -1517,9 +1523,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: on_confirm
-        timestamp: '2026-02-17T06:10:34.250Z'
+        timestamp: '2026-03-23T07:51:26.669Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 8d20c384-81ba-4ba2-81c8-c8321e95d40e
+        message_id: b278a843-a8bd-46d9-95fd-3fef4fe1b671
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1530,7 +1536,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '870062'
+          id: '349387'
           state: Created
           provider:
             id: P1
@@ -1541,10 +1547,12 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
-            - id: I1
+              location_id: L1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
+              location_id: L1
           billing:
             address:
               building: my building name or house
@@ -1557,8 +1565,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-17T06:10:29.218Z'
-            updated_at: '2026-02-17T06:10:29.218Z'
+            created_at: '2026-03-23T07:51:21.627Z'
+            updated_at: '2026-03-23T07:51:21.627Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1604,27 +1612,27 @@ transaction_history:
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Beautiful 12 Gold Necklace
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2260.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
-              - '@ondc/org/item_id': I1
+                    value: '2260'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Plain Atta
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '2360.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1639,11 +1647,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '400.00'
+              value: '4620.00'
             ttl: P1D
           payment:
             params:
-              amount: '400.00'
+              amount: '4620.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -1680,8 +1688,8 @@ transaction_history:
                     https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: 37BABCA6712B1Z6
-          created_at: '2026-02-17T06:10:34.243Z'
-          updated_at: '2026-02-17T06:10:34.252Z'
+          created_at: '2026-03-23T07:51:26.654Z'
+          updated_at: '2026-03-23T07:51:26.673Z'
     action: on_confirm
     saved_info: {}
   - action_id: cancel
@@ -1689,9 +1697,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: cancel
-        timestamp: '2026-02-17T06:10:36.552Z'
+        timestamp: '2026-03-23T07:51:27.817Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: def2b1ed-e22e-4c0a-b036-6b98091faf6c
+        message_id: 8cb845b5-5c9e-4fd4-ada2-78047ca867e4
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1701,8 +1709,8 @@ transaction_history:
         city: '*'
         core_version: 1.2.0
       message:
-        order_id: '870062'
-        cancellation_reason_id: '016'
+        order_id: '349387'
+        cancellation_reason_id: '002'
     action: cancel
     saved_info: {}
   - action_id: on_cancel
@@ -1710,9 +1718,9 @@ transaction_history:
       context:
         domain: ONDC:RET12
         action: on_cancel
-        timestamp: '2026-02-17T06:10:36.570Z'
+        timestamp: '2026-03-23T07:51:27.835Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: def2b1ed-e22e-4c0a-b036-6b98091faf6c
+        message_id: 8cb845b5-5c9e-4fd4-ada2-78047ca867e4
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1729,15 +1737,17 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 0
-            - id: I1
+              location_id: L1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 0
+              location_id: L1
             - id: I1
               quantity:
                 count: 1
               fulfillment_id: cancel_id_8189
-            - id: I1
+            - id: I2
               quantity:
                 count: 1
               fulfillment_id: cancel_id_8189
@@ -1757,8 +1767,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-02-17T06:10:29.218Z'
-            updated_at: '2026-02-17T06:10:29.218Z'
+            created_at: '2026-03-23T07:51:21.627Z'
+            updated_at: '2026-03-23T07:51:21.627Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1803,7 +1813,7 @@ transaction_history:
                 - code: cancel_request
                   list:
                     - code: reason_id
-                      value: '016'
+                      value: '002'
                     - code: initiated_by
                       value: bap
                 - code: precancel_state
@@ -1811,7 +1821,7 @@ transaction_history:
                     - code: fulfillment_state
                       value: Pending
                     - code: updated_at
-                      value: '2026-02-17T06:10:36.576Z'
+                      value: '2026-03-23T07:51:27.843Z'
             - id: cancel_id_8189
               type: Cancel
               state:
@@ -1827,23 +1837,23 @@ transaction_history:
                     - code: currency
                       value: INR
                     - code: value
-                      value: '-200.00'
+                      value: '-2260.00'
                 - code: quote_trail
                   list:
                     - code: type
                       value: item
                     - code: id
-                      value: I1
+                      value: I2
                     - code: currency
                       value: INR
                     - code: value
-                      value: '-200.00'
+                      value: '-2360.00'
           quote:
             breakup:
               - '@ondc/org/item_id': I1
                 '@ondc/org/item_quantity':
                   count: 0
-                title: Plain Atta
+                title: Butterfly Beautiful 12 Gold Necklace
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
@@ -1851,11 +1861,11 @@ transaction_history:
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
-              - '@ondc/org/item_id': I1
+                    value: '2260'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 0
-                title: Plain Atta
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
@@ -1863,7 +1873,7 @@ transaction_history:
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1882,7 +1892,7 @@ transaction_history:
             ttl: P1D
           payment:
             params:
-              amount: '400.00'
+              amount: '4620.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -1901,14 +1911,15 @@ transaction_history:
                 settlement_ifsc_code: XXXX
                 bank_name: XXXX
                 branch_name: XXXX
-          id: '870062'
-          created_at: '2026-02-17T06:10:34.243Z'
-          updated_at: '2026-02-17T06:10:36.576Z'
+          id: '349387'
+          created_at: '2026-03-23T07:51:26.654Z'
+          updated_at: '2026-03-23T07:51:27.843Z'
           cancellation:
             cancelled_by: sample-bap-id
             reason:
-              id: '016'
+              id: '002'
     action: on_cancel
     saved_info: {}
 validationLib: ''
-helperLib: ''
+helperLib: >-
+  Y29uc3QgUkVUMTJGQVNISU9OMTI1Q2F0YWxvZyA9IEpTT04ucGFyc2UoCiAgSlNPTi5zdHJpbmdpZnkoewogICAgY2F0YWxvZzogewogICAgImJwcC9mdWxmaWxsbWVudHMiOiBbCiAgICAgIHsKICAgICAgICBpZDogIkYxIiwKICAgICAgICB0eXBlOiAiRGVsaXZlcnkiLAogICAgICB9LAogICAgXSwKICAgICJicHAvZGVzY3JpcHRvciI6IHsKICAgICAgbmFtZTogIk1vY2sgU2VsbGVyIE5QIiwKICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyIsCiAgICAgIHNob3J0X2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICBsb25nX2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyJdLAogICAgICB0YWdzOiBbCiAgICAgICAgewogICAgICAgICAgY29kZTogImJwcF90ZXJtcyIsCiAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAibnBfdHlwZSIsCiAgICAgICAgICAgICAgdmFsdWU6ICJNU04iLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICB9LAogICAgICBdLAogICAgfSwKICAgICJicHAvcHJvdmlkZXJzIjogWwogICAgICB7CiAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgdGltZTogewogICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICB9LAogICAgICAgIHR0bDogIlBUMjRIIiwKICAgICAgICBsb2NhdGlvbnM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJMMSIsCiAgICAgICAgICAgIGdwczogIjEyLjkyNTgxMCw3Ny41ODM2MjQiLAogICAgICAgICAgICBhZGRyZXNzOiB7CiAgICAgICAgICAgICAgY2l0eTogIkJlbmdhbHVydSIsCiAgICAgICAgICAgICAgc3RhdGU6ICJLYXJuYXRha2EiLAogICAgICAgICAgICAgIGFyZWFfY29kZTogIjU2MDAxMSIsCiAgICAgICAgICAgICAgc3RyZWV0OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICBsb2NhbGl0eTogIkpheWFuYWdhciIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICAgICAgICBkYXlzOiAiMSwyLDMsNCw1IiwKICAgICAgICAgICAgICBzY2hlZHVsZTogewogICAgICAgICAgICAgICAgaG9saWRheXM6IFtdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgIHN0YXJ0OiAiMDAwMCIsCiAgICAgICAgICAgICAgICBlbmQ6ICIyMzU5IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBjaXJjbGU6IHsKICAgICAgICAgICAgICBncHM6ICIxMi45MjU4MTAsNzcuNTgzNjI0IiwKICAgICAgICAgICAgICByYWRpdXM6IHsKICAgICAgICAgICAgICAgIHVuaXQ6ICJrbSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjUiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyIsCiAgICAgICAgICBzaG9ydF9kZXNjOiAiU3RvcmUgMSIsCiAgICAgICAgICBsb25nX2Rlc2M6ICJTdG9yZSAxIiwKICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyJdLAogICAgICAgIH0sCiAgICAgICAgY2F0ZWdvcmllczogWwogICAgICAgICAgewogICAgICAgICAgICBpZDogIlYxIiwKICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgIG5hbWU6ICJWYXJpYW50IEdyb3VwIDEiLAogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAidmFyaWFudF9ncm91cCIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImF0dHIiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogIm5hbWUiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiaXRlbS50YWdzLmF0dHJpYnV0ZS5wbGF0aW5nIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJzZXEiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgaXRlbXM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJJMSIsCiAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQwNTozMDo0OC45OThaIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgcGFyZW50X2l0ZW1faWQ6ICJWMSIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBuYW1lOiAiQnV0dGVyZmx5IEJlYXV0aWZ1bCAxMiBHb2xkIE5lY2tsYWNlIiwKICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgIjE4S1QgQnV0dGVyZmx5IEJlYXV0aWZ1bCAxMiBHb2xkIE5lY2tsYWNlIFBlbmRhbnQgd2l0aCBnb2xkIGZpbmlzaGluZyIsCiAgICAgICAgICAgICAgbG9uZ19kZXNjOgogICAgICAgICAgICAgICAgIlRoaXMgaXMgMThLVCBCdXR0ZXJmbHkgQmVhdXRpZnVsIDEyIEdvbGQgTmVja2xhY2UgUGVuZGFudCB3aXRoIGdvbGQgZmluaXNoaW5nIiwKICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICAgIGNvZGU6ICI0OjcxMTMiLAogICAgICAgICAgICB9LAogICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgIHVuaXQ6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgbWF4aW11bTogewogICAgICAgICAgICAgICAgY291bnQ6ICI4IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMjYwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJOZWNrbGFjZXMiLAogICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL2F2YWlsYWJsZV9vbl9jb2QiOiBmYWxzZSwKICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQN0QiLAogICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAiU2VsbGVyIEJ1c2luZXNzLHRlc3RAZ21haWwuY29tLDk4NzY1NDMyMTAiLAogICAgICAgICAgICAiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjogewogICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgIlNlbGxlciBCdWlsZGluZyBBZGRyZXNzLCBKYXlhbmFnYXIsIEJlbmdhbHVydSwgS2FybmF0YWthLCBJbmRpYSAtIDU2MDAxMSIsCiAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6CiAgICAgICAgICAgICAgICAiQnV0dGVyZmx5IEJlYXV0aWZ1bCAxMiBHb2xkIE5lY2tsYWNlIiwKICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91cl9uYW1lIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImdvbGQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImdlbmRlciIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJmZW1hbGUiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIjQzBDMEMwIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJiYXNlX21ldGFsIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInNpbHZlciIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAicGxhdGluZyIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJnb2xkIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJzaXplIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjUiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImpld2VsbGVyeSBicmFuZCIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICBpZDogIkkyIiwKICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICB0aW1lc3RhbXA6ICIyMDI0LTA4LTEyVDEwOjI3OjQ4LjkxM1oiLAogICAgICAgICAgICB9LAogICAgICAgICAgICBwYXJlbnRfaXRlbV9pZDogIlYxIiwKICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgIG5hbWU6ICJCdXR0ZXJmbHkgTmVja2xhY2UgMm5kIiwKICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiMThLVCBCdXR0ZXJmbHkgTmVja2xhY2UgUGVuZGFudCB3aXRoIGdvbGQgZmluaXNoaW5nIiwKICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAiVGhpcyBpcyAxOEtUIEJ1dHRlcmZseSBOZWNrbGFjZSBQZW5kYW50IHdpdGggZ29sZCBmaW5pc2hpbmciLAogICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgY29kZTogIjQ6NzExMyIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICBjb3VudDogIjEwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjIzNjAiLAogICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMzYwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJOZWNrbGFjZXMiLAogICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL2F2YWlsYWJsZV9vbl9jb2QiOiBmYWxzZSwKICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQN0QiLAogICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAiU2VsbGVyIEJ1c2luZXNzLHRlc3RAZ21haWwuY29tLDk4NzY1NDMyMTAiLAogICAgICAgICAgICAiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjogewogICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgIlNlbGxlciBCdWlsZGluZyBBZGRyZXNzLCBKYXlhbmFnYXIsIEJlbmdhbHVydSwgS2FybmF0YWthLCBJbmRpYSAtIDU2MDAxMSIsCiAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJCdXR0ZXJmbHkgTmVja2xhY2UgMm5kIiwKICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91cl9uYW1lIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImdvbGQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImdlbmRlciIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJmZW1hbGUiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIjQzBDMEMwIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJiYXNlX21ldGFsIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInNpbHZlciIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAicGxhdGluZyIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJzaWx2ZXIiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogInNpemUiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYnJhbmQiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiamV3ZWxsZXJ5IGJyYW5kIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAiSTMiLAogICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgbmFtZTogIlNsZWVwaW5nIFJhYmJpdCBQcmludGVkIE92ZXJzaXplZCBULXNoaXJ0IGZvciBNZW4gLSBibGFjay9TIiwKICAgICAgICAgICAgICBjb2RlOiAiNDo2MTA5MTAwMCIsCiAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICJIZXkhIEhvdyB5b3UgZG9pbj8gSSdtIHlvdXIgbGF0ZXN0IGZhdm9yaXRlIFByaW50ZWQgT3ZlcnNpemVkIFQtc2hpcnQuIEkgaGF2ZSBiZWVuIG1hZGUgdXNpbmcgY290dG9uIHBvbHkgc28geW91IGNhbiBmZWVsIGF0IGVhc2Ugd2l0aCBteSBzb2Z0ICYgc3RyZXRjaGFibGUgbmF0dXJlLiBNeSBib2xkIHByaW50cyBvbiB0aGUgYmFjayBhcmUgc3VyZSB0byBlbmhhbmNlIHlvdXIgc3R5bGUgYW5kIG1hdGNoIHlvdXIgY29vbCB2aWJlLiBCcmVhdGhhYmlsaXR5ICYgbW9pc3R1cmUgYWJzb3JiZW5jeSBhcmUgdHdvIG9mIG15IGIiLAogICAgICAgICAgICAgIGxvbmdfZGVzYzoKICAgICAgICAgICAgICAgICJIZXkhIEhvdyB5b3UgZG9pbj8gSSdtIHlvdXIgbGF0ZXN0IGZhdm9yaXRlIFByaW50ZWQgT3ZlcnNpemVkIFQtc2hpcnQuIEkgaGF2ZSBiZWVuIG1hZGUgdXNpbmcgY290dG9uIHBvbHkgc28geW91IGNhbiBmZWVsIGF0IGVhc2Ugd2l0aCBteSBzb2Z0ICYgc3RyZXRjaGFibGUgbmF0dXJlLiBNeSBib2xkIHByaW50cyBvbiB0aGUgYmFjayBhcmUgc3VyZSB0byBlbmhhbmNlIHlvdXIgc3R5bGUgYW5kIG1hdGNoIHlvdXIgY29vbCB2aWJlLiBCcmVhdGhhYmlsaXR5ICYgbW9pc3R1cmUgYWJzb3JiZW5jeSBhcmUgdHdvIG9mIG15IGJlc3QgZmVhdHVyZXMsIGhlbmNlLCB5b3UgY2FuIHJlbHkgb24gbWUgdG8ga2VlcCB5b3UgZmVlbGluZyBjb21meSAmIGRyeSBhdCBhbGwgdGltZXMuIFNvIHdoZW4gYXJlIHdlIG1lZXRpbmciLAogICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHByaWNlOiB7CiAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgIHZhbHVlOiAiNDk5LjAwIiwKICAgICAgICAgICAgICBtYXhpbXVtX3ZhbHVlOiAiMTE5OS4wMCIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiVCBTaGlydHMiLAogICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgbG9jYXRpb25faWQ6ICJMMSIsCiAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQxMDoyNzo0OC45MTNaIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgcmVsYXRlZDogdHJ1ZSwKICAgICAgICAgICAgcmVjb21tZW5kZWQ6IHRydWUsCiAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogZmFsc2UsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQM0QiLAogICAgICAgICAgICAiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDFEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICJAb25kYy9vcmcvY29udGFjdF9kZXRhaWxzX2NvbnN1bWVyX2NhcmUiOgogICAgICAgICAgICAgICJEYWlseXdlYXIgRmFzaGlvbixzdXBwb3J0QGdtYWlsLmNvbSwyMzQzNDUzNDM0IiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6CiAgICAgICAgICAgICAgICAiU2xlZXBpbmcgUmFiYml0IFByaW50ZWQgT3ZlcnNpemVkIFQtc2hpcnQgZm9yIE1lbiIsCiAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOiAiaW5kaWEiLAogICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OgogICAgICAgICAgICAgICAgIlNsZWVwaW5nIFJhYmJpdCBQcmludGVkIE92ZXJzaXplZCBULXNoaXJ0IGZvciBNZW4iLAogICAgICAgICAgICAgIG1vbnRoX3llYXJfb2ZfbWFudWZhY3R1cmVfcGFja2luZ19pbXBvcnQ6ICJOQSIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiZ2VuZGVyIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIm1hbGUiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIjMDAwMDAwIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJzaXplIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIlMiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImJleW91bmciLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogInNpemVfY2hhcnQiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOgogICAgICAgICAgICAgICAgICAgICAgImh0dHBzOi8vYm9keWFuZHNvdWwubXUvbWVkaWEvc2l6ZV9jaGFydC9tZW53ZWJjb20uanBnIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJmYWJyaWMiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiY290dG9uIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb2xvdXJfbmFtZSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJibGFjayIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgZnVsZmlsbG1lbnRzOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAiRjEiLAogICAgICAgICAgICB0eXBlOiAiRGVsaXZlcnkiLAogICAgICAgICAgICBjb250YWN0OiB7CiAgICAgICAgICAgICAgcGhvbmU6ICI5ODc2NTQzMjEwIiwKICAgICAgICAgICAgICBlbWFpbDogInRlc3RAZ21haWwuY29tIiwKICAgICAgICAgICAgfSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgICBjcmVkczogWwogICAgICAgICAgewogICAgICAgICAgICBpZDogImdpLTEyMzQ1Njc4IiwKICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgIGNvZGU6ICJTb2NpYWwgU2VjdG9yIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiR0kiLAogICAgICAgICAgICB9LAogICAgICAgICAgICB1cmw6ICJodHRwczovL2FiY2QuY2RuLmNvbS9pbWFnZXMvYmFkZ2UtaW1nIiwKICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ2ZXJpZmljYXRpb24iLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogInZlcmlmeV91cmwiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiaHR0cHM6Ly9hYmNkLmdpLmNvbS92ZXJpZnk/aWQ9Z2ktMTIzNDU2NzgnIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2ZXJpZmllciIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJDU1AtQUJDIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJpc3N1ZXIiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiRXhhbXBsZSBBdXRob3JpdHkiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogInZhbGlkX2Zyb20iLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMjAyMy0wNi0wM1QwMDowMDowMDowMDBaIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWxpZF90byIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIyMDI0LTA2LTAzVDIzOjU5OjU5Ojk5OVoiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICBdLAogICAgICAgIHRhZ3M6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgY29kZTogInNlcnZpY2VhYmlsaXR5IiwKICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJsb2NhdGlvbiIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIkwxIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJjYXRlZ29yeSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIk5lY2tsYWNlcyIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAicGluY29kZSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiNTYwMDAxLTU2MDA3Niw1NjAwODMiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiVCBTaGlydHMiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgdmFsdWU6ICIxMiIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidW5pdCIsCiAgICAgICAgICAgICAgICB2YWx1ZTogImNvdW50cnkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgIGNvZGU6ICJ0aW1pbmciLAogICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgdmFsdWU6ICJBbGwiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImRheV9mcm9tIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAiZGF5X3RvIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidGltZV9mcm9tIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiMDAwMCIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidGltZV90byIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjIzNTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgIH0sCiAgICBdLAogIH0sCiAgfSkKKTs=
