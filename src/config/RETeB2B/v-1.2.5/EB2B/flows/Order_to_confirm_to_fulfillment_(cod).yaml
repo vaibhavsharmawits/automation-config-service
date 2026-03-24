@@ -76,9 +76,11 @@ steps:
                 - new
                 - existing
               description: Retailer type
+              default: existing
             customer_id:
               type: string
               description: Customer ID
+              default: CUST-2024-0015421
             phone_number:
               type: string
               description: Retailer phone number
@@ -101,6 +103,7 @@ steps:
             city_code:
               type: string
               description: City code
+              default: std:040
             state_code:
               type: string
               description: State code (default KA)
@@ -461,9 +464,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: credit
                 list:
                   - code: credit_limit
@@ -627,9 +630,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: bap_terms
                 list:
                   - code: accept_bpp_terms
@@ -815,9 +818,9 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
                   - code: accept_bap_terms
                     value: Y
               - code: bap_terms
@@ -1600,7 +1603,7 @@ steps:
     unsolicited: false
     description: On-track sent by the Seller Np in response to the track
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBzYXZlZENpdHkgPSBzZXNzaW9uRGF0YT8ucGF5bG9hZF9jaXR5Py5bMF07CgogIGlmICghZGVmYXVsdFBheWxvYWQuY29udGV4dCkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dCA9IHt9OwogIH0KCiAgaWYgKHNhdmVkQ2l0eSkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5jaXR5ID0gc2F2ZWRDaXR5OwogIH0KCiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gc2Vzc2lvbkRhdGEubWVzc2FnZV9pZFswXQogICAgICBhcHBseUR5bmFtaWNUaW1lc3RhbXBzKGRlZmF1bHRQYXlsb2FkKTsKCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgLy8gMe+4j+KDoyBFbnN1cmUgY29udGV4dCBleGlzdHMKICAgIGlmICghZGVmYXVsdFBheWxvYWQuY29udGV4dCkgewogICAgICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0ID0ge307CiAgICB9CgogICAgLy8gMu+4j+KDoyBVcGRhdGUgdGltZXN0YW1wCiAgICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LnRpbWVzdGFtcCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKCiAgICAvLyAz77iP4oOjIFNldCBjaXR5IGZyb20gc2Vzc2lvbgogICAgY29uc3Qgc2F2ZWRDaXR5ID0gc2Vzc2lvbkRhdGE/LnBheWxvYWRfY2l0eT8uWzBdOwogICAgaWYgKHNhdmVkQ2l0eSkgewogICAgICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmNpdHkgPSBzYXZlZENpdHk7CiAgICB9CgogICAgLy8gNO+4j+KDoyBTZXQgbWVzc2FnZV9pZCBmcm9tIHNlc3Npb24KICAgIGlmIChzZXNzaW9uRGF0YT8ubWVzc2FnZV9pZD8uWzBdKSB7CiAgICAgIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgICB9CgogICAgLy8gNe+4j+KDoyBFbnN1cmUgbWVzc2FnZSArIHRyYWNraW5nIHN0cnVjdHVyZQogICAgaWYgKCFkZWZhdWx0UGF5bG9hZC5tZXNzYWdlKSBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0ge307CiAgICBpZiAoIWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UudHJhY2tpbmcpIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UudHJhY2tpbmcgPSB7fTsKCiAgICBjb25zdCB0cmFja2luZyA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UudHJhY2tpbmc7CgogICAgLy8gNu+4j+KDoyBHZXQgb3JkZXJfaWQgZnJvbSBzZXNzaW9uCiAgICBjb25zdCBvcmRlcklkID0gc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF07CgogICAgLy8gN++4j+KDoyBVcGRhdGUgdHJhY2tpbmcudGFncyDihpIgb3JkZXIuaWQKICAgIGlmIChBcnJheS5pc0FycmF5KHRyYWNraW5nLnRhZ3MpKSB7CiAgICAgIHRyYWNraW5nLnRhZ3MgPSB0cmFja2luZy50YWdzLm1hcCh0YWcgPT4gewogICAgICAgIGlmICh0YWcuY29kZSA9PT0gIm9yZGVyIiAmJiBBcnJheS5pc0FycmF5KHRhZy5saXN0KSkgewogICAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgLi4udGFnLAogICAgICAgICAgICBsaXN0OiB0YWcubGlzdC5tYXAoaXRlbSA9PiB7CiAgICAgICAgICAgICAgaWYgKGl0ZW0uY29kZSA9PT0gImlkIiAmJiBvcmRlcklkKSB7CiAgICAgICAgICAgICAgICByZXR1cm4gewogICAgICAgICAgICAgICAgICAuLi5pdGVtLAogICAgICAgICAgICAgICAgICB2YWx1ZTogb3JkZXJJZCAgIC8vIOKchSBGSVggSEVSRQogICAgICAgICAgICAgICAgfTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgcmV0dXJuIGl0ZW07CiAgICAgICAgICAgIH0pCiAgICAgICAgICB9OwogICAgICAgIH0KICAgICAgICByZXR1cm4gdGFnOwogICAgICB9KTsKICAgIH0KCiAgICAvLyA477iP4oOjIEFwcGx5IGR5bmFtaWMgdGltZXN0YW1wcyAoZXhpc3RpbmcgaGVscGVyKQogICAgYXBwbHlEeW5hbWljVGltZXN0YW1wcyhkZWZhdWx0UGF5bG9hZCk7CgogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwoKICB9IGNhdGNoIChlcnJvcikgewogICAgY29uc29sZS5lcnJvcigiR2VuZXJhdGUgRXJyb3I6IiwgZXJyb3IpOwoKICAgIHJldHVybiB7CiAgICAgIGNvbnRleHQ6IGRlZmF1bHRQYXlsb2FkPy5jb250ZXh0IHx8IHt9LAogICAgICBlcnJvcjogZXJyb3I/Lm1lc3NhZ2UgfHwgIlVua25vd24gZXJyb3IiCiAgICB9OwogIH0KfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgLy8gQ2hlY2sgZm9yIG9yZGVyX2lkCiAgaWYgKCFzZXNzaW9uRGF0YS5vcmRlcl9pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIG9yZGVyX2lkIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19PUkRFUl9JRCIsCiAgICB9OwogIH0KCiAgLy8gQWxsIHJlcXVpcmVtZW50cyBzYXRpc2ZpZWQKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBkZXNjcmlwdGlvbjogIkFsbCBDaGVja3MgcGFzc2VkIHN1Y2Nlc3NmdWxseSIsCiAgICBjb2RlOiAiMjAwIiwKICB9Owp9Cg==
       defaultPayload:
@@ -2037,16 +2040,16 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: select
-        timestamp: 2026-03-23T13:31:18.504Z
+        timestamp: 2026-03-24T08:23:45.517Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 99de79b2-b832-451e-8067-2df7c3c1ce02
+        message_id: 7eb77d03-3b9c-4080-b9fb-949ef24ef3a7
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
@@ -2055,10 +2058,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               quantity:
-                count: 15
+                count: 10
               fulfillment_id: F1
           offers:
             - id: discp10
@@ -2072,7 +2075,7 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
     action: select
     saved_info: {}
   - action_id: on_select
@@ -2080,16 +2083,16 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_select
-        timestamp: 2026-03-23T13:31:18.531Z
+        timestamp: 2026-03-24T08:23:45.531Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 99de79b2-b832-451e-8067-2df7c3c1ce02
+        message_id: 7eb77d03-3b9c-4080-b9fb-949ef24ef3a7
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
@@ -2111,29 +2114,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -2148,10 +2151,10 @@ transaction_history:
                   value: "00.00"
             ttl: P1D
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               quantity:
-                count: 15
+                count: 10
               fulfillment_id: F1
     action: on_select
     saved_info: {}
@@ -2160,16 +2163,16 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: init
-        timestamp: 2026-03-23T13:31:18.571Z
+        timestamp: 2026-03-24T08:23:45.553Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: dc312f0d-2cb9-4917-8036-d0d70b558a2a
+        message_id: 6a4dc5c2-ddd0-4b30-b712-d71514ac585f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
@@ -2178,10 +2181,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               quantity:
-                count: 15
+                count: 10
               fulfillment_id: F1
           offers:
             - id: discp10
@@ -2198,8 +2201,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.571Z
-            updated_at: 2026-03-23T13:31:18.571Z
+            created_at: 2026-03-24T08:23:45.553Z
+            updated_at: 2026-03-24T08:23:45.553Z
           payment:
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -2223,29 +2226,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -2266,16 +2269,16 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_init
-        timestamp: 2026-03-23T13:31:18.586Z
+        timestamp: 2026-03-24T08:23:45.565Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: dc312f0d-2cb9-4917-8036-d0d70b558a2a
+        message_id: 6a4dc5c2-ddd0-4b30-b712-d71514ac585f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
@@ -2284,10 +2287,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               quantity:
-                count: 15
+                count: 10
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -2302,8 +2305,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.586Z
-            updated_at: 2026-03-23T13:31:18.586Z
+            created_at: 2026-03-24T08:23:45.565Z
+            updated_at: 2026-03-24T08:23:45.565Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -2325,29 +2328,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -2381,15 +2384,15 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: credit
               list:
                 - code: credit_limit
                   value: "25000.00"
                 - code: valid_till
-                  value: 2026-06-21T13:31:18.586Z
+                  value: 2026-06-22T08:23:45.565Z
     action: on_init
     saved_info: {}
   - action_id: confirm
@@ -2397,30 +2400,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: confirm
-        timestamp: 2026-03-23T13:31:18.601Z
+        timestamp: 2026-03-24T08:23:45.579Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 9f24ffc5-5a1d-41df-a761-a2125828c8d6
+        message_id: d58b33be-fe09-4443-9744-5ef1b0348d33
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: Created
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -2435,8 +2438,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.601Z
-            updated_at: 2026-03-23T13:31:18.601Z
+            created_at: 2026-03-24T08:23:45.579Z
+            updated_at: 2026-03-24T08:23:45.579Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -2460,29 +2463,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -2499,7 +2502,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -2522,9 +2525,9 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: bap_terms
               list:
                 - code: accept_bpp_terms
@@ -2533,8 +2536,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T13:31:18.601Z
-          updated_at: 2026-03-23T13:31:18.601Z
+          created_at: 2026-03-24T08:23:45.579Z
+          updated_at: 2026-03-24T08:23:45.579Z
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -2542,30 +2545,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_confirm
-        timestamp: 2026-03-23T13:31:18.618Z
+        timestamp: 2026-03-24T08:23:45.599Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 9f24ffc5-5a1d-41df-a761-a2125828c8d6
+        message_id: d58b33be-fe09-4443-9744-5ef1b0348d33
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: Accepted
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -2580,8 +2583,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.618Z
-            updated_at: 2026-03-23T13:31:18.618Z
+            created_at: 2026-03-24T08:23:45.599Z
+            updated_at: 2026-03-24T08:23:45.599Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -2623,29 +2626,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -2685,9 +2688,9 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: bap_terms
               list:
                 - code: accept_bpp_terms
@@ -2696,8 +2699,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T13:31:18.618Z
-          updated_at: 2026-03-23T13:31:18.618Z
+          created_at: 2026-03-24T08:23:45.599Z
+          updated_at: 2026-03-24T08:23:45.599Z
     action: on_confirm
     saved_info: {}
   - action_id: on_status_accepted
@@ -2705,30 +2708,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T13:31:18.636Z
+        timestamp: 2026-03-24T08:23:45.614Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 9d876919-7abd-46e1-b3c7-223b1413cb44
+        message_id: 89e9099c-4294-4c90-a5aa-b73c810ce936
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: Accepted
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -2743,8 +2746,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.636Z
-            updated_at: 2026-03-23T13:31:18.636Z
+            created_at: 2026-03-24T08:23:45.614Z
+            updated_at: 2026-03-24T08:23:45.614Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -2775,7 +2778,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T13:31:18.636Z
+                  timestamp: 2026-03-24T08:23:45.614Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -2796,7 +2799,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T13:31:18.636Z
+                  timestamp: 2026-03-24T08:23:45.614Z
               tags:
                 - code: routing
                   list:
@@ -2814,29 +2817,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -2853,7 +2856,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -2872,8 +2875,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T13:31:18.636Z
-          updated_at: 2026-03-23T13:31:18.636Z
+          created_at: 2026-03-24T08:23:45.614Z
+          updated_at: 2026-03-24T08:23:45.614Z
     action: on_status
     saved_info: {}
   - action_id: on_status_packed
@@ -2881,30 +2884,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T13:31:18.663Z
+        timestamp: 2026-03-24T08:23:45.628Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 04d7884f-ed56-4772-a1a4-6e941d316d00
+        message_id: 1eea324e-0f45-4182-aad4-61c7d4b52ca4
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -2919,8 +2922,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.663Z
-            updated_at: 2026-03-23T13:31:18.663Z
+            created_at: 2026-03-24T08:23:45.628Z
+            updated_at: 2026-03-24T08:23:45.628Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -2952,8 +2955,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:41:18.663Z
-                    end: 2026-03-23T13:51:18.663Z
+                    start: 2026-03-24T08:33:45.628Z
+                    end: 2026-03-24T08:43:45.628Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -2975,8 +2978,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:51:18.663Z
-                    end: 2026-03-23T14:41:18.663Z
+                    start: 2026-03-24T08:43:45.628Z
+                    end: 2026-03-24T09:33:45.628Z
               tags:
                 - code: routing
                   list:
@@ -2994,29 +2997,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3033,7 +3036,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3052,8 +3055,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T13:31:18.663Z
-          updated_at: 2026-03-23T13:31:18.663Z
+          created_at: 2026-03-24T08:23:45.628Z
+          updated_at: 2026-03-24T08:23:45.628Z
     action: on_status
     saved_info: {}
   - action_id: on_status_agent_assigned
@@ -3061,30 +3064,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T13:31:18.680Z
+        timestamp: 2026-03-24T08:23:45.643Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 74d01df3-9a16-4059-b8dc-e9a103f15f04
+        message_id: 67ae25cd-4b78-400a-b9cb-201c4a23e84b
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -3099,8 +3102,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.680Z
-            updated_at: 2026-03-23T13:31:18.680Z
+            created_at: 2026-03-24T08:23:45.643Z
+            updated_at: 2026-03-24T08:23:45.643Z
           offers:
             - id: discp10
           fulfillments:
@@ -3134,8 +3137,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:41:18.663Z
-                    end: 2026-03-23T13:51:18.663Z
+                    start: 2026-03-24T08:33:45.628Z
+                    end: 2026-03-24T08:43:45.628Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -3157,8 +3160,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:51:18.663Z
-                    end: 2026-03-23T14:41:18.663Z
+                    start: 2026-03-24T08:43:45.628Z
+                    end: 2026-03-24T09:33:45.628Z
               tags:
                 - code: routing
                   list:
@@ -3176,29 +3179,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3215,7 +3218,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3234,8 +3237,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T13:31:18.680Z
-          updated_at: 2026-03-23T13:31:18.680Z
+          created_at: 2026-03-24T08:23:45.643Z
+          updated_at: 2026-03-24T08:23:45.643Z
     action: on_status
     saved_info: {}
   - action_id: on_status_picked
@@ -3243,30 +3246,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T13:31:18.696Z
+        timestamp: 2026-03-24T08:23:45.663Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: c9936114-d9da-43db-91a7-8714028a05db
+        message_id: d788906f-5363-4db0-9061-a64a5c2c11fa
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -3281,8 +3284,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.696Z
-            updated_at: 2026-03-23T13:31:18.696Z
+            created_at: 2026-03-24T08:23:45.663Z
+            updated_at: 2026-03-24T08:23:45.663Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -3314,9 +3317,9 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:41:18.663Z
-                    end: 2026-03-23T13:51:18.663Z
-                  timestamp: 2026-03-23T13:31:18.696Z
+                    start: 2026-03-24T08:33:45.628Z
+                    end: 2026-03-24T08:43:45.628Z
+                  timestamp: 2026-03-24T08:23:45.663Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -3338,8 +3341,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:51:18.663Z
-                    end: 2026-03-23T14:41:18.663Z
+                    start: 2026-03-24T08:43:45.628Z
+                    end: 2026-03-24T09:33:45.628Z
               tags:
                 - code: routing
                   list:
@@ -3357,29 +3360,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3396,7 +3399,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3418,8 +3421,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T13:31:18.696Z
-          updated_at: 2026-03-23T13:31:18.696Z
+          created_at: 2026-03-24T08:23:45.663Z
+          updated_at: 2026-03-24T08:23:45.663Z
     action: on_status
     saved_info: {}
   - action_id: track
@@ -3427,19 +3430,19 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: track
-        timestamp: 2026-03-23T13:31:18.715Z
+        timestamp: 2026-03-24T08:23:45.676Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 6c335c40-776a-49fe-929a-ca314f18b493
+        message_id: 33fc7466-ae60-4500-8c39-434e079dd2dc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
-        order_id: "682414"
+        order_id: "817345"
     action: track
     saved_info: {}
   - action_id: on_track
@@ -3447,16 +3450,16 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_track
-        timestamp: 2026-03-23T13:31:18.730Z
+        timestamp: 2026-03-24T08:23:45.688Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: c9936114-d9da-43db-91a7-8714028a05db
+        message_id: d788906f-5363-4db0-9061-a64a5c2c11fa
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         tracking:
@@ -3464,15 +3467,15 @@ transaction_history:
           location:
             gps: 12.9740,77.6134
             time:
-              timestamp: 2026-03-23T13:31:18.730Z
-            updated_at: 2026-03-23T13:31:18.730Z
+              timestamp: 2026-03-24T08:23:45.688Z
+            updated_at: 2026-03-24T08:23:45.688Z
           url: https://snp.com/ondc/tracking/F1
           status: active
           tags:
             - code: order
               list:
                 - code: id
-                  value: O1
+                  value: "817345"
             - code: config
               list:
                 - code: attr
@@ -3504,30 +3507,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T13:31:18.749Z
+        timestamp: 2026-03-24T08:23:45.701Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 0f01d367-af7f-4f30-b618-d69775feb69d
+        message_id: f2b071dc-a429-41df-a4f6-49c379510c9d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -3542,8 +3545,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.749Z
-            updated_at: 2026-03-23T13:31:18.749Z
+            created_at: 2026-03-24T08:23:45.701Z
+            updated_at: 2026-03-24T08:23:45.701Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -3575,8 +3578,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:41:18.663Z
-                    end: 2026-03-23T13:51:18.663Z
+                    start: 2026-03-24T08:33:45.628Z
+                    end: 2026-03-24T08:43:45.628Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -3598,8 +3601,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:51:18.663Z
-                    end: 2026-03-23T14:41:18.663Z
+                    start: 2026-03-24T08:43:45.628Z
+                    end: 2026-03-24T09:33:45.628Z
               tags:
                 - code: routing
                   list:
@@ -3617,29 +3620,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3656,7 +3659,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3678,8 +3681,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T13:31:18.749Z
-          updated_at: 2026-03-23T13:31:18.749Z
+          created_at: 2026-03-24T08:23:45.701Z
+          updated_at: 2026-03-24T08:23:45.701Z
     action: on_status
     saved_info: {}
   - action_id: on_status_order_delivered
@@ -3687,30 +3690,30 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T13:31:18.769Z
+        timestamp: 2026-03-24T08:23:45.714Z
         transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
-        message_id: 3d286cde-8e11-4506-90bd-c905269fe37f
+        message_id: dc11db63-d381-4991-bafc-84cdb9be796d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
         bpp_id: sample-bpp-id
         bpp_uri: https://bpp.example.com
         country: IND
-        city: std:080
+        city: std:040
         core_version: 1.2.5
       message:
         order:
-          id: "682414"
+          id: "817345"
           state: Completed
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 15
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -3725,8 +3728,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T13:31:18.769Z
-            updated_at: 2026-03-23T13:31:18.769Z
+            created_at: 2026-03-24T08:23:45.714Z
+            updated_at: 2026-03-24T08:23:45.714Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -3758,8 +3761,8 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:41:18.663Z
-                    end: 2026-03-23T13:51:18.663Z
+                    start: 2026-03-24T08:33:45.628Z
+                    end: 2026-03-24T08:43:45.628Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -3781,9 +3784,9 @@ transaction_history:
                     name: my house or door or floor
                 time:
                   range:
-                    start: 2026-03-23T13:51:18.663Z
-                    end: 2026-03-23T14:41:18.663Z
-                  timestamp: 2026-03-23T13:31:18.769Z
+                    start: 2026-03-24T08:43:45.628Z
+                    end: 2026-03-24T09:33:45.628Z
+                  timestamp: 2026-03-24T08:23:45.714Z
               tags:
                 - code: routing
                   list:
@@ -3801,29 +3804,29 @@ transaction_history:
                 id: CUST-2024-0015421
                 organization:
                   city:
-                    code: std:080
+                    code: std:040
           quote:
             price:
               currency: INR
-              value: "720.00"
+              value: "520.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 15
-                title: Fortune Chakki Atta 1kg
+                  count: 10
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "720.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3840,7 +3843,7 @@ transaction_history:
           payment:
             params:
               currency: INR
-              amount: "720.00"
+              amount: "520.00"
             status: PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3862,8 +3865,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T13:31:18.769Z
-          updated_at: 2026-03-23T13:31:18.769Z
+          created_at: 2026-03-24T08:23:45.714Z
+          updated_at: 2026-03-24T08:23:45.714Z
     action: on_status
     saved_info: {}
 validationLib: ""
