@@ -90,6 +90,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: unsolicited_on_status_complete_BUS_201
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP   
   - id: IntraCity_Search_Pagination_FlowCode_Based
     tags: ["WORKBENCH", "OPTIONAL"]
     description: IntraCity - Search Pagination Flow(Code Based)
