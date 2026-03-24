@@ -26,8 +26,8 @@ supportedActions:
       "on_update",
       "issue"
     ]
-  cancel: ["on_cancel", "status"]
-  on_cancel: ["cancel", "status", "on_status"]
+  cancel: ["on_cancel", "cancel", "status"]
+  on_cancel: ["cancel", "status", "on_status", "update"]
   issue: ["on_issue", "issue", "on_update", "on_status", "on_issue_status"]
   on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
   on_issue_status: ["on_issue", "issue"]

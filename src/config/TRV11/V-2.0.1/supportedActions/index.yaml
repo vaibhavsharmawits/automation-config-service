@@ -9,7 +9,7 @@ supportedActions:
   confirm: ["on_confirm", "status"]
   on_confirm: ["confirm", "status", "cancel", "on_status", "update", "issue","on_cancel"]
   status: ["on_status"]
-  on_status: ["status", "cancel", "issue"]
+  on_status: ["status", "cancel", "issue", "on_status"]
   cancel: ["on_cancel", "status", "on_update", "on_status"]
   on_cancel: ["cancel", "status", "on_update", "on_status"]
   update: ["on_update"]

@@ -824,7 +824,7 @@ steps:
     description: please add relevant description
     mock:
       generate: >-
-        YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoCiAgZGVmYXVsdFBheWxvYWQsCiAgc2Vzc2lvbkRhdGEKKSB7CiAgY29uc3QgY2FuY2VsSXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcy5tYXAoKGl0ZW0pID0+IHsKICAgIGNvbnN0IG9iID0gewogICAgICBpZDogaXRlbS5pZCwKICAgICAgcXVhbnRpdHk6IHsKICAgICAgICBjb3VudDogaXRlbS5xdWFudGl0eS5jb3VudCwKICAgICAgfSwKICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJjYW5jZWxfaWRfODE4OSIsCiAgICB9OwogICAgaXRlbS5xdWFudGl0eS5jb3VudCA9IDA7CiAgICByZXR1cm4gb2I7CiAgfSk7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcyA9IFsuLi5zZXNzaW9uRGF0YS5pdGVtcywgLi4uY2FuY2VsSXRlbXNdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmJpbGxpbmcgPSBzZXNzaW9uRGF0YS5iaWxsaW5nWzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0gY3JlYXRlQ2FuY2VsRnVsZmlsbG1lbnRzKAogICAgc2Vzc2lvbkRhdGEucXVvdGUsCiAgICBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMsCiAgICBzZXNzaW9uRGF0YQogICk7CgogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucGF5bWVudCA9IHNlc3Npb25EYXRhLnBheW1lbnRbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9IHNlc3Npb25EYXRhLm9yZGVyX2NyZWF0ZWRfYXRbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY2FuY2VsbGF0aW9uID0gewogICAgY2FuY2VsbGVkX2J5OiBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmJhcF9pZCwKICAgIHJlYXNvbjogewogICAgICBpZDogc2Vzc2lvbkRhdGEuY2FuY2VsbGF0aW9uX3JlYXNvbl9pZFswXSwKICAgIH0sCiAgfTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlID0gc2Vzc2lvbkRhdGEucXVvdGVbMF07CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gc2Vzc2lvbkRhdGEubWVzc2FnZV9pZFswXTsKICAKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0KCmZ1bmN0aW9uIGNyZWF0ZUNhbmNlbEZ1bGZpbGxtZW50cygKICBxdW90ZSwKICBmdWxmaWxsbWVudHMsCiAgc2Vzc2lvbkRhdGEKKSB7CiAgZnVsZmlsbG1lbnRzID0gZnVsZmlsbG1lbnRzLm1hcCgoZikgPT4gewogICAgY29uc3QgdGFncyA9IGYudGFncyB8fCBbXTsKICAgIHJldHVybiB7CiAgICAgIC4uLmYsCiAgICAgIHN0YXRlOiB7CiAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgY29kZTogIkNhbmNlbGxlZCIsCiAgICAgICAgfSwKICAgICAgfSwKICAgICAgdGFnczogWwogICAgICAgIC4uLnRhZ3MsCiAgICAgICAgewogICAgICAgICAgY29kZTogImNhbmNlbF9yZXF1ZXN0IiwKICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJyZWFzb25faWQiLAogICAgICAgICAgICAgIHZhbHVlOiBzZXNzaW9uRGF0YS5jYW5jZWxsYXRpb25fcmVhc29uX2lkWzBdLAogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogImluaXRpYXRlZF9ieSIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhLmJhcF9pZCB8fCAiYmFwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICBjb2RlOiAicHJlY2FuY2VsX3N0YXRlIiwKICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJmdWxmaWxsbWVudF9zdGF0ZSIsCiAgICAgICAgICAgICAgdmFsdWU6ICJQZW5kaW5nIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgIGNvZGU6ICJ1cGRhdGVkX2F0IiwKICAgICAgICAgICAgICB2YWx1ZTogc2Vzc2lvbkRhdGEubGFzdF91cGRhdGVkX2F0IHx8IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgICAgICAgICAgfSwKICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgICAgXSwKICAgIH07CiAgfSk7CiAgZnVsZmlsbG1lbnRzLnB1c2goewogICAgaWQ6ICJjYW5jZWxfaWRfODE4OSIsCiAgICB0eXBlOiAiQ2FuY2VsIiwKICAgIHN0YXRlOiB7CiAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICBjb2RlOiAiQ2FuY2VsbGVkIiwKICAgICAgfSwKICAgIH0sCiAgICB0YWdzOiBjcmVhdGVRdW90ZVRyYWlsKHF1b3RlWzBdKSwKICB9KTsKICByZXR1cm4gZnVsZmlsbG1lbnRzOwp9CgpmdW5jdGlvbiBjcmVhdGVRdW90ZVRyYWlsKHF1b3RlKSB7CiAgY29uc3QgdGFncyA9IFtdOwogIGNvbnN0IGJyZWFrdXAgPSBxdW90ZS5icmVha3VwIHx8IFtdOwogIGZvciAoY29uc3QgaXRlbSBvZiBicmVha3VwKSB7CiAgICBjb25zdCBwcmljZVN0ciA9IGl0ZW0ucHJpY2U/LnZhbHVlIHx8ICIwLjAwIjsKICAgIGNvbnN0IHByaWNlVmFsdWUgPSBwYXJzZUZsb2F0KHByaWNlU3RyKTsKICAgIGlmIChpdGVtWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdKSB7CiAgICAgIGl0ZW1bIkBvbmRjL29yZy9pdGVtX3F1YW50aXR5Il0uY291bnQgPSAwOwogICAgfQogICAgaWYgKHByaWNlVmFsdWUgIT09IDApIHsKICAgICAgY29uc3QgdHJhaWwgPSBKU09OLnBhcnNlKEpTT04uc3RyaW5naWZ5KHNhbXBsZVF1b3RlVHJhaWwpKTsKICAgICAgdHJhaWwubGlzdFswXS52YWx1ZSA9IGl0ZW1bIkBvbmRjL29yZy90aXRsZV90eXBlIl0gfHwgIm1pc2MiOwogICAgICB0cmFpbC5saXN0WzFdLnZhbHVlID0gaXRlbVsiQG9uZGMvb3JnL2l0ZW1faWQiXSB8fCAidW5rbm93biI7CiAgICAgIHRyYWlsLmxpc3RbMl0udmFsdWUgPSBpdGVtLnByaWNlPy5jdXJyZW5jeSB8fCAiSU5SIjsKICAgICAgdHJhaWwubGlzdFszXS52YWx1ZSA9ICgtMSAqIHByaWNlVmFsdWUpLnRvRml4ZWQoMik7CiAgICAgIHRhZ3MucHVzaCh0cmFpbCk7CiAgICAgIGlmIChpdGVtLnByaWNlKSB7CiAgICAgICAgaXRlbS5wcmljZS52YWx1ZSA9ICIwLjAwIjsKICAgICAgfQogICAgfQogIH0KICBpZiAocXVvdGUucHJpY2UgJiYgcXVvdGUucHJpY2UudmFsdWUpIHsKICAgIHF1b3RlLnByaWNlLnZhbHVlID0gIjAuMDAiOwogIH0KCiAgcmV0dXJuIHRhZ3M7Cn0KCmNvbnN0IHNhbXBsZVF1b3RlVHJhaWwgPSB7CiAgY29kZTogInF1b3RlX3RyYWlsIiwKICBsaXN0OiBbCiAgICB7CiAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgdmFsdWU6ICJtaXNjIiwKICAgIH0sCiAgICB7CiAgICAgIGNvZGU6ICJpZCIsCiAgICAgIHZhbHVlOiAiYzRiMmRkNzQtOWNjZC00ZWMxLWI4ZjgtNThkMzZkZDhjZTMzIiwKICAgIH0sCiAgICB7CiAgICAgIGNvZGU6ICJjdXJyZW5jeSIsCiAgICAgIHZhbHVlOiAiSU5SIiwKICAgIH0sCiAgICB7CiAgICAgIGNvZGU6ICJ2YWx1ZSIsCiAgICAgIHZhbHVlOiAiLTEwMC4wMCIsCiAgICB9LAogIF0sCn07Cg==
+        YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoCiAgZGVmYXVsdFBheWxvYWQsCiAgc2Vzc2lvbkRhdGEKKSB7CiAgY29uc3QgY2FuY2VsSXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcy5tYXAoKGl0ZW0pID0+IHsKICAgIGNvbnN0IG9iID0gewogICAgICBpZDogaXRlbS5pZCwKICAgICAgcXVhbnRpdHk6IHsKICAgICAgICBjb3VudDogaXRlbS5xdWFudGl0eS5jb3VudCwKICAgICAgfSwKICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJjYW5jZWxfaWRfODE4OSIsCiAgICB9OwogICAgaXRlbS5xdWFudGl0eS5jb3VudCA9IDA7CiAgICByZXR1cm4gb2I7CiAgfSk7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcyA9IFsuLi5zZXNzaW9uRGF0YS5pdGVtcywgLi4uY2FuY2VsSXRlbXNdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmJpbGxpbmcgPSBzZXNzaW9uRGF0YS5iaWxsaW5nWzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0gY3JlYXRlQ2FuY2VsRnVsZmlsbG1lbnRzKAogICAgc2Vzc2lvbkRhdGEucXVvdGUsCiAgICBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMsCiAgICBzZXNzaW9uRGF0YQogICk7CgogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucGF5bWVudCA9IHNlc3Npb25EYXRhLnBheW1lbnRbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9IHNlc3Npb25EYXRhLm9yZGVyX2NyZWF0ZWRfYXRbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY2FuY2VsbGF0aW9uID0gewogICAgY2FuY2VsbGVkX2J5OiBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmJhcF9pZCwKICAgIHJlYXNvbjogewogICAgICBpZDogc2Vzc2lvbkRhdGEuY2FuY2VsbGF0aW9uX3JlYXNvbl9pZFswXSwKICAgIH0sCiAgfTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlID0gc2Vzc2lvbkRhdGEucXVvdGVbMF07CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gc2Vzc2lvbkRhdGEubWVzc2FnZV9pZFswXTsKICAKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0KCmNvbnN0IGlzb0R1clRvU2VjID0gKGR1cmF0aW9uKSA9PiB7CiAgICBjb25zdCBkdXJSRSA9CiAgICAgICAgL1AoKFxkKylZKT8oKFxkKylNKT8oKFxkKylXKT8oKFxkKylEKT9UPygoXGQrKUgpPygoXGQrKU0pPygoXGQrKVMpPy87CgogICAgY29uc3Qgc3BsaXRUaW1lID0gZHVyUkUuZXhlYyhkdXJhdGlvbik7CiAgICBpZiAoIXNwbGl0VGltZSkgewogICAgICAgIHJldHVybiAwOwogICAgfQoKICAgIGNvbnN0IHllYXJzID0gTnVtYmVyKHNwbGl0VGltZT8uWzJdKSB8fCAwOwogICAgY29uc3QgbW9udGhzID0gTnVtYmVyKHNwbGl0VGltZT8uWzRdKSB8fCAwOwogICAgY29uc3Qgd2Vla3MgPSBOdW1iZXIoc3BsaXRUaW1lPy5bNl0pIHx8IDA7CiAgICBjb25zdCBkYXlzID0gTnVtYmVyKHNwbGl0VGltZT8uWzhdKSB8fCAwOwogICAgY29uc3QgaG91cnMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bMTBdKSB8fCAwOwogICAgY29uc3QgbWludXRlcyA9IE51bWJlcihzcGxpdFRpbWU/LlsxMl0pIHx8IDA7CiAgICBjb25zdCBzZWNvbmRzID0gTnVtYmVyKHNwbGl0VGltZT8uWzE0XSkgfHwgMDsKCiAgICBjb25zdCByZXN1bHQgPQogICAgICAgIHllYXJzICogMzE1MzYwMDAgKwogICAgICAgIG1vbnRocyAqIDI2MjgyODggKwogICAgICAgIHdlZWtzICogNjA0ODAwICsKICAgICAgICBkYXlzICogODY0MDAgKwogICAgICAgIGhvdXJzICogMzYwMCArCiAgICAgICAgbWludXRlcyAqIDYwICsKICAgICAgICBzZWNvbmRzOwoKICAgIHJldHVybiByZXN1bHQ7Cn07CgpmdW5jdGlvbiBjcmVhdGVDYW5jZWxGdWxmaWxsbWVudHMoCiAgcXVvdGUsCiAgZnVsZmlsbG1lbnRzLAogIHNlc3Npb25EYXRhCikgewogIGZ1bGZpbGxtZW50cyA9IGZ1bGZpbGxtZW50cy5tYXAoKGYpID0+IHsKICAgICAgY29uc3QgdGFncyA9IGYudGFncyB8fCBbXTsKICAgICAgY29uc3QgdGltZSA9IG5ldyBEYXRlKG5ldyBEYXRlKCkuZ2V0VGltZSgpICsgMTAgKiAxMDAwICogNjApOwogICAgICBjb25zdCBzdGFydF9lbmQgPSBuZXcgRGF0ZSh0aW1lLmdldFRpbWUoKSArIDEwICogMTAwMCAqIDYwKS50b0lTT1N0cmluZygpOwogICAgcmV0dXJuIHsKICAgICAgLi4uZiwKICAgICAgc3RhdGU6IHsKICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICBjb2RlOiAiQ2FuY2VsbGVkIiwKICAgICAgICB9LAogICAgICAgIH0sCiAgICAgICAgc3RhcnQ6IHsKICAgICAgICAgICAgLi4uZi5zdGFydCwKICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgICAgICBzdGFydDogdGltZS50b0lTT1N0cmluZygpLAogICAgICAgICAgICAgICAgICAgIGVuZDogc3RhcnRfZW5kLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICB9LAogICAgICAgIGVuZDogewogICAgICAgICAgICAuLi5mLmVuZCwKICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgICAgICBzdGFydDogc3RhcnRfZW5kLAogICAgICAgICAgICAgICAgICAgIGVuZDogbmV3IERhdGUoCiAgICAgICAgICAgICAgICAgICAgICAgIHRpbWUuZ2V0VGltZSgpICsKICAgICAgICAgICAgICAgICAgICAgICAgMTAwMCAqIGlzb0R1clRvU2VjKGZbIkBvbmRjL29yZy9UQVQiXSB8fCAiUFQwSCIpCiAgICAgICAgICAgICAgICAgICAgKS50b0lTT1N0cmluZygpLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICB9LAogICAgICB0YWdzOiBbCiAgICAgICAgLi4udGFncywKICAgICAgICB7CiAgICAgICAgICBjb2RlOiAiY2FuY2VsX3JlcXVlc3QiLAogICAgICAgICAgbGlzdDogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInJlYXNvbl9pZCIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhLmNhbmNlbGxhdGlvbl9yZWFzb25faWRbMF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAiaW5pdGlhdGVkX2J5IiwKICAgICAgICAgICAgICB2YWx1ZTogc2Vzc2lvbkRhdGEuYmFwSWRbMF0gfHwgImJhcCIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgY29kZTogInByZWNhbmNlbF9zdGF0ZSIsCiAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAiZnVsZmlsbG1lbnRfc3RhdGUiLAogICAgICAgICAgICAgIHZhbHVlOiAiUGVuZGluZyIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAidXBkYXRlZF9hdCIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhLmxhc3RfdXBkYXRlZF9hdCB8fCBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgIH0sCiAgICAgIF0sCiAgICB9OwogIH0pOwogIGZ1bGZpbGxtZW50cy5wdXNoKHsKICAgIGlkOiAiY2FuY2VsX2lkXzgxODkiLAogICAgdHlwZTogIkNhbmNlbCIsCiAgICBzdGF0ZTogewogICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgY29kZTogIkNhbmNlbGxlZCIsCiAgICAgIH0sCiAgICB9LAogICAgdGFnczogY3JlYXRlUXVvdGVUcmFpbChxdW90ZVswXSksCiAgfSk7CiAgcmV0dXJuIGZ1bGZpbGxtZW50czsKfQoKZnVuY3Rpb24gY3JlYXRlUXVvdGVUcmFpbChxdW90ZSkgewogIGNvbnN0IHRhZ3MgPSBbXTsKICBjb25zdCBicmVha3VwID0gcXVvdGUuYnJlYWt1cCB8fCBbXTsKICBmb3IgKGNvbnN0IGl0ZW0gb2YgYnJlYWt1cCkgewogICAgY29uc3QgcHJpY2VTdHIgPSBpdGVtLnByaWNlPy52YWx1ZSB8fCAiMC4wMCI7CiAgICBjb25zdCBwcmljZVZhbHVlID0gcGFyc2VGbG9hdChwcmljZVN0cik7CiAgICBpZiAoaXRlbVsiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiXSkgewogICAgICBpdGVtWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdLmNvdW50ID0gMDsKICAgIH0KICAgIGlmIChwcmljZVZhbHVlICE9PSAwKSB7CiAgICAgIGNvbnN0IHRyYWlsID0gSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeShzYW1wbGVRdW90ZVRyYWlsKSk7CiAgICAgIHRyYWlsLmxpc3RbMF0udmFsdWUgPSBpdGVtWyJAb25kYy9vcmcvdGl0bGVfdHlwZSJdIHx8ICJtaXNjIjsKICAgICAgdHJhaWwubGlzdFsxXS52YWx1ZSA9IGl0ZW1bIkBvbmRjL29yZy9pdGVtX2lkIl0gfHwgInVua25vd24iOwogICAgICB0cmFpbC5saXN0WzJdLnZhbHVlID0gaXRlbS5wcmljZT8uY3VycmVuY3kgfHwgIklOUiI7CiAgICAgIHRyYWlsLmxpc3RbM10udmFsdWUgPSAoLTEgKiBwcmljZVZhbHVlKS50b0ZpeGVkKDIpOwogICAgICB0YWdzLnB1c2godHJhaWwpOwogICAgICBpZiAoaXRlbS5wcmljZSkgewogICAgICAgIGl0ZW0ucHJpY2UudmFsdWUgPSAiMC4wMCI7CiAgICAgIH0KICAgIH0KICB9CiAgaWYgKHF1b3RlLnByaWNlICYmIHF1b3RlLnByaWNlLnZhbHVlKSB7CiAgICBxdW90ZS5wcmljZS52YWx1ZSA9ICIwLjAwIjsKICB9CgogIHJldHVybiB0YWdzOwp9Cgpjb25zdCBzYW1wbGVRdW90ZVRyYWlsID0gewogIGNvZGU6ICJxdW90ZV90cmFpbCIsCiAgbGlzdDogWwogICAgewogICAgICBjb2RlOiAidHlwZSIsCiAgICAgIHZhbHVlOiAibWlzYyIsCiAgICB9LAogICAgewogICAgICBjb2RlOiAiaWQiLAogICAgICB2YWx1ZTogImM0YjJkZDc0LTljY2QtNGVjMS1iOGY4LTU4ZDM2ZGQ4Y2UzMyIsCiAgICB9LAogICAgewogICAgICBjb2RlOiAiY3VycmVuY3kiLAogICAgICB2YWx1ZTogIklOUiIsCiAgICB9LAogICAgewogICAgICBjb2RlOiAidmFsdWUiLAogICAgICB2YWx1ZTogIi0xMDAuMDAiLAogICAgfSwKICBdLAp9Owo=
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -1039,9 +1039,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: select
-        timestamp: '2026-03-17T08:24:44.154Z'
+        timestamp: '2026-03-23T13:45:54.604Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 09bd497f-3b0c-461a-a56a-2c91f3b606fb
+        message_id: 47aabf43-713b-4044-a36b-b0c012b60da0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1061,11 +1061,7 @@ transaction_history:
               quantity:
                 count: 1
               location_id: L1
-            - id: I1
-              quantity:
-                count: 1
-              location_id: L1
-            - id: I1
+            - id: I2
               quantity:
                 count: 1
               location_id: L1
@@ -1082,9 +1078,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: on_select
-        timestamp: '2026-03-17T08:24:44.173Z'
+        timestamp: '2026-03-23T13:45:54.628Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 09bd497f-3b0c-461a-a56a-2c91f3b606fb
+        message_id: 47aabf43-713b-4044-a36b-b0c012b60da0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1128,14 +1124,14 @@ transaction_history:
                   price:
                     currency: INR
                     value: '2260'
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '2260.00'
+                  value: '2360.00'
                 item:
                   quantity:
                     available:
@@ -1144,24 +1140,7 @@ transaction_history:
                       count: '99'
                   price:
                     currency: INR
-                    value: '2260'
-              - '@ondc/org/item_id': I1
-                '@ondc/org/item_quantity':
-                  count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
-                '@ondc/org/title_type': item
-                price:
-                  currency: INR
-                  value: '2260.00'
-                item:
-                  quantity:
-                    available:
-                      count: '99'
-                    maximum:
-                      count: '99'
-                  price:
-                    currency: INR
-                    value: '2260'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1176,14 +1155,12 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '6780.00'
+              value: '4620.00'
             ttl: P1D
           items:
             - id: I1
               fulfillment_id: F1
-            - id: I1
-              fulfillment_id: F1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
     action: on_select
     saved_info: {}
@@ -1192,9 +1169,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: init
-        timestamp: '2026-03-17T08:24:44.188Z'
+        timestamp: '2026-03-23T13:45:54.654Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: a1b9123c-3618-43f4-af5d-567fad8bd269
+        message_id: 1a472bb7-a24e-41b4-b646-27edef959bfb
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1215,12 +1192,7 @@ transaction_history:
               quantity:
                 count: 1
               location_id: L1
-            - id: I1
-              fulfillment_id: F1
-              quantity:
-                count: 1
-              location_id: L1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -1237,8 +1209,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-03-17T08:24:39.199Z'
-            updated_at: '2026-03-17T08:24:39.199Z'
+            created_at: '2026-03-23T13:45:49.666Z'
+            updated_at: '2026-03-23T13:45:49.666Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1264,9 +1236,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: on_init
-        timestamp: '2026-03-17T08:24:44.201Z'
+        timestamp: '2026-03-23T13:45:54.667Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: a1b9123c-3618-43f4-af5d-567fad8bd269
+        message_id: 1a472bb7-a24e-41b4-b646-27edef959bfb
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1287,12 +1259,7 @@ transaction_history:
               quantity:
                 count: 1
               location_id: L1
-            - id: I1
-              fulfillment_id: F1
-              quantity:
-                count: 1
-              location_id: L1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -1309,8 +1276,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-03-17T08:24:39.199Z'
-            updated_at: '2026-03-17T08:24:39.199Z'
+            created_at: '2026-03-23T13:45:49.666Z'
+            updated_at: '2026-03-23T13:45:49.666Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1343,30 +1310,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '2260'
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '2260.00'
+                  value: '2360.00'
                 item:
                   price:
                     currency: INR
-                    value: '2260'
-              - '@ondc/org/item_id': I1
-                '@ondc/org/item_quantity':
-                  count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
-                '@ondc/org/title_type': item
-                price:
-                  currency: INR
-                  value: '2260.00'
-                item:
-                  price:
-                    currency: INR
-                    value: '2260'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1381,7 +1336,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '6780.00'
+              value: '4620.00'
             ttl: P1D
           payment:
             '@ondc/org/buyer_app_finder_fee_type': percent
@@ -1411,9 +1366,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: confirm
-        timestamp: '2026-03-17T08:24:44.214Z'
+        timestamp: '2026-03-23T13:45:54.681Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 9678adcc-ac53-4060-b214-06a4c62f791b
+        message_id: 3b9739e4-25f5-4f79-8fd0-82c000622633
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1424,7 +1379,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '966891'
+          id: '860509'
           state: Created
           billing:
             address:
@@ -1438,20 +1393,15 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-03-17T08:24:39.199Z'
-            updated_at: '2026-03-17T08:24:39.199Z'
+            created_at: '2026-03-23T13:45:49.666Z'
+            updated_at: '2026-03-23T13:45:49.666Z'
           items:
             - id: I1
               fulfillment_id: F1
               quantity:
                 count: 1
               location_id: L1
-            - id: I1
-              fulfillment_id: F1
-              quantity:
-                count: 1
-              location_id: L1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -1483,7 +1433,7 @@ transaction_history:
               '@ondc/org/TAT': P3D
           payment:
             params:
-              amount: '6780.00'
+              amount: '4620.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -1516,30 +1466,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '2260'
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '2260.00'
+                  value: '2360.00'
                 item:
                   price:
                     currency: INR
-                    value: '2260'
-              - '@ondc/org/item_id': I1
-                '@ondc/org/item_quantity':
-                  count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
-                '@ondc/org/title_type': item
-                price:
-                  currency: INR
-                  value: '2260.00'
-                item:
-                  price:
-                    currency: INR
-                    value: '2260'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1554,7 +1492,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '6780.00'
+              value: '4620.00'
             ttl: P1D
           tags:
             - code: bpp_terms
@@ -1567,8 +1505,8 @@ transaction_history:
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: 37BABCA6712B1Z6
-          created_at: '2026-03-17T08:24:44.225Z'
-          updated_at: '2026-03-17T08:24:44.225Z'
+          created_at: '2026-03-23T13:45:54.691Z'
+          updated_at: '2026-03-23T13:45:54.691Z'
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -1576,9 +1514,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: on_confirm
-        timestamp: '2026-03-17T08:24:44.227Z'
+        timestamp: '2026-03-23T13:45:54.693Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 9678adcc-ac53-4060-b214-06a4c62f791b
+        message_id: 3b9739e4-25f5-4f79-8fd0-82c000622633
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1589,7 +1527,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '966891'
+          id: '860509'
           state: Created
           provider:
             id: P1
@@ -1601,12 +1539,7 @@ transaction_history:
               quantity:
                 count: 1
               location_id: L1
-            - id: I1
-              fulfillment_id: F1
-              quantity:
-                count: 1
-              location_id: L1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -1623,8 +1556,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-03-17T08:24:39.199Z'
-            updated_at: '2026-03-17T08:24:39.199Z'
+            created_at: '2026-03-23T13:45:49.666Z'
+            updated_at: '2026-03-23T13:45:49.666Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1679,30 +1612,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '2260'
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '2260.00'
+                  value: '2360.00'
                 item:
                   price:
                     currency: INR
-                    value: '2260'
-              - '@ondc/org/item_id': I1
-                '@ondc/org/item_quantity':
-                  count: 1
-                title: Butterfly Beautiful 12 Gold Necklace
-                '@ondc/org/title_type': item
-                price:
-                  currency: INR
-                  value: '2260.00'
-                item:
-                  price:
-                    currency: INR
-                    value: '2260'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1717,11 +1638,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '6780.00'
+              value: '4620.00'
             ttl: P1D
           payment:
             params:
-              amount: '6780.00'
+              amount: '4620.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -1758,8 +1679,8 @@ transaction_history:
                     https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: 37BABCA6712B1Z6
-          created_at: '2026-03-17T08:24:44.225Z'
-          updated_at: '2026-03-17T08:24:44.236Z'
+          created_at: '2026-03-23T13:45:54.691Z'
+          updated_at: '2026-03-23T13:45:54.704Z'
     action: on_confirm
     saved_info: {}
   - action_id: cancel
@@ -1767,9 +1688,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: cancel
-        timestamp: '2026-03-17T08:24:45.217Z'
+        timestamp: '2026-03-23T13:45:55.681Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 337c09f7-3c6b-4767-aa2a-c6ddc29dead2
+        message_id: dcebe66c-9cd2-4eba-ac34-e838ae088c10
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1779,7 +1700,7 @@ transaction_history:
         city: '*'
         core_version: 1.2.0
       message:
-        order_id: '966891'
+        order_id: '860509'
         cancellation_reason_id: '053'
     action: cancel
     saved_info: {}
@@ -1788,9 +1709,9 @@ transaction_history:
       context:
         domain: ONDC:RET18
         action: on_cancel
-        timestamp: '2026-03-17T08:24:45.233Z'
+        timestamp: '2026-03-23T13:45:55.696Z'
         transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
-        message_id: 337c09f7-3c6b-4767-aa2a-c6ddc29dead2
+        message_id: dcebe66c-9cd2-4eba-ac34-e838ae088c10
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1808,12 +1729,7 @@ transaction_history:
               quantity:
                 count: 0
               location_id: L1
-            - id: I1
-              fulfillment_id: F1
-              quantity:
-                count: 0
-              location_id: L1
-            - id: I1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 0
@@ -1822,11 +1738,7 @@ transaction_history:
               quantity:
                 count: 1
               fulfillment_id: cancel_id_8189
-            - id: I1
-              quantity:
-                count: 1
-              fulfillment_id: cancel_id_8189
-            - id: I1
+            - id: I2
               quantity:
                 count: 1
               fulfillment_id: cancel_id_8189
@@ -1846,8 +1758,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC Buyer
             email: nobody@nomail.com
-            created_at: '2026-03-17T08:24:39.199Z'
-            updated_at: '2026-03-17T08:24:39.199Z'
+            created_at: '2026-03-23T13:45:49.666Z'
+            updated_at: '2026-03-23T13:45:49.666Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -1872,6 +1784,10 @@ transaction_history:
                 contact:
                   phone: '9594663710'
                   email: nobody@nomail.com
+                time:
+                  range:
+                    start: '2026-03-23T13:55:55.718Z'
+                    end: '2026-03-23T14:05:55.718Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -1888,19 +1804,23 @@ transaction_history:
                     area_code: '400053'
                     locality: mock-locality
                     name: mock-house-name
+                time:
+                  range:
+                    start: '2026-03-23T14:05:55.718Z'
+                    end: '2026-03-26T13:55:55.718Z'
               tags:
                 - code: cancel_request
                   list:
                     - code: reason_id
                       value: '053'
                     - code: initiated_by
-                      value: bap
+                      value: sample-bap-id
                 - code: precancel_state
                   list:
                     - code: fulfillment_state
                       value: Pending
                     - code: updated_at
-                      value: '2026-03-17T08:24:45.253Z'
+                      value: '2026-03-23T13:45:55.718Z'
             - id: cancel_id_8189
               type: Cancel
               state:
@@ -1922,21 +1842,11 @@ transaction_history:
                     - code: type
                       value: item
                     - code: id
-                      value: I1
+                      value: I2
                     - code: currency
                       value: INR
                     - code: value
-                      value: '-2260.00'
-                - code: quote_trail
-                  list:
-                    - code: type
-                      value: item
-                    - code: id
-                      value: I1
-                    - code: currency
-                      value: INR
-                    - code: value
-                      value: '-2260.00'
+                      value: '-2360.00'
           quote:
             breakup:
               - '@ondc/org/item_id': I1
@@ -1951,10 +1861,10 @@ transaction_history:
                   price:
                     currency: INR
                     value: '2260'
-              - '@ondc/org/item_id': I1
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 0
-                title: Butterfly Beautiful 12 Gold Necklace
+                title: Butterfly Necklace 2nd
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
@@ -1962,19 +1872,7 @@ transaction_history:
                 item:
                   price:
                     currency: INR
-                    value: '2260'
-              - '@ondc/org/item_id': I1
-                '@ondc/org/item_quantity':
-                  count: 0
-                title: Butterfly Beautiful 12 Gold Necklace
-                '@ondc/org/title_type': item
-                price:
-                  currency: INR
-                  value: '0.00'
-                item:
-                  price:
-                    currency: INR
-                    value: '2260'
+                    value: '2360'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -1993,7 +1891,7 @@ transaction_history:
             ttl: P1D
           payment:
             params:
-              amount: '6780.00'
+              amount: '4620.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -2012,9 +1910,9 @@ transaction_history:
                 settlement_ifsc_code: XXXX
                 bank_name: XXXX
                 branch_name: XXXX
-          id: '966891'
-          created_at: '2026-03-17T08:24:44.225Z'
-          updated_at: '2026-03-17T08:24:45.253Z'
+          id: '860509'
+          created_at: '2026-03-23T13:45:54.691Z'
+          updated_at: '2026-03-23T13:45:55.718Z'
           cancellation:
             cancelled_by: sample-bap-id
             reason:
