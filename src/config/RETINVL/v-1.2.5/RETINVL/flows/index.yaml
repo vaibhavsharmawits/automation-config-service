@@ -17,3 +17,9 @@ flows:
     description: Order Flow Baseline for Inventory Less (find best price)
     config:
       $ref: "src/config/RETINVL/v-1.2.5/RETINVL/flows/ORDER_FLOW_BASELINE_ILBP.yaml"
+  - type: playground
+    id: BUYER_SIDE_ORDER_CANCELLATION
+    tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
+    description: Buyer Side Order Cancellation Flow
+    config:
+      $ref: "src/config/RETINVL/v-1.2.5/RETINVL/flows/BUYER_SIDE_ORDER_CANCELLATION.yaml"
