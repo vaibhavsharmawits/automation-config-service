@@ -454,9 +454,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: credit
                 list:
                   - code: credit_limit
@@ -619,9 +619,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: bap_terms
                 list:
                   - code: accept_bpp_terms
@@ -806,9 +806,9 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
                   - code: accept_bap_terms
                     value: Y
               - code: bap_terms
@@ -2979,9 +2979,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: select
-        timestamp: 2026-03-23T12:26:39.263Z
+        timestamp: 2026-03-24T08:37:30.143Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 7c002987-6039-41f7-8b1d-b411d799299c
+        message_id: 2ffe5b6e-74c6-4e1c-9e12-52b05f5ba84d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2997,10 +2997,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           fulfillments:
             - end:
@@ -3020,9 +3020,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_select
-        timestamp: 2026-03-23T12:26:39.297Z
+        timestamp: 2026-03-24T08:37:30.167Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 7c002987-6039-41f7-8b1d-b411d799299c
+        message_id: 2ffe5b6e-74c6-4e1c-9e12-52b05f5ba84d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3055,25 +3055,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3088,10 +3088,10 @@ transaction_history:
                   value: "0.00"
             ttl: P1D
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
     action: on_select
     saved_info: {}
@@ -3100,9 +3100,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: init
-        timestamp: 2026-03-23T12:26:39.330Z
+        timestamp: 2026-03-24T08:37:30.186Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 5f523957-50f5-4712-927c-82724ee71f4e
+        message_id: d6842a2d-7233-47e6-af03-0adb262ece21
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3118,10 +3118,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           offers:
             - id: discp10
@@ -3138,8 +3138,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.330Z
-            updated_at: 2026-03-23T12:26:39.330Z
+            created_at: 2026-03-24T08:37:30.186Z
+            updated_at: 2026-03-24T08:37:30.186Z
           payment:
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3167,25 +3167,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3206,9 +3206,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_init
-        timestamp: 2026-03-23T12:26:39.347Z
+        timestamp: 2026-03-24T08:37:30.199Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 5f523957-50f5-4712-927c-82724ee71f4e
+        message_id: d6842a2d-7233-47e6-af03-0adb262ece21
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3224,10 +3224,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -3242,8 +3242,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.347Z
-            updated_at: 2026-03-23T12:26:39.347Z
+            created_at: 2026-03-24T08:37:30.199Z
+            updated_at: 2026-03-24T08:37:30.199Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -3269,25 +3269,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3322,15 +3322,15 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: credit
               list:
                 - code: credit_limit
                   value: "25000.00"
                 - code: valid_till
-                  value: 2026-06-21T12:26:39.347Z
+                  value: 2026-06-22T08:37:30.199Z
     action: on_init
     saved_info: {}
   - action_id: confirm
@@ -3338,9 +3338,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: confirm
-        timestamp: 2026-03-23T12:26:39.366Z
+        timestamp: 2026-03-24T08:37:30.211Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: c03cfe9e-7ec0-458a-b04a-01cc94374ccf
+        message_id: 44a882b6-aa9a-4e02-b0cf-290db915a3b8
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3351,17 +3351,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Created
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               fulfillment_id: F1
               quantity:
-                count: 10
+                count: 15
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -3376,8 +3376,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.366Z
-            updated_at: 2026-03-23T12:26:39.366Z
+            created_at: 2026-03-24T08:37:30.211Z
+            updated_at: 2026-03-24T08:37:30.211Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -3405,25 +3405,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3442,8 +3442,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3466,9 +3466,9 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: bap_terms
               list:
                 - code: accept_bpp_terms
@@ -3477,8 +3477,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T12:26:39.366Z
-          updated_at: 2026-03-23T12:26:39.366Z
+          created_at: 2026-03-24T08:37:30.211Z
+          updated_at: 2026-03-24T08:37:30.211Z
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -3486,9 +3486,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_confirm
-        timestamp: 2026-03-23T12:26:39.391Z
+        timestamp: 2026-03-24T08:37:30.224Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: c03cfe9e-7ec0-458a-b04a-01cc94374ccf
+        message_id: 44a882b6-aa9a-4e02-b0cf-290db915a3b8
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3499,18 +3499,18 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Accepted
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
           billing:
             name: Sharma Kirana Store
             address:
@@ -3524,8 +3524,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.391Z
-            updated_at: 2026-03-23T12:26:39.391Z
+            created_at: 2026-03-24T08:37:30.224Z
+            updated_at: 2026-03-24T08:37:30.224Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -3571,25 +3571,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3631,9 +3631,9 @@ transaction_history:
                 - code: np_type
                   value: MSN
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
                 - code: accept_bap_terms
                   value: Y
             - code: bap_terms
@@ -3642,8 +3642,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T12:26:39.391Z
-          updated_at: 2026-03-23T12:26:39.391Z
+          created_at: 2026-03-24T08:37:30.224Z
+          updated_at: 2026-03-24T08:37:30.224Z
     action: on_confirm
     saved_info: {}
   - action_id: on_status_accepted
@@ -3651,9 +3651,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T12:26:39.411Z
+        timestamp: 2026-03-24T08:37:30.235Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: c4b4940a-5a94-4ff8-bed8-1705842dc0bc
+        message_id: 5c49e1f4-c149-468e-aaa5-7104bd16639c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3664,17 +3664,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Accepted
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -3689,8 +3689,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.411Z
-            updated_at: 2026-03-23T12:26:39.411Z
+            created_at: 2026-03-24T08:37:30.235Z
+            updated_at: 2026-03-24T08:37:30.235Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -3716,8 +3716,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -3734,8 +3734,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -3757,25 +3757,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3794,8 +3794,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3814,8 +3814,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T12:26:39.411Z
-          updated_at: 2026-03-23T12:26:39.411Z
+          created_at: 2026-03-24T08:37:30.235Z
+          updated_at: 2026-03-24T08:37:30.235Z
     action: on_status
     saved_info: {}
   - action_id: on_status_packed
@@ -3823,9 +3823,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T12:26:39.428Z
+        timestamp: 2026-03-24T08:37:30.251Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: c66ed510-dbaa-4b16-b326-281af63b31a9
+        message_id: ac8b4def-5c90-4fbd-a54d-29e86aa45433
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3836,17 +3836,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -3861,8 +3861,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.428Z
-            updated_at: 2026-03-23T12:26:39.428Z
+            created_at: 2026-03-24T08:37:30.251Z
+            updated_at: 2026-03-24T08:37:30.251Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -3888,8 +3888,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -3906,8 +3906,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -3929,25 +3929,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -3966,8 +3966,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3986,8 +3986,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T12:26:39.428Z
-          updated_at: 2026-03-23T12:26:39.428Z
+          created_at: 2026-03-24T08:37:30.251Z
+          updated_at: 2026-03-24T08:37:30.251Z
     action: on_status
     saved_info: {}
   - action_id: on_status_agent_assigned
@@ -3995,9 +3995,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T12:26:39.446Z
+        timestamp: 2026-03-24T08:37:30.278Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 24026df8-22d4-488f-9eff-0bb6d81d671a
+        message_id: 787c97c3-0e0a-47da-8ff0-7e639ff99415
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4008,17 +4008,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -4033,8 +4033,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.446Z
-            updated_at: 2026-03-23T12:26:39.446Z
+            created_at: 2026-03-24T08:37:30.278Z
+            updated_at: 2026-03-24T08:37:30.278Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -4060,8 +4060,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -4078,8 +4078,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -4104,25 +4104,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -4141,8 +4141,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4161,8 +4161,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T12:26:39.446Z
-          updated_at: 2026-03-23T12:26:39.446Z
+          created_at: 2026-03-24T08:37:30.278Z
+          updated_at: 2026-03-24T08:37:30.278Z
     action: on_status
     saved_info: {}
   - action_id: on_status_picked
@@ -4170,9 +4170,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T12:26:39.467Z
+        timestamp: 2026-03-24T08:37:30.294Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: f0d23a99-fd0e-4d53-8b2d-e5f807a68dab
+        message_id: a3a751a4-3e1d-4e30-b337-c0f8fdf46dc1
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4183,17 +4183,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -4208,8 +4208,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.467Z
-            updated_at: 2026-03-23T12:26:39.467Z
+            created_at: 2026-03-24T08:37:30.294Z
+            updated_at: 2026-03-24T08:37:30.294Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -4235,9 +4235,9 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
-                  timestamp: 2026-03-23T12:26:39.467Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
+                  timestamp: 2026-03-24T08:37:30.294Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -4254,8 +4254,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -4280,25 +4280,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -4317,8 +4317,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4340,8 +4340,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T12:26:39.467Z
-          updated_at: 2026-03-23T12:26:39.467Z
+          created_at: 2026-03-24T08:37:30.294Z
+          updated_at: 2026-03-24T08:37:30.294Z
     action: on_status
     saved_info: {}
   - action_id: on_status_out_for_delivery
@@ -4349,9 +4349,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T12:26:39.485Z
+        timestamp: 2026-03-24T08:37:30.306Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: a58d84e2-092a-4779-a39d-814e97383365
+        message_id: ad2646a5-8f0f-4f6f-b4ae-4e6cb3f708df
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4362,17 +4362,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: In-progress
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -4387,8 +4387,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.485Z
-            updated_at: 2026-03-23T12:26:39.485Z
+            created_at: 2026-03-24T08:37:30.306Z
+            updated_at: 2026-03-24T08:37:30.306Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -4414,8 +4414,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -4432,8 +4432,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -4458,25 +4458,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -4495,8 +4495,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4518,8 +4518,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T12:26:39.485Z
-          updated_at: 2026-03-23T12:26:39.485Z
+          created_at: 2026-03-24T08:37:30.306Z
+          updated_at: 2026-03-24T08:37:30.306Z
     action: on_status
     saved_info: {}
   - action_id: on_status_order_delivered
@@ -4527,9 +4527,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T12:26:39.506Z
+        timestamp: 2026-03-24T08:37:30.321Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: d0d3b535-25a9-4b42-aa76-f9f058ab9973
+        message_id: 0067d010-78b0-466a-a216-21974981c0ab
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4540,17 +4540,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Completed
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -4565,8 +4565,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.506Z
-            updated_at: 2026-03-23T12:26:39.506Z
+            created_at: 2026-03-24T08:37:30.321Z
+            updated_at: 2026-03-24T08:37:30.321Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -4592,8 +4592,8 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -4610,9 +4610,9 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
-                  timestamp: 2026-03-23T12:26:39.506Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
+                  timestamp: 2026-03-24T08:37:30.321Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -4637,25 +4637,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -4674,8 +4674,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4697,8 +4697,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T12:26:39.506Z
-          updated_at: 2026-03-23T12:26:39.506Z
+          created_at: 2026-03-24T08:37:30.321Z
+          updated_at: 2026-03-24T08:37:30.321Z
     action: on_status
     saved_info: {}
   - action_id: update_return
@@ -4706,9 +4706,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: update
-        timestamp: 2026-03-23T12:26:39.531Z
+        timestamp: 2026-03-24T08:37:30.335Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: db9b9002-1c8d-47ca-bfba-079ed18f20b5
+        message_id: 6fc8c1fb-659d-4ddb-b5ce-468dfa7777b0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4720,7 +4720,7 @@ transaction_history:
       message:
         update_target: item
         order:
-          id: "150661"
+          id: "637087"
           fulfillments:
             - type: Return
               id: ad392135
@@ -4728,11 +4728,11 @@ transaction_history:
                 - code: return_request
                   list:
                     - code: id
-                      value: 881c31eb-dca8-4cfd-bd14-3077366c1119
+                      value: c7df0e3e-b04e-436b-8d66-e7ba0a846e28
                     - code: item_id
-                      value: I2
+                      value: I1
                     - code: item_quantity
-                      value: "10"
+                      value: "15"
                     - code: reason_id
                       value: "001"
                     - code: reason_desc
@@ -4750,9 +4750,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_update
-        timestamp: 2026-03-23T12:26:39.552Z
+        timestamp: 2026-03-24T08:37:30.351Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: db9b9002-1c8d-47ca-bfba-079ed18f20b5
+        message_id: 6fc8c1fb-659d-4ddb-b5ce-468dfa7777b0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4763,40 +4763,40 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Completed
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -4823,8 +4823,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.552Z
-            updated_at: 2026-03-23T12:26:39.552Z
+            created_at: 2026-03-24T08:37:30.351Z
+            updated_at: 2026-03-24T08:37:30.351Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -4850,9 +4850,9 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
-                  timestamp: 2026-03-23T12:26:39.552Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
+                  timestamp: 2026-03-24T08:37:30.351Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -4869,8 +4869,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
                 organization:
@@ -4893,18 +4893,18 @@ transaction_history:
                 name: mock-agent
                 phone: "9886098860"
               time:
-                timestamp: 2026-03-23T12:26:39.552Z
+                timestamp: 2026-03-24T08:37:30.351Z
             - type: Return
-              id: f52d4cdb-25a0-476f-b99b-342a61195035
+              id: 7c722e6b-237b-436d-a135-2ba0dbd17129
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: f52d4cdb-25a0-476f-b99b-342a61195035
+                      value: 7c722e6b-237b-436d-a135-2ba0dbd17129
                     - code: item_id
-                      value: I2
+                      value: I1
                     - code: item_quantity
-                      value: "10"
+                      value: "15"
                     - code: reason_id
                       value: "001"
                     - code: reason_desc
@@ -4920,8 +4920,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4947,17 +4947,17 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: credit
               list:
                 - code: credit_limit
                   value: "25000.00"
                 - code: valid_till
-                  value: 2026-06-21T12:26:39.552Z
-          created_at: 2026-03-23T12:26:39.552Z
-          updated_at: 2026-03-23T12:26:39.552Z
+                  value: 2026-06-22T08:37:30.351Z
+          created_at: 2026-03-24T08:37:30.351Z
+          updated_at: 2026-03-24T08:37:30.351Z
     action: on_update
     saved_info: {}
   - action_id: on_update_return_approved
@@ -4965,9 +4965,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_update
-        timestamp: 2026-03-23T12:26:39.573Z
+        timestamp: 2026-03-24T08:37:30.365Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 3077bcd1-53b1-418f-b1ee-b20730aee1c2
+        message_id: 2d1c2d3b-8423-489b-baaa-f3f73a95a651
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4978,17 +4978,17 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Completed
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               location_id: L1
               quantity:
-                count: 10
+                count: 15
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -5003,30 +5003,30 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.573Z
-            updated_at: 2026-03-23T12:26:39.573Z
+            created_at: 2026-03-24T08:37:30.365Z
+            updated_at: 2026-03-24T08:37:30.365Z
           quote:
             price:
               currency: INR
-              value: "2450.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 10
-                title: Ashirwad Plain Atta 5kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "2450.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -5065,9 +5065,9 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
-                  timestamp: 2026-03-23T12:26:39.573Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
+                  timestamp: 2026-03-24T08:37:30.365Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -5084,8 +5084,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
               tags:
@@ -5105,18 +5105,18 @@ transaction_history:
                 name: mock-agent
                 phone: "9886098860"
               time:
-                timestamp: 2026-03-23T12:26:39.573Z
+                timestamp: 2026-03-24T08:37:30.365Z
             - type: Return
-              id: f52d4cdb-25a0-476f-b99b-342a61195035
+              id: 7c722e6b-237b-436d-a135-2ba0dbd17129
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: f52d4cdb-25a0-476f-b99b-342a61195035
+                      value: 7c722e6b-237b-436d-a135-2ba0dbd17129
                     - code: item_id
-                      value: I2
+                      value: I1
                     - code: item_quantity
-                      value: "10"
+                      value: "15"
                     - code: reason_id
                       value: "001"
                     - code: reason_desc
@@ -5144,8 +5144,8 @@ transaction_history:
                     area_code: "560001"
                 time:
                   range:
-                    start: 2026-03-23T12:26:39.573Z
-                    end: 2026-03-24T12:26:39.573Z
+                    start: 2026-03-24T08:37:30.365Z
+                    end: 2026-03-25T08:37:30.365Z
               end:
                 location:
                   id: L1
@@ -5159,15 +5159,15 @@ transaction_history:
                     state: KA
                 time:
                   range:
-                    start: 2026-03-24T12:26:39.573Z
-                    end: 2026-03-25T12:26:39.573Z
+                    start: 2026-03-25T08:37:30.365Z
+                    end: 2026-03-26T08:37:30.365Z
           payment:
             uri: https://ondc.transaction.com/payment
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -5202,8 +5202,8 @@ transaction_history:
               list:
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T12:26:39.573Z
-          updated_at: 2026-03-23T12:26:39.573Z
+          created_at: 2026-03-24T08:37:30.365Z
+          updated_at: 2026-03-24T08:37:30.365Z
     action: on_update
     saved_info: {}
   - action_id: on_update_return_picked
@@ -5211,9 +5211,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_update
-        timestamp: 2026-03-23T12:26:39.591Z
+        timestamp: 2026-03-24T08:37:30.379Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 06353333-3a69-4ad2-95c3-304b4ef9a9ff
+        message_id: 4c7ff79e-f9fc-4ac1-9dc2-b57891fd3c40
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -5224,18 +5224,18 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Completed
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               quantity:
-                count: 10
-              fulfillment_id: f52d4cdb-25a0-476f-b99b-342a61195035
-            - id: I2
+                count: 15
+              fulfillment_id: 7c722e6b-237b-436d-a135-2ba0dbd17129
+            - id: I1
               location_id: L1
               quantity:
                 count: 0
@@ -5253,17 +5253,17 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.591Z
-            updated_at: 2026-03-23T12:26:39.591Z
+            created_at: 2026-03-24T08:37:30.379Z
+            updated_at: 2026-03-24T08:37:30.379Z
           quote:
             price:
               currency: INR
               value: "0.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
                   count: 0
-                title: Ashirwad Plain Atta 5kg
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
@@ -5273,10 +5273,10 @@ transaction_history:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -5315,9 +5315,9 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
-                  timestamp: 2026-03-23T12:26:39.591Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
+                  timestamp: 2026-03-24T08:37:30.379Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -5334,8 +5334,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
               tags:
@@ -5355,18 +5355,18 @@ transaction_history:
                 name: mock-agent
                 phone: "9886098860"
               time:
-                timestamp: 2026-03-23T12:26:39.591Z
+                timestamp: 2026-03-24T08:37:30.379Z
             - type: Return
-              id: f52d4cdb-25a0-476f-b99b-342a61195035
+              id: 7c722e6b-237b-436d-a135-2ba0dbd17129
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: f52d4cdb-25a0-476f-b99b-342a61195035
+                      value: 7c722e6b-237b-436d-a135-2ba0dbd17129
                     - code: item_id
-                      value: I2
+                      value: I1
                     - code: item_quantity
-                      value: "10"
+                      value: "15"
                     - code: reason_id
                       value: "001"
                     - code: reason_desc
@@ -5382,11 +5382,11 @@ transaction_history:
                     - code: type
                       value: item
                     - code: id
-                      value: I2
+                      value: I1
                     - code: currency
                       value: INR
                     - code: value
-                      value: "-2450"
+                      value: "-780"
               state:
                 descriptor:
                   code: Return_Picked
@@ -5403,7 +5403,7 @@ transaction_history:
                     country: IND
                     area_code: "560002"
                 time:
-                  timestamp: 2026-03-23T12:26:39.591Z
+                  timestamp: 2026-03-24T08:37:30.379Z
               end:
                 location:
                   id: location_15
@@ -5416,14 +5416,14 @@ transaction_history:
                     area_code: "560002"
                     state: Karnataka
                 time:
-                  timestamp: 2026-03-23T12:26:39.591Z
+                  timestamp: 2026-03-24T08:37:30.379Z
           payment:
             uri: https://ondc.transaction.com/payment
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -5458,8 +5458,8 @@ transaction_history:
               list:
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T12:26:39.591Z
-          updated_at: 2026-03-23T12:26:39.591Z
+          created_at: 2026-03-24T08:37:30.379Z
+          updated_at: 2026-03-24T08:37:30.379Z
     action: on_update
     saved_info: {}
   - action_id: update_settlement_trail
@@ -5467,9 +5467,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: update
-        timestamp: 2026-03-23T12:26:39.605Z
+        timestamp: 2026-03-24T08:37:30.393Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: cfd4b418-0206-48e8-900d-4df1b7e9592c
+        message_id: b4631f45-021f-4c86-b256-74e68ae29177
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -5481,17 +5481,17 @@ transaction_history:
       message:
         update_target: payment
         order:
-          id: "150661"
+          id: "637087"
           fulfillments:
-            - id: f52d4cdb-25a0-476f-b99b-342a61195035
+            - id: 7c722e6b-237b-436d-a135-2ba0dbd17129
               type: Return
           payment:
             "@ondc/org/settlement_details":
               - settlement_counterparty: buyer
                 settlement_phase: refund
                 settlement_type: netbanking
-                settlement_amount: "2450"
-                settlement_timestamp: 2026-03-23T12:26:39.613Z
+                settlement_amount: "780"
+                settlement_timestamp: 2026-03-24T08:37:30.396Z
             status: PAID
     action: update
     saved_info: {}
@@ -5500,9 +5500,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_update
-        timestamp: 2026-03-23T12:26:39.627Z
+        timestamp: 2026-03-24T08:37:30.412Z
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: d1a2a97d-ee1a-4288-9155-9f2e44a2c01f
+        message_id: 84f0d917-f4f0-4485-8b93-198b353d0797
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -5513,18 +5513,18 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "150661"
+          id: "637087"
           state: Completed
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I2
+            - id: I1
               quantity:
-                count: 10
-              fulfillment_id: f52d4cdb-25a0-476f-b99b-342a61195035
-            - id: I2
+                count: 15
+              fulfillment_id: 7c722e6b-237b-436d-a135-2ba0dbd17129
+            - id: I1
               location_id: L1
               quantity:
                 count: 0
@@ -5542,17 +5542,17 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:26:39.330Z
-            updated_at: 2026-03-23T12:26:39.330Z
+            created_at: 2026-03-24T08:37:30.186Z
+            updated_at: 2026-03-24T08:37:30.186Z
           quote:
             price:
               currency: INR
               value: "0.00"
             breakup:
-              - "@ondc/org/item_id": I2
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
                   count: 0
-                title: Ashirwad Plain Atta 5kg
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
@@ -5562,10 +5562,10 @@ transaction_history:
                     available:
                       count: "99"
                     maximum:
-                      count: "50"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "245.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -5604,9 +5604,9 @@ transaction_history:
                   email: warehouse@abcdist.com
                 time:
                   range:
-                    start: 2026-03-23T12:36:39.411Z
-                    end: 2026-03-23T12:46:39.411Z
-                  timestamp: 2026-03-23T12:26:39.591Z
+                    start: 2026-03-24T08:47:30.235Z
+                    end: 2026-03-24T08:57:30.235Z
+                  timestamp: 2026-03-24T08:37:30.379Z
               end:
                 location:
                   gps: 12.4535,77.9283
@@ -5623,8 +5623,8 @@ transaction_history:
                   email: sharma.kirana@email.com
                 time:
                   range:
-                    start: 2026-03-23T12:46:39.411Z
-                    end: 2026-03-25T12:36:39.411Z
+                    start: 2026-03-24T08:57:30.235Z
+                    end: 2026-03-26T08:47:30.235Z
               customer:
                 id: CUST-2024-001234
               tags:
@@ -5644,18 +5644,18 @@ transaction_history:
                 name: mock-agent
                 phone: "9886098860"
               time:
-                timestamp: 2026-03-23T12:26:39.591Z
+                timestamp: 2026-03-24T08:37:30.379Z
             - type: Return
-              id: f52d4cdb-25a0-476f-b99b-342a61195035
+              id: 7c722e6b-237b-436d-a135-2ba0dbd17129
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: f52d4cdb-25a0-476f-b99b-342a61195035
+                      value: 7c722e6b-237b-436d-a135-2ba0dbd17129
                     - code: item_id
-                      value: I2
+                      value: I1
                     - code: item_quantity
-                      value: "10"
+                      value: "15"
                     - code: reason_id
                       value: "001"
                     - code: reason_desc
@@ -5671,11 +5671,11 @@ transaction_history:
                     - code: type
                       value: item
                     - code: id
-                      value: I2
+                      value: I1
                     - code: currency
                       value: INR
                     - code: value
-                      value: "-2450"
+                      value: "-780"
               state:
                 descriptor:
                   code: Return_Delivered
@@ -5692,7 +5692,7 @@ transaction_history:
                     country: IND
                     area_code: "560002"
                 time:
-                  timestamp: 2026-03-23T12:26:39.591Z
+                  timestamp: 2026-03-24T08:37:30.379Z
               end:
                 location:
                   id: location_15
@@ -5705,15 +5705,15 @@ transaction_history:
                     area_code: "560002"
                     state: Karnataka
                 time:
-                  timestamp: 2026-03-23T12:26:39.591Z
-                  timeStamp: 2026-03-23T12:26:39.633Z
+                  timestamp: 2026-03-24T08:37:30.379Z
+                  timeStamp: 2026-03-24T08:37:30.415Z
           payment:
             uri: https://ondc.transaction.com/payment
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "4315"
-              amount: "2450.00"
+              transaction_id: "1770"
+              amount: "780.00"
             status: PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -5732,8 +5732,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T12:26:39.366Z
-          updated_at: 2026-03-23T12:26:39.633Z
+          created_at: 2026-03-24T08:37:30.211Z
+          updated_at: 2026-03-24T08:37:30.415Z
     action: on_update
     saved_info: {}
 validationLib: ""
