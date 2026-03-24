@@ -657,9 +657,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: credit
                 list:
                   - code: credit_limit
@@ -822,9 +822,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: bap_terms
                 list:
                   - code: accept_bpp_terms
@@ -1009,9 +1009,9 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
                   - code: accept_bap_terms
                     value: Y
               - code: bap_terms
@@ -1793,7 +1793,7 @@ steps:
     unsolicited: false
     description: On-track sent by the Seller Np in response to the track
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBzYXZlZENpdHkgPSBzZXNzaW9uRGF0YT8ucGF5bG9hZF9jaXR5Py5bMF07CgogIGlmICghZGVmYXVsdFBheWxvYWQuY29udGV4dCkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dCA9IHt9OwogIH0KCiAgaWYgKHNhdmVkQ2l0eSkgewogICAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5jaXR5ID0gc2F2ZWRDaXR5OwogIH0KCiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gc2Vzc2lvbkRhdGEubWVzc2FnZV9pZFswXQogICAgIGFwcGx5RHluYW1pY1RpbWVzdGFtcHMoZGVmYXVsdFBheWxvYWQpOwogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgLy8gMe+4j+KDoyBFbnN1cmUgY29udGV4dCBleGlzdHMKICAgIGlmICghZGVmYXVsdFBheWxvYWQuY29udGV4dCkgewogICAgICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0ID0ge307CiAgICB9CgogICAgLy8gMu+4j+KDoyBVcGRhdGUgdGltZXN0YW1wCiAgICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LnRpbWVzdGFtcCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKCiAgICAvLyAz77iP4oOjIFNldCBjaXR5IGZyb20gc2Vzc2lvbgogICAgY29uc3Qgc2F2ZWRDaXR5ID0gc2Vzc2lvbkRhdGE/LnBheWxvYWRfY2l0eT8uWzBdOwogICAgaWYgKHNhdmVkQ2l0eSkgewogICAgICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmNpdHkgPSBzYXZlZENpdHk7CiAgICB9CgogICAgLy8gNO+4j+KDoyBTZXQgbWVzc2FnZV9pZCBmcm9tIHNlc3Npb24KICAgIGlmIChzZXNzaW9uRGF0YT8ubWVzc2FnZV9pZD8uWzBdKSB7CiAgICAgIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgICB9CgogICAgLy8gNe+4j+KDoyBFbnN1cmUgbWVzc2FnZSArIHRyYWNraW5nIHN0cnVjdHVyZQogICAgaWYgKCFkZWZhdWx0UGF5bG9hZC5tZXNzYWdlKSBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0ge307CiAgICBpZiAoIWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UudHJhY2tpbmcpIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UudHJhY2tpbmcgPSB7fTsKCiAgICBjb25zdCB0cmFja2luZyA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UudHJhY2tpbmc7CgogICAgLy8gNu+4j+KDoyBHZXQgb3JkZXJfaWQgZnJvbSBzZXNzaW9uCiAgICBjb25zdCBvcmRlcklkID0gc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF07CgogICAgLy8gN++4j+KDoyBVcGRhdGUgdHJhY2tpbmcudGFncyDihpIgb3JkZXIuaWQKICAgIGlmIChBcnJheS5pc0FycmF5KHRyYWNraW5nLnRhZ3MpKSB7CiAgICAgIHRyYWNraW5nLnRhZ3MgPSB0cmFja2luZy50YWdzLm1hcCh0YWcgPT4gewogICAgICAgIGlmICh0YWcuY29kZSA9PT0gIm9yZGVyIiAmJiBBcnJheS5pc0FycmF5KHRhZy5saXN0KSkgewogICAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgLi4udGFnLAogICAgICAgICAgICBsaXN0OiB0YWcubGlzdC5tYXAoaXRlbSA9PiB7CiAgICAgICAgICAgICAgaWYgKGl0ZW0uY29kZSA9PT0gImlkIiAmJiBvcmRlcklkKSB7CiAgICAgICAgICAgICAgICByZXR1cm4gewogICAgICAgICAgICAgICAgICAuLi5pdGVtLAogICAgICAgICAgICAgICAgICB2YWx1ZTogb3JkZXJJZCAgIC8vIOKchSBGSVggSEVSRQogICAgICAgICAgICAgICAgfTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgcmV0dXJuIGl0ZW07CiAgICAgICAgICAgIH0pCiAgICAgICAgICB9OwogICAgICAgIH0KICAgICAgICByZXR1cm4gdGFnOwogICAgICB9KTsKICAgIH0KCiAgICAvLyA477iP4oOjIEFwcGx5IGR5bmFtaWMgdGltZXN0YW1wcyAoZXhpc3RpbmcgaGVscGVyKQogICAgYXBwbHlEeW5hbWljVGltZXN0YW1wcyhkZWZhdWx0UGF5bG9hZCk7CgogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwoKICB9IGNhdGNoIChlcnJvcikgewogICAgY29uc29sZS5lcnJvcigiR2VuZXJhdGUgRXJyb3I6IiwgZXJyb3IpOwoKICAgIHJldHVybiB7CiAgICAgIGNvbnRleHQ6IGRlZmF1bHRQYXlsb2FkPy5jb250ZXh0IHx8IHt9LAogICAgICBlcnJvcjogZXJyb3I/Lm1lc3NhZ2UgfHwgIlVua25vd24gZXJyb3IiCiAgICB9OwogIH0KfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgLy8gQ2hlY2sgZm9yIG9yZGVyX2lkCiAgaWYgKCFzZXNzaW9uRGF0YS5vcmRlcl9pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIG9yZGVyX2lkIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19PUkRFUl9JRCIsCiAgICB9OwogIH0KCiAgLy8gQWxsIHJlcXVpcmVtZW50cyBzYXRpc2ZpZWQKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBkZXNjcmlwdGlvbjogIkFsbCBDaGVja3MgcGFzc2VkIHN1Y2Nlc3NmdWxseSIsCiAgICBjb2RlOiAiMjAwIiwKICB9Owp9Cg==
       defaultPayload:
@@ -2230,9 +2230,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: select
-        timestamp: 2026-03-23T11:46:38.477Z
+        timestamp: 2026-03-24T08:30:14.859Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 1d4f52ea-79d2-4ea3-a0d9-d48cb7217129
+        message_id: c15c11e5-6bba-466c-b808-5c9605150cd2
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2278,9 +2278,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_select
-        timestamp: 2026-03-23T11:46:38.496Z
+        timestamp: 2026-03-24T08:30:14.877Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 1d4f52ea-79d2-4ea3-a0d9-d48cb7217129
+        message_id: c15c11e5-6bba-466c-b808-5c9605150cd2
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2384,9 +2384,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: select
-        timestamp: 2026-03-23T11:46:51.484Z
+        timestamp: 2026-03-24T08:30:22.789Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: ffc39008-512f-47b8-8a7d-eb58cbd0be9d
+        message_id: e57b33f6-346f-4da5-99fa-aa895b0ca756
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2405,23 +2405,13 @@ transaction_history:
             - id: I1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
               fulfillment_id: F1
             - id: I2
               location_id: L1
               quantity:
-                count: 1
+                count: 10
               fulfillment_id: F1
-            - id: I4
-              location_id: L1
-              fulfillment_id: F1
-              quantity:
-                count: 12
-            - id: I3
-              location_id: L1
-              fulfillment_id: F1
-              quantity:
-                count: 13
           offers:
             - id: discp10
           fulfillments:
@@ -2442,9 +2432,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_select
-        timestamp: 2026-03-23T11:46:51.530Z
+        timestamp: 2026-03-24T08:30:22.816Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: ffc39008-512f-47b8-8a7d-eb58cbd0be9d
+        message_id: e57b33f6-346f-4da5-99fa-aa895b0ca756
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2477,15 +2467,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -2499,47 +2489,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -2567,22 +2521,12 @@ transaction_history:
               location_id: L1
               fulfillment_id: F1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               location_id: L1
               fulfillment_id: F1
               quantity:
-                count: 1
-            - id: I4
-              location_id: L1
-              fulfillment_id: F1
-              quantity:
-                count: 12
-            - id: I3
-              location_id: L1
-              fulfillment_id: F1
-              quantity:
-                count: 13
+                count: 10
     action: on_select
     saved_info: {}
   - action_id: init
@@ -2590,9 +2534,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: init
-        timestamp: 2026-03-23T11:46:51.557Z
+        timestamp: 2026-03-24T08:30:22.844Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: fca1e376-3888-4060-a818-9967a309b680
+        message_id: f38a52d3-5013-42f4-8c5d-f37a424a2219
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2612,22 +2556,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           offers:
             - id: discp10
           billing:
@@ -2643,8 +2577,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.557Z
-            updated_at: 2026-03-23T11:46:51.557Z
+            created_at: 2026-03-24T08:30:22.844Z
+            updated_at: 2026-03-24T08:30:22.844Z
           payment:
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -2672,15 +2606,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -2694,47 +2628,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -2764,9 +2662,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_init
-        timestamp: 2026-03-23T11:46:51.576Z
+        timestamp: 2026-03-24T08:30:22.856Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: fca1e376-3888-4060-a818-9967a309b680
+        message_id: f38a52d3-5013-42f4-8c5d-f37a424a2219
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2785,22 +2683,12 @@ transaction_history:
             - id: I1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
               fulfillment_id: F1
             - id: I2
               location_id: L1
               quantity:
-                count: 1
-              fulfillment_id: F1
-            - id: I4
-              location_id: L1
-              quantity:
-                count: 12
-              fulfillment_id: F1
-            - id: I3
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
               fulfillment_id: F1
           billing:
             name: Sharma Kirana Store
@@ -2815,8 +2703,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.576Z
-            updated_at: 2026-03-23T11:46:51.576Z
+            created_at: 2026-03-24T08:30:22.856Z
+            updated_at: 2026-03-24T08:30:22.856Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -2842,15 +2730,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -2864,47 +2752,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -2948,15 +2800,15 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: credit
               list:
                 - code: credit_limit
                   value: "25000.00"
                 - code: valid_till
-                  value: 2026-06-21T11:46:51.576Z
+                  value: 2026-06-22T08:30:22.856Z
     action: on_init
     saved_info: {}
   - action_id: confirm
@@ -2964,9 +2816,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: confirm
-        timestamp: 2026-03-23T11:46:51.593Z
+        timestamp: 2026-03-24T08:30:22.870Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: b93048f3-0129-4788-b0af-164ddaab62a1
+        message_id: 8ee5aced-8a13-4e8f-8607-04c620af31fc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2977,7 +2829,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: Created
           provider:
             id: P1
@@ -2987,22 +2839,12 @@ transaction_history:
             - id: I1
               fulfillment_id: F1
               quantity:
-                count: 1
+                count: 10
               location_id: L1
             - id: I2
               fulfillment_id: F1
               quantity:
-                count: 1
-              location_id: L1
-            - id: I4
-              fulfillment_id: F1
-              quantity:
-                count: 12
-              location_id: L1
-            - id: I3
-              fulfillment_id: F1
-              quantity:
-                count: 13
+                count: 10
               location_id: L1
           billing:
             name: Sharma Kirana Store
@@ -3017,8 +2859,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.593Z
-            updated_at: 2026-03-23T11:46:51.593Z
+            created_at: 2026-03-24T08:30:22.870Z
+            updated_at: 2026-03-24T08:30:22.870Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -3046,15 +2888,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3068,47 +2910,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3136,8 +2942,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3160,9 +2966,9 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: bap_terms
               list:
                 - code: accept_bpp_terms
@@ -3171,8 +2977,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T11:46:51.593Z
-          updated_at: 2026-03-23T11:46:51.593Z
+          created_at: 2026-03-24T08:30:22.870Z
+          updated_at: 2026-03-24T08:30:22.870Z
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -3180,9 +2986,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_confirm
-        timestamp: 2026-03-23T11:46:51.615Z
+        timestamp: 2026-03-24T08:30:22.889Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: b93048f3-0129-4788-b0af-164ddaab62a1
+        message_id: 8ee5aced-8a13-4e8f-8607-04c620af31fc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3193,7 +2999,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: Accepted
           provider:
             id: P1
@@ -3204,22 +3010,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -3233,8 +3029,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.615Z
-            updated_at: 2026-03-23T11:46:51.615Z
+            created_at: 2026-03-24T08:30:22.889Z
+            updated_at: 2026-03-24T08:30:22.889Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -3280,15 +3076,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3302,47 +3098,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3371,7 +3131,7 @@ transaction_history:
             collected_by: BPP
             params:
               currency: INR
-              amount: "1514.00"
+              amount: "1150.00"
             "@ondc/org/buyer_app_finder_fee_type": percent
             "@ondc/org/buyer_app_finder_fee_amount": "3.54"
             "@ondc/org/settlement_basis": delivery
@@ -3393,9 +3153,9 @@ transaction_history:
                 - code: np_type
                   value: MSN
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
                 - code: accept_bap_terms
                   value: Y
             - code: bap_terms
@@ -3404,8 +3164,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T11:46:51.615Z
-          updated_at: 2026-03-23T11:46:51.615Z
+          created_at: 2026-03-24T08:30:22.889Z
+          updated_at: 2026-03-24T08:30:22.889Z
     action: on_confirm
     saved_info: {}
   - action_id: on_status_accepted
@@ -3413,9 +3173,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T11:46:51.640Z
+        timestamp: 2026-03-24T08:30:22.908Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: e03406d5-5299-4267-a26d-c93cbd8db5cf
+        message_id: 2b5d6fc2-bdaa-4a18-b39f-435eb6dba972
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3426,7 +3186,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: Accepted
           provider:
             id: P1
@@ -3437,22 +3197,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -3466,8 +3216,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.640Z
-            updated_at: 2026-03-23T11:46:51.640Z
+            created_at: 2026-03-24T08:30:22.908Z
+            updated_at: 2026-03-24T08:30:22.908Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -3498,7 +3248,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.640Z
+                  timestamp: 2026-03-24T08:30:22.908Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -3519,7 +3269,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.640Z
+                  timestamp: 2026-03-24T08:30:22.908Z
               tags:
                 - code: routing
                   list:
@@ -3536,15 +3286,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3558,47 +3308,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3626,8 +3340,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3646,8 +3360,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T11:46:51.640Z
-          updated_at: 2026-03-23T11:46:51.640Z
+          created_at: 2026-03-24T08:30:22.908Z
+          updated_at: 2026-03-24T08:30:22.908Z
     action: on_status
     saved_info: {}
   - action_id: on_status_packed
@@ -3655,9 +3369,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T11:46:51.663Z
+        timestamp: 2026-03-24T08:30:22.927Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 6bfbd20a-b0c0-4c1d-ade8-ea5b9a33f782
+        message_id: 10c8b581-f55d-4d6e-80ed-1d34699ba253
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3668,7 +3382,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: In-progress
           provider:
             id: P1
@@ -3679,22 +3393,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -3708,8 +3412,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.663Z
-            updated_at: 2026-03-23T11:46:51.663Z
+            created_at: 2026-03-24T08:30:22.927Z
+            updated_at: 2026-03-24T08:30:22.927Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -3740,7 +3444,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.663Z
+                  timestamp: 2026-03-24T08:30:22.927Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -3761,7 +3465,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.663Z
+                  timestamp: 2026-03-24T08:30:22.927Z
               tags:
                 - code: routing
                   list:
@@ -3778,15 +3482,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3800,47 +3504,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -3868,8 +3536,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -3888,8 +3556,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T11:46:51.663Z
-          updated_at: 2026-03-23T11:46:51.663Z
+          created_at: 2026-03-24T08:30:22.927Z
+          updated_at: 2026-03-24T08:30:22.927Z
     action: on_status
     saved_info: {}
   - action_id: on_status_agent_assigned
@@ -3897,9 +3565,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T11:46:51.684Z
+        timestamp: 2026-03-24T08:30:22.941Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: d513a825-b532-43b6-b600-fcd721b8b356
+        message_id: bd6538d9-df3b-4989-9588-c68cc553ac4d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3910,7 +3578,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: In-progress
           provider:
             id: P1
@@ -3921,22 +3589,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -3950,8 +3608,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.684Z
-            updated_at: 2026-03-23T11:46:51.684Z
+            created_at: 2026-03-24T08:30:22.941Z
+            updated_at: 2026-03-24T08:30:22.941Z
           offers:
             - id: discp10
           fulfillments:
@@ -3984,7 +3642,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.684Z
+                  timestamp: 2026-03-24T08:30:22.941Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -4005,7 +3663,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.684Z
+                  timestamp: 2026-03-24T08:30:22.941Z
               tags:
                 - code: routing
                   list:
@@ -4022,15 +3680,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4044,47 +3702,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4112,8 +3734,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4132,8 +3754,8 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          created_at: 2026-03-23T11:46:51.684Z
-          updated_at: 2026-03-23T11:46:51.684Z
+          created_at: 2026-03-24T08:30:22.941Z
+          updated_at: 2026-03-24T08:30:22.941Z
     action: on_status
     saved_info: {}
   - action_id: on_status_picked
@@ -4141,9 +3763,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T11:46:51.703Z
+        timestamp: 2026-03-24T08:30:22.955Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 1b01ed4b-df61-41db-86f5-207871b8ea47
+        message_id: b27823a2-4dfc-4d1c-aa5f-18830bc10fa9
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4154,7 +3776,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: In-progress
           provider:
             id: P1
@@ -4165,22 +3787,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -4194,8 +3806,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.703Z
-            updated_at: 2026-03-23T11:46:51.703Z
+            created_at: 2026-03-24T08:30:22.955Z
+            updated_at: 2026-03-24T08:30:22.955Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -4226,7 +3838,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.703Z
+                  timestamp: 2026-03-24T08:30:22.955Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -4247,7 +3859,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.703Z
+                  timestamp: 2026-03-24T08:30:22.955Z
               tags:
                 - code: routing
                   list:
@@ -4264,15 +3876,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4286,47 +3898,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4354,8 +3930,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4377,8 +3953,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T11:46:51.703Z
-          updated_at: 2026-03-23T11:46:51.703Z
+          created_at: 2026-03-24T08:30:22.955Z
+          updated_at: 2026-03-24T08:30:22.955Z
     action: on_status
     saved_info: {}
   - action_id: track
@@ -4386,9 +3962,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: track
-        timestamp: 2026-03-23T11:46:51.723Z
+        timestamp: 2026-03-24T08:30:22.972Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 24230061-d98a-4be9-b1e9-6341f5027ed0
+        message_id: afdbaa40-9fba-462e-a878-9ea897dbd43c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4398,7 +3974,7 @@ transaction_history:
         city: std:070
         core_version: 1.2.5
       message:
-        order_id: "443914"
+        order_id: "540960"
     action: track
     saved_info: {}
   - action_id: on_track
@@ -4406,9 +3982,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_track
-        timestamp: 2026-03-23T11:46:51.741Z
+        timestamp: 2026-03-24T08:30:22.992Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 1b01ed4b-df61-41db-86f5-207871b8ea47
+        message_id: b27823a2-4dfc-4d1c-aa5f-18830bc10fa9
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4423,15 +3999,15 @@ transaction_history:
           location:
             gps: 12.9740,77.6134
             time:
-              timestamp: 2026-03-23T11:46:51.741Z
-            updated_at: 2026-03-23T11:46:51.741Z
+              timestamp: 2026-03-24T08:30:22.992Z
+            updated_at: 2026-03-24T08:30:22.992Z
           url: https://snp.com/ondc/tracking/F1
           status: active
           tags:
             - code: order
               list:
                 - code: id
-                  value: O1
+                  value: "540960"
             - code: config
               list:
                 - code: attr
@@ -4463,9 +4039,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T11:46:51.760Z
+        timestamp: 2026-03-24T08:30:23.014Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: 7855cbe2-6703-42cc-bdda-1e72dceff238
+        message_id: bcc1207c-b17b-40a7-965a-b207416b7fcd
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4476,7 +4052,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: In-progress
           provider:
             id: P1
@@ -4487,22 +4063,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -4516,8 +4082,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.760Z
-            updated_at: 2026-03-23T11:46:51.760Z
+            created_at: 2026-03-24T08:30:23.014Z
+            updated_at: 2026-03-24T08:30:23.014Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -4548,7 +4114,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.760Z
+                  timestamp: 2026-03-24T08:30:23.014Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -4569,7 +4135,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.760Z
+                  timestamp: 2026-03-24T08:30:23.014Z
               tags:
                 - code: routing
                   list:
@@ -4586,15 +4152,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4608,47 +4174,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4676,8 +4206,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4699,8 +4229,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T11:46:51.760Z
-          updated_at: 2026-03-23T11:46:51.760Z
+          created_at: 2026-03-24T08:30:23.014Z
+          updated_at: 2026-03-24T08:30:23.014Z
     action: on_status
     saved_info: {}
   - action_id: on_status_order_delivered
@@ -4708,9 +4238,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_status
-        timestamp: 2026-03-23T11:46:51.782Z
+        timestamp: 2026-03-24T08:30:23.030Z
         transaction_id: 70023cc5-3fe9-4b68-9205-aa2ae40f7d96
-        message_id: a7da2e91-ea92-45d1-8061-42dc2bee443c
+        message_id: 47c6716e-313f-4393-a1d5-a4257311cd3f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4721,7 +4251,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "443914"
+          id: "540960"
           state: Completed
           provider:
             id: P1
@@ -4732,22 +4262,12 @@ transaction_history:
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
+                count: 10
             - id: I2
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 1
-            - id: I4
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 12
-            - id: I3
-              fulfillment_id: F1
-              location_id: L1
-              quantity:
-                count: 13
+                count: 10
           billing:
             name: Sharma Kirana Store
             address:
@@ -4761,8 +4281,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T11:46:51.782Z
-            updated_at: 2026-03-23T11:46:51.782Z
+            created_at: 2026-03-24T08:30:23.030Z
+            updated_at: 2026-03-24T08:30:23.030Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": 24x7 Wellness Forever - ANDHERI FOUR BUNGLOW
@@ -4793,7 +4313,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.782Z
+                  timestamp: 2026-03-24T08:30:23.030Z
                 contact:
                   phone: "9594663710"
                   email: nobody@nomail.com
@@ -4814,7 +4334,7 @@ transaction_history:
                     locality: my street name
                     name: my house or door or floor
                 time:
-                  timestamp: 2026-03-23T11:46:51.782Z
+                  timestamp: 2026-03-24T08:30:23.030Z
               tags:
                 - code: routing
                   list:
@@ -4831,15 +4351,15 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1514.00"
+              value: "1150.00"
             breakup:
               - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4853,47 +4373,11 @@ transaction_history:
                     value: "52.00"
               - "@ondc/org/item_id": I2
                 "@ondc/org/item_quantity":
-                  count: 1
+                  count: 10
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "52.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I4
-                "@ondc/org/item_quantity":
-                  count: 12
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "624.00"
-                item:
-                  quantity:
-                    available:
-                      count: "99"
-                    maximum:
-                      count: "99"
-                    minimum:
-                      count: "1"
-                  price:
-                    currency: INR
-                    value: "52.00"
-              - "@ondc/org/item_id": I3
-                "@ondc/org/item_quantity":
-                  count: 13
-                "@ondc/org/title_type": item
-                price:
-                  currency: INR
-                  value: "676.00"
+                  value: "520.00"
                 item:
                   quantity:
                     available:
@@ -4921,8 +4405,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "6476"
-              amount: "1514.00"
+              transaction_id: "4824"
+              amount: "1150.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -4944,8 +4428,8 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: 2026-03-23T11:46:51.782Z
-          updated_at: 2026-03-23T11:46:51.782Z
+          created_at: 2026-03-24T08:30:23.030Z
+          updated_at: 2026-03-24T08:30:23.030Z
     action: on_status
     saved_info: {}
 validationLib: ""
