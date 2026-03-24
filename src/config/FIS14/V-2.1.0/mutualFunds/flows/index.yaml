@@ -27,50 +27,7 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: select
-    type: select
-    unsolicited: false
-    pair: on_select
-    owner: BAP
-    expect: false
-    force_proceed: true
-  - key: on_select
-    type: on_select
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: init
-    type: init
-    unsolicited: false
-    pair: on_init
-    owner: BAP
-    expect: false
-  - key: on_init
-    type: on_init
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: confirm
-    type: confirm
-    unsolicited: false
-    pair: on_confirm
-    owner: BAP
-    expect: false
-  - key: on_confirm
-    type: on_confirm
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: on_update
-    type: on_update
-    unsolicited: true
-    pair: null
-    owner: BPP
-    expect: false
-    force_proceed: true
+    
 - id: SIP_Creation_New_Folio
   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
   description: Create new SIP investment with new folio number
@@ -2254,7 +2211,7 @@ flows:
     owner: BPP
     expect: false
     force_proceed: true
-- id: Other_Services_Search
+- id: Main_Search
   tags: [WORKBENCH, SEARCH_FLOWS, USER_INITIATED]
   description: Search for list of other services offered
   sequence:
