@@ -467,9 +467,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: credit
                 list:
                   - code: credit_limit
@@ -632,9 +632,9 @@ steps:
               - code: bpp_terms
                 list:
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
               - code: bap_terms
                 list:
                   - code: accept_bpp_terms
@@ -819,9 +819,9 @@ steps:
                   - code: np_type
                     value: MSN
                   - code: tax_number
-                    value: gst_number_of_sellerNP
+                    value: 00ABCCH7409R1ZZ
                   - code: provider_tax_number
-                    value: PAN_number_of_provider
+                    value: ABCDE1234F
                   - code: accept_bap_terms
                     value: Y
               - code: bap_terms
@@ -1114,9 +1114,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: select
-        timestamp: 2026-03-23T12:08:26.733Z
+        timestamp: 2026-03-24T08:34:00.912Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: fc4eb2e4-0934-4ef8-9c7d-6f4e110e0d81
+        message_id: a496e6ae-7fac-441d-9c9d-4b45381c599b
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1132,10 +1132,10 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               quantity:
-                count: 25
+                count: 15
               fulfillment_id: F1
           offers:
             - id: discp10
@@ -1159,9 +1159,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_select
-        timestamp: 2026-03-23T12:08:26.761Z
+        timestamp: 2026-03-24T08:34:00.933Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: fc4eb2e4-0934-4ef8-9c7d-6f4e110e0d81
+        message_id: a496e6ae-7fac-441d-9c9d-4b45381c599b
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1189,25 +1189,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1200.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 25
-                title: Fortune Chakki Atta 1kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "1200.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -1222,10 +1222,10 @@ transaction_history:
                   value: "00.00"
             ttl: P1D
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               quantity:
-                count: 25
+                count: 15
               fulfillment_id: F1
     action: on_select
     saved_info: {}
@@ -1234,9 +1234,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: init
-        timestamp: 2026-03-23T12:08:26.788Z
+        timestamp: 2026-03-24T08:34:00.949Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: 58326bbb-b66c-447b-b425-5d5cc2f3807b
+        message_id: 3e7708b2-db76-4b54-b285-16a898179621
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1252,11 +1252,11 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               fulfillment_id: F1
               quantity:
-                count: 25
+                count: 15
           offers:
             - id: discp10
           billing:
@@ -1272,8 +1272,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:08:26.788Z
-            updated_at: 2026-03-23T12:08:26.788Z
+            created_at: 2026-03-24T08:34:00.949Z
+            updated_at: 2026-03-24T08:34:00.949Z
           payment:
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -1296,25 +1296,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1200.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 25
-                title: Fortune Chakki Atta 1kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "1200.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -1335,9 +1335,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_init
-        timestamp: 2026-03-23T12:08:26.806Z
+        timestamp: 2026-03-24T08:34:00.961Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: 58326bbb-b66c-447b-b425-5d5cc2f3807b
+        message_id: 3e7708b2-db76-4b54-b285-16a898179621
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1353,11 +1353,11 @@ transaction_history:
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               fulfillment_id: F1
               quantity:
-                count: 25
+                count: 15
           billing:
             name: Sharma Kirana Store
             address:
@@ -1371,8 +1371,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:08:26.806Z
-            updated_at: 2026-03-23T12:08:26.806Z
+            created_at: 2026-03-24T08:34:00.961Z
+            updated_at: 2026-03-24T08:34:00.961Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -1393,25 +1393,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1200.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 25
-                title: Fortune Chakki Atta 1kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "1200.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -1446,15 +1446,15 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: credit
               list:
                 - code: credit_limit
                   value: "25000.00"
                 - code: valid_till
-                  value: 2026-06-21T12:08:26.806Z
+                  value: 2026-06-22T08:34:00.961Z
     action: on_init
     saved_info: {}
   - action_id: confirm
@@ -1462,9 +1462,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: confirm
-        timestamp: 2026-03-23T12:08:26.819Z
+        timestamp: 2026-03-24T08:34:00.968Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: dc2b9ef4-7dbe-46e7-8502-8e524bff7475
+        message_id: c535930f-5eda-4339-98a1-72977491b1e0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1475,18 +1475,18 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "918186"
+          id: "578620"
           state: Created
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 25
+                count: 15
           billing:
             name: Sharma Kirana Store
             address:
@@ -1500,8 +1500,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:08:26.819Z
-            updated_at: 2026-03-23T12:08:26.819Z
+            created_at: 2026-03-24T08:34:00.968Z
+            updated_at: 2026-03-24T08:34:00.968Z
           fulfillments:
             - id: F1
               type: Delivery
@@ -1524,25 +1524,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1200.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 25
-                title: Fortune Chakki Atta 1kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "1200.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -1561,8 +1561,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "5387"
-              amount: "1200.00"
+              transaction_id: "9341"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -1585,9 +1585,9 @@ transaction_history:
             - code: bpp_terms
               list:
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
             - code: bap_terms
               list:
                 - code: accept_bpp_terms
@@ -1596,8 +1596,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T12:08:26.819Z
-          updated_at: 2026-03-23T12:08:26.819Z
+          created_at: 2026-03-24T08:34:00.968Z
+          updated_at: 2026-03-24T08:34:00.968Z
     action: confirm
     saved_info: {}
   - action_id: on_confirm
@@ -1605,9 +1605,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_confirm
-        timestamp: 2026-03-23T12:08:26.834Z
+        timestamp: 2026-03-24T08:34:00.977Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: dc2b9ef4-7dbe-46e7-8502-8e524bff7475
+        message_id: c535930f-5eda-4339-98a1-72977491b1e0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1618,18 +1618,18 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: "918186"
+          id: "578620"
           state: Accepted
           provider:
             id: P1
             locations:
               - id: L1
           items:
-            - id: I3
+            - id: I1
               fulfillment_id: F1
               location_id: L1
               quantity:
-                count: 25
+                count: 15
           billing:
             name: Sharma Kirana Store
             address:
@@ -1643,8 +1643,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:08:26.834Z
-            updated_at: 2026-03-23T12:08:26.834Z
+            created_at: 2026-03-24T08:34:00.977Z
+            updated_at: 2026-03-24T08:34:00.977Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -1685,25 +1685,25 @@ transaction_history:
           quote:
             price:
               currency: INR
-              value: "1200.00"
+              value: "780.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
-                  count: 25
-                title: Fortune Chakki Atta 1kg
+                  count: 15
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
-                  value: "1200.00"
+                  value: "780.00"
                 item:
                   quantity:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -1723,7 +1723,7 @@ transaction_history:
             collected_by: BPP
             params:
               currency: INR
-              amount: "1200.00"
+              amount: "780.00"
             "@ondc/org/buyer_app_finder_fee_type": percent
             "@ondc/org/buyer_app_finder_fee_amount": "3.54"
             "@ondc/org/settlement_basis": delivery
@@ -1745,9 +1745,9 @@ transaction_history:
                 - code: np_type
                   value: MSN
                 - code: tax_number
-                  value: gst_number_of_sellerNP
+                  value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
-                  value: PAN_number_of_provider
+                  value: ABCDE1234F
                 - code: accept_bap_terms
                   value: Y
             - code: bap_terms
@@ -1756,8 +1756,8 @@ transaction_history:
                   value: https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: 2026-03-23T12:08:26.834Z
-          updated_at: 2026-03-23T12:08:26.834Z
+          created_at: 2026-03-24T08:34:00.977Z
+          updated_at: 2026-03-24T08:34:00.977Z
     action: on_confirm
     saved_info: {}
   - action_id: cancel
@@ -1765,9 +1765,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: cancel
-        timestamp: 2026-03-23T12:08:26.843Z
+        timestamp: 2026-03-24T08:34:00.985Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: b2277148-b98f-475c-8ab9-e72e7f541ce9
+        message_id: 20dece6d-baad-4644-9dbb-e137721c8187
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1777,7 +1777,7 @@ transaction_history:
         city: std:070
         core_version: 1.2.5
       message:
-        order_id: "918186"
+        order_id: "578620"
         cancellation_reason_id: "051"
         descriptor:
           name: fulfillment
@@ -1796,9 +1796,9 @@ transaction_history:
       context:
         domain: ONDC:RETeB2B
         action: on_cancel
-        timestamp: 2026-03-23T12:08:26.865Z
+        timestamp: 2026-03-24T08:34:00.995Z
         transaction_id: 9e8654ed-0dd3-4315-81f2-814780f13e79
-        message_id: b2277148-b98f-475c-8ab9-e72e7f541ce9
+        message_id: 20dece6d-baad-4644-9dbb-e137721c8187
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -1811,14 +1811,14 @@ transaction_history:
         order:
           state: Cancelled
           items:
-            - id: I3
+            - id: I1
               location_id: L1
               fulfillment_id: F1
               quantity:
                 count: 0
-            - id: I3
+            - id: I1
               quantity:
-                count: 25
+                count: 15
               fulfillment_id: cancel_id_8189
           provider:
             id: P1
@@ -1837,8 +1837,8 @@ transaction_history:
             tax_number: 29AABCU9603R1ZM
             email: sharma.kirana@email.com
             phone: "9876543210"
-            created_at: 2026-03-23T12:08:26.865Z
-            updated_at: 2026-03-23T12:08:26.865Z
+            created_at: 2026-03-24T08:34:00.995Z
+            updated_at: 2026-03-24T08:34:00.995Z
           fulfillments:
             - id: F1
               "@ondc/org/provider_name": ABC Distributors
@@ -1890,7 +1890,7 @@ transaction_history:
                     - code: fulfillment_state
                       value: Pending
                     - code: updated_at
-                      value: 2026-03-23T12:08:26.865Z
+                      value: 2026-03-24T08:34:00.995Z
             - id: cancel_id_8189
               type: Cancel
               state:
@@ -1902,20 +1902,20 @@ transaction_history:
                     - code: type
                       value: item
                     - code: id
-                      value: I3
+                      value: I1
                     - code: currency
                       value: INR
                     - code: value
-                      value: "-1200.00"
+                      value: "-780.00"
           quote:
             price:
               currency: INR
               value: "0.00"
             breakup:
-              - "@ondc/org/item_id": I3
+              - "@ondc/org/item_id": I1
                 "@ondc/org/item_quantity":
                   count: 0
-                title: Fortune Chakki Atta 1kg
+                title: Ashirwad Plain Atta 1kg
                 "@ondc/org/title_type": item
                 price:
                   currency: INR
@@ -1925,10 +1925,10 @@ transaction_history:
                     available:
                       count: "99"
                     maximum:
-                      count: "80"
+                      count: "100"
                   price:
                     currency: INR
-                    value: "48.00"
+                    value: "52.00"
               - "@ondc/org/item_id": F1
                 title: Delivery charges
                 "@ondc/org/title_type": delivery
@@ -1947,8 +1947,8 @@ transaction_history:
             tl_method: http/get
             params:
               currency: INR
-              transaction_id: "5387"
-              amount: "1200.00"
+              transaction_id: "9341"
+              amount: "780.00"
             status: NOT-PAID
             type: ON-FULFILLMENT
             collected_by: BPP
@@ -1967,9 +1967,9 @@ transaction_history:
                 settlement_ifsc_code: XXXXXXXXX
                 bank_name: State Bank of India
                 branch_name: Jayanagar Branch
-          id: "918186"
-          created_at: 2026-03-23T12:08:26.865Z
-          updated_at: 2026-03-23T12:08:26.865Z
+          id: "578620"
+          created_at: 2026-03-24T08:34:00.995Z
+          updated_at: 2026-03-24T08:34:00.995Z
           cancellation:
             cancelled_by: sample-bap-id
             reason:
