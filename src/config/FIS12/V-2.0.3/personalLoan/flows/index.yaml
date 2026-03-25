@@ -2680,6 +2680,13 @@ flows:
         pair: on_update_pre_part_payment
         owner: BAP
         expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000"
 
       - key: on_update_pre_part_payment
         type: on_update
@@ -2932,6 +2939,13 @@ flows:
         pair: on_update_pre_part_payment
         owner: BAP
         expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000" 
 
       - key: on_update_pre_part_payment
         type: on_update
