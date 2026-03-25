@@ -977,29 +977,7 @@ flows:
         pair: null
         owner: BPP
         expect: false     
-
-      - key: on_update_unsolicited_personal_loan_3
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        force_proceed: true
-
-      - key: update_personal_loan_fulfillment_3
-        type: update
-        unsolicited: false
-        pair: on_update_personal_loan_fulfillment_3
-        owner: BAP
-        expect: false
-
-      - key: on_update_personal_loan_fulfillment_3
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-
+        
       - key: status_personal_loan_3
         type: status
         unsolicited: false
