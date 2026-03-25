@@ -152,6 +152,12 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
+      - key: unsolicited_on_status_complete_METRO_200
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP
   - id: ORDER_TO_CONFIRM_TO_JOURNEY_COMPLETION_SJT
     tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     title: Purchase journey of metro tickets (SJT)
@@ -268,6 +274,12 @@ flows:
         description: Provider platform responds with order status
         pair: null
         owner: BPP
+      - key: unsolicited_on_status_complete_METRO_200
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP    
   - id: TECHNICAL_CANCELLATION_FLOW
     tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     title: Technical cancellation journey
