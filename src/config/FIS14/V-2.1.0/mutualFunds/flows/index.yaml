@@ -1252,273 +1252,273 @@ flows:
 #     pair: null
 #     owner: BPP
 #     expect: false
-# - id: Redemption_By_Amount
-#   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
-#   description: Redeem mutual fund units by specifying amount (7 APIs)
-#   sequence:
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select_redemption
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#     force_proceed: true
-#   - key: on_select_redemption
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: on_update_redemption
-#     type: on_update_redemption
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: Redemption_Redeem_All
-#   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
-#   description: Redeem all units in folio (7 APIs)
-#   sequence:
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select_redemption
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#     force_proceed: true
-#   - key: on_select_redemption
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: on_update_redemption
-#     type: on_update_redemption
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: Redemption_By_Units
-#   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
-#   description: Redeem mutual fund by specifying number of units (7 APIs)
-#   sequence:
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select_redemption
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#     force_proceed: true
-#   - key: on_select_redemption
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: on_update_redemption
-#     type: on_update_redemption
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: Instant_Redemption_By_Amount
-#   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
-#   description: Instant redemption with immediate settlement (8 APIs)
-#   sequence:
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select_redemption
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#     force_proceed: true
-#   - key: on_select_redemption
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: on_update_1
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update_2
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: Redemption_Failure
-#   tags: [WORKBENCH, REDEMPTION_FLOWS, HYBRID]
-#   description: Redemption with failure scenario (7 APIs)
-#   sequence:
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select_redemption
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#     force_proceed: true
-#   - key: on_select_redemption
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: on_update_redemption
-#     type: on_update_redemption
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
+- id: Redemption_By_Amount
+  tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
+  description: Redeem mutual fund units by specifying amount (7 APIs)
+  sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select_redemption
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select_redemption
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_update_redemption
+    type: on_update_redemption
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: Redemption_Redeem_All
+  tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
+  description: Redeem all units in folio (7 APIs)
+  sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select_redemption
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select_redemption
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_update_redemption
+    type: on_update_redemption
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: Redemption_By_Units
+  tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
+  description: Redeem mutual fund by specifying number of units (7 APIs)
+  sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select_redemption
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select_redemption
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_update_redemption
+    type: on_update_redemption
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: Instant_Redemption_By_Amount
+  tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
+  description: Instant redemption with immediate settlement (8 APIs)
+  sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select_redemption
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select_redemption
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_update_1
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_2
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: Redemption_Failure
+  tags: [WORKBENCH, REDEMPTION_FLOWS, HYBRID]
+  description: Redemption with failure scenario (7 APIs)
+  sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select_redemption
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select_redemption
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_update_redemption
+    type: on_update_redemption
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
 # - id: Cart_Lumpsum_Investment
 #   tags: [WORKBENCH, CART_FLOWS, USER_INITIATED]
 #   description: Cart with multiple lumpsum investments (10 APIs)
