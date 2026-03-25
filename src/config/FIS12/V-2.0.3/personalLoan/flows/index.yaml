@@ -2680,6 +2680,13 @@ flows:
         pair: on_update_pre_part_payment
         owner: BAP
         expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000"
 
       - key: on_update_pre_part_payment
         type: on_update
@@ -2932,6 +2939,13 @@ flows:
         pair: on_update_pre_part_payment
         owner: BAP
         expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000" 
 
       - key: on_update_pre_part_payment
         type: on_update
@@ -2978,7 +2992,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false    
+        expect: false
 
       - key: personal_loan_information_form
         label: personal loan information form
@@ -2991,7 +3005,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.personal_loan_information_form
+            reference: $.reference_data.personal_loan_information_form       
     
       - key: select_bureau_consent_personal_loan_3
         type: select
@@ -3008,8 +3022,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: multiple_bureau_information_form
-        label: multiple_bureau_information_form
+      - key: consumer_information_form_1
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -3019,8 +3033,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.multiple_bureau_information_form           
-
+            reference: $.reference_data.personal_loan_information_form       
+  
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false
