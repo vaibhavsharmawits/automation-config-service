@@ -607,6 +607,9 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.city
+        on_init_payments: $.message.order.payments
+        on_init_quote: $.message.order.quote
+        order_type: $.message.order.type
       inputs:
         id: Retinvl_input
         jsonSchema:
@@ -2359,9 +2362,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: init
-        timestamp: '2026-03-20T10:50:36.188Z'
+        timestamp: '2026-03-25T10:23:49.849Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 2dd9d16e-2ef7-4f02-a767-0893c8013b56
+        message_id: 819fd0ef-6d2e-412a-9685-1c12616680d8
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2398,9 +2401,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_init
-        timestamp: '2026-03-20T10:50:38.191Z'
+        timestamp: '2026-03-25T10:23:51.932Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 2dd9d16e-2ef7-4f02-a767-0893c8013b56
+        message_id: 819fd0ef-6d2e-412a-9685-1c12616680d8
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2478,9 +2481,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: init
-        timestamp: '2026-03-20T10:50:42.412Z'
+        timestamp: '2026-03-25T10:23:56.928Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 01bf366c-9cac-4512-88f3-3e3ed5517e45
+        message_id: fc15eeb9-a318-42c0-8432-c304736ab5ba
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT2M
@@ -2524,9 +2527,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_init
-        timestamp: '2026-03-20T10:50:44.207Z'
+        timestamp: '2026-03-25T10:23:59.269Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: ec59d3b9-ece3-41a2-b1ca-4747924c15c3
+        message_id: fc15eeb9-a318-42c0-8432-c304736ab5ba
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2617,9 +2620,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: confirm
-        timestamp: '2026-03-20T10:50:45.848Z'
+        timestamp: '2026-03-25T10:24:01.189Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 12b3288f-1e8a-44c0-a04f-67876d4841a9
+        message_id: 5abda0b5-4741-40a5-8caf-5c8b020da4fd
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2631,7 +2634,7 @@ transaction_history:
       message:
         order:
           type: ILBN
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           state: Created
           provider:
             id: P1
@@ -2654,8 +2657,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -2684,7 +2687,7 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
+                transaction_id: UTR-1774434241190
           tags:
             - code: bap_terms
               list:
@@ -2693,8 +2696,8 @@ transaction_history:
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:45.848Z'
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.189Z'
     action: confirm
     saved_info: {}
   - action_id: on_confirm_1
@@ -2702,9 +2705,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_confirm
-        timestamp: '2026-03-20T10:50:45.888Z'
+        timestamp: '2026-03-25T10:24:01.207Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 12b3288f-1e8a-44c0-a04f-67876d4841a9
+        message_id: 5abda0b5-4741-40a5-8caf-5c8b020da4fd
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2715,7 +2718,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: Accepted
           provider:
@@ -2739,8 +2742,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -2777,8 +2780,8 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:50:45.888Z'
-                    end: '2026-03-20T12:20:45.888Z'
+                    start: '2026-03-25T11:24:01.207Z'
+                    end: '2026-03-25T11:54:01.207Z'
                 person:
                   name: Customer
                 contact:
@@ -2811,7 +2814,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -2836,7 +2845,7 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
+                transaction_id: UTR-1774434241190
           tags:
             - code: bap_terms
               list:
@@ -2845,8 +2854,8 @@ transaction_history:
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: gst_number_of_buyerNP
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:45.888Z'
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.207Z'
     action: on_confirm
     saved_info: {}
   - action_id: on_status_pending
@@ -2854,9 +2863,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_status
-        timestamp: '2026-03-20T10:50:45.893Z'
+        timestamp: '2026-03-25T10:24:01.236Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 49fa013b-4a99-401e-83ea-65186cb185a4
+        message_id: db20a6ee-3766-498d-95d9-de68c066fe9c
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2867,7 +2876,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: In-progress
           provider:
@@ -2891,8 +2900,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -2918,8 +2927,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-03-20T11:00:45.927Z'
-                    end: '2026-03-20T11:10:45.927Z'
+                    start: '2026-03-25T10:34:01.242Z'
+                    end: '2026-03-25T10:44:01.242Z'
               end:
                 location:
                   gps: '12.4535,77.9283'
@@ -2933,8 +2942,8 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:10:45.927Z'
-                    end: '2026-03-20T11:00:45.927Z'
+                    start: '2026-03-25T10:44:01.242Z'
+                    end: '2026-03-25T10:34:01.242Z'
                 person:
                   name: Customer
                 contact:
@@ -2967,7 +2976,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -2992,9 +3007,9 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:45.893Z'
+                transaction_id: UTR-1774434241190
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.236Z'
     action: on_status
     saved_info: {}
   - action_id: on_status_order_packed
@@ -3002,9 +3017,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_status
-        timestamp: '2026-03-20T10:50:45.937Z'
+        timestamp: '2026-03-25T10:24:01.271Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 147a1210-1aac-48b0-b23b-25d69208bf43
+        message_id: 6d45b84c-97e4-4e39-a05e-16a9c66a87f4
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3015,7 +3030,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: In-progress
           provider:
@@ -3039,8 +3054,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3066,8 +3081,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-03-20T11:00:45.927Z'
-                    end: '2026-03-20T11:10:45.927Z'
+                    start: '2026-03-25T10:34:01.242Z'
+                    end: '2026-03-25T10:44:01.242Z'
               end:
                 location:
                   gps: '12.4535,77.9283'
@@ -3081,8 +3096,8 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:10:45.927Z'
-                    end: '2026-03-20T11:00:45.927Z'
+                    start: '2026-03-25T10:44:01.242Z'
+                    end: '2026-03-25T10:34:01.242Z'
                 person:
                   name: Customer
                 contact:
@@ -3115,7 +3130,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3140,9 +3161,9 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:45.937Z'
+                transaction_id: UTR-1774434241190
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.271Z'
     action: on_status
     saved_info: {}
   - action_id: on_status_agent_assigned
@@ -3150,9 +3171,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_status
-        timestamp: '2026-03-20T10:50:45.976Z'
+        timestamp: '2026-03-25T10:24:01.303Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 89714340-67eb-4642-bed2-b110a9554036
+        message_id: 2891ff81-c0f7-4263-a3b4-3ef4f9193fde
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3163,7 +3184,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: In-progress
           provider:
@@ -3187,8 +3208,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3214,8 +3235,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-03-20T11:00:45.927Z'
-                    end: '2026-03-20T11:10:45.927Z'
+                    start: '2026-03-25T10:34:01.242Z'
+                    end: '2026-03-25T10:44:01.242Z'
               end:
                 location:
                   gps: '12.4535,77.9283'
@@ -3229,8 +3250,8 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:10:45.927Z'
-                    end: '2026-03-20T11:00:45.927Z'
+                    start: '2026-03-25T10:44:01.242Z'
+                    end: '2026-03-25T10:34:01.242Z'
                 person:
                   name: Customer
                 contact:
@@ -3263,7 +3284,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3288,9 +3315,9 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:45.976Z'
+                transaction_id: UTR-1774434241190
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.303Z'
     action: on_status
     saved_info: {}
   - action_id: track_1
@@ -3298,9 +3325,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: track
-        timestamp: '2026-03-20T10:50:46.024Z'
+        timestamp: '2026-03-25T10:24:01.340Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 7260aa9e-823c-4e78-b4c8-c11128f3bb23
+        message_id: f1fa4eaf-376b-4d3a-bcda-66f954dfd0e1
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3310,7 +3337,7 @@ transaction_history:
         city: 'std:080'
         core_version: 1.2.5
       message:
-        order_id: 438402b0-e097-41fd-bf7d-77c25aebf623
+        order_id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
     action: track
     saved_info: {}
   - action_id: on_track_1
@@ -3318,9 +3345,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_track
-        timestamp: '2026-03-20T10:50:46.112Z'
+        timestamp: '2026-03-25T10:24:01.383Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 7260aa9e-823c-4e78-b4c8-c11128f3bb23
+        message_id: f1fa4eaf-376b-4d3a-bcda-66f954dfd0e1
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3335,15 +3362,15 @@ transaction_history:
           location:
             gps: '12.9675,77.7496'
             time:
-              timestamp: '2026-03-20T10:40:46.112Z'
-            updated_at: '2026-03-20T10:50:46.112Z'
+              timestamp: '2026-03-25T10:14:01.383Z'
+            updated_at: '2026-03-25T10:24:01.383Z'
           url: 'https://snp.com/ondc/tracking/F1'
           status: active
           tags:
             - code: order
               list:
                 - code: id
-                  value: 438402b0-e097-41fd-bf7d-77c25aebf623
+                  value: 87e2cf4b-d2aa-4053-b9cc-73f345403323
             - code: config
               list:
                 - code: attr
@@ -3375,9 +3402,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_status
-        timestamp: '2026-03-20T10:50:46.123Z'
+        timestamp: '2026-03-25T10:24:01.410Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 899e8c6b-7d72-4208-aad8-305d6ff851ed
+        message_id: dd430c1c-0cbc-4310-86d9-3d6e2974e826
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3388,7 +3415,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: In-progress
           provider:
@@ -3412,8 +3439,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3439,9 +3466,9 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-03-20T11:00:45.927Z'
-                    end: '2026-03-20T11:10:45.927Z'
-                  timestamp: '2026-03-20T10:50:46.123Z'
+                    start: '2026-03-25T10:34:01.242Z'
+                    end: '2026-03-25T10:44:01.242Z'
+                  timestamp: '2026-03-25T10:24:01.410Z'
               end:
                 location:
                   gps: '12.4535,77.9283'
@@ -3455,8 +3482,8 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:10:45.927Z'
-                    end: '2026-03-20T11:00:45.927Z'
+                    start: '2026-03-25T10:44:01.242Z'
+                    end: '2026-03-25T10:34:01.242Z'
                 person:
                   name: Customer
                 contact:
@@ -3489,7 +3516,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3514,12 +3547,12 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
+                transaction_id: UTR-1774434241190
           documents:
-            - url: 'https://snp.com/invoice/438402b0-e097-41fd-bf7d-77c25aebf623.pdf'
+            - url: 'https://snp.com/invoice/87e2cf4b-d2aa-4053-b9cc-73f345403323.pdf'
               label: Invoice
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:46.123Z'
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.410Z'
     action: on_status
     saved_info: {}
   - action_id: on_status_out_for_delivery
@@ -3527,9 +3560,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_status
-        timestamp: '2026-03-20T10:50:46.174Z'
+        timestamp: '2026-03-25T10:24:01.447Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 72311fcd-c1b6-4a16-ba4d-5e04594e6bd8
+        message_id: 279f58ec-8737-4453-80ee-3ba62b5eaeba
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3540,7 +3573,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: In-progress
           provider:
@@ -3564,8 +3597,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3591,9 +3624,9 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-03-20T11:00:45.927Z'
-                    end: '2026-03-20T11:10:45.927Z'
-                  timestamp: '2026-03-20T10:50:46.174Z'
+                    start: '2026-03-25T10:34:01.242Z'
+                    end: '2026-03-25T10:44:01.242Z'
+                  timestamp: '2026-03-25T10:24:01.447Z'
               end:
                 location:
                   gps: '12.4535,77.9283'
@@ -3607,8 +3640,8 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:10:45.927Z'
-                    end: '2026-03-20T11:00:45.927Z'
+                    start: '2026-03-25T10:44:01.242Z'
+                    end: '2026-03-25T10:34:01.242Z'
                 person:
                   name: Customer
                 contact:
@@ -3641,7 +3674,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3666,12 +3705,12 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
+                transaction_id: UTR-1774434241190
           documents:
-            - url: 'https://snp.com/invoice/438402b0-e097-41fd-bf7d-77c25aebf623.pdf'
+            - url: 'https://snp.com/invoice/87e2cf4b-d2aa-4053-b9cc-73f345403323.pdf'
               label: Invoice
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:46.174Z'
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.447Z'
     action: on_status
     saved_info: {}
   - action_id: on_status_order_delivered
@@ -3679,9 +3718,9 @@ transaction_history:
       context:
         domain: 'ONDC:RETINVL'
         action: on_status
-        timestamp: '2026-03-20T10:50:46.216Z'
+        timestamp: '2026-03-25T10:24:01.486Z'
         transaction_id: 3d642d45-ec0a-4555-a115-da3a2145b66d
-        message_id: 45fa8491-aca2-402f-b53a-605ff4e1a31c
+        message_id: 49b6ab73-589e-4f88-ae70-6cc41942607d
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -3692,7 +3731,7 @@ transaction_history:
         core_version: 1.2.5
       message:
         order:
-          id: 438402b0-e097-41fd-bf7d-77c25aebf623
+          id: 87e2cf4b-d2aa-4053-b9cc-73f345403323
           type: ILBN
           state: Completed
           provider:
@@ -3716,8 +3755,8 @@ transaction_history:
               area_code: '560002'
             phone: '9886098860'
             email: buyer@test.com
-            created_at: '2026-03-20T10:50:45.848Z'
-            updated_at: '2026-03-20T10:50:45.848Z'
+            created_at: '2026-03-25T10:24:01.189Z'
+            updated_at: '2026-03-25T10:24:01.189Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3743,8 +3782,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-03-20T11:00:45.927Z'
-                    end: '2026-03-20T11:10:45.927Z'
+                    start: '2026-03-25T10:34:01.242Z'
+                    end: '2026-03-25T10:44:01.242Z'
               end:
                 location:
                   gps: '12.4535,77.9283'
@@ -3758,9 +3797,9 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-03-20T11:10:45.927Z'
-                    end: '2026-03-20T11:00:45.927Z'
-                  timestamp: '2026-03-20T10:50:46.216Z'
+                    start: '2026-03-25T10:44:01.242Z'
+                    end: '2026-03-25T10:34:01.242Z'
+                  timestamp: '2026-03-25T10:24:01.486Z'
                 person:
                   name: Customer
                 contact:
@@ -3793,7 +3832,13 @@ transaction_history:
                   price:
                     currency: INR
                     value: '10841'
-                tags: []
+                tags:
+                  - code: bidding
+                    list:
+                      - code: lowest_bid
+                        value: '67000'
+                      - code: round
+                        value: '1'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3818,12 +3863,12 @@ transaction_history:
               params:
                 amount: '11337.75'
                 currency: INR
-                transaction_id: UTR-1774003845849
+                transaction_id: UTR-1774434241190
           documents:
-            - url: 'https://snp.com/invoice/438402b0-e097-41fd-bf7d-77c25aebf623.pdf'
+            - url: 'https://snp.com/invoice/87e2cf4b-d2aa-4053-b9cc-73f345403323.pdf'
               label: Invoice
-          created_at: '2026-03-20T10:50:45.848Z'
-          updated_at: '2026-03-20T10:50:46.216Z'
+          created_at: '2026-03-25T10:24:01.189Z'
+          updated_at: '2026-03-25T10:24:01.486Z'
     action: on_status
     saved_info: {}
 validationLib: ''
