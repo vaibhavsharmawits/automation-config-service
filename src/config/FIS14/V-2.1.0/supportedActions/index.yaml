@@ -1,7 +1,7 @@
 supportedActions:
-  null: ["search", "select"]
+  null: ["search","select"]
   search: ["on_search"]
-  on_search: ["select"]
+  on_search: ["select", "search"]
   select: ["on_select", "select"]
   on_select: ["init", "select", "on_status", "status"]
   init: ["on_init"]
@@ -25,7 +25,7 @@ apiProperties:
     transaction_partner: ["search"]
   select:
     async_predecessor: null
-    transaction_partner: []
+    transaction_partner: ["on_search"]
   on_select:
     async_predecessor: null
     transaction_partner: ["select"]

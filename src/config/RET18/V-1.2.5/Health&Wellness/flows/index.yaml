@@ -564,7 +564,7 @@ flows:
       - key: select_ccc
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_ccc
         owner: BAP
         expect: true
         description: BAP select the item
@@ -583,7 +583,7 @@ flows:
       - key: init_ccc
         type: init
         unsolicited: false
-        pair: on_init
+        pair: on_init_ccc
         owner: BAP
         expect: false
         description: Buyer initiate the product and send the updated fulfillment id
@@ -597,7 +597,7 @@ flows:
       - key: confirm_ccc
         type: confirm
         unsolicited: false
-        pair: on_confirm
+        pair: on_confirm_ccc
         owner: BAP
         expect: false
         description: Buyer confirms product
