@@ -11,7 +11,7 @@ supportedActions:
   update: ["on_update"]
   on_update: ["update", "on_update", "status", "on_status", "issue"]
   status: ["on_status"]
-  on_status: ["status", "init", "on_update", "update", "issue"]
+  on_status: ["status", "init", "on_update", "update", "issue","select"]
   issue: ["on_issue", "issue", "on_update", "on_status", "on_issue_status", "on_confirm"]
   on_issue: ["issue", "on_issue", "on_status", "on_issue_status"]
   on_issue_status: ["on_issue", "issue"]
@@ -25,7 +25,7 @@ apiProperties:
     transaction_partner: ["search"]
   select:
     async_predecessor: null
-    transaction_partner: ["on_search"]
+    transaction_partner: []
   on_select:
     async_predecessor: null
     transaction_partner: ["select"]

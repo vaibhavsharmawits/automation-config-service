@@ -263,21 +263,26 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: application_form
-    label: Application Form with KYC
+  - key: investor_details_form
+    label: Investor Details Form
     type: HTML_FORM
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: select_kyc
+    input:
+    - name: form_submission_id
+      label: Enter Form Submission ID
+      type: HTML_FORM
+      reference: $.reference_data.investor_details_form
+  - key: select_2
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_2
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select_kyc
+  - key: on_select_2
     type: on_select
     unsolicited: false
     pair: null
@@ -2414,37 +2419,55 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: application_form
-    label: Application Form with KYC
+  - key: investor_details_form
+    label: Investor Details Form
     type: HTML_FORM
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: select_kyc
+    input:
+    - name: form_submission_id
+      label: Enter Form Submission ID
+      type: HTML_FORM
+      reference: $.reference_data.investor_details_form
+  - key: select_2
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_2
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select_kyc
+  - key: on_select_2
     type: on_select
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: kyc_form
-    label: KYC Form
-    type: HTML_FORM
-    unsolicited: false
+  - key: verification_status
+    label: Ekyc Details form
+    type: DYNAMIC_FORM
+    unsolicited: false  
     pair: null
     owner: BPP
     expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.verification_status
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
   - key: select_esign
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_esign
     owner: BAP
     expect: false
     force_proceed: true
@@ -2454,21 +2477,34 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: esign_form
-    label: E-Sign Form
-    type: HTML_FORM
-    unsolicited: false
+  - key: E_sign_verification_status
+    label: E sign 
+    type: DYNAMIC_FORM
+    unsolicited: false  
     pair: null
     owner: BPP
     expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.E_sign_verification_status
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
   - key: select_final
     type: select
     unsolicited: false
-    pair: on_select_2
+    pair: on_select_final
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select_2
+  - key: on_select_final
     type: on_select
     unsolicited: false
     pair: null

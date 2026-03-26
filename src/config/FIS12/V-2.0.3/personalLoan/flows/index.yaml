@@ -2655,7 +2655,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_pre_part_payment
+        pair: on_update_pre_part_payment_pl
         owner: BAP
         expect: true
         input:
@@ -2666,7 +2666,7 @@ flows:
               - "20000"
             default: "20000"
 
-      - key: on_update_pre_part_payment
+      - key: on_update_pre_part_payment_pl
         type: on_update
         unsolicited: false
         pair: null
@@ -2914,7 +2914,7 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_pre_part_payment
+        pair: on_update_pre_part_payment_pl
         owner: BAP
         expect: true
         input:
@@ -2925,7 +2925,7 @@ flows:
               - "20000"
             default: "20000" 
 
-      - key: on_update_pre_part_payment
+      - key: on_update_pre_part_payment_pl
         type: on_update
         unsolicited: false
         pair: null
