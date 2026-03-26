@@ -977,29 +977,7 @@ flows:
         pair: null
         owner: BPP
         expect: false     
-
-      - key: on_update_unsolicited_personal_loan_3
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        force_proceed: true
-
-      - key: update_personal_loan_fulfillment_3
-        type: update
-        unsolicited: false
-        pair: on_update_personal_loan_fulfillment_3
-        owner: BAP
-        expect: false
-
-      - key: on_update_personal_loan_fulfillment_3
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-
+        
       - key: status_personal_loan_3
         type: status
         unsolicited: false
@@ -1610,7 +1588,7 @@ flows:
             payloadField: "form_submission_id"
             reference: $.reference_data.payment_url_form
 
-      - key: on_update_unsolicited_personal_loan_3
+      - key: on_update_foreclosure_unsolicitated
         type: on_update
         unsolicited: true
         pair: null
@@ -2163,7 +2141,7 @@ flows:
             payloadField: "form_submission_id"
             reference: $.reference_data.payment_url_form
 
-      - key: on_update_unsolicited_personal_loan_3
+      - key: on_update_unsolicited_missed_emi_pl
         type: on_update
         unsolicited: true
         pair: null
@@ -2438,7 +2416,7 @@ flows:
         expect: false
         force_proceed: true
 
-  - id: Personal_Loan_Pre_Part_Payment_With_Account_Aggregator
+  - id: Personal_Loan__PrePart_Payment_With_Account_Aggregator
     tags: ["WORKBENCH","WITH_ACCOUNT_AGGREGATOR","REPORTABLE"]
     description: Personal Loan - Pre-Part Payment
     sequence:
@@ -2677,11 +2655,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_pre_part_payment
+        pair: on_update_pre_part_payment_pl
         owner: BAP
         expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000"
 
-      - key: on_update_pre_part_payment
+      - key: on_update_pre_part_payment_pl
         type: on_update
         unsolicited: false
         pair: null
@@ -2702,7 +2687,7 @@ flows:
             payloadField: "form_submission_id"
             reference: $.reference_data.payment_url_form
 
-      - key: on_update_unsolicited_personal_loan_3
+      - key: on_update_unsolicited_pre_part_payment
         type: on_update
         unsolicited: true
         pair: null
@@ -2929,11 +2914,18 @@ flows:
       - key: update_personal_loan_3
         type: update
         unsolicited: false
-        pair: on_update_pre_part_payment
+        pair: on_update_pre_part_payment_pl
         owner: BAP
         expect: true
+        input:
+          - name: pre_part_payment
+            label: Select Pre Part Payment Amount
+            type: text
+            values:
+              - "20000"
+            default: "20000" 
 
-      - key: on_update_pre_part_payment
+      - key: on_update_pre_part_payment_pl
         type: on_update
         unsolicited: false
         pair: null
@@ -2978,7 +2970,7 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false    
+        expect: false
 
       - key: personal_loan_information_form
         label: personal loan information form
@@ -2991,7 +2983,7 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.personal_loan_information_form
+            reference: $.reference_data.personal_loan_information_form       
     
       - key: select_bureau_consent_personal_loan_3
         type: select
@@ -3008,8 +3000,8 @@ flows:
         owner: BPP
         expect: false
 
-      - key: multiple_bureau_information_form
-        label: multiple_bureau_information_form
+      - key: consumer_information_form_1
+        label: personal loan information form
         type: HTML_FORM
         unsolicited: false
         pair: null
@@ -3019,8 +3011,8 @@ flows:
           - name: form_submission_id
             label: Enter Form Submission id
             type: HTML_FORM
-            reference: $.reference_data.multiple_bureau_information_form           
-
+            reference: $.reference_data.personal_loan_information_form       
+  
       - key: select_1_personal_loan_3
         type: select
         unsolicited: false

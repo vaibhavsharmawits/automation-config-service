@@ -1868,6 +1868,7 @@ steps:
         order_state: $.message.order.state
         on_status_fulfillments: $.message.order.fulfillments[*]
         last_updated_at: $.message.order.updated_at
+        fulfillments: $.message.order.fulfillments[*]
       inputs: {}
   - api: update
     action_id: update_return
@@ -1903,7 +1904,6 @@ steps:
             id: 2025-02-10-293522
             fulfillments:
               - type: Return
-                id: ad392135
                 tags:
                   - code: return_request
                     list:
@@ -1943,7 +1943,7 @@ steps:
     description: please add relevant description
     mock:
       generate: >-
-        Cgphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZSgKICBleGlzdGluZ1BheWxvYWQsCiAgc2Vzc2lvbkRhdGEKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyWzBdOwogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXM7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSBzZXNzaW9uRGF0YS5xdW90ZVswXTsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKCiAgY29uc3QgYWxsRnVsZmlsbG1lbnRzID0gWwogICAgLi4uKHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cyB8fCBbXSksCiAgICAuLi4oc2Vzc2lvbkRhdGEudXBkYXRlX2Z1bGZpbGxtZW50cyB8fCBbXSksCiAgXTsKCiAgY29uc3QgdXBkYXRlZEZ1bGZpbGxtZW50cyA9IGFsbEZ1bGZpbGxtZW50cy5tYXAoKGYpID0+IHsKICAgIGlmIChmLnR5cGUgPT09ICJSZXR1cm4iKSB7CiAgICAgIGNvbnN0IHRhZ0lkID0gZi50YWdzCiAgICAgICAgPy5maW5kKCh0KSA9PiB0LmNvZGUgPT09ICJyZXR1cm5fcmVxdWVzdCIpCiAgICAgICAgPy5saXN0Py5maW5kKChsKSA9PiBsLmNvZGUgPT09ICJpZCIpPy52YWx1ZTsKCiAgICAgIGNvbnNvbGUubG9nKCLwn5SNIEZvdW5kIFJldHVybiBmdWxmaWxsbWVudDoiLCB7CiAgICAgICAgZXhpc3RpbmdJZDogZi5pZCwKICAgICAgICB0YWdJZCwKICAgICAgfSk7CgogICAgICByZXR1cm4geyAuLi5mLCBpZDogdGFnSWQgfHwgZi5pZCB9OwogICAgfQogICAgcmV0dXJuIGY7CiAgfSk7CgogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cyA9IHVwZGF0ZWRGdWxmaWxsbWVudHM7CgogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSBzZXNzaW9uRGF0YS5vcmRlcl9jcmVhdGVkX2F0WzBdOwogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnVwZGF0ZWRfYXQgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+        Cgphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZSgKICBleGlzdGluZ1BheWxvYWQsCiAgc2Vzc2lvbkRhdGEKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyWzBdOwogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXM7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSBzZXNzaW9uRGF0YS5xdW90ZVswXTsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKCiAgY29uc3QgYWxsRnVsZmlsbG1lbnRzID0gWwogICAgLi4uKHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cyB8fCBbXSksCiAgICAuLi4oc2Vzc2lvbkRhdGEudXBkYXRlX2Z1bGZpbGxtZW50cyB8fCBbXSksCiAgXTsKCiAgY29uc3QgdXBkYXRlZEZ1bGZpbGxtZW50cyA9IGFsbEZ1bGZpbGxtZW50cy5tYXAoKGYpID0+IHsKICAgIGlmIChmLnR5cGUgPT09ICJSZXR1cm4iKSB7CiAgICAgIGNvbnN0IHRhZ0lkID0gZi50YWdzCiAgICAgICAgPy5maW5kKCh0KSA9PiB0LmNvZGUgPT09ICJyZXR1cm5fcmVxdWVzdCIpCiAgICAgICAgPy5saXN0Py5maW5kKChsKSA9PiBsLmNvZGUgPT09ICJpZCIpPy52YWx1ZTsKCiAgICAgIGNvbnNvbGUubG9nKCLwn5SNIEZvdW5kIFJldHVybiBmdWxmaWxsbWVudDoiLCB7CiAgICAgICAgZXhpc3RpbmdJZDogZi5pZCwKICAgICAgICB0YWdJZCwKICAgICAgfSk7CgogICAgICByZXR1cm4gewogICAgICAgIC4uLmYsCiAgICAgICAgaWQ6IHRhZ0lkIHx8IGYuaWQsCiAgICAgICAgc3RhdGU6IHsKICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgY29kZTogIlJldHVybl9Jbml0aWF0ZWQiLAogICAgICAgICAgfSwKICAgICAgICB9LAogICAgICB9OwogICAgfQogICAgcmV0dXJuIGY7CiAgfSk7CgogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cyA9IHVwZGF0ZWRGdWxmaWxsbWVudHM7CgogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSBzZXNzaW9uRGF0YS5vcmRlcl9jcmVhdGVkX2F0WzBdOwogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnVwZGF0ZWRfYXQgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -2414,7 +2414,7 @@ steps:
     description: please add relevant description
     mock:
       generate: >-
-        ZnVuY3Rpb24gZmluZFJldHVyblJlcXVlc3RJdGVtQ29kZXMob2JqKSB7Cgljb25zdCByZXN1bHQgPSBbXTsKCglmdW5jdGlvbiB3YWxrKG5vZGUpIHsKCQlpZiAoIW5vZGUgfHwgdHlwZW9mIG5vZGUgIT09ICJvYmplY3QiKSByZXR1cm47CgoJCS8vIElmIHRoaXMgbm9kZSBoYXMgdGFncywgaW5zcGVjdCB0aGVtCgkJaWYgKEFycmF5LmlzQXJyYXkobm9kZS50YWdzKSkgewoJCQlmb3IgKGNvbnN0IHRhZyBvZiBub2RlLnRhZ3MpIHsKCQkJCWlmICgKCQkJCQl0YWcgJiYKCQkJCQl0YWcuY29kZSA9PT0gInJldHVybl9yZXF1ZXN0IiAmJgoJCQkJCUFycmF5LmlzQXJyYXkodGFnLmxpc3QpCgkJCQkpIHsKCQkJCQlmb3IgKGNvbnN0IGl0ZW0gb2YgdGFnLmxpc3QpIHsKCQkJCQkJaWYgKGl0ZW0gJiYgaXRlbS5jb2RlID09PSAiaXRlbV9pZCIgJiYgaXRlbS52YWx1ZSAhPSBudWxsKSB7CgkJCQkJCQlyZXN1bHQucHVzaChpdGVtLnZhbHVlKTsKCQkJCQkJfQoJCQkJCX0KCQkJCX0KCQkJfQoJCX0KCgkJLy8gUmVjdXJzZQoJCWZvciAoY29uc3Qga2V5IGluIG5vZGUpIHsKCQkJd2Fsayhub2RlW2tleV0pOwoJCX0KCX0KCgl3YWxrKG9iaik7CglyZXR1cm4gcmVzdWx0Owp9CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKAoJZXhpc3RpbmdQYXlsb2FkLAoJc2Vzc2lvbkRhdGEKKSB7CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwoJZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKCWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXM7CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKCWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwoJZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9IHNlc3Npb25EYXRhLm9yZGVyX2NyZWF0ZWRfYXRbMF07CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwoKCWNvbnN0IGRlbGl2ZXJ5RnVsZmlsbG1lbnQgPSBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMuZmluZCgKCQkoZikgPT4gZi50eXBlID09ICJEZWxpdmVyeSIKCSkKCgljb25zdCBpdGVtQ29kZXMgPSBmaW5kUmV0dXJuUmVxdWVzdEl0ZW1Db2RlcyhzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMpOwoKCWNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cyksICJmdWxmaWxsbWVudCIpOwoJY29uc29sZS5sb2coIml0ZW1Db2RlcyIsIGl0ZW1Db2Rlcyk7Cgljb25zdCBpdGVtcyA9IFtdOwoJY29uc3QgZnVsZmlsbG1lbnRzID0gc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzOwoJY29uc3QgZnVsZmlsbG1lbnRJZCA9IGZ1bGZpbGxtZW50cy5maW5kKAoJCShmKSA9PiBmLnR5cGUgPT0gIlJldHVybiIKCSk/LmlkOwoJY29uc29sZS5sb2coImZ1bGZpbGxtZW50SWQiLCBmdWxmaWxsbWVudElkKTsKCXNlc3Npb25EYXRhLml0ZW1zLmZvckVhY2goKGl0ZW0pID0+IHsKCQlpZiAoaXRlbUNvZGVzLmluY2x1ZGVzKGl0ZW0uaWQpKSB7CgkJCWl0ZW1zLnB1c2goewoJCQkJaWQ6IGl0ZW0uaWQsCgkJCQlxdWFudGl0eTogewoJCQkJCWNvdW50OiBpdGVtLnF1YW50aXR5LmNvdW50LAoJCQkJfSwKCQkJCWZ1bGZpbGxtZW50X2lkOiBmdWxmaWxsbWVudElkLAoJCQl9KTsKCQkJaXRlbS5xdWFudGl0eS5jb3VudCA9IDA7CgkJfQoJCWl0ZW1zLnB1c2goaXRlbSk7Cgl9KTsKCWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gaXRlbXM7Cgljb25zdCBxdW90ZSA9IHNlc3Npb25EYXRhLnF1b3RlOwoJY29uc3QgYnJlYWt1cCA9IHF1b3RlLmJyZWFrdXAgPz8gW107Cgljb25zdCBpdGVtUHJpY2UgPQoJCWJyZWFrdXAuZmluZCgoaXRlbSkgPT4gaXRlbVsiQG9uZGMvb3JnL2l0ZW1faWQiXSA9PT0gaXRlbUNvZGVzWzBdKT8ucHJpY2UKCQkJPy52YWx1ZSA/PyAiMC4wMCI7Cgljb25zdCBpdGVtUHJpY2VOdW0gPSBwYXJzZUZsb2F0KGl0ZW1QcmljZSk7CgoJaWYgKHF1b3RlLnByaWNlKSB7CgkJY29uc3QgZXhpc3RpbmdQcmljZSA9IHBhcnNlRmxvYXQocXVvdGUucHJpY2UudmFsdWUgfHwgIjAiKTsKCQlxdW90ZS5wcmljZS52YWx1ZSA9IGAkeyhleGlzdGluZ1ByaWNlIC0gaXRlbVByaWNlTnVtKS50b0ZpeGVkKDIpfWA7Cgl9Cgljb25zdCBxdW90ZVRyYWlscyA9IGJyZWFrdXAKCQkubWFwKChpdGVtKSA9PiB7CgkJCWlmIChpdGVtWyJAb25kYy9vcmcvaXRlbV9pZCJdICE9PSBpdGVtQ29kZXNbMF0pIHsKCQkJCXJldHVybiBpdGVtOwoJCQl9CgkJCWNvbnN0IHByaWNlID0gcGFyc2VGbG9hdChpdGVtLnByaWNlPy52YWx1ZSB8fCAiMCIpOwoJCQlpZiAocHJpY2UgPT09IDApIHJldHVybiBudWxsOwoJCQlpZiAoaXRlbS5wcmljZSkgewoJCQkJaXRlbS5wcmljZS52YWx1ZSA9ICIwLjAwIjsKCQkJfQoJCQlpZiAoaXRlbVsiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiXSkgewoJCQkJaXRlbVsiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiXS5jb3VudCA9IDA7CgkJCX0KCQkJcmV0dXJuIHsKCQkJCWNvZGU6ICJxdW90ZV90cmFpbCIsCgkJCQlsaXN0OiBbCgkJCQkJeyBjb2RlOiAidHlwZSIsIHZhbHVlOiBpdGVtWyJAb25kYy9vcmcvdGl0bGVfdHlwZSJdIH0sCgkJCQkJeyBjb2RlOiAiaWQiLCB2YWx1ZTogaXRlbVsiQG9uZGMvb3JnL2l0ZW1faWQiXSB9LAoJCQkJCXsgY29kZTogImN1cnJlbmN5IiwgdmFsdWU6ICJJTlIiIH0sCgkJCQkJeyBjb2RlOiAidmFsdWUiLCB2YWx1ZTogYCR7LTEgKiBwcmljZX1gIH0sCgkJCQldLAoJCQl9OwoJCX0pCgkJLmZpbHRlcigoeCkgPT4geCAhPT0gbnVsbCk7CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgPSBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMubWFwKAoJCShmKSA9PiB7CgkJCWlmIChmLnR5cGUgPT0gIlJldHVybiIpIHsKCQkJCWNvbnN0IHRhZ3MgPSBmPy50YWdzOwoJCQkJcmV0dXJuIHsKCQkJCQkuLi5mLAoJCQkJCXN0YXRlOiB7CgkJCQkJCWRlc2NyaXB0b3I6IHsKCQkJCQkJCWNvZGU6ICJSZXR1cm5fUGlja2VkIiwKCQkJCQkJfSwKCQkJCQl9LAoJCQkJCXN0YXJ0OiB7CgkJCQkJCWxvY2F0aW9uOiBkZWxpdmVyeUZ1bGZpbGxtZW50LmVuZD8ubG9jYXRpb24sCgkJCQkJCXRpbWU6IHsKCQkJCQkJCS4uLmYuc3RhcnQ/LnRpbWUsCgkJCQkJCQl0aW1lU3RhbXA6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKCQkJCQkJfSwKCQkJCQl9LAoJCQkJCXRhZ3M6IFsuLi50YWdzLCAuLi5xdW90ZVRyYWlsc10sCgkJCQl9OwoJCQl9CgkJCXJldHVybiBmOwoJCX0KCSk7CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZSA9IHNlc3Npb25EYXRhLnF1b3RlWzBdOwoJcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+        ZnVuY3Rpb24gZmluZFJldHVyblJlcXVlc3RJdGVtQ29kZXMob2JqKSB7Cgljb25zdCByZXN1bHQgPSBbXTsKCglmdW5jdGlvbiB3YWxrKG5vZGUpIHsKCQlpZiAoIW5vZGUgfHwgdHlwZW9mIG5vZGUgIT09ICJvYmplY3QiKSByZXR1cm47CgoJCS8vIElmIHRoaXMgbm9kZSBoYXMgdGFncywgaW5zcGVjdCB0aGVtCgkJaWYgKEFycmF5LmlzQXJyYXkobm9kZS50YWdzKSkgewoJCQlmb3IgKGNvbnN0IHRhZyBvZiBub2RlLnRhZ3MpIHsKCQkJCWlmICgKCQkJCQl0YWcgJiYKCQkJCQl0YWcuY29kZSA9PT0gInJldHVybl9yZXF1ZXN0IiAmJgoJCQkJCUFycmF5LmlzQXJyYXkodGFnLmxpc3QpCgkJCQkpIHsKCQkJCQlmb3IgKGNvbnN0IGl0ZW0gb2YgdGFnLmxpc3QpIHsKCQkJCQkJaWYgKGl0ZW0gJiYgaXRlbS5jb2RlID09PSAiaXRlbV9pZCIgJiYgaXRlbS52YWx1ZSAhPSBudWxsKSB7CgkJCQkJCQlyZXN1bHQucHVzaChpdGVtLnZhbHVlKTsKCQkJCQkJfQoJCQkJCX0KCQkJCX0KCQkJfQoJCX0KCgkJLy8gUmVjdXJzZQoJCWZvciAoY29uc3Qga2V5IGluIG5vZGUpIHsKCQkJd2Fsayhub2RlW2tleV0pOwoJCX0KCX0KCgl3YWxrKG9iaik7CglyZXR1cm4gcmVzdWx0Owp9CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKAoJZXhpc3RpbmdQYXlsb2FkLAoJc2Vzc2lvbkRhdGEKKSB7CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwoJZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKCWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXM7CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKCWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwoJZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9IHNlc3Npb25EYXRhLm9yZGVyX2NyZWF0ZWRfYXRbMF07CglleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwoKCWNvbnN0IGRlbGl2ZXJ5RnVsZmlsbG1lbnQgPSBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMuZmluZCgKCQkoZikgPT4gZi50eXBlID09ICJEZWxpdmVyeSIKCSkKCgljb25zdCBpdGVtQ29kZXMgPSBmaW5kUmV0dXJuUmVxdWVzdEl0ZW1Db2RlcyhzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMpOwoKCWNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cyksICJmdWxmaWxsbWVudCIpOwoJY29uc29sZS5sb2coIml0ZW1Db2RlcyIsIGl0ZW1Db2Rlcyk7Cgljb25zdCBpdGVtcyA9IFtdOwoJY29uc3QgZnVsZmlsbG1lbnRzID0gc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzOwoJY29uc3QgZnVsZmlsbG1lbnRJZCA9IGZ1bGZpbGxtZW50cy5maW5kKAoJCShmKSA9PiBmLnR5cGUgPT0gIlJldHVybiIKCSk/LmlkOwoJY29uc29sZS5sb2coImZ1bGZpbGxtZW50SWQiLCBmdWxmaWxsbWVudElkKTsKCXNlc3Npb25EYXRhLml0ZW1zLmZvckVhY2goKGl0ZW0pID0+IHsKCQlpZiAoaXRlbUNvZGVzLmluY2x1ZGVzKGl0ZW0uaWQpKSB7CgkJCWl0ZW1zLnB1c2goewoJCQkJaWQ6IGl0ZW0uaWQsCgkJCQlxdWFudGl0eTogewoJCQkJCWNvdW50OiBpdGVtLnF1YW50aXR5LmNvdW50LAoJCQkJfSwKCQkJCWZ1bGZpbGxtZW50X2lkOiBmdWxmaWxsbWVudElkLAoJCQl9KTsKCQkJaXRlbS5xdWFudGl0eS5jb3VudCA9IDA7CgkJfQoJCWl0ZW1zLnB1c2goaXRlbSk7Cgl9KTsKCWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gaXRlbXM7Cgljb25zdCBxdW90ZSA9IHNlc3Npb25EYXRhLnF1b3RlPy5bMF0gfHwge307CiAgICBjb25zdCBicmVha3VwID0gcXVvdGUuYnJlYWt1cCA/PyBbXTsKCWNvbnN0IGl0ZW1QcmljZSA9CgkJYnJlYWt1cC5maW5kKChpdGVtKSA9PiBpdGVtWyJAb25kYy9vcmcvaXRlbV9pZCJdID09PSBpdGVtQ29kZXNbMF0pPy5wcmljZQoJCQk/LnZhbHVlID8/ICIwLjAwIjsKCWNvbnN0IGl0ZW1QcmljZU51bSA9IHBhcnNlRmxvYXQoaXRlbVByaWNlKTsKCglpZiAocXVvdGUucHJpY2UpIHsKCQljb25zdCBleGlzdGluZ1ByaWNlID0gcGFyc2VGbG9hdChxdW90ZS5wcmljZS52YWx1ZSB8fCAiMCIpOwoJCXF1b3RlLnByaWNlLnZhbHVlID0gYCR7KGV4aXN0aW5nUHJpY2UgLSBpdGVtUHJpY2VOdW0pLnRvRml4ZWQoMil9YDsKCX0KCWNvbnN0IHF1b3RlVHJhaWxzID0gYnJlYWt1cAoJCS5tYXAoKGl0ZW0pID0+IHsKCQkJaWYgKGl0ZW1bIkBvbmRjL29yZy9pdGVtX2lkIl0gIT09IGl0ZW1Db2Rlc1swXSkgewoJCQkJcmV0dXJuIG51bGw7CgkJCX0KCQkJY29uc3QgcHJpY2UgPSBwYXJzZUZsb2F0KGl0ZW0ucHJpY2U/LnZhbHVlIHx8ICIwIik7CgkJCWlmIChwcmljZSA9PT0gMCkgcmV0dXJuIG51bGw7CgkJCWlmIChpdGVtLnByaWNlKSB7CgkJCQlpdGVtLnByaWNlLnZhbHVlID0gIjAuMDAiOwoJCQl9CgkJCWlmIChpdGVtWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdKSB7CgkJCQlpdGVtWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdLmNvdW50ID0gMDsKCQkJfQoJCQlyZXR1cm4gewoJCQkJY29kZTogInF1b3RlX3RyYWlsIiwKCQkJCWxpc3Q6IFsKCQkJCQl7IGNvZGU6ICJ0eXBlIiwgdmFsdWU6IGl0ZW1bIkBvbmRjL29yZy90aXRsZV90eXBlIl0gfSwKCQkJCQl7IGNvZGU6ICJpZCIsIHZhbHVlOiBpdGVtWyJAb25kYy9vcmcvaXRlbV9pZCJdIH0sCgkJCQkJeyBjb2RlOiAiY3VycmVuY3kiLCB2YWx1ZTogIklOUiIgfSwKCQkJCQl7IGNvZGU6ICJ2YWx1ZSIsIHZhbHVlOiBgJHstMSAqIHByaWNlfWAgfSwKCQkJCV0sCgkJCX07CgkJfSkKCQkuZmlsdGVyKCh4KSA9PiB4ICE9PSBudWxsKTsKCgljb25zb2xlLmxvZygicXVvdGVUcmlhbHMiLCBKU09OLnN0cmluZ2lmeShxdW90ZVRyYWlscykpCgoJZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0gc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzLm1hcCgKCQkoZikgPT4gewoJCQlpZiAoZi50eXBlID09ICJSZXR1cm4iKSB7CgkJCQljb25zdCB0YWdzID0gZj8udGFnczsKCQkJCXJldHVybiB7CgkJCQkJLi4uZiwKCQkJCQlzdGF0ZTogewoJCQkJCQlkZXNjcmlwdG9yOiB7CgkJCQkJCQljb2RlOiAiUmV0dXJuX1BpY2tlZCIsCgkJCQkJCX0sCgkJCQkJfSwKCQkJCQlzdGFydDogewoJCQkJCQlsb2NhdGlvbjogZGVsaXZlcnlGdWxmaWxsbWVudC5lbmQ/LmxvY2F0aW9uLAoJCQkJCQl0aW1lOiB7CgkJCQkJCQkuLi5mLnN0YXJ0Py50aW1lLAoJCQkJCQkJdGltZVN0YW1wOiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCgkJCQkJCX0sCgkJCQkJfSwKCQkJCQl0YWdzOiBbLi4udGFncywgLi4ucXVvdGVUcmFpbHNdLAoJCQkJfTsKCQkJfQoJCQlyZXR1cm4gZjsKCQl9CgkpOwoJZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSBzZXNzaW9uRGF0YS5xdW90ZVswXTsKCXJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: >-
@@ -2946,9 +2946,9 @@ transaction_history:
       context:
         domain: ONDC:RET10
         action: select
-        timestamp: '2026-02-04T13:50:31.313Z'
+        timestamp: '2026-03-26T07:07:06.720Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 87cd7786-2dc9-4c47-8037-bc7681d043ef
+        message_id: f2eeee40-e4e6-436c-9da5-ad1c30830d8f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -2968,21 +2968,26 @@ transaction_history:
               quantity:
                 count: 1
               location: L1
+            - id: I2
+              quantity:
+                count: 1
+              location: L1
           fulfillments:
             - end:
                 location:
                   gps: 19.129076,72.825803
                   address:
                     area_code: '400053'
+    action: select
     saved_info: {}
   - action_id: on_select
     payload:
       context:
         domain: ONDC:RET10
         action: on_select
-        timestamp: '2026-02-04T13:50:31.341Z'
+        timestamp: '2026-03-26T07:07:06.754Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 87cd7786-2dc9-4c47-8037-bc7681d043ef
+        message_id: f2eeee40-e4e6-436c-9da5-ad1c30830d8f
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3026,6 +3031,23 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3040,20 +3062,23 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           items:
             - id: I1
               fulfillment_id: F1
+            - id: I2
+              fulfillment_id: F1
+    action: on_select
     saved_info: {}
   - action_id: init
     payload:
       context:
         domain: ONDC:RET10
         action: init
-        timestamp: '2026-02-04T13:50:31.364Z'
+        timestamp: '2026-03-26T07:07:06.801Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 8c6fffc5-6409-4217-959e-f874a3ce1dc7
+        message_id: 51ff1b9e-246e-46ed-a097-dca2a2374a58
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3073,6 +3098,10 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
@@ -3085,8 +3114,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3105,15 +3134,16 @@ transaction_history:
                     locality: mock-locality
                     name: mock-house-name
           offers: []
+    action: init
     saved_info: {}
   - action_id: on_init
     payload:
       context:
         domain: ONDC:RET10
         action: on_init
-        timestamp: '2026-02-04T13:50:31.388Z'
+        timestamp: '2026-03-26T07:07:06.829Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 8c6fffc5-6409-4217-959e-f874a3ce1dc7
+        message_id: 51ff1b9e-246e-46ed-a097-dca2a2374a58
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3133,6 +3163,10 @@ transaction_history:
               fulfillment_id: F1
               quantity:
                 count: 1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
@@ -3145,8 +3179,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3179,6 +3213,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3193,7 +3239,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             '@ondc/org/buyer_app_finder_fee_type': percent
@@ -3216,15 +3262,16 @@ transaction_history:
                   value: 00ABCCH7409R1ZZ
                 - code: provider_tax_number
                   value: ABCDE1234F
+    action: on_init
     saved_info: {}
   - action_id: confirm
     payload:
       context:
         domain: ONDC:RET10
         action: confirm
-        timestamp: '2026-02-04T13:50:31.404Z'
+        timestamp: '2026-03-26T07:07:06.853Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 5e0f204a-69ea-4842-a25d-1762f0984fac
+        message_id: 8c43d760-95d4-46ef-8a27-327f441e835e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3235,7 +3282,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Created
           billing:
             address:
@@ -3249,10 +3296,14 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -3284,7 +3335,7 @@ transaction_history:
               '@ondc/org/TAT': P2D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -3318,6 +3369,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3332,7 +3395,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           tags:
             - code: bpp_terms
@@ -3345,17 +3408,18 @@ transaction_history:
                     https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
                 - code: tax_number
                   value: 00ABCCH7409R1ZZ
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.410Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:06.853Z'
+    action: confirm
     saved_info: {}
   - action_id: on_confirm
     payload:
       context:
         domain: ONDC:RET10
         action: on_confirm
-        timestamp: '2026-02-04T13:50:31.423Z'
+        timestamp: '2026-03-26T07:07:06.881Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 5e0f204a-69ea-4842-a25d-1762f0984fac
+        message_id: 8c43d760-95d4-46ef-8a27-327f441e835e
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3366,7 +3430,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Created
           provider:
             id: P1
@@ -3374,6 +3438,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -3389,8 +3457,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3445,6 +3513,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3459,11 +3539,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -3501,17 +3581,18 @@ transaction_history:
                     https://github.com/ONDC-Official/protocol-network-extension/discussions/79
                 - code: tax_number
                   value: 00ABCCH7409R1ZZ
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.426Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:06.882Z'
+    action: on_confirm
     saved_info: {}
   - action_id: on_status_accepted
     payload:
       context:
         domain: ONDC:RET10
         action: on_status
-        timestamp: '2026-02-04T13:50:31.438Z'
+        timestamp: '2026-03-26T07:07:06.915Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 3d579dfc-40db-4d92-9445-e54874c8f19f
+        message_id: 8f46377a-5ac0-4ab5-800f-23b87b5f57e0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3522,7 +3603,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Accepted
           provider:
             id: P1
@@ -3530,6 +3611,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -3545,8 +3630,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3573,8 +3658,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -3593,8 +3678,8 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
               tags:
                 - code: routing
                   list:
@@ -3622,6 +3707,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3636,11 +3733,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -3660,17 +3757,18 @@ transaction_history:
                 settlement_ifsc_code: xxxx
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.441Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:06.917Z'
+    action: on_status
     saved_info: {}
   - action_id: on_status_packed
     payload:
       context:
         domain: ONDC:RET10
         action: on_status
-        timestamp: '2026-02-04T13:50:31.455Z'
+        timestamp: '2026-03-26T07:07:06.946Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: cb990f8e-ab4f-4bb8-a9df-9318f1eb77d2
+        message_id: e847cc48-4042-4858-b137-e69d3db71564
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3681,7 +3779,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: In-progress
           provider:
             id: P1
@@ -3689,6 +3787,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -3704,8 +3806,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3732,8 +3834,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -3752,8 +3854,8 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
               tags:
                 - code: routing
                   list:
@@ -3781,6 +3883,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3795,11 +3909,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -3819,17 +3933,18 @@ transaction_history:
                 settlement_ifsc_code: xxxx
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.458Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:06.948Z'
+    action: on_status
     saved_info: {}
   - action_id: on_status_agent_assigned
     payload:
       context:
         domain: ONDC:RET10
         action: on_status
-        timestamp: '2026-02-04T13:50:31.470Z'
+        timestamp: '2026-03-26T07:07:06.980Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 4f2a2819-a521-4bed-8404-744956969ded
+        message_id: 9c73291f-d209-4942-a821-444ecb90f51c
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -3840,7 +3955,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: In-progress
           provider:
             id: P1
@@ -3848,6 +3963,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -3863,8 +3982,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -3891,8 +4010,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -3911,8 +4030,8 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
               tags:
                 - code: routing
                   list:
@@ -3943,6 +4062,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -3957,11 +4088,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -3981,17 +4112,18 @@ transaction_history:
                 settlement_ifsc_code: xxxx
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.477Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:06.982Z'
+    action: on_status
     saved_info: {}
   - action_id: on_status_picked
     payload:
       context:
         domain: ONDC:RET10
         action: on_status
-        timestamp: '2026-02-04T13:50:31.491Z'
+        timestamp: '2026-03-26T07:07:07.015Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: c1009b8c-c4bc-4443-a4d9-c592b9d43464
+        message_id: 5afad91f-805b-4dd4-b7b7-8dbbac2fb5a0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4002,7 +4134,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: In-progress
           provider:
             id: P1
@@ -4010,6 +4142,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -4025,8 +4161,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -4053,9 +4189,9 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
-                  timestamp: '2026-02-04T13:50:31.494Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
+                  timestamp: '2026-03-26T07:07:07.017Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -4074,8 +4210,8 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
               tags:
                 - code: routing
                   list:
@@ -4106,6 +4242,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -4120,11 +4268,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -4147,17 +4295,18 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.494Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.017Z'
+    action: on_status
     saved_info: {}
   - action_id: on_status_out_for_delivery
     payload:
       context:
         domain: ONDC:RET10
         action: on_status
-        timestamp: '2026-02-04T13:50:31.508Z'
+        timestamp: '2026-03-26T07:07:07.042Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 66da55d1-56f2-4ee6-a641-0ea60ef407ac
+        message_id: 9ac43528-d965-4d1d-9fa0-567d045653e0
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4168,7 +4317,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: In-progress
           provider:
             id: P1
@@ -4176,6 +4325,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -4191,8 +4344,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -4219,8 +4372,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -4239,8 +4392,8 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
               tags:
                 - code: routing
                   list:
@@ -4271,6 +4424,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -4285,11 +4450,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -4312,17 +4477,18 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.511Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.044Z'
+    action: on_status
     saved_info: {}
   - action_id: on_status_order_delivered
     payload:
       context:
         domain: ONDC:RET10
         action: on_status
-        timestamp: '2026-02-04T13:50:31.529Z'
+        timestamp: '2026-03-26T07:07:07.068Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: a589bcf1-c5c8-4c8e-890e-06986b324a3f
+        message_id: fabb51a7-203b-41fb-8820-faa5e6fd5eca
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4333,7 +4499,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Completed
           provider:
             id: P1
@@ -4341,6 +4507,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -4356,8 +4526,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
@@ -4384,8 +4554,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -4404,9 +4574,9 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
-                  timestamp: '2026-02-04T13:50:31.532Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
+                  timestamp: '2026-03-26T07:07:07.070Z'
               tags:
                 - code: routing
                   list:
@@ -4437,6 +4607,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -4451,11 +4633,11 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -4478,17 +4660,18 @@ transaction_history:
           documents:
             - url: https://invoice_url
               label: Invoice
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.532Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.070Z'
+    action: on_status
     saved_info: {}
   - action_id: update_return
     payload:
       context:
         domain: ONDC:RET10
         action: update
-        timestamp: '2026-02-04T13:50:31.546Z'
+        timestamp: '2026-03-26T07:07:07.090Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 2d74c3fd-c001-42ea-9ca6-f0ca6fef1ce9
+        message_id: 4a9d1064-dc70-42f7-9e23-0045f5bcd290
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4500,15 +4683,14 @@ transaction_history:
       message:
         update_target: item
         order:
-          id: '901020'
+          id: '331834'
           fulfillments:
             - type: Return
-              id: ad392135
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+                      value: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
                     - code: item_id
                       value: I1
                     - code: item_quantity
@@ -4524,15 +4706,16 @@ transaction_history:
                       value: PT24H
                     - code: ttl_reverseqc
                       value: P3D
+    action: update
     saved_info: {}
   - action_id: on_update_return_init
     payload:
       context:
         domain: ONDC:RET10
         action: on_update
-        timestamp: '2026-02-04T13:50:31.564Z'
+        timestamp: '2026-03-26T07:07:07.107Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 2d74c3fd-c001-42ea-9ca6-f0ca6fef1ce9
+        message_id: 4a9d1064-dc70-42f7-9e23-0045f5bcd290
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4543,7 +4726,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Completed
           provider:
             id: P1
@@ -4551,6 +4734,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -4568,6 +4755,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -4582,7 +4781,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           billing:
             address:
@@ -4596,15 +4795,15 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           fulfillments:
             - id: F1
               type: Delivery
               tracking: true
               state:
                 descriptor:
-                  code: Order-picked-up
+                  code: Order-delivered
               '@ondc/org/TAT': P2D
               '@ondc/org/provider_name': Store 1
               start:
@@ -4624,9 +4823,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
-                  timestamp: '2026-02-04T13:50:31.494Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -4645,8 +4843,9 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
+                  timestamp: '2026-03-26T07:07:07.070Z'
               tags:
                 - code: routing
                   list:
@@ -4664,12 +4863,11 @@ transaction_history:
                 name: mock-agent
                 phone: '9886098860'
             - type: Return
-              id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+                      value: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
                     - code: item_id
                       value: I1
                     - code: item_quantity
@@ -4685,9 +4883,13 @@ transaction_history:
                       value: PT24H
                     - code: ttl_reverseqc
                       value: P3D
+              id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
+              state:
+                descriptor:
+                  code: Return_Initiated
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -4707,17 +4909,18 @@ transaction_history:
                 settlement_ifsc_code: xxxx
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.571Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.110Z'
+    action: on_update
     saved_info: {}
   - action_id: on_update_return_approved
     payload:
       context:
         domain: ONDC:RET10
         action: on_update
-        timestamp: '2026-02-04T13:50:31.586Z'
+        timestamp: '2026-03-26T07:07:07.126Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: 75a88e5b-0074-470a-a0c7-0791effb24a7
+        message_id: 2af9fcc2-2258-411e-b9b0-da50ef296434
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4728,7 +4931,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Completed
           provider:
             id: P1
@@ -4736,6 +4939,10 @@ transaction_history:
               - id: L1
           items:
             - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+            - id: I2
               fulfillment_id: F1
               quantity:
                 count: 1
@@ -4751,8 +4958,8 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           quote:
             breakup:
               - '@ondc/org/item_id': I1
@@ -4767,6 +4974,18 @@ transaction_history:
                   price:
                     currency: INR
                     value: '200.00'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '300.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -4781,7 +5000,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '500.00'
             ttl: P1D
           fulfillments:
             - id: F1
@@ -4789,7 +5008,7 @@ transaction_history:
               tracking: true
               state:
                 descriptor:
-                  code: Order-picked-up
+                  code: Order-delivered
               '@ondc/org/TAT': P2D
               '@ondc/org/provider_name': Store 1
               start:
@@ -4809,9 +5028,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
-                  timestamp: '2026-02-04T13:50:31.494Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -4830,8 +5048,9 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
+                  timestamp: '2026-03-26T07:07:07.070Z'
               tags:
                 - code: routing
                   list:
@@ -4849,12 +5068,11 @@ transaction_history:
                 name: mock-agent
                 phone: '9886098860'
             - type: Return
-              id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+                      value: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
                     - code: item_id
                       value: I1
                     - code: item_quantity
@@ -4870,6 +5088,7 @@ transaction_history:
                       value: PT24H
                     - code: ttl_reverseqc
                       value: P3D
+              id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
               state:
                 descriptor:
                   code: Return_Approved
@@ -4887,8 +5106,8 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T13:50:31.590Z'
-                    end: '2026-02-05T13:50:31.590Z'
+                    start: '2026-03-26T07:07:07.127Z'
+                    end: '2026-03-27T07:07:07.127Z'
               end:
                 location:
                   id: L1
@@ -4903,11 +5122,11 @@ transaction_history:
                     area_code: '400053'
                 time:
                   range:
-                    start: '2026-02-05T13:50:31.590Z'
-                    end: '2026-02-06T13:50:31.590Z'
+                    start: '2026-03-27T07:07:07.127Z'
+                    end: '2026-03-28T07:07:07.127Z'
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -4927,17 +5146,18 @@ transaction_history:
                 settlement_ifsc_code: xxxx
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.590Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.127Z'
+    action: on_update
     saved_info: {}
   - action_id: on_update_return_picked
     payload:
       context:
         domain: ONDC:RET10
         action: on_update
-        timestamp: '2026-02-04T13:50:31.604Z'
+        timestamp: '2026-03-26T07:07:07.156Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: dfc29842-bb3d-41ea-a197-5eaafe553fd6
+        message_id: 4ed6c1d1-5cd1-4925-9696-61d56d25592d
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -4948,7 +5168,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Completed
           provider:
             id: P1
@@ -4958,11 +5178,15 @@ transaction_history:
             - id: I1
               quantity:
                 count: 1
-              fulfillment_id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+              fulfillment_id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
             - id: I1
               fulfillment_id: F1
               quantity:
                 count: 0
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
@@ -4975,22 +5199,34 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           quote:
             breakup:
               - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 0
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '200.00'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
                 title: Plain Atta
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '300.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -5005,7 +5241,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '300.00'
             ttl: P1D
           fulfillments:
             - id: F1
@@ -5013,7 +5249,7 @@ transaction_history:
               tracking: true
               state:
                 descriptor:
-                  code: Order-picked-up
+                  code: Order-delivered
               '@ondc/org/TAT': P2D
               '@ondc/org/provider_name': Store 1
               start:
@@ -5033,9 +5269,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
-                  timestamp: '2026-02-04T13:50:31.494Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -5054,8 +5289,9 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
+                  timestamp: '2026-03-26T07:07:07.070Z'
               tags:
                 - code: routing
                   list:
@@ -5073,12 +5309,11 @@ transaction_history:
                 name: mock-agent
                 phone: '9886098860'
             - type: Return
-              id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+                      value: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
                     - code: item_id
                       value: I1
                     - code: item_quantity
@@ -5094,6 +5329,17 @@ transaction_history:
                       value: PT24H
                     - code: ttl_reverseqc
                       value: P3D
+                - code: quote_trail
+                  list:
+                    - code: type
+                      value: item
+                    - code: id
+                      value: I1
+                    - code: currency
+                      value: INR
+                    - code: value
+                      value: '-200'
+              id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
               state:
                 descriptor:
                   code: Return_Picked
@@ -5111,9 +5357,9 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-02-04T13:50:31.590Z'
-                    end: '2026-02-05T13:50:31.590Z'
-                  timeStamp: '2026-02-04T13:50:31.618Z'
+                    start: '2026-03-26T07:07:07.127Z'
+                    end: '2026-03-27T07:07:07.127Z'
+                  timeStamp: '2026-03-26T07:07:07.157Z'
               end:
                 location:
                   id: L1
@@ -5128,11 +5374,11 @@ transaction_history:
                     area_code: '400053'
                 time:
                   range:
-                    start: '2026-02-05T13:50:31.590Z'
-                    end: '2026-02-06T13:50:31.590Z'
+                    start: '2026-03-27T07:07:07.127Z'
+                    end: '2026-03-28T07:07:07.127Z'
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -5152,17 +5398,18 @@ transaction_history:
                 settlement_ifsc_code: xxxx
                 bank_name: xxxx
                 branch_name: xxxx
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.618Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.157Z'
+    action: on_update
     saved_info: {}
   - action_id: update_settlement_trail
     payload:
       context:
         domain: ONDC:RET10
         action: update
-        timestamp: '2026-02-04T13:50:31.643Z'
+        timestamp: '2026-03-26T07:07:07.172Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: b01588df-df5d-47c0-a0cd-4356da8e8287
+        message_id: af15062b-1808-4239-828a-5150fa5f0bdc
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -5174,26 +5421,27 @@ transaction_history:
       message:
         update_target: payment
         order:
-          id: '901020'
+          id: '331834'
           fulfillments:
-            - id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+            - id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
               type: Return
           payment:
             '@ondc/org/settlement_details':
               - settlement_counterparty: buyer
                 settlement_phase: refund
                 settlement_type: netbanking
-                settlement_amount: '0'
-                settlement_timestamp: '2026-02-04T13:50:31.651Z'
+                settlement_amount: '200'
+                settlement_timestamp: '2026-03-26T07:07:07.175Z'
+    action: update
     saved_info: {}
   - action_id: on_update_return_delivered
     payload:
       context:
         domain: ONDC:RET10
         action: on_update
-        timestamp: '2026-02-04T13:50:31.666Z'
+        timestamp: '2026-03-26T07:07:07.221Z'
         transaction_id: 63145d80-a1c1-4a4a-bba0-c6097c43f696
-        message_id: e2294939-81bc-4875-891f-29096715fcef
+        message_id: cb40fac6-b246-49aa-a1cb-2bf6b8a71a8a
         bap_id: sample-bap-id
         bap_uri: https://bap.example.com
         ttl: PT30S
@@ -5204,7 +5452,7 @@ transaction_history:
         core_version: 1.2.0
       message:
         order:
-          id: '901020'
+          id: '331834'
           state: Completed
           provider:
             id: P1
@@ -5214,11 +5462,15 @@ transaction_history:
             - id: I1
               quantity:
                 count: 1
-              fulfillment_id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+              fulfillment_id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
             - id: I1
               fulfillment_id: F1
               quantity:
                 count: 0
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
           billing:
             address:
               building: my building name or house
@@ -5231,22 +5483,34 @@ transaction_history:
             phone: '9898989898'
             name: ONDC buyer
             email: nobody@nomail.com
-            created_at: '2026-02-04T13:50:26.371Z'
-            updated_at: '2026-02-04T13:50:26.371Z'
+            created_at: '2026-03-26T07:07:01.802Z'
+            updated_at: '2026-03-26T07:07:01.802Z'
           quote:
             breakup:
               - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 0
+                title: Plain Atta
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '200.00'
+              - '@ondc/org/item_id': I2
                 '@ondc/org/item_quantity':
                   count: 1
                 title: Plain Atta
                 '@ondc/org/title_type': item
                 price:
                   currency: INR
-                  value: '200.00'
+                  value: '300.00'
                 item:
                   price:
                     currency: INR
-                    value: '200.00'
+                    value: '300.00'
               - '@ondc/org/item_id': F1
                 title: Delivery charges
                 '@ondc/org/title_type': delivery
@@ -5261,7 +5525,7 @@ transaction_history:
                   value: '00.00'
             price:
               currency: INR
-              value: '200.00'
+              value: '300.00'
             ttl: P1D
           fulfillments:
             - id: F1
@@ -5269,7 +5533,7 @@ transaction_history:
               tracking: true
               state:
                 descriptor:
-                  code: Order-picked-up
+                  code: Order-delivered
               '@ondc/org/TAT': P2D
               '@ondc/org/provider_name': Store 1
               start:
@@ -5289,9 +5553,8 @@ transaction_history:
                   email: nobody@nomail.com
                 time:
                   range:
-                    start: '2026-02-04T14:00:31.441Z'
-                    end: '2026-02-04T14:10:31.441Z'
-                  timestamp: '2026-02-04T13:50:31.494Z'
+                    start: '2026-03-26T07:17:06.917Z'
+                    end: '2026-03-26T07:27:06.917Z'
               end:
                 contact:
                   email: nobody@nomail.com
@@ -5310,8 +5573,9 @@ transaction_history:
                     name: mock-house-name
                 time:
                   range:
-                    start: '2026-02-04T14:10:31.441Z'
-                    end: '2026-02-06T14:00:31.441Z'
+                    start: '2026-03-26T07:27:06.917Z'
+                    end: '2026-03-28T07:17:06.917Z'
+                  timestamp: '2026-03-26T07:07:07.070Z'
               tags:
                 - code: routing
                   list:
@@ -5329,12 +5593,11 @@ transaction_history:
                 name: mock-agent
                 phone: '9886098860'
             - type: Return
-              id: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
               tags:
                 - code: return_request
                   list:
                     - code: id
-                      value: 9b43ed77-6ec6-4e57-acc5-b7c4779ed2be
+                      value: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
                     - code: item_id
                       value: I1
                     - code: item_quantity
@@ -5350,6 +5613,17 @@ transaction_history:
                       value: PT24H
                     - code: ttl_reverseqc
                       value: P3D
+                - code: quote_trail
+                  list:
+                    - code: type
+                      value: item
+                    - code: id
+                      value: I1
+                    - code: currency
+                      value: INR
+                    - code: value
+                      value: '-200'
+              id: 736557fe-fa0a-41c4-b66d-91da0ec28ba7
               state:
                 descriptor:
                   code: Return_Delivered
@@ -5367,9 +5641,9 @@ transaction_history:
                     area_code: '560002'
                 time:
                   range:
-                    start: '2026-02-04T13:50:31.590Z'
-                    end: '2026-02-05T13:50:31.590Z'
-                  timeStamp: '2026-02-04T13:50:31.618Z'
+                    start: '2026-03-26T07:07:07.127Z'
+                    end: '2026-03-27T07:07:07.127Z'
+                  timeStamp: '2026-03-26T07:07:07.157Z'
               end:
                 location:
                   id: L1
@@ -5384,12 +5658,12 @@ transaction_history:
                     area_code: '400053'
                 time:
                   range:
-                    start: '2026-02-05T13:50:31.590Z'
-                    end: '2026-02-06T13:50:31.590Z'
-                  timeStamp: '2026-02-04T13:50:31.670Z'
+                    start: '2026-03-27T07:07:07.127Z'
+                    end: '2026-03-28T07:07:07.127Z'
+                  timeStamp: '2026-03-26T07:07:07.222Z'
           payment:
             params:
-              amount: '200.00'
+              amount: '500.00'
               currency: INR
               transaction_id: mock_payment_id_123
             status: PAID
@@ -5412,10 +5686,11 @@ transaction_history:
               - settlement_counterparty: buyer
                 settlement_phase: refund
                 settlement_type: netbanking
-                settlement_amount: '0'
-                settlement_timestamp: '2026-02-04T13:50:31.651Z'
-          created_at: '2026-02-04T13:50:31.410Z'
-          updated_at: '2026-02-04T13:50:31.670Z'
+                settlement_amount: '200'
+                settlement_timestamp: '2026-03-26T07:07:07.175Z'
+          created_at: '2026-03-26T07:07:06.853Z'
+          updated_at: '2026-03-26T07:07:07.222Z'
+    action: on_update
     saved_info: {}
 validationLib: ''
 helperLib: ''
