@@ -1,5 +1,6 @@
 flows:
   - id: Discovery_Flow_full_catalog
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", WORKBENCH]
     description: Retail 1.2.5 (Discovery Flow)
     sequence:
       - key: search
@@ -117,6 +118,7 @@ flows:
         label: full catalog
         description: BPP returns the full catalog refresh
   - id: Discovery_Flow_incremental_catalog
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: "Retail 1.2.5 (Discovery Flow Incremental Catalog)"
     sequence:
       - key: search_inc
@@ -154,6 +156,7 @@ flows:
         expect: false
         description: Bap stops search for incremental changes
   - id: Delivery_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -260,6 +263,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Out_Of_Stock_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Out Of Stock)
     sequence:
       - key: select
@@ -382,7 +386,29 @@ flows:
         owner: BPP
         expect: false
         description: BPP sends the tracking information
+  - id: Out_Of_Stock_Flow(Error-code)
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+    description: Retail 1.2.5 (Out Of Stock)
+    sequence:
+      - key: select
+        type: select
+        unsolicited: false
+        input:
+          - name: grocery_select
+            type: ret10_grocery_select
+        pair: on_select_out_of_stock
+        owner: BAP
+        expect: true
+        description: BAP may add unavailable or out-of-stock items to the cart
+      - key: on_select_out_of_stock
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: BPP returns item breakup when item is out of stock
   - id: Cancellation_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Cancellation)
     sequence:
       - key: select
@@ -447,6 +473,7 @@ flows:
         expect: false
         description: Seller Accepts cancellation
   - id: RTO_And_Part_Cancellation_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (RTO and Part Cancellation)
     sequence:
       - key: select
@@ -553,6 +580,7 @@ flows:
         expect: false
         description: RTO delivered
   - id: Return_Flow
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Return)
     sequence:
       - key: select
@@ -687,6 +715,7 @@ flows:
         expect: false
         description: Update request delivered
   - id: Cash_On_Delivery_Flow
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Cash On Delivery)
     sequence:
       - key: select
@@ -793,6 +822,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Self_Pickup_Flow
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Self Pickup)
     sequence:
       - key: select
@@ -864,6 +894,7 @@ flows:
         expect: false
         description: Status updates - order self pickup complete
   - id: Slotted_Delivery_Flow
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Slotted Delivery)
     sequence:
       - key: select
@@ -956,6 +987,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Buyer_Delivery_Flow
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Delivery Flow)
     sequence:
       - key: select
@@ -1041,6 +1073,7 @@ flows:
         expect: false
         description: Buyer updates order delivered
   - id: Buyer_Instructions_And_Delivery_Update_Flow
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Instructions)
     sequence:
       - key: select
@@ -1168,6 +1201,7 @@ flows:
         expect: false
         description: Status updates - order delivered
   - id: Multi_Option_Fulfillment_Flow
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Multi Option Fulfillment)
     sequence:
       - key: select
@@ -1224,42 +1258,43 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order accepted
-      # - key: on_status_packed
-      #   type: on_status
-      #   unsolicited: true
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   description: Status updates - order packed
-      # - key: on_status_agent_assigned
-      #   type: on_status
-      #   unsolicited: true
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   description: Status updates - agent assigned
-      # - key: on_status_picked
-      #   type: on_status
-      #   unsolicited: true
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   description: Status updates - order picked up
-      # - key: on_status_out_for_delivery
-      #   type: on_status
-      #   unsolicited: true
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   description: Status updates - order out for delivery
-      # - key: on_status_order_delivered
-      #   type: on_status
-      #   unsolicited: true
-      #   pair: null
-      #   owner: BPP
-      #   expect: false
-      #   description: Status updates - order delivered
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered
   - id: Forced_Cancellation_Flow
+    tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Delivery)
     sequence: &base_line_flow
       - key: select
@@ -1389,6 +1424,7 @@ flows:
         expect: false
         description: settlement trail update
   - id: Commercial_Model_For_BNP/SNP_Flow
+    tags: ["PRAMAAN", "OPTIONAL", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Commercial model)
     sequence:
       - key: select
@@ -1454,7 +1490,8 @@ flows:
         owner: BPP
         expect: false
         description: BPP accepts order confirmation
-  - id: Delivery_Flow_With_IGM_1
+  - id: Delivery_Flow_With_IGM(v-2.0.0)
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 1)
     sequence: &base_line_flow
       - key: select
@@ -1545,20 +1582,20 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
-        expect: false
-      - key: on_issue_processing  
+        expect: true
+      - key: on_issue_processing
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1566,23 +1603,23 @@ flows:
         type: on_issue
         label: need_more_info
         unsolicited: true
-        description: LSP provides more information
+        description: Respondent requests for more information
         pair: null
         owner: BPP
-        expect: true
+        expect: false
       - key: issue_info_provided
         type: issue
         label: info_provided
         unsolicited: false
-        description: Open an issue for IGM
+        description: Complainant provides required information
         pair: on_issue_provided
         owner: BAP
         expect: false
       - key: on_issue_provided
         type: on_issue
-        label: provided
+        label: processing
         unsolicited: false
-        description: LSP
+        description: Respondent marks the action as PROCESSING
         pair: null
         owner: BPP
         expect: false
@@ -1590,7 +1627,7 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1598,23 +1635,26 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
         input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
           - name: resolution_accept
-            label: Select a resolution
-            type: select
-            values: 
-              - "R1-Refund"  
-              - "R2-Replacement"  
-            default: "R2-Replacement"
+            label: Enter resolution ID
+            type: text
       - key: on_issue_resolved
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1622,11 +1662,28 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
-  - id: Delivery_Flow_With_IGM_2
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      - key: on_update_igm_return
+        type: on_update
+        label: on_update_igm
+        unsolicited: true
+        description: final on_update call after issue closed
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Delivery_Flow_With_IGM_Rejection(v-2.0.0)
+    tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
     description: Retail 1.2.5 (Delivery with IGM 2)
     sequence: &base_line_flow
       - key: select
@@ -1717,20 +1774,20 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
-        expect: false
-      - key: on_issue_processing  
+        expect: true
+      - key: on_issue_processing
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1738,7 +1795,59 @@ flows:
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_reject
+        type: issue
+        label: resolution_reject
+        unsolicited: false
+        description: The resolution is rejected by the complainant
+        pair: on_issue_processing_1
+        owner: BAP
+        expect: false
+        input:
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_processing_1
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_1
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_escalate
+        type: issue
+        label: escalate
+        unsolicited: false
+        description: Complainant escalates the complaint not being satisfied with the resolution
+        pair: on_issue_processing_2
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_2
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_2
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution again for the complaint
         pair: null
         owner: BPP
         expect: false
@@ -1746,23 +1855,26 @@ flows:
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
+        description: A resolution is accepted by the complainant
         pair: on_issue_resolved
         owner: BAP
         expect: false
         input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
           - name: resolution_accept
-            label: Select a resolution
-            type: select
-            values: 
-              - "R1-Refund"  
-              - "R2-Replacement"  
-            default: "R2-Replacement"
+            label: Enter resolution ID
+            type: text
       - key: on_issue_resolved
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
@@ -1770,11 +1882,28 @@ flows:
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
-  - id: Delivery_Flow_With_IGM_3
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      - key: on_update_igm_replacement
+        type: on_update
+        label: on_update_igm
+        unsolicited: true
+        description: final on_update call after issue closed
+        pair: null
+        owner: BPP
+        expect: false
+  - id: Delivery_Flow_With_IGM_No_Action(v-2.0.0)
+    tags: ["WORKBENCH", "MANDATORY"]
     description: Retail 1.2.5 (Delivery with IGM 3)
     sequence: &base_line_flow
       - key: select
@@ -1865,60 +1994,211 @@ flows:
         pair: null
         owner: BPP
         expect: false
-        description: Status updates - order delivered 
+        description: Status updates - order delivered
       - key: issue_open_2
         type: issue
         label: open
         unsolicited: false
-        description: Open an issue for IGM
+        description: Create a complaint for the order
         pair: on_issue_processing
         owner: BAP
         expect: false
-      - key: on_issue_processing  
+      - key: on_issue_processing
         type: on_issue
         label: processing
         unsolicited: false
-        description: anything
+        description: Respondent starts PROCESSING the complaint
         pair: null
         owner: BPP
         expect: false
-      - key: on_issue_resolution
+      - key: on_issue_resolution_igm_3
         type: on_issue
         label: resolution
         unsolicited: true
-        description: LSSA
+        description: Respondent proposes resolution for the complaint
         pair: null
         owner: BPP
         expect: false
-      - key: issue_resolution_accept
+      - key: issue_resolution_accept_igm_3
         type: issue
         label: resolution_accept
         unsolicited: false
-        description: Open an issue for IGM
-        pair: on_issue_resolved
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_igm_3
         owner: BAP
         expect: false
         input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
           - name: resolution_accept
-            label: Select a resolution
-            type: select
-            values: 
-              - "R1-Refund"  
-              - "R2-Replacement"  
-            default: "R2-Replacement"
-      - key: on_issue_resolved
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_igm_3
         type: on_issue
         label: resolved
         unsolicited: false
-        description: LSSA
+        description: The complaint is marked as resolved
         pair: null
         owner: BPP
         expect: false
-      - key: issue_close
+      - key: issue_close_igm_3
         type: issue
         label: close
         unsolicited: false
-        description: Open an issue for IGM
+        description: Once resolved, the complaint is marked as closed
         pair: null
         owner: BAP
         expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      - key: on_status_igm_3
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered
+  - id: Delivery_Flow_With_IGM(v-1.0.0)
+    tags: ["WORKBENCH", "MANDATORY"]
+    description: Retail 1.2.5 (Delivery with IGM 1.0.0)
+    sequence: &base_line_flow
+      - key: select
+        type: select
+        unsolicited: false
+        pair: on_select
+        owner: BAP
+        expect: true
+        description: BAP select the item
+        input:
+          - name: fashion_select
+            type: ret10_grocery_select
+      - key: on_select
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description:
+          BPP returns item breakup when item is in stock and offer applied
+          (if any)
+      - key: init
+        type: init
+        unsolicited: false
+        pair: on_init
+        owner: BAP
+        expect: false
+        description: Buyer initiate the product and send the updated fulfillment id
+      - key: on_init
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Respond to init
+      - key: confirm
+        type: confirm
+        unsolicited: false
+        pair: on_confirm
+        owner: BAP
+        expect: false
+        description: Buyer confirms product
+      - key: on_confirm
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+        description: Seller Accepts confirmation
+      - key: on_status_pending
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order accepted
+      - key: on_status_packed
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order packed
+      - key: on_status_agent_assigned
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - agent assigned
+      - key: on_status_picked
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order picked up
+      - key: on_status_out_for_delivery
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order out for delivery
+      - key: on_status_order_delivered
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Status updates - order delivered
+      - key: issue_open_100
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_100
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_100
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolved_100
+        type: on_issue_status
+        label: resolved
+        unsolicited: true
+        description: The complaint is marked as resolved with a resolution
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_100
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"

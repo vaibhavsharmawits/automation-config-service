@@ -1,5 +1,6 @@
 flows:
 - id: FEATURE_DISCOVERY
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Feature discovery for point-to-point logistics operations
   sequence:
   - key: search_LOGISTICS
@@ -173,6 +174,7 @@ flows:
       - code: "022"
         name: "RTO (with return)"
 - id: ORDER_FLOW_BASE_LINE
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -211,6 +213,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -327,6 +331,7 @@ flows:
     pair: null
     owner: BPP
 - id: IMMEDIATE_DELIVERY_FLOW
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: The Immediate Delivery Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Ship to delivery (S2D) TAT for the same is less than 60 minutes.
   sequence:
   - key: search_LOGISTICS
@@ -490,7 +495,186 @@ flows:
     description: LSP updates order status [Order delivered]
     pair: null
     owner: BPP
+- id: FIFO_FLOW
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+  description: The Immediate Delivery Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Ship to delivery (S2D) TAT for the same is less than 60 minutes.
+  sequence:
+  - key: search_FIFO_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_FIFO_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Immediate Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+    - name: feature_discovery
+      label: Features supported
+      type: checkbox
+      options:
+      - code: "009"
+        name: "Static OTP verification (pickup & delivery)"
+      - code: "017"
+        name: "Surge fee"
+      - code: "01A"
+        name: "Cancellation terms"
+  - key: on_search_FIFO_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+    input:
+    - name: feature_discovery
+      label: Features supported
+      type: checkbox
+      options:
+      - code: "009"
+        name: "Static OTP verification (pickup & delivery)"
+      - code: "017"
+        name: "Surge fee"
+      - code: "01A"
+        name: "Cancellation terms"
+  - key: init_FIFO_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_FIFO_LOGISTICS
+    owner: BAP
+  - key: on_init_FIFO_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup, also does an inline rider check.
+    pair: null
+    owner: BPP
+  - key: confirm_FIFO_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: >
+      LBNP sends order confirmation, may set "ready_to_ship" = "yes"
+    pair: on_confirm_FIFO_LOGISTICS
+    owner: BAP
+  - key: on_confirm_FIFO_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order and agent may be assigned.
+    pair: null
+    owner: BPP
+  - key: update_FIFO_LOGISTICS
+    type: update
+    unsolicited: false
+    description: >
+      LBNP sends "order_ready" = "yes" via /update to notify LSP that the order is ready for pickup.
+    pair: on_update_FIFO_LOGISTICS
+    owner: BAP
+  - key: on_update_FIFO_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order update and rider reaches the pickup location.
+    pair: null
+    owner: BPP
+  - key: on_status_13_LOGISTICS
+    type: on_status
+    label: Agent-assigned
+    unsolicited: true
+    description: LSP updates order status [Agent-assigned]
+    pair: null
+    owner: BPP
+  - key: on_status_5_LOGISTICS
+    type: on_status
+    unsolicited: true
+    description: LSP updates order status (At-pickup)
+    label: At-pickup
+    pair: null
+    owner: BPP
+  - key: on_status_FIFO_LOGISTICS
+    type: on_status
+    label: Order-picked-up
+    unsolicited: true
+    description: LSP updates order status [Order-picked-up]
+    pair: null
+    owner: BPP
+  - key: track_LOGISTICS
+    type: track
+    unsolicited: false
+    description: LBNP requests for tracking information
+    pair: on_track_LOGISTICS
+    owner: BAP
+  - key: on_track_LOGISTICS
+    type: on_track
+    unsolicited: false
+    description: LSP provides order tracking information (GPS coordinates)
+    pair: null
+    owner: BPP
+  - key: on_status_12_LOGISTICS
+    type: on_status
+    label: At-delivery
+    unsolicited: true
+    description: LSP updates order status [At-delivery]
+    pair: null
+    owner: BPP
+  - key: on_status_3_LOGISTICS
+    type: on_status
+    label: Order delivered
+    unsolicited: true
+    description: LSP updates order status [Order delivered]
+    pair: null
+    owner: BPP
 - id: RTO_FLOW
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order.
   sequence:
   - key: search_LOGISTICS
@@ -677,6 +861,7 @@ flows:
     pair: null
     owner: BPP
 - id: CASH_ON_DELIVERY_FLOW
+  tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
   description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
   sequence:
   - key: search_1_LOGISITCS
@@ -858,6 +1043,7 @@ flows:
     pair: null
     owner: BPP
 - id: PREPAID_PAYMENT_FLOW
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: This flow outlines the Payment Wallet process for Logistics Service Providers (LSPs), enabling them to establish a prepaid wallet system for logistics buyers.Payments for services are deducted directly from this wallet, ensuring a seamless and efficient transaction process.
   sequence:
   - key: search_LOGISTICS
@@ -1014,7 +1200,7 @@ flows:
   - key: on_status_1_LOGISTICS
     type: on_status
     label: Order-picked-up
-    unsolicited: false
+    unsolicited: true
     description: LSP updates order status [Order-picked-up]
     pair: null
     owner: BPP
@@ -1045,6 +1231,7 @@ flows:
     pair: null
     owner: BPP
 - id: QUICK_COMMERCE_FLOW
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: This flow covers logistics for Quick Commerce, Milk Run, and SPMD models, enabling coordination between LBNPs and LSPs.
   sequence:
   - key: search_qc
@@ -1201,6 +1388,7 @@ flows:
     pair: null
     owner: BPP
 - id: SURGE_FEE_FLOW
+  tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP adds an additional surge charge due to any operational reason.
   sequence:
   - key: search_LOGISTICS
@@ -1368,6 +1556,7 @@ flows:
     pair: null
     owner: BPP
 - id: CANCELLATION_TERMS_FLOW
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
   sequence:
   - key: search_LOGISTICS
@@ -1535,6 +1724,7 @@ flows:
     pair: null
     owner: BPP
 - id: STATIC_OTP_PICKUP_DELIVERY
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
   sequence:
   - key: search_2_LOGISTICS
@@ -1698,6 +1888,7 @@ flows:
     pair: null
     owner: BPP
 - id: STATIC_OTP_RTO_DELIVERY
+  tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
   description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
   sequence:
   - key: search_3_LOGISTICS
@@ -1860,7 +2051,8 @@ flows:
     description: LSP status update - [RTO Delivered]
     pair: null
     owner: BPP
-- id: ORDER_FLOW_BASE_LINE_WITH_IGM
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM(v-2.0.0)
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -1899,6 +2091,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2018,7 +2212,7 @@ flows:
     type: issue
     label: open
     unsolicited: false
-    description: Open an issue for IGM
+    description: Create a complaint for the order
     pair: on_issue_processing
     owner: BAP
     expect: false
@@ -2026,7 +2220,7 @@ flows:
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent starts PROCESSING the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2034,7 +2228,7 @@ flows:
     type: on_issue
     label: need_more_info
     unsolicited: true
-    description: LSP provides more information
+    description: Respondent requests for more information
     pair: null
     owner: BPP
     expect: true
@@ -2042,15 +2236,15 @@ flows:
     type: issue
     label: info_provided
     unsolicited: false
-    description: Open an issue for IGM
+    description: Complainant provides required information
     pair: on_issue_provided
     owner: BAP
     expect: false
   - key: on_issue_provided
     type: on_issue
-    label: provided
+    label: processing
     unsolicited: false
-    description: LSP
+    description: Respondent marks the action as PROCESSING
     pair: null
     owner: BPP
     expect: false
@@ -2058,7 +2252,7 @@ flows:
     type: on_issue
     label: resolution
     unsolicited: true
-    description: LSSA
+    description: Respondent proposes resolution for the complaint
     pair: null
     owner: BPP
     expect: false
@@ -2066,15 +2260,26 @@ flows:
     type: issue
     label: resolution_accept
     unsolicited: false
-    description: Open an issue for IGM
+    description: A resolution is accepted by the complainant
     pair: on_issue_resolved
     owner: BAP
     expect: false
+    input:
+      # - name: resolution_accept
+      #   label: Select a resolution
+      #   type: select
+      #   values:
+      #     - "R1-Refund"
+      #     - "R2-Replacement"
+      #   default: "R2-Replacement"
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
   - key: on_issue_resolved
     type: on_issue
     label: resolved
     unsolicited: false
-    description: LSSA
+    description: The complaint is marked as resolved
     pair: null
     owner: BPP
     expect: false
@@ -2082,11 +2287,28 @@ flows:
     type: issue
     label: close
     unsolicited: false
-    description: Open an issue for IGM
+    description: Once resolved, the complaint is marked as closed
     pair: null
     owner: BAP
     expect: false
-- id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+          - "THUMBS_UP"
+          - "THUMBS_DOWN"
+        default: "THUMBS_UP"
+  - key: on_update_refund_igm
+    type: on_update
+    label: on_update_igm
+    unsolicited: true
+    description: final on_update call after issue closed
+    pair: null
+    owner: BPP
+    expect: false
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM_REJECTION(v-2.0.0)
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2125,6 +2347,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2244,7 +2468,7 @@ flows:
     type: issue
     label: open
     unsolicited: false
-    description: Open an issue for IGM
+    description: Create a complaint for the order
     pair: on_issue_processing
     owner: BAP
     expect: false
@@ -2252,50 +2476,543 @@ flows:
     type: on_issue
     label: processing
     unsolicited: false
-    description: anything
+    description: Respondent starts PROCESSING the complaint
     pair: null
     owner: BPP
     expect: false
-  - key: on_issue_need_more_info
+  - key: on_issue_resolution
     type: on_issue
-    label: need_more_info
+    label: resolution
     unsolicited: true
-    description: LSP provides more information
+    description: Respondent proposes resolution for the complaint
     pair: null
     owner: BPP
-    expect: true
+    expect: false
+  - key: issue_resolution_reject
+    type: issue
+    label: resolution_reject
+    unsolicited: false
+    description: The resolution is rejected by the complainant
+    pair: on_issue_processing_1
+    owner: BAP
+    expect: false
+    input:
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
+  - key: on_issue_processing_1
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: Respondent marks the action as PROCESSING
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_issue_resolution_1
+    type: on_issue
+    label: resolution
+    unsolicited: true
+    description: Respondent proposes updated resolution for the complaint
+    pair: null
+    owner: BPP
+    expect: false
+  - key: issue_escalate
+    type: issue
+    label: escalate
+    unsolicited: false
+    description: Complainant escalates the complaint not being satisfied with the resolution
+    pair: on_issue_processing_2
+    owner: BAP
+    expect: false
+  - key: on_issue_processing_2
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: Respondent marks the action as PROCESSING
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_issue_resolution_2
+    type: on_issue
+    label: resolution
+    unsolicited: true
+    description: Respondent proposes updated resolution again for the complaint
+    pair: null
+    owner: BPP
+    expect: false
   - key: issue_resolution_accept
     type: issue
-    label: resolution accepted
+    label: resolution_accept
     unsolicited: false
-    description: Open an issue for IGM
+    description: A resolution is accepted by the complainant
     pair: on_issue_resolved
     owner: BAP
     expect: false
+    input:
+      # - name: resolution_accept
+      #   label: Select a resolution
+      #   type: select
+      #   values:
+      #     - "R1-Refund"
+      #     - "R2-Replacement"
+      #   default: "R2-Replacement"
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
   - key: on_issue_resolved
     type: on_issue
-    label: provided
+    label: resolved
     unsolicited: false
-    description: LSP
+    description: The complaint is marked as resolved
     pair: null
     owner: BPP
     expect: false
-  - key: on_update_IGM
-    type: on_update
-    label: update_igm
-    unsolicited: true
-    description: LSP updates IGM with additional information
-    pair: null
-    owner: BPP
-    expect: false
-  - key: issue_resolution
+  - key: issue_close
     type: issue
-    label: resolution
+    label: close
     unsolicited: false
-    description: LSSA
+    description: Once resolved, the complaint is marked as closed
     pair: null
     owner: BAP
     expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+          - "THUMBS_UP"
+          - "THUMBS_DOWN"
+        default: "THUMBS_UP"
+  - key: on_update_refund_igm
+    type: on_update
+    label: on_update_igm
+    unsolicited: true
+    description: final on_update call after issue closed
+    pair: null
+    owner: BPP
+    expect: false
+
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM_NO_ACTION(v-2.0.0)
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+  description: Standard point-to-point delivery flow including baseline features
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: on_status_13_LOGISTICS
+    type: on_status
+    label: Agent-assigned
+    unsolicited: true
+    description: LSP updates order status [Agent-assigned]
+    pair: null
+    owner: BPP
+  - key: on_status_5_LOGISTICS
+    type: on_status
+    unsolicited: true
+    description: LSP updates order status (At-pickup)
+    label: At-pickup
+    pair: null
+    owner: BPP
+  - key: on_status_1_LOGISTICS
+    type: on_status
+    label: Order-picked-up
+    unsolicited: true
+    description: LSP updates order status [Order picked up]
+    pair: null
+    owner: BPP
+  - key: track_LOGISTICS
+    type: track
+    unsolicited: false
+    description: Buyer requests delivery tracking
+    pair: on_track_LOGISTICS
+    owner: BAP
+  - key: on_track_LOGISTICS
+    type: on_track
+    unsolicited: false
+    description: LSP provides order tracking information (gps or url)
+    pair: null
+    owner: BPP
+  - key: issue_open_2
+    type: issue
+    label: open
+    unsolicited: false
+    description: Create a complaint for the order
+    pair: on_issue_processing
+    owner: BAP
+    expect: false
+  - key: on_issue_processing
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: Respondent starts PROCESSING the complaint
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_issue_resolution_igm_3
+    type: on_issue
+    label: resolution
+    unsolicited: true
+    description: Respondent proposes resolution for the complaint
+    pair: null
+    owner: BPP
+    expect: false
+  - key: issue_resolution_accept_igm_3
+    type: issue
+    label: resolution_accept
+    unsolicited: false
+    description: A resolution is accepted by the complainant
+    pair: on_issue_resolved_igm_3
+    owner: BAP
+    expect: false
+    input:
+      # - name: resolution_accept
+      #   label: Select a resolution
+      #   type: select
+      #   values:
+      #     - "R1-Refund"
+      #     - "R2-Replacement"
+      #   default: "R2-Replacement"
+      - name: resolution_accept
+        label: Enter resolution ID
+        type: text
+  - key: on_issue_resolved_igm_3
+    type: on_issue
+    label: resolved
+    unsolicited: false
+    description: The complaint is marked as resolved
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_12_LOGISTICS
+    type: on_status
+    label: At-delivery
+    unsolicited: true
+    description: LSP updates order status [At-delivery]
+    pair: null
+    owner: BPP
+  - key: on_status_3_LOGISTICS
+    type: on_status
+    label: Order-delivered
+    unsolicited: true
+    description: LSP updates order status [Order delivered]
+    pair: null
+    owner: BPP
+  - key: issue_close_igm_3
+    type: issue
+    label: close
+    unsolicited: false
+    description: Once resolved, the complaint is marked as closed
+    pair: null
+    owner: BAP
+    expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+        - "THUMBS_UP"
+        - "THUMBS_DOWN"
+        default: "THUMBS_UP"
+- id: ORDER_FLOW_BASE_LINE_WITH_IGM(v-1.0.0)
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+  description: Standard point-to-point delivery flow including baseline features
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: on_status_13_LOGISTICS
+    type: on_status
+    label: Agent-assigned
+    unsolicited: true
+    description: LSP updates order status [Agent-assigned]
+    pair: null
+    owner: BPP
+  - key: on_status_5_LOGISTICS
+    type: on_status
+    unsolicited: true
+    description: LSP updates order status (At-pickup)
+    label: At-pickup
+    pair: null
+    owner: BPP
+  - key: on_status_1_LOGISTICS
+    type: on_status
+    label: Order-picked-up
+    unsolicited: true
+    description: LSP updates order status [Order picked up]
+    pair: null
+    owner: BPP
+  - key: track_LOGISTICS
+    type: track
+    unsolicited: false
+    description: Buyer requests delivery tracking
+    pair: on_track_LOGISTICS
+    owner: BAP
+  - key: on_track_LOGISTICS
+    type: on_track
+    unsolicited: false
+    description: LSP provides order tracking information (gps or url)
+    pair: null
+    owner: BPP
+  - key: on_status_12_LOGISTICS
+    type: on_status
+    label: At-delivery
+    unsolicited: true
+    description: LSP updates order status [At-delivery]
+    pair: null
+    owner: BPP
+  - key: on_status_3_LOGISTICS
+    type: on_status
+    label: Order-delivered
+    unsolicited: true
+    description: LSP updates order status [Order delivered]
+    pair: null
+    owner: BPP
+  - key: issue_open_100
+    type: issue
+    label: open
+    unsolicited: false
+    description: Create a complaint for the order
+    pair: on_issue_processing_100
+    owner: BAP
+    expect: false
+  - key: on_issue_processing_100
+    type: on_issue
+    label: processing
+    unsolicited: false
+    description: Respondent starts PROCESSING the complaint
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_issue_resolved_100
+    type: on_issue_status
+    label: resolved
+    unsolicited: true
+    description: The complaint is marked as resolved with a resolution
+    pair: null
+    owner: BPP
+    expect: false
+  - key: issue_close_100
+    type: issue
+    label: close
+    unsolicited: false
+    description: Once resolved, the complaint is marked as closed
+    pair: null
+    owner: BAP
+    expect: false
+    input:
+      - name: rating
+        label: Select Rating
+        type: select
+        values:
+          - "THUMBS_UP"
+          - "THUMBS_DOWN"
+        default: "THUMBS_UP"
 
 ## developer portal flows
 
@@ -2304,7 +3021,7 @@ flows:
 
 - id: FEATURE_DISCOVERY_SEARCH_DEV_PORTAL
   title: Feature Discovery
-  tags: [ "DEV_PORTAL", "SEARCH", "SPSD", "FD" ]
+  tags: [ "DEV_PORTAL", "SEARCH", "SPSD", "FD", "REPORTABLE"]
   description: Feature discovery for point-to-point logistics operations
   sequence:
   - key: search_LOGISTICS
@@ -2472,7 +3189,7 @@ flows:
 
 - id: ORDER_FLOW_BASE_LINE_INIT_DEV_PORTAL
   title: Baseline Flow
-  tags: [ "DEV_PORTAL", "INIT", "SPSD" ]
+  tags: [ "DEV_PORTAL", "INIT", "SPSD", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2511,6 +3228,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2560,7 +3279,7 @@ flows:
 
 - id: ORDER_FLOW_BASE_LINE_CONFIRM_DEV_PORTAL
   title: Baseline Flow
-  tags: [ "DEV_PORTAL", "CONFIRM", "SPSD" ]
+  tags: [ "DEV_PORTAL", "CONFIRM", "SPSD", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2599,6 +3318,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2658,7 +3379,7 @@ flows:
 
 # track
 - id: ORDER_FLOW_BASE_LINE_TRACK_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "TRACK", "SPSD" ]
+  tags: [ "DEV_PORTAL", "TRACK", "SPSD", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2697,6 +3418,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2801,7 +3524,7 @@ flows:
 
 # update
 - id: ORDER_FLOW_BASE_LINE_UPDATE_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "UPDATE", "SPSD" ]
+  tags: [ "DEV_PORTAL", "UPDATE", "SPSD", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2840,6 +3563,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -2911,7 +3636,7 @@ flows:
 
 # status
 - id: ORDER_FLOW_BASE_LINE_STATUS_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "STATUS", "SPSD" ]
+  tags: [ "DEV_PORTAL", "STATUS", "SPSD", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -2950,6 +3675,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -3071,7 +3798,7 @@ flows:
 # search
 
 - id: CASH_ON_DELIVERY_FLOW_SEARCH_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "SEARCH", "COD" ]
+  tags: [ "DEV_PORTAL", "SEARCH", "COD", "REPORTABLE"]
   description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
   sequence:
   - key: search_1_LOGISITCS
@@ -3173,7 +3900,7 @@ flows:
 # init
 
 - id: CASH_ON_DELIVERY_FLOW_INIT_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "INIT", "COD" ]
+  tags: [ "DEV_PORTAL", "INIT", "COD", "REPORTABLE"]
   description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
   sequence:
   - key: search_1_LOGISITCS
@@ -3287,7 +4014,7 @@ flows:
 # confirm
 
 - id: CASH_ON_DELIVERY_FLOW_CONFIRM_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "CONFIRM", "COD" ]
+  tags: [ "DEV_PORTAL", "CONFIRM", "COD", "REPORTABLE"]
   description: This flow defines the logistics process for Cash on Delivery (COD) retail orders, ensuring proper tracking and settlement between Logistics Buyer Network Participants (LBNPs) and Logistics Service Providers (LSPs).
   sequence:
   - key: search_1_LOGISITCS
@@ -3415,7 +4142,7 @@ flows:
 # init
 
 - id: CANCELLATION_TERMS_FLOW_INIT_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "INIT", "CT" ]
+  tags: [ "DEV_PORTAL", "INIT", "CT", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LSP provides cancellation terms which would be applicable in case of a cancellation.
   sequence:
   - key: search_LOGISTICS
@@ -3515,7 +4242,7 @@ flows:
 # confirm
 
 - id: STATIC_OTP_PICKUP_DELIVERY_CONFIRM_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "CONFIRM", "SOV_P&D" ]
+  tags: [ "DEV_PORTAL", "CONFIRM", "SOV_P&D", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). Here the LBNP provides static OTP for pickup and delivery verification.
   sequence:
   - key: search_2_LOGISTICS
@@ -3624,7 +4351,7 @@ flows:
 # confirm
 
 - id: IMMEDIATE_DELIVERY_FLOW_CONFIRM_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "CONFIRM", "UFID" ]
+  tags: [ "DEV_PORTAL", "CONFIRM", "UFID", "REPORTABLE"]
   description: The Immediate Delivery Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Ship to delivery (S2D) TAT for the same is less than 60 minutes.
   sequence:
   - key: search_LOGISTICS
@@ -3748,7 +4475,7 @@ flows:
 # search
 
 - id: STATIC_OTP_RTO_DELIVERY_SEARCB_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "SEARCH", "SOV_RTO" ]
+  tags: [ "DEV_PORTAL", "SEARCH", "SOV_RTO", "REPORTABLE"]
   description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
   sequence:
   - key: search_3_LOGISTICS
@@ -3831,7 +4558,7 @@ flows:
 # init
 
 - id: STATIC_OTP_RTO_DELIVERY_INIT_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "INIT", "SOV_RTO" ]
+  tags: [ "DEV_PORTAL", "INIT", "SOV_RTO", "REPORTABLE"]
   description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
   sequence:
   - key: search_3_LOGISTICS
@@ -3926,7 +4653,7 @@ flows:
 # confirm
 
 - id: STATIC_OTP_RTO_DELIVERY_CONFIRM_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "CONFIRM", "SOV_RTO" ]
+  tags: [ "DEV_PORTAL", "CONFIRM", "SOV_RTO", "REPORTABLE"]
   description: Flow for Return to Origin (RTO) when buyer is unavailable or delivery fails. A separate RTO fulfillment is created and linked to the forward shipment. RTO quote is added before RTO completes. RTO ends with Delivered or Disposed, completing the order. Here LBNP provides static OTP for RTO delivery verification.
   sequence:
   - key: search_3_LOGISTICS
@@ -4042,7 +4769,7 @@ flows:
 # search
 
 - id: SURGE_FEE_FLOW_SEARCB_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "SEARCH", "SF" ]
+  tags: [ "DEV_PORTAL", "SEARCH", "SF", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP adds an additional surge charge due to any operational reason.
   sequence:
   - key: search_LOGISTICS
@@ -4128,7 +4855,7 @@ flows:
 # confirm
 
 - id: SURGE_FEE_FLOW_CONFIRM_DEV_PORTAL
-  tags: [ "DEV_PORTAL", "CONFIRM", "SF" ]
+  tags: [ "DEV_PORTAL", "CONFIRM", "SF", "REPORTABLE"]
   description: This Flow outlines the process for confirming and updating logistics orders with the Logistics Service Provider (LSP) and the Logistics Buyer Network Partner (LBNP). This flow is mainly for F&B and Grocery orders. Here the LSP adds an additional surge charge due to any operational reason.
   sequence:
   - key: search_LOGISTICS
@@ -4236,6 +4963,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_EXCHANGE_CUSTOMER_SUPPORT_DETAILS
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features with customer support details
   sequence:
   - key: search_LOGISTICS
@@ -4274,6 +5002,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4390,6 +5120,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_CODIFIED_STATIC_TERMS
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features with codifed static terms
   sequence:
   - key: search_LOGISTICS
@@ -4428,6 +5159,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4544,6 +5277,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_RCM
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features with rcm self-declartion
   sequence:
   - key: search_LOGISTICS
@@ -4582,6 +5316,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4698,6 +5434,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_BASE_LINE_PUBLIC_SPECIAL_CAPABILITIES
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features with public special capabilities
   sequence:
   - key: search_LOGISTICS
@@ -4736,6 +5473,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -4852,6 +5591,7 @@ flows:
     pair: null
     owner: BPP
 - id: ORDER_FLOW_BASE_LINE_SLA_METRICS
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS_SLA
@@ -4890,6 +5630,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5006,6 +5748,7 @@ flows:
     pair: null
     owner: BP
 - id: ORDER_FLOW_BASE_LINE_SELLER_CREDS
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5044,6 +5787,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5161,6 +5906,7 @@ flows:
     owner: BPP
 
 - id: UPDATE_DELIVERY_ADDRESS
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5199,6 +5945,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5394,6 +6142,7 @@ flows:
     owner: BPP
 
 - id: SELLER_BUYER_INSTRUCTIONS
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5432,6 +6181,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5537,6 +6288,7 @@ flows:
     owner: BPP
 
 - id: E-WAY_BILL
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5575,6 +6327,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5692,6 +6446,7 @@ flows:
     owner: BPP
 
 - id: E-POD
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5730,6 +6485,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -5859,6 +6616,7 @@ flows:
     owner: BPP
 
 - id: Call-Masking
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Standard point-to-point delivery flow including baseline features
   sequence:
   - key: search_LOGISTICS
@@ -5897,6 +6655,8 @@ flows:
       type: select
       values:
       - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
       payloadField: $.message.intent.payment.type
     - name: city_code
       label: Enter city code
@@ -6014,6 +6774,7 @@ flows:
     owner: BPP
 
 - id: RATE_CARD (P2P)
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
   description: Rate Card for point-to-point logistics operations
   sequence: 
   - key: search_rate_card_P2P_LOGISTICS
@@ -6186,3 +6947,268 @@ flows:
         name: "Differential weight charges"
       - code: "022"
         name: "RTO (with return)"
+- id: BUYER_SIDE_ORDER_CANCELLATION
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+  description: Standard point-to-point cancellation flow
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: buyer_side_cancel_LOGISTICS
+    type: cancel
+    unsolicited: false
+    description: LBNP requests for order cancellation.
+    payloadField: $.message.order.cancellation_reason_id
+    input:
+      - name: cancellation_reason_id
+        label: Select a reason_id
+        type: select
+        values:
+          - "150"
+          - "151"
+          - "152"
+          - "153"
+          - "154"
+        default: "151"
+    pair: null
+    owner: BAP
+  - key: buyer_side_on_cancel_LOGISTICS
+    type: on_cancel
+    unsolicited: false
+    description: LSP acknowledges order cancellation.
+    pair: null
+    owner: BPP
+- id: SELLER_SIDE_ORDER_CANCELLATION
+  tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
+  description: Standard point-to-point cancellation flow
+  sequence:
+  - key: search_LOGISTICS
+    type: search
+    unsolicited: false
+    description: LBNP sends a search request
+    pair: on_search_LOGISTICS
+    owner: BAP
+    expect: true
+    input:
+    - name: retailCategory
+      label: Select retail item category
+      type: select
+      values:
+      - F&B
+      - Grocery
+      - Fashion
+      - BPC
+      - Electronics
+      - Appliances
+      - Home & Kitchen
+      - Health & Wellness
+      - Pharma
+      - Auto components
+      - C2C parcels
+    - name: category
+      label: Select a category
+      type: select
+      values:
+      - Standard Delivery
+      - Next Day Delivery
+      - Same Day Delivery
+      payloadField: $.message.intent.category.id
+    - name: paymentType
+      label: Select payment type
+      type: select
+      values:
+      - POST-FULFILLMENT
+      - ON-ORDER
+      - ON-FULFILLMENT
+      payloadField: $.message.intent.payment.type
+    - name: city_code
+      label: Enter city code
+      type: text
+      payloadField: $.context.city
+      default: "std:080"
+    - name: start_gps
+      label: Enter start gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.gps
+      default: 12.4535,77.9283
+    - name: end_gps
+      label: Enter end gps coordinates
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.gps
+      default: 12.4535,77.9283
+    - name: start_code
+      label: Enter start area code
+      type: text
+      payloadField: $.message.intent.fulfillment.start.location.address.area_code
+      default: "560001"
+    - name: end_code
+      label: Enter end area code
+      type: text
+      payloadField: $.message.intent.fulfillment.end.location.address.area_code
+      default: "560001"
+  - key: on_search_LOGISTICS
+    type: on_search
+    unsolicited: false
+    description: LSP responds with catalog
+    pair: null
+    owner: BPP
+  - key: init_LOGISTICS
+    type: init
+    unsolicited: false
+    description: LBNP selects and initializes order
+    pair: on_init_LOGISTICS
+    owner: BAP
+  - key: on_init_LOGISTICS
+    type: on_init
+    unsolicited: false
+    description: LSP acknowledges and provides quote breakup
+    pair: null
+    owner: BPP
+  - key: confirm_LOGISTICS
+    type: confirm
+    unsolicited: false
+    description: LBNP sends order confirmation
+    pair: on_confirm_LOGISTICS
+    owner: BAP
+  - key: on_confirm_LOGISTICS
+    type: on_confirm
+    unsolicited: false
+    description: LSP accepts the order
+    pair: null
+    owner: BPP
+  - key: update_LOGISTICS
+    type: update
+    unsolicited: false
+    description: LBNP updates order details
+    pair: on_update_LOGISTICS
+    owner: BAP
+  - key: on_update_LOGISTICS
+    type: on_update
+    unsolicited: false
+    description: LSP acknowledges order updates and searches for an agent.
+    pair: null
+    owner: BPP
+  - key: on_status_13_LOGISTICS
+    type: on_status
+    label: Agent-assigned
+    unsolicited: true
+    description: LSP updates order status [Agent-assigned]
+    pair: null
+    owner: BPP
+  - key: on_status_5_LOGISTICS
+    type: on_status
+    unsolicited: true
+    description: LSP updates order status (At-pickup)
+    label: At-pickup
+    pair: null
+    owner: BPP
+  - key: seller_side_on_cancel_LOGISTICS
+    type: on_cancel
+    unsolicited: true
+    description: LSP acknowledges order cancellation.
+    pair: null
+    owner: BPP
+    payloadField: $.message.order.cancellation_reason_id

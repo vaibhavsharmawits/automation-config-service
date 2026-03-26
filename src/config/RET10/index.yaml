@@ -7,3 +7,10 @@ versions:
         flows: "./v-1.2.5/GROCERY/flows/index.yaml"
     supportedActions:
       $ref: "src/config/RET10/v-1.2.5/supportedActions/index.yaml"
+  - id: 1.2.0
+    reporting: false
+    usecase:
+      - name: GROCERY
+        flows: "./v-1.2.0/GROCERY/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RET10/v-1.2.0/supportedActions/index.yaml"

@@ -1,152 +1,7 @@
 flows:
-  - id: Hotel Booking Seller App Pagination Flow
-    description: Hotel Booking - Seller App Pagination Flow
-    sequence:
-      - key: search_1
-        type: search
-        unsolicited: false
-        pair: on_search_1
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_1
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: on_search_2
-        type: on_search
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false  
-      - key: on_search_3
-        type: on_search
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false  
-      - key: on_search_4
-        type: on_search
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false      
-  - id: Hotel Booking Purchase Journey
-    description: Get a list of all the accommodations with delta changes
-    sequence:
-      - key: search_5
-        type: search
-        unsolicited: false
-        pair: on_search_5
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_5
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false     
-      - key: select
-        type: select
-        unsolicited: false
-        pair: on_select
-        owner: BAP
-        expect: false
-      - key: on_select
-        type: on_select
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: init
-        type: init
-        unsolicited: false
-        pair: on_init
-        owner: BAP
-        expect: false
-      - key: on_init
-        type: on_init
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: confirm
-        type: confirm
-        unsolicited: false
-        pair: on_confirm
-        owner: BAP
-        expect: false
-      - key: on_confirm
-        type: on_confirm
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: status
-        type: status
-        unsolicited: false
-        pair: on_status
-        owner: BAP
-        expect: false
-      - key: on_status
-        type: on_status
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false  
-      - key: update
-        type: update
-        unsolicited: false
-        pair: on_update
-        owner: BAP
-        expect: false
-      - key: on_update
-        type: on_update
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: cancel
-        type: cancel
-        unsolicited: false
-        pair: on_cancel
-        owner: BAP
-        expect: false
-      - key: on_cancel
-        type: on_cancel
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false  
-  - id: Hotel Booking TTL
-    description: Hotel Booking (ttl based) - Flow
+  - id: Order to Confirm to Fulfillment (City Code)
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Complete hotel booking journey from search to status check using GPS coordinates
     sequence:
       - key: search_6
         type: search
@@ -159,14 +14,109 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
+      - key: on_search_6
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_5
+        type: select
+        unsolicited: false
+        pair: on_select_5
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_5
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_5
+        type: init
+        unsolicited: false
+        pair: on_init_5
+        owner: BAP
+        expect: false
+      - key: on_init_5
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_5
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_5
+        owner: BAP
+        expect: false
+      - key: on_confirm_5
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_5
+        type: status
+        unsolicited: false
+        pair: on_status_city_code
+        owner: BAP
+        expect: false
+      - key: on_status_city_code
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Hotel Booking (ttl based) booking
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Hotel booking flow using TTL-based incremental catalog refresh
+    sequence:
+      - key: search_6
+        type: search
+        unsolicited: false
+        pair: on_search_6
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search_6
         type: on_search
         unsolicited: false
@@ -179,8 +129,402 @@ flows:
         pair: on_search_7
         owner: BAP
         expect: true
+        input:
+          - name: start_time
+            label: Enter Start Time
+            type: date
+            payloadField: $.message.intent.category.time.range.start
+          - name: end_time
+            label: Enter End Time
+            type: date
+            payloadField: $.message.intent.category.time.range.end
       - key: on_search_7
         type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Hotel Booking Seller App Pagination Flow
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Hotel Booking - Seller App Pagination Flow with multiple on_search responses
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_2
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_3
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_search_4
+        type: on_search
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Buyer Side Full Cancellation
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Full booking journey with buyer-initiated cancellation
+    sequence:
+      - key: search_6
+        type: search
+        unsolicited: false
+        pair: on_search_6
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_6
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_5
+        type: select
+        unsolicited: false
+        pair: on_select_5
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_5
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_5
+        type: init
+        unsolicited: false
+        pair: on_init_5
+        owner: BAP
+        expect: false
+      - key: on_init_5
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_5
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_5
+        owner: BAP
+        expect: false
+      - key: on_confirm_5
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_5
+        type: status
+        unsolicited: false
+        pair: on_status_5
+        owner: BAP
+        expect: false
+      - key: on_status_5
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel_5
+        type: cancel
+        unsolicited: false
+        pair: on_cancel_5
+        owner: BAP
+        expect: false
+      - key: on_cancel_5
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Merchant Side Full Cancellation
+    tags: ["REPORTABLE", "MANDATORY", "WORKBENCH"]
+    description: Full booking journey with merchant-initiated (unsolicited) cancellation
+    sequence:
+      - key: search_6
+        type: search
+        unsolicited: false
+        pair: on_search_6
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_6
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_5
+        type: select
+        unsolicited: false
+        pair: on_select_5
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_5
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_5
+        type: init
+        unsolicited: false
+        pair: on_init_5
+        owner: BAP
+        expect: false
+      - key: on_init_5
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_5
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_5
+        owner: BAP
+        expect: false
+      - key: on_confirm_5
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_5
+        type: status
+        unsolicited: false
+        pair: on_status_5
+        owner: BAP
+        expect: false
+      - key: on_status_5
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel_unsolicited
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+
+  - id: Order to Confirm to Fulfillment (Updates in Booking)
+    tags: ["REPORTABLE", "OPTIONAL", "WORKBENCH"]
+    description: Complete booking journey with update capability
+    sequence:
+      - key: search_6
+        type: search
+        unsolicited: false
+        pair: on_search_6
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_6
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_5
+        type: select
+        unsolicited: false
+        pair: on_select_5
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_5
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_5
+        type: init
+        unsolicited: false
+        pair: on_init_5
+        owner: BAP
+        expect: false
+      - key: on_init_5
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_5
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_5
+        owner: BAP
+        expect: false
+      - key: on_confirm_5
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_5
+        type: status
+        unsolicited: false
+        pair: on_status_5
+        owner: BAP
+        expect: false
+      - key: on_status_5
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: update_5
+        type: update
+        unsolicited: false
+        pair: on_update_5
+        owner: BAP
+        expect: false
+        input:
+          - name: email
+            label: Enter email
+            type: text
+            payloadField: $.message.order.fulfillments[*].tags[*].list[?(@.descriptor.code=="contact.email")].value
+
+      - key: on_update_5
+        type: on_update
         unsolicited: false
         pair: null
         owner: BPP

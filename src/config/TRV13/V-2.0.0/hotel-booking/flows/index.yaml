@@ -1,5 +1,6 @@
 flows:
-  - id: Hotel Booking
+  - id: Order to Confirm to Fulfillment (City Based)
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
     sequence:
       - key: search_1
@@ -13,14 +14,108 @@ flows:
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
             type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: start_time
+            label: Enter Check In Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.start  
+          - name: end_time
+            label: Enter Check Out Time (YYYY-MM-DD)
+            type: text
+            required: false
+            payloadField: $.message.order.provider.time.range.end  
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1
+        type: init
+        unsolicited: false
+        pair: on_init_1
+        owner: BAP
+        expect: false
+      - key: on_init_1
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_1
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_1
+        owner: BAP
+        expect: false
+      - key: on_confirm_1
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_1
+        type: status
+        unsolicited: false
+        pair: on_status_1
+        owner: BAP
+        expect: false
+      - key: on_status_1
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Incremental Catalog refresh
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search_1
         type: on_search
         unsolicited: false
@@ -38,38 +133,581 @@ flows:
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false  
+        expect: false    
+  - id: Order to Confirm to Fulfillment (Time range Based)
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
       - key: search_3
         type: search
         unsolicited: false
         pair: on_search_3
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+          - name: start_date
+            label: Enter start date (check in) (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.category.time.range.start
+          - name: end_date
+            label: Enter end date (check out) (YYYY-MM-DD)
+            type: text
+            payloadField: $.message.intent.category.time.range.end
+
       - key: on_search_3
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
+        expect: false
+      - key: select_3
+        type: select
+        unsolicited: false
+        pair: on_select_3
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_3
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_3
+        type: init
+        unsolicited: false
+        pair: on_init_3
+        owner: BAP
+        expect: false
+      - key: on_init_3
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_3
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_3
+        owner: BAP
+        expect: false
+      - key: on_confirm_3
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_3
+        type: status
+        unsolicited: false
+        pair: on_status_3
+        owner: BAP
+        expect: false
+      - key: on_status_3
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
         expect: false  
+  - id: Order to Confirm to Fulfillment (Provider Specific)
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: search_4
         type: search
         unsolicited: false
         pair: on_search_4
         owner: BAP
         expect: true
+        # input:
+        #   - name: provider_id
+        #     label: Enter provider id
+        #     type: text
+        #     payloadField: $.message.intent.provider.id
+        #   - name: provider_name
+        #     label: Enter provider name
+        #     type: text
+        #     payloadField: $.message.intent.provider.descriptor.name
+        #   - name: start_time
+        #     label: Enter start time (check in)
+        #     type: text
+        #     payloadField: $.message.intent.provider.time.range.start
+        #   - name: end_time
+        #     label: Enter end time (check out)
+        #     type: text
+        #     payloadField: $.message.intent.provider.time.range.end
+        input:
+          - name: select_input
+            label: Enter
+            type: trv13_select_provider
       - key: on_search_4
         type: on_search
         unsolicited: false
         pair: null
         owner: BPP
-        expect: false      
-      - key: select
+        expect: false
+      - key: select_4
         type: select
         unsolicited: false
-        pair: on_select
+        pair: on_select_4
         owner: BAP
         expect: false
-      - key: on_select
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_4
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_4
+        type: init
+        unsolicited: false
+        pair: on_init_4
+        owner: BAP
+        expect: false
+      - key: on_init_4
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_4
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_4
+        owner: BAP
+        expect: false
+      - key: on_confirm_4
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_4
+        type: status
+        unsolicited: false
+        pair: on_status_4
+        owner: BAP
+        expect: false
+      - key: on_status_4
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Order to Confirm to Fulfillment (Part Payment)
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1
+        type: init
+        unsolicited: false
+        pair: on_init_1
+        owner: BAP
+        expect: false
+      - key: on_init_1
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_1
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_1
+        owner: BAP
+        expect: false
+      - key: on_confirm_1
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_1
+        type: status
+        unsolicited: false
+        pair: on_status_1
+        owner: BAP
+        expect: false
+      - key: on_status_1
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false  
+  - id: Buyer side full cancellation
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1
+        type: init
+        unsolicited: false
+        pair: on_init_1
+        owner: BAP
+        expect: false
+      - key: on_init_1
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_1
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_1
+        owner: BAP
+        expect: false
+      - key: on_confirm_1
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_1
+        type: status
+        unsolicited: false
+        pair: on_status_1
+        owner: BAP
+        expect: false
+      - key: on_status_1
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: cancel
+        type: cancel
+        unsolicited: false
+        pair: on_cancel
+        owner: BAP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false 
+  - id: Merchant side full cancellation
+    tags: ["REPORTABLE", "MANDATORY","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_1
+        type: on_select
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: init_1
+        type: init
+        unsolicited: false
+        pair: on_init_1
+        owner: BAP
+        expect: false
+      - key: on_init_1
+        type: on_init
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: confirm_1
+        type: confirm
+        unsolicited: false
+        pair: on_confirm_1
+        owner: BAP
+        expect: false
+      - key: on_confirm_1
+        type: on_confirm
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: status_1
+        type: status
+        unsolicited: false
+        pair: on_status_1
+        owner: BAP
+        expect: false
+      - key: on_status_1
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_cancel
+        type: on_cancel
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false 
+  - id: Order to Confirm to Fulfillment (Updates in Booking)
+    tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
+    description: Get a list of all the accommodations with delta changes
+    sequence:
+      - key: search_1
+        type: search
+        unsolicited: false
+        pair: on_search_1
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+
+      - key: on_search_1
+        type: on_search
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
+      - key: select_1
+        type: select
+        unsolicited: false
+        pair: on_select_1
+        owner: BAP
+        expect: false
+        input:
+          - name: item_id
+            label: Enter item id (from on_search catalog)
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: quantity
+            label: Enter quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
+          - name: add_on_id
+            label: Enter add-on id (optional)
+            type: text
+            required: false
+            payloadField: $.message.order.items[0].add_ons[0].id
+          - name: adults_count
+            label: Number of adults
+            type: text
+            payloadField: $.message.order.fulfillments[0].tags[0].list[0].value
+          - name: children_count
+            label: Number of children
+            type: text
+            required: false
+            payloadField: $.message.order.fulfillments[0].tags[0].list[1].value
+      - key: on_select_1
         type: on_select
         unsolicited: false
         pair: null
@@ -117,61 +755,15 @@ flows:
         pair: on_update
         owner: BAP
         expect: false
+        input:
+          - name: email
+            label: Enter Email 
+            type: text
+            payloadField: ""
       - key: on_update
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
-      - key: cancel
-        type: cancel
-        unsolicited: false
-        pair: on_cancel
-        owner: BAP
-        expect: false
-      - key: on_cancel
-        type: on_cancel
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false  
-  - id: Hotel Booking TTL
-    description: Hotel Booking (ttl based) - Flow
-    sequence:
-      - key: search_1
-        type: search
-        unsolicited: false
-        pair: on_search_1
-        owner: BAP
-        expect: true
-        input:
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
-          - name: start_gps
-            label: Enter start gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.gps
-          - name: end_gps
-            label: Enter end gps coordinates
-            type: text
-            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.gps
-      - key: on_search_1
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
-      - key: search_5
-        type: search
-        unsolicited: false
-        pair: on_search_5
-        owner: BAP
-        expect: true
-      - key: on_search_5
-        type: on_search
-        unsolicited: false
-        pair: null
-        owner: BPP
-        expect: false
+  

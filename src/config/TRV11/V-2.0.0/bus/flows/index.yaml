@@ -1,5 +1,6 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
+    tags: ["WORKBENCH","MANDATORY"]
     description: User uses station code for searching bus
     sequence:
       - key: search1_BUS_200
@@ -11,13 +12,19 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
         description: Response with all station codes
         pair: null
         owner: BPP
-  - id: STATION_CODE_FLOW_ORDER
+  - id: ORDER_TO_CONFIRM_TO_JOURNEY_COMPLETION
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching bus
     sequence:
       - key: search1_BUS_200
@@ -29,6 +36,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -79,6 +91,15 @@ flows:
         description: User selects the station code
         pair: on_select_BUS_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
@@ -129,7 +150,14 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
+      - key: unsoliciated_on_status_BUS_200
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP  
   - id: TECHNICAL_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY", REPORTABLE]
     description: User cancels the bus booking
     sequence:
       - key: search1_BUS_200
@@ -141,6 +169,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -191,6 +224,15 @@ flows:
         description: User selects the station code
         pair: on_select_BUS_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false
@@ -229,7 +271,7 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_BUS_200
+      - key: status_tech_cancel_BUS_200
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -256,6 +298,7 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY", REPORTABLE]
     description: User cancels the bus booking
     sequence:
       - key: search1_BUS_200
@@ -267,6 +310,11 @@ flows:
         pair: on_search1_BUS_200
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_BUS_200
         type: on_search
         unsolicited: false
@@ -317,6 +365,15 @@ flows:
         description: User selects the station code
         pair: on_select_BUS_200
         owner: BAP
+        input:
+          - name: Item_id
+            label: Select Item_ID
+            type: text
+            payloadField: $.message.order.items[0].id
+          - name: Item_Quantity
+            label: Select Item Quantity
+            type: text
+            payloadField: $.message.order.items[0].quantity.selected.count
       - key: on_select_BUS_200
         type: on_select
         unsolicited: false

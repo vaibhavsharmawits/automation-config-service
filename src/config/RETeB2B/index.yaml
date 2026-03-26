@@ -1,0 +1,9 @@
+name: ONDC:RETeB2B
+versions:
+  - id: 1.2.5
+    reporting: false
+    usecase:
+      - name: eB2B
+        flows: "./v-1.2.5/EB2B/flows/index.yaml"
+    supportedActions:
+      $ref: "src/config/RETeB2B/v-1.2.5/supportedActions/index.yaml"

@@ -7,3 +7,10 @@ versions:
     usecase:
       - name: BPC
         flows: "./V-1.2.5/BPC/flows/index.yaml"
+  - id: 1.2.0
+    reporting: false
+    supportedActions:
+      $ref: "src/config/RET13/V-1.2.0/supportedActions/index.yaml"
+    usecase:
+      - name: BPC
+        flows: "./V-1.2.0/BPC/flows/index.yaml"

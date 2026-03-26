@@ -1,0 +1,1926 @@
+meta:
+  domain: ONDC:RET16
+  version: 1.2.0
+  flowId: Buyer_Side_Order_Cancellation
+transaction_data:
+  transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+  latest_timestamp: '1970-01-01T00:00:00.000Z'
+  bap_id: sample-bap-id
+  bap_uri: https://bap.example.com
+  bpp_id: sample-bpp-id
+  bpp_uri: https://bpp.example.com
+steps:
+  - api: select
+    action_id: select
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: First Select where items are selected
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCWNvbnN0IGlucHV0cyA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwoJaWYgKCFpbnB1dHMpIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKCWlmIChpbnB1dHMucHJvdmlkZXIpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gaW5wdXRzLnByb3ZpZGVyOwoJfQoJaWYgKGlucHV0cy5wcm92aWRlcl9sb2NhdGlvbiAmJiBBcnJheS5pc0FycmF5KGlucHV0cy5wcm92aWRlcl9sb2NhdGlvbikpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmxvY2F0aW9ucyA9CgkJCWlucHV0cy5wcm92aWRlcl9sb2NhdGlvbi5tYXAoKGxvY2F0aW9uKSA9PiB7CgkJCQlyZXR1cm4gewoJCQkJCWlkOiBsb2NhdGlvbiwKCQkJCX07CgkJCX0pOwoJfSBlbHNlIGlmICgKCQlpbnB1dHMucHJvdmlkZXJfbG9jYXRpb24gJiYKCQl0eXBlb2YgaW5wdXRzLnByb3ZpZGVyX2xvY2F0aW9uID09PSAic3RyaW5nIgoJKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5sb2NhdGlvbnMgPSBbCgkJCXsKCQkJCWlkOiBpbnB1dHMucHJvdmlkZXJfbG9jYXRpb24sCgkJCX0sCgkJXTsKCX0KCWlmIChpbnB1dHMubG9jYXRpb25fZ3BzKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uZW5kLmxvY2F0aW9uLmdwcyA9CgkJCWlucHV0cy5sb2NhdGlvbl9ncHM7Cgl9CglpZiAoaW5wdXRzLmxvY2F0aW9uX3Bpbl9jb2RlKSB7CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uZW5kLmxvY2F0aW9uLmFkZHJlc3MuYXJlYV9jb2RlID0KCQkJaW5wdXRzLmxvY2F0aW9uX3Bpbl9jb2RlOwoJCWRlZmF1bHRQYXlsb2FkLmNvbnRleHQuY2l0eSA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzLmNpdHlfY29kZTsKCX0KCWlmIChpbnB1dHMuaXRlbXMpIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gaW5wdXRzLml0ZW1zLm1hcCgoaXRlbSkgPT4gewoJCQlyZXR1cm4gewoJCQkJaWQ6IGl0ZW0uaXRlbUlkLAoJCQkJcXVhbnRpdHk6IHsKCQkJCQljb3VudDogaXRlbS5xdWFudGl0eSwKCQkJCX0sCgkJCQlsb2NhdGlvbl9pZDogaXRlbS5sb2NhdGlvbiwKCQkJfTsKCQl9KTsKCX0KCWNvbnN0IGlucHV0S2V5cyA9IE9iamVjdC5rZXlzKGlucHV0cyk7Cgljb25zdCBvZmZlcnMgPSBpbnB1dEtleXMuZmlsdGVyKChrKSA9PiBrLnN0YXJ0c1dpdGgoIm9mZmVyc18iKSk7CglpZiAob2ZmZXJzLmxlbmd0aCA+IDApIHsKCQlkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLm9mZmVycyA9IG9mZmVycwoJCQkuZmlsdGVyKChvZmZlcikgPT4gaW5wdXRzW29mZmVyXSAhPT0gZmFsc2UgJiYgaW5wdXRzW29mZmVyXSAhPT0gbnVsbCkKCQkJLm1hcCgob2ZmZXIpID0+IHsKCQkJCXJldHVybiB7CgkJCQkJaWQ6IG9mZmVyLnJlcGxhY2UoIm9mZmVyc18iLCAiIiksCgkJCQkJLy8gdGFnczogWwoJCQkJCS8vIAl7CgkJCQkJLy8gCQljb2RlOiAic2VsZWN0aW9uIiwKCQkJCQkvLyAJCWxpc3Q6IFsKCQkJCQkvLyAJCQl7CgkJCQkJLy8gCQkJCWNvZGU6ICJhcHBseSIsCgkJCQkJLy8gCQkJCXZhbHVlOiAieWVzIiwKCQkJCQkvLyAJCQl9LAoJCQkJCS8vIAkJXSwKCQkJCQkvLyAJfSwKCQkJCQkvLyBdLAoJCQkJfTsKCQkJfSk7Cgl9CglyZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: select
+          timestamp: '2025-12-29T06:22:03.809Z'
+          transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
+          message_id: befae42f-ac37-41e9-90ae-a33ec945bcf3
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            items:
+              - id: I1
+                quantity:
+                  count: 1
+                location_id: L1
+            fulfillments:
+              - end:
+                  location:
+                    gps: 12.966545,77.592074
+                    address:
+                      area_code: '560027'
+      saveData:
+        bapId: $.context.bap_id
+        message_id: $.context.message_id
+        selected_items: $.message.order.items[*]
+        payload_city: $.context.city
+        selected_fulfillments: $.message.order.fulfillments[*]
+        selected_offers: $.message.order.offers[*]
+        provider: $.message.order.provider
+        RET10Catalog: >-
+          EVAL#ZnVuY3Rpb24gZ2V0U2F2ZShlKXtyZXR1cm57Y2F0YWxvZzp7ImJwcC9mdWxmaWxsbWVudHMiOlt7aWQ6IkYxIix0eXBlOiJEZWxpdmVyeSJ9LHtpZDoiRjIiLHR5cGU6IlNlbGYtUGlja3VwIn0se2lkOiJGMzI4MjIiLHR5cGU6IkJ1eWVyLURlbGl2ZXJ5In0sXSwiYnBwL2Rlc2NyaXB0b3IiOntuYW1lOiJNb2NrIFNlbGxlciBOUCIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIixzaG9ydF9kZXNjOiJTZWxsZXIgTWFya2V0cGxhY2UiLGxvbmdfZGVzYzoiU2VsbGVyIE1hcmtldHBsYWNlIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIl0sdGFnczpbe2NvZGU6ImJwcF90ZXJtcyIsbGlzdDpbe2NvZGU6Im5wX3R5cGUiLHZhbHVlOiJNU04ifSxdfSxdfSwiYnBwL3Byb3ZpZGVycyI6W3t0aW1lOntsYWJlbDoiZW5hYmxlIix0aW1lc3RhbXA6IjIwMjQtMTItMjNUMDY6NTU6NDUuMDM1WiJ9LHJhdGluZzoiNCIsZGVzY3JpcHRvcjp7bmFtZToiU3RvcmUgMSIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyIsc2hvcnRfZGVzYzoiU3RvcmUgMSIsbG9uZ19kZXNjOiJTdG9yZSAxIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvc3RvcmUxLnBuZyJdfSx0dGw6IlAxRCIsbG9jYXRpb25zOlt7aWQ6IkwxIix0aW1lOntsYWJlbDoiZW5hYmxlIix0aW1lc3RhbXA6IjIwMjQtMTItMjNUMDY6NTU6NDUuMDM1WiIsZGF5czoiMSwyLDMsNCw1LDYsNyIsc2NoZWR1bGU6e2hvbGlkYXlzOltdfSxyYW5nZTp7c3RhcnQ6IjAwMDAiLGVuZDoiMjM1OSJ9fSxncHM6IjE5LjEyOTA3Niw3Mi44MjU4MDMiLGFkZHJlc3M6e3N0cmVldDoiMSAmIDIsQU1BUiBKWU9USSBDSFMuQkxERy4sT1BQLk5BTkQgS1JJUEEgSEFMTCIsbG9jYWxpdHk6IkFOREhFUkkgRk9VUiBCVU5HTE9XIEFNQVIgSllPVEkgQ0hTIixjaXR5OiJtb2NrLXNlbGxlci1jaXR5IixzdGF0ZToibW9jay1zdGF0ZSIsYXJlYV9jb2RlOiI0MDAwNTMifSxjaXJjbGU6e2dwczoiMTkuMTI5MDc2LDcyLjgyNTgwMyIscmFkaXVzOnt1bml0OiJrbSIsdmFsdWU6IjMifX19LF0sZnVsZmlsbG1lbnRzOlt7aWQ6IkYxIix0eXBlOiJEZWxpdmVyeSIsY29udGFjdDp7cGhvbmU6Ijk1OTQ2NjM3MTAiLGVtYWlsOiJub2JvZHlAbm9tYWlsLmNvbSJ9fSx7aWQ6IkYyIix0eXBlOiJTZWxmLVBpY2t1cCIsY29udGFjdDp7cGhvbmU6Ijk1OTQ2NjM5OTkiLGVtYWlsOiJtb2NrQG5vbWFpbC5jb20ifX0se2lkOiJGMzI4MjIiLHR5cGU6IkJ1eWVyLURlbGl2ZXJ5Iixjb250YWN0OntwaG9uZToiOTU5NDY2Mzg4OCIsZW1haWw6Im1vY2syQG5vbWFpbC5jb20ifX0sXSxpdGVtczpbe2Rlc2NyaXB0b3I6e25hbWU6IlBsYWluIEF0dGEiLGNvZGU6IjE6OTc4MDIwMTM3OTYyIixzeW1ib2w6Imh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLHNob3J0X2Rlc2M6IlBsYWluIEF0dGEiLGxvbmdfZGVzYzoiUGxhaW4gQXR0YSIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdfSxyYXRpbmc6IjQuMCIscHJpY2U6e2N1cnJlbmN5OiJJTlIiLHZhbHVlOiIyMDAuMDAiLG1heGltdW1fdmFsdWU6IjIwMC4wMCJ9LHF1YW50aXR5Ont1bml0aXplZDp7bWVhc3VyZTp7dW5pdDoia2lsb2dyYW0iLHZhbHVlOiIzIn19LGF2YWlsYWJsZTp7Y291bnQ6Ijk5In0sbWF4aW11bTp7Y291bnQ6Ijk5In19LGNhdGVnb3J5X2lkOiJBdHRhLCBGbG91cnMgYW5kIFNvb2ppIixmdWxmaWxsbWVudF9pZDoiRjEiLGxvY2F0aW9uX2lkOiJMMSIsIkBvbmRjL29yZy9yZXR1cm5hYmxlIjohMCwiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjohMCwiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiJQN0QiLCJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiExLCJAb25kYy9vcmcvdGltZV90b19zaGlwIjoiUFQ1TSIsIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjohMCwiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoiUmFtZXNoLHJhbWVzaEBhYmMuY29tLDE4MDA0MjU0NDQ0IiwiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjp7bWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiJJVEMiLG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoiSVRDIFF1YWxpdHkgQ2FyZSBDZWxsLFAuTyBCb3ggTm8uNTkyLEJhbmdhbG9yZS01NjAwMDUiLGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiJBc2hpcndhZCBBdHRhIixtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiIwMS8yMDIzIn0sdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkxIixwYXJlbnRfaXRlbV9pZDoiVjEifSx7ZGVzY3JpcHRvcjp7bmFtZToiUGxhaW4gQXR0YSIsY29kZToiMTo0NzQxMzE4MTkxODk0IixzeW1ib2w6Imh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLHNob3J0X2Rlc2M6IlBsYWluIEF0dGEiLGxvbmdfZGVzYzoiUGxhaW4gQXR0YSIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdfSxyYXRpbmc6IjMuMCIscHJpY2U6e2N1cnJlbmN5OiJJTlIiLHZhbHVlOiIzMDAuMDAiLG1heGltdW1fdmFsdWU6IjMwMC4wMCJ9LHF1YW50aXR5Ont1bml0aXplZDp7bWVhc3VyZTp7dW5pdDoia2lsb2dyYW0iLHZhbHVlOiI1In19LGF2YWlsYWJsZTp7Y291bnQ6Ijk5In0sbWF4aW11bTp7Y291bnQ6Ijk5In19LGNhdGVnb3J5X2lkOiJBdHRhLCBGbG91cnMgYW5kIFNvb2ppIixmdWxmaWxsbWVudF9pZDoiRjEiLGxvY2F0aW9uX2lkOiJMMSIsIkBvbmRjL29yZy9yZXR1cm5hYmxlIjohMCwiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjohMCwiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiJQN0QiLCJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiExLCJAb25kYy9vcmcvdGltZV90b19zaGlwIjoiUFQ1TSIsIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjohMCwiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoiUmFtZXNoLHJhbWVzaEBhYmMuY29tLDE4MDA0MjU0NDQ0IiwiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjp7bWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiJJVEMiLG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoiSVRDIFF1YWxpdHkgQ2FyZSBDZWxsLFAuTyBCb3ggTm8uNTkyLEJhbmdhbG9yZS01NjAwMDUiLGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiJBc2hpcndhZCBBdHRhIixtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiIwMS8yMDIzIn0sdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkyIixwYXJlbnRfaXRlbV9pZDoiVjEifSx7ZGVzY3JpcHRvcjp7bmFtZToiQWxwaGFuc28gTWFuZ28iLGNvZGU6IjE6NzM5NjM3Mzk3NTk1NyIsc3ltYm9sOiJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIixzaG9ydF9kZXNjOiJBbHBoYW5zbyIsbG9uZ19kZXNjOiJBbHBoYW5zbyBNYW5nbyBmcmVzaGx5IGhhbmQgcGlja2VkIixpbWFnZXM6WyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl19LHJhdGluZzoiMy4wIixwcmljZTp7Y3VycmVuY3k6IklOUiIsdmFsdWU6IjI1MC4wMCIsbWF4aW11bV92YWx1ZToiMjUwLjAwIn0scXVhbnRpdHk6e3VuaXRpemVkOnttZWFzdXJlOnt1bml0OiJraWxvZ3JhbSIsdmFsdWU6IjEifX0sYXZhaWxhYmxlOntjb3VudDoiOTkifSxtYXhpbXVtOntjb3VudDoiOTkifX0sY2F0ZWdvcnlfaWQ6IkZydWl0cyBhbmQgVmVnZXRhYmxlcyIsZnVsZmlsbG1lbnRfaWQ6IkYxIixsb2NhdGlvbl9pZDoiTDEiLCJAb25kYy9vcmcvcmV0dXJuYWJsZSI6ITEsIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6ITEsIkBvbmRjL29yZy9yZXR1cm5fd2luZG93IjoiUDFEIiwiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjohMSwiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6IlBUNU0iLCJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6ITAsIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6IlJhbWVzaCxyYW1lc2hAYWJjLmNvbSwxODAwNDI1NDQ0NCIsdGltZTp7bGFiZWw6ImVuYWJsZSIsdGltZXN0YW1wOiIyMDI0LTEyLTIzVDA2OjU1OjQ1LjAzNVoifSx0YWdzOlt7Y29kZToib3JpZ2luIixsaXN0Olt7Y29kZToiY291bnRyeSIsdmFsdWU6IklORCJ9LF19LF0saWQ6IkkzIn0sXSx0YWdzOlt7Y29kZToidGltaW5nIixsaXN0Olt7Y29kZToidHlwZSIsdmFsdWU6IkFsbCJ9LHtjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImRheV9mcm9tIix2YWx1ZToiMSJ9LHtjb2RlOiJkYXlfdG8iLHZhbHVlOiI3In0se2NvZGU6InRpbWVfZnJvbSIsdmFsdWU6IjAwMDAifSx7Y29kZToidGltZV90byIsdmFsdWU6IjIzNTkifSxdfSx7Y29kZToic2VydmljZWFiaWxpdHkiLGxpc3Q6W3tjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImNhdGVnb3J5Iix2YWx1ZToiQXR0YSwgRmxvdXJzIGFuZCBTb29qaSJ9LHtjb2RlOiJ0eXBlIix2YWx1ZToiMTEifSx7Y29kZToidW5pdCIsdmFsdWU6InBpbmNvZGUifSx7Y29kZToidmFsIix2YWx1ZToiNTYwMDAxLTU2MDA3Niw1NjAwODMifSxdfSx7Y29kZToic2VydmljZWFiaWxpdHkiLGxpc3Q6W3tjb2RlOiJsb2NhdGlvbiIsdmFsdWU6IkwxIn0se2NvZGU6ImNhdGVnb3J5Iix2YWx1ZToiRnJ1aXRzIGFuZCBWZWdldGFibGVzIn0se2NvZGU6InR5cGUiLHZhbHVlOiIxMCJ9LHtjb2RlOiJ2YWwiLHZhbHVlOiIzIn0se2NvZGU6InVuaXQiLHZhbHVlOiJrbSJ9LF19LF0sY2F0ZWdvcmllczpbe2lkOiJWMSIsdGFnczpbe2NvZGU6InR5cGUiLGxpc3Q6W3tjb2RlOiJ0eXBlIix2YWx1ZToidmFyaWFudF9ncm91cCJ9LF19LHtjb2RlOiJhdHRyIixsaXN0Olt7Y29kZToibmFtZSIsdmFsdWU6Iml0ZW0ucXVhbnRpdHkudW5pdGl6ZWQubWVhc3VyZSJ9LHtjb2RlOiJzZXEiLHZhbHVlOiIxIn0sXX0sXSxkZXNjcmlwdG9yOntuYW1lOiJQbGFpbiBBdHRhIn19LF0saWQ6IlAxIixvZmZlcnM6W3tpZDoiRkxBVDUwIixkZXNjcmlwdG9yOntjb2RlOiJkaXNjb3VudCIsaW1hZ2VzOlsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL29mZmVyMi1iYW5uZXIucG5nIl19LGxvY2F0aW9uX2lkczpbIkwxIl0saXRlbV9pZHM6WyJJMSIsIkkyIiwiSTMiXSx0aW1lOntsYWJlbDoidmFsaWQiLHJhbmdlOntzdGFydDoiMjAyNC0xMi0yM1QwNjo1NTo0NS4wMzVaIixlbmQ6IjIwMzAtMTItMjNUMDg6MTI6MTUuMDMzWiJ9fSx0YWdzOlt7Y29kZToicXVhbGlmaWVyIixsaXN0Olt7Y29kZToibWluX3ZhbHVlIix2YWx1ZToiMTAwLjAwIn0sXX0se2NvZGU6ImJlbmVmaXQiLGxpc3Q6W3tjb2RlOiJ2YWx1ZV90eXBlIix2YWx1ZToiYW1vdW50In0se2NvZGU6InZhbHVlIix2YWx1ZToiLTUwLjAwIn0sXX0se2NvZGU6Im1ldGEiLGxpc3Q6W3tjb2RlOiJhZGRpdGl2ZSIsdmFsdWU6Im5vIn0se2NvZGU6ImF1dG8iLHZhbHVlOiJubyJ9LF19LF19LHtpZDoiYnV5MmdldDMiLGRlc2NyaXB0b3I6e2NvZGU6ImJ1eVhnZXRZIixpbWFnZXM6WyJodHRwczovL3NucC5jb20vaW1hZ2VzL29mZmVyMS1iYW5uZXIud2VicCJdfSxsb2NhdGlvbl9pZHM6WyJMMSJdLGNhdGVnb3J5X2lkczpbXSxpdGVtX2lkczpbIkkxIiwiSTIiLCJJMyJdLHRpbWU6e2xhYmVsOiJ2YWxpZCIscmFuZ2U6e3N0YXJ0OiIyMDI1LTAxLTAxVDE2OjAwOjAwLjAwMFoiLGVuZDoiMjAzMC0wMS0wMVQyMzowMDowMC4wMDBaIn19LHRhZ3M6W3tjb2RlOiJxdWFsaWZpZXIiLGxpc3Q6W3tjb2RlOiJpdGVtX2NvdW50Iix2YWx1ZToiMiJ9LF19LHtjb2RlOiJiZW5lZml0IixsaXN0Olt7Y29kZToiaXRlbV9jb3VudCIsdmFsdWU6IjEifSx7Y29kZToiaXRlbV9pZCIsdmFsdWU6IkkyIn0se2NvZGU6Iml0ZW1fdmFsdWUiLHZhbHVlOiIwLjAwIn0sXX0se2NvZGU6Im1ldGEiLGxpc3Q6W3tjb2RlOiJhZGRpdGl2ZSIsdmFsdWU6Im5vIn0se2NvZGU6ImF1dG8iLHZhbHVlOiJubyJ9LF19LF19LF19LF19fX0=
+      inputs:
+        id: ret10_grocery_select
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            city_code:
+              type: string
+              default: std:011
+            provider:
+              type: string
+              default: P1
+            provider_location:
+              type: string
+              default: L1
+            location_gps:
+              type: string
+              default: 19.129076,72.825803
+            location_pin_code:
+              type: string
+              default: '400053'
+            items:
+              type: array
+              default: []
+              items:
+                type: object
+                properties:
+                  itemId:
+                    type: string
+                    default: I1
+                  quantity:
+                    type: number
+                    default: 1
+                  location:
+                    type: string
+                    default: L1
+                additionalProperties: true
+                default: {}
+          additionalProperties: true
+          default: {}
+  - api: on_select
+    action_id: on_select
+    owner: BPP
+    responseFor: select
+    unsolicited: false
+    description: On-select response to select
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBjcmVhdGVRdW90ZSgKCXNlbGVjdGVkSXRlbXMsCglzZXNzaW9uRGF0YSwKCWRlZmF1bHRQYXlsb2FkLAoJZnVsZmlsbG1lbnRzLAoJY2FuY2VsbGVkID0gZmFsc2UKKSB7CgoJbGV0IHRvdGFsUHJpY2UgPSAwOwoJbGV0IHRvdGFsUXVhbnRpdHkgPSAwOwoJbGV0IGl0ZW1TZXQgPSBuZXcgU2V0KCk7CglsZXQgYnJlYWt1cE9iamVjdCA9IFtdOwoJY29uc3QgY2F0YWxvZ0l0ZW1zID0gUkVUMTZIT01FS0lUQ0hFTjEyNUNhdGFsb2cuY2F0YWxvZ1sKCQkiYnBwL3Byb3ZpZGVycyIKCV1bMF0uaXRlbXMuZmlsdGVyKChpKSA9PiB7CgkJY29uc3QgaWRNYXAgPSBzZWxlY3RlZEl0ZW1zLm1hcCgoaXRlbSkgPT4gaXRlbS5pZCk7CgkJcmV0dXJuIGlkTWFwLmluY2x1ZGVzKGkuaWQpOwoJfSk7CgkKCWZvciAoY29uc3Qgc2VsZWN0ZWRJdGVtIG9mIHNlbGVjdGVkSXRlbXMgPz8gW10pIHsKCQljb25zdCBmdWxmaWxsbWVudCA9IGZ1bGZpbGxtZW50cy5maW5kKAoJCQkoZikgPT4gZi5pZCA9PT0gc2VsZWN0ZWRJdGVtLmZ1bGZpbGxtZW50X2lkCgkJKTsKCQlpZiAoCgkJCSFmdWxmaWxsbWVudCB8fAoJCQkhWyJEZWxpdmVyeSIsICJTZWxmLVBpY2t1cCIsICJCdXllci1EZWxpdmVyeSJdLmluY2x1ZGVzKAoJCQkJZnVsZmlsbG1lbnQudHlwZSA/PyAiIgoJCQkpCgkJKSB7CgkJCWNvbnRpbnVlOwoJCX0KCQljb25zdCBjYXRhbG9nSXRlbSA9IGNhdGFsb2dJdGVtcy5maW5kKChpKSA9PiBpLmlkID09PSBzZWxlY3RlZEl0ZW0uaWQpOwoJCWlmICghY2F0YWxvZ0l0ZW0pIGNvbnRpbnVlOyAvLyBTa2lwIGlmIGl0ZW0gbm90IGZvdW5kIGluIGNhdGFsb2cKCgkJY29uc3QgcXVhbnRpdHkgPSBjYW5jZWxsZWQgPyAwIDogc2VsZWN0ZWRJdGVtLmNvdW50ID8/IDE7CgkJY29uc3QgcHJpY2UgPSBwYXJzZUZsb2F0KGNhdGFsb2dJdGVtLnByaWNlLnZhbHVlKSAqIHF1YW50aXR5OwoJCXRvdGFsUHJpY2UgKz0gcHJpY2U7CgoJCWNvbnN0IGJyZWFrdXBDbG9uZSA9IEpTT04ucGFyc2UoCgkJCUpTT04uc3RyaW5naWZ5KGJyZWFrdXBJdGVtKQoJCSk7CgkJYnJlYWt1cENsb25lWyJAb25kYy9vcmcvaXRlbV9pZCJdID0gY2F0YWxvZ0l0ZW0uaWQ7CgkJYnJlYWt1cENsb25lLnRpdGxlID0gY2F0YWxvZ0l0ZW0uZGVzY3JpcHRvci5uYW1lOwoJCWJyZWFrdXBDbG9uZVsiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiXS5jb3VudCA9IHF1YW50aXR5OwoJCWJyZWFrdXBDbG9uZS5wcmljZS52YWx1ZSA9IGAke3ByaWNlLnRvRml4ZWQoMil9YDsKCQlicmVha3VwQ2xvbmUuaXRlbS5wcmljZS52YWx1ZSA9IGNhdGFsb2dJdGVtLnByaWNlLnZhbHVlOwoJCWJyZWFrdXBPYmplY3QucHVzaChicmVha3VwQ2xvbmUpOwoKCQlpZiAoc2Vzc2lvbkRhdGEub3V0X29mX3N0b2NrX2l0ZW1faWRzPy5pbmNsdWRlcyhjYXRhbG9nSXRlbS5pZCkpIHsKCQkJYnJlYWt1cENsb25lLml0ZW0ucXVhbnRpdHkuYXZhaWxhYmxlLmNvdW50ID0gIjAiOwoJCQlicmVha3VwQ2xvbmUuaXRlbS5xdWFudGl0eS5tYXhpbXVtLmNvdW50ID0gIjAiOwoJCQlicmVha3VwQ2xvbmVbIkBvbmRjL29yZy90aXRsZV90eXBlIl0gPSAiaXRlbSI7CgkJCWRlZmF1bHRQYXlsb2FkLmVycm9yID0gewoJCQkJdHlwZTogIkRPTUFJTi1FUlJPUiIsCgkJCQljb2RlOiAiNDAwMDIiLAoJCQkJbWVzc2FnZTogYEl0ZW0gd2l0aCBpZDogJHtjYXRhbG9nSXRlbS5pZH0gaXMgb3V0IG9mIHN0b2NrYCwKCQkJfTsKCQl9IGVsc2UgewoJCQl0b3RhbFF1YW50aXR5ICs9IHNlbGVjdGVkSXRlbS5jb3VudCA/PyAwOwoJCQlpZiAocXVhbnRpdHkgPiAwKSBpdGVtU2V0LmFkZChjYXRhbG9nSXRlbS5pZCk7CgkJfQoKCQlpZiAoc2Vzc2lvbkRhdGEuc2VhcmNoX2JhcF90ZXJtcz8ubGlzdD8uc29tZSh0ID0+IHQuY29kZSA9PT0gIjAwQSIpKSB7CgkJCWZvciAoY29uc3QgZmVlIG9mIG5wRmVlc2JyZWFrdXApIHsKCQkJCWNvbnN0IGZlZUNsb25lID0gSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeShmZWUpKTsKCQkJCWZlZUNsb25lWyJAb25kYy9vcmcvaXRlbV9pZCJdID0gY2F0YWxvZ0l0ZW0uaWQ7CgkJCQlicmVha3VwT2JqZWN0LnB1c2goZmVlQ2xvbmUpOwoJCQkJdG90YWxQcmljZSArPSBwYXJzZUZsb2F0KGZlZUNsb25lLnByaWNlLnZhbHVlID8/ICIwIik7CgkJCX0KCQl9Cgl9CgoJYnJlYWt1cE9iamVjdC5wdXNoKGJyZWFrdXBbMF0pOwoJYnJlYWt1cE9iamVjdC5wdXNoKGJyZWFrdXBbMV0pOwoJaWYgKHNlc3Npb25EYXRhLnNlbGVjdGVkX29mZmVycyAmJiBzZXNzaW9uRGF0YS5zZWxlY3RlZF9vZmZlcnMubGVuZ3RoID4gMCkgewoJCWxldCBvZmZlclF1b3RlID0KCQkJb2ZmZXJRdW90ZXNbCgkJCQlzZXNzaW9uRGF0YS5zZWxlY3RlZF9vZmZlcnNbMF0uaWQKCQkJXTsKCgkJY29uc3Qgb2ZmZXJJZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX29mZmVyc1swXS5pZDsKCgkJaWYgKG9mZmVySWQgPT09ICJGTEFUNTAiICYmIHRvdGFsUXVhbnRpdHkgPiAwKSB7CgkJCWJyZWFrdXBPYmplY3QucHVzaChvZmZlclF1b3RlKTsKCQkJbGV0IG9mZmVyUHJpY2UgPSBwYXJzZUZsb2F0KG9mZmVyUXVvdGUucHJpY2UudmFsdWUpOwoJCQlpZiAoY2FuY2VsbGVkKSBvZmZlclByaWNlID0gMDsKCQkJdG90YWxQcmljZSArPSBvZmZlclByaWNlOwoJCX0gZWxzZSBpZiAob2ZmZXJJZCA9PT0gImNvbWJvMSIgJiYgaXRlbVNldC5zaXplID49IDMpIHsKCQkJYnJlYWt1cE9iamVjdC5wdXNoKG9mZmVyUXVvdGUpOwoJCQlsZXQgb2ZmZXJQcmljZSA9IHBhcnNlRmxvYXQob2ZmZXJRdW90ZS5wcmljZS52YWx1ZSk7CgkJCWlmIChjYW5jZWxsZWQpIG9mZmVyUHJpY2UgPSAwOwoJCQl0b3RhbFByaWNlICs9IG9mZmVyUHJpY2U7CgkJfSBlbHNlIGlmICgKCQkJb2ZmZXJJZCA9PT0gImJ1eTJnZXQzIiAmJgoJCQl0b3RhbFF1YW50aXR5ID49IDIgJiYKCQkJIXNlc3Npb25EYXRhLm91dF9vZl9zdG9ja19pdGVtX2lkcz8uaW5jbHVkZXMoIkkyIikKCQkpIHsKCQkJaWYgKGNhbmNlbGxlZCkgewoJCQkJLy9AdHMtaWdub3JlCgkJCQlvZmZlclF1b3RlWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdID0gewoJCQkJCWNvdW50OiAwLAoJCQkJfTsKCQkJfQoJCQlicmVha3VwT2JqZWN0LnB1c2gob2ZmZXJRdW90ZSk7CgkJfQoJfQoJcmV0dXJuIHsKCQlicmVha3VwOiBicmVha3VwT2JqZWN0LAoJCXByaWNlOiB7CgkJCWN1cnJlbmN5OiAiSU5SIiwKCQkJdmFsdWU6IGAke3RvdGFsUHJpY2UudG9GaXhlZCgyKX1gLAoJCX0sCgkJdHRsOiAiUDFEIiwKCX07Cn0KCmNvbnN0IGJyZWFrdXBJdGVtID0gewogICJAb25kYy9vcmcvaXRlbV9pZCI6ICJJMSIsCiAgIkBvbmRjL29yZy9pdGVtX3F1YW50aXR5IjogewogICAgY291bnQ6IDEsCiAgfSwKICB0aXRsZTogIlBvd2VyIEJhbmsiLAogICJAb25kYy9vcmcvdGl0bGVfdHlwZSI6ICJpdGVtIiwKICBwcmljZTogewogICAgY3VycmVuY3k6ICJJTlIiLAogICAgdmFsdWU6ICIxMDAuMDAiLAogIH0sCiAgaXRlbTogewogICAgcXVhbnRpdHk6IHsKICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgIH0sCiAgICAgIG1heGltdW06IHsKICAgICAgICBjb3VudDogIjk5IiwKICAgICAgfSwKICAgIH0sCiAgICBwcmljZTogewogICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgIHZhbHVlOiAiMTAwLjAwIiwKICAgIH0sCiAgfSwKfTsKCmNvbnN0IGJyZWFrdXAgPSBbCiAgewogICAgIkBvbmRjL29yZy9pdGVtX2lkIjogIkYxIiwKICAgIHRpdGxlOiAiRGVsaXZlcnkgY2hhcmdlcyIsCiAgICAiQG9uZGMvb3JnL3RpdGxlX3R5cGUiOiAiZGVsaXZlcnkiLAogICAgcHJpY2U6IHsKICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICB2YWx1ZTogIjAwLjAwIiwKICAgIH0sCiAgfSwKICB7CiAgICAiQG9uZGMvb3JnL2l0ZW1faWQiOiAiRjEiLAogICAgdGl0bGU6ICJDb252ZW5pZW5jZSBGZWUiLAogICAgIkBvbmRjL29yZy90aXRsZV90eXBlIjogIm1pc2MiLAogICAgcHJpY2U6IHsKICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICB2YWx1ZTogIjAwLjAwIiwKICAgIH0sCiAgfSwKXTsKCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKAogIGRlZmF1bHRQYXlsb2FkLAogIHNlc3Npb25EYXRhCikgewogIGNvbnN0IHNlbGVjdGVkSXRlbXNPYmogPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtczsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gc2VsZWN0ZWRJdGVtc09iai5tYXAoKGl0ZW0pID0+IHsKICAgIHJldHVybiB7CiAgICAgIGlkOiBpdGVtLmlkLAogICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgIH07CiAgfSk7CiAgY29uc3QgcXVvdGUgPSBjcmVhdGVRdW90ZSgKICAgIHNlbGVjdGVkSXRlbXNPYmoubWFwKChpdGVtKSA9PiB7CiAgICAgIHJldHVybiB7CiAgICAgICAgaWQ6IGl0ZW0uaWQsCiAgICAgICAgY291bnQ6IGl0ZW0ucXVhbnRpdHkuY291bnQsCiAgICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICAgIH07CiAgICB9KSwKICAgIHNlc3Npb25EYXRhLAogICAgZGVmYXVsdFBheWxvYWQsCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cwogICk7CglkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlID0gcXVvdGU7CglkZWZhdWx0UGF5bG9hZC5jb250ZXh0Lm1lc3NhZ2VfaWQgPSBzZXNzaW9uRGF0YS5tZXNzYWdlX2lkWzBdOwogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQo=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        ZnVuY3Rpb24gbWVldFJlcXVpcmVtZW50cyhzZXNzaW9uRGF0YSl7CiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2l0ZW1zCiAgaWYgKCFzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcyB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9pdGVtcyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXlsb2FkX2NpdHkKICBpZiAoIXNlc3Npb25EYXRhLnBheWxvYWRfY2l0eSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheWxvYWRfY2l0eSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUEFZTE9BRF9DSVRZIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cyB8fAogICAgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcHJvdmlkZXIKICBpZiAoIXNlc3Npb25EYXRhLnByb3ZpZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcHJvdmlkZXIgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BST1ZJREVSIiwKICAgIH07CiAgfQoKICAvLyBBbGwgcmVxdWlyZW1lbnRzIHNhdGlzZmllZAogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGRlc2NyaXB0aW9uOiAiQWxsIENoZWNrcyBwYXNzZXMgc3VjY2Vzc2Z1bGx5IiwKICAgIGNvZGU6ICIyMDAiLAogIH07Cn0K
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: on_select
+          timestamp: '2025-12-29T06:44:41.277Z'
+          transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
+          message_id: 001f9ecd-fbe0-43da-987e-6db9f5003db6
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            fulfillments:
+              - id: F1
+                type: Delivery
+                '@ondc/org/provider_name': LSP or Provider Name
+                tracking: true
+                '@ondc/org/category': Standard Delivery
+                '@ondc/org/TAT': P3D
+                state:
+                  descriptor:
+                    code: Serviceable
+            quote:
+              price:
+                value: '2756.75'
+                currency: INR
+              breakup:
+                - '@ondc/org/item_id': I1
+                  '@ondc/org/item_quantity':
+                    count: 1
+                  title: MINISO Two-Layer Drawer Organizer
+                  '@ondc/org/title_type': item
+                  price:
+                    currency: INR
+                    value: '2260.00'
+                  item:
+                    quantity:
+                      available:
+                        count: '99'
+                      maximum:
+                        count: '10'
+                    price:
+                      currency: INR
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
+                  title: Delivery charges
+                  '@ondc/org/title_type': delivery
+                  price:
+                    currency: INR
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
+                  title: Convenience Fee
+                  '@ondc/org/title_type': misc
+                  price:
+                    currency: INR
+                    value: '3.00'
+              ttl: P1D
+            items:
+              - id: I1
+                fulfillment_id: F1
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        quote: $.message.order.quote
+        on_select_fulfillments: $.message.order.fulfillments[*]
+        on_select_items: $.message.order.items[*]
+        tat: $.message.order.fulfillments[0]["@ondc/org/TAT"]
+      inputs: {}
+  - api: init
+    action_id: init
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: 'Init '
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBnZXRVcGRhdGVkQmlsbGluZyhzYXZlZEJpbGxpbmcsIGluaXRpYWxpemUgPSBmYWxzZSkgewogIGlmIChpbml0aWFsaXplKSB7CiAgICBjb25zdCBuZXdJc28gPSBuZXcgRGF0ZShuZXcgRGF0ZSgpLmdldFRpbWUoKSAtIDUgKiAxMDAwKS50b0lTT1N0cmluZygpOwogICAgc2F2ZWRCaWxsaW5nLmNyZWF0ZWRfYXQgPSBuZXdJc287CiAgICBzYXZlZEJpbGxpbmcudXBkYXRlZF9hdCA9IG5ld0lzbzsKICB9CiAgcmV0dXJuIHNhdmVkQmlsbGluZzsKfQpmdW5jdGlvbiBjcmVhdGVGdWxmaWxsbWVudHMoCiAgc2Vzc2lvbkRhdGEsCiAgZGVmYXVsdEZ1bGZpbGxtZW50cwopIHsKICBpZiAoZGVmYXVsdEZ1bGZpbGxtZW50cy5sZW5ndGggPCAxKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoIkVtcHR5IGZ1bGZpbGxtZW50cyBmb3VuZCIpOwogIH0KICBjb25zdCBvblNlbGVjdEZ1bGZpbGxtZW50cyA9CiAgICBzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzOwogICAgY29uc3Qgc2VsZWN0ZWQgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9mdWxmaWxsbWVudHM7CiAgICBjb25zdCBkZWZhdWx0RW5kID0gewogICAgICBlbmQ6IHsKICAgICAgICBjb250YWN0OiB7CiAgICAgICAgICBlbWFpbDogIm5vYm9keUBub21haWwuY29tIiwKICAgICAgICAgIHBob25lOiAiOTg5ODk4OTg5OCIsCiAgICAgICAgfSwKICAgICAgICBsb2NhdGlvbjogewogICAgICAgICAgZ3BzOiBzZWxlY3RlZFswXS5lbmQ/LmxvY2F0aW9uPy5ncHMsCiAgICAgICAgICBhZGRyZXNzOiB7CiAgICAgICAgICAgIGJ1aWxkaW5nOiAibW9jay1idWlsZGluZyIsCiAgICAgICAgICAgIGNpdHk6ICJtb2NrLWNpdHkiLAogICAgICAgICAgICBzdGF0ZTogIm1vY2stc3RhdGUiLAogICAgICAgICAgICBjb3VudHJ5OiAiSU5EIiwKICAgICAgICAgICAgYXJlYV9jb2RlOgogICAgICAgICAgICAgIHNlbGVjdGVkWzBdLmVuZD8ubG9jYXRpb24/LmFkZHJlc3M/LmFyZWFfY29kZSB8fCAiNDAwMDUzIiwKICAgICAgICAgICAgbG9jYWxpdHk6ICJtb2NrLWxvY2FsaXR5IiwKICAgICAgICAgICAgbmFtZTogIm1vY2staG91c2UtbmFtZSIsCiAgICAgICAgICB9LAogICAgICAgIH0sCiAgICAgIH0sCiAgICB9OwoKICAgIGxldCB0YXJnZXRGdWxmaWxsbWVudCA9IHt9OwogICAgICB0YXJnZXRGdWxmaWxsbWVudCA9IG9uU2VsZWN0RnVsZmlsbG1lbnRzLmZpbmQoCiAgICAgICAgKGYpID0+IGYudHlwZSA9PT0gIkRlbGl2ZXJ5IgogICAgICApOwoKICAgIGNvbnN0IGluaXRGdWxmaWxsbWVudHMgPSBbCiAgICAgIHsKICAgICAgICBpZDogdGFyZ2V0RnVsZmlsbG1lbnQ/LmlkIHx8ICJGMyIsCiAgICAgICAgdHlwZTogdGFyZ2V0RnVsZmlsbG1lbnQ/LnR5cGUgfHwgIkRlbGl2ZXJ5IiwKICAgICAgICBlbmQ6IGRlZmF1bHRFbmQuZW5kLAogICAgICB9LAogICAgXTsKCiAgICByZXR1cm4gaW5pdEZ1bGZpbGxtZW50czsKfQphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpdGVtcyA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX2l0ZW1zOwoJY29uc3Qgb25TZWxlY3REYXRhID0gc2Vzc2lvbkRhdGEub25fc2VsZWN0X2Z1bGZpbGxtZW50czsKCWNvbnN0IGZJZCA9IG9uU2VsZWN0RGF0YS5maW5kKChmKSA9PiBmLnR5cGUgPT09ICJEZWxpdmVyeSIpPy5pZCB8fCAiRjEiOwoKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gaXRlbXMubWFwKChpdGVtKSA9PiB7CgkJcmV0dXJuIHsKCQkJaWQ6IGl0ZW0uaWQsCgkJCWZ1bGZpbGxtZW50X2lkOiBmSWQsCgkJCXF1YW50aXR5OiB7CgkJCQljb3VudDogaXRlbS5xdWFudGl0eS5jb3VudCwKCQkJfSwKCQkJbG9jYXRpb25faWQ6IGl0ZW0ubG9jYXRpb25faWQsCgkJfTsKCX0pOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuYmlsbGluZyA9IGdldFVwZGF0ZWRCaWxsaW5nKAoJCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuYmlsbGluZywKCQl0cnVlCgkpOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0gY3JlYXRlRnVsZmlsbG1lbnRzKAoJCXNlc3Npb25EYXRhLAogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMKCSk7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyWzBdOwoJaWYgKHNlc3Npb25EYXRhLnNlbGVjdGVkX29mZmVycykgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5vZmZlcnMgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9vZmZlcnMubWFwKAoJCQkob2ZmZXIpID0+IHsKCQkJCXJldHVybiB7CgkJCQkJaWQ6IG9mZmVyLmlkLAoJCQkJCXRhZ3M6IFsKCQkJCQkJewoJCQkJCQkJY29kZTogInNlbGVjdGlvbiIsCgkJCQkJCQlsaXN0OiBbCgkJCQkJCQkJewoJCQkJCQkJCQljb2RlOiAiYXBwbHkiLAoJCQkJCQkJCQl2YWx1ZTogInllcyIsCgkJCQkJCQkJfSwKCQkJCQkJCV0sCgkJCQkJCX0sCgkJCQkJXSwKCQkJCX07CgkJCX0KCQkpOwoJfQoKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpewogIC8vIENoZWNrIGZvciBzZWxlY3RlZF9pdGVtcwogIGlmICghc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXMgfHwgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gc2VsZWN0ZWRfaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX0lURU1TIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcGF5bG9hZF9jaXR5CiAgaWYgKCFzZXNzaW9uRGF0YS5wYXlsb2FkX2NpdHkpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBwYXlsb2FkX2NpdHkgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BBWUxPQURfQ0lUWSIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2Z1bGZpbGxtZW50cwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5zZWxlY3RlZF9mdWxmaWxsbWVudHMgfHwKICAgIHNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cy5sZW5ndGggPT09IDAKICApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9mdWxmaWxsbWVudHMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX0ZVTEZJTExNRU5UUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHByb3ZpZGVyCiAgaWYgKCFzZXNzaW9uRGF0YS5wcm92aWRlcikgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHByb3ZpZGVyIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19QUk9WSURFUiIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHF1b3RlCiAgaWYgKCFzZXNzaW9uRGF0YS5xdW90ZSB8fCB0eXBlb2Ygc2Vzc2lvbkRhdGEucXVvdGUgIT09ICJvYmplY3QiKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcXVvdGUgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1FVT1RFIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igb25fc2VsZWN0X2Z1bGZpbGxtZW50cwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzIHx8CiAgICBzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIG9uX3NlbGVjdF9mdWxmaWxsbWVudHMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX09OX1NFTEVDVF9GVUxGSUxMTUVOVFMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvbl9zZWxlY3RfaXRlbXMKICBpZiAoCiAgICAhc2Vzc2lvbkRhdGEub25fc2VsZWN0X2l0ZW1zIHx8CiAgICBzZXNzaW9uRGF0YS5vbl9zZWxlY3RfaXRlbXMubGVuZ3RoID09PSAwCiAgKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gb25fc2VsZWN0X2l0ZW1zIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19PTl9TRUxFQ1RfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciB0YXQKICBpZiAoIXNlc3Npb25EYXRhLnRhdCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHRhdCBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfVEFUIiwKICAgIH07CiAgfQoKICAvLyBBbGwgcmVxdWlyZW1lbnRzIHNhdGlzZmllZAogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGRlc2NyaXB0aW9uOiAiQWxsIENoZWNrcyBwYXNzZWQgc3VjY2Vzc2Z1bGx5IiwKICAgIGNvZGU6ICIyMDAiLAogIH07Cn0K
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: init
+          timestamp: '2025-12-29T07:50:43.211Z'
+          transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
+          message_id: c8681924-f1de-4e37-9456-cb43743ce863
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            items:
+              - id: I1
+                quantity:
+                  count: 1
+                location_id: L1
+                fulfillment_id: F1
+            billing:
+              address:
+                building: my building name or house
+                city: Bengaluru
+                state: Karnataka
+                country: IND
+                area_code: '560027'
+                locality: my street name
+                name: my house or door or floor
+              phone: '9898989898'
+              name: ONDC Buyer
+              email: nobody@nomail.com
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
+            fulfillments:
+              - id: F1
+                type: Delivery
+                end:
+                  contact:
+                    email: nobody@nomail.com
+                    phone: '9898989898'
+                  location:
+                    gps: 12.966545,77.592074
+                    address:
+                      building: my building name or house
+                      city: Bengaluru
+                      state: Karnataka
+                      country: IND
+                      area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
+      saveData:
+        transactionId: $.context.transaction_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        message_id: $.context.message_id
+        items: $.message.order.items[*]
+        provider: $.message.order.provider
+        billing: $.message.order.billing
+        fulfillments: $.message.order.fulfillments[*]
+        selected_np_fees: >-
+          $.message.order.items[*].tags[?(@.code=="np_fees")].list[?(@.code=="id")].value
+      inputs: {}
+  - api: on_init
+    action_id: on_init
+    owner: BPP
+    responseFor: init
+    unsolicited: false
+    description: Response to Init call
+    mock:
+      generate: >-
+        ZnVuY3Rpb24gZ2V0VXBkYXRlZEJpbGxpbmcoc2F2ZWRCaWxsaW5nLCBpbml0aWFsaXplID0gZmFsc2UpIHsKCWlmIChpbml0aWFsaXplKSB7CgkJY29uc3QgbmV3SXNvID0gbmV3IERhdGUobmV3IERhdGUoKS5nZXRUaW1lKCkgLSA1ICogMTAwMCkudG9JU09TdHJpbmcoKTsKCQlzYXZlZEJpbGxpbmcuY3JlYXRlZF9hdCA9IG5ld0lzbzsKCQlzYXZlZEJpbGxpbmcudXBkYXRlZF9hdCA9IG5ld0lzbzsKCX0KCXJldHVybiBzYXZlZEJpbGxpbmc7Cn0KZnVuY3Rpb24gY3JlYXRlRnVsZmlsbG1lbnRzKAoJc2Vzc2lvbkRhdGEsCglkZWZhdWx0RnVsZmlsbG1lbnRzCikgewoJaWYgKGRlZmF1bHRGdWxmaWxsbWVudHMubGVuZ3RoIDwgMSkgewoJCXRocm93IG5ldyBFcnJvcigiRW1wdHkgZnVsZmlsbG1lbnRzIGZvdW5kIik7Cgl9CgoJCWNvbnN0IGZ1bGZpbGxtZW50cyA9IHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50czsKCQlyZXR1cm4gZnVsZmlsbG1lbnRzLm1hcCgoZikgPT4gewoJCQlyZXR1cm4gewoJCQkJaWQ6IGYuaWQsCgkJCQl0eXBlOiBmLnR5cGUsCgkJCQllbmQ6IGYuZW5kLAoJCQkJdHJhY2tpbmc6IHRydWUsCgkJCX07CgkJfSk7Cgp9CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKAoJZGVmYXVsdFBheWxvYWQsCglzZXNzaW9uRGF0YQopIHsKCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtczsKCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0gY3JlYXRlRnVsZmlsbG1lbnRzKAoJCXNlc3Npb25EYXRhLAoJCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzCgkpOwoJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gZ2V0VXBkYXRlZEJpbGxpbmcoCgkJc2Vzc2lvbkRhdGEuYmlsbGluZ1swXQoJKTsKCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSBzZXNzaW9uRGF0YS5xdW90ZVswXTsKCWRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUuYnJlYWt1cCA9CgkJZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZS5icmVha3VwLm1hcCgoYikgPT4gewoJCQlpZiAoYlsiQG9uZGMvb3JnL3RpdGxlX3R5cGUiXSA9PT0gIml0ZW0iKSB7CgkJCQlpZiAoYi5pdGVtICYmIGIuaXRlbS5xdWFudGl0eSkgZGVsZXRlIGIuaXRlbS5xdWFudGl0eTsKCQkJfQoJCQlyZXR1cm4gYjsKCQl9KTsKCglkZWZhdWx0UGF5bG9hZC5jb250ZXh0Lm1lc3NhZ2VfaWQgPSBzZXNzaW9uRGF0YS5tZXNzYWdlX2lkWzBdOwoJcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cg==
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBBUEkgY2FsbCBhcmUgbWV0LgogKiAKICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0UmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2l0ZW1zCiAgaWYgKCFzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcyB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9pdGVtcyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXlsb2FkX2NpdHkKICBpZiAoIXNlc3Npb25EYXRhLnBheWxvYWRfY2l0eSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheWxvYWRfY2l0eSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUEFZTE9BRF9DSVRZIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cyB8fAogICAgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcHJvdmlkZXIKICBpZiAoIXNlc3Npb25EYXRhLnByb3ZpZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcHJvdmlkZXIgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BST1ZJREVSIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcXVvdGUKICBpZiAoIXNlc3Npb25EYXRhLnF1b3RlIHx8IHR5cGVvZiBzZXNzaW9uRGF0YS5xdW90ZSAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBxdW90ZSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUVVPVEUiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvbl9zZWxlY3RfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwCiAgKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gb25fc2VsZWN0X2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfT05fU0VMRUNUX0ZVTEZJTExNRU5UUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIG9uX3NlbGVjdF9pdGVtcwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5vbl9zZWxlY3RfaXRlbXMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9pdGVtcy5sZW5ndGggPT09IDAKICApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBvbl9zZWxlY3RfaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX09OX1NFTEVDVF9JVEVNUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHRhdAogIGlmICghc2Vzc2lvbkRhdGEudGF0KSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gdGF0IGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19UQVQiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBpdGVtcyAoTkVXKQogIGlmICghc2Vzc2lvbkRhdGEuaXRlbXMgfHwgc2Vzc2lvbkRhdGEuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX0lURU1TIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgYmlsbGluZyAoTkVXKQogIGlmICghc2Vzc2lvbkRhdGEuYmlsbGluZyB8fCB0eXBlb2Ygc2Vzc2lvbkRhdGEuYmlsbGluZyAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBiaWxsaW5nIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CSUxMSU5HIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgZnVsZmlsbG1lbnRzIChORVcpCiAgaWYgKCFzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMgfHwgc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIGZ1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfbnBfZmVlcyAoTkVXKQogIGlmICghc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfbnBfZmVlcykgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX25wX2ZlZXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX05QX0ZFRVMiLAogICAgfTsKICB9CgogIC8vIEFsbCByZXF1aXJlbWVudHMgc2F0aXNmaWVkCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgZGVzY3JpcHRpb246ICJBbGwgQ2hlY2tzIHBhc3NlZCBzdWNjZXNzZnVsbHkiLAogICAgY29kZTogIjIwMCIsCiAgfTsKfQo=
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: on_init
+          timestamp: '2025-12-29T08:10:19.239Z'
+          transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
+          message_id: c2d4ecdb-b863-4eb0-ab35-8851e9c789be
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            items:
+              - id: I1
+                quantity:
+                  count: 1
+                fulfillment_id: F1
+            billing:
+              address:
+                building: my building name or house
+                city: Bengaluru
+                state: Karnataka
+                country: IND
+                area_code: '560027'
+                locality: my street name
+                name: my house or door or floor
+              phone: '9898989898'
+              name: ONDC Buyer
+              email: nobody@nomail.com
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
+            fulfillments:
+              - id: F1
+                type: Delivery
+                end:
+                  contact:
+                    email: nobody@nomail.com
+                    phone: '9898989898'
+                  location:
+                    gps: 12.966545,77.592074
+                    address:
+                      building: my building name or house
+                      city: Bengaluru
+                      state: Karnataka
+                      country: IND
+                      area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
+                tracking: true
+            quote:
+              price:
+                value: '2756.75'
+                currency: INR
+              breakup:
+                - '@ondc/org/item_id': I1
+                  '@ondc/org/item_quantity':
+                    count: 1
+                  title: MINISO Two-Layer Drawer Organizer
+                  '@ondc/org/title_type': item
+                  price:
+                    currency: INR
+                    value: '2260.00'
+                  item:
+                    price:
+                      currency: INR
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
+                  title: Delivery charges
+                  '@ondc/org/title_type': delivery
+                  price:
+                    currency: INR
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
+                  title: Convenience Fee
+                  '@ondc/org/title_type': misc
+                  price:
+                    currency: INR
+                    value: '3.00'
+              ttl: P1D
+            payment:
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3'
+              '@ondc/org/settlement_details':
+                - settlement_counterparty: seller-app
+                  settlement_phase: sale-amount
+                  settlement_type: neft
+                  beneficiary_name: xxxx
+                  settlement_bank_account_no: XXXX
+                  settlement_ifsc_code: XXXX
+                  bank_name: XXXX
+                  branch_name: XXXX
+            tags:
+              - code: bpp_terms
+                list:
+                  - code: np_type
+                    value: MSN
+                  - code: tax_number
+                    value: 37ABACA6712B1Z6
+                  - code: provider_tax_number
+                    value: USYDS6482D
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        quote: $.message.order.quote
+        bpp_terms: $.message.order.tags[?(@.code == 'bpp_terms')]
+        tags: $.message.order.tags[*]
+        fulfillments: $.message.order.fulfillments[*]
+      inputs: {}
+  - api: confirm
+    action_id: confirm
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: Confirming the Order after Init
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBnZXRVcGRhdGVkQmlsbGluZyhzYXZlZEJpbGxpbmcsIGluaXRpYWxpemUgPSBmYWxzZSkgewoJaWYgKGluaXRpYWxpemUpIHsKCQljb25zdCBuZXdJc28gPSBuZXcgRGF0ZShuZXcgRGF0ZSgpLmdldFRpbWUoKSAtIDUgKiAxMDAwKS50b0lTT1N0cmluZygpOwoJCXNhdmVkQmlsbGluZy5jcmVhdGVkX2F0ID0gbmV3SXNvOwoJCXNhdmVkQmlsbGluZy51cGRhdGVkX2F0ID0gbmV3SXNvOwoJfQoJcmV0dXJuIHNhdmVkQmlsbGluZzsKfQpmdW5jdGlvbiBjcmVhdGVGdWxmaWxsbWVudHMoCglzZXNzaW9uRGF0YSwKCWRlZmF1bHRGdWxmaWxsbWVudHMKKSB7CglpZiAoZGVmYXVsdEZ1bGZpbGxtZW50cy5sZW5ndGggPCAxKSB7CgkJdGhyb3cgbmV3IEVycm9yKCJFbXB0eSBmdWxmaWxsbWVudHMgZm91bmQiKTsKCX0KCWNvbnN0IG9uU2VsZWN0RnVsZmlsbG1lbnRzID0KCQlzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzOwoJCWNvbnN0IGZ1bGZpbGxtZW50cyA9IHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50czsKCQlyZXR1cm4gZnVsZmlsbG1lbnRzLm1hcCgoZikgPT4gewoJCQljb25zdCBvblNlbGVjdEZ1bGZpbGxtZW50ID0gb25TZWxlY3RGdWxmaWxsbWVudHMuZmluZCgKCQkJCShvZikgPT4gb2YuaWQgPT09IGYuaWQKCQkJKTsKCQkJcmV0dXJuIHsKCQkJCWlkOiBmLmlkLAoJCQkJdHlwZTogZi50eXBlLAoJCQkJZW5kOiB7CgkJCQkJY29udGFjdDogZi5lbmQ/LmNvbnRhY3QsCgkJCQkJcGVyc29uOiB7CgkJCQkJCW5hbWU6ICJtb2NrLXBlcnNvbiIsCgkJCQkJfSwKCQkJCQlsb2NhdGlvbjogZi5lbmQ/LmxvY2F0aW9uLAoJCQkJfSwKCQkJCXRyYWNraW5nOiBmLnRyYWNraW5nLAoJCQkJIkBvbmRjL29yZy9jYXRlZ29yeSI6IG9uU2VsZWN0RnVsZmlsbG1lbnQ/LlsiQG9uZGMvb3JnL2NhdGVnb3J5Il0sCgkJCQkiQG9uZGMvb3JnL1RBVCI6IG9uU2VsZWN0RnVsZmlsbG1lbnQ/LlsiQG9uZGMvb3JnL1RBVCJdLAoJCQl9OwoJCX0pOwoJcmV0dXJuIGRlZmF1bHRGdWxmaWxsbWVudHM7Cn0KYXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoCglkZWZhdWx0UGF5bG9hZCwKCXNlc3Npb25EYXRhCikgewoJY29uc3QgdGltZUlzbyA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gZ2VuZXJhdGVTaXhEaWdpdENvZGUoKTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSB0aW1lSXNvOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IHRpbWVJc287CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZSA9IHNlc3Npb25EYXRhLnF1b3RlWzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuYmlsbGluZyA9IGdldFVwZGF0ZWRCaWxsaW5nKAoJCXNlc3Npb25EYXRhLmJpbGxpbmdbMF0KCSk7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcyA9IHNlc3Npb25EYXRhLml0ZW1zOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQucGFyYW1zLmFtb3VudCA9CgkJc2Vzc2lvbkRhdGEucXVvdGVbMF0/LnByaWNlPy52YWx1ZTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQucGFyYW1zLnRyYW5zYWN0aW9uX2lkID0KCQkibW9ja19wYXltZW50X2lkXzEyMyI7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgPSBjcmVhdGVGdWxmaWxsbWVudHMoCgkJc2Vzc2lvbkRhdGEsCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cwogICk7CglkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cy5mb3JFYWNoKChmdWxmaWxsbWVudCkgPT4gewoJCS8vIFJlbW92ZSB1bndhbnRlZCBwcm9wZXJ0aWVzIGZyb20gZnVsZmlsbG1lbnQJCgkJaWYgKGZ1bGZpbGxtZW50WyJAb25kYy9vcmcvY2F0ZWdvcnkiXSkgewoJCQlkZWxldGUgZnVsZmlsbG1lbnRbIkBvbmRjL29yZy9jYXRlZ29yeSJdOwoJCX0KCX0pOwogIGNvbnN0IGV4aXN0aW5nVGFncyA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudGFnczsKCWNvbnN0IGJwcFRlcm1zID0gZXhpc3RpbmdUYWdzLmZpbmQoKGYpID0+IGYuY29kZSA9PT0gImJwcF90ZXJtcyIpOwoJaWYgKGJwcFRlcm1zKSB7CgkJYnBwVGVybXMubGlzdCA9IHNlc3Npb25EYXRhLmJwcF90ZXJtcy5saXN0OwoJfQoJcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9CgpmdW5jdGlvbiBnZW5lcmF0ZVNpeERpZ2l0Q29kZSgpIHsKCXJldHVybiBNYXRoLmZsb29yKDEwMDAwMCArIE1hdGgucmFuZG9tKCkgKiA5MDAwMDApLnRvU3RyaW5nKCk7Cn0=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBBUEkgY2FsbCBhcmUgbWV0LgogKiAKICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0UmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2l0ZW1zCiAgaWYgKCFzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcyB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9pdGVtcyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXlsb2FkX2NpdHkKICBpZiAoIXNlc3Npb25EYXRhLnBheWxvYWRfY2l0eSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheWxvYWRfY2l0eSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUEFZTE9BRF9DSVRZIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cyB8fAogICAgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcHJvdmlkZXIKICBpZiAoIXNlc3Npb25EYXRhLnByb3ZpZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcHJvdmlkZXIgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BST1ZJREVSIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcXVvdGUKICBpZiAoIXNlc3Npb25EYXRhLnF1b3RlIHx8IHR5cGVvZiBzZXNzaW9uRGF0YS5xdW90ZSAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBxdW90ZSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUVVPVEUiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvbl9zZWxlY3RfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwCiAgKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gb25fc2VsZWN0X2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfT05fU0VMRUNUX0ZVTEZJTExNRU5UUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIG9uX3NlbGVjdF9pdGVtcwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5vbl9zZWxlY3RfaXRlbXMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9pdGVtcy5sZW5ndGggPT09IDAKICApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBvbl9zZWxlY3RfaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX09OX1NFTEVDVF9JVEVNUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHRhdAogIGlmICghc2Vzc2lvbkRhdGEudGF0KSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gdGF0IGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19UQVQiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBpdGVtcwogIGlmICghc2Vzc2lvbkRhdGEuaXRlbXMgfHwgc2Vzc2lvbkRhdGEuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX0lURU1TIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgYmlsbGluZwogIGlmICghc2Vzc2lvbkRhdGEuYmlsbGluZyB8fCB0eXBlb2Ygc2Vzc2lvbkRhdGEuYmlsbGluZyAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBiaWxsaW5nIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CSUxMSU5HIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgZnVsZmlsbG1lbnRzCiAgaWYgKCFzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMgfHwgc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIGZ1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfbnBfZmVlcwogIGlmICghc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfbnBfZmVlcykgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX25wX2ZlZXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX05QX0ZFRVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBicHBfdGVybXMgKE5FVykKICBpZiAoIXNlc3Npb25EYXRhLmJwcF90ZXJtcyB8fCBzZXNzaW9uRGF0YS5icHBfdGVybXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gYnBwX3Rlcm1zIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CUFBfVEVSTVMiLAogICAgfTsKICB9CgogIC8vIEFsbCByZXF1aXJlbWVudHMgc2F0aXNmaWVkCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgZGVzY3JpcHRpb246ICJBbGwgQ2hlY2tzIHBhc3NlZCBzdWNjZXNzZnVsbHkiLAogICAgY29kZTogIjIwMCIsCiAgfTsKfQo=
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: confirm
+          timestamp: '2025-12-29T08:39:38.573Z'
+          transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
+          message_id: 60f5adb8-cc0b-4954-8742-265b5e03593b
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            id: O1
+            state: Created
+            billing:
+              address:
+                building: my building name or house
+                city: Bengaluru
+                state: Karnataka
+                country: IND
+                area_code: '560027'
+                locality: my street name
+                name: my house or door or floor
+              phone: '9898989898'
+              name: ONDC buyer
+              email: nobody@nomail.com
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
+            items:
+              - id: I1
+                quantity:
+                  count: 1
+                fulfillment_id: F1
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            fulfillments:
+              - '@ondc/org/TAT': P3D
+                id: F1
+                tracking: true
+                end:
+                  contact:
+                    email: nobody@nomail.com
+                    phone: '9898989898'
+                  person:
+                    name: ONDC Buyer
+                  location:
+                    gps: 12.966545,77.592074
+                    address:
+                      building: my building name or house
+                      city: Bengaluru
+                      state: Karnataka
+                      country: IND
+                      area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
+                type: Delivery
+            payment:
+              params:
+                amount: '2756.75'
+                currency: INR
+                transaction_id: order_PjggJp7MccQmAa
+              status: PAID
+              type: ON-ORDER
+              collected_by: BAP
+              uri: https://razorpay.com/
+              tl_method: http/get
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3.0'
+              '@ondc/org/settlement_details':
+                - settlement_counterparty: seller-app
+                  settlement_phase: sale-amount
+                  settlement_type: neft
+                  beneficiary_name: xxxx
+                  settlement_bank_account_no: XXXX
+                  settlement_ifsc_code: XXXX
+                  bank_name: XXXX
+                  branch_name: XXXX
+            quote:
+              price:
+                currency: INR
+                value: '2756.75'
+              breakup:
+                - '@ondc/org/item_id': I1
+                  '@ondc/org/item_quantity':
+                    count: 1
+                  title: MINISO Two-Layer Drawer Organizer
+                  '@ondc/org/title_type': item
+                  price:
+                    currency: INR
+                    value: '2260.00'
+                  item:
+                    price:
+                      currency: INR
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
+                  title: Delivery charges
+                  '@ondc/org/title_type': delivery
+                  price:
+                    currency: INR
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
+                  title: Convenience Fee
+                  '@ondc/org/title_type': misc
+                  price:
+                    currency: INR
+                    value: '3.00'
+              ttl: P1D
+            tags:
+              - code: bpp_terms
+                list:
+                  - code: np_type
+                    value: MSN
+                  - code: tax_number
+                    value: 37ABACA6712B1Z6
+                  - code: provider_tax_number
+                    value: USYDS6482D
+              - code: bap_terms
+                list:
+                  - code: accept_bpp_terms
+                    value: 'Y'
+                  - code: static_terms
+                    value: >-
+                      https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
+                  - code: tax_number
+                    value: 37BABCA6712B1Z6
+            created_at: '2024-08-14T09:11:00.810Z'
+            updated_at: '2024-08-14T09:11:00.810Z'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        message_id: $.context.message_id
+        payment: $.message.order.payment
+        order_state: $.message.order.state
+        order_created_at: $.message.order.created_at
+        bap_terms: $.message.order.tags[?(@.code == 'bap_terms')]
+        fulfillments: $.message.order.fulfillments[*]
+        order_id: $.message.order.id
+      inputs: {}
+  - api: on_confirm
+    action_id: on_confirm
+    owner: BPP
+    responseFor: confirm
+    unsolicited: false
+    description: On-confirm Response to the confirm call
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwpmdW5jdGlvbiBnZXRVcGRhdGVkQmlsbGluZyhzYXZlZEJpbGxpbmcsIGluaXRpYWxpemUgPSBmYWxzZSkgewoJaWYgKGluaXRpYWxpemUpIHsKCQljb25zdCBuZXdJc28gPSBuZXcgRGF0ZShuZXcgRGF0ZSgpLmdldFRpbWUoKSAtIDUgKiAxMDAwKS50b0lTT1N0cmluZygpOwoJCXNhdmVkQmlsbGluZy5jcmVhdGVkX2F0ID0gbmV3SXNvOwoJCXNhdmVkQmlsbGluZy51cGRhdGVkX2F0ID0gbmV3SXNvOwoJfQoJcmV0dXJuIHNhdmVkQmlsbGluZzsKfQpmdW5jdGlvbiBjcmVhdGVGdWxmaWxsbWVudHMoCiAgc2Vzc2lvbkRhdGEsCiAgZGVmYXVsdEZ1bGZpbGxtZW50cwopIHsKICBpZiAoZGVmYXVsdEZ1bGZpbGxtZW50cy5sZW5ndGggPCAxKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoIkVtcHR5IGZ1bGZpbGxtZW50cyBmb3VuZCIpOwogIH0KICBjb25zdCBvblNlbGVjdEZ1bGZpbGxtZW50cyA9CiAgICBzZXNzaW9uRGF0YS5vbl9zZWxlY3RfZnVsZmlsbG1lbnRzOwoKICBjb25zdCBmdWxmaWxsbWVudHMgPSBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHM7CiAgICByZXR1cm4gZnVsZmlsbG1lbnRzCiAgICAgIC5maWx0ZXIoKGYpID0+IG9uU2VsZWN0RnVsZmlsbG1lbnRzLnNvbWUoKHNmKSA9PiBzZi5pZCA9PT0gZi5pZCkpCiAgICAgIC5tYXAoKGYsIGluZGV4KSA9PiB7CiAgICAgICAgY29uc3Qgc2VsZWN0ZWQgPQogICAgICAgICAgb25TZWxlY3RGdWxmaWxsbWVudHMuZmluZCgoc2YpID0+IHNmLmlkID09PSBmLmlkKSB8fCB7fTsKCiAgICAgICAgcmV0dXJuIHsKICAgICAgICAgIGlkOiBmLmlkLAogICAgICAgICAgdHlwZTogZi50eXBlLAogICAgICAgICAgdHJhY2tpbmc6IGYudHJhY2tpbmcsCiAgICAgICAgICBzdGF0ZTogewogICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgY29kZTogIlBlbmRpbmciLAogICAgICAgICAgICB9LAogICAgICAgICAgfSwKICAgICAgICAgICJAb25kYy9vcmcvVEFUIjogc2VsZWN0ZWRbIkBvbmRjL29yZy9UQVQiXSwKICAgICAgICAgICJAb25kYy9vcmcvcHJvdmlkZXJfbmFtZSI6ICJTdG9yZSAxIiwKICAgICAgICAgIHN0YXJ0OiB7CiAgICAgICAgICAgIGxvY2F0aW9uOiB7CiAgICAgICAgICAgICAgaWQ6ICJMMSIsCiAgICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgICAgbmFtZTogIlN0b3JlIDEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgZ3BzOiAiMTkuMTI5MDc2LDcyLjgyNTgwMyIsCiAgICAgICAgICAgICAgYWRkcmVzczogewogICAgICAgICAgICAgICAgc3RyZWV0OiAiMSAmIDIsQU1BUiBKWU9USSBDSFMuQkxERy4sT1BQLk5BTkQgS1JJUEEgSEFMTCIsCiAgICAgICAgICAgICAgICBsb2NhbGl0eTogIkFOREhFUkkgRk9VUiBCVU5HTE9XIEFNQVIgSllPVEkgQ0hTIiwKICAgICAgICAgICAgICAgIGNpdHk6ICJtb2NrLXNlbGxlci1jaXR5IiwKICAgICAgICAgICAgICAgIHN0YXRlOiAibW9jay1zdGF0ZSIsCiAgICAgICAgICAgICAgICBhcmVhX2NvZGU6ICI0MDAwNTMiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIGNvbnRhY3Q6IHsKICAgICAgICAgICAgICBwaG9uZTogIjk1OTQ2NjM3MTAiLAogICAgICAgICAgICAgIGVtYWlsOiAibm9ib2R5QG5vbWFpbC5jb20iLAogICAgICAgICAgICB9LAogICAgICAgICAgfSwKICAgICAgICAgIGVuZDogZi5lbmQsCiAgICAgICAgfTsKICAgICAgfSk7CiAgCn0KCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKAogIGRlZmF1bHRQYXlsb2FkLAogIHNlc3Npb25EYXRhCikgewogIGNvbnN0IHRpbWVJc28gPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gdGltZUlzbzsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSBzZXNzaW9uRGF0YS5vcmRlcl9jcmVhdGVkX2F0WzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmJpbGxpbmcgPSBnZXRVcGRhdGVkQmlsbGluZygKICAgIHNlc3Npb25EYXRhLmJpbGxpbmdbMF0KICApOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtczsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyID0gc2Vzc2lvbkRhdGEucHJvdmlkZXJbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgPSBjcmVhdGVGdWxmaWxsbWVudHMoCiAgICBzZXNzaW9uRGF0YSwKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzCiAgKTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlID0gc2Vzc2lvbkRhdGEucXVvdGVbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5wYXltZW50ID0gc2Vzc2lvbkRhdGEucGF5bWVudFswXTsKICBjb25zdCBleGlzdGluZ1RhZ3MgPSBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnRhZ3MKICBjb25zdCBiYXBUZXJtcyA9IGV4aXN0aW5nVGFncy5maW5kKChmKSA9PiBmLmNvZGUgPT09ICJiYXBfdGVybXMiKTsKICBpZiAoYmFwVGVybXMpIHsKICAgIGJhcFRlcm1zLmxpc3QgPSBzZXNzaW9uRGF0YS5iYXBfdGVybXNbMF0ubGlzdAogICAgICAuZmlsdGVyKChpKSA9PiBpLmNvZGUgIT09ICJhY2NlcHRfYnBwX3Rlcm1zIikKICAgICAgLm1hcCgoaSkgPT4KICAgICAgICBpLmNvZGUgPT09ICJzdGF0aWNfdGVybXMiCiAgICAgICAgICA/IHsgLi4uaSwgdmFsdWU6ICJodHRwczovL2dpdGh1Yi5jb20vT05EQy1PZmZpY2lhbC9wcm90b2NvbC1uZXR3b3JrLWV4dGVuc2lvbi9kaXNjdXNzaW9ucy83OSIgfQogICAgICAgICAgOiBpCiAgICAgICk7CiAgfQogIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cg==
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBBUEkgY2FsbCBhcmUgbWV0LgogKiAKICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0UmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2l0ZW1zCiAgaWYgKCFzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcyB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9pdGVtcyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXlsb2FkX2NpdHkKICBpZiAoIXNlc3Npb25EYXRhLnBheWxvYWRfY2l0eSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheWxvYWRfY2l0eSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUEFZTE9BRF9DSVRZIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cyB8fAogICAgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcHJvdmlkZXIKICBpZiAoIXNlc3Npb25EYXRhLnByb3ZpZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcHJvdmlkZXIgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BST1ZJREVSIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcXVvdGUKICBpZiAoIXNlc3Npb25EYXRhLnF1b3RlIHx8IHR5cGVvZiBzZXNzaW9uRGF0YS5xdW90ZSAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBxdW90ZSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUVVPVEUiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvbl9zZWxlY3RfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwCiAgKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gb25fc2VsZWN0X2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfT05fU0VMRUNUX0ZVTEZJTExNRU5UUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIG9uX3NlbGVjdF9pdGVtcwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5vbl9zZWxlY3RfaXRlbXMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9pdGVtcy5sZW5ndGggPT09IDAKICApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBvbl9zZWxlY3RfaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX09OX1NFTEVDVF9JVEVNUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHRhdAogIGlmICghc2Vzc2lvbkRhdGEudGF0KSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gdGF0IGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19UQVQiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBpdGVtcwogIGlmICghc2Vzc2lvbkRhdGEuaXRlbXMgfHwgc2Vzc2lvbkRhdGEuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX0lURU1TIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgYmlsbGluZwogIGlmICghc2Vzc2lvbkRhdGEuYmlsbGluZyB8fCB0eXBlb2Ygc2Vzc2lvbkRhdGEuYmlsbGluZyAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBiaWxsaW5nIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CSUxMSU5HIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgZnVsZmlsbG1lbnRzCiAgaWYgKCFzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMgfHwgc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIGZ1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfbnBfZmVlcwogIGlmICghc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfbnBfZmVlcykgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX25wX2ZlZXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX05QX0ZFRVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBicHBfdGVybXMKICBpZiAoIXNlc3Npb25EYXRhLmJwcF90ZXJtcyB8fCBzZXNzaW9uRGF0YS5icHBfdGVybXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gYnBwX3Rlcm1zIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CUFBfVEVSTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvcmRlcl9pZCAoTkVXKQogIGlmICghc2Vzc2lvbkRhdGEub3JkZXJfaWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBvcmRlcl9pZCBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfT1JERVJfSUQiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBiYXBfdGVybXMgKE5FVykKICBpZiAoIXNlc3Npb25EYXRhLmJhcF90ZXJtcyB8fCBzZXNzaW9uRGF0YS5iYXBfdGVybXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gYmFwX3Rlcm1zIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CQVBfVEVSTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBzdGF0ZSAoTkVXKQogIGlmICghc2Vzc2lvbkRhdGEuc3RhdGUpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzdGF0ZSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU1RBVEUiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXltZW50IChORVcpCiAgaWYgKCFzZXNzaW9uRGF0YS5wYXltZW50IHx8IHR5cGVvZiBzZXNzaW9uRGF0YS5wYXltZW50ICE9PSAib2JqZWN0IikgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheW1lbnQgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BBWU1FTlQiLAogICAgfTsKICB9CgogIC8vIEFsbCByZXF1aXJlbWVudHMgc2F0aXNmaWVkCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgZGVzY3JpcHRpb246ICJBbGwgQ2hlY2tzIHBhc3NlZCBzdWNjZXNzZnVsbHkiLAogICAgY29kZTogIjIwMCIsCiAgfTsKfQo=
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: on_confirm
+          timestamp: '2025-12-29T08:51:49.239Z'
+          transaction_id: 3cd7243a-eef8-42e1-8d12-9c76eab6fcea
+          message_id: 2280275d-5d9a-413c-8c83-6ddc1db4e761
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            id: O1
+            state: Created
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            items:
+              - id: I1
+                quantity:
+                  count: 1
+                fulfillment_id: F1
+            billing:
+              address:
+                building: my building name or house
+                city: Bengaluru
+                state: Karnataka
+                country: IND
+                area_code: '560027'
+                locality: my street name
+                name: my house or door or floor
+              phone: '9898989898'
+              name: ONDC buyer
+              email: nobody@nomail.com
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
+            fulfillments:
+              - id: F1
+                '@ondc/org/provider_name': Seller Business
+                '@ondc/org/TAT': P3D
+                state:
+                  descriptor:
+                    code: Pending
+                type: Delivery
+                tracking: true
+                start:
+                  location:
+                    id: L1
+                    descriptor:
+                      name: Seller Business
+                    gps: 12.925810,77.583624
+                    address:
+                      building: my building name or house
+                      country: IND
+                      locality: my street name
+                      city: Bengaluru
+                      area_code: '560011'
+                      state: Karnataka
+                      name: my house or door or floor
+                  contact:
+                    phone: '9594663710'
+                    email: nobody@nomail.com
+                end:
+                  person:
+                    name: John Doe
+                  contact:
+                    email: nobody@nomail.com
+                    phone: '9898989898'
+                  location:
+                    gps: 12.966545,77.592074
+                    address:
+                      building: my building name or house
+                      city: Bengaluru
+                      state: Karnataka
+                      country: IND
+                      area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
+            quote:
+              price:
+                currency: INR
+                value: '2756.75'
+              breakup:
+                - '@ondc/org/item_id': I1
+                  '@ondc/org/item_quantity':
+                    count: 1
+                  title: MINISO Two-Layer Drawer Organizer
+                  '@ondc/org/title_type': item
+                  price:
+                    currency: INR
+                    value: '2260.00'
+                  item:
+                    price:
+                      currency: INR
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
+                  title: Delivery charges
+                  '@ondc/org/title_type': delivery
+                  price:
+                    currency: INR
+                    value: '493.75'
+                - '@ondc/org/item_id': F1
+                  title: Convenience Fee
+                  '@ondc/org/title_type': misc
+                  price:
+                    currency: INR
+                    value: '3.00'
+              ttl: P1D
+            payment:
+              params:
+                amount: '2756.75'
+                currency: INR
+                transaction_id: order_Okj0iihMKJod0V
+              status: PAID
+              type: ON-ORDER
+              collected_by: BAP
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3.0'
+              '@ondc/org/settlement_details':
+                - settlement_counterparty: seller-app
+                  settlement_phase: sale-amount
+                  settlement_type: neft
+                  beneficiary_name: xxxx
+                  settlement_bank_account_no: xxxx
+                  settlement_ifsc_code: xxxx
+                  bank_name: xxxx
+                  branch_name: xxxx
+            tags:
+              - code: bpp_terms
+                list:
+                  - code: np_type
+                    value: MSN
+                  - code: tax_number
+                    value: 37ABACA6712B1Z6
+                  - code: provider_tax_number
+                    value: USYDS6482D
+                  - code: accept_bap_terms
+                    value: 'Y'
+              - code: bap_terms
+                list:
+                  - code: static_terms
+                    value: >-
+                      https://github.com/ONDC-Official/protocol-network-extension/discussions/79
+                  - code: tax_number
+                    value: 37ABACA6712B1Z6
+            created_at: '2024-08-14T09:11:00.810Z'
+            updated_at: '2024-08-14T09:11:01.239Z'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        order_state: $.message.order.state
+        fulfillments: $.message.order.fulfillments[*]
+      inputs: {}
+  - api: cancel
+    action_id: cancel
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: please add relevant description
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpbnB1dHMgPSBzZXNzaW9uRGF0YS51c2VyX2lucHV0czsKICBpZiAoIWlucHV0cykgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIGNvbnN0IHJlYXNvbklkID0gaW5wdXRzPy5jYW5jZWxsYXRpb25fcmVhc29uX2lkID8/ICIwMDEiOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UuY2FuY2VsbGF0aW9uX3JlYXNvbl9pZCA9IHJlYXNvbklkOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXJfaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIAogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBBUEkgY2FsbCBhcmUgbWV0LgogKiAKICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0UmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgLy8gQ2hlY2sgZm9yIG9yZGVyX2lkCiAgaWYgKCFzZXNzaW9uRGF0YS5vcmRlcl9pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIG9yZGVyX2lkIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19PUkRFUl9JRCIsCiAgICB9OwogIH0KCiAgLy8gQWxsIHJlcXVpcmVtZW50cyBzYXRpc2ZpZWQKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBkZXNjcmlwdGlvbjogIkFsbCBDaGVja3MgcGFzc2VkIHN1Y2Nlc3NmdWxseSIsCiAgICBjb2RlOiAiMjAwIiwKICB9Owp9Cg==
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: cancel
+          timestamp: '2025-12-30T08:00:22.239Z'
+          transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+          message_id: 84a4baa4-5a34-4d59-bc78-7cd078adc326
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order_id: 2024-08-08-250723
+          cancellation_reason_id: '051'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        message_id: $.context.message_id
+        cancellation_reason_id: $.message.cancellation_reason_id
+      inputs:
+        id: ExampleInputId
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            cancellation_reason_id:
+              type: string
+              enum:
+                - '051'
+                - '052'
+                - '053'
+                - '099'
+              default: '053'
+          required:
+            - cancellation_reason_id
+          additionalProperties: false
+          default: {}
+  - api: on_cancel
+    action_id: on_cancel
+    owner: BPP
+    responseFor: cancel
+    unsolicited: false
+    description: please add relevant description
+    mock:
+      generate: >-
+        Y29uc3QgaXNvRHVyVG9TZWMgPSAoZHVyYXRpb24pID0+IHsKICAgIGNvbnN0IGR1clJFID0KICAgICAgICAvUCgoXGQrKVkpPygoXGQrKU0pPygoXGQrKVcpPygoXGQrKUQpP1Q/KChcZCspSCk/KChcZCspTSk/KChcZCspUyk/LzsKCiAgICBjb25zdCBzcGxpdFRpbWUgPSBkdXJSRS5leGVjKGR1cmF0aW9uKTsKICAgIGlmICghc3BsaXRUaW1lKSB7CiAgICAgICAgcmV0dXJuIDA7CiAgICB9CgogICAgY29uc3QgeWVhcnMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bMl0pIHx8IDA7CiAgICBjb25zdCBtb250aHMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bNF0pIHx8IDA7CiAgICBjb25zdCB3ZWVrcyA9IE51bWJlcihzcGxpdFRpbWU/Lls2XSkgfHwgMDsKICAgIGNvbnN0IGRheXMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bOF0pIHx8IDA7CiAgICBjb25zdCBob3VycyA9IE51bWJlcihzcGxpdFRpbWU/LlsxMF0pIHx8IDA7CiAgICBjb25zdCBtaW51dGVzID0gTnVtYmVyKHNwbGl0VGltZT8uWzEyXSkgfHwgMDsKICAgIGNvbnN0IHNlY29uZHMgPSBOdW1iZXIoc3BsaXRUaW1lPy5bMTRdKSB8fCAwOwoKICAgIGNvbnN0IHJlc3VsdCA9CiAgICAgICAgeWVhcnMgKiAzMTUzNjAwMCArCiAgICAgICAgbW9udGhzICogMjYyODI4OCArCiAgICAgICAgd2Vla3MgKiA2MDQ4MDAgKwogICAgICAgIGRheXMgKiA4NjQwMCArCiAgICAgICAgaG91cnMgKiAzNjAwICsKICAgICAgICBtaW51dGVzICogNjAgKwogICAgICAgIHNlY29uZHM7CgogICAgcmV0dXJuIHJlc3VsdDsKfTsKCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKAogIGRlZmF1bHRQYXlsb2FkLAogIHNlc3Npb25EYXRhCikgewogIGNvbnN0IGNhbmNlbEl0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXMubWFwKChpdGVtKSA9PiB7CiAgICBjb25zdCBvYiA9IHsKICAgICAgaWQ6IGl0ZW0uaWQsCiAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgY291bnQ6IGl0ZW0ucXVhbnRpdHkuY291bnQsCiAgICAgIH0sCiAgICAgIGZ1bGZpbGxtZW50X2lkOiAiY2FuY2VsX2lkXzgxODkiLAogICAgfTsKICAgIGl0ZW0ucXVhbnRpdHkuY291bnQgPSAwOwogICAgcmV0dXJuIG9iOwogIH0pOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBbLi4uc2Vzc2lvbkRhdGEuaXRlbXMsIC4uLmNhbmNlbEl0ZW1zXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyID0gc2Vzc2lvbkRhdGEucHJvdmlkZXJbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5iaWxsaW5nID0gc2Vzc2lvbkRhdGEuYmlsbGluZ1swXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cyA9IGNyZWF0ZUNhbmNlbEZ1bGZpbGxtZW50cygKICAgIHNlc3Npb25EYXRhLnF1b3RlLAogICAgc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzLAogICAgc2Vzc2lvbkRhdGEKICApOwoKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnQgPSBzZXNzaW9uRGF0YS5wYXltZW50WzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSBzZXNzaW9uRGF0YS5vcmRlcl9jcmVhdGVkX2F0WzBdOwogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNhbmNlbGxhdGlvbiA9IHsKICAgIGNhbmNlbGxlZF9ieTogZGVmYXVsdFBheWxvYWQuY29udGV4dC5iYXBfaWQsCiAgICByZWFzb246IHsKICAgICAgaWQ6IHNlc3Npb25EYXRhLmNhbmNlbGxhdGlvbl9yZWFzb25faWRbMF0sCiAgICB9LAogIH07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZSA9IHNlc3Npb25EYXRhLnF1b3RlWzBdOwogIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQubWVzc2FnZV9pZCA9IHNlc3Npb25EYXRhLm1lc3NhZ2VfaWRbMF07CiAgCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9CgpmdW5jdGlvbiBjcmVhdGVDYW5jZWxGdWxmaWxsbWVudHMoCiAgcXVvdGUsCiAgZnVsZmlsbG1lbnRzLAogIHNlc3Npb25EYXRhCikgewogIGZ1bGZpbGxtZW50cyA9IGZ1bGZpbGxtZW50cy5tYXAoKGYpID0+IHsKICAgICAgY29uc3QgdGFncyA9IGYudGFncyB8fCBbXTsKICAgICAgY29uc3QgdGltZSA9IG5ldyBEYXRlKG5ldyBEYXRlKCkuZ2V0VGltZSgpICsgMTAgKiAxMDAwICogNjApOwogICAgICBjb25zdCBzdGFydF9lbmQgPSBuZXcgRGF0ZSh0aW1lLmdldFRpbWUoKSArIDEwICogMTAwMCAqIDYwKS50b0lTT1N0cmluZygpOwogICAgcmV0dXJuIHsKICAgICAgLi4uZiwKICAgICAgc3RhdGU6IHsKICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICBjb2RlOiAiQ2FuY2VsbGVkIiwKICAgICAgICB9LAogICAgICAgIH0sCiAgICAgICAgc3RhcnQ6IHsKICAgICAgICAgICAgLi4uZi5zdGFydCwKICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgICAgICBzdGFydDogdGltZS50b0lTT1N0cmluZygpLAogICAgICAgICAgICAgICAgICAgIGVuZDogc3RhcnRfZW5kLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICB9LAogICAgICAgIGVuZDogewogICAgICAgICAgICAuLi5mLmVuZCwKICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgICAgICBzdGFydDogc3RhcnRfZW5kLAogICAgICAgICAgICAgICAgICAgIGVuZDogbmV3IERhdGUoCiAgICAgICAgICAgICAgICAgICAgICAgIHRpbWUuZ2V0VGltZSgpICsKICAgICAgICAgICAgICAgICAgICAgICAgMTAwMCAqIGlzb0R1clRvU2VjKGZbIkBvbmRjL29yZy9UQVQiXSB8fCAiUFQwSCIpCiAgICAgICAgICAgICAgICAgICAgKS50b0lTT1N0cmluZygpLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICB9LAogICAgICB0YWdzOiBbCiAgICAgICAgLi4udGFncywKICAgICAgICB7CiAgICAgICAgICBjb2RlOiAiY2FuY2VsX3JlcXVlc3QiLAogICAgICAgICAgbGlzdDogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgY29kZTogInJlYXNvbl9pZCIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhLmNhbmNlbGxhdGlvbl9yZWFzb25faWRbMF0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAiaW5pdGlhdGVkX2J5IiwKICAgICAgICAgICAgICB2YWx1ZTogc2Vzc2lvbkRhdGEuYmFwSWRbMF0gfHwgImJhcCIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgY29kZTogInByZWNhbmNlbF9zdGF0ZSIsCiAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAiZnVsZmlsbG1lbnRfc3RhdGUiLAogICAgICAgICAgICAgIHZhbHVlOiAiUGVuZGluZyIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAidXBkYXRlZF9hdCIsCiAgICAgICAgICAgICAgdmFsdWU6IHNlc3Npb25EYXRhLmxhc3RfdXBkYXRlZF9hdCB8fCBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCiAgICAgICAgICAgIH0sCiAgICAgICAgICBdLAogICAgICAgIH0sCiAgICAgIF0sCiAgICB9OwogIH0pOwogIGZ1bGZpbGxtZW50cy5wdXNoKHsKICAgIGlkOiAiY2FuY2VsX2lkXzgxODkiLAogICAgdHlwZTogIkNhbmNlbCIsCiAgICBzdGF0ZTogewogICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgY29kZTogIkNhbmNlbGxlZCIsCiAgICAgIH0sCiAgICB9LAogICAgdGFnczogY3JlYXRlUXVvdGVUcmFpbChxdW90ZVswXSksCiAgfSk7CiAgcmV0dXJuIGZ1bGZpbGxtZW50czsKfQoKZnVuY3Rpb24gY3JlYXRlUXVvdGVUcmFpbChxdW90ZSkgewogIGNvbnN0IHRhZ3MgPSBbXTsKICBjb25zdCBicmVha3VwID0gcXVvdGUuYnJlYWt1cCB8fCBbXTsKICBmb3IgKGNvbnN0IGl0ZW0gb2YgYnJlYWt1cCkgewogICAgY29uc3QgcHJpY2VTdHIgPSBpdGVtLnByaWNlPy52YWx1ZSB8fCAiMC4wMCI7CiAgICBjb25zdCBwcmljZVZhbHVlID0gcGFyc2VGbG9hdChwcmljZVN0cik7CiAgICBpZiAoaXRlbVsiQG9uZGMvb3JnL2l0ZW1fcXVhbnRpdHkiXSkgewogICAgICBpdGVtWyJAb25kYy9vcmcvaXRlbV9xdWFudGl0eSJdLmNvdW50ID0gMDsKICAgIH0KICAgIGlmIChwcmljZVZhbHVlICE9PSAwKSB7CiAgICAgIGNvbnN0IHRyYWlsID0gSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeShzYW1wbGVRdW90ZVRyYWlsKSk7CiAgICAgIHRyYWlsLmxpc3RbMF0udmFsdWUgPSBpdGVtWyJAb25kYy9vcmcvdGl0bGVfdHlwZSJdIHx8ICJtaXNjIjsKICAgICAgdHJhaWwubGlzdFsxXS52YWx1ZSA9IGl0ZW1bIkBvbmRjL29yZy9pdGVtX2lkIl0gfHwgInVua25vd24iOwogICAgICB0cmFpbC5saXN0WzJdLnZhbHVlID0gaXRlbS5wcmljZT8uY3VycmVuY3kgfHwgIklOUiI7CiAgICAgIHRyYWlsLmxpc3RbM10udmFsdWUgPSAoLTEgKiBwcmljZVZhbHVlKS50b0ZpeGVkKDIpOwogICAgICB0YWdzLnB1c2godHJhaWwpOwogICAgICBpZiAoaXRlbS5wcmljZSkgewogICAgICAgIGl0ZW0ucHJpY2UudmFsdWUgPSAiMC4wMCI7CiAgICAgIH0KICAgIH0KICB9CiAgaWYgKHF1b3RlLnByaWNlICYmIHF1b3RlLnByaWNlLnZhbHVlKSB7CiAgICBxdW90ZS5wcmljZS52YWx1ZSA9ICIwLjAwIjsKICB9CgogIHJldHVybiB0YWdzOwp9Cgpjb25zdCBzYW1wbGVRdW90ZVRyYWlsID0gewogIGNvZGU6ICJxdW90ZV90cmFpbCIsCiAgbGlzdDogWwogICAgewogICAgICBjb2RlOiAidHlwZSIsCiAgICAgIHZhbHVlOiAibWlzYyIsCiAgICB9LAogICAgewogICAgICBjb2RlOiAiaWQiLAogICAgICB2YWx1ZTogImM0YjJkZDc0LTljY2QtNGVjMS1iOGY4LTU4ZDM2ZGQ4Y2UzMyIsCiAgICB9LAogICAgewogICAgICBjb2RlOiAiY3VycmVuY3kiLAogICAgICB2YWx1ZTogIklOUiIsCiAgICB9LAogICAgewogICAgICBjb2RlOiAidmFsdWUiLAogICAgICB2YWx1ZTogIi0xMDAuMDAiLAogICAgfSwKICBdLAp9Owo=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBBUEkgY2FsbCBhcmUgbWV0LgogKiAKICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0UmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgLy8gQ2hlY2sgZm9yIHNlbGVjdGVkX2l0ZW1zCiAgaWYgKCFzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcyB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBzZWxlY3RlZF9pdGVtcyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfSVRFTVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBwYXlsb2FkX2NpdHkKICBpZiAoIXNlc3Npb25EYXRhLnBheWxvYWRfY2l0eSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHBheWxvYWRfY2l0eSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUEFZTE9BRF9DSVRZIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLnNlbGVjdGVkX2Z1bGZpbGxtZW50cyB8fAogICAgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfU0VMRUNURURfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcHJvdmlkZXIKICBpZiAoIXNlc3Npb25EYXRhLnByb3ZpZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gcHJvdmlkZXIgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1BST1ZJREVSIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgcXVvdGUKICBpZiAoIXNlc3Npb25EYXRhLnF1b3RlIHx8IHR5cGVvZiBzZXNzaW9uRGF0YS5xdW90ZSAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBxdW90ZSBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfUVVPVEUiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBvbl9zZWxlY3RfZnVsZmlsbG1lbnRzCiAgaWYgKAogICAgIXNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwCiAgKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gb25fc2VsZWN0X2Z1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfT05fU0VMRUNUX0ZVTEZJTExNRU5UUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIG9uX3NlbGVjdF9pdGVtcwogIGlmICgKICAgICFzZXNzaW9uRGF0YS5vbl9zZWxlY3RfaXRlbXMgfHwKICAgIHNlc3Npb25EYXRhLm9uX3NlbGVjdF9pdGVtcy5sZW5ndGggPT09IDAKICApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBvbl9zZWxlY3RfaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX09OX1NFTEVDVF9JVEVNUyIsCiAgICB9OwogIH0KCiAgLy8gQ2hlY2sgZm9yIHRhdAogIGlmICghc2Vzc2lvbkRhdGEudGF0KSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gdGF0IGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19UQVQiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBpdGVtcwogIGlmICghc2Vzc2lvbkRhdGEuaXRlbXMgfHwgc2Vzc2lvbkRhdGEuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gaXRlbXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX0lURU1TIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgYmlsbGluZwogIGlmICghc2Vzc2lvbkRhdGEuYmlsbGluZyB8fCB0eXBlb2Ygc2Vzc2lvbkRhdGEuYmlsbGluZyAhPT0gIm9iamVjdCIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgZGVzY3JpcHRpb246ICJObyBiaWxsaW5nIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CSUxMSU5HIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3IgZnVsZmlsbG1lbnRzCiAgaWYgKCFzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMgfHwgc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIGZ1bGZpbGxtZW50cyBhdmFpbGFibGUgaW4gc2Vzc2lvbiBkYXRhIiwKICAgICAgY29kZTogIk1JU1NJTkdfRlVMRklMTE1FTlRTIiwKICAgIH07CiAgfQoKICAvLyBDaGVjayBmb3Igc2VsZWN0ZWRfbnBfZmVlcwogIGlmICghc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfbnBfZmVlcykgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBkZXNjcmlwdGlvbjogIk5vIHNlbGVjdGVkX25wX2ZlZXMgYXZhaWxhYmxlIGluIHNlc3Npb24gZGF0YSIsCiAgICAgIGNvZGU6ICJNSVNTSU5HX1NFTEVDVEVEX05QX0ZFRVMiLAogICAgfTsKICB9CgogIC8vIENoZWNrIGZvciBicHBfdGVybXMgKE5FVykKICBpZiAoIXNlc3Npb25EYXRhLmJwcF90ZXJtcyB8fCBzZXNzaW9uRGF0YS5icHBfdGVybXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGRlc2NyaXB0aW9uOiAiTm8gYnBwX3Rlcm1zIGF2YWlsYWJsZSBpbiBzZXNzaW9uIGRhdGEiLAogICAgICBjb2RlOiAiTUlTU0lOR19CUFBfVEVSTVMiLAogICAgfTsKICB9CgogIC8vIEFsbCByZXF1aXJlbWVudHMgc2F0aXNmaWVkCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgZGVzY3JpcHRpb246ICJBbGwgQ2hlY2tzIHBhc3NlZCBzdWNjZXNzZnVsbHkiLAogICAgY29kZTogIjIwMCIsCiAgfTsKfQo=
+      defaultPayload:
+        context:
+          domain: ONDC:RET16
+          action: on_cancel
+          timestamp: '2025-12-30T08:00:30.113Z'
+          transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+          message_id: de93e4f2-0f69-4d23-8c53-6a181ece2b50
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          order:
+            state: Cancelled
+            items:
+              - id: I1
+                quantity:
+                  count: 0
+                fulfillment_id: F1
+              - id: I1
+                quantity:
+                  count: 2
+                fulfillment_id: C1
+            provider:
+              id: P1
+              locations:
+                - id: L1
+            billing:
+              address:
+                building: my building name or house
+                city: Bengaluru
+                state: Karnataka
+                country: IND
+                area_code: '560027'
+                locality: my street name
+                name: my house or door or floor
+              phone: '9898989898'
+              name: ONDC buyer
+              email: nobody@nomail.com
+              created_at: '2024-08-14T09:10:34.369Z'
+              updated_at: '2024-08-14T09:10:34.369Z'
+            fulfillments:
+              - id: F1
+                '@ondc/org/provider_name': Seller Business
+                '@ondc/org/TAT': P3D
+                state:
+                  descriptor:
+                    code: Cancelled
+                type: Delivery
+                tracking: false
+                start:
+                  location:
+                    id: L1
+                    descriptor:
+                      name: Seller Business
+                    gps: 12.925810,77.583624
+                    address:
+                      building: my building name or house
+                      country: IND
+                      locality: my street name
+                      city: Bengaluru
+                      area_code: '560011'
+                      state: Karnataka
+                      name: my house or door or floor
+                  contact:
+                    phone: '9594663710'
+                    email: nobody@nomail.com
+                end:
+                  person:
+                    name: John Doe
+                  contact:
+                    email: nobody@nomail.com
+                    phone: '9898989898'
+                  location:
+                    gps: 12.966545,77.592074
+                    address:
+                      building: my building name or house
+                      city: Bengaluru
+                      state: Karnataka
+                      country: IND
+                      area_code: '560027'
+                      locality: my street name
+                      name: my house or door or floor
+                tags:
+                  - code: cancel_request
+                    list:
+                      - code: reason_id
+                        value: '001'
+                      - code: initiated_by
+                        value: dev-automation.ondc.org
+                  - code: precancel_state
+                    list:
+                      - code: fulfillment_state
+                        value: Pending
+                      - code: updated_at
+                        value: '2024-08-14T09:11:01.239Z'
+              - id: C1
+                type: Cancel
+                state:
+                  descriptor:
+                    code: Cancelled
+                tags:
+                  - code: quote_trail
+                    list:
+                      - code: type
+                        value: delivery
+                      - code: id
+                        value: F1
+                      - code: currency
+                        value: INR
+                      - code: value
+                        value: '-493.75'
+                  - code: quote_trail
+                    list:
+                      - code: type
+                        value: misc
+                      - code: id
+                        value: F1
+                      - code: currency
+                        value: INR
+                      - code: value
+                        value: '-3.00'
+                  - code: quote_trail
+                    list:
+                      - code: type
+                        value: item
+                      - code: id
+                        value: I1
+                      - code: currency
+                        value: INR
+                      - code: value
+                        value: '-2260.00'
+            quote:
+              price:
+                currency: INR
+                value: '0.00'
+              breakup:
+                - '@ondc/org/item_id': I1
+                  '@ondc/org/item_quantity':
+                    count: 1
+                  title: MINISO Two-Layer Drawer Organizer
+                  '@ondc/org/title_type': item
+                  price:
+                    currency: INR
+                    value: '0.00'
+                  item:
+                    price:
+                      currency: INR
+                      value: '2260.00'
+                - '@ondc/org/item_id': F1
+                  title: Delivery charges
+                  '@ondc/org/title_type': delivery
+                  price:
+                    currency: INR
+                    value: '0.00'
+                - '@ondc/org/item_id': F1
+                  title: Convenience Fee
+                  '@ondc/org/title_type': misc
+                  price:
+                    currency: INR
+                    value: '0.00'
+              ttl: P1D
+            payment:
+              params:
+                amount: '2756.75'
+                currency: INR
+                transaction_id: order_Okj0iihMKJod0V
+              status: PAID
+              type: ON-ORDER
+              collected_by: BAP
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3.0'
+              '@ondc/org/settlement_details':
+                - settlement_counterparty: seller-app
+                  settlement_phase: sale-amount
+                  settlement_type: neft
+                  beneficiary_name: xxxx
+                  settlement_bank_account_no: xxxx
+                  settlement_ifsc_code: xxxx
+                  bank_name: xxxx
+                  branch_name: xxxx
+            id: O1
+            created_at: '2024-08-14T09:11:00.810Z'
+            updated_at: '2024-08-14T09:12:02.456Z'
+            cancellation:
+              cancelled_by: dev-automation.ondc.org
+              reason:
+                id: '001'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        quote: $.message.order.quote
+        items: $.message.order.items[*]
+        on_status_fulfillments: $.message.order.fulfillments[*]
+      inputs: {}
+transaction_history:
+  - action_id: select
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: select
+        timestamp: '2026-03-23T13:39:08.078Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: d82abd10-ec6a-451b-8ace-ba6433f0a909
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: std:011
+        core_version: 1.2.0
+      message:
+        order:
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          items:
+            - id: I1
+              quantity:
+                count: 1
+              location_id: L1
+            - id: I2
+              quantity:
+                count: 1
+              location_id: L1
+          fulfillments:
+            - end:
+                location:
+                  gps: 19.129076,72.825803
+                  address:
+                    area_code: '400053'
+    action: select
+    saved_info: {}
+  - action_id: on_select
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: on_select
+        timestamp: '2026-03-23T13:39:08.105Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: d82abd10-ec6a-451b-8ace-ba6433f0a909
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order:
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          fulfillments:
+            - id: F1
+              type: Delivery
+              '@ondc/org/provider_name': LSP or Provider Name
+              tracking: true
+              '@ondc/org/category': Standard Delivery
+              '@ondc/org/TAT': P3D
+              state:
+                descriptor:
+                  code: Serviceable
+          quote:
+            breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: MINISO Two-Layer Drawer Organizer
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2260.00'
+                item:
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '2260'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Doms Art Apps Nxt Kit With Plastic Carry Case
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2460.00'
+                item:
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                  price:
+                    currency: INR
+                    value: '2460'
+              - '@ondc/org/item_id': F1
+                title: Delivery charges
+                '@ondc/org/title_type': delivery
+                price:
+                  currency: INR
+                  value: '00.00'
+              - '@ondc/org/item_id': F1
+                title: Convenience Fee
+                '@ondc/org/title_type': misc
+                price:
+                  currency: INR
+                  value: '00.00'
+            price:
+              currency: INR
+              value: '4720.00'
+            ttl: P1D
+          items:
+            - id: I1
+              fulfillment_id: F1
+            - id: I2
+              fulfillment_id: F1
+    action: on_select
+    saved_info: {}
+  - action_id: init
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: init
+        timestamp: '2026-03-23T13:39:08.119Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: 9e673076-7dc7-4d2c-a07b-4259dfeaecdf
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order:
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          items:
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+          billing:
+            address:
+              building: my building name or house
+              city: Bengaluru
+              state: Karnataka
+              country: IND
+              area_code: '560027'
+              locality: my street name
+              name: my house or door or floor
+            phone: '9898989898'
+            name: ONDC Buyer
+            email: nobody@nomail.com
+            created_at: '2026-03-23T13:39:03.128Z'
+            updated_at: '2026-03-23T13:39:03.128Z'
+          fulfillments:
+            - id: F1
+              type: Delivery
+              end:
+                contact:
+                  email: nobody@nomail.com
+                  phone: '9898989898'
+                location:
+                  gps: 19.129076,72.825803
+                  address:
+                    building: mock-building
+                    city: mock-city
+                    state: mock-state
+                    country: IND
+                    area_code: '400053'
+                    locality: mock-locality
+                    name: mock-house-name
+          offers: []
+    action: init
+    saved_info: {}
+  - action_id: on_init
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: on_init
+        timestamp: '2026-03-23T13:39:08.140Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: 9e673076-7dc7-4d2c-a07b-4259dfeaecdf
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order:
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          items:
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+          billing:
+            address:
+              building: my building name or house
+              city: Bengaluru
+              state: Karnataka
+              country: IND
+              area_code: '560027'
+              locality: my street name
+              name: my house or door or floor
+            phone: '9898989898'
+            name: ONDC Buyer
+            email: nobody@nomail.com
+            created_at: '2026-03-23T13:39:03.128Z'
+            updated_at: '2026-03-23T13:39:03.128Z'
+          fulfillments:
+            - id: F1
+              type: Delivery
+              end:
+                contact:
+                  email: nobody@nomail.com
+                  phone: '9898989898'
+                location:
+                  gps: 19.129076,72.825803
+                  address:
+                    building: mock-building
+                    city: mock-city
+                    state: mock-state
+                    country: IND
+                    area_code: '400053'
+                    locality: mock-locality
+                    name: mock-house-name
+              tracking: true
+          quote:
+            breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: MINISO Two-Layer Drawer Organizer
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2260.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2260'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Doms Art Apps Nxt Kit With Plastic Carry Case
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2460.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2460'
+              - '@ondc/org/item_id': F1
+                title: Delivery charges
+                '@ondc/org/title_type': delivery
+                price:
+                  currency: INR
+                  value: '00.00'
+              - '@ondc/org/item_id': F1
+                title: Convenience Fee
+                '@ondc/org/title_type': misc
+                price:
+                  currency: INR
+                  value: '00.00'
+            price:
+              currency: INR
+              value: '4720.00'
+            ttl: P1D
+          payment:
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3'
+            '@ondc/org/settlement_details':
+              - settlement_counterparty: seller-app
+                settlement_phase: sale-amount
+                settlement_type: neft
+                beneficiary_name: xxxx
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
+          tags:
+            - code: bpp_terms
+              list:
+                - code: np_type
+                  value: MSN
+                - code: tax_number
+                  value: 37ABACA6712B1Z6
+                - code: provider_tax_number
+                  value: USYDS6482D
+    action: on_init
+    saved_info: {}
+  - action_id: confirm
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: confirm
+        timestamp: '2026-03-23T13:39:08.154Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: 329db925-3ff7-4353-8b4e-26860d09ea9b
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order:
+          id: '518246'
+          state: Created
+          billing:
+            address:
+              building: my building name or house
+              city: Bengaluru
+              state: Karnataka
+              country: IND
+              area_code: '560027'
+              locality: my street name
+              name: my house or door or floor
+            phone: '9898989898'
+            name: ONDC Buyer
+            email: nobody@nomail.com
+            created_at: '2026-03-23T13:39:03.128Z'
+            updated_at: '2026-03-23T13:39:03.128Z'
+          items:
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          fulfillments:
+            - id: F1
+              type: Delivery
+              end:
+                contact:
+                  email: nobody@nomail.com
+                  phone: '9898989898'
+                person:
+                  name: mock-person
+                location:
+                  gps: 19.129076,72.825803
+                  address:
+                    building: mock-building
+                    city: mock-city
+                    state: mock-state
+                    country: IND
+                    area_code: '400053'
+                    locality: mock-locality
+                    name: mock-house-name
+              tracking: true
+              '@ondc/org/TAT': P3D
+          payment:
+            params:
+              amount: '4720.00'
+              currency: INR
+              transaction_id: mock_payment_id_123
+            status: PAID
+            type: ON-ORDER
+            collected_by: BAP
+            uri: https://razorpay.com/
+            tl_method: http/get
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3.0'
+            '@ondc/org/settlement_details':
+              - settlement_counterparty: seller-app
+                settlement_phase: sale-amount
+                settlement_type: neft
+                beneficiary_name: xxxx
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
+          quote:
+            breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: MINISO Two-Layer Drawer Organizer
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2260.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2260'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Doms Art Apps Nxt Kit With Plastic Carry Case
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2460.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2460'
+              - '@ondc/org/item_id': F1
+                title: Delivery charges
+                '@ondc/org/title_type': delivery
+                price:
+                  currency: INR
+                  value: '00.00'
+              - '@ondc/org/item_id': F1
+                title: Convenience Fee
+                '@ondc/org/title_type': misc
+                price:
+                  currency: INR
+                  value: '00.00'
+            price:
+              currency: INR
+              value: '4720.00'
+            ttl: P1D
+          tags:
+            - code: bpp_terms
+            - code: bap_terms
+              list:
+                - code: accept_bpp_terms
+                  value: 'Y'
+                - code: static_terms
+                  value: >-
+                    https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
+                - code: tax_number
+                  value: 37BABCA6712B1Z6
+          created_at: '2026-03-23T13:39:08.162Z'
+          updated_at: '2026-03-23T13:39:08.162Z'
+    action: confirm
+    saved_info: {}
+  - action_id: on_confirm
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: on_confirm
+        timestamp: '2026-03-23T13:39:08.183Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: 329db925-3ff7-4353-8b4e-26860d09ea9b
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order:
+          id: '518246'
+          state: Created
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          items:
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 1
+              location_id: L1
+          billing:
+            address:
+              building: my building name or house
+              city: Bengaluru
+              state: Karnataka
+              country: IND
+              area_code: '560027'
+              locality: my street name
+              name: my house or door or floor
+            phone: '9898989898'
+            name: ONDC Buyer
+            email: nobody@nomail.com
+            created_at: '2026-03-23T13:39:03.128Z'
+            updated_at: '2026-03-23T13:39:03.128Z'
+          fulfillments:
+            - id: F1
+              type: Delivery
+              tracking: true
+              state:
+                descriptor:
+                  code: Pending
+              '@ondc/org/TAT': P3D
+              '@ondc/org/provider_name': Store 1
+              start:
+                location:
+                  id: L1
+                  descriptor:
+                    name: Store 1
+                  gps: 19.129076,72.825803
+                  address:
+                    street: 1 & 2,AMAR JYOTI CHS.BLDG.,OPP.NAND KRIPA HALL
+                    locality: ANDHERI FOUR BUNGLOW AMAR JYOTI CHS
+                    city: mock-seller-city
+                    state: mock-state
+                    area_code: '400053'
+                contact:
+                  phone: '9594663710'
+                  email: nobody@nomail.com
+              end:
+                contact:
+                  email: nobody@nomail.com
+                  phone: '9898989898'
+                person:
+                  name: mock-person
+                location:
+                  gps: 19.129076,72.825803
+                  address:
+                    building: mock-building
+                    city: mock-city
+                    state: mock-state
+                    country: IND
+                    area_code: '400053'
+                    locality: mock-locality
+                    name: mock-house-name
+          quote:
+            breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: MINISO Two-Layer Drawer Organizer
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2260.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2260'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 1
+                title: Doms Art Apps Nxt Kit With Plastic Carry Case
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '2460.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2460'
+              - '@ondc/org/item_id': F1
+                title: Delivery charges
+                '@ondc/org/title_type': delivery
+                price:
+                  currency: INR
+                  value: '00.00'
+              - '@ondc/org/item_id': F1
+                title: Convenience Fee
+                '@ondc/org/title_type': misc
+                price:
+                  currency: INR
+                  value: '00.00'
+            price:
+              currency: INR
+              value: '4720.00'
+            ttl: P1D
+          payment:
+            params:
+              amount: '4720.00'
+              currency: INR
+              transaction_id: mock_payment_id_123
+            status: PAID
+            type: ON-ORDER
+            collected_by: BAP
+            uri: https://razorpay.com/
+            tl_method: http/get
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3.0'
+            '@ondc/org/settlement_details':
+              - settlement_counterparty: seller-app
+                settlement_phase: sale-amount
+                settlement_type: neft
+                beneficiary_name: xxxx
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
+          tags:
+            - code: bpp_terms
+              list:
+                - code: np_type
+                  value: MSN
+                - code: tax_number
+                  value: 37ABACA6712B1Z6
+                - code: provider_tax_number
+                  value: USYDS6482D
+                - code: accept_bap_terms
+                  value: 'Y'
+            - code: bap_terms
+              list:
+                - code: static_terms
+                  value: >-
+                    https://github.com/ONDC-Official/protocol-network-extension/discussions/79
+                - code: tax_number
+                  value: 37BABCA6712B1Z6
+          created_at: '2026-03-23T13:39:08.162Z'
+          updated_at: '2026-03-23T13:39:08.197Z'
+    action: on_confirm
+    saved_info: {}
+  - action_id: cancel
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: cancel
+        timestamp: '2026-03-23T13:39:09.251Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: 79e0fc7f-1d0c-4968-becb-cb0375f8eae7
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order_id: '518246'
+        cancellation_reason_id: '053'
+    action: cancel
+    saved_info: {}
+  - action_id: on_cancel
+    payload:
+      context:
+        domain: ONDC:RET16
+        action: on_cancel
+        timestamp: '2026-03-23T13:39:09.269Z'
+        transaction_id: 33127360-aa12-4c0a-a92a-cd6602731e31
+        message_id: 79e0fc7f-1d0c-4968-becb-cb0375f8eae7
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: '*'
+        core_version: 1.2.0
+      message:
+        order:
+          state: Cancelled
+          items:
+            - id: I1
+              fulfillment_id: F1
+              quantity:
+                count: 0
+              location_id: L1
+            - id: I2
+              fulfillment_id: F1
+              quantity:
+                count: 0
+              location_id: L1
+            - id: I1
+              quantity:
+                count: 1
+              fulfillment_id: cancel_id_8189
+            - id: I2
+              quantity:
+                count: 1
+              fulfillment_id: cancel_id_8189
+          provider:
+            id: P1
+            locations:
+              - id: L1
+          billing:
+            address:
+              building: my building name or house
+              city: Bengaluru
+              state: Karnataka
+              country: IND
+              area_code: '560027'
+              locality: my street name
+              name: my house or door or floor
+            phone: '9898989898'
+            name: ONDC Buyer
+            email: nobody@nomail.com
+            created_at: '2026-03-23T13:39:03.128Z'
+            updated_at: '2026-03-23T13:39:03.128Z'
+          fulfillments:
+            - id: F1
+              type: Delivery
+              tracking: true
+              state:
+                descriptor:
+                  code: Cancelled
+              '@ondc/org/TAT': P3D
+              '@ondc/org/provider_name': Store 1
+              start:
+                location:
+                  id: L1
+                  descriptor:
+                    name: Store 1
+                  gps: 19.129076,72.825803
+                  address:
+                    street: 1 & 2,AMAR JYOTI CHS.BLDG.,OPP.NAND KRIPA HALL
+                    locality: ANDHERI FOUR BUNGLOW AMAR JYOTI CHS
+                    city: mock-seller-city
+                    state: mock-state
+                    area_code: '400053'
+                contact:
+                  phone: '9594663710'
+                  email: nobody@nomail.com
+                time:
+                  range:
+                    start: '2026-03-23T13:49:09.280Z'
+                    end: '2026-03-23T13:59:09.280Z'
+              end:
+                contact:
+                  email: nobody@nomail.com
+                  phone: '9898989898'
+                person:
+                  name: mock-person
+                location:
+                  gps: 19.129076,72.825803
+                  address:
+                    building: mock-building
+                    city: mock-city
+                    state: mock-state
+                    country: IND
+                    area_code: '400053'
+                    locality: mock-locality
+                    name: mock-house-name
+                time:
+                  range:
+                    start: '2026-03-23T13:59:09.280Z'
+                    end: '2026-03-26T13:49:09.280Z'
+              tags:
+                - code: cancel_request
+                  list:
+                    - code: reason_id
+                      value: '053'
+                    - code: initiated_by
+                      value: sample-bap-id
+                - code: precancel_state
+                  list:
+                    - code: fulfillment_state
+                      value: Pending
+                    - code: updated_at
+                      value: '2026-03-23T13:39:09.280Z'
+            - id: cancel_id_8189
+              type: Cancel
+              state:
+                descriptor:
+                  code: Cancelled
+              tags:
+                - code: quote_trail
+                  list:
+                    - code: type
+                      value: item
+                    - code: id
+                      value: I1
+                    - code: currency
+                      value: INR
+                    - code: value
+                      value: '-2260.00'
+                - code: quote_trail
+                  list:
+                    - code: type
+                      value: item
+                    - code: id
+                      value: I2
+                    - code: currency
+                      value: INR
+                    - code: value
+                      value: '-2460.00'
+          quote:
+            breakup:
+              - '@ondc/org/item_id': I1
+                '@ondc/org/item_quantity':
+                  count: 0
+                title: MINISO Two-Layer Drawer Organizer
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2260'
+              - '@ondc/org/item_id': I2
+                '@ondc/org/item_quantity':
+                  count: 0
+                title: Doms Art Apps Nxt Kit With Plastic Carry Case
+                '@ondc/org/title_type': item
+                price:
+                  currency: INR
+                  value: '0.00'
+                item:
+                  price:
+                    currency: INR
+                    value: '2460'
+              - '@ondc/org/item_id': F1
+                title: Delivery charges
+                '@ondc/org/title_type': delivery
+                price:
+                  currency: INR
+                  value: '00.00'
+              - '@ondc/org/item_id': F1
+                title: Convenience Fee
+                '@ondc/org/title_type': misc
+                price:
+                  currency: INR
+                  value: '00.00'
+            price:
+              currency: INR
+              value: '0.00'
+            ttl: P1D
+          payment:
+            params:
+              amount: '4720.00'
+              currency: INR
+              transaction_id: mock_payment_id_123
+            status: PAID
+            type: ON-ORDER
+            collected_by: BAP
+            uri: https://razorpay.com/
+            tl_method: http/get
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3.0'
+            '@ondc/org/settlement_details':
+              - settlement_counterparty: seller-app
+                settlement_phase: sale-amount
+                settlement_type: neft
+                beneficiary_name: xxxx
+                settlement_bank_account_no: XXXX
+                settlement_ifsc_code: XXXX
+                bank_name: XXXX
+                branch_name: XXXX
+          id: '518246'
+          created_at: '2026-03-23T13:39:08.162Z'
+          updated_at: '2026-03-23T13:39:09.280Z'
+          cancellation:
+            cancelled_by: sample-bap-id
+            reason:
+              id: '053'
+    action: on_cancel
+    saved_info: {}
+validationLib: ''
+helperLib: >-
+  Y29uc3QgUkVUMTZIT01FS0lUQ0hFTjEyNUNhdGFsb2cgPSBKU09OLnBhcnNlKAogICAgSlNPTi5zdHJpbmdpZnkoewogICAgICAgIGNhdGFsb2c6IHsKICAgICAgICAgICAgImJwcC9mdWxmaWxsbWVudHMiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgaWQ6ICJGMSIsCiAgICAgICAgICAgICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgaWQ6ICJGMiIsCiAgICAgICAgICAgICAgICAgICAgdHlwZTogIlNlbGYtUGlja3VwIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJicHAvZGVzY3JpcHRvciI6IHsKICAgICAgICAgICAgICAgIG5hbWU6ICJNb2NrIFNlbGxlciBOUCIsCiAgICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIiwKICAgICAgICAgICAgICAgIHNob3J0X2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICAgICAgICAgICAgbG9uZ19kZXNjOiAiU2VsbGVyIE1hcmtldHBsYWNlIiwKICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvbnAucG5nIl0sCiAgICAgICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYnBwX3Rlcm1zIiwKICAgICAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJucF90eXBlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1TTiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJhY2NlcHRfYmFwX3Rlcm1zIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIlkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgImJwcC9wcm92aWRlcnMiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTNUMDY6NDY6MTkuNzM2WiIsCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICByYXRpbmc6ICI0IiwKICAgICAgICAgICAgICAgICAgICB0dGw6ICJQVDI0SCIsCiAgICAgICAgICAgICAgICAgICAgbG9jYXRpb25zOiBbCiAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlkOiAiTDEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZ3BzOiAiMTIuOTI1ODEwLDc3LjU4MzYyNCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBhZGRyZXNzOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2l0eTogIkJlbmdhbHVydSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3RhdGU6ICJLYXJuYXRha2EiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFyZWFfY29kZTogIjU2MDAxMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3RyZWV0OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsb2NhbGl0eTogIkpheWFuYWdhciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1lc3RhbXA6ICIyMDI0LTA4LTEzVDA2OjQ2OjE5LjczNloiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRheXM6ICIxLDIsMyw0LDUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNjaGVkdWxlOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhvbGlkYXlzOiBbXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJhbmdlOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXJ0OiAiMDAwMCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGVuZDogIjIzNTkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgY2lyY2xlOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ3BzOiAiMTIuOTI1ODEwLDc3LjU4MzYyNCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmFkaXVzOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaXQ6ICJrbSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICAgICAgICAgIG5hbWU6ICJTdG9yZSAxIiwKICAgICAgICAgICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL3N0b3JlMS5wbmciLAogICAgICAgICAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiU3RvcmUgMSIsCiAgICAgICAgICAgICAgICAgICAgICAgIGxvbmdfZGVzYzogIlN0b3JlIDEiLAogICAgICAgICAgICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL3N0b3JlMS5wbmciXSwKICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM6IFsKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQ6ICJWMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmFtZTogIlZhcmlhbnQgR3JvdXAgMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAidmFyaWFudF9ncm91cCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYXR0ciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibmFtZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJpdGVtLnRhZ3MuYXR0cmlidXRlLmNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJzZXEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgaXRlbXM6IFsKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQ6ICJJMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICByYXRpbmc6ICI0IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQwNTozMDo0OC45OThaIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmFtZTogIk1JTklTTyBUd28tTGF5ZXIgRHJhd2VyIE9yZ2FuaXplciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIkhhcmQsIHRvdWdoIGFuZCBkdXJhYmxlIGNvc21ldGljIHN0b3JhZ2UgYW5kIG9yZ2FuaXplciwgVHdvLUxheWVyIERyYXdlciBPcmdhbml6ZXIgQ29zbWV0aWMgU3RvcmFnZSBCb3gsIFdoaXRlLCBSZWN0YW5ndWxhciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbG9uZ19kZXNjOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiSW50cm9kdWNpbmcgdGhlIE1JTklTTyBUd28tTGF5ZXIgRHJhd2VyIE9yZ2FuaXplciBDb3NtZXRpYyBTdG9yYWdlIEJveCBpbiBhIHNsZWVrLCBtb2Rlcm4gV2hpdGUsIFJlY3Rhbmd1bGFyIGRlc2lnbi4gQ3JhZnRlZCB3aXRoIHRvdWdobmVzcyBhbmQgZHVyYWJpbGl0eSBpbiBtaW5kLCB0aGlzIG9yZ2FuaXplciBpcyBidWlsdCB0byB3aXRoc3RhbmQgZGFpbHkgdXNlLCBlbnN1cmluZyB5b3VyIGl0ZW1zIHN0YXkgc2VjdXJlIGFuZCBwcm90ZWN0ZWQuSXRzIGNvbXBhY3QgZGVzaWduIG9mZmVycyBzaW1wbGljaXR5IGFuZCBwZXJmZWN0aW9uLCBhbGxvd2luZyB5b3UgdG8gbWF4aW1pemUgc3BhY2Ugd2hpbGUgbWFpbnRhaW5pbmcgYW4gZWxlZ2FudCBhZXN0aGV0aWMuIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICIzOjk1MDExMDE1MzAwMDciLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnQ6ICI4IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByaWNlOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMjI2MCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiS2l0Y2hlbiBTdG9yYWdlIGFuZCBDb250YWluZXJzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybmFibGUiOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL2F2YWlsYWJsZV9vbl9jb2QiOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlAyRCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQN0QiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIlNlbGxlciBCdXNpbmVzcyx0ZXN0QGdtYWlsLmNvbSw5ODc2NTQzMjEwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9uYW1lOiAiU2VsbGVyIEJ1c2luZXNzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX2FkZHJlc3M6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiS2l0Y2hlbiBTdG9yYWdlIGFuZCBDb250YWluZXJzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJvcmlnaW4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvdW50cnkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1JTklTTyBUd28tTGF5ZXIgRHJhd2VyIE9yZ2FuaXplciAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIiNGRkZGRkYiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY29sb3VyX25hbWUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiYnJvd24iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibWF0ZXJpYWwiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAidGhlcm1vcGxhc3RpYyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZDogIkkyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJhdGluZzogIjMiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGltZTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVsOiAiZW5hYmxlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1lc3RhbXA6ICIyMDI0LTA4LTEyVDEwOjI3OjQ4LjkxM1oiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuYW1lOiAiRG9tcyBBcnQgQXBwcyBOeHQgS2l0IFdpdGggUGxhc3RpYyBDYXJyeSBDYXNlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzaG9ydF9kZXNjOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQ29sb3JpbmcgJiBBcnQgU21hcnQgS2l0IFVzZSBGb3IgU2tldGNoaW5nLCBXcml0aW5nLCBTaGFkaW5nLCBDb2xvdXJpbmcsIEhpZ2hsaWdodGluZy5Ob24tVG94aWMsIEVhc3kgVG8gVXNlICYgU2FmZSBGb3IgQ2hpbGRyZW5zLiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbG9uZ19kZXNjOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiSW50cm9kdWNpbmcgb3VyIGNvbXByZWhlbnNpdmUgY29tYmluYXRpb24ga2l0LCBkZXNpZ25lZCB0byBzYXRpc2Z5IGFsbCB5b3VyIGNyZWF0aXZlIG5lZWRzISBXaGV0aGVyIHlvdSdyZSBza2V0Y2hpbmcsIHdyaXRpbmcsIHNoYWRpbmcsIGNvbG9yaW5nLCBvciBoaWdobGlnaHRpbmcsIHRoaXMga2l0IGhhcyBldmVyeXRoaW5nIHlvdSBuZWVkIHRvIHVubGVhc2ggeW91ciBpbWFnaW5hdGlvbi5Zb3UnbGwgZmluZCAxMiB3YXRlcmNvbG9yIHBlbnMgZm9yIHZpYnJhbnQgYW5kIGZsdWlkIGFydHdvcmssIDEyIGJpLWNvbG9yIGNyYXlvbnMgZm9yIHZlcnNhdGlsZSBjb2xvcmluZyBvcHRpb25zLCAxMiBqdW1ibyBvaWwgcGFzdGVscyBmb3Igc21vb3RoIGFuZCBibGVuZGFibGUgdGV4dHVyZXMsIDggYmktY29sb3IgcGVuY2lscyBmb3IgcHJlY2lzZSBkcmF3aW5nIGFuZCBzaGFkaW5nLCBhbmQgMTIgcGxhc3RpYyBjcmF5b25zIGZvciBib2xkIGFuZCBkdXJhYmxlIGxpbmVzLiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiMzo3ODQ1NjMyMTk4NDcxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaXQ6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvdW50OiAiMTAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJpY2U6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIyNDYwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhpbXVtX3ZhbHVlOiAiMjQ2MCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJTdGF0aW9uZXJ5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFyZW50X2l0ZW1faWQ6ICJWMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NhbmNlbGxhYmxlIjogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDJEIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9yZXR1cm5fd2luZG93IjogIlA3RCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1c2luZXNzLHRlc3RAZ21haWwuY29tLDk4NzY1NDMyMTAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIlNlbGxlciBCdWlsZGluZyBBZGRyZXNzLCBKYXlhbmFnYXIsIEJlbmdhbHVydSwgS2FybmF0YWthLCBJbmRpYSAtIDU2MDAxMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJQbGFzdGljIENyYXlvbnMiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vbnRoX3llYXJfb2ZfbWFudWZhY3R1cmVfcGFja2luZ19pbXBvcnQ6ICJOQSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYnJhbmQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiRG9tcyBBcnQgQXBwcyBOeHQgS2l0IFdpdGggUGxhc3RpYyBDYXJyeSBDYXNlICIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb2xvdXIiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzAwRkYwMCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb2xvdXJfbmFtZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ3aGl0ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJtYXRlcmlhbCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJ0aGVybW9wbGFzdGljIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlkOiAiSTMiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcmF0aW5nOiAiNCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmFtZTogIlBvbHlzZXQgRWxlZ2FuY2UgUGxhc3RpYyBMYXVuZHJ5IEJhc2tldCAtIEFzc29ydGVkIENvbG91ciwgNTMgTCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIjM6NjIxMzU3NDg5MDIzOCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2hvcnRfZGVzYzoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIlBvbHlzZXTigJlzIExhdW5kcnkgQmFza2V0IG1hZGUgZnJvbSB2aXJnaW4gcGxhc3RpYyBpcyB2ZXJ5IHRvdWdoLCBkdXJhYmxlIGFuZCBsb25nLWxhc3RpbmcuIEl0IGhhcyBhIGxhcmdlIHNwYWNlIGVub3VnaCB0byBrZWVwIGFsbCB0aGUgZGlydHkgY2xvdGhlcyBpbiBvbmUgcGxhY2UuIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJUaGlzIFBvbHlzZXQgTGF1bmRyeSBCYXNrZXQgY29tZXMgaW4gbGFyZ2Ugc2l6ZSwgd2hpY2ggZ2l2ZXMgeW91IG1vcmUgc3BhY2UgZm9yIHN0b3JpbmcgbXVsdGlwbGUgaXRlbXMgbGlrZSBjbG90aGVzLCB0b3lzLCBncm9jZXJpZXMsIGtpdGNoZW4gYW5kIGJhdGhpbmcgYWNjZXNzb3JpZXMsIElkZWFsIGZvciBmYW1pbHkgdXNlIGluIHRoZSBMYXVuZHJ5IFJvb20sIEJlZHJvb20gb3IgQmF0aHJvb20sIGl0cyBjb21lcyB3aXRoIExpZCBmb3IgcHJvdGVjdGluZyB5b3VyIGFydGljbGVzIGZyb20gZHVzdC4gVG8gYWRkIHRvIGl0LCB0aGUgZGVzaWduIGFuZCBjb2xvdXIgYXJlIHNvIGF0dHJhY3RpdmUsIHRoYXQgaXQgaW1tZWRpYXRlbHkgZ2VscyB3aXRoIHRoZSBpbnRlcmlvciBvZiB0aGUgaG91c2UsIGJlIGl0IEJhdGhyb29tLCBCZWRyb29tIGV0Yy4gRWFzaWx5IHBvcnRhYmxlIGNyb3NzIHZlbnRpbGF0aW5nIGJvZHkga2VlcHMgeW91ciBpdGVtcyBmcmVlIG1vZHVsZSBmb3JtYXRpb24uIEFuZCBpdCBnaXZlcyB5b3UgZXh0cmEtbGFyZ2Ugc3BhY2UgdG8gc3RvcmUgeW91ciBwcm9kdWN0cy4gQW5kIHRoaXMgaXMgbWFkZSBmcm9tIHRvdWdoIHBsYXN0aWMgd2hpY2ggcHJvdmlkZXMgaW1tZW5zZSBzdHJlbmd0aCB0byB0aGUgcHJvZHVjdC4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGltYWdlczogWyJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIl0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJpY2U6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjdXJyZW5jeTogIklOUiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICI0OTkuMDAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIxMTk5LjAwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYXJlbnRfaXRlbV9pZDogIlYxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiQ2xvc2V0L0xhdW5kcnkvU2hvZSBPcmdhbml6YXRpb24iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZnVsZmlsbG1lbnRfaWQ6ICJGMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsb2NhdGlvbl9pZDogIkwxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xMlQxMDoyNzo0OC45MTNaIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB1bml0aXplZDogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9yZXR1cm5hYmxlIjogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvc2VsbGVyX3BpY2t1cF9yZXR1cm4iOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQM0QiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQMUQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL2NvbnRhY3RfZGV0YWlsc19jb25zdW1lcl9jYXJlIjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiRGFpbHl3ZWFyIEZhc2hpb24sc3VwcG9ydEBnbWFpbC5jb20sMjM0MzQ1MzQzNCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL3N0YXR1dG9yeV9yZXFzX3BhY2thZ2VkX2NvbW1vZGl0aWVzIjogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZTogIlNlbGxlciBCdXNpbmVzcyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiU2VsbGVyIEJ1aWxkaW5nIEFkZHJlc3MsIEpheWFuYWdhciwgQmVuZ2FsdXJ1LCBLYXJuYXRha2EsIEluZGlhIC0gNTYwMDExIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb21tb25fb3JfZ2VuZXJpY19uYW1lX29mX2NvbW1vZGl0eTogIkxhdW5kcnkgQmFza2V0IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb250aF95ZWFyX29mX21hbnVmYWN0dXJlX3BhY2tpbmdfaW1wb3J0OiAiTkEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJvcmlnaW4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvdW50cnkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZToKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIlBvbHlzZXQgRWxlZ2FuY2UgUGxhc3RpYyBMYXVuZHJ5IEJhc2tldCAtIEFzc29ydGVkIENvbG91ciwgNTMgTCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb2xvdXIiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiIzk2NEIwMCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb2xvdXJfbmFtZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJicm93biIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJtYXRlcmlhbCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJwb2x5ZXRoeWxlbmUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQ6ICJJNCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICByYXRpbmc6ICI0IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuYW1lOiAiUGlnZW9uIGJ5IFN0b3Zla3JhZnQgTWluaSBGcnVpdCAmIFZlZ2V0YWJsZSBDaG9wcGVyIFdpdGggMyBCbGFkZXMiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICIzOjQwMTI3ODk1NDMxNjUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN5bWJvbDogImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNob3J0X2Rlc2M6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJUaGlzIGNvbXBhY3Qga2l0Y2hlbiBhcHBsaWFuY2UgaXMgZGVzaWduZWQgdG8gaGVscCBjdXQgZG93biB5b3VyIGtpdGNoZW4gY2hvcmVzLiBBIHNpbXBsZSBwdWxsIG9mIHRoZSByb3BlIGluIHRoaXMgUGlnZW9uIEhhbmR5IHZlZ2V0YWJsZSBhbmQgZnJ1aXQgY2hvcHBlciBjdXRzIGZvb2QgaXRlbXMgZG93biBpbnRvIHNtYWxsIHBpZWNlcy4gIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsb25nX2Rlc2M6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJUaGUgY2hvcHBlcuKAmXMgdG91Z2ggYm9keSBjYW4gd2l0aHN0YW5kIGJlaW5nIHB1dCBpbnRvIHRoZSBkaXNod2FzaGVyLiBEdXJhYmxlIGRlc2lnbiwgYSBjb252ZW5pZW50IHVzYWdlIG1hZGUgb2YgQUJTIHBsYXN0aWMsIHRoaXMgY2hvcHBlciBpcyBzdHVyZHkgYW5kIGR1cmFibGUuIEl0IGRvZXMgbm90IHJlcXVpcmUgZWxlY3RyaWNpdHkgdG8gYmUgaW4gdXNlLiBDaG9wIGZydWl0cyBhbmQgdmVnZXRhYmxlcy4gVGhpcyBjaG9wcGVyIHVzZXMgaXRzIHRocmVlIHN0YWlubGVzcyBzdGVlbCBibGFkZXMgYW5kIHJlbGllcyBvbiBhIHVuaXF1ZSBzdHJpbmcgZnVuY3Rpb24gdG8gY2hvcCBmcnVpdHMgYW5kIHZlZ2V0YWJsZXMgd2l0aCBlYXNlLiBJdCBpcyBlYXN5IHRvIHVzZS4gR2V0IHRoaW5ncyBzdGFydGVkIGJ5IHB1dHRpbmcgdGhlIGJsYWRlIGluIHRoZSBDZW50cmUgb2YgdGhlIGJvd2wuIEN1dCB2ZWdldGFibGVzIG9yIGZydWl0cyB0byBtZWRpdW0gc2l6ZSBiZWZvcmUgcHV0dGluZyB0aGVtIGludG8gdGhpcyBib3dsIHRvIGF2b2lkIGphbW1pbmcgdGhlIGJsYWRlcy4gUHV0IHRoZSBjb250ZW50cyBpbiwgY2xvc2UgdGhlIGxpZCwgYW5kIHN0aW5nIHRoZSByb3BlIHF1aWNrbHkgdG8gY3V0IGZvb2QgaXRlbXMgaW50byBzbWFsbCBwaWVjZXMuIFRoZW4sIHRha2UgdGhlIGJsYWRlIHN5c3RlbSBvdXQgYmVmb3JlIHlvdSByZW1vdmUgdGhlIGNob3BwZWQgZm9vZC4gIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByaWNlOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3VycmVuY3k6ICJJTlIiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNTk5LjAwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhpbXVtX3ZhbHVlOiAiMTE5OS4wMCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJLaXRjaGVuIFRvb2xzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZ1bGZpbGxtZW50X2lkOiAiRjEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgbG9jYXRpb25faWQ6ICJMMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaXQ6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDNEIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy90aW1lX3RvX3NoaXAiOiAiUDFEIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJAb25kYy9vcmcvYXZhaWxhYmxlX29uX2NvZCI6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIkRhaWx5d2VhciBGYXNoaW9uLHN1cHBvcnRAZ21haWwuY29tLDIzNDM0NTM0MzQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIlNlbGxlciBCdWlsZGluZyBBZGRyZXNzLCBKYXlhbmFnYXIsIEJlbmdhbHVydSwgS2FybmF0YWthLCBJbmRpYSAtIDU2MDAxMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29tbW9uX29yX2dlbmVyaWNfbmFtZV9vZl9jb21tb2RpdHk6ICJWZWdldGFibGUgQ2hvcHBlciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIk5BIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiYXR0cmlidXRlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJicmFuZCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJQaWdlb24gYnkgU3RvdmVrcmFmdCBNaW5pIEZydWl0ICYgVmVnZXRhYmxlIENob3BwZXIgV2l0aCAzIEJsYWRlc8KgIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91ciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIjMDBGRjAwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImNvbG91cl9uYW1lIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImdyZWVuIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIm1hdGVyaWFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInBvbHlwcm9weWxlbmUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgIGZ1bGZpbGxtZW50czogWwogICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZDogIkYxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGU6ICJEZWxpdmVyeSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb250YWN0OiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGhvbmU6ICI5ODc2NTQzMjEwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbWFpbDogInRlc3RAZ21haWwuY29tIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRhY3Q6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbWFpbDogImhvbWVAZXhhbXBsZS5jb20iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBob25lOiAiNzk4MDI3MTEyMiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQ6ICJGMiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0eXBlOiAiU2VsZi1QaWNrdXAiLAogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjYXRlZ29yeSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiS2l0Y2hlbiBTdG9yYWdlIGFuZCBDb250YWluZXJzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjExIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInBpbmNvZGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICI1NjAwMDEtNTYwMDc2LDU2MDA4MyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJzZXJ2aWNlYWJpbGl0eSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIkwxIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJTdGF0aW9uZXJ5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImNvdW50cnkuIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInNlcnZpY2VhYmlsaXR5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJsb2NhdGlvbiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIkNsb3NldC9MYXVuZHJ5L1Nob2UgT3JnYW5pemF0aW9uIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInR5cGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInVuaXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImNvdW50cnkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjYXRlZ29yeSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiS2l0Y2hlbiBUb29scyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxMiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInZhbCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInRpbWluZyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiQWxsIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJkYXlfZnJvbSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvZGU6ICJkYXlfdG8iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAidGltZV9mcm9tIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICIwMDAwIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogInRpbWVfdG8iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjIzNTkiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2RlOiAib3JkZXJfdmFsdWUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29kZTogIm1pbl92YWx1ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgfSwKICAgIH0pCik7

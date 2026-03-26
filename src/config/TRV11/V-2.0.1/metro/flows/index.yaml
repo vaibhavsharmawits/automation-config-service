@@ -1,5 +1,6 @@
 flows:
   - id: STATION_CODE_FLOW_CATALOG
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
     sequence:
       - key: search1_METRO_201
@@ -11,6 +12,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -18,6 +24,7 @@ flows:
         pair: null
         owner: BPP
   - id: STATION_CODE_FLOW_ORDER
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User uses station code for searching metro
     sequence:
       - key: search1_METRO_201
@@ -29,6 +36,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -51,10 +63,7 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
+          
           - name: start_code
             label: Enter start station code
             type: text
@@ -79,6 +88,11 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details 
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -129,8 +143,15 @@ flows:
         description: Provider platform responds with the status of the order
         pair: null
         owner: BPP
-  - id: TECHNICAL_CANCELLATION_FLOW
-    description: User cancels the metro booking
+      - key: unsolicited_on_status_complete_METRO_201
+        type: on_status
+        unsolicited: true
+        description: on_status (Order Completed)
+        pair: null
+        owner: BPP  
+  - id: STATION_CODE_FLOW_ORDER (W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
     sequence:
       - key: search1_METRO_201
         type: search
@@ -140,7 +161,12 @@ flows:
           in the city
         pair: on_search1_METRO_201
         owner: BAP
-        expect: true_201_201
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -163,10 +189,114 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and ap_201pends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP
+  - id: TECHNICAL_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User cancels the metro booking
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
           - name: city_code
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          
           - name: start_code
             label: Enter start station code
             type: text
@@ -191,6 +321,11 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -229,7 +364,128 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO_201
+      - key: status_tech_cancel_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_active_METRO_201
+        owner: BAP
+      - key: on_status_active_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP
+      - key: cancel_tech_METRO_201
+        type: cancel
+        unsolicited: false
+        description: User cancels the booking
+        pair: on_cancel_hard_METRO_201
+        owner: BAP
+      - key: on_cancel_hard_METRO_201
+        type: on_cancel
+        unsolicited: false
+        description:
+          Provider platform cancels the booking and provides the details of
+          the cancellation
+        pair: null
+        owner: BPP
+  - id: TECHNICAL_CANCELLATION_FLOW (W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User cancels the metro booking
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_delayed_METRO_201
+        owner: BAP
+      - key: on_confirm_delayed_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_tech_cancel_METRO_201
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -256,6 +512,7 @@ flows:
         pair: null
         owner: BPP
   - id: USER_CANCELLATION_FLOW
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -267,6 +524,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -289,10 +551,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -317,6 +575,11 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -383,7 +646,8 @@ flows:
           the cancellation
         pair: null
         owner: BPP
-  - id: DELAYED_CANCELLATION_FLOW_ACCEPTED
+  - id: USER_CANCELLATION_FLOW (W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -395,6 +659,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -417,10 +686,129 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: cancel_soft_METRO_201
+        type: cancel
+        unsolicited: false
+        description: User cancels the booking
+        pair: on_cancel_soft_METRO_201
+        owner: BAP
+      - key: on_cancel_soft_METRO_201
+        type: on_cancel
+        unsolicited: false
+        description:
+          Provider platform cancels the booking and provides the details of
+          the cancellation
+        pair: null
+        owner: BPP
+      - key: cancel_hard_METRO_201
+        type: cancel
+        unsolicited: false
+        description: User cancels the booking
+        pair: on_cancel_hard_METRO_201
+        owner: BAP
+      - key: on_cancel_hard_METRO_201
+        type: on_cancel
+        unsolicited: false
+        description:
+          Provider platform cancels the booking and provides the details of
+          the cancellation
+        pair: null
+        owner: BPP
+  - id: DELAYED_CANCELLATION_FLOW_ACCEPTED
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User cancels the metro booking
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
           - name: city_code
             label: Enter city code
             type: text
             payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
           - name: start_code
             label: Enter start station code
             type: text
@@ -445,6 +833,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -483,7 +877,134 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO_201
+      - key: status_tech_cancel_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_active_METRO_201
+        owner: BAP
+      - key: on_status_active_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP
+      - key: cancel_hard_METRO_201
+        type: cancel
+        unsolicited: false
+        description: User cancels the booking
+        pair: on_cancel_init_METRO_201
+        owner: BAP
+      - key: on_cancel_init_METRO_201
+        type: on_cancel
+        unsolicited: false
+        description:
+          Provider platform cancels the booking and provides the details of
+          the cancellation
+        pair: null
+        owner: BPP
+      - key: on_update_accepted_METRO_201
+        type: on_update
+        unsolicited: true
+        description: Provider platform updates the user with the details of the cancellation
+        pair: null
+        owner: BPP
+  - id: DELAYED_CANCELLATION_FLOW_ACCEPTED (W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User cancels the metro booking
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_delayed_METRO_201
+        owner: BAP
+      - key: on_confirm_delayed_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_tech_cancel_METRO_201
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -516,6 +1037,7 @@ flows:
         pair: null
         owner: BPP
   - id: DELAYED_CANCELLATION_FLOW_REJECTED
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
     description: User cancels the metro booking
     sequence:
       - key: search1_METRO_201
@@ -527,6 +1049,11 @@ flows:
         pair: on_search1_METRO_201
         owner: BAP
         expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
       - key: on_search1_METRO_201
         type: on_search
         unsolicited: false
@@ -549,10 +1076,6 @@ flows:
             values:
               - METRO
             payloadField: $.message.intent.fulfillment.vehicle.category
-          - name: city_code
-            label: Enter city code
-            type: text
-            payloadField: $.context.location.city.code
           - name: start_code
             label: Enter start station code
             type: text
@@ -577,6 +1100,12 @@ flows:
         description: User selects the station code
         pair: on_select_METRO_201
         owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
       - key: on_select_METRO_201
         type: on_select
         unsolicited: false
@@ -589,9 +1118,10 @@ flows:
         description:
           Consumer platform shares the terms of order and initializes the
           order
-        pair: on_init_METRO_201
+        pair: on_init_without_select_METRO_201
         owner: BAP
-      - key: on_init_METRO_201
+      
+      - key: on_init_without_select_METRO_201
         type: on_init
         unsolicited: false
         description:
@@ -615,7 +1145,7 @@ flows:
           journey on confirmation
         pair: null
         owner: BPP
-      - key: status_METRO_201
+      - key: status_tech_cancel_METRO_201
         type: status
         unsolicited: false
         description: Consumer platform requests for the status of the order
@@ -639,7 +1169,7 @@ flows:
         description:
           Provider platform cancels the booking and provides the details of
           the cancellation
-        pair: cancel_hard_METRO_201
+        pair: null
         owner: BPP
       - key: on_status_cancel_METRO_201
         type: on_status
@@ -647,3 +1177,1997 @@ flows:
         description: Provider platform updates the user with the details of the cancellation
         pair: null
         owner: BPP
+  - id: DELAYED_CANCELLATION_FLOW_REJECTED (W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User cancels the metro booking
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_delayed_METRO_201
+        owner: BAP
+      - key: on_confirm_delayed_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_tech_cancel_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_active_METRO_201
+        owner: BAP
+      - key: on_status_active_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP
+      - key: cancel_hard_METRO_201
+        type: cancel
+        unsolicited: false
+        description: User cancels the booking
+        pair: on_cancel_init_METRO_201
+        owner: BAP
+      - key: on_cancel_init_METRO_201
+        type: on_cancel
+        unsolicited: false
+        description:
+          Provider platform cancels the booking and provides the details of
+          the cancellation
+        pair: null
+        owner: BPP
+      - key: on_status_cancel_METRO_201
+        type: on_status
+        unsolicited: true
+        description: Provider platform updates the user with the details of the cancellation
+        pair: null
+        owner: BPP
+  - id: END_STOP_UPDATE_FLOW
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: End stop update flow
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: select_METRO_201
+        type: select
+        unsolicited: false
+        description: User selects the station code
+        pair: on_select_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
+      - key: on_select_METRO_201
+        type: on_select
+        unsolicited: false
+        description: Response with selected station code
+        pair: null
+        owner: BPP
+      - key: init_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+       
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: update_end_stop_1
+        type: update
+        unsolicited: false
+        pair: on_update_end_stop_1
+        owner: BAP
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.order.fulfillments[*].stops[?(@.type=='END')].location.descriptor.code
+      - key: on_update_end_stop_1
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+      - key: update_end_stop_2
+        type: update
+        unsolicited: false
+        pair: on_update_end_stop_2
+        owner: BAP
+      - key: on_update_end_stop_2
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+      - key: update_end_stop_3
+        type: update
+        unsolicited: false
+        pair: on_update_end_stop_3
+        owner: BAP
+      - key: on_update_end_stop_3
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+
+  - id: END_STOP_UPDATE_FLOW (W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: End stop update flow
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: update_end_stop_1
+        type: update
+        unsolicited: false
+        pair: on_update_end_stop_1
+        owner: BAP
+        input:
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.order.fulfillments[*].stops[?(@.type=='END')].location.descriptor.code
+      - key: on_update_end_stop_1
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+      - key: update_end_stop_2
+        type: update
+        unsolicited: false
+        pair: on_update_end_stop_2
+        owner: BAP
+      - key: on_update_end_stop_2
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+      - key: update_end_stop_3
+        type: update
+        unsolicited: false
+        pair: on_update_end_stop_3
+        owner: BAP
+      - key: on_update_end_stop_3
+        type: on_update
+        unsolicited: false
+        pair: null
+        owner: BPP
+
+  - id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: select_METRO_201
+        type: select
+        unsolicited: false
+        description: User selects the station code
+        pair: on_select_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
+      - key: on_select_METRO_201
+        type: on_select
+        unsolicited: false
+        description: Response with selected station code
+        pair: null
+        owner: BPP
+      - key: init_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_METRO_201
+        owner: BAP
+      - key: on_init_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and ap_201pends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP
+      - key: issue_open_metro_201
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_need_more_info_metro_201
+        type: on_issue
+        label: need_more_info
+        unsolicited: true
+        description: Respondent requests for more information
+        pair: null
+        owner: BPP
+        expect: true
+      - key: issue_info_provided_metro_201
+        type: issue
+        label: info_provided
+        unsolicited: false
+        description: Complainant provides required information
+        pair: on_issue_provided_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_provided_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_metro_201
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_metro_201
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_metro_201
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_metro_201
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_update_igm_return_metro_201
+      #   type: on_update
+      #   label: on_update_igm
+      #   unsolicited: true
+      #   description: final on_update call after issue closed
+      #   pair: null
+      #   owner: BPP
+      #   expect: false  
+  - id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0)(W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP
+      - key: issue_open_metro_201
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_need_more_info_metro_201
+        type: on_issue
+        label: need_more_info
+        unsolicited: true
+        description: Respondent requests for more information
+        pair: null
+        owner: BPP
+        expect: true
+      - key: issue_info_provided_metro_201
+        type: issue
+        label: info_provided
+        unsolicited: false
+        description: Complainant provides required information
+        pair: on_issue_provided_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_provided_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_metro_201
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_metro_201
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_metro_201
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_metro_201
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_update_igm_return_metro_201
+      #   type: on_update
+      #   label: on_update_igm
+      #   unsolicited: true
+      #   description: final on_update call after issue closed
+      #   pair: null
+      #   owner: BPP
+      #   expect: false  
+     
+  - id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: select_METRO_201
+        type: select
+        unsolicited: false
+        description: User selects the station code
+        pair: on_select_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
+      - key: on_select_METRO_201
+        type: on_select
+        unsolicited: false
+        description: Response with selected station code
+        pair: null
+        owner: BPP
+      - key: init_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_METRO_201
+        owner: BAP
+      - key: on_init_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and ap_201pends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP 
+      - key: issue_open_metro_201
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_reject_metro_201
+        type: issue
+        label: resolution_reject
+        unsolicited: false
+        description: The resolution is rejected by the complainant
+        pair: on_issue_processing_1_metro_201
+        owner: BAP
+        expect: false
+        input:
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_processing_1_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_1_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_escalate_metro_201
+        type: issue
+        label: escalate
+        unsolicited: false
+        description: Complainant escalates the complaint not being satisfied with the resolution
+        pair: on_issue_processing_2_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_2_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_2_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution again for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_metro_201
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_metro_201
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_metro_201
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_metro_201
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_update_igm_replacement_metro_201
+      #   type: on_update
+      #   label: on_update_igm
+      #   unsolicited: true
+      #   description: final on_update call after issue closed
+      #   pair: null
+      #   owner: BPP
+      #   expect: false  
+  - id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)(W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP 
+      - key: issue_open_metro_201
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_reject_metro_201
+        type: issue
+        label: resolution_reject
+        unsolicited: false
+        description: The resolution is rejected by the complainant
+        pair: on_issue_processing_1_metro_201
+        owner: BAP
+        expect: false
+        input:
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_processing_1_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_1_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_escalate_metro_201
+        type: issue
+        label: escalate
+        unsolicited: false
+        description: Complainant escalates the complaint not being satisfied with the resolution
+        pair: on_issue_processing_2_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_2_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent marks the action as PROCESSING
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_2_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes updated resolution again for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_metro_201
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_metro_201
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_metro_201
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_metro_201
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_update_igm_replacement_metro_201
+      #   type: on_update
+      #   label: on_update_igm
+      #   unsolicited: true
+      #   description: final on_update call after issue closed
+      #   pair: null
+      #   owner: BPP
+      #   expect: false  
+
+  - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: select_METRO_201
+        type: select
+        unsolicited: false
+        description: User selects the station code
+        pair: on_select_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
+      - key: on_select_METRO_201
+        type: on_select
+        unsolicited: false
+        description: Response with selected station code
+        pair: null
+        owner: BPP
+      - key: init_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_METRO_201
+        owner: BAP
+      - key: on_init_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and ap_201pends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP 
+      - key: issue_open_2_metro_201
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_igm_3_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_igm_3_metro_201
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_igm_3_metro_201
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_igm_3_metro_201
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_igm_3_metro_201
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_status_igm_3_metro_201
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order delivered     
+  - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)(W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP 
+      - key: issue_open_2_metro_201
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_201
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_201
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolution_igm_3_metro_201
+        type: on_issue
+        label: resolution
+        unsolicited: true
+        description: Respondent proposes resolution for the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_resolution_accept_igm_3_metro_201
+        type: issue
+        label: resolution_accept
+        unsolicited: false
+        description: A resolution is accepted by the complainant
+        pair: on_issue_resolved_igm_3_metro_201
+        owner: BAP
+        expect: false
+        input:
+          # - name: resolution_accept
+          #   label: Select a resolution
+          #   type: select
+          #   values:
+          #     - "R1-Refund"
+          #     - "R2-Replacement"
+          #   default: "R2-Replacement"
+          - name: resolution_accept
+            label: Enter resolution ID
+            type: text
+      - key: on_issue_resolved_igm_3_metro_201
+        type: on_issue
+        label: resolved
+        unsolicited: false
+        description: The complaint is marked as resolved
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_igm_3_metro_201
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"
+      # - key: on_status_igm_3_metro_201
+      #   type: on_status
+      #   unsolicited: true
+      #   pair: null
+      #   owner: BPP
+      #   expect: false
+      #   description: Status updates - order delivered   
+  
+  - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: select_METRO_201
+        type: select
+        unsolicited: false
+        description: User selects the station code
+        pair: on_select_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: select_metro_trv11
+            label: Select items and billing details
+            type: select_metro_trv11
+            payloadField: ""
+      - key: on_select_METRO_201
+        type: on_select
+        unsolicited: false
+        description: Response with selected station code
+        pair: null
+        owner: BPP
+      - key: init_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_METRO_201
+        owner: BAP
+      - key: on_init_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and ap_201pends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP 
+      - key: issue_open_metro_100
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_100
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_100
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolved_metro_100
+        type: on_issue_status
+        label: resolved
+        unsolicited: true
+        description: The complaint is marked as resolved with a resolution
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_metro_100
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"          
+  - id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)(W/O Select)
+    tags: ["WORKBENCH","MANDATORY", "REPORTABLE"]
+    description: User uses station code for searching metro
+    sequence:
+      - key: search1_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          in the city
+        pair: on_search1_METRO_201
+        owner: BAP
+        expect: true
+        input:
+          - name: city_code
+            label: Enter city code
+            type: text
+            payloadField: $.context.location.city.code
+      - key: on_search1_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with all station codes
+        pair: null
+        owner: BPP
+      - key: search2_METRO_201
+        type: search
+        unsolicited: false
+        description:
+          User searches over the network to avail the metro mode of transport
+          from one station to another
+        pair: on_search2_METRO_201
+        owner: BAP
+        expect: false
+        input:
+          - name: vehicle_category
+            label: Select vehicle category
+            type: select
+            values:
+              - METRO
+            payloadField: $.message.intent.fulfillment.vehicle.category
+          - name: start_code
+            label: Enter start station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='START')].location.descriptor.code
+          - name: end_code
+            label: Enter end station code
+            type: text
+            payloadField: $.message.intent.fulfillment.stops[?(@.type=='END')].location.descriptor.code
+          - name: bpp_id
+            label: enter your bpp_id
+            type: text
+            payloadField: $.context.bpp_id
+      - key: on_search2_METRO_201
+        type: on_search
+        unsolicited: false
+        description: Response with start and end station code
+        pair: null
+        owner: BPP
+      - key: init_without_select_METRO_201
+        type: init
+        unsolicited: false
+        description:
+          Consumer platform shares the terms of order and initializes the
+          order
+        pair: on_init_without_select_METRO_201
+        owner: BAP
+        input:
+          - name: init_metro_trv11
+            label: Select items and billing details
+            type: init_metro_trv11
+            payloadField: ""
+      - key: on_init_without_select_METRO_201
+        type: on_init
+        unsolicited: false
+        description:
+          Provider platform accepts the terms of orders and appends its own
+          terms and responds with the final draft
+        pair: null
+        owner: BPP
+      - key: confirm_METRO_201
+        type: confirm
+        unsolicited: false
+        description:
+          Consumer platform confirms the booking and provides all information
+          required for confirmation as per the terms of order
+        pair: on_confirm_METRO_201
+        owner: BAP
+      - key: on_confirm_METRO_201
+        type: on_confirm
+        unsolicited: false
+        description:
+          Provider platform confirms the order and provides details of the
+          journey on confirmation
+        pair: null
+        owner: BPP
+      - key: status_METRO_201
+        type: status
+        unsolicited: false
+        description: Consumer platform requests for the status of the order
+        pair: on_status_complete_METRO_201
+        owner: BAP
+      - key: on_status_complete_METRO_201
+        type: on_status
+        unsolicited: false
+        description: Provider platform responds with the status of the order
+        pair: null
+        owner: BPP 
+      - key: issue_open_metro_100
+        type: issue
+        label: open
+        unsolicited: false
+        description: Create a complaint for the order
+        pair: on_issue_processing_metro_100
+        owner: BAP
+        expect: false
+      - key: on_issue_processing_metro_100
+        type: on_issue
+        label: processing
+        unsolicited: false
+        description: Respondent starts PROCESSING the complaint
+        pair: null
+        owner: BPP
+        expect: false
+      - key: on_issue_resolved_metro_100
+        type: on_issue_status
+        label: resolved
+        unsolicited: true
+        description: The complaint is marked as resolved with a resolution
+        pair: null
+        owner: BPP
+        expect: false
+      - key: issue_close_metro_100
+        type: issue
+        label: close
+        unsolicited: false
+        description: Once resolved, the complaint is marked as closed
+        pair: null
+        owner: BAP
+        expect: false
+        input:
+          - name: rating
+            label: Select Rating
+            type: select
+            values:
+              - "THUMBS_UP"
+              - "THUMBS_DOWN"
+            default: "THUMBS_UP"          

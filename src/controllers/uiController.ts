@@ -1,56 +1,58 @@
 import { Request, Response } from "express";
 import { getConfigService } from "../services/cacheService";
 import { filterDomainData, getFileFromRefrence, filterByTags } from "../utils";
+import { convertPlaygroundFlowConfig } from "./mockController";
 
 export const getFlows = async (req: Request, res: Response) => {
-  try {
-    const query = req.query;
-    console.log("query", query);
-    const config = await getConfigService();
+	try {
+		const query = req.query;
+		console.log("query", query);
+		const config = await getConfigService();
 
-    const filePath = filterDomainData(
-      config,
-      query.domain as string,
-      query.version as string,
-      query.usecase as string,
-      "flows"
-    );
-    const data: any = await getFileFromRefrence(filePath);
+		const filePath = filterDomainData(
+			config,
+			query.domain as string,
+			query.version as string,
+			query.usecase as string,
+			"flows",
+		);
+		let data: any = await getFileFromRefrence(filePath);
+		data = convertPlaygroundFlowConfig(data);
 
-    const optionsParam = req.query?.options as string;
+		const optionsParam = req.query?.options as string;
 
-    const optionsArray = Array.isArray(optionsParam)
-      ? optionsParam // multiple ?options=apple&options=banana
-      : optionsParam?.split(",");
+		const optionsArray = Array.isArray(optionsParam)
+			? optionsParam // multiple ?options=apple&options=banana
+			: optionsParam?.split(",");
 
-    console.log("req.query?.options", optionsArray);
-    const filteredData = filterByTags(data.flows, optionsArray);
+		console.log("req.query?.options", optionsArray);
+		const filteredData = filterByTags(data.flows, optionsArray);
 
-    res.send({ data: { flows: filteredData } });
-  } catch (e) {
-    console.log("Error while fetching flows", e);
-    res
-      .status(400)
-      .send({ error: true, message: "Error while fetching flows" });
-  }
+		res.send({ data: { flows: filteredData } });
+	} catch (e) {
+		console.log("Error while fetching flows", e);
+		res
+			.status(400)
+			.send({ error: true, message: "Error while fetching flows" });
+	}
 };
 
 export const getScenarioFormData = async (_req: Request, res: Response) => {
-  const config = await getConfigService();
+	const config = await getConfigService();
 
-  res.send(config.usecases);
+	res.send(config.usecases);
 };
 
 export const getReportingStatus = async (req: Request, res: Response) => {
-  const query = req.query;
-  const config = await getConfigService();
-  const reporting = filterDomainData(
-    config,
-    query.domain as string,
-    query.version as string,
-    "",
-    "reporting"
-  );
+	const query = req.query;
+	const config = await getConfigService();
+	const reporting = filterDomainData(
+		config,
+		query.domain as string,
+		query.version as string,
+		"",
+		"reporting",
+	);
 
-  res.send({ data: reporting || true });
+	res.send({ data: reporting || true });
 };
