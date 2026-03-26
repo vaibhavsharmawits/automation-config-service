@@ -184,6 +184,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: BPP sends the order picked up status
       # - key: update_document
       #   type: update
       #   unsolicited: false
@@ -504,12 +505,14 @@ flows:
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the order confirmation
       - key: cancel
         type: cancel
         unsolicited: false
@@ -572,36 +575,42 @@ flows:
             label: Enter area code
             type: text
             default: "110088"
+        description: BAP selects items for the order
       - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote for selected items
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: BAP initializes the order
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to order initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the order confirmation
       - key: on_update_part_cancel
         type: on_update
         unsolicited: true
@@ -613,48 +622,56 @@ flows:
             name: partCancelItemId
             type: text
             # cancellation "002"
+        description: BPP sends a partial cancellation update
       - key: update_settelment_part_cancel
         type: update
         unsolicited: false
         pair: null
         owner: BAP
         expect: false
+        description: BAP updates the settlement for partial cancellation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at pickup
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at delivery
       - key: on_cancel_rto
         type: on_cancel
         unsolicited: true
@@ -669,6 +686,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - RTO disposed
   - id: RETURN_FLOW
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Liquidation)
@@ -697,78 +715,91 @@ flows:
             label: Enter area code
             type: text
             default: "110088"
+        description: BAP selects items for return
       - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote for return items
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: BAP initializes the return
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to return initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the return order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at pickup
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at delivery
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order delivered
       - key: update_return
         type: update
         unsolicited: false
@@ -794,18 +825,21 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: BPP sends an interim update for the return
       - key: on_update_return_final
         type: on_update
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: BPP sends a final update for the return
       - key: update_settelment_return
         type: update
         unsolicited: false
         pair: null
         owner: BAP
         expect: false
+        description: BAP updates the settlement for the return
   - id: FORCE_CANCEL
     tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
@@ -853,66 +887,77 @@ flows:
             label: Enter area code
             type: text
             default: "560001"
+        description: BAP selects items for the order
       - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: BAP initializes the order
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to order initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the order confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at pickup
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: cancel_no
         type: cancel
         unsolicited: false
@@ -959,6 +1004,7 @@ flows:
             type: text
             default: "yes"
             display: false
+        description: BAP updates the settlement for the cancellation
   - id: OFFERS_FLOW
     tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: Retail 1.2.5 (Buyer Side Order Cancellation)
@@ -1014,36 +1060,42 @@ flows:
             label: Enter area code
             type: text
             default: "560001"
+        description: BAP selects items with offers
       - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote with offers applied
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: BAP initializes the order
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to order initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the order confirmation
       - key: cancel
         type: cancel
         unsolicited: false
@@ -1106,12 +1158,14 @@ flows:
             label: Enter area code
             type: text
             default: "560001"
+        description: BAP selects items for self-pickup
       - key: on_select_multiple_fulfillment
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote for multiple fulfillment
       - key: init
         type: init
         unsolicited: false
@@ -1124,42 +1178,49 @@ flows:
             type: text
             display: false
             default: Self-Pickup
+        description: BAP initializes the self-pickup order
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to self-pickup initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the self-pickup order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the self-pickup confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_self_delivery_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up for self-pickup
   - id: SLOTTED_DELIVERY
     tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: User pickes the order themselfs
@@ -1188,12 +1249,14 @@ flows:
             label: Enter area code
             type: text
             default: "560001"
+        description: BAP selects items for slotted delivery
       - key: on_select_slotted
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote for slotted delivery
       - key: init_multiple_fulfillment
         type: init
         unsolicited: false
@@ -1204,30 +1267,35 @@ flows:
           - name: selectedFulfillment
             label: Select Fulfillment Id
             type: text
+        description: BAP initializes the order with multiple fulfillments
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to order initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the slotted delivery order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the slotted delivery confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
@@ -1240,24 +1308,28 @@ flows:
             type: text
             default: "yes"
             display: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at pickup
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
@@ -1270,12 +1342,14 @@ flows:
             type: text
             default: "yes"
             display: false
+        description: Status updates - out for delivery
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order delivered
   - id: BUYER_DELIVERY
     tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: User uses station code for searching bus
@@ -1304,12 +1378,14 @@ flows:
             label: Enter area code
             type: text
             default: "110088"
+        description: BAP selects items for buyer delivery
       - key: on_select_multiple_fulfillment
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote for multiple fulfillment
       - key: init
         type: init
         unsolicited: false
@@ -1322,60 +1398,70 @@ flows:
             type: text
             display: false
             default: Buyer-Delivery
+        description: BAP initializes the buyer delivery order
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to buyer delivery initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the buyer delivery order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the buyer delivery confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: update_buyer_delivery_intermin
         type: update
         unsolicited: false
         pair: on_update_buyer_delivery_intermin
         owner: BAP
         expect: false
+        description: BAP sends an interim update for buyer delivery
       - key: on_update_buyer_delivery_intermin
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to the interim update
       - key: update_buyer_delivery_final
         type: update
         unsolicited: false
         pair: on_update_buyer_delivery_final
         owner: BAP
         expect: false
+        description: BAP sends a final update for buyer delivery
       - key: on_update_buyer_delivery_final
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to the final update
   - id: BUYER INSTRUCTIONS AND ADDRESS UPDATE FLOW
     tags: ["WORKBENCH", "MANDATORY", "REPORTABLE"]
     description: User uses station code for searching bus
@@ -1431,108 +1517,126 @@ flows:
                 name: "Demand Signal"
             display: false
             default: demandSignal
+        description: BAP selects items with instructions
       - key: on_select
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote
       - key: init
         type: init
         unsolicited: false
         pair: on_init
         owner: BAP
         expect: false
+        description: BAP initializes the order
       - key: on_init
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to order initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: update_address
         type: update
         unsolicited: false
         pair: on_update_address
         owner: BAP
         expect: false
+        description: BAP updates the delivery address
       - key: on_update_address
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to address update
       - key: update_buyer_inst
         type: update
         unsolicited: false
         pair: on_update_buyer_inst
         owner: BAP
         expect: false
+        description: BAP updates buyer instructions
       - key: on_update_buyer_inst
         type: on_update
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to instruction update
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at pickup
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_update_delivery_auth
         type: on_update
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: BPP sends delivery authentication
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - out for delivery
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order delivered
   - id: MULTI_OPTION_FULFILLMENT_FLOW
     tags: ["WORKBENCH", "MANDATORY"]
     description: User uses station code for searching bus
@@ -1580,78 +1684,91 @@ flows:
             label: Enter area code
             type: text
             default: "110088"
+        description: BAP selects items for multi-option fulfillment
       - key: on_select_fulfillment_array
         type: on_select
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP returns the quote for fulfillment array
       - key: init_fulfillment_array
         type: init
         unsolicited: false
         pair: on_init_fulfillment_array
         owner: BAP
         expect: false
+        description: BAP initializes the order with fulfillment array
       - key: on_init_fulfillment_array
         type: on_init
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP responds to order initialization
       - key: confirm
         type: confirm
         unsolicited: false
         pair: on_confirm
         owner: BAP
         expect: false
+        description: BAP confirms the multi-option order
       - key: on_confirm
         type: on_confirm
         unsolicited: false
         pair: null
         owner: BPP
         expect: false
+        description: BPP accepts the confirmation
       - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order accepted
       - key: on_status_packed
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order packed
       - key: on_status_agent_assigned
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - agent assigned
       - key: on_status_at_pickup
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - at pickup
       - key: on_status_order_picked
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       - key: on_status_at_delivery
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - out for delivery
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order delivered
   - id: COMMERCIAL_MODEL_FOR_BNP/SNP_FLOW
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Retail 1.2.5 (Commercial model)
@@ -1834,6 +1951,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       # - key: update_document
       #   type: update
       #   unsolicited: false
@@ -2066,6 +2184,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       # - key: update_document
       #   type: update
       #   unsolicited: false
@@ -2326,6 +2445,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       # - key: update_document
       #   type: update
       #   unsolicited: false
@@ -2533,6 +2653,7 @@ flows:
         pair: null
         owner: BPP
         expect: false
+        description: Status updates - order picked up
       # - key: update_document
       #   type: update
       #   unsolicited: false
