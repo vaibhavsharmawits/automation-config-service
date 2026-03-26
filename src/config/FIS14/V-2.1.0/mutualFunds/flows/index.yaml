@@ -2467,7 +2467,7 @@ flows:
   - key: select_esign
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_esign
     owner: BAP
     expect: false
     force_proceed: true
@@ -2477,21 +2477,34 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: esign_form
-    label: E-Sign Form
-    type: HTML_FORM
-    unsolicited: false
+  - key: E_sign_verification_status
+    label: E sign 
+    type: DYNAMIC_FORM
+    unsolicited: false  
     pair: null
     owner: BPP
     expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.E_sign_verification_status
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
   - key: select_final
     type: select
     unsolicited: false
-    pair: on_select_2
+    pair: on_select_final
     owner: BAP
     expect: false
     force_proceed: true
-  - key: on_select_2
+  - key: on_select_final
     type: on_select
     unsolicited: false
     pair: null
