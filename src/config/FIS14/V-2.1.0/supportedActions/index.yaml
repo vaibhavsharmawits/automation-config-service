@@ -46,11 +46,11 @@ apiProperties:
     transaction_partner: [] 
   on_update:
     async_predecessor: null
-    transaction_partner: ["update", "on_confirm"]
+    transaction_partner: ["on_confirm"]
   status:
     async_predecessor: null
     transaction_partner: ["on_select"]
   on_status:
     async_predecessor: null
-    transaction_partner: []
+    transaction_partner: ["on_select"]
 
