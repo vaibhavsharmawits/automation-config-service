@@ -2421,8 +2421,8 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: investor_details_form
-    label: Investor Details Form
+  - key: kyc_details_form
+    label: Application Form With KYC
     type: HTML_FORM
     unsolicited: false
     pair: null
@@ -2432,7 +2432,7 @@ flows:
     - name: form_submission_id
       label: Enter Form Submission ID
       type: HTML_FORM
-      reference: $.reference_data.investor_details_form
+      reference: $.reference_data.kyc_details_form
   - key: select_2
     type: select
     unsolicited: false
