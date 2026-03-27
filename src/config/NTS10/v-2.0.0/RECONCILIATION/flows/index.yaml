@@ -1,1 +1,7 @@
 flows:
+  - type: playground
+    id: Recon_flow
+    tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
+    description: Recon Flow
+    config:
+      $ref: "src/config/NTS10/v-2.0.0/RECONCILIATION/flows/Recon_Flow.yaml"
