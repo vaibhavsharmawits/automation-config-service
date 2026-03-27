@@ -360,7 +360,7 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_status_payment
+  - key: on_status_unsolicited_payment
     type: on_status
     unsolicited: true
     pair: null
@@ -1278,25 +1278,25 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: init
+  - key: init_redemption
     type: init
     unsolicited: false
-    pair: on_init
+    pair: on_init_redemption
     owner: BAP
     expect: false
-  - key: on_init
+  - key: on_init_redemption
     type: on_init
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: confirm
+  - key: confirm_redemption
     type: confirm
     unsolicited: false
-    pair: on_confirm
+    pair: on_confirm_redemption
     owner: BAP
     expect: false
-  - key: on_confirm
+  - key: on_confirm_redemption
     type: on_confirm
     unsolicited: false
     pair: null
@@ -1309,6 +1309,14 @@ flows:
     owner: BPP
     expect: false
     force_proceed: true
+    input:
+      - name: redemption_status
+        label: Status
+        type: select
+        values:
+          - "CANCELLED"
+          - "COMPLETED"
+
 - id: Redemption_Redeem_All
   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
   description: Redeem all units in folio (7 APIs)
@@ -1330,25 +1338,25 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: init
+  - key: init_redemption
     type: init
     unsolicited: false
-    pair: on_init
+    pair: on_init_redemption
     owner: BAP
     expect: false
-  - key: on_init
+  - key: on_init_redemption
     type: on_init
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: confirm
+  - key: confirm_redemption
     type: confirm
     unsolicited: false
-    pair: on_confirm
+    pair: on_confirm_redemption
     owner: BAP
     expect: false
-  - key: on_confirm
+  - key: on_confirm_redemption
     type: on_confirm
     unsolicited: false
     pair: null
@@ -1361,6 +1369,14 @@ flows:
     owner: BPP
     expect: false
     force_proceed: true
+    input:
+      - name: redemption_status
+        label: Status
+        type: select
+        values:
+          - "CANCELLED"
+          - "COMPLETED"
+
 - id: Redemption_By_Units
   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
   description: Redeem mutual fund by specifying number of units (7 APIs)
@@ -1382,25 +1398,25 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: init
+  - key: init_redemption
     type: init
     unsolicited: false
-    pair: on_init
+    pair: on_init_redemption
     owner: BAP
     expect: false
-  - key: on_init
+  - key: on_init_redemption
     type: on_init
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: confirm
+  - key: confirm_redemption
     type: confirm
     unsolicited: false
-    pair: on_confirm
+    pair: on_confirm_redemption
     owner: BAP
     expect: false
-  - key: on_confirm
+  - key: on_confirm_redemption
     type: on_confirm
     unsolicited: false
     pair: null
@@ -1413,6 +1429,14 @@ flows:
     owner: BPP
     expect: false
     force_proceed: true
+    input:
+      - name: redemption_status
+        label: Status
+        type: select
+        values:
+          - "CANCELLED"
+          - "COMPLETED"
+
 - id: Instant_Redemption_By_Amount
   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
   description: Instant redemption with immediate settlement (8 APIs)
@@ -1434,96 +1458,45 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: init
+  - key: init_redemption
     type: init
     unsolicited: false
-    pair: on_init
+    pair: on_init_redemption
     owner: BAP
     expect: false
-  - key: on_init
+  - key: on_init_redemption
     type: on_init
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
-  - key: confirm
+  - key: confirm_redemption
     type: confirm
     unsolicited: false
-    pair: on_confirm
+    pair: on_confirm_redemption
     owner: BAP
     expect: false
-  - key: on_confirm
-    type: on_confirm
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: on_update_1
-    type: on_update
-    unsolicited: true
-    pair: null
-    owner: BPP
-    expect: false
-    force_proceed: true
-  - key: on_update_2
-    type: on_update
-    unsolicited: true
-    pair: null
-    owner: BPP
-    expect: false
-    force_proceed: true
-- id: Redemption_Failure
-  tags: [WORKBENCH, REDEMPTION_FLOWS, HYBRID]
-  description: Redemption with failure scenario (7 APIs)
-  sequence:
-  - key: select
-    type: select
-    unsolicited: false
-    pair: on_select_redemption
-    owner: BAP
-    expect: true
-    input:
-      - name: select_input
-        label: Enter
-        type: fis14_mutul_fund_select
-    force_proceed: true
-  - key: on_select_redemption
-    type: on_select
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: init
-    type: init
-    unsolicited: false
-    pair: on_init
-    owner: BAP
-    expect: false
-  - key: on_init
-    type: on_init
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: confirm
-    type: confirm
-    unsolicited: false
-    pair: on_confirm
-    owner: BAP
-    expect: false
-  - key: on_confirm
+  - key: on_confirm_redemption
     type: on_confirm
     unsolicited: false
     pair: null
     owner: BPP
     expect: false
   - key: on_update_redemption
-    type: on_update_redemption
+    type: on_update
     unsolicited: true
     pair: null
     owner: BPP
     expect: false
     force_proceed: true
+    input:
+      - name: redemption_status
+        label: Status
+        type: select
+        values:
+          - "CANCELLED"
+          - "COMPLETED"
+
 # - id: Cart_Lumpsum_Investment
 #   tags: [WORKBENCH, CART_FLOWS, USER_INITIATED]
 #   description: Cart with multiple lumpsum investments (10 APIs)
@@ -2237,18 +2210,6 @@ flows:
   tags: [WORKBENCH, REPORTABLE, LUMPSUM_FLOWS, USER_INITIATED]
   description: Lumpsum investment using investor's existing folio number
   sequence:
-  # - key: search
-  #   type: search
-  #   unsolicited: false
-  #   pair: on_search
-  #   owner: BAP
-  #   expect: true
-  # - key: on_search
-  #   type: on_search
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
   - key: select
     type: select
     unsolicited: false
@@ -2290,7 +2251,27 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
+  - key: payment_url_form
+    label: Payment Form
+    type: DYNAMIC_FORM
+    unsolicited: false  
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.payment_url_form
+  - key: on_status_unsolicited_payment
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
     type: on_update
     unsolicited: true
     pair: null
@@ -2379,7 +2360,27 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
+  - key: payment_url_form
+    label: Payment Form
+    type: DYNAMIC_FORM
+    unsolicited: false  
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.payment_url_form
+  - key: on_status_unsolicited_payment
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
     type: on_update
     unsolicited: true
     pair: null
@@ -2490,7 +2491,7 @@ flows:
         type: DYNAMIC_FORM
         payloadField: "form_submission_id"
         reference: $.reference_data.E_sign_verification_status
-  - key: on_status_unsolicited
+  - key: on_status_unsolicited_esign
     type: on_status
     unsolicited: true
     pair: null
@@ -2534,7 +2535,27 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
+  - key: payment_url_form
+    label: Payment Form
+    type: DYNAMIC_FORM
+    unsolicited: false  
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.payment_url_form
+  - key: on_status_unsolicited_payment
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
     type: on_update
     unsolicited: true
     pair: null
@@ -2598,7 +2619,27 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: on_update
+  - key: payment_url_form
+    label: Payment Form
+    type: DYNAMIC_FORM
+    unsolicited: false  
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.payment_url_form
+  - key: on_status_unsolicited_payment
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
     type: on_update
     unsolicited: true
     pair: null
@@ -2662,16 +2703,42 @@ flows:
     pair: null
     owner: BPP
     expect: false
-  - key: payment_failed
+  - key: payment_url_form
+    label: Payment Form
+    type: DYNAMIC_FORM
+    unsolicited: false  
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: "form_submission_id"
+        reference: $.reference_data.payment_url_form
+  - key: on_status_unsolicited_payment
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited_failed
     type: on_update
     unsolicited: true
     pair: null
     owner: BPP
     expect: false
     force_proceed: true
-  - key: on_update_retry
+  - key: update_payment_retry
+    type: update
+    unsolicited: false
+    pair: on_update_payment_retry
+    owner: BAP
+    expect: false
+  - key: on_update_payment_retry
     type: on_update
-    unsolicited: true
+    unsolicited: false
     pair: null
     owner: BPP
     expect: false
