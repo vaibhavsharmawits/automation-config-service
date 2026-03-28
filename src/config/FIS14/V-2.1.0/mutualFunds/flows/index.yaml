@@ -1303,12 +1303,11 @@ flows:
     owner: BPP
     expect: false
   - key: on_update_redemption
-    type: on_update_redemption
+    type: on_update
     unsolicited: true
     pair: null
     owner: BPP
     expect: false
-    force_proceed: true
     input:
       - name: redemption_status
         label: Status
@@ -1363,12 +1362,11 @@ flows:
     owner: BPP
     expect: false
   - key: on_update_redemption
-    type: on_update_redemption
+    type: on_update
     unsolicited: true
     pair: null
     owner: BPP
     expect: false
-    force_proceed: true
     input:
       - name: redemption_status
         label: Status
@@ -1423,12 +1421,11 @@ flows:
     owner: BPP
     expect: false
   - key: on_update_redemption
-    type: on_update_redemption
+    type: on_update
     unsolicited: true
     pair: null
     owner: BPP
     expect: false
-    force_proceed: true
     input:
       - name: redemption_status
         label: Status
@@ -1437,65 +1434,64 @@ flows:
           - "CANCELLED"
           - "COMPLETED"
 
-- id: Instant_Redemption_By_Amount
-  tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
-  description: Instant redemption with immediate settlement (8 APIs)
-  sequence:
-  - key: select
-    type: select
-    unsolicited: false
-    pair: on_select_redemption
-    owner: BAP
-    expect: true
-    input:
-      - name: redemption_select
-        label: Enter
-        type: fis14_mf_redemption_select
-    force_proceed: true
-  - key: on_select_redemption
-    type: on_select
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: init_redemption
-    type: init
-    unsolicited: false
-    pair: on_init_redemption
-    owner: BAP
-    expect: false
-  - key: on_init_redemption
-    type: on_init
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: confirm_redemption
-    type: confirm
-    unsolicited: false
-    pair: on_confirm_redemption
-    owner: BAP
-    expect: false
-  - key: on_confirm_redemption
-    type: on_confirm
-    unsolicited: false
-    pair: null
-    owner: BPP
-    expect: false
-  - key: on_update_redemption
-    type: on_update
-    unsolicited: true
-    pair: null
-    owner: BPP
-    expect: false
-    force_proceed: true
-    input:
-      - name: redemption_status
-        label: Status
-        type: select
-        values:
-          - "CANCELLED"
-          - "COMPLETED"
+# - id: Instant_Redemption_By_Amount
+#   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
+#   description: Instant redemption with immediate settlement (8 APIs)
+#   sequence:
+#   - key: select
+#     type: select
+#     unsolicited: false
+#     pair: on_select_redemption
+#     owner: BAP
+#     expect: true
+#     input:
+#       - name: redemption_select
+#         label: Enter
+#         type: fis14_mf_redemption_select
+#     force_proceed: true
+#   - key: on_select_redemption
+#     type: on_select
+#     unsolicited: false
+#     pair: null
+#     owner: BPP
+#     expect: false
+#   - key: init_redemption
+#     type: init
+#     unsolicited: false
+#     pair: on_init_redemption
+#     owner: BAP
+#     expect: false
+#   - key: on_init_redemption
+#     type: on_init
+#     unsolicited: false
+#     pair: null
+#     owner: BPP
+#     expect: false
+#   - key: confirm_redemption
+#     type: confirm
+#     unsolicited: false
+#     pair: on_confirm_redemption
+#     owner: BAP
+#     expect: false
+#   - key: on_confirm_redemption
+#     type: on_confirm
+#     unsolicited: false
+#     pair: null
+#     owner: BPP
+#     expect: false
+#   - key: on_update_redemption
+#     type: on_update
+#     unsolicited: true
+#     pair: null
+#     owner: BPP
+#     expect: false
+#     input:
+#       - name: redemption_status
+#         label: Status
+#         type: select
+#         values:
+#           - "CANCELLED"
+#           - "COMPLETED"
 
 # - id: Cart_Lumpsum_Investment
 #   tags: [WORKBENCH, CART_FLOWS, USER_INITIATED]
