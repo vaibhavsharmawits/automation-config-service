@@ -294,6 +294,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_unsoliciated
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
   - id: purchase_journey_order_level_forms_culture_heritage
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE","WORKBENCH"]
     description: Purchase Journey:Order Level Forms (Additional Flow:Culture-Heritage)
