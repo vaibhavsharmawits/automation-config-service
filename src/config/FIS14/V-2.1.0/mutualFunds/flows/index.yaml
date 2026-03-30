@@ -1261,7 +1261,7 @@ flows:
   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
   description: Redeem mutual fund units by specifying amount (7 APIs)
   sequence:
-  - key: select
+  - key: select_redemption
     type: select
     unsolicited: false
     pair: on_select_redemption
@@ -1320,7 +1320,7 @@ flows:
   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
   description: Redeem all units in folio (7 APIs)
   sequence:
-  - key: select
+  - key: select_redemption
     type: select
     unsolicited: false
     pair: on_select_redemption
@@ -1379,7 +1379,7 @@ flows:
   tags: [WORKBENCH, REPORTABLE, REDEMPTION_FLOWS, USER_INITIATED]
   description: Redeem mutual fund by specifying number of units (7 APIs)
   sequence:
-  - key: select
+  - key: select_redemption
     type: select
     unsolicited: false
     pair: on_select_redemption
