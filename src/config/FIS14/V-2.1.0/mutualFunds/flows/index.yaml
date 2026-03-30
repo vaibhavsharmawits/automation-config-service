@@ -2655,7 +2655,7 @@ flows:
   - key: select
     type: select
     unsolicited: false
-    pair: on_select
+    pair: on_select_existing_folio
     owner: BAP
     expect: true
     input:
@@ -2663,7 +2663,7 @@ flows:
         label: Enter
         type: fis14_mutul_fund_select
     force_proceed: true
-  - key: on_select
+  - key: on_select_existing_folio
     type: on_select
     unsolicited: false
     pair: null
@@ -2672,10 +2672,10 @@ flows:
   - key: init
     type: init
     unsolicited: false
-    pair: on_init
+    pair: on_init_existing_folio
     owner: BAP
     expect: false
-  - key: on_init
+  - key: on_init_existing_folio
     type: on_init
     unsolicited: false
     pair: null
@@ -2684,10 +2684,10 @@ flows:
   - key: confirm
     type: confirm
     unsolicited: false
-    pair: on_confirm
+    pair: on_confirm_existing_folio
     owner: BAP
     expect: false
-  - key: on_confirm
+  - key: on_confirm_existing_folio
     type: on_confirm
     unsolicited: false
     pair: null
@@ -2706,13 +2706,13 @@ flows:
         type: DYNAMIC_FORM
         payloadField: "form_submission_id"
         reference: $.reference_data.payment_url_form
-  - key: on_status_unsolicited_payment
-    type: on_status
-    unsolicited: true
-    pair: null
-    owner: BPP
-    expect: false
-    force_proceed: true
+  # - key: on_status_unsolicited_payment
+  #   type: on_status
+  #   unsolicited: true
+  #   pair: null
+  #   owner: BPP
+  #   expect: false
+  #   force_proceed: true
   - key: on_update_unsolicited_failed
     type: on_update
     unsolicited: true
