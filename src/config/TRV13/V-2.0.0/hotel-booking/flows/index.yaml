@@ -235,6 +235,12 @@ flows:
         pair: null
         owner: BPP
         expect: false  
+      - key: on_status_unsoliciated
+        type: on_status
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false  
   - id: Order to Confirm to Fulfillment (Provider Specific)
     tags: ["REPORTABLE", "OPTIONAL","WORKBENCH"]
     description: Get a list of all the accommodations with delta changes
