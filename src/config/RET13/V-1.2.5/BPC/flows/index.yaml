@@ -1023,7 +1023,7 @@ flows:
         owner: BPP
         expect: false
         description: Seller Accepts confirmation
-      - key: on_status_accepted
+      - key: on_status_pending
         type: on_status
         unsolicited: true
         pair: null
@@ -1065,14 +1065,14 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order delivered
-      - key: update_return
+      - key: update_reverse_qc
         type: update
         unsolicited: false
-        pair: on_update_return_init
+        pair: on_update_interim_reverseQc
         owner: BAP
         expect: false
         description: Buyer updates product
-      - key: on_update_return_init
+      - key: on_update_interim_reverseQc
         type: on_update
         unsolicited: false
         pair: null
@@ -1093,7 +1093,7 @@ flows:
         owner: BPP
         expect: false
         description: Update request picked
-      - key: update_settlement_trail
+      - key: update_reverse_qc_settlement
         type: update
         unsolicited: false
         pair: null
