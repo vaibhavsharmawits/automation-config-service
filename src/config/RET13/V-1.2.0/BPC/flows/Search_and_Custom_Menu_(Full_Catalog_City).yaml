@@ -1,0 +1,799 @@
+meta:
+  domain: ONDC:RET13
+  version: 1.2.0
+  flowId: Search_and_Custom_Menu_(Full_Catalog_City)
+transaction_data:
+  transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+  latest_timestamp: '1970-01-01T00:00:00.000Z'
+  bap_id: sample-bap-id
+  bap_uri: https://bap.example.com
+  bpp_id: sample-bpp-id
+  bpp_uri: https://bpp.example.com
+steps:
+  - api: search
+    action_id: search_1
+    owner: BAP
+    responseFor: null
+    unsolicited: false
+    description: BAP sends the search request
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpbnB1dHMgPSBzZXNzaW9uRGF0YS51c2VyX2lucHV0czsKICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0LmNpdHkgPSBpbnB1dHMuY2l0eV9jb2RlCiAgY29uc3QgdGFncyA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UuaW50ZW50LnRhZ3M7CgoJdGFnc1swXS5saXN0WzJdLnZhbHVlID0gbmV3IERhdGUoCgkJbmV3IERhdGUoKS5nZXRUaW1lKCkgKyAxMDAwICogNjAgKiA2MCAqIDI0ICogMTAKCSkudG9JU09TdHJpbmcoKTsKICAKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET13
+          action: search
+          timestamp: '2026-01-20T09:05:17.039Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: b00ce1b2-b91d-4634-931e-7822bb0cd34c
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          intent:
+            payment:
+              '@ondc/org/buyer_app_finder_fee_type': percent
+              '@ondc/org/buyer_app_finder_fee_amount': '3'
+            tags:
+              - code: bap_terms
+                list:
+                  - code: static_terms
+                    value: ' https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf'
+                  - code: static_terms_new
+                    value: >-
+                      https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
+                  - code: effective_date
+                    value: '2025-02-01T00:00:00.000Z'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        city: $.context.city
+      inputs:
+        id: ExampleInputId
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            city_code:
+              type: string
+              description: Enter the city code
+              minLength: 1
+          required:
+            - city_code
+          additionalProperties: false
+  - api: on_search
+    action_id: on_search1
+    owner: BPP
+    responseFor: search_1
+    unsolicited: false
+    description: BPP returns the full catalog refresh
+    mock:
+      generate: >-
+        LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwoKYXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5jaXR5PXNlc3Npb25EYXRhLmNpdHlbMF0KCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nWyJicHAvcHJvdmlkZXJzIl1bMF0ubG9jYXRpb25zWzBdLmFkZHJlc3MuYXJlYV9jb2RlID0gc2Vzc2lvbkRhdGE/LnVzZXJfaW5wdXRzPy5hcmVhX2NvZGUKICBkZWZhdWx0UGF5bG9hZC5jb250ZXh0Lm1lc3NhZ2VfaWQgPSBzZXNzaW9uRGF0YS5sYXRlc3RNZXNzYWdlX2lkWzBdCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
+      validate: >-
+        LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      requirements: >-
+        LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      defaultPayload:
+        context:
+          domain: ONDC:RET13
+          action: on_search
+          timestamp: '2026-01-20T10:27:04.570Z'
+          transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+          message_id: 6a02cb20-722c-433e-ab13-da8621f5aaa6
+          bap_id: sample-bap-id
+          bap_uri: https://bap.example.com
+          ttl: PT30S
+          bpp_id: sample-bpp-id
+          bpp_uri: https://bpp.example.com
+          country: IND
+          city: '*'
+          core_version: 1.2.0
+        message:
+          catalog:
+            bpp/fulfillments:
+              - id: F1
+                type: Delivery
+                contact:
+                  phone: '9876543210'
+                  email: test@gmail.com
+            bpp/descriptor:
+              name: Mock Seller NP
+              symbol: https://sellerNP.com/images/np.png
+              short_desc: Seller Marketplace
+              long_desc: Seller Marketplace
+              images:
+                - https://sellerNP.com/images/np.png
+              tags:
+                - code: bpp_terms
+                  list:
+                    - code: np_type
+                      value: MSN
+            bpp/providers:
+              - id: P1
+                time:
+                  label: enable
+                  timestamp: '2024-08-13T06:46:19.736Z'
+                ttl: PT24H
+                locations:
+                  - id: L1
+                    gps: 12.925810,77.583624
+                    address:
+                      city: Bengaluru
+                      state: Karnataka
+                      area_code: '560011'
+                      street: Jayanagar
+                      locality: Jayanagar
+                    time:
+                      label: enable
+                      timestamp: '2024-08-13T06:46:19.736Z'
+                      days: 1,2,3,4,5
+                      schedule:
+                        holidays: []
+                      range:
+                        start: '0000'
+                        end: '2359'
+                    circle:
+                      gps: 12.925810,77.583624
+                      radius:
+                        unit: km
+                        value: '5'
+                descriptor:
+                  name: Store 1
+                  symbol: https://sellerNP.com/images/store1.png
+                  short_desc: Store 1
+                  long_desc: Store 1
+                  images:
+                    - https://sellerNP.com/images/store1.png
+                categories:
+                  - id: V1
+                    descriptor:
+                      name: Variant Group 1
+                    tags:
+                      - code: type
+                        list:
+                          - code: type
+                            value: variant_group
+                      - code: attr
+                        list:
+                          - code: name
+                            value: item.tags.attribute.plating
+                          - code: seq
+                            value: '1'
+                items:
+                  - id: I1
+                    time:
+                      label: enable
+                      timestamp: '2024-08-12T05:30:48.998Z'
+                    parent_item_id: V1
+                    descriptor:
+                      name: AHA PHA BHA 32%
+                      code: '1:8809326333661'
+                      symbol: https://sellerNP.com/images/i1.png
+                      short_desc: Weekend Exfoliating Facial
+                      long_desc: >-
+                        A powerful peeling trio of 25% AHA, 5% PHA & 2% BHA that
+                        provides multi-level exfoliation, both on the surface &
+                        inside the pores, giving you a healthy, plump, and
+                        glowing skin.Fragrance free. Non-comedogenic 30ml
+                      images:
+                        - https://sellerNP.com/images/i1.png
+                        - https://sellerNP.com/images/i1.png
+                        - https://sellerNP.com/images/i1.png
+                    quantity:
+                      unitized:
+                        measure:
+                          unit: millilitre
+                          value: '30'
+                      available:
+                        count: '99'
+                      maximum:
+                        count: '8'
+                    price:
+                      currency: INR
+                      value: '2260'
+                      maximum_value: '2260'
+                    category_id: Skin Care - Face Cleansers
+                    location_id: L1
+                    fulfillment_id: F1
+                    '@ondc/org/returnable': true
+                    '@ondc/org/cancellable': true
+                    '@ondc/org/return_window': P7D
+                    '@ondc/org/seller_pickup_return': false
+                    '@ondc/org/time_to_ship': PT5M
+                    '@ondc/org/available_on_cod': true
+                    '@ondc/org/contact_details_consumer_care': Minimalist Customer Care,help@beminimalist.co,9772346555
+                    '@ondc/org/statutory_reqs_packaged_commodities':
+                      manufacturer_or_packer_name: Seller Business
+                      manufacturer_or_packer_address: >-
+                        Seller Building Address, Jayanagar, Bengaluru,
+                        Karnataka, India - 560011
+                      common_or_generic_name_of_commodity: >-
+                        AHAs (Alpha Hydroxy Acids) and BHAs (Beta Hydroxy Acids)
+                        and PHA (Polyhydroxy Acid)
+                      month_year_of_manufacture_packing_import: 03/2024
+                    tags:
+                      - code: origin
+                        list:
+                          - code: country
+                            value: IND
+                      - code: attribute
+                        list:
+                          - code: brand
+                            value: Minimalist
+                  - id: I2
+                    time:
+                      label: enable
+                      timestamp: '2024-08-12T10:27:48.913Z'
+                    parent_item_id: V1
+                    descriptor:
+                      name: Marula Oil 05% Moisturizer
+                      code: '1:8906128100436'
+                      symbol: https://sellerNP.com/images/i1.png
+                      short_desc: >-
+                        Deep & Intense Moisturization. Treats Dryness, Roughness
+                        and Flakiness
+                      long_desc: >-
+                        An everyday moisturizing cream with 5% Marula Oil,
+                        paired with Vitamin F and Vitamin E to nourish,
+                        moisturize and improve skin softness. It's a heavy
+                        cream, suitable for dry/damaged to normal skin
+                        types.Fragrance free    Non-comedogenic     50g
+                      images:
+                        - https://sellerNP.com/images/i1.png
+                    quantity:
+                      unitized:
+                        measure:
+                          unit: gram
+                          value: '50'
+                      available:
+                        count: '99'
+                      maximum:
+                        count: '10'
+                    price:
+                      currency: INR
+                      value: '2360'
+                      maximum_value: '2360'
+                    category_id: Skin Care - Lotions, Moisturisers, and Creams
+                    location_id: L1
+                    fulfillment_id: F1
+                    '@ondc/org/returnable': true
+                    '@ondc/org/cancellable': true
+                    '@ondc/org/return_window': P7D
+                    '@ondc/org/seller_pickup_return': false
+                    '@ondc/org/time_to_ship': PT5M
+                    '@ondc/org/available_on_cod': true
+                    '@ondc/org/contact_details_consumer_care': Seller Business,test@gmail.com,9876543210
+                    '@ondc/org/statutory_reqs_packaged_commodities':
+                      manufacturer_or_packer_name: Seller Business
+                      manufacturer_or_packer_address: >-
+                        Seller Building Address, Jayanagar, Bengaluru,
+                        Karnataka, India - 560011
+                      common_or_generic_name_of_commodity: Marula Oil
+                      month_year_of_manufacture_packing_import: 03/2024
+                    tags:
+                      - code: origin
+                        list:
+                          - code: country
+                            value: IND
+                      - code: attribute
+                        list:
+                          - code: brand
+                            value: Minamilist
+                  - id: I3
+                    descriptor:
+                      name: Niacinamide 05%
+                      code: '1:8906128100108'
+                      symbol: https://sellerNP.com/images/i1.png
+                      short_desc: Hydrates, Repairs & Soothes Skin
+                      long_desc: >-
+                        A nourishing & hydrating daily serum that repairs
+                        damaged barrier & soothes sensitive skin. Ideal for
+                        people with dry, sensitive skin & those who find
+                        Niacinamide 10% a little strong.Fragrance free   
+                        Non-comedogenic 30ml
+                      images:
+                        - https://sellerNP.com/images/i1.png
+                    price:
+                      currency: INR
+                      value: '499.00'
+                      maximum_value: '1199.00'
+                    category_id: Skin Care - Lotions, Moisturisers, and Creams
+                    fulfillment_id: F1
+                    location_id: L1
+                    time:
+                      label: enable
+                      timestamp: '2024-08-12T10:27:48.913Z'
+                    quantity:
+                      available:
+                        count: '99'
+                      maximum:
+                        count: '99'
+                      unitized:
+                        measure:
+                          value: '1'
+                          unit: unit
+                    '@ondc/org/returnable': true
+                    '@ondc/org/cancellable': true
+                    '@ondc/org/return_window': P7D
+                    '@ondc/org/seller_pickup_return': false
+                    '@ondc/org/time_to_ship': PT5M
+                    '@ondc/org/available_on_cod': true
+                    '@ondc/org/contact_details_consumer_care': Minimalist Customer Care,support@gmail.com,2343453434
+                    '@ondc/org/statutory_reqs_packaged_commodities':
+                      manufacturer_or_packer_name: Minimalist
+                      manufacturer_or_packer_address: >-
+                        Seller Building Address, Jayanagar, Bengaluru,
+                        Karnataka, India - 560011
+                      common_or_generic_name_of_commodity: Niacinamide
+                      month_year_of_manufacture_packing_import: 03/2024
+                    tags:
+                      - code: origin
+                        list:
+                          - code: country
+                            value: IND
+                      - code: attribute
+                        list:
+                          - code: brand
+                            value: Minimalist
+                fulfillments:
+                  - id: F1
+                    type: Delivery
+                    contact:
+                      phone: '9876543210'
+                      email: test@gmail.com
+                creds:
+                  - id: gi-12345678
+                    descriptor:
+                      code: Social Sector
+                      short_desc: GI
+                    url: https://abcd.cdn.com/images/badge-img
+                    tags:
+                      - code: verification
+                        list:
+                          - code: verify_url
+                            value: https://abcd.gi.com/verify?id=gi-12345678
+                          - code: verifier
+                            value: CSP-ABC
+                          - code: issuer
+                            value: Example Authority
+                          - code: valid_from
+                            value: 2023-06-03T00:00:00:000Z
+                          - code: valid_to
+                            value: 2024-06-03T23:59:59:999Z
+                tags:
+                  - code: serviceability
+                    list:
+                      - code: location
+                        value: L1
+                      - code: category
+                        value: Skin Care - Lotions, Moisturisers, and Creams
+                      - code: type
+                        value: '12'
+                      - code: unit
+                        value: pincode
+                      - code: val
+                        value: 560001-560076,560083
+                  - code: serviceability
+                    list:
+                      - code: location
+                        value: L1
+                      - code: category
+                        value: Skin Care - Face Cleansers
+                      - code: type
+                        value: '12'
+                      - code: unit
+                        value: country
+                      - code: val
+                        value: IND
+                  - code: timing
+                    list:
+                      - code: type
+                        value: All
+                      - code: location
+                        value: L1
+                      - code: day_from
+                        value: '1'
+                      - code: day_to
+                        value: '6'
+                      - code: time_from
+                        value: '0000'
+                      - code: time_to
+                        value: '2359'
+      saveData:
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+      inputs:
+        id: ExampleInputId
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            area_code:
+              type: string
+              description: Enter the area code
+              default: '144203'
+          required:
+            - area_code
+          additionalProperties: true
+          default: {}
+transaction_history:
+  - action_id: search_1
+    payload:
+      context:
+        domain: ONDC:RET13
+        action: search
+        timestamp: '2026-02-25T05:26:44.260Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: 2c246513-8558-4ee6-b382-8883f53a5593
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        country: IND
+        city: std:011
+        core_version: 1.2.0
+      message:
+        intent:
+          payment:
+            '@ondc/org/buyer_app_finder_fee_type': percent
+            '@ondc/org/buyer_app_finder_fee_amount': '3'
+          tags:
+            - code: bap_terms
+              list:
+                - code: static_terms
+                  value: ' https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf'
+                - code: static_terms_new
+                  value: >-
+                    https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
+                - code: effective_date
+                  value: '2026-03-07T05:26:44.293Z'
+    action: search
+    saved_info: {}
+  - action_id: on_search1
+    payload:
+      context:
+        domain: ONDC:RET13
+        action: on_search
+        timestamp: '2026-02-25T05:26:45.413Z'
+        transaction_id: 7bff96fb-28c1-4b0f-82b0-c6e13beb0cfc
+        message_id: 2c246513-8558-4ee6-b382-8883f53a5593
+        bap_id: sample-bap-id
+        bap_uri: https://bap.example.com
+        ttl: PT30S
+        bpp_id: sample-bpp-id
+        bpp_uri: https://bpp.example.com
+        country: IND
+        city: std:011
+        core_version: 1.2.0
+      message:
+        catalog:
+          bpp/fulfillments:
+            - id: F1
+              type: Delivery
+              contact:
+                phone: '9876543210'
+                email: test@gmail.com
+          bpp/descriptor:
+            name: Mock Seller NP
+            symbol: https://sellerNP.com/images/np.png
+            short_desc: Seller Marketplace
+            long_desc: Seller Marketplace
+            images:
+              - https://sellerNP.com/images/np.png
+            tags:
+              - code: bpp_terms
+                list:
+                  - code: np_type
+                    value: MSN
+          bpp/providers:
+            - id: P1
+              time:
+                label: enable
+                timestamp: '2024-08-13T06:46:19.736Z'
+              ttl: PT24H
+              locations:
+                - id: L1
+                  gps: 12.925810,77.583624
+                  address:
+                    city: Bengaluru
+                    state: Karnataka
+                    area_code: '144203'
+                    street: Jayanagar
+                    locality: Jayanagar
+                  time:
+                    label: enable
+                    timestamp: '2024-08-13T06:46:19.736Z'
+                    days: 1,2,3,4,5
+                    schedule:
+                      holidays: []
+                    range:
+                      start: '0000'
+                      end: '2359'
+                  circle:
+                    gps: 12.925810,77.583624
+                    radius:
+                      unit: km
+                      value: '5'
+              descriptor:
+                name: Store 1
+                symbol: https://sellerNP.com/images/store1.png
+                short_desc: Store 1
+                long_desc: Store 1
+                images:
+                  - https://sellerNP.com/images/store1.png
+              categories:
+                - id: V1
+                  descriptor:
+                    name: Variant Group 1
+                  tags:
+                    - code: type
+                      list:
+                        - code: type
+                          value: variant_group
+                    - code: attr
+                      list:
+                        - code: name
+                          value: item.tags.attribute.plating
+                        - code: seq
+                          value: '1'
+              items:
+                - id: I1
+                  time:
+                    label: enable
+                    timestamp: '2024-08-12T05:30:48.998Z'
+                  parent_item_id: V1
+                  descriptor:
+                    name: AHA PHA BHA 32%
+                    code: '1:8809326333661'
+                    symbol: https://sellerNP.com/images/i1.png
+                    short_desc: Weekend Exfoliating Facial
+                    long_desc: >-
+                      A powerful peeling trio of 25% AHA, 5% PHA & 2% BHA that
+                      provides multi-level exfoliation, both on the surface &
+                      inside the pores, giving you a healthy, plump, and glowing
+                      skin.Fragrance free. Non-comedogenic 30ml
+                    images:
+                      - https://sellerNP.com/images/i1.png
+                      - https://sellerNP.com/images/i1.png
+                      - https://sellerNP.com/images/i1.png
+                  quantity:
+                    unitized:
+                      measure:
+                        unit: millilitre
+                        value: '30'
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '8'
+                  price:
+                    currency: INR
+                    value: '2260'
+                    maximum_value: '2260'
+                  category_id: Skin Care - Face Cleansers
+                  location_id: L1
+                  fulfillment_id: F1
+                  '@ondc/org/returnable': true
+                  '@ondc/org/cancellable': true
+                  '@ondc/org/return_window': P7D
+                  '@ondc/org/seller_pickup_return': false
+                  '@ondc/org/time_to_ship': PT5M
+                  '@ondc/org/available_on_cod': true
+                  '@ondc/org/contact_details_consumer_care': Minimalist Customer Care,help@beminimalist.co,9772346555
+                  '@ondc/org/statutory_reqs_packaged_commodities':
+                    manufacturer_or_packer_name: Seller Business
+                    manufacturer_or_packer_address: >-
+                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
+                      India - 560011
+                    common_or_generic_name_of_commodity: >-
+                      AHAs (Alpha Hydroxy Acids) and BHAs (Beta Hydroxy Acids)
+                      and PHA (Polyhydroxy Acid)
+                    month_year_of_manufacture_packing_import: 03/2024
+                  tags:
+                    - code: origin
+                      list:
+                        - code: country
+                          value: IND
+                    - code: attribute
+                      list:
+                        - code: brand
+                          value: Minimalist
+                - id: I2
+                  time:
+                    label: enable
+                    timestamp: '2024-08-12T10:27:48.913Z'
+                  parent_item_id: V1
+                  descriptor:
+                    name: Marula Oil 05% Moisturizer
+                    code: '1:8906128100436'
+                    symbol: https://sellerNP.com/images/i1.png
+                    short_desc: >-
+                      Deep & Intense Moisturization. Treats Dryness, Roughness
+                      and Flakiness
+                    long_desc: >-
+                      An everyday moisturizing cream with 5% Marula Oil, paired
+                      with Vitamin F and Vitamin E to nourish, moisturize and
+                      improve skin softness. It's a heavy cream, suitable for
+                      dry/damaged to normal skin types.Fragrance free   
+                      Non-comedogenic     50g
+                    images:
+                      - https://sellerNP.com/images/i1.png
+                  quantity:
+                    unitized:
+                      measure:
+                        unit: gram
+                        value: '50'
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '10'
+                  price:
+                    currency: INR
+                    value: '2360'
+                    maximum_value: '2360'
+                  category_id: Skin Care - Lotions, Moisturisers, and Creams
+                  location_id: L1
+                  fulfillment_id: F1
+                  '@ondc/org/returnable': true
+                  '@ondc/org/cancellable': true
+                  '@ondc/org/return_window': P7D
+                  '@ondc/org/seller_pickup_return': false
+                  '@ondc/org/time_to_ship': PT5M
+                  '@ondc/org/available_on_cod': true
+                  '@ondc/org/contact_details_consumer_care': Seller Business,test@gmail.com,9876543210
+                  '@ondc/org/statutory_reqs_packaged_commodities':
+                    manufacturer_or_packer_name: Seller Business
+                    manufacturer_or_packer_address: >-
+                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
+                      India - 560011
+                    common_or_generic_name_of_commodity: Marula Oil
+                    month_year_of_manufacture_packing_import: 03/2024
+                  tags:
+                    - code: origin
+                      list:
+                        - code: country
+                          value: IND
+                    - code: attribute
+                      list:
+                        - code: brand
+                          value: Minamilist
+                - id: I3
+                  descriptor:
+                    name: Niacinamide 05%
+                    code: '1:8906128100108'
+                    symbol: https://sellerNP.com/images/i1.png
+                    short_desc: Hydrates, Repairs & Soothes Skin
+                    long_desc: >-
+                      A nourishing & hydrating daily serum that repairs damaged
+                      barrier & soothes sensitive skin. Ideal for people with
+                      dry, sensitive skin & those who find Niacinamide 10% a
+                      little strong.Fragrance free    Non-comedogenic 30ml
+                    images:
+                      - https://sellerNP.com/images/i1.png
+                  price:
+                    currency: INR
+                    value: '499.00'
+                    maximum_value: '1199.00'
+                  category_id: Skin Care - Lotions, Moisturisers, and Creams
+                  fulfillment_id: F1
+                  location_id: L1
+                  time:
+                    label: enable
+                    timestamp: '2024-08-12T10:27:48.913Z'
+                  quantity:
+                    available:
+                      count: '99'
+                    maximum:
+                      count: '99'
+                    unitized:
+                      measure:
+                        value: '1'
+                        unit: unit
+                  '@ondc/org/returnable': true
+                  '@ondc/org/cancellable': true
+                  '@ondc/org/return_window': P7D
+                  '@ondc/org/seller_pickup_return': false
+                  '@ondc/org/time_to_ship': PT5M
+                  '@ondc/org/available_on_cod': true
+                  '@ondc/org/contact_details_consumer_care': Minimalist Customer Care,support@gmail.com,2343453434
+                  '@ondc/org/statutory_reqs_packaged_commodities':
+                    manufacturer_or_packer_name: Minimalist
+                    manufacturer_or_packer_address: >-
+                      Seller Building Address, Jayanagar, Bengaluru, Karnataka,
+                      India - 560011
+                    common_or_generic_name_of_commodity: Niacinamide
+                    month_year_of_manufacture_packing_import: 03/2024
+                  tags:
+                    - code: origin
+                      list:
+                        - code: country
+                          value: IND
+                    - code: attribute
+                      list:
+                        - code: brand
+                          value: Minimalist
+              fulfillments:
+                - id: F1
+                  type: Delivery
+                  contact:
+                    phone: '9876543210'
+                    email: test@gmail.com
+              creds:
+                - id: gi-12345678
+                  descriptor:
+                    code: Social Sector
+                    short_desc: GI
+                  url: https://abcd.cdn.com/images/badge-img
+                  tags:
+                    - code: verification
+                      list:
+                        - code: verify_url
+                          value: https://abcd.gi.com/verify?id=gi-12345678
+                        - code: verifier
+                          value: CSP-ABC
+                        - code: issuer
+                          value: Example Authority
+                        - code: valid_from
+                          value: 2023-06-03T00:00:00:000Z
+                        - code: valid_to
+                          value: 2024-06-03T23:59:59:999Z
+              tags:
+                - code: serviceability
+                  list:
+                    - code: location
+                      value: L1
+                    - code: category
+                      value: Skin Care - Lotions, Moisturisers, and Creams
+                    - code: type
+                      value: '12'
+                    - code: unit
+                      value: pincode
+                    - code: val
+                      value: 560001-560076,560083
+                - code: serviceability
+                  list:
+                    - code: location
+                      value: L1
+                    - code: category
+                      value: Skin Care - Face Cleansers
+                    - code: type
+                      value: '12'
+                    - code: unit
+                      value: country
+                    - code: val
+                      value: IND
+                - code: timing
+                  list:
+                    - code: type
+                      value: All
+                    - code: location
+                      value: L1
+                    - code: day_from
+                      value: '1'
+                    - code: day_to
+                      value: '6'
+                    - code: time_from
+                      value: '0000'
+                    - code: time_to
+                      value: '2359'
+    action: on_search
+    saved_info: {}
+validationLib: ''
+helperLib: >-
+  CmNvbnN0IFJFVDEzQlBDMTI1Q2F0YWxvZyA9IEpTT04ucGFyc2UoCiAgSlNPTi5zdHJpbmdpZnkoewogICAgY2F0YWxvZzogewogICAgImJwcC9mdWxmaWxsbWVudHMiOiBbCiAgICAgIHsKICAgICAgICBpZDogIkYxIiwKICAgICAgICB0eXBlOiAiRGVsaXZlcnkiLAogICAgICB9LAogICAgXSwKICAgICJicHAvZGVzY3JpcHRvciI6IHsKICAgICAgbmFtZTogIk1vY2sgU2VsbGVyIE5QIiwKICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyIsCiAgICAgIHNob3J0X2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICBsb25nX2Rlc2M6ICJTZWxsZXIgTWFya2V0cGxhY2UiLAogICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL25wLnBuZyJdLAogICAgICB0YWdzOiBbCiAgICAgICAgewogICAgICAgICAgY29kZTogImJwcF90ZXJtcyIsCiAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICBjb2RlOiAibnBfdHlwZSIsCiAgICAgICAgICAgICAgdmFsdWU6ICJNU04iLAogICAgICAgICAgICB9LAogICAgICAgICAgXSwKICAgICAgICB9LAogICAgICBdLAogICAgfSwKICAgICJicHAvcHJvdmlkZXJzIjogWwogICAgICB7CiAgICAgICAgaWQ6ICJQMSIsCiAgICAgICAgdGltZTogewogICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICB9LAogICAgICAgIHR0bDogIlBUMjRIIiwKICAgICAgICBsb2NhdGlvbnM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJMMSIsCiAgICAgICAgICAgIGdwczogIjEyLjkyNTgxMCw3Ny41ODM2MjQiLAogICAgICAgICAgICBhZGRyZXNzOiB7CiAgICAgICAgICAgICAgY2l0eTogIkJlbmdhbHVydSIsCiAgICAgICAgICAgICAgc3RhdGU6ICJLYXJuYXRha2EiLAogICAgICAgICAgICAgIGFyZWFfY29kZTogIjU2MDAxMSIsCiAgICAgICAgICAgICAgc3RyZWV0OiAiSmF5YW5hZ2FyIiwKICAgICAgICAgICAgICBsb2NhbGl0eTogIkpheWFuYWdhciIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHRpbWU6IHsKICAgICAgICAgICAgICBsYWJlbDogImVuYWJsZSIsCiAgICAgICAgICAgICAgdGltZXN0YW1wOiAiMjAyNC0wOC0xM1QwNjo0NjoxOS43MzZaIiwKICAgICAgICAgICAgICBkYXlzOiAiMSwyLDMsNCw1IiwKICAgICAgICAgICAgICBzY2hlZHVsZTogewogICAgICAgICAgICAgICAgaG9saWRheXM6IFtdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICAgIHN0YXJ0OiAiMDAwMCIsCiAgICAgICAgICAgICAgICBlbmQ6ICIyMzU5IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBjaXJjbGU6IHsKICAgICAgICAgICAgICBncHM6ICIxMi45MjU4MTAsNzcuNTgzNjI0IiwKICAgICAgICAgICAgICByYWRpdXM6IHsKICAgICAgICAgICAgICAgIHVuaXQ6ICJrbSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjUiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgbmFtZTogIlN0b3JlIDEiLAogICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL3N0b3JlMS5wbmciLAogICAgICAgICAgc2hvcnRfZGVzYzogIlN0b3JlIDEiLAogICAgICAgICAgbG9uZ19kZXNjOiAiU3RvcmUgMSIsCiAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL3N0b3JlMS5wbmciXSwKICAgICAgICB9LAogICAgICAgIGNhdGVnb3JpZXM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJWMSIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBuYW1lOiAiVmFyaWFudCBHcm91cCAxIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgdGFnczogWwogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ0eXBlIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogInZhcmlhbnRfZ3JvdXAiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJuYW1lIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIml0ZW0udGFncy5hdHRyaWJ1dGUucGxhdGluZyIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAic2VxIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjEiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICBdLAogICAgICAgIGl0ZW1zOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAiSTEiLAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMDU6MzA6NDguOTk4WiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgbmFtZTogIkFIQSBQSEEgQkhBIDMyJSIsCiAgICAgICAgICAgICAgY29kZTogIjE6ODgwOTMyNjMzMzY2MSIsCiAgICAgICAgICAgICAgc3ltYm9sOiAiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyIsCiAgICAgICAgICAgICAgc2hvcnRfZGVzYzogIldlZWtlbmQgRXhmb2xpYXRpbmcgRmFjaWFsIiwKICAgICAgICAgICAgICBsb25nX2Rlc2M6ICJBIHBvd2VyZnVsIHBlZWxpbmcgdHJpbyBvZiAyNSUgQUhBLCA1JSBQSEEgJiAyJSBCSEEgdGhhdCBwcm92aWRlcyBtdWx0aS1sZXZlbCBleGZvbGlhdGlvbiwgYm90aCBvbiB0aGUgc3VyZmFjZSAmIGluc2lkZSB0aGUgcG9yZXMsIGdpdmluZyB5b3UgYSBoZWFsdGh5LCBwbHVtcCwgYW5kIGdsb3dpbmcgc2tpbi5GcmFncmFuY2UgZnJlZS4gTm9uLWNvbWVkb2dlbmljIDMwbWwiLAogICAgICAgICAgICAgIGltYWdlczogWwogICAgICAgICAgICAgICAgImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciLAogICAgICAgICAgICAgICAgImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciCiAgICAgICAgICAgICAgXQogICAgICAgICAgICB9LAogICAgICAgICAgICBxdWFudGl0eTogewogICAgICAgICAgICAgIHVuaXRpemVkOiB7CiAgICAgICAgICAgICAgICBtZWFzdXJlOiB7CiAgICAgICAgICAgICAgICAgIHVuaXQ6ICJtaWxpbGV0ZXIiLAogICAgICAgICAgICAgICAgICB2YWx1ZTogIjMwIiwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBhdmFpbGFibGU6IHsKICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgbWF4aW11bTogewogICAgICAgICAgICAgICAgY291bnQ6ICI4IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjIyNjAiLAogICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMjYwIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgY2F0ZWdvcnlfaWQ6ICJTa2luIENhcmUgLSBGYWNlIENsZWFuc2VycyIsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IGZhbHNlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQVDVNIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6ICJNaW5pbWFsaXN0IEN1c3RvbWVyIENhcmUsaGVscEBiZW1pbmltYWxpc3QuY28sOTc3MjM0NjU1NSIsCiAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiQUhBcyAoQWxwaGEgSHlkcm94eSBBY2lkcykgYW5kIEJIQXMgKEJldGEgSHlkcm94eSBBY2lkcykgYW5kIFBIQSAoUG9seWh5ZHJveHkgQWNpZCkiLAogICAgICAgICAgICAgIG1vbnRoX3llYXJfb2ZfbWFudWZhY3R1cmVfcGFja2luZ19pbXBvcnQ6ICIwMy8yMDI0IgogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1pbmltYWxpc3QiCiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAiSTIiLAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHBhcmVudF9pdGVtX2lkOiAiVjEiLAogICAgICAgICAgICBkZXNjcmlwdG9yOiB7CiAgICAgICAgICAgICAgbmFtZTogIk1hcnVsYSBPaWwgMDUlIE1vaXN0dXJpemVyIiwKICAgICAgICAgICAgICBjb2RlOiAiMTo4OTA2MTI4MTAwNDM2IiwKICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiRGVlcCAmIEludGVuc2UgTW9pc3R1cml6YXRpb24uIFRyZWF0cyBEcnluZXNzLCBSb3VnaG5lc3MgYW5kIEZsYWtpbmVzcyIsCiAgICAgICAgICAgICAgbG9uZ19kZXNjOiAiQW4gZXZlcnlkYXkgbW9pc3R1cml6aW5nIGNyZWFtIHdpdGggNSUgTWFydWxhIE9pbCwgcGFpcmVkIHdpdGggVml0YW1pbiBGIGFuZCBWaXRhbWluIEUgdG8gbm91cmlzaCwgbW9pc3R1cml6ZSBhbmQgaW1wcm92ZSBza2luIHNvZnRuZXNzLiBJdCdzIGEgaGVhdnkgY3JlYW0sIHN1aXRhYmxlIGZvciBkcnkvZGFtYWdlZCB0byBub3JtYWwgc2tpbiB0eXBlcy5GcmFncmFuY2UgZnJlZSAgICBOb24tY29tZWRvZ2VuaWMgICAgIDUwZyIsCiAgICAgICAgICAgICAgaW1hZ2VzOiBbImh0dHBzOi8vc2VsbGVyTlAuY29tL2ltYWdlcy9pMS5wbmciXSwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgcXVhbnRpdHk6IHsKICAgICAgICAgICAgICB1bml0aXplZDogewogICAgICAgICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAgICAgICB1bml0OiAiZ3JhbSIsCiAgICAgICAgICAgICAgICAgIHZhbHVlOiAiNTAiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGF2YWlsYWJsZTogewogICAgICAgICAgICAgICAgY291bnQ6ICI5OSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICBtYXhpbXVtOiB7CiAgICAgICAgICAgICAgICBjb3VudDogIjEwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjIzNjAiLAogICAgICAgICAgICAgIG1heGltdW1fdmFsdWU6ICIyMzYwIiwKICAgICAgICAgICAgfSwKCiAgICAgICAgICAgIGNhdGVnb3J5X2lkOiAiU2tpbiBDYXJlIC0gTG90aW9ucywgTW9pc3R1cmlzZXJzLCBhbmQgQ3JlYW1zIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9yZXR1cm5hYmxlIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy9jYW5jZWxsYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuX3dpbmRvdyI6ICJQN0QiLAogICAgICAgICAgICAiQG9uZGMvb3JnL3NlbGxlcl9waWNrdXBfcmV0dXJuIjogZmFsc2UsCiAgICAgICAgICAgICJAb25kYy9vcmcvdGltZV90b19zaGlwIjogIlBUNU0iLAogICAgICAgICAgICAiQG9uZGMvb3JnL2F2YWlsYWJsZV9vbl9jb2QiOiB0cnVlLAoKCiAgICAgICAgICAgIGxvY2F0aW9uX2lkOiAiTDEiLAogICAgICAgICAgICBmdWxmaWxsbWVudF9pZDogIkYxIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6CiAgICAgICAgICAgICAgIlNlbGxlciBCdXNpbmVzcyx0ZXN0QGdtYWlsLmNvbSw5ODc2NTQzMjEwIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zdGF0dXRvcnlfcmVxc19wYWNrYWdlZF9jb21tb2RpdGllcyI6IHsKICAgICAgICAgICAgICBtYW51ZmFjdHVyZXJfb3JfcGFja2VyX25hbWU6ICJTZWxsZXIgQnVzaW5lc3MiLAogICAgICAgICAgICAgIG1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfYWRkcmVzczoKICAgICAgICAgICAgICAgICJTZWxsZXIgQnVpbGRpbmcgQWRkcmVzcywgSmF5YW5hZ2FyLCBCZW5nYWx1cnUsIEthcm5hdGFrYSwgSW5kaWEgLSA1NjAwMTEiLAogICAgICAgICAgICAgIGNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5OiAiTWFydWxhIE9pbCIsCiAgICAgICAgICAgICAgbW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydDogIjAzLzIwMjQiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAib3JpZ2luIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJjb3VudHJ5IiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIklORCIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImF0dHJpYnV0ZSIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCgogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1pbmFtaWxpc3QiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJJMyIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBuYW1lOiAiTmlhY2luYW1pZGUgMDUlIiwKICAgICAgICAgICAgICBjb2RlOiAiMTo4OTA2MTI4MTAwMTA4IiwKICAgICAgICAgICAgICBzeW1ib2w6ICJodHRwczovL3NlbGxlck5QLmNvbS9pbWFnZXMvaTEucG5nIiwKICAgICAgICAgICAgICBzaG9ydF9kZXNjOiAiSHlkcmF0ZXMsIFJlcGFpcnMgJiBTb290aGVzIFNraW4iLAogICAgICAgICAgICAgIGxvbmdfZGVzYzogIkEgbm91cmlzaGluZyAmIGh5ZHJhdGluZyBkYWlseSBzZXJ1bSB0aGF0IHJlcGFpcnMgZGFtYWdlZCBiYXJyaWVyICYgc29vdGhlcyBzZW5zaXRpdmUgc2tpbi4gSWRlYWwgZm9yIHBlb3BsZSB3aXRoIGRyeSwgc2Vuc2l0aXZlIHNraW4gJiB0aG9zZSB3aG8gZmluZCBOaWFjaW5hbWlkZSAxMCUgYSBsaXR0bGUgc3Ryb25nLkZyYWdyYW5jZSBmcmVlICAgIE5vbi1jb21lZG9nZW5pYyAzMG1sIiwKICAgICAgICAgICAgICBpbWFnZXM6IFsiaHR0cHM6Ly9zZWxsZXJOUC5jb20vaW1hZ2VzL2kxLnBuZyJdLAogICAgICAgICAgICB9LAogICAgICAgICAgICBwcmljZTogewogICAgICAgICAgICAgIGN1cnJlbmN5OiAiSU5SIiwKICAgICAgICAgICAgICB2YWx1ZTogIjQ5OS4wMCIsCiAgICAgICAgICAgICAgbWF4aW11bV92YWx1ZTogIjExOTkuMDAiLAogICAgICAgICAgICB9LAogICAgICAgICAgICAiY2F0ZWdvcnlfaWQiOiAiU2tpbiBDYXJlIC0gTG90aW9ucywgTW9pc3R1cmlzZXJzLCBhbmQgQ3JlYW1zIiwKICAgICAgICAgICAgImZ1bGZpbGxtZW50X2lkIjogIjEiLAogICAgICAgICAgICAibG9jYXRpb25faWQiOiAiMSIsCiAgICAgICAgICAgICJAb25kYy9vcmcvcmV0dXJuYWJsZSI6IHRydWUsCiAgICAgICAgICAgICJAb25kYy9vcmcvY2FuY2VsbGFibGUiOiB0cnVlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3JldHVybl93aW5kb3ciOiAiUDdEIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9zZWxsZXJfcGlja3VwX3JldHVybiI6IGZhbHNlLAogICAgICAgICAgICAiQG9uZGMvb3JnL3RpbWVfdG9fc2hpcCI6ICJQVDVNIiwKICAgICAgICAgICAgIkBvbmRjL29yZy9hdmFpbGFibGVfb25fY29kIjogdHJ1ZSwKICAgICAgICAgICAgIkBvbmRjL29yZy9jb250YWN0X2RldGFpbHNfY29uc3VtZXJfY2FyZSI6ICJNaW5pbWFsaXN0IEN1c3RvbWVyIENhcmUsc3VwcG9ydEBnbWFpbC5jb20sMjM0MzQ1MzQzNCIsCiAgICAgICAgICAgICJAb25kYy9vcmcvc3RhdHV0b3J5X3JlcXNfcGFja2FnZWRfY29tbW9kaXRpZXMiOiB7CiAgICAgICAgICAgICAgIm1hbnVmYWN0dXJlcl9vcl9wYWNrZXJfbmFtZSI6ICJNaW5pbWFsaXN0IiwKICAgICAgICAgICAgICAibWFudWZhY3R1cmVyX29yX3BhY2tlcl9hZGRyZXNzIjogIlNlbGxlciBCdWlsZGluZyBBZGRyZXNzLCBKYXlhbmFnYXIsIEJlbmdhbHVydSwgS2FybmF0YWthLCBJbmRpYSAtIDU2MDAxMSIsCiAgICAgICAgICAgICAgImNvbW1vbl9vcl9nZW5lcmljX25hbWVfb2ZfY29tbW9kaXR5IjogIk5pYWNpbmFtaWRlIiwKICAgICAgICAgICAgICAibW9udGhfeWVhcl9vZl9tYW51ZmFjdHVyZV9wYWNraW5nX2ltcG9ydCI6ICIwMy8yMDI0IgogICAgICAgICAgICB9LAogICAgICAgICAgICB0aW1lOiB7CiAgICAgICAgICAgICAgbGFiZWw6ICJlbmFibGUiLAogICAgICAgICAgICAgIHRpbWVzdGFtcDogIjIwMjQtMDgtMTJUMTA6Mjc6NDguOTEzWiIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICAgICAgYXZhaWxhYmxlOiB7CiAgICAgICAgICAgICAgICBjb3VudDogIjk5IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIG1heGltdW06IHsKICAgICAgICAgICAgICAgIGNvdW50OiAiOTkiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgdW5pdGl6ZWQ6IHsKICAgICAgICAgICAgICAgIG1lYXN1cmU6IHsKICAgICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICAgICAgdW5pdDogInVuaXQiLAogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICB9LAogICAgICAgICAgICB0YWdzOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogIm9yaWdpbiIsCiAgICAgICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgICAgICAgdmFsdWU6ICJJTkQiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJhdHRyaWJ1dGUiLAogICAgICAgICAgICAgICAgbGlzdDogWwogICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgY29kZTogImJyYW5kIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIk1pbmltYWxpc3QiLAogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICBdLAogICAgICAgIGZ1bGZpbGxtZW50czogWwogICAgICAgICAgewogICAgICAgICAgICBpZDogIkYxIiwKICAgICAgICAgICAgdHlwZTogIkRlbGl2ZXJ5IiwKICAgICAgICAgICAgY29udGFjdDogewogICAgICAgICAgICAgIHBob25lOiAiOTg3NjU0MzIxMCIsCiAgICAgICAgICAgICAgZW1haWw6ICJ0ZXN0QGdtYWlsLmNvbSIsCiAgICAgICAgICAgIH0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgY3JlZHM6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJnaS0xMjM0NTY3OCIsCiAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICBjb2RlOiAiU29jaWFsIFNlY3RvciIsCiAgICAgICAgICAgICAgc2hvcnRfZGVzYzogIkdJIiwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgdXJsOiAiaHR0cHM6Ly9hYmNkLmNkbi5jb20vaW1hZ2VzL2JhZGdlLWltZyIsCiAgICAgICAgICAgIHRhZ3M6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmVyaWZpY2F0aW9uIiwKICAgICAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2ZXJpZnlfdXJsIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogImh0dHBzOi8vYWJjZC5naS5jb20vdmVyaWZ5P2lkPWdpLTEyMzQ1Njc4JyIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmVyaWZpZXIiLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiQ1NQLUFCQyIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAiaXNzdWVyIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIkV4YW1wbGUgQXV0aG9yaXR5IiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgIGNvZGU6ICJ2YWxpZF9mcm9tIiwKICAgICAgICAgICAgICAgICAgICB2YWx1ZTogIjIwMjMtMDYtMDNUMDA6MDA6MDA6MDAwWiIsCiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjb2RlOiAidmFsaWRfdG8iLAogICAgICAgICAgICAgICAgICAgIHZhbHVlOiAiMjAyNC0wNi0wM1QyMzo1OTo1OTo5OTlaIiwKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgICB0YWdzOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGNvZGU6ICJzZXJ2aWNlYWJpbGl0eSIsCiAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAiY2F0ZWdvcnkiLAogICAgICAgICAgICAgICAgdmFsdWU6ICJTa2luIENhcmUgLSBMb3Rpb25zLCBNb2lzdHVyaXNlcnMsIGFuZCBDcmVhbXMiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjExIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAicGluY29kZSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiNTYwMDAxLTU2MDA3Niw1NjAwODMiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIF0sCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICBjb2RlOiAic2VydmljZWFiaWxpdHkiLAogICAgICAgICAgICBsaXN0OiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImxvY2F0aW9uIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiTDEiLAogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgY29kZTogImNhdGVnb3J5IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiU2tpbiBDYXJlIC0gRmFjZSBDbGVhbnNlcnMiCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIjEyIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ1bml0IiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiY291bnRyeSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidmFsIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiSU5EIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgY29kZTogInRpbWluZyIsCiAgICAgICAgICAgIGxpc3Q6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAidHlwZSIsCiAgICAgICAgICAgICAgICB2YWx1ZTogIkFsbCIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAibG9jYXRpb24iLAogICAgICAgICAgICAgICAgdmFsdWU6ICJMMSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBjb2RlOiAiZGF5X2Zyb20iLAogICAgICAgICAgICAgICAgdmFsdWU6ICIxIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJkYXlfdG8iLAogICAgICAgICAgICAgICAgdmFsdWU6ICI2IiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX2Zyb20iLAogICAgICAgICAgICAgICAgdmFsdWU6ICIwMDAwIiwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGNvZGU6ICJ0aW1lX3RvIiwKICAgICAgICAgICAgICAgIHZhbHVlOiAiMjM1OSIsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgXSwKICAgICAgICAgIH0sCiAgICAgICAgXSwKICAgICAgfSwKICAgIF0sCiAgfSwKICB9KQopOwoK
