@@ -1,5 +1,12 @@
 name: ONDC:RET12
 versions:
+  - id: 1.2.0
+    reporting: false
+    supportedActions:
+      $ref: src/config/RET12/V-1.2.0/supportedActions/index.yaml
+    usecase:
+      - name: FASHION
+        flows: /V-1.2.0/FASHION/flows/index.yaml
   - id: 1.2.5
     reporting: false
     supportedActions:
