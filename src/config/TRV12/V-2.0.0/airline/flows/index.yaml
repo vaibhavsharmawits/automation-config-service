@@ -193,6 +193,13 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: on_status_unsoliciated_Airline_200
+        type: on_status
+        unsolicited: true
+        description: Order status Completed
+        pair: null
+        owner: BPP
+        expect: false  
   - id: Cancellation by Buyer
     tags: ["WORKBENCH", "MANDATORY","PRAAMAN", "REPORTABLE"]
     description: Airlines - Cancellation by Buyer
