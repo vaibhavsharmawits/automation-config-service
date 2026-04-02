@@ -125,6 +125,18 @@ steps:
           orders:
             type: array
             minItems: 1
+            default:
+            - id: order-1
+              amount:
+                currency: INR
+                value: '100.00'
+              settlements:
+              - id: settlement-1
+                payment_id: payment-1
+                status: PENDING
+                amount:
+                  currency: INR
+                  value: '100.00'
             items:
               type: object
               required:
@@ -135,6 +147,7 @@ steps:
                 id:
                   type: string
                   minLength: 1
+                  default: order-1
                 amount:
                   type: object
                   required:
@@ -143,11 +156,20 @@ steps:
                   properties:
                     currency:
                       type: string
+                      default: INR
                     value:
                       type: string
+                      default: '100.00'
                 settlements:
                   type: array
                   minItems: 1
+                  default:
+                  - id: settlement-1
+                    payment_id: payment-1
+                    status: PENDING
+                    amount:
+                      currency: INR
+                      value: '100.00'
                   items:
                     type: object
                     required:
@@ -158,14 +180,17 @@ steps:
                     properties:
                       id:
                         type: string
+                        default: settlement-1
                       payment_id:
                         type: string
+                        default: payment-1
                       status:
                         type: string
                         enum:
                         - PENDING
                         - SETTLED
                         - TO_BE_INITIATED
+                        default: PENDING
                       amount:
                         type: object
                         required:
@@ -174,8 +199,10 @@ steps:
                         properties:
                           currency:
                             type: string
+                            default: INR
                           value:
                             type: string
+                            default: '100.00'
                       commission:
                         type: object
                         properties:
@@ -329,6 +356,19 @@ steps:
           orders:
             type: array
             minItems: 1
+            default:
+            - id: order-1
+              recon_accord: 'false'
+              amount:
+                currency: INR
+                value: '100.00'
+              settlements:
+              - id: settlement-1
+                payment_id: payment-1
+                status: PENDING
+                amount:
+                  currency: INR
+                  value: '100.00'
             items:
               type: object
               required:
@@ -340,11 +380,13 @@ steps:
                 id:
                   type: string
                   minLength: 1
+                  default: order-1
                 recon_accord:
                   type: string
                   enum:
                   - 'true'
                   - 'false'
+                  default: 'false'
                 amount:
                   type: object
                   required:
@@ -353,13 +395,22 @@ steps:
                   properties:
                     currency:
                       type: string
+                      default: INR
                     value:
                       type: string
+                      default: '100.00'
                     diff_value:
                       type: string
                 settlements:
                   type: array
                   minItems: 1
+                  default:
+                  - id: settlement-1
+                    payment_id: payment-1
+                    status: PENDING
+                    amount:
+                      currency: INR
+                      value: '100.00'
                   items:
                     type: object
                     required:
@@ -370,14 +421,17 @@ steps:
                     properties:
                       id:
                         type: string
+                        default: settlement-1
                       payment_id:
                         type: string
+                        default: payment-1
                       status:
                         type: string
                         enum:
                         - PENDING
                         - SETTLED
                         - TO_BE_INITIATED
+                        default: PENDING
                       amount:
                         type: object
                         required:
@@ -386,8 +440,10 @@ steps:
                         properties:
                           currency:
                             type: string
+                            default: INR
                           value:
                             type: string
+                            default: '100.00'
                           diff_value:
                             type: string
                       commission:
@@ -435,9 +491,9 @@ transaction_history:
     context:
       domain: ONDC:NTS10
       action: recon
-      timestamp: '2026-03-25T11:45:32.773Z'
+      timestamp: '2026-04-02T06:56:11.741Z'
       transaction_id: f5ac7312-4bf9-4cc0-8a66-531500dff172
-      message_id: 8ba434cd-cb6b-486f-b2b2-a2615c6fe477
+      message_id: 9062644d-7cd0-4231-b0fa-a2a3263c7261
       bap_id: bap.example.com
       bap_uri: https://bap.example.com
       ttl: PT1H
@@ -451,19 +507,55 @@ transaction_history:
           code: "*"
     message:
       orders:
-      - id: '12'
+      - id: order-1
         amount:
           currency: INR
-          value: '1'
+          value: '100.00'
         settlements:
-        - id: '123'
-          payment_id: '1'
-          status: SETTLED
+        - id: settlement-1
+          payment_id: payment-1
+          status: PENDING
           amount:
-            currency: '1'
-            value: '1'
-          updated_at: '2026-03-25T11:45:32.776Z'
+            currency: INR
+            value: '100.00'
+          updated_at: '2026-04-02T06:56:11.748Z'
   action: recon
+  saved_info: {}
+- action_id: on_recon
+  payload:
+    context:
+      domain: ONDC:NTS10
+      action: on_recon
+      timestamp: '2026-04-02T06:56:15.885Z'
+      transaction_id: f5ac7312-4bf9-4cc0-8a66-531500dff172
+      message_id: 9062644d-7cd0-4231-b0fa-a2a3263c7261
+      bap_id: bap.example.com
+      bap_uri: https://bap.example.com
+      ttl: PT1H
+      bpp_id: bpp.example.com
+      bpp_uri: https://bpp.example.com
+      version: 2.0.0
+      location:
+        country:
+          code: IND
+        city:
+          code: "*"
+    message:
+      orders:
+      - id: order-1
+        recon_accord: false
+        amount:
+          currency: INR
+          value: '100.00'
+        settlements:
+        - id: settlement-1
+          payment_id: payment-1
+          status: PENDING
+          amount:
+            currency: INR
+            value: '100.00'
+          updated_at: '2026-04-02T06:56:15.891Z'
+  action: on_recon
   saved_info: {}
 validationLib: ''
 helperLib: LyoKCUN1c3RvbSBoZWxwZXIgZnVuY3Rpb25zIGF2YWlsYWJsZSBpbiBhbGwgbW9jayBnZW5lcmF0aW9uIGZ1bmN0aW9ucy4KCXRoZXNlIGFyZSBhcHBlbmRlZCBiZWxvdyB0aGUgZ2VuZXJhdGUgZnVuY3Rpb24gZm9yIGVhY2ggc3RlcC4KKi8KCmNvbnN0IGNyZWF0ZUZvcm1VUkwgPSAoZG9tYWluLGZvcm1JZCwgc2Vzc2lvbkRhdGEpID0+IHsKCWNvbnN0IGJhc2VVUkwgPSBzZXNzaW9uRGF0YS5tb2NrQmFzZVVybDsKCWNvbnN0IHRyYW5zYWN0aW9uSWQgPSBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkWzBdOwoJY29uc3Qgc2Vzc2lvbklkID0gc2Vzc2lvbkRhdGEuc2Vzc2lvbklkOwoJcmV0dXJuIGAke2Jhc2VVUkx9L2Zvcm1zLyR7ZG9tYWlufS8ke2Zvcm1JZH0vP3RyYW5zYWN0aW9uX2lkPSR7dHJhbnNhY3Rpb25JZH0mc2Vzc2lvbl9pZD0ke3Nlc3Npb25JZH1gOwp9CgovLyBHZW5lcmF0ZXMgYSBVVUlEIHY0CmZ1bmN0aW9uIHV1aWR2NCgpIHsKCXJldHVybiAneHh4eHh4eHgteHh4eC00eHh4LXl4eHgteHh4eHh4eHh4eHh4Jy5yZXBsYWNlKC9beHldL2csIGZ1bmN0aW9uIChjKSB7CgkgIGNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMTYgfCAwOwoJICBjb25zdCB2ID0gYyA9PT0gJ3gnID8gciA6IChyICYgMHgzIHwgMHg4KTsKCSAgcmV0dXJuIHYudG9TdHJpbmcoMTYpOwoJfSk7Cn0KCi8vIEdlbmVyYXRlIGEgNiBkaWdpdCBzdHJpbmcgSUQKZnVuY3Rpb24gZ2VuZXJhdGU2RGlnaXRJZCgpIHsKCXJldHVybiBNYXRoLmZsb29yKDEwMDAwMCArIE1hdGgucmFuZG9tKCkgKiA5MDAwMDApLnRvU3RyaW5nKCk7Cn0KCi8vIFJldHVybnMgdGhlIGN1cnJlbnQgSVNPIHRpbWVzdGFtcApmdW5jdGlvbiBjdXJyZW50VGltZXN0YW1wKCkgewoJcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKfQoKLy8gQ29udmVydHMgSVNPIDg2MDEgZHVyYXRpb24gc3RyaW5nIHRvIHRvdGFsIHNlY29uZHMKY29uc3QgaXNvRHVyVG9TZWMgPSAoZHVyYXRpb24pID0+IHsKICBjb25zdCBkdXJSRSA9IC9QKChkKylZKT8oKGQrKU0pPygoZCspVyk/KChkKylEKT9UPygoZCspSCk/KChkKylNKT8oKGQrKVMpPy87CiAgY29uc3QgcyA9IGR1clJFLmV4ZWMoZHVyYXRpb24pOwogIGlmICghcykgcmV0dXJuIDA7CiAgCiAgcmV0dXJuIChOdW1iZXIocz8uWzJdKSB8fCAwKSAqIDMxNTM2MDAwICsKCShOdW1iZXIocz8uWzRdKSB8fCAwKSAqIDI2MjgyODggKwoJKE51bWJlcihzPy5bNl0pIHx8IDApICogNjA0ODAwICsKCShOdW1iZXIocz8uWzhdKSB8fCAwKSAqIDg2NDAwICsKCShOdW1iZXIocz8uWzEwXSkgfHwgMCkgKiAzNjAwICsKCShOdW1iZXIocz8uWzEyXSkgfHwgMCkgKiA2MCArCgkoTnVtYmVyKHM/LlsxNF0pIHx8IDApOwp9OwoKY29uc3Qgc2V0Q2l0eUZyb21JbnB1dHMgPSAocGF5bG9hZCwgaW5wdXRzKSA9PiB7CglpZiAoIWlucHV0cykgcmV0dXJuICIqIjsKCWxldCB2ZXJzaW9uID0gcGF5bG9hZC5jb250ZXh0LnZlcnNpb24gfHwgcGF5bG9hZC5jb250ZXh0LmNvcmVfdmVyc2lvbiB8fCAiMi4wLjAiOwoJaWYgKHZlcnNpb24uc3RhcnRzV2l0aCgiMSIpKSB7CgkJcGF5bG9hZC5jb250ZXh0LmNpdHkgPSBpbnB1dHMuY2l0eV9jb2RlID8/ICIqIjsKCX0gZWxzZSB7CgkJcGF5bG9hZC5jb250ZXh0LmxvY2F0aW9uLmNpdHkuY29kZSA9IGlucHV0cy5jaXR5X2NvZGUgPz8gIioiOwoJfQp9Cg==
