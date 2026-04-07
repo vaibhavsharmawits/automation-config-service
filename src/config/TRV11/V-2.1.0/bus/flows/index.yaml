@@ -141,6 +141,12 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: unsoliciated_on_status_complete_BUS_210
+        type: on_status
+        unsolicited: true
+        description: on_status (Order COMPLETED)
+        pair: null
+        owner: BPP    
 
   - id: IntraCity_User_Cancellation_Flow
     tags: ["PRAMAAN", "MANDATORY", "REPORTABLE", "WORKBENCH"]
