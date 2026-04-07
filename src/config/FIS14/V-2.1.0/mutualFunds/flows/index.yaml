@@ -45,10 +45,10 @@ flows:
     owner: BPP
     expect: false
     
-# - id: SIP_Creation_New_Folio
-#   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
-#   description: Create new SIP investment with new folio number
-#   sequence:
+- id: SIP_Creation_New_Folio
+  tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
+  description: Create new SIP investment with new folio number
+  sequence:
   # - key: search
   #   type: search
   #   unsolicited: false
@@ -61,96 +61,96 @@ flows:
   #   pair: null
   #   owner: BPP
   #   expect: false
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#   - key: on_select
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: investor_details_form
-#     label: Investor Details Form
-#     type: HTML_FORM
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     input:
-#     - name: form_submission_id
-#       label: Enter Form Submission ID
-#       type: HTML_FORM
-#       reference: $.reference_data.investor_details_form
-#   - key: select_2
-#     type: select
-#     unsolicited: false
-#     pair: on_select_2
-#     owner: BAP
-#     expect: false
-#     force_proceed: true
-#   - key: on_select_2
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     input:
-#       - name: payment_status  
-#         label: Select Payment Status
-#         type: select
-#         values:
-#           - "PAID"
-#           - "NOT_PAID"    
-#   - key: on_status_unsolicited
-#     type: on_status
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update_unsolicited
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: SIP_Creation_Existing_Folio
-#   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
-#   description: Create SIP investment using investor's existing folio number
-#   sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+    - name: form_submission_id
+      label: Enter Form Submission ID
+      type: HTML_FORM
+      reference: $.reference_data.investor_details_form
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+      - name: payment_status  
+        label: Select Payment Status
+        type: select
+        values:
+          - "PAID"
+          - "NOT_PAID"    
+  - key: on_status_unsolicited
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_unsolicited
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: SIP_Creation_Existing_Folio
+  tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
+  description: Create SIP investment using investor's existing folio number
+  sequence:
   # - key: search
   #   type: search
   #   unsolicited: false
@@ -163,77 +163,77 @@ flows:
   #   pair: null
   #   owner: BPP
   #   expect: false
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select_existing_folio
-#     owner: BAP
-#     expect: true
-#     input:
-#       - name: select_input
-#         label: Enter
-#         type: fis14_mutul_fund_select
-#     force_proceed: true
-#   - key: on_select_existing_folio
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: payment_mandate_form
-#     label: Payment Mandate Setup
-#     type: HTML_FORM
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     input:
-#     - name: form_submission_id
-#       label: Enter Payment Form ID
-#       type: HTML_FORM
-#       reference: $.reference_data.payment_mandate_form
-#   - key: on_status
-#     type: on_status
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: SIP_Creation_New_Folio_With_KYC
-#   tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
-#   description: Create SIP with full KYC process for new folio (20 APIs)
-#   sequence:
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select_existing_folio
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select_existing_folio
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+    - name: form_submission_id
+      label: Enter Payment Form ID
+      type: HTML_FORM
+      reference: $.reference_data.payment_mandate_form
+  - key: on_status
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: SIP_Creation_New_Folio_With_KYC
+  tags: [WORKBENCH, REPORTABLE, SIP_SETUP_FLOWS, USER_INITIATED]
+  description: Create SIP with full KYC process for new folio (20 APIs)
+  sequence:
   # - key: search
   #   type: search
   #   unsolicited: false
@@ -246,293 +246,293 @@ flows:
   #   pair: null
   #   owner: BPP
   #   expect: false
-  # - key: select
-  #   type: select
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: true
+    input:
+      - name: select_input
+        label: Enter
+        type: fis14_mutul_fund_select
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: investor_details_form
+    label: Investor Details Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+    input:
+    - name: form_submission_id
+      label: Enter Form Submission ID
+      type: HTML_FORM
+      reference: $.reference_data.investor_details_form
+  - key: select_2
+    type: select
+    unsolicited: false
+    pair: on_select_2
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_2
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_kyc
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: kyc_form
+    label: KYC Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: select_esign
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select_esign
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_esign
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: esign_form
+    label: E-Sign Form
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: payment_mandate_form
+    label: Payment Mandate Setup
+    type: HTML_FORM
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: on_status_unsolicited_payment
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: SIP_Creation_Without_Payment_Mandate
+  tags: [WORKBENCH, SIP_SETUP_FLOWS, USER_INITIATED]
+  description: SIP creation without setting up payment mandate (6 APIs)
+  sequence:
+  # - key: search
+  #   type: search
   #   unsolicited: false
-  #   pair: on_select
+  #   pair: on_search
   #   owner: BAP
   #   expect: true
-  #   input:
-  #     - name: select_input
-  #       label: Enter
-  #       type: fis14_mutul_fund_select
-  #   force_proceed: true
-  # - key: on_select
-  #   type: on_select
+  # - key: on_search
+  #   type: on_search
   #   unsolicited: false
   #   pair: null
   #   owner: BPP
   #   expect: false
-  # - key: investor_details_form
-  #   label: Investor Details Form
-  #   type: HTML_FORM
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  #   input:
-  #   - name: form_submission_id
-  #     label: Enter Form Submission ID
-  #     type: HTML_FORM
-  #     reference: $.reference_data.investor_details_form
-  # - key: select_2
-  #   type: select
-  #   unsolicited: false
-  #   pair: on_select_2
-  #   owner: BAP
-  #   expect: false
-  #   force_proceed: true
-  # - key: on_select_2
-  #   type: on_select
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: on_status_kyc
-  #   type: on_status
-  #   unsolicited: true
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  #   force_proceed: true
-  # - key: kyc_form
-  #   label: KYC Form
-  #   type: HTML_FORM
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: select_esign
-  #   type: select
-  #   unsolicited: false
-  #   pair: on_select
-  #   owner: BAP
-  #   expect: false
-  #   force_proceed: true
-  # - key: on_select_esign
-  #   type: on_select
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: on_status_esign
-  #   type: on_status
-  #   unsolicited: true
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  #   force_proceed: true
-  # - key: esign_form
-  #   label: E-Sign Form
-  #   type: HTML_FORM
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: init
-  #   type: init
-  #   unsolicited: false
-  #   pair: on_init
-  #   owner: BAP
-  #   expect: false
-  # - key: on_init
-  #   type: on_init
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: confirm
-  #   type: confirm
-  #   unsolicited: false
-  #   pair: on_confirm
-  #   owner: BAP
-  #   expect: false
-  # - key: on_confirm
-  #   type: on_confirm
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: payment_mandate_form
-  #   label: Payment Mandate Setup
-  #   type: HTML_FORM
-  #   unsolicited: false
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  # - key: on_status_unsolicited_payment
-  #   type: on_status
-  #   unsolicited: true
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  #   force_proceed: true
-  # - key: on_update
-  #   type: on_update
-  #   unsolicited: true
-  #   pair: null
-  #   owner: BPP
-  #   expect: false
-  #   force_proceed: true
-# - id: SIP_Creation_Without_Payment_Mandate
-#   tags: [WORKBENCH, SIP_SETUP_FLOWS, USER_INITIATED]
-#   description: SIP creation without setting up payment mandate (6 APIs)
-#   sequence:
-#   - key: search
-#     type: search
-#     unsolicited: false
-#     pair: on_search
-#     owner: BAP
-#     expect: true
-#   - key: on_search
-#     type: on_search
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: select
-#     type: select
-#     unsolicited: false
-#     pair: on_select
-#     owner: BAP
-#     expect: false
-#     force_proceed: true
-#   - key: on_select
-#     type: on_select
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-# - id: SIP_Manual_Trigger_Instalment
-#   tags: [WORKBENCH, SIP_SETUP_FLOWS, USER_INITIATED]
-#   description: Manually trigger SIP instalment payment (4 APIs)
-#   sequence:
-#   - key: init
-#     type: init
-#     unsolicited: false
-#     pair: on_init
-#     owner: BAP
-#     expect: false
-#   - key: on_init
-#     type: on_init
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-#   - key: confirm
-#     type: confirm
-#     unsolicited: false
-#     pair: on_confirm
-#     owner: BAP
-#     expect: false
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: false
-#     pair: null
-#     owner: BPP
-#     expect: false
-# - id: SIP_Instalment
-#   tags: [WORKBENCH, REPORTABLE, SIP_LIFECYCLE_FLOWS, UNSOLICITED]
-#   description: Regular SIP instalment deduction and confirmation (5 APIs)
-#   sequence:
-#   - key: on_update_initiate
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update_payment
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_status
-#     type: on_status
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update_success
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-# - id: SIP_Instalment_Failure
-#   tags: [WORKBENCH, SIP_LIFECYCLE_FLOWS, UNSOLICITED]
-#   description: SIP instalment with failure scenario (5 APIs)
-#   sequence:
-#   - key: on_update_initiate
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_confirm
-#     type: on_confirm
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update_payment
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_status
-#     type: on_status
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
-#   - key: on_update_failed
-#     type: on_update
-#     unsolicited: true
-#     pair: null
-#     owner: BPP
-#     expect: false
-#     force_proceed: true
+  - key: select
+    type: select
+    unsolicited: false
+    pair: on_select
+    owner: BAP
+    expect: false
+    force_proceed: true
+  - key: on_select
+    type: on_select
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+- id: SIP_Manual_Trigger_Instalment
+  tags: [WORKBENCH, SIP_SETUP_FLOWS, USER_INITIATED]
+  description: Manually trigger SIP instalment payment (4 APIs)
+  sequence:
+  - key: init
+    type: init
+    unsolicited: false
+    pair: on_init
+    owner: BAP
+    expect: false
+  - key: on_init
+    type: on_init
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+  - key: confirm
+    type: confirm
+    unsolicited: false
+    pair: on_confirm
+    owner: BAP
+    expect: false
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: false
+    pair: null
+    owner: BPP
+    expect: false
+- id: SIP_Instalment
+  tags: [WORKBENCH, REPORTABLE, SIP_LIFECYCLE_FLOWS, UNSOLICITED]
+  description: Regular SIP instalment deduction and confirmation (5 APIs)
+  sequence:
+  - key: on_update_initiate
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_payment
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_status
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_success
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+- id: SIP_Instalment_Failure
+  tags: [WORKBENCH, SIP_LIFECYCLE_FLOWS, UNSOLICITED]
+  description: SIP instalment with failure scenario (5 APIs)
+  sequence:
+  - key: on_update_initiate
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_confirm
+    type: on_confirm
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_payment
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_status
+    type: on_status
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
+  - key: on_update_failed
+    type: on_update
+    unsolicited: true
+    pair: null
+    owner: BPP
+    expect: false
+    force_proceed: true
 # - id: SIP_Instalment_Payment_Failure
 #   tags: [WORKBENCH, SIP_LIFECYCLE_FLOWS, UNSOLICITED]
 #   description: SIP instalment with payment failure (4 APIs)
