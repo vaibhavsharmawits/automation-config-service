@@ -23,3 +23,9 @@ flows:
     description: Buyer Side Order Cancellation Flow
     config:
       $ref: "src/config/RETINVL/v-1.2.5/RETINVL/flows/BUYER_SIDE_ORDER_CANCELLATION.yaml"
+  - type: playground
+    id: OFFERS_FLOW
+    tags: ["WORKBENCH","PRAMAAN", "MANDATORY", "REPORTABLE"]
+    description: Offers Flow for Inventory Less (Buy now journey and find best price)
+    config:
+      $ref: "src/config/RETINVL/v-1.2.5/RETINVL/flows/OFFERS_FLOW.yaml"
