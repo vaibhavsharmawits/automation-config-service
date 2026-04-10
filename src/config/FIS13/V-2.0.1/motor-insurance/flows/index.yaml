@@ -47,11 +47,15 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: addon_selection
-            label: Select Add-ons
-            type: fis13_addon_select
+          - name: insurance_select
+            label: Select Insurance Product
+            type: insurance_select
             required: false
-            reference: $.reference_data.selected_add_ons
+          # - name: addon_selection
+          #   label: Select Add-ons
+          #   type: fis13_addon_select
+          #   required: false
+          #   reference: $.reference_data.selected_add_ons
       - key: on_select_motor
         type: on_select
         unsolicited: false
@@ -316,11 +320,15 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: addon_selection
-            label: Select Add-ons
-            type: fis13_addon_select
+          - name: insurance_select
+            label: Select Insurance Product
+            type: insurance_select
             required: false
-            reference: $.reference_data.selected_add_ons
+          # - name: addon_selection
+          #   label: Select Add-ons
+          #   type: fis13_addon_select
+          #   required: false
+          #   reference: $.reference_data.selected_add_ons
       - key: on_select_motor
         type: on_select
         unsolicited: false
@@ -555,11 +563,15 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: addon_selection
-            label: Select Add-ons
-            type: fis13_addon_select
+          - name: insurance_select
+            label: Select Insurance Product
+            type: insurance_select
             required: false
-            reference: $.reference_data.selected_add_ons
+          # - name: addon_selection
+          #   label: Select Add-ons
+          #   type: fis13_addon_select
+          #   required: false
+          #   reference: $.reference_data.selected_add_ons
       - key: on_select_motor
         type: on_select
         unsolicited: false
@@ -848,11 +860,15 @@ flows:
         owner: BAP
         expect: false
         input:
-          - name: addon_selection
-            label: Select Add-ons
-            type: fis13_addon_select
+          - name: insurance_select
+            label: Select Insurance Product
+            type: insurance_select
             required: false
-            reference: $.reference_data.selected_add_ons
+          # - name: addon_selection
+          #   label: Select Add-ons
+          #   type: fis13_addon_select
+          #   required: false
+          #   reference: $.reference_data.selected_add_ons
       - key: on_select_motor
         type: on_select
         unsolicited: false
