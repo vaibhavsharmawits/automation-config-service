@@ -1,24 +1,32 @@
 import { Request, Response } from "express";
-import { getConfigService } from "../services/cacheService";
-import { filterDomainData } from "../utils";
+import { fetchSpec } from "../services/dbService";
 
 export const getSupportedActions = async (req: Request, res: Response) => {
-  try {
-    const query = req.query;
-    const config = await getConfigService();
-    const data = filterDomainData(
-      config,
-      query.domain as string,
-      query.version as string, 
-      "", 
-      "supportedActions"
-    );
-
-    res.send({ data: data });
-  } catch (e) {
-    console.log("Error while fetching flows", e);
-    res
-      .status(400)
-      .send({ error: true, message: "Error while fetching flows" });
-  }
+    try {
+        const { domain, version } = req.query as {
+            domain: string;
+            version: string;
+        };
+        const data = await fetchSpec(domain, version, { include: "meta" });
+        res.send({
+            data: {
+                supportedActions: data?.meta?.supportedActions || [],
+                apiProperties: data?.meta?.apiProperties || [],
+            },
+        });
+    } catch (e: any) {
+        if (e.response?.status === 404) {
+            return res
+                .status(404)
+                .send({ error: true, message: "Spec not found" });
+        }
+        if (e.message === "AUTOMATION_DB_BASE_URL is not configured") {
+            return res.status(500).send({ error: true, message: e.message });
+        }
+        console.error("Error while fetching supported actions", e);
+        res.status(500).send({
+            error: true,
+            message: "Error while fetching supported actions",
+        });
+    }
 };
