@@ -1146,13 +1146,6 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order picked up
-      - key: on_update_delivery_auth
-        type: on_update
-        unsolicited: true
-        pair: null
-        owner: BPP
-        expect: false
-        description: Update delivery authorization
       - key: on_status_out_for_delivery
         type: on_status
         unsolicited: true
@@ -1160,6 +1153,13 @@ flows:
         owner: BPP
         expect: false
         description: Status updates - order out for delivery
+      - key: on_update_delivery_auth
+        type: on_update
+        unsolicited: true
+        pair: null
+        owner: BPP
+        expect: false
+        description: Update delivery authorization
       - key: on_status_order_delivered
         type: on_status
         unsolicited: true
