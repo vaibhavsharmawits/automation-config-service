@@ -1595,6 +1595,18 @@ flows:
         pair: null
         owner: BPP
         expect: false
+      - key: status_purchase_flow_BUS_201
+        type: status
+        unsolicited: false
+        pair: on_status_complete_BUS_201
+        owner: BAP
+        expect: false
+      - key: on_status_complete_BUS_201
+        type: on_status
+        unsolicited: false
+        pair: null
+        owner: BPP
+        expect: false
       - key: issue_open_100
         type: issue
         label: open
