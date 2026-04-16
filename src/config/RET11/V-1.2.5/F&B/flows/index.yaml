@@ -995,21 +995,14 @@ flows:
         pair: null
         owner: BPP
         expect: false
-      - key: cancel
-        type: cancel
-        unsolicited: false
-        pair: on_cancel
-        owner: BAP
-        expect: false
-        description: Buyer request for the cancellation of the order
-        # add input with reason code "001"
-      - key: on_cancel
-        type: on_cancel
-        unsolicited: false
+      - key: on_update_reverse_offers
+        type: on_update
+        unsolicited: true
         pair: null
         owner: BPP
         expect: false
-        description: Seller confirms the cancellation of the order
+        description: reversal of the offer
+        # add input with reason code "001"
   - id: SELF_PICKUP
     description: User pickes the order themselfs
     sequence:
